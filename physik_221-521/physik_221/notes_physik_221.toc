@@ -1,0 +1,62 @@
+\babel@toc {nil}{}\relax 
+\contentsline {section}{\numberline {1}Newton'sche Mechanik}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Inertialsysteme}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Newton--Gesetze}{4}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}DGL}{5}{subsubsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.3}Beispiel: Angetriebener, gedämpfter harmonischer Oszillator}{6}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Konservative Kräfte}{8}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Beispiel: harmonischer, ungedämpfter Oszillator}{8}{subsubsection.1.4.1}%
+\contentsline {section}{\numberline {2}Kinetische und potenzielle Energie}{9}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Eine Dimension}{9}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Drei Dimensionen}{9}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Konvservative Kräfte}{10}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Beispiel: Zentralkraft}{11}{subsubsection.2.2.2}%
+\contentsline {section}{\numberline {3}Oszillatoren}{13}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Gekoppelte, harmonische Oszillatoren}{13}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Allgemeiner Fall: verschiedene Massen und Phasen}{14}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Lagrangeformalismus}{16}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Eine Dimension}{16}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}$n$--Massenpunkte in drei Dimensionen}{17}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Beispiel: Teilchen in der Ebene mit Zentralpotential $V(r)$}{18}{subsubsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.3}Zwangsbedingungen}{20}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Holonome}{20}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Beispiel: Pendel an oszillirender Aufhängung}{21}{subsubsection.4.3.2}%
+\contentsline {section}{\numberline {5}Hamiltonformalismus}{23}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Wirkung}{23}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Hamilton--Funktion und Hamilton--Gleichung}{24}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Allgemeiner Algorithmus zur Berechnung von $H$}{25}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Satz von Liouville}{29}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Virialsatz}{29}{subsection.5.5}%
+\contentsline {section}{\numberline {6}Erhaltungssätze -- Noether's Theorem}{31}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Energieerhaltung}{31}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Impulserhaltung}{31}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Beispiel: Zug im Regen}{32}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2}Beispiel: Raketenantrieb}{32}{subsubsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.3}Elastischer Stoß}{33}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Drehimpulserhaltung}{36}{subsection.6.4}%
+\contentsline {subsubsection}{\numberline {6.4.1}Beispiel: Bewegung in der $(x,y)$ Ebene}{38}{subsubsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.5}Kepler--Gesetze}{41}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Rutherford--Streuung}{42}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Mehrkörpersysteme}{45}{subsection.6.7}%
+\contentsline {subsubsection}{\numberline {6.7.1}Zweikörperproblem}{46}{subsubsection.6.7.1}%
+\contentsline {section}{\numberline {7}Rotation, beschl. Bezugssysteme und starre Körper}{48}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Starre Körper}{48}{subsection.7.1}%
+\contentsline {subsubsection}{\numberline {7.1.1}Rotation eines starren Körpers}{49}{subsubsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.2}Beispiel: Rollendes Rad}{53}{subsubsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.2}Lagrange--Funktion eines starren Körpers}{54}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Beschleunigte Bezugssysteme}{56}{subsection.7.3}%
+\contentsline {subsubsection}{\numberline {7.3.1}Beispiel: Flüssigkeit in rotierendem Eimer}{58}{subsubsection.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.2}Beispiel: Bewegung auf der Erde}{58}{subsubsection.7.3.2}%
+\contentsline {subsection}{\numberline {7.4}Bewegungsgleichung für rotierende starre Körper}{59}{subsection.7.4}%
+\contentsline {section}{\numberline {8}Gravitation und Kosmologie}{63}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Gezeitenkräfte}{64}{subsection.8.1}%
+\contentsline {subsubsection}{\numberline {8.1.1}Effekt der Gezeiten auf Himmelskörper}{67}{subsubsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.2}Anwendung des Gravitationsgesetzes in Forschung}{67}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Der anharmonische Oszillator}{69}{section.9}%
+\contentsline {subsection}{\numberline {9.1}anharmonischer Oszillator mit beliebiger potentieller Energie}{69}{subsection.9.1}%
+\contentsline {subsubsection}{\numberline {9.1.1}Beispiel: Masse zwischen zwei Federn}{70}{subsubsection.9.1.1}%
+\contentsline {subsubsection}{\numberline {9.1.2}Beispiel: Mathematisches Pendel}{71}{subsubsection.9.1.2}%
+\contentsline {subsection}{\numberline {9.2}Störungstheoretische Behandlung}{73}{subsection.9.2}%
+\contentsline {subsubsection}{\numberline {9.2.1}Beispiel: angetriebener, gedämpfter, anharmonischer Oszillator}{77}{subsubsection.9.2.1}%
+\contentsline {subsection}{\numberline {9.3}Entwicklung in Fourier--Komponenten}{79}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Übergang zum Chaos}{81}{subsection.9.4}%

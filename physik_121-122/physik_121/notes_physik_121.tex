@@ -1,0 +1,380 @@
+%:LLPStartPreview
+%:VimtexCompile(SS)
+
+%{{{ Formatierung
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{physics_notetaking}
+
+%\definecolor{bg}{RGB}{69,0,128}
+%\definecolor{fg}{RGB}{237,237,222}
+%\pagecolor{bg}
+%\color{fg}
+
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*\contentsname{Inhaltsverzeichnis}
+
+%\bibliographystyle{alphadin}
+\pagestyle{fancy}
+\sloppy
+%\pagenumbering{gobble}
+
+\lhead{Jonas Wortmann}\chead{Notizen}\rhead{Physik}
+
+%}}}
+
+\begin{document}
+
+%{{{ Titelseite
+\thispagestyle{empty}
+\hfill
+\Huge
+\begin{center}
+        Notizen - B.Sc. Physik $|$ physik121
+\end{center}
+\normalsize
+\hfill
+
+%}}}
+
+\newpage
+
+%{{{ Inhaltsverzeichnis
+\rhead{Inhaltsverzeichnis}
+\tableofcontents
+
+%}}}
+
+\newpage
+
+%{{{ physik121
+\rhead{physik121}
+\section*{astro121}\addcontentsline{toc}{section}{physik121}
+
+\section{Formeln}
+\begin{align*} %\intertext
+        \text{Stefan--Boltzmann}&:P=A\cdot \sigma \cdot T^4\\
+        \text{Stefan--Boltzmann Leuchtkraft}&:L=4\pi\cdot A\cdot \sigma \cdot T^4\\
+        \text{Wien'sches Verschiebungsgesetz}&:\lambda _{\text{max}}\cdot T_{\text{eff}}=2.9\cdot 10^{-3}mK\\
+        \text{Planck--Gesetz}&:B\left(\lambda ,T\right)=\dfrac{2\pi hc ^2}{\lambda ^{5}}\dfrac{1}{e^{\left(\tfrac{hc}{\lambda kT}\right)}-1}\\
+        \text{Dopplereffekt}&:\Delta \lambda =\dfrac{v}{c}\lambda\\
+        \text{Absolute Helligkeit}&:m-M=-5+5\log r\qquad r=10^{\tfrac{1}{5}\left(m-M\right)+1}pc\\
+        \text{Helligkeitsdifferenz}&:m_1-m_2=-2,5\cdot \log\left(\dfrac{F_1}{F_2}\right)\\
+        \text{Masse--Leuchtkraft Beziehung}&:L\propto M^3\\
+        \text{Zeit auf der Hauptreihe}&:t_{MS}\propto M^{-2}\propto T^{-4}\\
+        \text{Erwartete Lebensdauer}&:\tau =\tau _{\odot}\cdot \left(\dfrac{T_{\text{eff} }}{T_\odot}\right)^{-4}\\
+        \text{Energieabgabe--Temperatur Beziehung}&:\diff[]{E}{t}\propto T^6\text{ bis zu }\diff[]{E}{t}\propto T^{20}\\
+        \text{Auflösungsvermögen}&:\alpha =1,22\cdot \dfrac{\lambda }{D}\\
+        \text{Entfernung}&:1pc \approx 3,26Lj\approx 206\,000AE
+\end{align*}
+
+\newpage
+
+\section{Elektromagnetische Strahlung}
+Farben entstehen dadurch, dass verschiedene Stoffe verschiedene Wellenlängen des Lichts reflektieren bzw absorbieren.
+\begin{align*}
+        \text{Radio}&:10^{3}m\\
+        \text{Microwave}&:10^{-2}m\\
+        \text{Infrared}&:10^{-5}m\\
+        \text{Visible}&:0.5\cdot 10^{-6}m\\
+        \text{Ultraviolet}&:10^{-8}m\\
+        \text{X-ray}&:10^{-10}m\\
+        \text{Gamma ray}&:10^{-12}m
+\end{align*}
+\\\hfill\\\textbf{Linienstrahlung}\\
+Strahlung mit genau einem Frequenzbereich. Hüllenelektronen geben Linienstrahlung ab, wenn sie die Energie von einem Photon absorbieren und danach wieder emittieren. Diese Strahlung ist abhängig vom Material, da die Elektronen nur Vielfache ihrer Energieniveaus aufnehmen.
+\\\hfill\\\textbf{Kontinuierliche Strahlung}\\ 
+Zum Beispiel Wärmestrahlung die durch Atombewegung entsteht.
+\\\hfill\\\textbf{Leuchtkraft (Leistung)}\\
+Die Energieabgabe pro Zeit.
+\\\hfill\\\textbf{Fluss}\\
+Leuchtkraft pro Quadratmeter.
+\\\hfill\\\textbf{Messung der Lichtgeschwindigkeit}\\ 
+\textsc{Ole Römer}: Messung anhand der Monde von Jupiter. In der Stellung Jupiter - Erde - Sonne hat das von den Monden Jupiters reflektierte Licht eine kürzere Strecke als in der Stellung Jupiter - Sonne - Erde zurückzulegen. Dadurch kann die Zeit der Verfinsterung der Monde gemessen und verglichen werden. Wenn der Mond zum Beispiel um 2000 in der ersten Stellung verdunkelt wird, allerdings erst um 2222 in der zweiten Stellung, dann lässt sich daraus schließen, dass das Licht ca 22 Minuten braucht, um zur Erde zu kommen.
+\\\hfill\\\textbf{Dopplereffekt}\\ 
+Der Dopplereffekt kann auch bei elektromagnetischer Strahlung auftreten. Dieser kann mit der Formel
+\[ 
+        \Delta \lambda =\dfrac{v}{c}\lambda 
+\] 
+beschrieben werden.
+\\\hfill\\\textbf{Rötung}\\ 
+Die Refraktion von blauem Licht durch die Atmosphäre und das interstellare Medium. Dadurch erscheinen Objekte röter. Die Extinktion beschreibt die absorption dieses blauen Lichts.
+
+\subsection{Schwarzer Strahler}
+Jeder Körper mit einer Temperatur sendet elektromagnetische Strahlung (in einem Kontinuum / breitbandigem Spektrum) aus. Ein schwarzer Strahler ist ein Körper, der alle einfallende elektromagnetische Strahlung absorbiert und nur die Strahlung seiner Temperatur emittiert. In der Astronomie wird dieses Emissionsspektrum mit der korrespondierenden Temperatur des Schwarzkörpers dazu verwendet, um die effektive Temperatur eines Sterns zu ermitteln. Mithilfe des Planck Gesetzes kann die kontinuierliche Strahlung eines schwarzen Strahlers beschrieben werden
+\[ 
+        B\left(\lambda ,T\right)=\dfrac{2\pi hc ^2}{\lambda ^{5}}\dfrac{1}{e^{\left(\tfrac{hc}{\lambda kT}\right)}-1}[W,m ^{-2},\mu m ^{-1}]
+.\] 
+Zudem ist die Energie der Strahlung immer ein Vielfaches des Planck'schen Wirkungsquantums $h$ 
+\[ 
+        E_P=n\cdot h\qquad E=h\cdot f=h\cdot \dfrac{c}{\lambda }
+.\] 
+Die zu erwartende Leistung eines Schwarzkörpers über das gesamte Spektrum kann mit der Stefan-Boltzmann-Gleichung hergeleitet werden
+\[ 
+        P=A\cdot \sigma \cdot T^{4}
+.\] 
+Wobei $A$ die Oberfläche, $\sigma $ die Stefan--Boltzmann Konstante und $T$ die Temparatur ist. Das Maximum des Spektrums kann mit der Wienschen Verschiebung beschrieben werden
+\[ 
+        2,9\cdot 10^{-3}mK=\lambda _{\text{max}}\cdot T_{\text{Oberfl.}}
+.\] 
+Der Unterschied zwischen dem Spektrum eines schwarzen Strahlers und dem eines realen Sterns ist trivialerweise, dass der Stern im Gegensatz zum schwarzen Strahler kein perfektes Spektrum hat. Es gibt gewisse Ausschläge abhängig von den Elementen innerhalb des Sterns.
+
+\subsection{Beugung}
+Die Beugung von Wellen kann mit dem Huygens-Fresnelschen-Prinzip beschrieben werden. Dieses Gesetz besagt, dass an einer Wellenfront von jedem Punkt neue konzentrische Wellen ausgehen. Weit entfernte Sterne werden in einem Teleskop als eine Intensitätsverteilung (Airy-Pattern) dargestellt, welche aufgrund der Beugung zustande kommt (der Stern kann als Spalt angesehen werden; die daraus resultierende Wellenfront ist das Interferenzmuster).
+
+\section{Vermessung des Himmels}
+Winkel: 1 Grad = 60 Bogenminuten = 60 $\cdot $ 60 Bogensekunden. Zur Vermessung des Abstandes kann die Winkelausdehnung (die Größe der Ankathete / der Druchmesser des Objekts) mit Hilfe des Tangens berechnet werden.
+
+\subsection{Winkelauflösung}
+Die Winkelauflösung eines Teleskops gibt an, wie weit zwei Objekte voneinander entfernt sein dürfen, damit sie noch als zwei Objekte beobachtet werden können. Die Winkelauflösung eines Teleskops wird genauer, wenn die Teleskopöffnung größer wird.
+
+\section{Koordinaten}
+In der Astronomie gibt es verschiedene Koordinatensysteme zum Bestimmen der Positionen von Himmelsobjekten. Zum einen das horizontale, welches allerdings Zeit- und Ortsabhängig ist, und zum anderen das äquatoriale, welches nicht Zeit- und Ortsabhängig ist.
+\\\hfill\\\textbf{Definitionen des horizontalen Koordinatensystems}
+\begin{enumerate}[label=$\cdot$]
+        \item Fixstern: Sterne die ihre Position am Himmel nicht verändern.
+        \item Altitude: Winkeldistanz über dem Horizont
+        \item Zenit: Die Höhe bei 90$^\circ$ über dem Beobachter.
+        \item Nadir: Gegenüber dem Zenit.
+        \item Meridian: Die orthogonale Kreisbahn zum Himmelsäquator, durch den Zenit, sowie Nord- und Südpol.
+        \item Kulmination: Der Schnittpunkt der Sonne mit dem Meridian (auch der höchste Punkt der Sonne).
+        \item Azimut: Winkel über den Äquator, bzw. Winkeldistanz zur Südrichtung (oft im Uhrzeigersinn).
+\end{enumerate}
+\hfill\\\textbf{Definitionen des äquatorialen Koordinatensystems}
+\begin{enumerate}[wide,label=$\cdot$]
+        \item Frühlingspunkt: Mitrotierender Bezugspunkt; Der Schnittpunkt der Ekliptik und des Himmelsäquators. (Aufgrund der Präzession bzw. Nutation wird dieser pro Jahr um 20'' bzw. 50'' verschoben.)
+        \item Rektaszension: Winkel gegen den Uhrzeigersinnzwischen dem Objekt und Frühlingspunkt.
+        \item Studenwinkel: Winkel gegen den Uhrzeigersinn zwischen dem Objekt und dem Meridian. (Die Differenz zwischen Sternzeit und Rektaszension.) 
+        \item Sternzeit: Die Summe aus der Rektaszension und dem Stundenwinkel.
+        \item Deklination: Winkeldifferenz zwischen dem Objekt und Himmelsäquator.
+        \item Himmelnordpol: Die Position des Polarsterns (die Höhe über dem Horizont kann als geographische Breite verstanden werden).
+        \item Meridian: Die orthogonale Kreisbahn zum Himmelsäquator, durch den Zenit, sowie Nord- und Südpol.
+        \item zirkumpolare Sterne: Sterne die immer von dem Beobachter aus sichtbar sind.
+        \item Präzession: Die Fortschreitung des Frühlingspunktes aufgrund der Gravitationskräfte der Sonne und des Mondes. Diese tragen zur Schwankung in der Drehung der Erde bei.
+        \item Nutation: Die kleine Schwankung in der Präzession, aufgrund eines nicht konstanten Drehmoments.
+\end{enumerate}
+Beispiel für Koordinaten: 14h 39m 36.491s, -60$^{\circ}$50'02.308\grqq (mitrotierender Bezugspunkt, Rektaszension, Deklination)\\\\
+
+\subsection{Sternposition}
+Veränderung der Sternposition:
+\begin{enumerate}[wide,label=-]
+        \item Eigenbewegung der Sterne (proper Motion)
+        \item Radialgeschw. (Änderung der Entfernung)
+        \item Orientierung der Erde (Rotation, Präzession, Nutation)
+        \item Bewegung der Erde um Sonne (Aberration, Parallaxe)
+        \item Erdatmosphäre (Refraktion)
+\end{enumerate}
+
+\subsection{Sternhelligkeit}
+\textbf{Magnitude}\\ 
+Die Sichtbarkeit der Sterne wird in Magnituden angegeben. Diese Skala steigt logarithmisch und mit größerer Magnitudenzahl sinkt die Sichtbarkeit der Sterne. Das Auge kann bis zu 6 (8 ist Ausnahme) Magnituden wahrnehmen.
+\\\hfill\\\textbf{Absolute Helligkeit}\\ 
+Die scheinbare Helligkeit der Sterne hängt mit $r^2$ von der Entfernung des Himmelsobjekts vom Beobachter ab. Um ein Vergleichmedium zu schaffen, wird definiert, dass die Normalentfernung eines Sterns $10\text{pc}$ ist. Die Helligkeit eines Objekts in der Entfernung von $10\text{pc}$ wird als absolute Helligkeit bezeichnet
+\[ 
+        \dfrac{r}{10\text{pc}}=10^{\tfrac{1}{5}\left(m-M\right)}\qquad r=10^{\tfrac{1}{5}\left(m-M\right)+1}
+\] 
+mit $m-M$ als Entfernungsmodul
+\[ 
+        m-M=-5+5\log r\,\text{pc}
+.\] 
+Der Zusammenhang zwischen den Magnituden und Intensitäten zweier Sterne ist
+\[ 
+        m_1-m_2=-2.5\cdot \lg\left(\dfrac{I_1}{I_2}\right)
+.\] 
+\\\hfill\\\textbf{Bolometrische Helligkeit}\\ 
+Die bolometrische Helligkeit beschreibt die Helligkeit über das gesamte Spektrum der emittierten Strahlung.
+
+\subsection{Positionsbestimmung}
+Die Sonnenhöhe wird bestimmt durch den Schatten eines im Boden steckenden Stabs. Die Höhe ist dann
+\[
+        \tan \alpha =\dfrac{\text{Schattenlänge}}{\text{Stablänge}}
+.\]
+Mithilfe der Gleichung für den Breitengrad 
+\[ 
+        \Phi =\alpha +\delta _{\odot}
+\]
+wobei $\delta _{\odot}$ die Korrektur, also der Winkel zwischen dem Äquator und der Ekliptik ist.
+
+\section{Instrumente der Astronomie}
+Instrumente dienen der Veränderung der Wahrnehmung. Mit einem Teleskop lässt sich die Auflösung und Intensität des Lichts vergrößern bzw verstärken. Es lässt sich auch der Wellenlängengenbereich des empfangenden Lichts spezifizieren, um auf verschiedenen Spektren Beobachtung durchführen zu können.
+
+\subsection{Optische Teleskope: Refraktoren}
+Diese Art von Teleskop beruht darauf, dass das einfallende Licht von Linsen gebrochen wird. Da diese Brechung Wellenlängen abhängig ist, führt dass dazu, dass bei dem Versuch eine Wellenlänge scharf zu machen, werden die anderen dabei Verschwommen und erzeugen einen Farbfehler. Das kommt daher, dass Strahlen verschiedener Wellenlängen nicht im selben Brennpunkt der Linse vereinigt werden. Diesen Effekt bezeichnet man als chromatische Aberration. Reduzieren kann man diesen Fehler bei Benutzung von Linsen mit verschiedenen Brechungsindizes.
+
+\subsection{Optische Teleskope: Reflektoren}
+Bei dieser Art von Teleskop werden alle einfallenden Strahlen mit einem parabelförmigen Spiegel reflektiert und dann in dem Brennpunkt fokussiert. Es kann auch nicht zu einer chromatischen Aberration kommen, da alle Strahlen unabhängig der Wellenlänge in den selben Brennpunkt reflektiert werden. Für diesen Spiegel muss allerdings eine Oberflächengenauigkeit von ca $\tfrac{1}{10}$ der kürzesten Wellenlänge die beobachtet werden soll haben ($\approx 10nm$).\\Heutzutage werden bis zu $10m$ große, aber sehr dünne ($\approx 0.1m$) Spiegel auf Aktuatoren gelagert. Wenn dieser Spiegel gedreht wird, dann kommt es aufgrund des Gewichts zur Verformung, also wird mit diesen Aktuatoren die Form des Spiegels in Abhängigkeit seines Winkels mechanisch verformt, um immer auf eine Parabelform zu kommen.
+
+\subsection{Optische Teleskope: Interferometer}
+Bei einem optischen Interferometer werden die eintreffenden Lichtstrahlen von Linsen aufgeteilt und dann wieder zusammengefügt, wobei ein Interferenzmuster entsteht. Danach kann aus dem Abstand der Spiegel und der Wellenlänge die Winkelauflösungen, sowie der Durchmesser des beobachteten Obejkts herausgefunden werden, wenn man seine Entfernung kennt.
+
+\subsection{Adaptive Optik}
+Mithilfe der adaptiven Optik lassen sich Objekte durch die Atmosphäre hindurch genau auflösen, da es in der Atmosphäre durch Interferenzen zu verzerrungen des Lichts kommt. Diese Wellenfront kann mit einem deformierten Spiegel ausgeglichen werden. Die Aktuatoren in dem Spiegel in echtzeit an das Licht angepasst, indem die resultierende Wellenfront wieder in einen Sensor eingeführt wird, welche dann mithilfe dieser Daten die Aktuatoren anpasst. Wichtig ist, dass sich das zu beobachtende Obejekt und die Eichquelle im selben isoplanaren Feld befinden müssen, damit die Wellenfront nicht von unterschiedlichen Turbulenzen verformt wird. Aktuatoren können über den piezoelektrischen Effekt erzeugt werden: Dabei wird die Kristallstruktur des Spiegels mithilfe der Veränderung der Spannung angepasst. 
+
+\subsection{Radioteleskope}
+Radioteleskope empfangen Radiowellen, indem sie diese mit einer entsprechend großen Schüssel zu einer Antenne bündeln, mit der sie gesammelt und an das Analysesystem weitergeleitet werden.
+
+\subsection{Röntgenteleskope}
+
+\section{Detektoren}
+\subsection{CCDs - Charge-Couple Devices}
+CCDs oder Charge-Couple Devices, sind Detektoren, die in der Lage sind eintreffende Photonen in elektrische Signale umzuwandeln. Dabei treffen Photonen auf photosensitive Bereiche der Hülle, wodurch elektrische Ladung proportional zu der Lichtintensität in einem Kondensator gespeichert wird. Diese Ladung wird dann durch ein Array von Kondensatoren geschickt, indem \textit{gate electrodes} dazwischen in Reihe positiv geladen werden. Die letze \textit{gate electrode} schickt die Elektronen dann in einen Signalverstärker, welcher die Ladung in Spannung umwandelt. Wird dieses Verfahren wiederholt, entsteht eine Sequenz an Spannungen, welche digitalisiert und gespeichert werden kann. Solche CCD-Detektoren erreichen eine Sensitivität von bis zu 31 Magnituden.
+
+Bei CCD-Detektoren kann der Effekt des Blooming auftreten, welcher in hellen vertikalen Streifen im Bild resultiert. Dieser kommt daher, dass ein Kondensator aufgrund der Photonenintensität überladen wird und die Elektronen dann nach oben bzw. unten entweichen. Mithilfe eines \textit{drains} kann dieses Phänomen reduziert werden, allerdings leidet dann die Sensitivität darunter.
+
+\section{Astronomische Bildverarbeitung}
+Die Bildverarbeitung in der Astronomie von Rohdaten zu einem fertigem Bild erfolgt unter mehreren Schritten. 
+
+\subsection{Rohdaten}
+Die Rohdaten des Bildes kommen meist in dem \texttt{.fits} format, welches es erlaubt Bilddaten, Spektren und Metadaten verlustfrei zu kodieren. 
+\\\hfill\\\textbf{Störungen}\\ 
+Verschiedene Störungen und Fehler können beim Aufnehmen eines Bildes aus dem Weltall passieren. Zum Beispiel kann kosmische Strahlung oder Teilchen direkt auf die Detektoren fallen, was in weißen Punkten oder Strichen resultiert. Diese können aber entfernt werden, indem mehrere Aufnahmen gemacht werden und jeweils der minimum Helligkeitswert jedes Pixels genommen wird.
+
+\subsection{Farbfilter}
+Bei dem Weltraumteleskop Hubble zum Beispiel, kamen 4 verschiedene Farbfilter zum Einsatz. Diese sind nicht wie bei herkömmlichen Kameras direkt vor der Linse fest verbaut, sondern austauschbar. Es wird mit jedem Filter jeweils zwei mal belichtet. Später werden diese Farbfilter dann übereinandergelegt und man bekommt ein Bild in RGB-Farben. Final können noch schwarze Stellen ausgebessert werden, die aufgrund von Überbelichtung oder Fehlerhafter Verknüpfung der Bilder entstehen.
+
+\section{Messung der Zeit}
+\subsection{Wahre und mittlere Sonnenzeit}
+Die wahre Sonnenzeit wird definiert als die Zeit zwischen zwei Durchgängen der Sonne durch den Meridian (Kulmination). Bei der Kulmination ist es also 12 Uhr. Da allerdings der wahre Sonnentag ungleichmäßig aufgrund elliptizität der Erdbahn und der Neigung der Ekliptik ist, wird der mittlere Sonnentag definiert, bei welchem die Sonne den Meridian in gleichmäßigen Abständen von 24 Stunden durchläuft. Die mittlere Sonnenzeit ist allerdings Ortsabhängig, weshalb die verschiedenen \textbf{Zeitzonen} bzw. Breitengrade definiert worden sind. In Greenwich ist der $0^{\circ}$ Breitengrad. Die Datumsgrenze liegt bei $180^{\circ}$.
+
+\subsection{Sonnentag und siderischer Tag}
+Des Weiteren wird zwischen dem Sonnentag und siderischen Tag unterschieden. Der Sonnentag entspricht exakt $24h$ und ist definiert durch die Zeit zwischen zwei Kulminationen der Sonne. Der siderische Tag hingegen entspricht ca. $23,9345h$ und ist definiert durch die Zeit zwischen zwei Druchgängen des Frühlingspunkts.
+
+\subsection{Analemma}
+Das Analemma ist ein Diagramm, welches den Sonnenstand über die Dauer eines Jahres an einem fixen Punkt und zu der selben mittleren Sonnenzeit zeigt. Dieser ändert sich im Laufe der Zeit und die Bahn der Sonne sieht aus wie eine 8. An den äußeren Enden rechts bzw. links der 8 geht die Uhr zwischen 5 und 15 nach bzw. vor der mittleren Sonnenzeit. Ca. am ersten Januar steht die Sonne ganz unten und ca. am 1. Juli ganz oben in der 8.
+
+\subsection{Zeitgleichung}
+Die Zeitgleichung 
+\[ 
+        ZG=WOZ-MOZ
+\] 
+also die wahre Sonnenzeit minus die mittlere Sonnenzeit. $ZG$ beschreibt die Minuten in abhängigkeit von dem Datum.
+
+\section{Kepler'schen Gesetze}
+Die Kepler'schen Gesetze beschreiben die Planetenbewegung als den Umlauf eines Planeten um einen Stern auf Ellipsenbahnen. Johannes Kepler hat sie unteranderem aufgrund der Schleifenbewegung anderer Planeten aus der Sicht der Erde hergeleitet.
+\\\hfill\\\textbf{1. Kepler'sches Gesetz}\\ 
+Die Umlaufbahn eines Trabanten ist eine Ellipse. Eine ihrer Brennpunkte liegt im Schwerezentrum des Systems.
+\\\hfill\\\textbf{2. Kepler'sches Gesetz}\\ 
+In gleichen Zeiten überstreicht der Fahrstrahl Objekt--Schwerezentrum gleiche Flächen.
+\\\hfill\\\textbf{3. Kepler'sches Gesetz}\\ 
+Die Quadrate der Umlaufzeiten $T_1$ und $T_2$ je zweier Trabanten um ein gemeinsames Zentrum sind proportional zu den Kuben der großen Halbachsen $a_1$ und $a_2$ ihrer Ellipsenbahnen.
+
+\section{Das Sonnensystem}
+\subsection{Aufbau von terrestrischen Planeten}
+\textbf{Erde}\\
+Die Erde besteht aus mehreren Schichten. Ganz außen sind die Kontinentalplatten mit einer Dicke von ca. $100km$ und einer Dichte von $\approx 2.7g/cm^3$. Darunter befindet sich der Mantel aus Gestein mit einer Dichte von $\approx 3.0g/cm^3$, welcher sich wie eine extrem viskose Flüssigkeit verhält. Der Teil zwischen der Kruste (inkl. fester Mantel) und dem flüssigen Mantel wird Lithosphäre genannt. Die Hitze kommt durch den radioaktiven Zerfall von Uran und Thorium. Zwischen dem festen Eisen-Nickel-Kern und der Gesteinsschicht befindet sich auch der flüssige Teil des Kerns, welcher für das Magnetfeld verantwortlich ist.
+\\\hfill\\\textbf{Mond}\\ 
+Der Mond hingegen hat einen relativ großen Mantel und vergleichsweise kleinen Eisen-Nickel-Kern. Die mittlere Dichte liegt bei $\approx 3.3g/cm^3$ und ist auch nur $\tfrac{1}{4}$ so groß wie die Erde. Die Vermutung zur Entstehung des Mondes ist, dass der Mond mit der Erde kollidiert ist. Dabei wurde viel Gestein der Erde losgelöst und in ihre Umlaufbahn geschickt, welches sich zu dem heutigen Mond geformt hat. Die Erdachse soll sich bei dieser Kollision auch um die $23.5^{\circ}$, die sie heute hat, verschoben haben.
+\\\hfill\\\textbf{Gezeiten}\\ 
+Die Gezeiten auf der Erde entstehen hauptsächlich aufgrund der Fliehkräfte die bei der Rotation der Erde entstehen, aber auch (zu einem sehr kleinen Teil) aufgrund der Gravitationskraft des Mones (und der Sonne). Dabei entstehen zwei symmetrische Flutberge, die die Erdrotation sogar um eine Sekunde alle 65.000 Jahre verlangsamt. Die Springtide entseht bei Voll- und Neumond (wenn Mond und Sonne in einer Geraden liegen) und die Niptide bei Halbmond (Verbindungslinie zwischen Mond--Erde und Sonne--Erde ist orthogonal zueinander).
+
+\subsubsection{Heizung}
+Es gibt verschiedene Phänomene durch die Planeten aufgeheizt werden. Zum Beispiel durch \textbf{Akkretion}, bei dem Himmelskörper in Planeten einschlagen und ihre gravitative potentielle Energie in kinetische und dann in thermische Energie umwandlen. Des Weiteren gibt es die Differentiation, bei der leichtes Material zu Erdoberfläche fließt und schweres Material zum Erdkern sinkt, wobei gravitative potentielle Energie in thermische Energie umgewandelt wird. Zuletzt entsteht Wärme auch durch radioaktiven Zerfall von Atomen im Erdinneren.
+
+\subsubsection{Kühlung}
+Planeten werden durch drei wesentliche Prozesse gekühlt. Zum einen die Konvektion, bei der heißes Gas im Inneren aufsteigt und abkühlt und dann wieder zum Kern sinkt. Die Konduktion, die Wärme durch die feste Lithosphähre nach außen trägt. Sowie Strahlung, welche Energie an der Erdoberfläche in den Weltraum abgibt.\\\\Die Größe der Planeten spielt dabei auch eine Rolle, sodass bei kleineren Planeten das Innere schneller auskühlt und es nicht zu Vulkanismus kommt, welche bei größeren Planeten das Auskühlen drastisch verlängert (die Ausgasung lassen dabei auch eine Atmosphäre entstehen, wodurch Erosionen möglich werden).
+
+\subsection{Aufbau von Gasplaneten}
+Gasplaneten oder auch jovianische Planeten (lat. für jupiterähnlich) bestehen hauptsächlich aus H-- und He--Verbindungen, welche sich in verschiedenen Aggregatzuständen aufschichten. Am Beispiel von Jupiter: Ganz außen befindet sich eine Wolkenschicht mit sehr geringen Dichte von $0,0002 \tfrac{g}{cm^3}$. Darunter ist gasförmiger Wasserstoff mit einer Temperatur von $125K$ und einer Dichte von $0,5\tfrac{g}{cm^3}$. Dann kommt flüssiger Wasserstoff mit einer Temperatur von $2000K$ und einer Dichte von $1\tfrac{g}{cm^3}$. Den größten Teil des Planeten macht eine $5000K$ heiße metallische Wasserstoffschicht aus mit einer Dichte von $1,0\tfrac{g}{cm^3}$. Der Kern des Planeten besteht aus Gestein, Metall und Wasserstoffverbindungen mit einer Temperatur von $20\,000K$ und einer Dichte von ca. $25,0\tfrac{g}{cm^3}$.
+
+\subsection{Größen des Planetensystems}
+\subsubsection{Umlaufperioden}
+Die \textbf{siderische} Umlaufdauer bezeichnet die Dauer eines vollständigen Umlaufs eines Planeten um die Sonne bezogen auf das Bezugssystem der Sterne. Die \textbf{synodische} Umlaufdauer hingegen bezeichnet die Umlaufdauer eines Planeten bis dieser relativ zum Sonne--Erde System die gleiche Position am Himmel einnimmt.\\Für äußere Planeten gilt
+\[ 
+        \dfrac{1}{\text{\textit{siderische Umlaufzeit Planet} }}=\dfrac{1}{\text{\textit{siderische Umlaufzeit Erde} }}-\dfrac{1}{\text{\textit{synodische Umlaufzeit Planet} }}
+.\] 
+Für innere Planeten gilt die Summe.
+
+\subsubsection{Bestimmung der AE}
+Die astronomische Einheit AE wurde damals mithilfe des Venustransit vor der Sonne bestimmt. Bei dieser Methode wird von unterschiedlichen Orten auf der Erde die Bahn der Venus vor der Sonne beobachtet und jeweils mit dem Abstand der Beobachtungsstandpunkte und der Parallaxen (die sich daraus ergeben) der Winkel berechnet, in dem die Venus \glqq verschoben\grqq{} ist. Mithilfe des Strahlensatzes lässt sich dann die Entfernung der Venus von der Sonne, bzw. die Entfernung der Erde von der Sonne berechnen.
+
+\section{Äußere Objekte des Sonnensystems}
+\subsection{Asteriodengürtel}
+Zwischen dem Mars und Jupiter befindet sich der erste Asteroidengürtel in einer Entfernung von 2.0 bis 3.4 AE und hinter Neptun der Kuipergürtel in einer Distanz von 30 bis 50 AE. In einer Entfernung von 2\,000 bis 20\,000 AE befindet sich die Oort'sche Wolke mit Asterioden in einer sphärischen Anordnung um das Sonnensystem.
+
+\subsection{Heliosphäre}
+Die Heliosphäre ist die äußerste Hülle der Atmosphäre der Sonne. Sie besteht hauptsächlich aus Protonen, Alphateilchen und Elektronen, die mit $106t$ und 40\,000 Kilometern pro Sekunde in das Weltall geschickt wird. Sie ist eine Magnetosphäre, welche der letze Teil des Magnetfelds ist, welches eine Auswirkung auf geladene Teilchen hat. Die \textit{Heliopause} ist die Grenze zwischen der Heliosphäre und dem interstellaren Wind, in dem sie in einem Equillibrium sind. Die \textit{Heliosheath} ist die Stelle in der Heliosphäre, in der der Wind sehr turbulent aufgrund der Kompression durch den interstellaren Wind ist.
+
+\section{Sterne}
+\subsection{Hertzsprung--Russel Diagramm}
+Das Hertzsprung--Russel Diagramm ist ein scatter plot, in dem die Sterne mit der absoluten Magnitude (Leuchtkraftklasse) auf der Y--Achse und der Temperatur (Spektralklasse) auf der X--Achse eingetragen werden. Die verschiedenen Leuchtkraftklassen lassen sich wie folgt angeben
+\begin{enumerate}[label=\roman*]
+        \item Überriesen
+        \item[ii--iii]Riesen
+        \addtocounter{enumi}{2}
+        \item Unterriesen
+        \item Zwerge (Hauptreihe)
+        \item Unterzwerge
+        \item Weiße Zwerge
+\end{enumerate}
+Sterne die Wasserstoff zu Helium fusionieren liegen auf der Hauptreihe. Die Spektralklassen der Sterne sehen wie folgt aus
+\begin{enumerate}[label=]
+        \item[\tiny{O,B,A}]massereich, kurzlebig
+        \item[\tiny{F,G,K}]sonnenähnlich
+        \item[\tiny{M}]klein, schwach 
+        \item[\tiny{L,T}]keine Kernfusion
+\end{enumerate}
+Sterne auf der Hauptreihe entwickeln sich insofern, als das sie leuchtrkäftiger und größer werden. Je mehr Wasserstoff sie zu Helium fusionieren, desto weniger H-Atome finden sich nachher in der Sonne, was dazu führt, dass die Sterne kleiner werden, da weniger Druck der Gravitationskraft entgegengesetzt ist. Wenn sie so klein werden, dass die G.--Kraft so hoch ist, dass Helium weiter fusioniert, dehnt sich der Stern wieder aus. Sobald alles Helium fusioniert ist, fängt der Prozess wieder von vorne an, bis der Kern (abhängig von der Anfangsmasse, da sonst zu wenig G.--Kraft wirkt) nur noch aus Eisen besteht. Danach wird nichts mehr fusioniert und der Stern fängt langsam an seine Äußeren Hüllen abzustoßen. Auf dem HRD wandert der Stern langsam von der Hauptreihe in Richtung der Riesen bzw. Überriesen und dann mit einem Bogen um die Hauptreihe zu den weißen Zwergen.\\\indent
+Das Lebensende von Sternen ist auch abhängig von ihrer Masse. Sterne mit einer Kernmasse von bis zu $10M_{\odot}$ werden zu einem weißen Zwerg und haben ihre Hüllen als planetare Nebel abgestoßen. Sterne mit einer Kernmasse zwischen $10M_{\odot}$ und $25M_{\odot}$ wandeln sich in einen Neutronenstern, da die Gravitationskraft zu hoch ist, um die größe eines weißes Zwergs zu halten, dabei entstehen auch Supernovae. Ein schwarzes Loch entsteht schon ab Kernmassen von $10M_{\odot}$.\\\indent
+Sterne auf der Hauptreihe besitzen aufgrund der verschiedenen Temperaturen auch verschiedene Spektrallinien, da in ihrem Kern verschiedene Elemente fusioniert werden.
+
+\subsection{Doppelsterne}
+Es gibt verschiedene Arten von Doppelsternsystemen.
+\begin{enumerate}[label=]
+        \item Visueller Doppelstern: Winkelabstand ist groß genug, um die Komponente mit optischen Mitteln zu trennen.
+        \item Astrometrischer Doppelstern: Erscheint am Himmel als ein Punkt, die Doppelsternnatur kann nur von seiner Bahn am Himmel abgeleitet werden.
+        \item Spektroskopischer Doppelstern: Erscheint am Himmel als ein Punkt, die Doppelsternnatur ist durch die Analyse des Spektrums feststellbar.
+        \item Bedeckungsveränderliche: Zeigen einen Abfall in der Helligkeit, wenn die Komponente mit geringer Helligkeit die Sichtlinie passiert
+\end{enumerate}
+
+\subsection{Variable Sterne}
+Es gibt 3 Klassen von variablen Sternen
+\begin{enumerate}[label=\arabic*]
+        \item Pulsationsveränderliche
+        \item Bedeckungsveränderliche (Aufgrund von Doppelsternsystemen)
+        \item Eruptionsveränderliche (Supernovae bzw. Novae)
+\end{enumerate}
+
+\subsection{Masse-Leuchtkraft Beziehung}
+Die Masse-Leuchtkraft Beziehung wird durch 
+\[ 
+        L\propto M^{2.5}[M<\dfrac{1}{2}M_o]\qquad L\propto M^{3.8}[M>\dfrac{1}{2}M_o]
+\] 
+angegeben. Daraus folgert sich, dass Massereiche Sterne kürzere Zeit fusionieren, denn es gilt
+\[ 
+        t\propto \dfrac{M}{L}\propto \dfrac{1}{M^2}
+.\] 
+
+\section{Sternaufbau und -entwicklung}
+Da die Oberflächentemperatur so hoch ist kann die Materie nur in einem gasförmigen Zustand existieren. Aufgrund des Eigengewichts der Gasverteilung sind die Gase geschichtet, sodass die der Druck in Richtung Kern steigt. Diese erzeugte Druckverteilung heißt \textbf{hydrostatischer Druck}. Da die Sonne eine konstante Größte hat muss es ein Gleichgewicht zwischen den verschiedenen Kräften geben. Das führt zu der Druckbilanz
+\[ 
+        p_{\text{Gravitation}}=p_{\text{Zentrifugal}}+p_{\text{Gas}}+p_{\text{Radial}}
+.\] 
+Der Stern befindet sich also in einem Gleichgewicht: Nach außen wirkt der Druckgradient; Nach innen die Gravitation. Der Energieverlust beruht auf der emittierten Strahlung.
+
+\subsection{Energietransport}
+Der Kern des Sterns entspricht ca. 10 Prozent der Masse. Nur an diesem Ort wird Wasserstoff zu Helium fusioniert (bei ca. $16\cdot 10^6C^\circ$). Danach folgt die Strahlungszone mit ca. 85 Prozent des Sterns, in der die Strahlung nach außen diffundiert; Dieser Prozess ist mikroskopisch; Die Photonen werden immerwieder absorbiert und emittiert, was dazu führt, dass sie in einem \glqq Random-walk\grqq{} durch diese Zone geleitet werden (im Mittel braucht ein Photon ca. 170\,000 Jahre bei einer Weglänge von $0.09cm$). Die äußerste Zone ist die Konvektionszone, dort wird die Strahlung abgegeben. Gas mit geringerer Dichte bewegt sich makroskopisch nach außen und strahlt die Energie ab. Dieser Prozess ähnelt einer Umwälzung. Auf der Sternoberfläche sieht man diese Umwälzungen als helle Stellen (an denen Gas austritt) und dunklere Stellen (an denen das Gas wieder absinkt).\\\\
+Es existieren auch Sterne (abhängig von der Größe) die keine Strahlungs- und volle Konvektionszone, die Strahlungszone innen und Konvektionszone außen, oder die Strahlungszone außen und Konvektionszone innen haben.\\\\
+Sterne sind stabil, da sie selbstreguliert sind. Die Kernfusion reagiert sehr empfindich auf die Temperatur, mit folgender Proportionalität
+\[ 
+        \dfrac{\text{d}E}{\text{d}t}\propto T^6\text{ bis zu }\dfrac{\text{d}E}{\text{d}t}\propto T^{20}
+.\] 
+\glqq Störungen\grqq{} der Temperatur laufen nur innerhalb von Stunden durch den Stern zum Kern, weshalb die Fusion sehr schnell reagieren kann. Die Sonne explodiert zum einen aus diesem Grund nicht, aber auch weil die Fusion von zwei Wasserstoffatomen, aufgrund der abstoßenden Coloumbkraft, sehr ineffizient ist.
+
+\subsection{Energieerzeugung}
+Die Energie wird durch die Fusion von Wasserstoff zu Helium gewonnen. Die Fusion findet genau dann statt, wenn zwei H-Atome so nach aneinander kommen, dass die Coloumbabstoßung überwunden wird und die starke Kernkraft wirkt. Die Coloumbkraft wird nur dann überwunden, wenn der Tunneleffekt wirkt, da die Protonen nur eine thermischen Energie von 1\% der benötigten Energie besitzen (im Mittel dauert es 10 Mrd. Jahre bis ein Proton tunnelt). Dabei wird Energie aufgrund des Massedefekts des leichteren Heliumkerns $E=\Delta c ^2$ frei. Deshalb wird in jeder Sekunde $5\cdot 10^{9}kg$ Masse der Sonne in Energie umgewandelt. Da Bindungsenergie ab Eisen bei der Fusion nicht mehr frei wird, müssen Sterne je schwerer die Elemente werden, schneller fusionieren. Es werden also alle Elemente bis Eisen von Sternen produziert und alle Elemente die schwerer sind müssen künstlich erzeugt werden.
+
+%}}}
+
+%{{{ Notizen
+\section{Notizen}
+Hier könnten Ihre Notizen stehen.
+
+%}}}
+
+\newpage
+
+\end{document}

@@ -1,0 +1,20 @@
+Versuch 104
+
+{Einleitung}
+In diesem Versuch geht es um die Bestimmung des Trägheitsmoments einer Kreisscheibe, die an einem Stab befestigt ist und sich als physisches Pendel verhält. Ferner soll die Erdbeschleunigung g, welche den Drehmoment der Kreisscheibe verursacht, mit Hilfe eines Geradenfits errechnet werden. Zuletzt wird eine Scheibe mit 9 Löchern betrachtet und ihr Trägheitsmoment berechnet, in Abhängigkeit davon in welchem Loch sie aufgehangen ist.
+
+{Theorie}
+Tea beschreibt das Trägheitsmoment der Rotation und ist analog zur Masse bei der Translation.
+Im allgemeinen Fall wird der Trägheitstensor Tea_ij= verwendet.
+Im Fall von Pendeln spielt das Trägheitsmoment nur bei physischen Pendeln eine Rolle; bei mathematischen Pendeln wird es vernachlässigt.
+Des Weiteren ist der Satz von Steiner wichtig, der besagt, dass bei orthogonaler Verschiebung der Rotationsachse, das Trägheitsmoment um mr^2, mit r dem Abstand, vergrößert wird.
+Im diesem Versuch wird ein physisches Pendel mit einer Scheibe mit dem Trägheitsmoment von Tea= verwendet.
+Die Schwingungsdauer ist T^2= , wobei D eine Richtkonstante (analog zur Federkonstante der Translation) ist, und die Frequenz omega= .
+Um die Scheibe in Bewegung zu setzen braucht es ein Drehmoment M=-Dvph, wobei D=amg mit Kleinwinkelnäherung ist.
+Schließlich ergibt sich für T^2= oder aT^2= .
+
+{Geräte}
+[skizze] Im Versuch wird ein physisches Pendel bestehend aus einer Scheibe und 9 Löchern, die auf einer Geraden durch den Mittelpunkt liegen, verwendet. Das Pendel kann auslenken ...
+
+104.A
+s. Angelo

@@ -1,0 +1,78 @@
+%:LLPStartPreview
+%:VimtexCompile(SS)
+
+%{{{ Formatierung
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{physics_notetaking}
+
+%%% dark red
+%\definecolor{bg}{RGB}{60,47,47}
+%\definecolor{fg}{RGB}{255,244,230}
+%%% space grey
+%\definecolor{bg}{RGB}{46,52,64}
+%\definecolor{fg}{RGB}{216,222,233}
+%%% purple
+\definecolor{bg}{RGB}{69,0,128}
+\definecolor{fg}{RGB}{237,237,222}
+\pagecolor{bg}
+\color{fg}
+
+\newcommand{\td}{\,\text{d}}
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+%\renewcommand*\contentsname{Contents}
+
+%\bibliographystyle{alphadin}
+\pagestyle{fancy}
+
+%\sloppy
+%\pagenumbering{gobble}
+
+\lhead{Jonas Wortmann}\chead{Notizen}\rhead{physik122}
+
+%}}}
+
+\begin{document}
+
+%{{{ Titelseite
+
+\thispagestyle{empty}
+\hfill
+\Huge
+\begin{center}
+        Notizen - B.Sc. Physik $|$ physik122
+\end{center}
+\normalsize
+\hfill
+
+%}}}
+
+\newpage
+
+%{{{ Inhaltsverzeichnis
+
+\rhead{Inhaltsverzeichnis}
+\tableofcontents
+
+%}}} 
+
+\newpage
+
+%{{{ physik122
+
+\rhead{phsik122}
+
+%}}}
+
+%{{{ Notizen
+
+\section{Notizen}
+Hier könnten Ihre Notizen stehen.
+
+%}}}
+
+\end{document}

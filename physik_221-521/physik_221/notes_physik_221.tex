@@ -1,0 +1,2460 @@
+%:LLPStartPreview
+%:VimtexCompile(SS)
+
+%{{{ Formatierung
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{physics_notetaking}
+
+%%% dark red
+%\definecolor{bg}{RGB}{60,47,47}
+%\definecolor{fg}{RGB}{255,244,230}
+%%% space grey
+%\definecolor{bg}{RGB}{46,52,64}
+%\definecolor{fg}{RGB}{216,222,233}
+%%% purple
+%\definecolor{bg}{RGB}{69,0,128}
+%\definecolor{fg}{RGB}{237,237,222}
+%\pagecolor{bg}
+%\color{fg}
+
+\newcommand{\td}{\,\text{d}}
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+
+\newcommand\inlineeqno{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnoa{(\theequation.\text{a})}
+\newcommand\inlineeqnob{(\theequation.\text{b})}
+\newcommand\inlineeqnoc{(\theequation.\text{c})}
+
+\newcommand\inlineeqnowo{{\theequation}} %eig noch mit \stepcounter{equation} aber das verträgt sich nicht mit \tag{}. (9.7 muss übersprungen werden.)
+\newcommand\inlineeqnowoa{\theequation.\text{a}}
+\newcommand\inlineeqnowob{\theequation.\text{b}}
+\newcommand\inlineeqnowoc{\theequation.\text{c}}
+
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+%\renewcommand*\contentsname{Contents}
+
+\pagestyle{fancy}
+
+\sloppy
+
+\numberwithin{equation}{section}
+
+%}}}
+
+\begin{document}
+
+%{{{ Titleseite
+
+\title{Notizen - B.Sc. Physik $|$ physik221}
+\author{Jonas Wortmann}
+\maketitle
+\pagenumbering{gobble}
+
+%}}}
+
+\newpage
+
+%{{{ Inhaltsverzeichnis
+
+\pagenumbering{arabic}
+
+\fancyhead[L]{\thepage}
+\fancyfoot[C]{}
+
+\tableofcontents
+
+%}}}
+
+\newpage
+
+%{{{ physik221
+
+\fancyhead[R]{\leftmark\\\rightmark}
+
+\section{Newton'sche Mechanik}
+Die Grundlegenden Annahmen oder auch Axiome der Newton'schen Mechanik
+\begin{enumerate}[label=\arabic*)]
+        \item Der Raum hat drei Dimensionen, welche als Koordinaten beschrieben werden können.
+                \[ 
+                        \vv{x}=\begin{cases}
+                                \left(x,y,z\right):\,\text{Kartesisch}\\
+                                \left(r,\varphi ,z\right):\,\text{Zylinder}\\
+                                \left(r,\theta,\phi \right):\,\text{Kugel}
+                        \end{cases}
+                .\] 
+        \item Der Raum ist flach und nicht gekrümmt. Das heißt, dass der Abstand zwischen zwei Punkten $\vv{x}_1$ und $\vv{x}_2$ z.B.\, in Kartesischen Koordinaten als 
+                \[ 
+                        |\vv{x}_1-\vv{x}_2|=\left[\left(x_1-x_2\right)^2+\left(y_1-y_2\right)^2+\left(z_1-z_2\right)^2\right]^{\tfrac{1}{2}}
+                .\] 
+                Diese Annahme ist allerdings in der nähe von großen Massen falsch, da dort der Raum zu stark gekrümmt wird.
+        \item Es gibt eine einzige eindeutig bestimmte, gleichförmig vergehende, absolute Zeit. Für hinreichend schnell bewegte Objekte $\left(v\rightarrow c\right)$ ist diese Annahme allerdings auch falsch.
+        \item Die einfachsten Objekte sind Massenpunkte. Es gibt keine Ausdehnung aber eine Masse (z.B.\, Elektronen). 
+                \begin{enumerate}[label=--]
+                        \item Die Bewegung wird durch eine Trajektorie $\vv{x}\left(t\right)$ als Funktion der Zeit beschrieben
+                        \item Die Geschwindigkeit ist $\vv{v}\left(t\right)=\diff[]{\vv{x}\left(t\right)}{t}\equiv\dot{\vv{x}}\left(t\right)$
+                        \item Die Beschleunigung ist $\vv{a}\left(t\right)=\diff[]{\vv{v}\left(t\right)}{t}=\diff[2]{\vv{x}\left(t\right)}{t}\equiv\ddot{\vv{x}}\left(t\right)$ 
+                \end{enumerate}
+        \item Es existieren Inertialsysteme, in denen sich ein Körper mit konstanter Geschwindigkeit bewegt, wenn keine Kraft auf ihr wirkt.
+\end{enumerate}
+
+\subsection{Inertialsysteme}
+Sei $\vv{x}\left(t\right)$ in einem Inertialsystem definiert, mit $\ddot{\vv{x}}=0$. Dann erzeugen folgende Operationen weitere Inertialsysteme.
+\begin{enumerate}[label=\arabic*)]
+        \item Zeitunabhängige Rotation der Achsen: $\vv{x}'=\overleftrightarrow{O}\vv{x}$, wobei $\overleftrightarrow{O}$ eine orthogonale $3\times 3$--Matrix ist. Dann folgt
+                \[ 
+                        \dot{\overleftrightarrow{O}}=0\Rightarrow \dot{\vv{x}}'=\overleftrightarrow{O}\dot{\vv{x}}\qquad \ddot{\vv{x}}'=\overleftrightarrow{O}\ddot{\vv{x}}=0
+                .\] 
+        \item Gallileitransformation: $\vv{x}'=\vv{x}\left(t\right)+\vv{x}_0+\vv{v}_0t$, also eine Verschiebung des Ursprungs mit konstanter Geschwindigkeit. Dann folgt
+                \[ 
+                        \dot{\vv{x}}'=\dot{\vv{x}}\left(t\right)+\vv{v}_0\qquad \ddot{\vv{x}}'=\ddot{\vv{x}}\left(t\right)+\dot{\vv{v}}_0=0
+                .\] 
+        \item Skalierung: $\vv{x}\left(t\right)=\alpha \vv{x}\left(t\right)$ wobei $\alpha  \in \mathbb{R}^{\neq 0},\dot{\alpha }=0$. 
+\end{enumerate}
+Alle Kombinationen von 1) bist 3) sind möglich. Es erlaubt die Wahl eines passenden Intertialsystems. Zu beachten ist dass die Newton'schen Gesetze nur in einem Inertialsystem gelten. 
+
+\subsection{Newton--Gesetze}
+Nicht trivial ist die Existenz eines Inertialsystems.
+\begin{enumerate}[label=\arabic*)]
+        \item Ein Körper, auf den keine Kraft wirkt, bewegt sich mit konstanter Geschwindigkeit $\left(\vv{a}\left(t\right)=0\right)$.
+        \item $\vv{F}=m\cdot \vv{a}$. Um diese Gleichung benutzen zu können müssen Masse $m$ und Kraft $\vv{F}$ definiert werden. Danach kann sie als Gesetz verwendet werden.
+        \item Actio gleich reactio: Wenn zwei Körper wechselwirken, dann üben sie jeweils den gleich Kraftbetrag aufeinander aus $\vv{F}_{12}=-\vv{F}_{21}$.
+\end{enumerate}
+Verschiedene Kräfte sind zum Beispiel
+\begin{enumerate}[label=\arabic*)]
+        \item Gravitationsgesetz: Beschreibt die Anziehung zwischen Körpern.
+                \[ 
+                        \vv{F}_{12}=-\gamma \dfrac{m_1m_2\left(\vv{x}_1-\vv{x}_2\right)}{|\vv{x}_1-\vv{x}_2|^3} 
+                .\] 
+        \item Hooke'sche Gesetz: Beschreibt eine kleine Deformation eines elastischen Körpers.
+                \[ 
+                        \vv{F}=-\kappa \vv{x}
+                .\] 
+        \item Reibungskraft: Verlangsamt die Bewegung eines Körpers aufgrund der Reibung
+                \begin{enumerate}[label=\alph*)]
+                        \item Haftreibung (Körper an Körper)
+                                \[ 
+                                        |\vv{F}_{HR}|\lesssim \mu _s|\vv{F}_{\perp\,\text{ext}}|
+                                .\] 
+                        \item Gleitreibung 
+                                \[ 
+                                        |\vv{F}_{GR}|\lesssim \mu _k|\vv{F}_{\perp\,\text{ext}}|\qquad \mu _k\leq \mu _s
+                                .\] 
+                        \item Körper in einer Flüssigkeit
+                                \[ 
+                                        |\vv{F}_R|=-b\vv{v}\,\text{für kleine $v$}\qquad b\propto\,\text{Viskosität M.}\cdot \,\text{Durchmesser K.}
+                                .\] 
+                        \item Körper in einem Gas
+                                \[ 
+                                        |\vv{F}_R|=-c|\vv{v}|\vv{v}\,\text{für $v<\,\text{Schallgeschw.}$}\qquad c\propto\,\text{Dichte M.}\cdot  \,\text{Durchmesser K.}
+                                .\] 
+                \end{enumerate}
+\end{enumerate}
+
+\subsubsection{DGL}
+Die Kraftgleichungen lassen sich auch als DGL darstellen
+\[ 
+        m\ddot{x}=F\left(x\left(t\right),\dot{x}\left(t\right),t\right)
+.\] 
+Dies ist eine gewöhnliche DGL zweiter Ordnung und es werden zwei Anfangsbedingungen zum Lösen benötigt (zum Beispiel legt man $x\left(t_0\right),\dot{x}\left(t_0\right)$ fest). Mit der Zeit $t_1=t_0+\Delta t$ mit $\Delta t$ als infinitesimales $t$ folgt
+\begin{align*}
+        x\left(t_1\right)&=x\left(t_0\right)+\Delta t\cdot v\left(t_0\right)\\
+        v\left(t_1\right)&=v\left(t_0\right)+\Delta t\cdot a\left(t_0\right)\\
+        a\left(t_1\right)&=\dfrac{F\left(x\left(t_1\right),\dot{x}\left(t_1\right),t\right)}{m}
+\end{align*}
+Man könnte behaupten, dass mit genügend Anfangsbedingungen die Zukunft \glqq vorhersagen\grqq{} könne. Dies ist allerdings nicht möglich, da Systeme oftmals chaotisch verlaufen und nur sehr kleine Veränderungen in einem System zu einer falschen \glqq Vorhersage\grqq{} führt. Man beachte also, dass $x\left(t_0\right)$ und $\dot{x}\left(t_0\right)$ immer nur mit endlicher Genauigkeit bekannt sein können.
+\\\hfill\\\textbf{$F$ hängt nur von $x$ ab}\\ 
+Für Gleichungen der Form $m\ddot{x}=m\diff[1]{v}{t}=F\left(x\right)$ kann mit dem Ansatz \textbf{Trennung der Variablen} gelöst werden
+\[ 
+        \diff[1]{v}{t}=\diffp[1]{v}{x}\diffp[1]{x}{t}=v \diff[1]{v}{x}
+.\] 
+Damit folgt man die Gleichung
+\begin{align*}
+        mv \diff[1]{v}{x}&=F\left(x\right)\\
+        m\int_{v_0}^{v}v'\td v'&=\int_{x_0}^{x}F\left(x'\right)\td x'\\
+        \dfrac{1}{2}m\left(v^2\left(x\right)-v^2\left(x_0\right)\right)&=\int_{x_0}^{x}F\left(x'\right)\td x'
+\end{align*}
+Dann ist
+\[ 
+        v\left(x\right)=\pm\left[v^2\left(x_0\right)+\dfrac{2}{m}\underbrace{\int_{x_0}^{x}F\left(x'\right)\td x'}_{\,\text{pot. Energie}\,}\right]^{\tfrac{1}{2}}
+.\] 
+Für die Zeit folgt
+\[ 
+        t-t_0=\int_{t_0}^{t}\td t'=\pm\bigint_{x_0}^{x}\dfrac{1}{\left[\tfrac{2}{m}\int_{x_0'}^{x'}F\left(x''\right)\td x''+v^2\left(x_0\right)\right]^{\tfrac{1}{2} }}\td x'
+.\] 
+\hfill\\\textbf{$F$ hängt nur von $v$ ab}\\ 
+Daraus folgt die Gleichung
+\begin{align*}
+        m\diff[1]{v}{t}&=F\left(v\right)\\
+        m\int_{v_0}^{v}\dfrac{1}{F\left(v'\right)}\td v'&=\int_{t_0}^{t}\td t'=t-t_0
+.\end{align*}
+Löst man dann nach $v\left(t\right)$ auf, folgt
+\[ 
+        x'\left(t\right)=x\left(t_0\right)+\int_{t_0}^{t}v\left(t'\right)\td t'
+.\] 
+\hfill\\\textbf{$F$ hängt nur von $t$ ab}\\ 
+Daraus folgt die Gleichung
+\begin{align*}
+        m\diff[1]{v}{t}=F\left(t\right)\\
+        M\left[v\left(t\right)-v\left(t_0\right)\right]&=\int_{t_0}^{t}F\left(t'\right)\td t'
+.\end{align*}
+Damit für 
+\[ 
+        x\left(t\right)=x\left(t_0\right)+v\left(t_0\right)\left(t-t_0\right)+\dfrac{1}{m}\int_{t_0}^{t}\td t'\int_{t_0'}^{t'}F\left(t''\right)\td t''
+.\] 
+
+\subsection{Beispiel: Angetriebener, gedämpfter harmonischer Oszillator}
+$x$ ist die Auslenkung aus der Ruhelage. Damit folgt die DGL
+\begin{align*}
+        m\ddot{x}&=-kx-b\dot{x}+F\cdot \cos \left(\omega t\right)\\
+        \ddot{x}+2\gamma \dot{x}+\omega _0^2x&=f\cdot \cos \left(\omega t\right)\tag{1}\label{1} %\eqref{\,\text{homogen}\,}
+\end{align*}
+wobei $\gamma =\tfrac{b}{2m},\omega _0=\sqrt[ ]{\tfrac{k}{m}},f=\tfrac{F}{m}$. $f$ kann als Beschleunigung verstanden werden. Die allgemeine Lösung der homogenen DGL (also mit $f=0$) ist 
+\[ 
+        x\left(t\right)=c\cdot x_0e^{-i\gamma }e^{\pm\sqrt[]{\omega _0^2-\gamma ^2}}
+.\] 
+Die Lösung der inhomogenen DGL (also mit $fe^{i\omega t},f \in \mathbb{R}$) und der komplexen Koordinate $z$, mit
+\begin{align*}
+        \ddot{z}+2\gamma \dot{z}+\omega _0^2z&=fe^{i\omega t}\tag{2}\label{2} %\eqref{2}
+.\end{align*}
+Die Gleichung \eqref{1} ist der Realteil der Gleichung \eqref{2}. Dies funktioniert nur, da \eqref{1} linear ist. Es gibt also keine Terme wie $x^2,\dot{x}^2,\hdots $. Der Ansatz zur Lösung ist dann $z\left(t\right)=\tfrac{f}{R}e^{i\omega t}$, wobei $R$ eine Konstante ist. Dann folgt für die einzelnen Terme
+\begin{align*}
+        \dot{z}\left(t\right)&=i \omega z\left(t\right)\\
+        \ddot{z}\left(t\right)&=-\omega ^2z\left(t\right)
+.\end{align*}
+Damit folgt
+\begin{align*}
+        \dfrac{f}{R}e^{i\omega t}\left[-\omega ^2+2i \omega \gamma +\omega _0^2\right]&=fe^{i\omega t}\\
+        R&=\omega _0^2+\omega ^2+2i\omega \gamma =re^{i\theta }\qquad r,\theta  \in \mathbb{R}
+\end{align*}
+$r$ ist Phasendifferenz zwischen treibender Kraft und Bewegung des Systems. Die Bewegungsgleichung ist also
+\[ 
+        z\left(t\right)=\dfrac{f}{r}e^{i\left(\omega t-\theta \right)}
+\] 
+mit
+\[ 
+        r=|R|=\left[\left(\omega _0^2-\omega ^2\right)^2+4\omega ^2\gamma ^2\right]^{\tfrac{1}{2}}\qquad \tan \theta =\dfrac{\,\text{Im}\,\left(R\right)}{\,\text{Re}\,\left(R\right)}=\dfrac{2\omega \gamma }{\omega _0^2-\omega ^2}
+.\] 
+Diese Lösung ist allerdings nicht die allgemeineste Lösung, dazu braucht es noch die Lösung der homogenen DGL. Für festes $f$ ist die maximale Auslenkung $\tfrac{f}{r}$, wenn $r^2$ minimiert wird
+\begin{align*}
+        \diff[1]{r^2}{\omega ^2}&=2\left(\omega ^2-\omega _0^2\right)+4\gamma ^2\stackrel{!}{=}0\\
+        \underbrace{\omega _r^2}_{\,\text{Resonannt}\,}&=\omega _0^2-2\gamma ^2
+.\end{align*}
+Dann folgt
+\[ 
+        r^2\left(\omega _r\right)=4\gamma ^2\left(\omega _0^2-\gamma ^2\right)
+.\] 
+Für schwache Dämpfung und ähnliche Eigenfrequenz ist $\gamma ^2\ll \omega _0^2:\omega _r \approx \omega _0$. Für $\theta $ gilt dann
+\[ 
+        \tan \theta =\dfrac{2\omega \gamma }{\omega _0^2-\omega ^2}=\dfrac{2\omega \gamma }{\left(\omega _0+\omega \right)\left(\omega _0+\omega \right)}\approx \dfrac{\gamma }{\omega _0-\omega }
+.\] 
+Die maximale Auslenkung liegt bei $\tfrac{1}{\gamma }$. Zu kleine Dämpfungen kann dabei zu einer Resonanzkatastrophe führen. \\\\\noindent
+Die allgemeine Lösung für $\gamma <\omega $ und einer Dämpfung die eine Resonanzkatastrophe verhindert ist dann
+\[ 
+        x\left(t\right)=Ce^{-\gamma t}\cos \left(\Omega t+\alpha \right)+\dfrac{f}{\underbrace{\left[\left(\omega _0^2-\omega ^2\right)^2-4\gamma ^2\omega ^2\right]^{\tfrac{1}{2} }}_{r}}\cos \left[\omega t-\underbrace{\arctan \dfrac{2\gamma \omega }{\omega _0^2-\omega ^2}}_{\theta }\right]
+\] 
+mit $\Omega =\sqrt[ ]{\omega _0^2-\gamma ^2}$ und $C,\alpha $ als Integrationskonstanten bzw.\,Anfangsbedingungen.\\\indent
+Als Zusatzinformation: Eine beliebige periodische externe Kraft kann durch die Fourier--Zerlegung dargestellt werden
+\[ 
+        \dfrac{1}{m}F_{\,\text{ext}\,}\left(t\right)=\sum_{n=1}^{\infty}f_n\cos \left(n\omega t\right)+\tilde{f}_n\sin \left(n\omega t\right)
+.\] 
+
+\subsection{Konservative Kräfte}
+Eine Kraft die nur von dem Ort abhängig ist, nennt man \textbf{konversativ}. Ein Beispiel für eine konservative Kraft ist das Hooke'sche Gesetz
+\[ 
+        F_H=-kx\qquad V_H=\dfrac{1}{2}kx^2
+.\] 
+\subsubsection{Beispiel: harmonischer, ungedämpfter Oszillator}
+Für einen harmonischen, ungedämpften Oszillator ist die Bewegungsgleichung
+\[ 
+        x(t)=C\cos \left(\omega _0t+\alpha \right)\qquad \omega _0=\sqrt[]{\dfrac{k}{m}}
+.\] 
+Die Ableitung ist
+\[ 
+        \dot{x}(t)=-\omega _0C\sin (\omega _0t+\alpha )=\dfrac{1}{2}kC^2=\,\text{const.}\,
+.\] 
+
+\newpage
+\section{Kinetische und potenzielle Energie}
+\subsection{Eine Dimension}
+Zunächst wird sich die Energie in einer Dimension für einen Körper mit konstanter Masse angeschaut
+\[ 
+        m\ddot{x}=m \diff[1]{v}{t}=\diff[1]{mv}{t}=F\left(x,v,t\right)\\
+.\] 
+Aus dem Integral über die Kraft
+\begin{align*}
+        v\cdot \diff*[1]{mv}{t}&=v\cdot F\left(x,v,t\right)\\
+        \diff*[1]{\dfrac{1}{2}mv^2}{t}&=v\cdot F\left(x,v,t\right)\\
+        \dfrac{1}{2}m\left(v^2\left(t_2\right)-v^2\left(t_1\right)\right)&=\int_{t_1}^{t_2}\diff[1]{x}{t}F\left(x,v,t\right)\td t=\int_{x\left(t_1\right)}^{x\left(t_2\right)}F\left(x,v,t\right)\td x
+\end{align*}
+ergibt sich dann die kinetische Energie als
+\[ 
+        E_{\,\text{kin}\,}=\dfrac{1}{2}mv^2
+.\] 
+Die Änderung der kinetischen Energie ist die geleistete Arbeit
+\[ 
+        W=\int_{x_1}^{x_2}F\left(x,v\left(x\right),t\left(x\right)\right)\td x
+.\] 
+Im Allgemeinen muss $x\left(t\right)$ bekannt sein um die Arbeit berechnen zu können. Kenntnis von $x_1=x\left(t_1\right)$ sowie $x_2=x\left(t_2\right)$ ist nicht ausreichend. Ein wichtiger Spezialfall ist allerdings, wenn $F$ nur von $x$ abhängt. Dann definiert man die potenzielle Energie als
+\[ 
+        V\left(x\right)=-\int_{x_n}^{x}F\left(x'\right)\td x'
+\] 
+wobei $x_n$ ein freiwählbarer Bezugspunkt ist mit $V\left(x_n\right)=0$. Damit die Gesamtenergie erhalten bleibt, muss gelten
+\[ 
+        E_{\,\text{tot}\,}=E_{\,\text{kin}\,}+V
+.\] 
+Falls $F$ explizit von $\dot{x}$ abhängt, verliert das System Energie in Form von Wärme durch Reibung. Hängt $F$ nur von $t$ ab, dann ist das System nicht abgeschlossen. Die Gesamtenergie eines Körpers ist also in diesen Fällen nicht erhalten.
+
+\subsection{Drei Dimensionen}
+\textbf{Drehung}\\ 
+In drei Dimensionen wird die Bewegung durch Vektoren angegeben. Hier sind Vektoren Größen, die sich wie $\vv{x}$ verhalten, sich also mit einer Orthogonalmatrix transformieren lassen. In $n$ Dimensionen hat $\overleftrightarrow{O}$ $\tfrac{n(n-1)}{2}$ freie Parameter. Wenn über mehrere Winkel rotiert wird, kann die Rotation als Produkt von $\overleftrightarrow{O}$ angesehen werden. Dei Zeit $t$, sowie die Masse $m$ sind Skalare, da sich diese bei Rotation um das Bezugssystem nicht ändert. Die Geschwindigkeit, sowie ihre Ableitungen sind Vektoren $\vv{x},\dot{\vv{x}},\ddot{\vv{x}}$. Das Kreuzprodukt ist nur in drei Dimensionen definiert, als 
+\[ 
+        \left(\vv{a}\times \vv{b}\right)_i=\sum_{i,j,k}^{}\varepsilon _{ijk}a_jb_k   
+.\]
+Mit einer Transformation folgt dann
+\[ 
+        \sum_{i'}^{}O_{ii'}\left(\vv{a}\times \vv{b}\right)_{i'}
+.\] 
+\hfill\\\textbf{Spiegelung}\\ 
+Vektoren die bei einer Spiegelung das Vorzeichen $\vv{x}\rightarrow -\vv{x}$ ändern, heißen \textbf{echte} Vektoren. Wenn $\vv{a}$ und $\vv{b}$ echte Vektoren sind, dann ändert sich das Vorzeichen bei dem Kreuzprodukt nicht $\vv{a}\times \vv{b}\rightarrow \left(-\vv{a}\right)\times\left(-\vv{b}\right)=\vv{a}\times \vv{b}$. $\vv{a}\times \vv{b}$ ist ein \textbf{Pseudo--} oder \textbf{Axialvektor}.
+
+\subsubsection{Konvservative Kräfte}
+Nach dem zweiten Newton--Gesetz gilt
+\[ 
+        \diff*[]{m\vv{v}}{t}=\vv{F}\left(\vv{x},\vv{v},t\right)
+.\] 
+Das heißt, dass jede Komponente von $\vv{F}$ von allen Kommponenten von $\vv{x}$ und $\vv{v}$ abhängen kann. Damit ist die Arbeit
+\begin{align*}
+        &&\vv{v}\cdot \diff*[]{m\vv{v}}{t}&=\vv{v}\cdot \vv{F}\left(\vv{x},\vv{v},t\right)&&\\
+        \Leftrightarrow &&\diff*[]{\dfrac{1}{2}m\vv{v}\vv{v}}{t}&=\vv{F}(\vv{x},\vv{v},t)\cdot \diff[]{\vv{x}}{t}&&\\
+        \Leftrightarrow &&\td \left(\dfrac{1}{2}m\vv{v}^2\right)&=\vv{F}\left(\vv{x},\vv{v},t\right)\cdot \td \vv{x}&&\\
+        \Leftrightarrow &&E_{\,\text{kin}\,}\left(\vv{x}_2\right)-E_{\,\text{kin}\,}\left(\vv{x}_1\right)&=\int_{\vv{x}_1}^{\vv{x}_2}\vv{F}\left(\vv{x},\vv{v},t\right)\td \vv{x}
+\end{align*}
+Die mechanische Energie ist nur dann erhalten, wenn die Arbeit unabhängig vom Weg $\vv{x}(t)$ ist. Alle Bahnen mit $\vv{x}(t_1)=\vv{x}_1$ und $\vv{x}(t_2)=\vv{x}_2$ müssen das gleiche Ergebnis liefern. Es kann nNur dann die potenzielle Energie definiert werden, falls $\vv{F}$ nicht explizit von $\vv{\dot{x}}$ oder $t$ abhängt. Das heißt es muss gelten
+\[ 
+        V\left(\vv{x}\right)=-\int_{\vv{x}_n}^{\vv{x}}\vv{F}\left(\vv{x}'\right)\td \vv{x}'
+.\] 
+Diese Gleichung ist aber nicht automatisch wohldefiniert. Es soll gelten, dass
+\[ 
+        V\left(\vv{x}\right)_{\,\text{Weg 1}\,}-V\left(\vv{x}\right)_{\,\text{Weg 2}\,}\stackrel{!}{=}0
+.\] 
+Das kann man mit Hilfe der infinitesimalen Aufteilung der Wege in zum Beispiel der $y-z$--Ebene  erreicht werden
+\begin{align*}
+        &=-\left[\td zF_z(x_N)+\td yF_y(x_N,y_N,z_N+\td z)\right]+\left[\td yF_y(x_N,y_N,z_N)+\td zF_z(x_N,y_N+\td y,z_N)\right]\\
+        &=-\td y\td z\left(\diffp[]{F_y}{z}-\diffp[]{F_z}{y}\right)\\
+        &\stackrel{!}{=}0\\
+        &\Rightarrow \diffp[]{F_z}{y}-\diffp[]{F_y}{z}=0\\
+        &\Rightarrow \left(\vv{\nabla}\times \vv{F}\right)_x=\,\text{rot}\,\vv{F}=0
+.\end{align*}
+Das bedeutet, dass die Rotation in der $x$--Ebene gleich null sein muss. Ist sie nicht gleich null, dann gibt es kein konservatives Kraftfeld. Die Kraft kann dann auch allgemeiner als
+\[ 
+        \vv{F}(\vv{x})=-\vv{\nabla }V(\vv{x})=-\,\text{grad}\,V(\vv{x})
+.\] 
+Die folgenden Aussagen sind äquivalent
+\begin{enumerate}[label=\arabic*.]
+        \item Die totale Energie $E_{\,\text{tot}\,}=\dfrac{1}{2}m\vv{v}^2-\int_{\vv{x}_n}^{\vv{x}(t)}\vv{F}(\vv{x})\td \vv{x}'$ ist unabhängig von $t$.
+        \item Es existiert eine potentielle Energie $V(\vv{x})$, sodass $\vv{F}(\vv{x})=-\vv{\nabla }V(\vv{x})$.
+        \item Die Kraft hängt nur von $\vv{x}$ ab, mit $\vv{\nabla }\times \vv{F}(\vv{x})=0$.
+\end{enumerate}
+Es ist zu beachten, dass die kinetische Energie erhalten ist, wenn $\vv{F}(\vv{x},\vv{v},t)$ immer senktrecht zur Bewegungsrichtung ist, also $\vv{F}=\vv{f}(\vv{x},\vv{v},t)\times \vv{v}$. Denn, man leistet keine Arbeit gegen diese Kraft, $\vv{F}\cdot \vv{v}=0$. $\vv{F}$ ist nicht durch potentielle Energie darstellbar. 
+
+\subsubsection{Beispiel: Zentralkraft}
+Ein wichtiges Beispiel für solch eine konservative Kraft ist die Zentralkraft, eine Kraft, bei der das Kraftzentrum im Ursprung des Koordinatensystems liegt, also gilt $\vv{F}(\vv{x})?F_c(|\vv{x}|)\cdot \tfrac{\vv{x}}{|\vv{x}|}$. Da diese Kraft konservativ ist muss gelten
+\begin{align*}
+        \vv{\nabla }\times \vv{F}|_x&=\diffp[]{F_z}{y}-\diffp[]{F_y}{z}\\
+                                    &=\diffp*[]{\tilde F(|\vv{x}|z}{y}-\diffp*[]{\tilde F(|\vv{x}|y}{z}\\
+                                    &=\diff[]{\tilde F(|\vv{x}|}{|\vv{x}|}\cdot \left[z\diffp[]{|\vv{x}|}{y}-y\diffp[]{|\vv{x}|}{z}\right]\\
+                                    &=\diff[]{\tilde F(|\vv{x}|}{|\vv{x}|}\cdot \left[z\cdot \dfrac{y}{|\vv{x}|}-y\dfrac{z}{|\vv{x}|}\right]\\
+                                    &=0
+.\end{align*}
+Für die Komponenten $y,z$ gilt dies analog. Also ist $\vv{\nabla }\times \vv{F}=0$. Die potenzielle Energie berechnet sich aus
+\begin{align*}
+        \td V&=-\left[F_x\td x+F_y\td y+F_z\td z\right]\\
+             &=\dfrac{F_c(|\vv{x}|)}{|\vv{x}|}(x\td x+y\td y+z\td z)\\
+             &=-F_c(|\vv{x}|)\td |\vv{x}|
+.\end{align*}
+Die Berechnung von $V(\vv{x})=v(|\vv{x}|)$ ist also unabhängig vom Weg, da $F_c$ nur von der skalaren Größe $|\vv{x}|$ abhängt. Beachte, dass die Rotation unter Verschiebung des Kraftzentrums zu einem beliebigen $x_0$ invariant ist. Zudem ist die Summe von Zentralkräften auch konservativ.
+
+\newpage
+\section{Oszillatoren}
+\subsection{Gekoppelte, harmonische Oszillatoren}
+Bei gekoppelten, harmonischen Oszillatoren handlet es sich um die Kopplung von zwei schwingfähigen Systemen, beide mit einer Eigenfrequenz und Amplitude. $x_1,x_2$ beschreibt die Auslenkung aus der Ruhelage, $k_1,k_2$ die Federkonstante des jeweiligen Systems und $\kappa $ ist die Federkonstante der Verbindung. Daraus folgen die beiden Bewegungsgleichungen
+\[ 
+        m\ddot{x}_1=-kx_1-\kappa (x_1-x_2)\qquad m\ddot{x}_2=-kx_2-\kappa (x_2-x_1)
+.\] 
+Diese Gleichungen sind \textbf{gekoppelt} und können durch Addition oder Subtraktion \textbf{entkoppelt} werden. Beachte, die Kraft auf einen Körper hängt von $x_1$ und $x_2$ ab. Die Energie des ersten Körpers ist nicht erhalten. Es kann aber die gesamte potenzielle Energie, die in allen Federn steckt, definiert werden, als
+\[ 
+        V(x_1,x_2)=\dfrac{1}{2}\left[kx_1^2+kx_2^2+\kappa (x_1-x_2)^2\right]\qquad F_i=-\diffp[]{V}{x_i}
+,\] 
+mit $F_i$ als die Kraft die auf Körper $i$ wirkt. Die gesamte Energie des Systems bleibt allerdings erhalten. Folgende Gleichungen sind als \textbf{Eigenmoden} zu bezeichnen
+\begin{align*}
+        m(\ddot{x}_1+\ddot{x}_2)&=-k(x_1+x_2)&\Rightarrow (x_1+x_2)(t)&=a_+\cos (\omega _+t+\alpha _+),\omega _-=\sqrt[]{\dfrac{k}{m}}\tag{+}\label{+}\\ %\eqref{+}
+        m(\ddot{x}_1-\ddot{x}_2)&=-(k+2\kappa )(x_1-x_2)&\Rightarrow (x_1-x_2)(t)&=a_-\cos (\omega _-t+\alpha _-),\omega _-=\sqrt[]{\dfrac{k+2\kappa }{m}}\tag{--}\label{--} %\eqref{--}
+.\end{align*}
+\eqref{+} beschreibt die Schwingung, bei der die mittlere Feder in Ruhelage behalten wird. Die Körper schwingen in Phase, $x_1-x_2=0$. \eqref{--} beschreibt die Schwingung, bei der die mittlere Feder maximal ausgelenkt ist, $x_1+x_2=0$. Das System bleibt generell in Eigen-- oder Normalmoden, wenn nur diese angeregt wurden.\\\\
+Allgemein gilt für die beiden Bewegungsgleichungen
+\begin{align*}
+        x_1(t)&=\dfrac{1}{2}\left[(x_1+x_2)+(x_1-x_2)\right]\\
+              &=\dfrac{1}{2}\left[a_+\cos (\omega _+t+\alpha _+)+a_-\cos (\omega _-t+\alpha _-)\right]\\
+        x_2(t)&=\dfrac{1}{2}\left[(x_1+x_2)-(x_1-x_2)\right]\\
+              &=\dfrac{1}{2}\left[a_+\cos (\omega _+t+\alpha _+)-a_-\cos (\omega _-t+\alpha _-)\right]
+.\end{align*}
+Die Amplituden $a_{\pm}$ und Phasen $\alpha _{\pm}$ gehen aus den Anfangsbedingungen hervor, wie zum Beispiel $x_1(0)\equiv a\neq 0,x_2(0)=\dot{x}_1(0)=\dot{x}_2(0)=0$.\\\\
+Falls $\kappa \ll k$ existiert eine \textbf{schwache Kopplung}
+\[ 
+        \omega _-=\sqrt[]{\dfrac{k+2\kappa }{m}}\approx \sqrt[]{\dfrac{k}{m}}\sqrt[]{1+\dfrac{2\kappa }{k}}\approx \omega _+\left(1+\dfrac{\kappa }{k}\right)
+.\] 
+Daraus folgt
+\[ 
+        \dfrac{\omega _++\omega _-}{2}\approx \omega _+\qquad \dfrac{\omega _--\omega _+}{2}\approx \omega _+\cdot \dfrac{\kappa }{2k}\ll \omega _+
+.\] 
+
+\subsection{Allgemeiner Fall: verschiedene Massen und Phasen}
+Wenn die Massen und Phasen verschieden sind gelten die Differenzialgleichungen
+\begin{align*}
+        \ddot{x}_1+\omega ^2_{1,1}+\omega ^2_{1,2}&=0\\
+        \ddot{x}_2+\omega ^2_{2,2}+\omega ^2_{1,2}&=0
+.\end{align*}
+Es gibt zwei Spezialfälle
+\[ 
+        \omega ^2_{1,1}=\omega ^2_{2,2}=\dfrac{k+\kappa }{m}\qquad \omega ^2_{1,2}=-\dfrac{k}{m}
+.\] 
+Der Ansatz für die Lösung der DGL ist $x_i(t)=c_ie^{i\omega t},c_i \in \mathbb{C}$. Eine physikalische Lösung muss aber immer Reell sein, deshalb
+\begin{align*}
+        \left(-\omega ^2+\omega ^2_{1,1}\right)c_1+\omega ^2_{1,2}c_2&=0\\
+        \left(-\omega ^2+\omega ^2_{2,2}\right)c_2+\omega ^2_{1,2}c_1&=0
+,\end{align*}
+oder als Matrix
+\[ 
+        \left(\begin{matrix}
+                        \omega ^2_{1,1}&\omega ^2_{1,2}\\\omega ^2_{1,2}&\omega ^2_{1,2}-\omega ^2
+        \end{matrix}\right)\cdot \left(\begin{matrix}
+                c_1\\c_2
+        \end{matrix}\right)=0
+.\] 
+Lineare homogene Gleichungen haben dann nicht triviale Lösungen, wenn die Determinante gleich null ist
+\[ 
+        \omega =\pm\dfrac{1}{2}\left(\omega ^2_{1,1}+\omega ^2_{1,2}\right)\pm \sqrt[]{\omega ^2_{1,1}-\omega ^2_{2,2}+4\omega ^2_{1,2}}
+.\] 
+Diese Lösungen sind die Eigenwerte der Matrix, also gilt
+\[ 
+        \left(\begin{matrix}
+                        \omega ^2_{1,1}&\omega ^1_{1,2}\\\omega ^1_{1,2}&\omega ^2_{2,2}
+        \end{matrix}\right)\begin{pmatrix}
+                c_1\\c_2
+        \end{pmatrix}=\omega ^2 \begin{pmatrix}
+                c_1\\c_2
+        \end{pmatrix}
+.\] 
+Die Matrix ist reell--symmetrisch, also sind die Eigenwerte auch reell. 
+\[ 
+        \dfrac{c _{i_2}}{c _{i_1}}=\dfrac{\omega ^2_{i}-\omega ^2_{1,1}}{\omega ^2_{1,2}} \in \mathbb{R}\qquad i=1,2
+.\] 
+Beachte, wenn $\vv{c}$ die Gleichung löst, dann auch $r\cdot \vv{c},r \in \mathbb{C}$. Diese Gleichnung bestimmt das Verhältnis von $c_1$ zu $c_2$, legt also die Richtung der (komplexen) Eigenvektoren fest. Eigenvektoren zu verschiedenen $\omega ^2=\omega ^2_i$ sind orthogonal zueinander. Diese Beschreiben die Schwingung oder Eigenmoden des Systems. Die allgemeine Lösung aus der Superposition von Eigenmoden ist dann
+\begin{align*}
+        x_1(t)&=\mathfrak{R}\left(\sum_{i=1}^{2}a_ie^{i\omega _it}\right)=\mathfrak{R}\left(\sum_{i=1}^{2}|a_i|e^{i(\omega t+\alpha_i )}\right)\qquad c _{1_i}=a_i \in \mathbb{C}=|a_i|e^{i\alpha _i}\\
+        x_2(t)&=\mathfrak{R}\left(\sum_{i=1}^{2}\dfrac{\omega _i^2-\omega _{1,1}^2}{\omega _{1,2}^2}|a_i|e^{i(\omega t+\alpha _i)}\right)
+,\end{align*}
+mit $|a_i|,\alpha _i$ aus den Anfangsbedingungen. Für $N$ Körper bekommt man meine $(N\times N)$--Matrix mit $N$--Eigenwerten; und die Summen gehen bis $N$, wobei $c _{1_i}$ beliebig sind und alle anderen $c _{j_i}$ mit $i=2,\hdots ,N$ analog bestimmt werden.
+
+\newpage
+\section{Lagrangeformalismus}
+Das Ziel des Lagrangeformalismus ist, eine systematische Herleitung der Bewegungsgleichung in verallgemeinerten Koordinaten zu erreichen. Die Lösungen der Bewegungsgleichung sind äquivalent zu denen von Newton und es gilt weiterhin das lineare Superpositionsprinzip.\\\indent
+Für $N$--Körper im dreidimensionalen Raum braucht man man mindestens $3N$--Koordinaten. Für die Menge der verallgemeinerten Koordinaten definiert man
+\[ 
+        \left\{q_k\right\}\,\text{mit}\,\vv{x}_i=\vv{x}_i(q_k,t)\,\text{oder}\,q_k\equiv q_k(\vv{x}_i,t)
+.\] 
+Beachte, $q_k$ muss keine Länge sein, oft sind Winkel bequemer. Die Lagrange Gleichungen sind dann später DGL zweiter Ordnung für $q_k(t)$.
+
+\subsection{Eine Dimension}
+Für die Bewegungsgleichung eines Körpers in einer Dimension gelten folgende Zusammenhänge.
+\\\hfill\\\textbf{Geschwindigeit}\\ 
+\[ 
+        q(t)=q[x(t),t]
+.\] 
+Nach $x$ aufgelöst und abgeleitet gilt
+\begin{align*}
+        x(t)&=x[q(t),t]\\
+        \dot{x}(t)&=\diffp[]{x}{q}\diffp[]{q}{t}+\diffp[]{x[q,t]}{t}=\diffp[]{x}{q}\dot{q}+\diffp[]{x[q,t]}{t}
+.\end{align*}
+Im Lagrange--Formalismus werden $q$ und $\dot{q}$ als unabhängige Variablen behandelt.\\\indent
+\\\hfill\\\textbf{Linearer Impuls}\\ 
+Ein linearer Impuls kann als 
+\[ 
+        p_x=m\dot{x}=\diff*[]{\left[\dfrac{1}{2}m\dot{x}^2\right]}{\dot{x}}=\diff[]{E_{\,\text{kin}\,}}{\dot{x}}
+\] 
+dargestellt werden. Verallgemeinert gilt
+\[ 
+        p_q=\diffp[]{E_{\,\text{kin}\,}(q,\dot{q},t)}{\dot{q}}=\diffp*[]{\left[\dfrac{1}{2}m\dot{x}(q,\dot{q},t)^2\right]}{\dot{q}}=\diff[]{E_{\,\text{kin}\,}}{\dot{x}}\diffp[]{\dot{x}}{\dot{q}}=p_x\diffp[]{x}{q}
+.\] 
+Für die Ableitung gilt
+\[ 
+        \dot{p}_q=\dot{p}_x\diffp[]{x}{q}+p_x\diff*[]{\left(\diffp[]{x}{q}\right)}{t}
+,\] 
+genauer
+\begin{align*}
+        \diff*[]{\diffp[]{x}{q}}{t}&=\left(\diffp[]{}{q}\diffp[]{x}{q}\right)\dot{q}+\diffp*[]{\left(\diffp[]{x}{q}\right)}{t}\\
+        \diffp[]{\dot{x}}{q}&=\diffp*[]{\diffp[]{x}{q}}{q}\dot{q}+\diffp*[]{\diffp[]{x}{t}}{p}=\diff*[]{\left(\diffp[]{x}{q}\right)}{t}
+.\end{align*}
+Dann folgt 
+\[ 
+        \dot{p}_q=\dot{p}_x\diffp[]{x}{q}+p_x\diffp[]{\dot{x}}{q}=F_x\diffp[]{x}{q}+p_x\diffp[]{\dot{x}}{q}=F_x\diffp[]{x}{q}+\diff[]{E_{\,\text{kin}\,}}{\dot{x}}\diffp[]{x}{q}\equiv Q+\diffp[]{E_{\,\text{kin}\,}[\dot{x}(q,\dot{q},t)]}{q}
+,\] 
+mit 
+\[ 
+        Q(q,\dot{q},t)=F_x(x,\dot{x},t)\diffp[]{x}{q}=-\diff[]{V(x)}{x}+\tilde F_x[x(q,t),\dot{x}(q,\dot{q},t),t]\diffp[]{x}{q}=-\diffp[]{V(q,t)}{q}+\tilde Q
+\] 
+als die verallgemeinerte Kraft, wobei $F_x$ in einen konservativen und restlichen Teil aufgespaltet werden kann
+\[ 
+        F_x(x,\dot{x},t)=-\diff[]{V(x)}{x}+\tilde F_x(x,\dot{x},t)
+.\] 
+Beachte, $V(q,t)$ hat eine andere funktionelle Form als $V(x)$. Zum Beispiel gilt für $q=x^2$
+\[ 
+        V(x)=\dfrac{1}{2}x^2k\qquad V(q)=\dfrac{1}{2}qk
+.\] 
+Für $x=\sqrt[]{q}$ am Beispiel einer Feder gilt
+\begin{align*}
+        \dot{x}=\dfrac{1}{2\,\sqrt[]{x}}\dot{q}\Rightarrow E_{\,\text{kin}\,}=\dfrac{m}{2}\dot{q}^2\dfrac{1}{4q}=\dfrac{m\dot{q}^2}{8q}\qquad p_q=\dfrac{1}{2\,\sqrt[]{x}}m\dot{x}=\dfrac{m\dot{q}}{4q}\\
+        \diff*[]{\left(\dfrac{m\dot{q}}{4q}\right)}{t}=\hdots =\dfrac{m\dot{x}^2}{2x^2}+\dfrac{m\ddot{x}}{2x}=\dfrac{m\dot{x}^2}{2x^2}-\dfrac{1}{2}k\Rightarrow m\ddot{x}=-kx
+\end{align*}
+Der verallgemeinerte Impuls ist dann
+\[ 
+        \dot{p}_q=\diffp*[]{\left(E_{\,\text{kin}\,}-V\right)}{q}+\tilde Q=\diffp[]{L}{q}+\tilde Q
+,\] 
+beziehungsweise die Lagrange--Funktion
+\[ 
+        L=E_{\,\text{kin}\,}(q,\dot{q},t)-V(q,t)
+.\] 
+
+\subsection{$n$--Massenpunkte in drei Dimensionen}
+Die Massenpunkte haben ab jetzt mehr Abhängigkeiten
+\[ 
+        x_k=x_k(q_j,t)\qquad q_j=q_j(x_k,t)\qquad j,k=1,\hdots ,n
+.\] 
+Beachte, dass jedes $x_k(q_j)$ von allen $q_j(x_k)$ abhängen kann.
+\\\hfill\\\textbf{Impuls}\\ 
+Für den Impuls gilt dann
+\begin{align*}
+        \left(P_x\right)_k&=\diffp[]{E_{\,\text{kin}\,}(\dot{x}_j}{\dot{x}_k}\\
+        \left(P_q\right)_j&=\diffp[]{E_{\,\text{kin}\,}(\dot{x}_j}{\dot{q}_j}=\diffp[]{E_{\,\text{kin}\,}}{\dot{x}_k}\diffp[]{\dot{x}_k}{\dot{q}_j}=\left(P_x\right)_k\diffp[]{\dot{x}_k}{\dot{q}_j}
+\end{align*}
+Daraus folgt
+\begin{align*}
+        \left(\dot{P}_q\right)_j&=\left(\dot{P}_x\right)_k\diffp[]{x_k}{q_j}+\diffp[]{\dot{x}_k}{q_j}\left(P_x\right)_k\\
+                                &=\left(-\diffp[]{V(x)}{x_k}+\tilde F_k\right)\diffp[]{x_k}{q_j}+\diffp[]{E_{\,\text{kin}\,}\dot{x}_k}{\dot{x}_k}\diffp[]{\dot{x}_k}{q_j}\\
+                                &=-\diffp[]{V(x_j(q,t))}{q_j}+\diffp[]{E_{\,\text{kin}\,}(\dot{x}_j(q_j,\dot{q}_j,t))}{q_j}+\tilde F_k(q,\dot{q},t)\diffp[]{x_k(q_j,t)}{q_j}\\
+                                &=\diffp[]{L(q,\dot{q},t)}{q_j}+\tilde Q_j
+.\end{align*}
+Mit der Lagrange--Funktion 
+\[ 
+L(q_j,\dot{q}_j,t)=E_{\,\text{kin}\,}\left(q_j,\dot{q}_j,t\right)-V(q,t)
+.\]
+und der verallgemeinerten Kraft 
+\[
+        \tilde Q_j\left(q_i,\dot{q}_i,t\right)=\tilde F_k\left(x_l,\dot{x}_l,t\right)\diffp[]{x_k(q,t)}{q_j}
+.\]
+Dann folgt
+\[ 
+        \diffp[]{L}{\dot{q}_j}=\diffp[]{E}{\dot{q}_j}=\left(P_q\right)_j
+.\] 
+\textbf{Die Bewegungsgleichung des Lagrange--Formalismus ist} 
+\[ 
+        \diff*[]{\left(\diffp[]{L}{\dot{q}_j}\right)}{t}-\diffp[]{L}{q_j}=\tilde Q_j\,\forall j
+.\] 
+\subsubsection{Beispiel: Teilchen in der Ebene mit Zentralpotential $V(r)$}
+Hier werden Polarkoordinaten hilfreich
+\begin{align*}
+        x&=r\cos \varphi \\
+        y&=r\sin \varphi 
+.\end{align*}
+Die kinetische Energie ist
+\[ 
+        E_{\,\text{kin}\,}=\dfrac{1}{2}m\dot{\vv{x}}^2=\dfrac{1}{2}m\left(\dot{r}^2+r^2\dot{\varphi }^2\right)
+.\] 
+Der selbe Ausdruck in verallgemeinerten Koordinaten, mit
+\begin{align*}
+        q_1&=r\\q_2&=\varphi 
+,\end{align*}
+ist
+\[ 
+        E_{\,\text{kin}\,}=\dfrac{1}{2}m\left(\dot{q}_1^2+q_1^2\dot{q}_2^2\right)\qquad V=q_1
+.\] 
+Nimm an $\tilde Q_i=0,i=1,2$,
+\[ 
+        \diffp[]{L}{\dot{q}_1}=m\dot{q}\qquad \diffp[]{L}{q_1}=mq_1\dot{q}_2^2-V^{(1)}(q_1)
+.\] 
+Die benötigten Terme sind
+\begin{align*}
+        \diffp[]{L}{\dot{q}_2}&=m\ddot{q}_1=mq_1\dot{q}_2^2-V(q_1)\Rightarrow m\ddot{r}-mr\dot{q}^2=-\diff[]{V}{r}=F_r\\
+        \diffp[]{L}{q_2}&=0
+.\end{align*}
+Die erhaltenen Größen sind
+\begin{align*}
+        \diff*[]{\left(mq_1^2\dot{q}_2\right)}{t}&=0\\
+        2m\dot{r}r\dot{\varphi }+mr^2\ddot{\varphi }&=0
+.\end{align*}
+Beachte, das $mq_1^2\dot{q}_2=mr^2\dot{\varphi }$ erhalten (also konstant) ist. Grund dafür ist, dass $\diffp[]{L_D}{\varphi }=0$ ist, wobei $L_D$ der Drehimpuls ist. Ganz allgemein kann also gesagt werden, wenn $\diffp[]{L}{q_j}=\tilde Q_j=0$, dann ist $\diffp[]{L}{\dot{q}_j}$ eine Erhaltungsgröße. Es können auch gewissen geschwindigkeitsabhängige Kräfte durch ein verallgemeinertes Potential beschrieben werden, wenn die verallgemeinerte Kraft als $Q_j=-\diffp[]{U\left(q_j,\dot{q}_j,t\right)}{q_j}+\diff*[]{\left(\diffp[]{U\left(q_j,\dot{q}_j,t\right)}{\dot{q}_j}\right)}{t}$ geschrieben werden kann. Setzt man für $Q_j$ ein folgt
+\begin{align*}
+        \diff*[]{\left(\diffp[]{E_{\,\text{kin}\,}}{\dot{q}_j}\right)}{t}&=-\diffp[]{U(q_j,\dot{q}_j)}{q_j}+\diff*[]{\left(\diffp[]{U(q_j,\dot{q}_j)}{\dot{q}_j}\right)}{t}+\diffp[]{E_{\,\text{kin}\,}}{q_j}\\
+        \diff*[]{\left(\diffp[]{E_{\,\text{kin}\,}-U}{\dot{q}_j}\right)}{t}&=\diffp[]{E_{\,\text{kin}\,}-U}{\dot{q}_j}\qquad |L=E_{\,\text{kin}\,}\left(q,\dot{q},t\right)-U\left(q,\dot{q},t\right)\\
+        \diff*[]{\left(\diffp[]{L}{\dot{q}_j}\right)}{t}-\diffp[]{L}{q_j}&=0
+.\end{align*}
+Damit kann man die magnetische Lorentz--Kraft auf eine bewegte Ladung beschreiben.\\\indent
+Man kann eine totale Ableitung bezüglich der Zeit zu $L$ addieren, ohne dass sich die Bewegungsgleichung ändert
+\begin{align*}
+        L(q,\dot{q},t)\,\text{und}\,\tilde L(q,\dot{q},t)&=L(q,\dot{q},t)+\diff[]{F(q,t)}{t}
+,\end{align*}
+mit 
+\[ 
+        \diff[]{F(q,t)}{t}=\diffp[]{F}{q_k}\dot{q}_k+\diffp[]{F}{t}\qquad \diffp[]{\tilde L}{\dot{q}_j}=\diffp[]{L}{\dot{q}_j}+\diffp[]{F}{q_j}
+.\] 
+Dann folgt für die totale Ableitung
+\begin{align*}
+        \diff*[]{\left(\diffp[]{\tilde L}{\dot{q}_j}\right)}{t}=\diff*[]{\left(\diffp[]{L}{\dot{q}_j}\right)}{t}+\diffp*[]{\left(\diffp[]{F}{q_j}\right)}{q_k}\dot{q}_k+\diffp*[]{}{}[]{\left(\diffp[]{F}{q_j}\right)}{t}
+\end{align*}
+und die partielle Ableitung
+\begin{align*}
+        \diffp[]{\tilde L}{q_j}=\diffp[]{L}{q_j}+\left(\diffp*[]{\left(\diffp[]{F}{q_k}\right)}{q_j}\right)\dot{q}_k+\diffp*[]{\left(\diffp[]{F}{t}\right)}{q_j}
+.\end{align*}
+Insgesamt gilt also
+\begin{align*}
+        \diff*[]{\left(\diffp[]{\tilde L}{\dot{q}_j}\right)}{t}-\diffp[]{\tilde L}{q_j}=\hdots =\diff*[]{\left(\diffp[]{L}{\dot{q}_j}\right)}{t}-\diffp[]{L}{q_j}
+.\end{align*}
+
+\subsection{Zwangsbedingungen}
+Zwangsbedingungen schränken die Bewegung ein. Sie ersetzen gewisse Kräfte durch ihre Effekte.
+
+\subsubsection{Holonome}
+Diese haben in kartesischen Koordinaten die Form
+\[ 
+        f_j(x_k,t)=0\qquad j=1,\hdots 
+.\] 
+Zum Beispiel hat ein Pendel die Zwangsbedingung der Länge des Fadens
+\[ 
+        \left(x-x_0\right)^2+\left(y-y_0\right)^2=l^2\qquad f_1=\left(x-x_0\right)^2+\left(y-y_0\right)^2-l^2=0
+.\] 
+Holonome Zwangsbedingungen können sehr einfach im Lagrange--Formalismus beschrieben werden. Man wählt deshalb Koordinaten, $\tilde q_j=f_j(x,t)=0,j=1,\hdots ,c$, die bereits diese Zwangsbedingungen erfüllen. Die übrigen $3n-c$ müssen unabhängig von diesen Bedingungen gewählt werden. Die Lagrange--Methode ist allerdings nicht geeignet für die Behandlung für nicht--holonomer Zwangsbedingungen. Es können entsprechende Zwangskräfte aus Lagrange--Gleichungen berechnet werden
+\[ 
+        \diff*[]{\left(\diffp[]{L}{\dot{\tilde q}_j}\right)}{t}-\diffp[]{L}{{\tilde q}_j}=\tilde Q_{c,j}=-\diffp[]{L}{\tilde q_j}\qquad |\,\text{da}\,\tilde q_j=0
+.\] 
+Diese sind nützlich, um zu prüfen ob das System stabil genug ist. 
+\subsubsection{Beispiel: Pendel an oszillirender Aufhängung}
+$x_A(t),y_A(t)$ sind gegeben. Es gilt
+\begin{align*}
+        x&=l \sin \varphi \\
+        y&=l \cos \varphi 
+.\end{align*}
+Die Bewegungsgleichungen beschreiben die Bewegung des MP am Ende des Fadens relativ zur Aufhängung
+\begin{align*}
+        X(t)&=x_A(t)+x(t)\\
+        Y(t)&=y_A(t)+y(t)
+.\end{align*}
+Die kinetische und potenzielle Energie sind
+\begin{align*}
+        E_{\,\text{kin}\,}&=\dfrac{1}{2}m\left(\dot{X}^2+\dot{Y}^2\right)\\
+                          &=\dfrac{1}{2}m\left[\left(\dot{x}+\dot{x}_A\right)^2+\left(\dot{y}+\dot{y}_A\right)^2\right]\\
+                          &=\dfrac{1}{2}m\left[\left(l\dot{\varphi }\cos \varphi +\dot{x}_A\right)^2+\left(\dot{y}_A-l\dot{\varphi }\sin \varphi \right)^2\right]\\
+        V&=-mgY\\
+         &=-mg\left(y_A+l\cos \varphi \right)
+.\end{align*}
+Dann folgt für die Lagrange--Funktion
+\begin{align*}
+        L&=\dfrac{1}{2}\left[\left(l\dot{\varphi }\cos \varphi +\dot{x}_A\right)^2+\left(\dot{y}_A-l\dot{\varphi }\sin \varphi \right)^2\right]+mg\left(y_A+l\cos \varphi \right)
+\end{align*}
+und die Lagrange--Gleichung
+\begin{align*}
+        \diffp[]{L}{\dot{\varphi }}&=\dfrac{1}{2}m\left[2\left(l\dot{\varphi }\cos \varphi +\dot{x}_A\right)l\cos \varphi +2\left(l\dot{\varphi }\sin \varphi -\dot{y}_A\right)l \sin \varphi  \right]\\
+                                   &=ml^2\dot{\varphi }\left(\cos ^2\varphi +\sin ^2\varphi \right)+ml \left(\cos \varphi \dot{x}_A-\sin \varphi \dot{y}_A\right)\\
+                                   &=ml^2\dot{\varphi }+ml\left(\cos \varphi \dot{x}_A-\sin \varphi \dot{y}_A\right)\\
+        \diff*[]{\diffp[]{L}{\dot{\varphi }} }{t}&=ml^2\ddot{\varphi }-ml\dot{\varphi }\left(\sin \varphi \dot{x}_A+\cos \varphi \dot{y}_A\right)+ml(\cos \varphi \ddot{x}_A-\sin \varphi \ddot{y}_A)\\
+        \diffp[]{L}{\varphi }&=\dfrac{1}{2}m\left[2\left(l\dot{\varphi }\cos \varphi +\dot{x}_A\right)(-\sin \varphi )l\dot{\varphi }+2\left(l\dot{\varphi }\sin \varphi -\dot{y}_A\right)l\dot{\cos \varphi }\right]-mgl \sin \varphi \\
+                             &=-ml\dot{\varphi }\left(\sin \varphi \dot{x}_A+\cos \varphi \dot{y}_A\right)-mgl \sin \varphi 
+.\end{align*}
+Dann ist die Bewegungsgleichung
+\[ 
+        ml^2\ddot{\varphi }=-mgl \sin \varphi +ml\left(\sin \varphi \ddot{y}_A-\cos \varphi \ddot{x}_A\right)
+.\] 
+Beachte, die Gleichung hängt nur von den zweiten Ableitungen $\ddot{x}_A,\ddot{y}_A$ ab, da die gleichförmige Bewegung der Aufhängung keinen Einfluss auf das Pendel hat. $\varphi (t)$ enspricht einer Gallileitransformation.
+
+\newpage
+\section{Hamiltonformalismus}
+\subsection{Wirkung}
+Das \textbf{Hamilton--Prinzip} ermöglicht es die Lagrange--Gleichung für den Fall, dass alle Kräfte durch (verallgemeinerte) Potenziale beschrieben werden können, neu herzuleiten. Damit dies funktioniert führt man die Größe -- Wirkung $S$ -- ein
+\[ 
+        S=\int_{t_1}^{t_2}L(q_i(t),\dot{q}_i(t),t)\td t
+.\] 
+$S$ nennt man mathematisch ein Funktional.\\\indent
+Das Hamiltonsche Prinzip selbst besagt: Die physikalische Lösung $q_i(t)$ entspricht einem stationären Punkt der Wirkung $S$, für feste Zeiten $t_1$ und $t_2$ und feste $q_i(t_1)$ und $q_i(t_2)$.\\\indent
+Um zu prüfen ob die Wirkung stationär ist, betrachtet man eine Variation der Bahnen
+\[ 
+        q_i(t)\rightarrow q_i(t)+\delta q_i(t)\qquad \delta q_i(t_1)=\delta q_i(t)=0\,\forall i\qquad \delta \ll 1\,\forall t
+.\] 
+Die Variation der Wirkung ist
+\[ 
+        \delta S=\int_{t_1}^{t_2}L(q_i(t)+\delta q_i(t),\dot{q}_i(t)+\delta \dot{q}_i(t),t)\td t-\int_{t_1}^{t_2}L(q_i(t),\dot{q}_i(t),t)\td t\equiv \int_{t_1}^{t_2}\delta L\td t
+.\] 
+Die Variation des Funktionals $\delta L$ kann formell wie ein totales Differential behandelt werden
+\begin{align*}
+        \delta L&=\sum_{i}^{}\left(\diffp[]{L}{q_i(t)}\delta q_i(t)+\diffp[]{L}{\dot{q}_i(t)}\delta \dot{q}_i(t)\right)\\
+        \delta \dot{q}_i(t)&=\diff[]{\delta q_i(t)}{t}
+.\end{align*}
+Dann folgt für die Variation der Wirkung
+\begin{align*}
+        \delta S&=\int_{t_1}^{t_2}\left[\diffp[]{L}{q_i(t)}\delta q_i(t)+\diffp[]{L}{\dot{q}_i(t)}\left(\diff[]{\delta q_i(t)}{t}\right)\right]\td t\\
+                &=\int_{t_1}^{t_2}\left[\diffp[]{L}{q_i(t)}\delta q_i(t)-\left(\diff*[]{\left(\diffp[]{L}{q_i(t)}\right)}{t}\right)\delta q_i(t)\right]\td t+\underbrace{\left.\diffp[]{L}{\dot{q}_i(t)}\delta q_i\right|_{t_1}^{t_2}}_{=0}\\
+                &=\int_{t_1}^{t_2}\left[\diffp[]{L}{q_i(t)}-\diff*[]{\left(\diffp[]{L}{\dot{q}_i(t)}\right)}{t}\right]\delta q_i(t)\td t\\
+                &\stackrel{!}{=}0
+.\end{align*}
+Dies muss für beliebige infinitesimale $\delta q_i(t)$ gelten. Im Integranten verschwindet dann 
+\[ 
+        \diffp[]{L}{q_i(t)}-\diff*[]{\left(\diffp[]{L}{\dot{q}_i(t)}\right)}{t}=0
+.\] 
+Das Hamilton--Prinzip zeigt, dass die Lagrange--Gleichung forminvariant ist. Betrachte die Transformation
+\[ 
+        q_i\rightarrow \overline{q_i}(q_k,t)\qquad q_i\equiv q_i(\overline{q}_k,t)
+.\] 
+Das heißt
+\begin{align*}
+        S=\int_{t_1}^{t_2}L(q_i,\dot{q}_i,t)\td t&=\int_{t_1}^{t_2}L\left(q_i\left(\overline{q}_k,t\right),\dot{q}_i\left(\overline{q}_k,t\right),t\right)\td t\\
+                                                 &=\int_{t_1}^{t_2}\overline{L}\left(\overline{q}_k,\dot{\overline{q}}_k,t\right)\td t
+.\end{align*}
+$\overline{L}$ hat eine andere funktionale Form als $L$; nach dem Hamilton--Prinzip 
+\[ 
+        \diff*[]{\left(\diffp[]{\overline{L}}{\dot{\overline{q}}_k}\right)}{t}-\diffp[]{\overline{L}}{\overline{q}_k}=0\,\forall k
+.\] 
+Es lässt sich nun die Newtonsche Kraftgleichung in kartesischen Koordinaten herleiten
+\begin{align*}
+        L(x,\dot{x},t)&=E_{\,\text{kin}\,}(\dot{x}_i)-U(x_i,\dot{x}_i)\\
+        \diff*[]{\left[\diffp*[]{\dfrac{1}{2}\sum_{k}^{}m_k\dot{x}_k^2}{\dot{x}_j}-\diffp[]{U}{\dot{x}_j}\right]}{t}&=-\diffp[]{U}{x_j}\\
+        \underbrace{m_j\ddot{x}_j}_{\,\text{keine Summe}\,}&=-\diffp[]{U}{x_j}+\diff*[]{\diffp[]{U(x_j,\dot{x}_j}{\dot{x}_j}}{t}\\
+        m_j\ddot{x}_j&=F_j
+.\end{align*}
+In der makroskopischen Mechanik ist das Hamilton--Prinzip weniger allgemein als Newtons Gleichungen. Es funktioniert nur, wenn alle Kräfte als verallgemeinerte Potentiale darstellbar sind. Zudem müssen alle Zwangsbedingungen holonom sein.\\\indent
+Aber, eine Verallgemeinerung des Hamilton--Prinzip funktioniert in Feldtheorien und alle fundamentalen Kräfte sind darstellbar. In der modernen Physik ist oft das Hamilton--Prinzip der Startpunkt, indem man eine Wirkung postuliert.
+
+\subsection{Hamilton--Funktion und Hamilton--Gleichung}
+Bislang wurde Bewegung als Bahn $q_i(t)$ im Konfigurationsraum, durch $q_i$ aufgespannt, beschrieben. $\dot{q}_i$ sind in der Lagrange--Funktion formal unabhängige Variablen, aber $\dot{q}_i(t)=\diff[]{q_i(t)}{t}$. In der Euler--Lagrange--Gleichung sind $n=D\cdot N-C$ Differentialgleichungen zweiter Ordnung zu lösen. $D$ ist hier die Raumdimension, $N$ die Anzahl an Teilchen und $C$ die Anzahl holonomer Zwangsbedingungen. In der Hamilton--Gleichung sind es $2n$ Differentialgleichungen erster Ordnung. Zu jeder verallgemeinerten Koordinate $q_i$ gibt es einen \textbf{kanonisch konjugierten} verallgemeinerten Impuls
+\[ 
+        p_i\equiv \diffp[]{L}{\dot{q}_i}
+.\] 
+Beachte, im Allgemeinen ist $p_i \neq p_{q_i}$, falls $\diffp[]{U(x_k,\dot{x}_k)}{\dot{x}_j}\neq 0$. Dieser Impuls spielt auch in der Quantenmechanik eine wichtige Rolle.\\\\\indent
+Die \textbf{Hamilton--Funktion} $H\left(q_i,p_i,t\right)$ aus der \textbf{Legendre--Transformation} von $L(q_i,\dot{q}_i,t)$ zu $H$, ist definiert als
+\[ 
+        H\left(q_i,p_i,t\right)=\sum_{k}^{}p_k\dot{q}_k-L\left(q_i,\dot{q}_i,t\right) 
+.\] 
+Das totale Differential ist
+\begin{align*}
+        \td H&=\sum_{i}^{}\left(\diffp[]{H}{q_i}\td q_i+\diffp[]{H}{p_i}\td p_i\right)+\diffp[]{H}{t}\td t\\
+             &=\sum_{i}^{}\left(-\diffp[]{L}{q_i}\td q_i-\diffp[]{L}{\dot{q}_i}\td \dot{q}_i\right)-\diffp[]{L}{t}\td t+\sum_{i}^{}\left(\dot{q}_i\td p_i+p_i\td \dot{q}_i\right)\\
+             &=\sum_{i}^{}\left(-\diffp[]{L}{q_i}\td q_i\right)-\diffp[]{L}{t}\td t+\sum_{i}^{}\left(\dot{q}_i\td p_i\right)
+.\end{align*}
+Die Terme um $\td \dot{q}_i$ fallen automatisch weg. Vergleicht man nun die Koeffizienten
+\begin{align*}
+        \td p_i-\,\text{Terme}&:\diffp[]{H}{p_i}=\dot{q}_i\\
+        \td q_i-\,\text{Terme}&:\diffp[]{H}{q_i}=-\diffp[]{L}{q_i}=-\diff*[]{\diffp[]{L}{\dot{q}_i}}{t}+\tilde Q_i=-\dot{p}_i+\tilde Q_i\\
+        \td t-\,\text{Terme}&:\diffp[]{H}{t}=-\diffp[]{L}{t}
+.\end{align*}
+
+\subsection{Allgemeiner Algorithmus zur Berechnung von $H$}
+Ein allgemeiner Algorithmus zur Berechnung der Hamilton--Funktion.
+\begin{enumerate}[label=\arabic*.]
+        \item Berechne $L\left(q_i,\dot{q}_i,t\right)=E_{\,\text{kin}\,}-U$.
+        \item Berechne den kanonisch konjugierten Impuls $p_i=\diffp[]{L}{\dot{q}_i}$.
+        \item Schreibe die Hamilton--Funktion als $H\left(q_i,\dot{q}_i,p_i,t\right)=\sum_{k}^{}p_k\dot{q}_k-L\left(q_i,\dot{q}_i,t\right)$.
+        \item Invertiere die Gleichung aus $2.$: $\dot{q}_i\equiv \dot{q}_i(q_k,p_k,t)$.
+        \item Setze das Ergebnis von $4.$ in $3.$ ein.
+\end{enumerate}
+Falls $U(q_i,\dot{q}_i,t)=V(q,t)$ die normale potentielle Energie ist, dann ist der kanonisch konjugierte Impuls identisch mit dem allgemeinen Impuls. Dann gilt für die kinetische Energie
+\begin{align*}
+        E_{\,\text{kin}\,}=\sum_{i}^{}\dfrac{1}{2}m_i\dot{x}_i^2=\sum_{i}^{}\dfrac{1}{2}p_{x_i}\dot{x}_i&=\dfrac{1}{2}p_{x_i}\left(\sum_{k}^{}\diffp[]{x_i}{q_k}\dot{q}_k+\diffp[]{x_i(q_j,t)}{t}\right)\\
+                                                                                  &=\dfrac{1}{2}\sum_{k}^{}p_{q_k}\dot{q}_k+\dfrac{1}{2}p_{x_i}\diffp[]{x_i}{t}
+.\end{align*}
+Daraus folgt
+\begin{align*}
+        p_{q_k}\dot{q}_k=2E_{\,\text{kin}\,}-p_{x_i}\diffp[]{x_i}{t}\Rightarrow H&=2E_{\,\text{kin}\,}-p_{x_i}\diffp[]{x_i}{t}-\left(E_{\,\text{kin}\,}-V\right)\\
+                                                                                 &=E_{\,\text{kin}\,}+V-p_{x_i}\diffp[]{x_i(q_k,t)}{t}
+.\end{align*}
+$H$ ist dann die totale Energie, $H=E_{\,\text{kin}\,}+V=E_{\,\text{tot}\,}$, falls keine explizite Zeitabhängigkeit in der Definition von $q_i(x_k)$ vorkommt; falls $U(x_i,\dot{x}_i,t)=V(x,t)$.\\\\
+Falls $L$ bilinear in den $\dot{q}_i$ ist, dann gilt
+\begin{align*}
+        L(q_k,\dot{q}_k,t)=L_0(q_k,t)+\sum_{i}^{}\dot{q}_ia_i(q_k,t)+\sum_{i,j}^{}\dfrac{1}{2}\dot{q}_i\dot{q}_jT_{ij}(q_k,t)
+.\end{align*}
+Man führt $n\times 1$--Matrizen $\vv{a},\vv{q}$ in einen $n$--dimensionalen Konfigurationsraum ein. Analog ist die Matrix $\overleftrightarrow{T}^T=\overleftrightarrow{T}$. Mit diesen Größen kann dann die bilineare Lagrange--Funktion geschrieben werden
+\begin{align*}
+        L&=L_0+\underbrace{\dot{\vv{q}}_i^T\vv{a}}_{\text{Skalar}}+\dfrac{1}{2}\dot{\vv{q}}^T\overleftrightarrow{T}\dot{\vv{q}}
+.\end{align*}
+Für den kanonisch konjugierten Impuls gilt dann
+\begin{align*}
+        p_j=\sum_{i}^{}a_i+\sum_{i,j}^{}T_{ij}\dot{q}_i\Rightarrow \vv{p}=\vv{a}+\overleftrightarrow{T}\dot{\vv{q}}
+;\end{align*}
+und für $\overleftrightarrow{T}\dot{\vv{q}}$ gilt
+\begin{align*}
+        \overleftrightarrow{T}\dot{\vv{q}}=\vv{p}-\vv{a}\Rightarrow \dot{\vv{q}}=\overleftrightarrow{T}^{-1}\left(\vv{p}-\vv{a}\right)\Rightarrow \dot{\vv{q}}^T=\left(\vv{q}^T-\vv{a}^T\right){\overleftrightarrow{T}^{-1}}^T=\left(\vv{q}^T-\vv{a}^T\right)\overleftrightarrow{T}^{-1}
+.\end{align*}
+Die Hamilton--Funktion ist dann
+\begin{align*}
+        H&=\dot{\vv{q}}^T\vv{p}-L\\
+         &=\left(\vv{q}^T-\vv{a}^T\right)\overleftrightarrow{T}^{-1}\vv{p}-L_0-\left(\vv{p}^T-\vv{a}^T\right)\overleftrightarrow{T}^{-1}\vv{a}-\dfrac{1}{2}\left(\vv{p}^T-\vv{a}^T\right)\overleftrightarrow{T}^{-1}\overleftrightarrow{T}\overleftrightarrow{T}^{-1}\left(\vv{p}-\vv{a}\right)\\
+         &=\dfrac{1}{2}\left(\vv{p}^T-\vv{a}\right)\overleftrightarrow{T}^{-1}\left(\vv{p}-\vv{a}\right)-L_0
+.\end{align*}
+\hfill\\\textbf{Erhaltungsgröße der Hamilton--Funktion}\\ 
+Um zu berechnen wann die Hamilton--Funktion erhalten bleibt, muss die totale Ableitung berechnet werden
+\begin{align*}
+        \diff[]{H(q_i,p_i,t)}{t}&=\sum_{i}^{}\diffp[]{H}{q_i}\dot{q}_i+\sum_{i}^{}\diffp[]{H_i}{p_i}\dot{q}_i+\diffp[]{H}{t}\\
+                                &=\sum_{i}^{}\left(-\dot{p}_i+\tilde Q_i\right)\dot{q}_i+\sum_{i}^{}\dot{q}_i\dot{p}_i+\diffp[]{H}{t}\\
+                                &=\sum_{i}^{}\tilde Q_i\dot{q}_i+\diffp[]{H}{t}
+.\end{align*}
+$H$ ist also dann erhalten, wenn alle Kräfte durch ein verallgemeinerstes Potential darstellbar sind $\left(\tilde Q_i=0\right)$ und es keine explizite Abhängigkeit von der Zeit $\left(\diffp[]{H}{t}\right)$ gibt.\\\indent
+Beachte, $H$ kann konstant sein, aber $H\neq E_{\,\text{tot}\,}$, wenn zum Beispiel $U\left(q_i,\dot{q}_i\right)$; oder die Gesamtenergie kann konstant sein, aber $E_{\,\text{tot}\,}\neq H$, wenn zum Beispiel eine explizite Zeitabhängigkeit $q_i(x_j,t)$ vorliegt; oder $H=E_{\,\text{tot}\,}$, aber nicht konstant.\\\indent
+Unter Koordinatentransformation kann $L$ seine funktionale Form ändern, aber der numerische Wert an einem festen physikalischen Punkt oder Zeitpunkt von $L$ verändert sich nicht.\\\indent
+Für explizite zeitliche Transformation kann $H$ allerdings seinen numerischen Wert ändern.\\\\\indent
+Falls $U(q_i,\dot{q}_i,t)=V(q_i,t)+U'(q_i,\dot{q}_i,t)$, in kartesischen Koordinaten
+\begin{align*}
+        L&=\sum_{i}^{}\dfrac{1}{2}m_i\dot{x}_i^2-U\\
+         &=\sum_{i}^{}\dfrac{1}{2}m_i\dot{x}_i^2-V(x_k,t)-U'(x_k,\dot{x}_k,t)
+.\end{align*}
+Daraus lässt sich der kanonisch konjugierte Impuls herleiten
+\begin{align*}
+        p_i^{(x)}=m_i\dot{x}_i-\diffp[]{U'}{\dot{x}_i}
+.\end{align*}
+Das heißt, der kanonisch konjugierte Impuls ist nicht der lineare Impuls. Formt man nach $\dot{x}_i$ um und setzt ein, folgt
+\begin{align*}
+        E_{\,\text{kin}\,}&=\dfrac{1}{2}\sum_{i}^{}\dot{x}_i\left(p_i^{(x)}+\diffp[]{U'}{\dot{x}_i}\right)
+.\end{align*}
+In verallgemeinerten Koordinaten für die kinetische Energie
+\begin{align*}
+        E_{\,\text{kin}\,}&=\dfrac{1}{2}\sum_{i,k}^{}\underbrace{\left(\diffp[]{x_i}{q_k}\dot{q}_k+\diffp[]{x_i}{t}\right)}_{\dot{x}_i}\left(p_i^{(x)}+\diffp[]{U'}{\dot{x}_i}\right)
+;\end{align*}
+für den Impuls
+\begin{align*}
+        P_k^{(q)}&=\diffp[]{L}{\dot{q}_k}\\
+                 &=\sum_{i}^{}m_i\dot{x}_i\diffp[]{\dot{x}_i}{\dot{q}_k}-\diffp[]{U'}{\dot{q}_k}\\
+                 &=\sum_{i}^{}\left(p_i^{(x)}+\diffp[]{U'}{\dot{x}_i}\right)\diffp[]{\dot{x}_i}{\dot{q}_k}-\diffp[]{U'}{\dot{q}_k}\\
+                 &=\sum_{i}^{}p_i^{(x)}\diffp[]{x_i}{q_k}
+.\end{align*}
+Der kanonisch konjugierte Impuls verhält sich also genau so wie der verallgemeinerte Impuls
+\begin{align*}
+        \,\text{verallg. Impuls}&:p_{q_j}=\diffp[]{E_{\,\text{kin}\,}}{\dot{q}_j}\\
+        \,\text{kanonisch konj. Impuls}&:p_j^{(q)}=\diffp[]{L}{\dot{q}_j}
+.\end{align*}
+Die kinetische Energie für die Hamilton--Funktion ist dann
+\begin{align*}
+        E_{\,\text{kin}\,}&=\dfrac{1}{2}\sum_{k}^{}\left[p_k^{(q)}\dot{q}_k+\diffp[]{x_k}{t}\left(p_k^{(x)}+\diffp[]{U'}{\dot{x}_k}\right)+\dfrac{1}{2}\diffp[]{U'}{\dot{q}_k}\dot{q}_k\right]
+.\end{align*}
+Somit
+\begin{align*}
+        H&=\sum_{k}^{}p_k^{(q)}\dot{q}_k-L\\
+         &=2E_{\,\text{kin}\,}-\sum_{k}^{}\diffp[]{x_k}{t}\left(p_k^{(x)}+\diffp[]{U'}{\dot{x}_k}\right)-\diffp[]{U'}{\dot{x}_k}\dot{q}_k-E_{\,\text{kin}\,}+V+U'\\
+         &=\underbrace{E_{\,\text{kin}\,}+V}_{\text{als Fkt.\,der $p_k^{(q)}$}}+\underbrace{U'-\sum_{k}^{}\dot{q}_k\diffp[]{U'}{\dot{q}_k}}_{=0,\,\text{falls $U'$ lin.\,Fkt.\,der $\dot{q}_k$}}-\sum_{k}^{}\diffp[]{x_k}{t}\left(p_i^{(x)}+\diffp[]{U'}{\dot{x}_i}\right)
+.\end{align*}
+Die $q_i,p_i$ sind formal völlig äquivalent. Der Vorteil der Hamilton'schen Methode in der klassischen Mechanik ist die Behandlung zyklischer Variablen $q_k^c$ mit $\tilde Q_k=\diffp[]{L}{q_k^c}=0$, aber $\dot{q}_k^c\neq 0$, also in der Regel $\diff*[]{\diffp[]{L}{\dot{q}_k^c}}{t}=0$. $\dot{p}_k^c=0$ ist der kanonisch konjugierte Impuls, welcher zu zyklischen Variablen erhalten ist.\\\indent
+Für fundamentale Wechselwirkungen in abgeschlossenen Systemen ist oft $H=E_{\,\text{tot}\,}=\,\text{const.}\,$. Dies hat eine direkte physikalische Bedeutung welche eine fundamentale Rolle in der QM und statistischen Mechanik eine Rolle spielt. In der Relativitätstheorie und QFT wird die Hamilton--Funktion allerdings weniger als die Lagrange--Funktion benutzt.
+\\\hfill\\\textbf{Einige formale Ergebnisse}\\ 
+$\left\{q_i\right\}$ ist der Konfigurationsraum und $\left\{p_i\right\}$ ist der Impulsraum. $\left\{q_i(t_0)\right\}$ reichen nicht aus um $\left\{q_i(t)\right\}\,\forall t$ zu berechnen. Analog für $\left\{p_i(t_0)\right\}$. Man definiert also einen $2n$--dimensionalen Phasenraum $\left\{q_i,p_i\right\}$. $\left\{q_i(t_0),p_i(t_0)\right\}$ reichen dann aus, um $\left\{q_i(t),pi(t)\right\}\,\forall t$ zu berechnen. Gegeben ist zudem, dass sich Trajektorien in einem Phasenraum nicht überschneiden.
+
+\subsection{Satz von Liouville}
+In einem $2d$--dimensionalen Phasenraum gilt für $N\gg 1$ Teilchen mit der Dichte $\tilde f$ im Phasenraum
+\begin{align*}
+        \vv{q}_i& \in \left[\vv{\overline{q}}_0-\dfrac{1}{2}d\vv{q},\vv{\overline{q}}_0+\dfrac{1}{2}d\vv{q}\right]\\
+        \vv{p}_i& \in \left[\vv{\overline{p}}_0-\dfrac{1}{2}d\vv{p},\vv{\overline{p}}_0+\dfrac{1}{2}d\vv{p}\right]
+,\end{align*}
+dass dies äquivalent ist zu
+\[ 
+        \tilde f\left(\vv{\overline{q}},\vv{\overline{p}}\right)d^dqd^dp
+.\] 
+Das Theorem von Liouville besagt, dass $\diff[]{\tilde f}{t}=0$, falls alle externen Kräfte durch ein verallgemeinertes Potential darstellbar und die Kräfte zwischen den Teilchen vernachlässigbar sind. Dieses Theorem gilt für alle durch den Hamilton--Formalismus beschriebene Systeme.
+
+\subsection{Virialsatz}
+Betrachte das Virial 
+\[ 
+        S=\sum_{i}^{}p_ix_i
+\] 
+und seine Zeitableitung
+\begin{align*}
+        \diff[]{S}{t}&=\sum_{i}^{}\left(p_i\dot{x}_i+\dot{p}_ix_i\right)\\
+        \left\langle \diff[]{S}{t}\right\rangle &=\dfrac{1}{\tau }\int_{0}^{\tau }\diff[]{S}{t}\td t=\dfrac{S\left(\tau \right)-S\left(0\right)}{\tau }
+,\end{align*}
+mit $\tau $ als Zeitintervall. Man nimmt an, dass alle Trajektorien in einer endlichen Region im Phasenraum liegen. $S(t)$ ist also endlich $\,\forall t$. Wenn also hinreichend lage gemittelt wird, dann $\left\langle \diff[]{S}{t}\right\rangle \rightarrow 0$ für $\tau \rightarrow \infty$, dann
+\[ 
+        \lim_{\tau \rightarrow \infty}\left\langle \sum_{i}^{}p_i\dot{x}_i\right\rangle =-\left\langle \sum_{i}^{}\dot{p}_ix_i\right\rangle 
+.\] 
+Der Virialsatz kann für konservative Kräfte angewandt werden, also $U(x_i,\dot{x}_i,t)=V(x_i,t),H=E_{\,\text{kin}\,}+V$
+\[ 
+        \left\langle E_{\,\text{kin}\,}\right\rangle \rightarrow \dfrac{1}{2}\left\langle \sum_{i}^{}\diffp[]{H}{x_i}x_i\right\rangle =\dfrac{1}{2}\left\langle \sum_{i}^{}x_i\diffp[]{V}{x_i}\right\rangle \qquad \,\text{falls}\,V=\sum_{\alpha \neq \beta }^{}\kappa _{\alpha ,\beta }|\vv{x}_\alpha -\vv{x}_\beta |^c
+.\] 
+Für die kinetische Energie über ein unendliches Zeitintervall
+\begin{align*}
+        \lim_{\tau \rightarrow \infty}\left\langle E_{\,\text{kin}\,}\right\rangle =\dfrac{1}{2}\sum_{\gamma }^{}\left\langle \vv{x}_\gamma \cdot \vv{\nabla }_{x_\gamma }V\right\rangle
+,\end{align*}
+mit
+\begin{align*}
+        \vv{x}_\gamma \cdot \vv{\nabla }_{x_\gamma }\sum_{\alpha \neq \beta }^{}|\vv{x}_\alpha -\vv{x}_\beta |^c&=\sum_{\alpha \neq \beta }^{}\left(x_\gamma \partial _{x_\gamma }+y_\gamma \partial _{y_\gamma }+z_\gamma \partial _{z_\gamma }\right)\left[\left(x_\alpha -x_\beta \right)^2\left(y_\alpha -y_\beta \right)^2\left(z_\alpha -z_\beta \right)^2\right]^{\tfrac{c}{2}}\\
+                                                                                                                &=\hdots \\
+                                                                                                                &=c \sum_{\alpha }^{}|\vv{x}_\alpha -\vv{x}_\beta |^c
+.\end{align*}
+Daraus folgt, dass das zeitliche Mittel der kinetischen Energie proportional zum zeitlichen Mittel der potentiellen Energie ist
+\begin{align*}
+        \left\langle E_{\,\text{kin}\,}\right\rangle \propto \dfrac{c}{2}\left\langle V\right\rangle 
+.\end{align*}
+Zum Beispiel für den harmonischen Oszillator mit $c=2$ und $x(t)=a\cos \left(\omega _0t+\varphi \right)$ ist $\left\langle E_{\,\text{kin}\,}\right\rangle =\left\langle V\right\rangle $. Es gilt
+\begin{align*}
+        \omega _0=\sqrt[]{\dfrac{k}{m}}\qquad \dot{x}=-a\omega _0\sin \left(\omega _0t+\varphi \right)
+,\end{align*}
+woraus für die Energie folgt
+\begin{align*}
+        \left\langle E_{\,\text{kin}\,}\right\rangle &=\dfrac{1}{2}ma^2\omega _0^2\underbrace{\left\langle \sin ^2\left(\omega _0t+\varphi \right)\right\rangle }_{=\tfrac{1}{2}}\\
+                                                     &=\dfrac{1}{4}ma^2\omega _0^2\\
+                                                     &=\dfrac{1}{4}a^2k
+;\end{align*}
+und für das Potential
+\begin{align*}
+        \left\langle V\right\rangle &=\dfrac{1}{2}k\left\langle x^2\right\rangle \\
+                                    &=\dfrac{1}{2}ka^2\underbrace{\left\langle \cos ^2\left(\omega _0t+\varphi \right)\right\rangle }_{=\tfrac{1}{2}}\\
+                                    &=\dfrac{1}{4}ka^2
+.\end{align*}
+Für die Gravitation ist $c=1-$ und somit $\left\langle E_{\,\text{kin}\,}\right\rangle =-\tfrac{1}{2}\left\langle V\right\rangle $.a
+
+\newpage
+\section{Erhaltungssätze -- Noether's Theorem}
+\subsection{Energieerhaltung}
+Für die Erhaltungssätze wird ein System betrachtet, welches vollständig durch eine Lagrange--Funktion beschrieben werden kann $\tilde Q_i=0\,\forall i$. Falls $L$ invariant unter einer Zeitverschiebung ist, also $t\rightarrow t+\td t$ , gilt $L\left(q_i,\dot{q}_i,t+\td t\right)=L\left(q_i,\dot{q}_i,t\right)\,\forall t\Rightarrow \diffp[]{L}{t}=0$, es gibt also keine explizite Zeitabhängigkeit. Die totale Zeitabhängigkeit ist
+\begin{align*}
+        \diff[]{L}{t}&=\sum_{i}^{}\diffp[]{L}{q_i}\dot{q}_i+\sum_{i}^{}\diffp[]{L}{\dot{q}_i}\diff[]{\dot{q}_i}{t}\\
+                     &=\sum_{i}^{}\left(\diff*[]{\diffp[]{L}{\dot{q}_i}}{t}\right)\dot{q}_i+\sum_{i}^{}\diffp[]{L}{\dot{q}_i}\diff[]{\dot{q}_i}{t}\\
+                     &=\sum_{i}^{}\diff*[]{\left(\dot{q}_i\diffp[]{L}{\dot{q}_i}\right)}{t}
+.\end{align*}
+Daraus folgt, dass 
+\[ 
+        \sum_{i}^{}\diff*[]{\left(\dot{q}_i\diffp[]{L}{\dot{q}_i}-L\right)}{t}=0
+.\] 
+Diesen Ausdruck nennt man die Energiefunktion
+\[ 
+        h\left(q_i,\dot{q}_i\right)=\sum_{i}^{}\left(\dot{q}_i\diffp[]{L}{\dot{q}_i}-L\right)
+.\] 
+Diese ist erhalten. Falls $\diffp[]{L}{\dot{q}_i}=p_i$, dann ist $h=H$. Falls keine zeitabhängigen Zwangsbedingungen existieren, dann ist die Energiefunktion gleich der Energie. Sie stellt eine Beziehung zwischen kontinuierlicher Symmetrie (Invarianz unter Zeitverschiebung) und der Erhaltungsgröße der Energie her.
+
+\subsection{Impulserhaltung}
+Für die Erhaltungssätze wird ein System betrachtet, welches vollständig durch eine Lagrange--Funktion beschrieben werden kann $\tilde Q_i=0\,\forall i$. Falls $L$ invariant unter einer Raumverschiebung ist, also $\vv{x}_i\rightarrow \vv{x}_i+\vv{\varepsilon },\dot{\vv{\varepsilon }}=0$, mit $i$ gleich der Anzahl der Teilchen, gilt für die Variation von $L$ in kartesischen Koordinaten
+\begin{align*}
+        \delta L&=\sum_{i=1}^{N}\left[\partial _{x_i}L\varepsilon _x+\partial _{y_i}L\varepsilon _y+\partial _{z_i}L\varepsilon _z\right]\\
+                &=\sum_{i=1}^{N}\left[\varepsilon _x\diff*[]{\partial _{\dot{x_i}}L}{t}+\varepsilon _y\diff*[]{\partial _{\dot{y_i}}L}{t}+\varepsilon _z\diff*[]{\partial _{\dot{z_i}}L}{t}\right]\\
+                &=\sum_{i=1}^{N}\left[\varepsilon _x\dot{p}_x+\varepsilon _y\dot{p}_y+\varepsilon _z\dot{p}_z\right]\\
+                &=\vv{\varepsilon }\sum_{i=1}^{N}\dot{\vv{p}}_{x_i}\\
+                &=\diff*[]{\vv{\varepsilon }\vv{P}_x}{t}\\
+                &:=\vv{\varepsilon }\cdot \dot{\vv{P}}_x\\
+                &\stackrel{!}{=}0
+.\end{align*} 
+Der Gesamtimpuls in $\varepsilon $--Richtung ist also erhalten. Falls dies auch für drei linear unabhängige $\varepsilon $--Vektoren gilt, dann ist $\vv{P}_x$ erhalten. Falls $U(\vv{x}_i,\dot{\vv{x}}_i,t)=V\left(\vv{x},t\right)\Rightarrow \sum_{i}^{}\vv{p}_{x_i}=\partial _{\dot{\vv{x}}_{x_i}}E_{\,\text{kin}\,}$. Für die Herleitung im Newton'schen Formalismus benötigt man explizit das dritte Axiom.
+\subsubsection{Beispiel: Zug im Regen}
+Ein Zug mit offenem Wagon bewegt sich mit einer Anfangsgeschwindigkeit $v_0$ reibungsfrei in $x$--Richtung. Zum Zeitpunkt $t=0$ beginnt es zu regnen, sodass pro Zeiteinheit die Masse des Wagens (+ Wasser) um $\diff[]{m_W}{t}=\sigma =\,\text{const.}\,$ anwächst. Die Frage ist, wie sich die Geschwindigkeit ändert. Für $t\leq t_0:v(t)=v_0=\,\text{const.}\,$. Da der Regen vertikal fällt, ist das System invariant unter horizontaler Verschiebung, also bleibt der lineare horizontale Impuls erhalten, $m_W(0)v_0=m_W(t)v(t)=\left(m_W(0)+\sigma t\right)v(t)$. Daraus folgt
+\begin{align*}
+        v(t)&=\dfrac{m_W(0)}{m_W(0)+\sigma t}\\
+            &=\dfrac{v_0}{1+\tfrac{\sigma t}{m_W(0)}}
+.\end{align*}
+\subsubsection{Beispiel: Raketenantrieb}
+Eine Rakete fliegt mit der Geschwindigkeit $v$ in einer dimension nach vorne und stößt Treibstoff mit einer Geschwindigkeit $u$ relativ zur Rakete aus. Die Masse der Rakete plus dem Treibstoff nimmt ab, $v(t)$ nimmt zu, $u$ bleibt konstant. Zur Zeit $t$ gilt $p(t)=m(t)v(t)$ für den Impuls der Rakete plus Treibstoff. Zur Zeit $t+\td t$ gilt $p+\td p=\left(m-\td m\right)\left(v+\td v\right)+\td m\left(v-u\right)$. Es folgt
+\begin{align*}
+        p+\td p&=p-v\td m+m\td v+v\td m-u\td m\\
+        \td p&=m\td v-u\td m\\
+        \diff[]{p}{t}&=F_{\,\text{ext}\,}\\
+                     &=m\diff[]{v}{t}-u\diff[]{m}{t}\\
+        m\diff[]{v}{t}=&F_{\,\text{ext}\,}+u\diff[]{m}{t}
+.\end{align*}
+Für $F_{\,\text{ext}\,}=0$ und $u=\,\text{const.}\,$ gilt $\td p=0\Rightarrow \td v=\tfrac{\td m}{m}$. Die Geschwindigkeitsdifferenz ist also
+\begin{align*}
+        v(t_2)-v(t_1)&=u\ln \dfrac{m(t_2)}{m(t_1)}
+.\end{align*}
+$v>u$ ist nur möglich, wenn ursprünglich die meiste Masse in Treibstoff vorliegt.
+
+\subsection{Elastischer Stoß}
+Bei einem elastischen Stoß wechselwirken zwei Körper $m_1$ und $m_2$ über einen kurzen Zeitraum. Externe Kräfte können vernachlässigt werden, da der Stoß über einen sehr kurzen Zeitraum passiert. Die WW zwischen den Körpern ist translationsinvariant, woraus die Impulserhaltung folgt. Der Gesamtimpuls 
+\[ 
+        \vv{P}=\vv{p}_{1,i}+\vv{p}_{2,i}=\vv{p}_{1,f}+\vv{p}_{2,f}=\,\text{const.}\,
+\] 
+ist damit erhalten. Dies gilt in jedem Inertialsystem, insbesondere im Ruhesystem von $m_{2,i}\vv{v}_{2,i}=0$, also im \textbf{Laborsystem} (Körper 1 streut am ursprünglich ruhenden Körper 2); im \textbf{Schwerpunktsystem (SPS)} gilt $\vv{P}'=0$, also $\vv{p}_{1,i}'=-\vv{p}_{2,i}'$. (Beachte: Intertialsystem sind Variablen ohne Strich, SPS sind Variablen mit Strich.)\\\indent
+Die beiden Systeme sind durch eine Gallilei--Transformation verknüpft, mit $\vv{x}'=\vv{x}-\vv{v}_0t$. Für die Geschwindigkeit im SPS gilt $\vv{v}_{1,i}'=\vv{v}_{1,i}-\vv{v}_0,\vv{v}_{2,i}'=\vv{v}_{2,i}-\vv{v}_0=-\vv{v}_0$.\\\indent
+Es soll gelten
+\begin{align*}
+        && m_1\vv{v}_{1,i}'+m_2\vv{v}_{2,i}'&=0\\
+        \Rightarrow && m_1\left(\vv{v}_{1,i}-\vv{v}_0\right)-m_2\vv{v}_0&=0\\
+        \Rightarrow &&\vv{v}_0&=\vv{v}_{1,i}\dfrac{m_1}{m_1+m_2}=-\vv{v}_{2,i}'\\
+        \Rightarrow &&\vv{v}_{1,i}'&=\vv{v}_{1,i}\left(1-\dfrac{m_1}{m_1+m_2}\right)=\vv{v}_{1,i}\dfrac{m_1}{m_1+m_2}
+.\end{align*}
+Jetzt wird die auslaufende Geschwindigkeit der Körper nach der WW berechnet. Solange WW nur von Relativkoordinaten $\vv{x}_1-\vv{x}_2$ abhängt, dann ist $\vv{P}$ erhalten. Falls zusätzlich noch die kinetische Energie erhalten ist, spricht man von elastischen Stößen, mit 
+\[ 
+        E_{\,\text{kin}\,}=\dfrac{1}{2}\left(m_1\vv{v}_{1,i}^2+m_2\vv{v}_{2,i}^2\right)=\dfrac{1}{2}\left(m_1\vv{v}_{1,f}^2+m_2\vv{v}_{2,f}^2\right)
+.\] 
+Bei inelastischen Stößen wird ein Teil der kinetischen Energie in \glqq interne\grqq{} Energie (z.B.\,Wärme) verwandlet. Stöße von makroskopischen Körpern sind nie ganz elastisch, wohingegen Stöße bei mikroskopischen Systemen elastisch sein können. Man kann zudem zeigen, dass elastische Stöße in allen Inertialsystemen elastisch bleiben. Mit der Gallilei--Transformation
+\begin{align*}
+        E^*_{\,\text{kin}\,,i}&=\dfrac{1}{2}\left[m_1\left(\vv{v}_{1,i}+\vv{v}_0^*\right)^2+m_2\left(\vv{v}_{2,i}+\vv{v}_0^*\right)^2\right]\\
+                              &=\dfrac{1}{2}\left[m_1v_{1,i}^2+m_2v_{2,i}^2\right]+\dfrac{1}{2}\left(m_1+m_2\right){v_0^*}^2+\vv{v_0}^*\underbrace{\left(m_1\vv{v}_{1,i}+m_2\vv{v}_{1,i}\right)}_{\vv{P}}\\
+                              &=\dfrac{1}{2}\left[m_1v_{1,f}^2+m_2v_{2,f}^2\right]+\dfrac{1}{2}\left(m_1+m_2\right){v_0^*}^2+\vv{v}_0^*\left(m_1\vv{v}_{1,f}+m_2\vv{v}_{2,f}\right)\\
+                              &=E_{\,\text{kin}\,,f}^*
+.\end{align*}
+Für den elastischen Stoß im SPS gilt 
+\begin{align*}
+        \vv{P}_{1,i}'+\vv{P}_{2,i}'=0&\Rightarrow \vv{v}_{2,i}'=-\dfrac{m_1}{m_2}\vv{v}_{1,i}'\\
+        \vv{P}_{1,f}'+\vv{P}_{2,f}'=0&\Rightarrow \vv{v}_{2,f}'=-\dfrac{m_1}{m_2}\vv{v}_{1,f}'
+.\end{align*}
+Daraus folgt
+\begin{align*}
+        m_1{v_{1,i}'}^2+m_2{v_{2,i}'}^2&=m_1{v_{1,f}'}^2+m_2{v_{2,f}'}^2\\
+        {v_{1,i}'}^2\left[m_1+m_2\left(\dfrac{m_1}{m_2}\right)^2\right]&={v_{1,f}'}^2\left[m_1+m_2\left(\dfrac{m_1}{m_2}\right)^2\right]\\
+        |\vv{v}_{1,i}'|&=|\vv{v}_{1,f}'|
+.\end{align*}
+Diese Beziehung gilt nur im SPS. Mit diesen Gleichungen existieren vier Beziehungen für sechs Größen. Das heißt, zwei freie Variablen müssen durch Anfangsbedingungen und die Form der WW bestimmt werden.\\\indent
+Sei also (in Kugelkoordinaten) $\vv{p}_{1,i}'=\left(0,0,p'\right)\Rightarrow \vv{p}_{2,i}'=\left(0,0,-p'\right)$, dann gilt
+\begin{align*}
+        \vv{p}_{1,f}'=p'\left(\sin \theta '\sin \varphi ',\sin \theta '\cos \varphi ',\cos \theta '\right)=-\vv{p}_{1,f}'
+.\end{align*}
+Alle $\theta ' \in \left[0,\pi \right],\varphi ' \in \left[0,2\pi \right]$ sind kinematisch möglich (mit den Erhaltungssätzen zu vereinbaren).\\\indent
+Im Laborsystem
+\begin{align*}
+               a 
+\end{align*}
+Da $\vv{v}_{1,f}=\vv{v}_{1,f}'+\vv{v}_0=v_{1,f}\left(\sin \theta \sin \varphi ,\sin \theta \cos \varphi ,\cos \theta \right)$ gilt 
+\begin{align*}
+        x,y-\,\text{Richtung}\,&:v_{1,f}\sin \theta =v_{1,f}'\sin \theta '\\
+        z-\,\text{Richtung}\,&:v_{1,f}\cos \theta =v_{1,f}'\cos \theta '+v_0
+.\end{align*}
+Dividiert man die obere durch die untere Gleichung ergibt sich
+\begin{align*}
+        \tan \theta &=\dfrac{\sin \theta '}{\cos \theta '}=\dfrac{\sin \theta '}{\cos \theta '+\tfrac{v_0}{v_{1,f}'}}=\dfrac{\sin \theta '}{\cos \theta '+\tfrac{v_{2,i}'}{v_{1,i}'}}=\dfrac{\sin \theta '}{\cos \theta '+\tfrac{m_1}{m_2}}
+.\end{align*}
+Für $m_1\ll m_2\Rightarrow \theta '=\theta ,\,\text{sonst}\,\theta '>\theta $. \\
+Für $m_1=m_2\Rightarrow \tan \theta =\dfrac{\sin \theta '}{1+\cos \theta '}=\tan \tfrac{\theta '}{2}\Rightarrow \theta =\tfrac{\theta '}{2}$.\\
+Für $\theta '=0\Rightarrow \theta =0$ gibt es keine Streuung.\\
+Für $\theta '\rightarrow \pi \Rightarrow \tan \theta \rightarrow \tfrac{+0}{m_1m_2^{-1}-1}:+0\left(\theta \rightarrow 0\right)\,\text{falls}\,m_1>m_2;-0\left(\theta \rightarrow \pi \right)\,\text{falls}\,m_1<m_2$.\\
+Für Extrema von $\theta $, also die Ableitung: $\cos \theta '\left(\cos \theta '+\tfrac{m_1}{m_2}\right)+\sin ^2\theta '\stackrel{!}{=}0\Rightarrow \cos \theta '\tfrac{m_1}{m_2}=-1$,\\\indent
+nur möglich für $m_1>m_2\Rightarrow \sin \theta _{\,\text{max}\,}=\tfrac{m_2}{m_1}$, für $m_1<m_2$ kein Extreumum und $\theta  \in \left[0,\pi \right]$. Für die Geschwindigkeiten gilt dann
+\begin{align*}
+        m_1<m_2&:v_0<v_{1,i}'\\
+        m_1>m_2&:v_0>v_{1,i}'
+.\end{align*}
+Der Übertrag der kinetischen Energie ist 
+\begin{align*}
+        \Delta E_{\,\text{kin}\,}&=\dfrac{1}{2}m_2\left(v_{2,f}^2-v_{2,i}^2\right)\\
+                                 &=\dfrac{1}{2}m_1\left(v_{1,i}^2-v_{1,f}^2\right)
+.\end{align*}
+Im SPS ist $\Delta E_{\,\text{kin}\,}'=0$.\\
+Im Laborsystem ist
+\begin{align*}
+        \Delta E_{\,\text{kin}\,}=E_{\,\text{kin}\,,2,f}&=\dfrac{1}{2}m_2v_{2,f}^2\\
+                                                        &=\dfrac{1}{2}m_2\left(\vv{v}_{2,f}'+\vv{v}_0\right)^2\\
+                                                        &=\dfrac{1}{2}m_2\left(\vv{v}_{2,f}'-\vv{v}_{2,i}'\right)^2\\
+                                                        &=\dfrac{1}{2}m_2\left(v_{2,f}'^2+{v_{2,i}'}^2-2v_{2,f}'v_{2,i}'\cos \theta '\right)\\
+                                                        &\stackrel{v_{2,f}'=v_{2,i}'}{=}{v_{2,i}'}^2m_2\left(1-\cos \theta '\right)\\
+                                                        &=2m_2{v_{2,i}'}^2\sin ^2\dfrac{\theta '}{2}
+.\end{align*}
+Die relative Geschwindigkeit von Teilchen 1 ist dann
+\begin{align*}
+        \dfrac{E_{\,\text{kin}\,,2,f}}{E_{\,\text{kin}\,,1,i}}&=\dfrac{2m_2{v_{2,i}'}^2\sin ^2\tfrac{\theta '}{2}}{\tfrac{1}{2}m_1v_{1,i}^2}\\
+                                                              &=\dfrac{2m_2{v_{2,i}'}^2\sin ^2\tfrac{\theta '}{2}}{\tfrac{1}{2}m_1\left(\tfrac{m_1+m_2}{m_1}\right)^2{v_{2,i}'}^2}\\
+                                                              &=\dfrac{4m_1m_2}{\left(m_1+m_2\right)^2}\sin ^2\dfrac{\theta '}{2}
+.\end{align*}
+Der Energieübertrag ist maximal für $\theta '=\pi $, also bei einer Rückwärtsstreuung im SPS. Das Maximum bezüglich $m_2$ für festes $m_1$ ist $4\left(m_1+m_2\right)^2-4m_1m_2 2\left(m_1+m_2\right)=0$. Daraus folgt $m_1^2-m_1m_2=0\Rightarrow m_2=m_1$. Die effizienteste Methode um einen Körper abzubremsen ist also, ihn mit einem Körper gleicher Masse zu streuen.\\\indent 
+Die Besonderheit für $m_1=m_2$ ist, dass eine der Endgeschwindigkeiten nach dem Stoß gleich null ist $\vv{v}_{1,f}\cdot \vv{v}_{2,f}=0$. Allgemein gilt mit $\vv{p}_{2,i}=0$
+\[ 
+        p_{1,i}^2=\left(\vv{p}_{1,f}+\vv{p}_{2,f}\right)^2=p_{1,f}^2+p_{2,f}^2+2\vv{p}_{1,f}\vv{p}_{2,f}
+\] 
+und noch mit $m_1=m_2\equiv m$
+\[ 
+        \dfrac{p_{1,f}^2}{2m}=\dfrac{p_{1,f}^2}{2m}+\dfrac{p_{2,f}^2}{2m}\Rightarrow p_{1,i}^2=p_{1,f}^2+p_{2,f}^2\Rightarrow \vv{p}_{1,f}\cdot \vv{p}_{2,f}=0
+.\] 
+
+\subsection{Drehimpulserhaltung}
+Sei ein System wieder durch die Lagrange--Funktion $L$ vollständig zu beschreiben. $L$ sei invariant unter einer kleinen Rotation in der $(x,y)$--Ebene. In kartesischen Koordinaten wird
+\begin{align*}
+        \vv{x}_i=\begin{pmatrix} x_i\\y_i\\z_i \end{pmatrix}
+\end{align*}
+mit 
+\[ 
+        \overleftrightarrow{O}=\begin{pmatrix} \cos \varphi &\sin \varphi &0\\-\sin \varphi &\cos \varphi &0\\0&0&1 \end{pmatrix}
+\] 
+multipliziert, also wird $\vv{x}_i$ rotiert
+\begin{align*}
+        \Rightarrow \begin{pmatrix} x_i\cos \varphi +y_i\sin \varphi \\-x_i\sin \varphi +y_i\cos \varphi \\z_i \end{pmatrix}\stackrel{|\varphi |\ll 1}{\approx } \begin{pmatrix} x_i+\varphi y_i\\y_i-\varphi x_i\\z_i \end{pmatrix}
+.\end{align*}
+Da $\dot{\varphi }=0$ 
+\begin{align*}
+        \dot{\vv{x}}_i=\begin{pmatrix} \dot{x}_i+\varphi \dot{y}_i\\\dot{y}_i-\varphi \dot{x}_i\\\dot{z}_i \end{pmatrix}
+\end{align*}
+folgt für induzierte Anwendung von $L$
+\begin{align*}
+        0\stackrel{!}{=}\delta L\left(\varphi \right)&=\diffp[]{L}{x_i}\delta x_i+\diffp[]{L}{y_i}\delta y_i+\diffp[]{L}{z_i}\delta z_i+\diffp[]{L}{\dot{x}_i}\delta \dot{x}_i +\diffp[]{L}{\dot{y}_i}\delta \dot{y}_i+\diffp[]{L}{\dot{z}_i}\delta \dot{z}_i\\
+                                                     &=\diffp[]{L}{x_i}\varphi y_i-\diffp[]{L}{y_i}\varphi x_i+\diffp[]{L}{\dot{x}_i}\varphi \dot{y}_i-\diffp[]{L}{\dot{y}_i}\varphi \dot{x}_i\\
+                                                     &=\left(\diff*[]{\diffp[]{L}{\dot{x}_i}}{t}\right)\varphi y_i+\diffp[]{L}{\dot{x}_i}\varphi \dot{y}_i-\left(\diff*[]{\diffp[]{L}{\dot{y}_i}}{t}\right)\varphi x_i-\diffp[]{L}{\dot{y}_i}\varphi \dot{x}_i\\
+                                                     &=\varphi \diff*[]{\left[\diffp[]{L}{\dot{x}_i}y_i-\diffp[]{L}{\dot{y}_i}x_i\right]}{t}\\
+                                                     &=\varphi \diff*[]{\left[p^{(x)}_{x_i}y_i-p^{(x)}_{y_i}x_i\right]}{t}\\
+                                                     &=\varphi \diff*[]{\left[\vv{p}^{(x)}\times \vv{x}_i\right]}{t}
+.\end{align*}
+Der Drehimpuls ist also erhalten, mit dem Drehimpuls in der $(x,y)$--Ebene
+\[ 
+        L_z=\left(\vv{x}_i\times \vv{p}_i^{(x)}\right)_z
+.\] 
+Analog wenn $L$ invariant in der $(x,z)$--Ebene ist, dann gilt
+\[ 
+        L_y=\left(\vv{x}_i\times \vv{p}_i^{(y)}\right)_y
+.\] 
+Analog wenn $L$ invariant in der $(y,z)$--Ebene ist, dann gilt
+\[ 
+        L_x=\left(\vv{x}_i\times \vv{p}_i^{(x)}\right)_x
+.\] 
+Diese sind alle Komponenten des totalen Drehimpulses.\\\indent
+Es gilt $\vv{p}_i^{(x)}=m\dot{\vv{x}}_i$ nur dann, wenn $\diffp[]{U}{\vv{\dot{x}}_i}=0$. Falls $U>Q_k\vv{A}_k\cdot \dot{\vv{x}}_k$ mit $\vv{A}$ einem externen Feld und $\dot{\vv{A}}=0$, dann ist $L$ nur unter Drehung in der Ebene senktrecht zu $\vv{A}$ invariant. $U$ hängt nicht von den Komponenten $\dot{\vv{x}}_k$ senkrecht zu $\vv{A}$ ab. Also gilt nur dann $\left.\vv{p}_k^{(x)}\right|_\perp=\left.m\dot{\vv{x}}_k\right|_\perp$. Die Komponente von $\vv{L}$ parallel zu $\vv{A}$ ist dann erhalten.\\\indent
+Für die Ableitung des allgemeinen Drehimpulses $\vv{L}=\vv{x}\times \vv{p}=m\vv{x}\times \dot{\vv{x}}$, also das Drehmoment $\vv{N}$ gilt
+\begin{align*}
+        \diff*[]{\vv{L}}{t}&=m \underbrace{\dot{\vv{x}}\times \dot{\vv{x} }}_{=0}+m\vv{x}\times \ddot{\vv{x}}\\
+                           &=\vv{x}\times \vv{F}\\
+                           &=:\vv{N}
+.\end{align*} 
+Beachte, $\vv{N}=\dot{\vv{L}}=0$, falls $\vv{F}| | \vv{x}$. $\vv{N},\vv{L}$ sind definiert bezüglich eines bestimmten Bezugspunktes (für Zentralkräfte). 
+\subsubsection{Beispiel: Bewegung in der $(x,y)$ Ebene}
+Hier ist $x=r\cos \varphi $ und $y=r\sin \varphi $ mit $r,\varphi $ als dynamische Variablen. Der Impuls ist dann
+\begin{align*}
+        p_x&=m\dot{x}=m\left(\dot{r}\cos \varphi -r\dot{\varphi }\sin \varphi \right)\\
+        p_y&=m\dot{y}=m\left(\dot{r}\sin \varphi +r\dot{\varphi }\cos \varphi \right)
+.\end{align*}
+$\vv{L}$ hat dementsprechend nur eine $z$--Komponente, da $z=p_z=0$
+\begin{align*}
+        L_z=xp_y-yp_x&=mr\left[\cos \varphi \left(\dot{r}\sin \varphi +r\dot{\varphi }\cos \varphi \right)-\sin \varphi \left(\dot{r}\cos \varphi -r\dot{\varphi }\sin \varphi \right)\right]\\
+                     &=mr^2\dot{\varphi }
+.\end{align*}
+Da $\vv{L}=\,\text{const.}\,$ gibt es nur eine Bewegung in der $(x,y)$--Ebene. Mit der Kraft
+\begin{align*}
+        \vv{F}&=F_r\vv{e}_r+F_\varphi \vv{e}_\varphi 
+,\end{align*}
+folgt das Drehmoment
+\begin{align*}
+        \vv{N}=\vv{x}\times \vv{F}&=r\vv{e}_r\times \left(F_r\vv{e}_r+F_\varphi \vv{e}_\varphi \right)\\
+                                  &=rF_\varphi \vv{e}_r\times \vv{e}_\varphi \\
+                                  &=rF_\varphi \vv{e}_z
+.\end{align*}
+Dann ist also $\dot{L}_z=rF_\varphi $ mit der Zentralkraft $F_\varphi =0\Rightarrow \vv{L}=\left(0,0,L_z\right)$. Ab hier wird die Zentralkraft $F_\varphi =0$ betrachtet. Aus der Bewegungsgleichung folgt
+\begin{align*}
+        m\left(\ddot{r}-r\dot{\varphi }\right)=F_r\qquad m\left(2\dot{r}\dot{\varphi }+r\ddot{\varphi }\right)=F_\varphi =0
+.\end{align*}
+Multipliziert man mit $r$,
+\[ 
+        2r\dot{r}\dot{\varphi }+r^2\ddot{\varphi }=0\Rightarrow \diff*[]{r^2\dot{\varphi }}{t}=0=\diff*[]{\dfrac{L_z}{m}}{t}
+.\] 
+Um das System mit Erhaltungsgrößen auszudrücken wird die Bewegungsgleichung als eine eindimensionale Bewegungsgleichung in $r$ ausgedrückt
+\begin{align*}
+        m\ddot{r}&=F_r+mr\dot{\varphi }^2\\
+                 &=F_r+mr\left(\dfrac{L_z}{mr^2}\right)^2\\
+                 &=F_r+\dfrac{L_z^2}{mr^3}
+.\end{align*}
+Für die Zentralkraft gilt dann $F_r=-\diff[]{V\left(r\right)}{r}$. Man führt also ein \glqq Zentrifugalpotential\grqq{} ein
+\begin{align*}
+        \dfrac{L_z^2}{mr^3}&=-\diff*[]{V_{cf}\left(r\right)}{r}\\
+        V_{cf}\left(r\right)&=\dfrac{L_z^2}{2mr^2}
+.\end{align*}
+Jetzt kann die Bewegungsgleichung durch ein \glqq effektives Potential\grqq{} beschrieben werden
+\begin{align*}
+        m\ddot{r}&=-\diff*[]{V_{\,\text{eff}\,}\left(r\right)}{r}\qquad V_{\,\text{eff}\,}\left(r\right)=V\left(r\right)+\dfrac{L_z^2}{2mr^2}
+.\end{align*}
+Sie hat die Form einer eindimensionalen Bewegungsgleichung mit einer konservativen Kraft. Die effektive eindimensionale Energie muss also erhalten sein
+\[ 
+        \dfrac{1}{2}m\dot{r}^2+V_{\,\text{eff}\,}\left(r\right)=\,\text{const.}\,
+.\] 
+Beachte, dass der Term $\tfrac{1}{2}m\dot{r}^2$ nicht die gesamte (zweidimensionale) kinetische Energie ist. Die gesamte kinetische Energie wäre $\tfrac{1}{2}m\left(\dot{r}^2+r^2\dot{\varphi }^2\right)$. Die Gesamtenergie ist also
+\begin{align*}
+        \dfrac{1}{2}m\dot{r}^2+\dfrac{1}{2}mr^2\dot{\varphi }^2+V\left(r\right)&=\dfrac{1}{2}m\dot{r}^2+\underbrace{V\left(r\right)+\dfrac{1}{2}mr^2\left(\dfrac{L_z}{mr^2}\right)^2}_{V_{\,\text{eff}\,}}=\,\text{const.}\,
+.\end{align*}
+Ein wichtiger Spezialfall ist $V\left(r\right)=-\tfrac{\alpha }{r}$, mit $\alpha $ dem Potential (zum Beispiel bei Planetenbahnen, oder dem Coulomb--Potential).\\\\\indent
+Jetzt soll die Bahnkurve $r\left(\varphi \right)$ berechnet werden
+\begin{align*}
+        \dfrac{m}{2}\left(\diff[]{r}{t}\right)^2&=-\dfrac{L_z^2}{2mr^2}+\dfrac{\alpha }{r}+E_{\,\text{tot}\,}&&|\,L_z^2=\left(mr^2\diff[]{\varphi }{t}\right)^2\\
+        \dfrac{\tfrac{m}{2}\left(\diff[]{r}{t}\right)^2}{m^2r^4\left(\diff[]{\varphi }{t}\right)^2}&=-\dfrac{1}{2mr^2}+\dfrac{\alpha }{rL_z^2}+\dfrac{E_{\,\text{tot}\,}}{L_z^2}&&|\,\cdot 2m\\
+        \left(\dfrac{1}{r^2}\diff[]{r}{\varphi }\right)^2&=-\dfrac{1}{r^2}+\dfrac{2\alpha m}{rL_z^2}+\dfrac{2mE_{\,\text{tot}\,}}{L_z^2}\\
+        \left(\diff*[]{\dfrac{1}{r\left(\varphi \right)}}{\varphi }\right)^2&=-\left(\dfrac{1}{r}-\dfrac{\alpha m}{L_z^2}\right)^2+\dfrac{m^2\alpha ^2}{L_z^4}+\dfrac{2mE_{\,\text{tot}\,}}{L_z^2}
+.\end{align*}
+Diese Gleichung hat die Form $\left(f'\right)^2=-\left(f-a\right)^2+b$. Sei $g=f-a\Rightarrow g'=f'\Rightarrow \left(g'\right)^2=-g^2+b$. Der Lösungsansatz ist $g\left(\varphi \right)=c\cdot \cos \left(\varphi -\varphi _0\right)\Rightarrow g'=-c\cdot \sin \left(\varphi -\varphi _0\right)$ und $\left(g'\right)^2=c^2\cdot \sin ^2\left(\varphi -\varphi _0\right)$. Setzt man diese Ausdrücke in die Bewegungsgleichung ein, also
+\begin{align*}
+        c^2\sin ^2\left(\varphi -\varphi _0\right)&=-c^2\cos ^2\left(\varphi -\varphi _0\right)+b\\
+        c&=\pm \,\sqrt[]{b}
+.\end{align*}
+Daraus folgt
+\begin{align*}
+        f\left(\varphi \right)=\dfrac{1}{r\left(\varphi \right)}&=g\left(\varphi \right)+a=\underbrace{\dfrac{\alpha m}{L_z^2}}_{=a}+\,\sqrt[]{\dfrac{\alpha ^2m^2}{L_z^4}+\dfrac{2mE_{\,\text{tot}\,}}{L_z^2}}\cos \left(\varphi -\varphi _0\right)\\
+                                                                &=\dfrac{\alpha }{L_z^2}\left[1+\varepsilon \cos \left(\varphi -\varphi _0\right)\right]&&|\,\varepsilon =\underbrace{\sqrt[]{1+\dfrac{2E_{\,\text{tot}\,}L_z^2}{m\alpha ^2}} }_{\sqrt[]{\left(1-\dfrac{L_z^2}{\alpha mr}\right)^2+\dot{r}^2\dfrac{L_z^2}{\alpha ^2}}\geq 0}\\
+        r\left(\varphi \right)&=\dfrac{\lambda \left(1+\varepsilon \right)}{1+\varepsilon \cos \left(\varphi -\varphi _0\right)}&&|\,\lambda =\dfrac{L_z^2}{m\alpha \left(1+\varepsilon \right)}
+.\end{align*}
+Dieser Ausdruck ist gleich dem eines Kegelsschnittes, mit der Spitze des Kegels bei $r=0$. Nun wählt man die Koordinaten so, dass $\varphi _0=0$. Man unterscheidet folgende Fälle
+\begin{align*}
+        \varepsilon =0&:r=\lambda =\dfrac{L_z^2}{m\alpha }&&\,\text{Kreisbahn, für}\,\alpha >0\\
+        0<\varepsilon <1&:E_{\,\text{tot}\,}<0,\alpha >0&&\begin{aligned}
+                &r_{\,\text{min}\,}=r\left(\varphi =0\right)=\lambda ,r_{\,\text{max}\,}=r\left(\varphi =\pi \right)=\lambda \dfrac{1+\varepsilon }{1-\varepsilon }\\
+                &\text{Ellipse mit Brennpunkt im Ursprung}\,\\
+                &\text{der Abstand $d$ der Brennpunkte:}\,d=r_{\,\text{max}\,}-r_{\,\text{min}\,}=\lambda \dfrac{2\varepsilon }{1-\varepsilon }
+        \end{aligned}
+.\end{align*}
+Man kann nun zeigen, dass der zweite Fall wirklich eine Ellipse beschreibt. Es muss gelten, $l_1+l_2=\,\text{const.}\,=2\lambda +d$, mit $l$ als Abstand von $r_{\,\text{min}\,}$ und $r_{\,\text{max}\,}$ zum Rand
+\begin{align*}
+        \sqrt[]{x^2+y^2}+\sqrt[]{\left(x+d\right)^2+y^2}&=2\lambda +d\\
+        r+\sqrt[]{r^2+d^2+2dr\cos \varphi }&=2\lambda +d\\
+        r^2+d^2+2dr\cos \varphi &=\left(2\lambda +d-r\right)^2\\
+                                &=4\lambda ^2+d^2+r^2+4\lambda d-4dr-4dr\\
+        r\left(2d\cos \varphi +4\lambda +2d\right)&=4\lambda \left(\lambda +d\right)\\
+        \lambda \dfrac{1+\varepsilon }{1+\varepsilon \cos \varphi }\left[4\lambda \dfrac{\varepsilon \cos \varphi }{1-\varepsilon }+4\lambda +4\lambda \dfrac{\varepsilon }{1-\varepsilon }\right]&=4\lambda ^2\left(1+\dfrac{2\varepsilon }{1-\varepsilon }\right)\\
+        \dfrac{1}{\left(1-\varepsilon \right)\left(1+\varepsilon \cos \varphi \right)}\left[\varepsilon \cos \varphi +1-\varepsilon +\varepsilon \right]&=\dfrac{1}{1-\varepsilon }\\
+        \dfrac{1}{1-\varepsilon }&=\dfrac{1}{1-\varepsilon }
+.\end{align*}
+Die große Halbachse ist
+\[ 
+        a=\dfrac{1}{2}\left(r_{\,\text{min}\,}+r_{\,\text{max}\,}\right)=\dfrac{\lambda }{1-\varepsilon }
+.\] 
+Die kleine Halbachse ist
+\begin{align*}
+        b&=y_{\,\text{max}\,}\qquad y\left(\varphi \right)=r\left(\varphi \right)\sin \varphi =\lambda \left(1+\varepsilon \right)\dfrac{\sin \varphi }{1+\varepsilon \cos \varphi }
+.\end{align*}
+Für das Maximum gilt $y'\left(\varphi _{\,\text{max}\,}\right)=0$, also
+\[ 
+        \cos \varphi _{\,\text{max}\,}\left(1+\varepsilon \cos \varphi _{\,\text{max}\,}\right)+\varepsilon \sin ^2\varphi _{\,\text{max}\,}=0\Rightarrow \cos \varphi _{\,\text{max}\,}=-\varepsilon \Rightarrow \sin \varphi _{\,\text{max}\,}=\sqrt[]{1-\varepsilon ^2}
+.\] 
+Dann folgt für $b$ 
+\[ 
+        b=\lambda \left(1+\varepsilon \right)\dfrac{\sqrt[]{1-\varepsilon ^2}}{1-\varepsilon ^2}=\lambda \sqrt[]{\dfrac{1+\varepsilon }{1-\varepsilon }}
+.\] 
+Der dritte Fall ist
+\begin{align*}
+                \varepsilon =1&:E_{\,\text{tot}\,}=0&&\begin{aligned}
+                &r\rightarrow \infty\,\text{für}\,\cos \varphi \rightarrow -1,\cos \varphi  \in (-1,1]\\
+                &\text{Parabel mit}\,x\left(\varphi \right)=\lambda -\dfrac{y^2\left(\varphi \right)}{4\lambda }
+                \end{aligned}
+.\end{align*}
+Bei dem letzten Fall sind anziehende mit $\alpha >0$ und abstoßende mit $\alpha <0$ Kräfte vorhanden
+\begin{align*}
+        \varepsilon >1&:E_{\,\text{tot}\,}>0&&\text{Hyperbel}\,\\
+        \alpha <0&:&&\begin{aligned}
+        &r_{\,\text{min}\,}=\lambda \,\text{für}\,\varphi =0\\
+        &r\rightarrow \infty\,\text{für}\,\cos \varphi \rightarrow -\dfrac{1}{\varepsilon }\Rightarrow \cos \varphi  \in (-\dfrac{1}{\varepsilon },1]
+        \end{aligned}\\
+                \alpha >0&:\lambda <0&&\begin{aligned}
+                        &1+\varepsilon \cos \varphi <0\Rightarrow \cos \varphi  \in [-1,-\dfrac{1}{\varepsilon }]\\
+                        &r_{\,\text{min}\,}=r\left(\cos \varphi =-1\right)=|\lambda |\dfrac{\varepsilon +1}{\varepsilon -1}>\lambda 
+                \end{aligned}
+.\end{align*}
+\subsection{Kepler--Gesetze}
+Für gebundene Systeme mit $\varepsilon >1$ 
+\\\hfill\\\textbf{1. Gesetz}\\ 
+Die Planetenbahnen sind Ellipsen, mit der Sonne als Brennpunkt. Näherungsweise bewegt sich die Sonne aufgrund der großen Massenunterschiede nicht.
+\\\hfill\\\textbf{2. Gesetz}\\ 
+Die Fläche die der Ortsvektor $\vv{x}$ pro Zeiteinheit überstreicht, ist konstant. Der Ortsvektor hat den Ursprung im Kraftzentrum
+\begin{align*}
+        \td A=\dfrac{1}{2}r^2\td \varphi &=\dfrac{1}{2}r^2\diff[]{\varphi }{t}\td t\\
+        \diff[]{A}{t}&=\dfrac{1}{2}r^2\dot{\varphi }\\
+                     &=\dfrac{L_z}{2m}\\
+                     &=\,\text{const.}\,
+\end{align*}
+Dieser Ausdruck ist nichts anderes als die Drehimpulserhaltung.
+\\\hfill\\\textbf{3. Gesetz}\\ 
+Das Quadrat der Umlaufzeit $\tau $ ist proportional zur dritten Potenz der großen Halbachse $a$
+\begin{align*}
+        \int_{\,\text{Ellipse}\,}^{}\td A&=\int_{0}^{\tau }\td t\dfrac{L_z}{2m}\\
+        \tau &=\dfrac{2m}{L_z}A\\
+             &=\dfrac{2m}{L_z}\pi ab\\
+             &=\dfrac{2m}{L_z}\pi a^2\,\sqrt[]{1-\varepsilon ^2}
+,\end{align*}
+mit $\varepsilon ^2=1+\tfrac{2E_{\,\text{tot}\,}L_z^2}{m\alpha ^2}\Rightarrow 1-\varepsilon ^2=-\tfrac{2E_{\,\text{tot}\,}L_z^2}{m\alpha ^2}$, ist die Umlaufzeit
+\begin{align*}
+        \tau &=\dfrac{2m}{L_z}\pi a^2\dfrac{L_z}{\alpha }\,\sqrt[]{-\tfrac{2E_{\,\text{tot}\,}}{m}}
+\end{align*}
+und die große Halbachse
+\begin{align*}
+        a&=\dfrac{\lambda }{1-\varepsilon }\\
+         &=\dfrac{L_z^2}{m\alpha \left(1-\varepsilon \right)^2}\\
+         &=-\dfrac{L_z^2m\alpha ^2}{m\alpha 2E_{\,\text{tot}\,}L_z^2}\\
+         &=-\dfrac{\alpha }{2E_{\,\text{tot}\,}}
+.\end{align*}
+Das Quadrat der Umlaufzeit ist
+\begin{align*}
+        \tau ^2&=\dfrac{4\pi ^2ma^3}{\alpha }\qquad |\, \alpha =G_NMm\\
+               &=\dfrac{4\pi ^2a^3}{G_NM}
+.\end{align*}
+Der Term $\tfrac{4\pi ^2}{G_NM}$ ist nur abhängig von der Sonne.\\\\\indent
+Diese Gesetze sind allerdings nicht exakt, da $M\neq \infty$. Die Sonne selbst hat auch eine sehr kleine Bewegung aufgrund der Anziehung der Planeten. Diesen Effekt benutzt man auch um extrasolare Planeten zu finden. Des Weiteren beeinflussen sich die Planeten auch gegenseitig. Planetenbahnen sind auch keine geschlossenen Kurven, dies würde nur für ein striktes $\tfrac{1}{r}$ gelten. Dieses Phänomen wurde zur Entdeckung der \glqq äußeren\grqq{} Planeten verwendet. In der ART werden Abweichungen des $\tfrac{1}{r}$--Potential vorausgesagt; dieser Effekt ist die Perihelion--Verschiebung.
+
+\subsection{Rutherford--Streuung}
+Die Rutherford--Streuung behandelt die Streuung eines leichten geladenen Teilchens der Masse $m$ an einem schwereren Kern der Masse $M$, mit $m\ll M$ (also ist der Kern in Ruhe). Mit $\alpha =-\tfrac{qQ}{4\pi \varepsilon _0}<0$, also $E_{\,\text{tot}\,}>0$, was eine Hyperbelbahn für das Teilchen ergibt. Der Streuwinkel ist $\theta \equiv 2\cos ^{-1}\left(-\tfrac{1}{\varepsilon }\right)-\pi $ mit $\varepsilon =\,\sqrt[]{1+\tfrac{2E_{\,\text{tot}\,}L_z^2}{m\alpha ^2}}$.\\\indent
+Die potentielle Energie ist $V\left(r\rightarrow \infty\right)\rightarrow 0$, also ist die Gesamtenergie $E_{\,\text{tot}\,}=\tfrac{1}{2}mv_i^2$. Der Drehimpuls ist $|L_z|=\lim_{r\rightarrow \infty}m|\vv{r}\times \vv{v}|=\lim_{r\rightarrow \infty}mrv_i\sin \varphi _i=mv_ib$, mit $\varphi \ll 1$ und $b$ ... . Mit $\cos \left(\tfrac{\theta +\pi }{2}\right)=-\sin \tfrac{\theta }{2}=-\tfrac{1}{\varepsilon }$ 
+\begin{align*}
+        \sin \dfrac{\theta }{2}&=\dfrac{1}{\,\sqrt[]{1+\left(\tfrac{mv_i^2b}{\alpha }\right)^2}}\\
+        \dfrac{1}{\sin ^2 \dfrac{\theta }{2}}-1&=\left(\dfrac{mv_i^2b}{\alpha }\right)^2\\
+        \dfrac{1-\sin ^2 \dfrac{\theta }{2}}{\sin ^2 \dfrac{\theta }{2}}&=\left(\dfrac{mv_i^2b}{\alpha }\right)^2\\
+        \cot ^2 \tfrac{\theta }{2}&=\left(\dfrac{mv_i^2b}{\alpha }\right)^2\\
+        b&=\dfrac{|\alpha |}{mv_i^2}\cot \dfrac{\theta }{2}
+.\end{align*}
+Daraus folgt, das kleinere Stoßparameter größere Streuwinkel haben. Es werden also alle Teilchen mit dem Stoßparamter $\leq b$ um einen Winkel $\geq \theta \left(b\right)$ gestreut.\\\indent
+Man betrachte jetzt die einfallenden parallelen Strahle von Teilchen mit der Querschnittsfläche $A$, damit der Strahlungsintensität $I_0=\tfrac{N_0}{A}$, mit $N_0$ $\#$ Teilchen. Für einen Kern im Target der Dicke $d$ ist $\#$ Teilchen pro Zeit, die um einen Winkel $\geq \theta \left(b\right)$ gestreut werden, gleich $I_0\pi b^2\left(\theta \right)$. Man definiert zudem den \textbf{Wirkungsquerschnitt} 
+\begin{align*}
+        \sigma &=\dfrac{\,\text{$\#$ gestreuter Teilchen pro Zeit}\,}{\,\text{einfallende Intensität}\,}\\
+               &=\pi b^2\left(\theta \right)
+.\end{align*}
+Für $\#$ gestreuten Teilchen an allen Kernen im Target gilt
+\[ 
+        \#\,\text{Kerne}\,=\underbrace{n}_{\,\text{Dicke d.\,Kerne}\,}\cdot Ad
+.\] 
+Für die totale $\#$ Teilchen pro Zeit die um den Winkel $\geq \theta $ gestreut werden gilt
+\[ 
+        N\left(\theta \right)=\underbrace{I_0}_{\tfrac{N_0}{A}}\cdot \pi b^2\cdot n\cdot Ad
+.\] 
+Für den bruchteil der gestreuten Teilchen
+\[ 
+        f\left(\theta \right)=\pi b^2\left(\theta \right)\cdot n\cdot d
+.\] 
+Der differentielle Wirkungsquerschnitt für einen Streuwinkel zwischen $\theta $ und $\theta +\td \theta $ gilt
+\begin{align*}
+        &&\td \sigma &=2\pi b\td b&&|b=\dfrac{|\alpha |}{mv_i^2}\dfrac{\cos \tfrac{\theta }{2}}{\sin \tfrac{\theta }{2}}\\
+        &&&=2\pi b\dfrac{|\alpha |}{mv_i^2}\dfrac{\td \theta }{2}\left| \dfrac{-\sin ^2 \tfrac{\theta }{2}-\cos ^2 \tfrac{\theta }{2}}{\sin ^2 \tfrac{\theta }{2}}\right|\\
+        &&&=2\pi b\dfrac{|\alpha |}{2mv_i^2}\td \theta \dfrac{1}{\sin ^2 \tfrac{\theta }{2}}\\
+        &&&=\dfrac{2\pi }{2}\left(\dfrac{\alpha }{mv_i^2}\right)^2\dfrac{\cos \tfrac{\theta }{2}}{\sin ^3 \tfrac{\theta }{2}}\td \theta \\
+        &&&=2\pi \left(\dfrac{\alpha }{2mv_i^2}\right)^2\dfrac{\sin \theta \td \theta }{\sin ^4 \tfrac{\theta }{2}}\\
+        &&&=2\pi \left(\dfrac{\alpha }{2mv_i^2}\right)^2\dfrac{|d\cos \theta |}{\sin ^4 \tfrac{\theta }{2}}\\
+        &&\dfrac{\td \sigma }{\td \cos \theta }&=2\pi \left(\dfrac{\alpha }{2mv_i^2}\right)^2\dfrac{1}{\sin ^4 \tfrac{\theta }{2}}
+.\end{align*}
+Dieser Ausdruck wächst sehr schnell für ein $\theta \rightarrow 0$.\\\indent
+Der minimale Abstand zwischen den streuenden Teilchen und einem Kern ist
+\begin{align*}
+        r_{\,\text{min}\,}&=|\lambda |\dfrac{1+\varepsilon }{1-\varepsilon }=|\lambda |\dfrac{\left(1+\varepsilon \right)^2}{1-\varepsilon ^2}
+,\end{align*}
+mit
+\[ 
+        1-\varepsilon ^2=-\dfrac{2E_{\,\text{tot}\,}L_z^2}{m\alpha ^2}=-\dfrac{2E_{\,\text{tot}\,}}{m\alpha ^2}\lambda _{\,\text{max}\,}\left(1+\varepsilon \right)=-\dfrac{2E_{\,\text{tot}\,}\lambda \left(1-\varepsilon \right)}{\alpha }
+,\] 
+also ist
+\[ 
+        r_{\,\text{min}\,}=-\dfrac{\alpha }{2E_{\,\text{tot}\,}}\left(1+\varepsilon \right)=-\dfrac{\alpha }{2E_{\,\text{tot}\,}}\left(1+\dfrac{1}{\sin \tfrac{\theta }{2}}\right)
+\] 
+minimal für $\sin \tfrac{\theta }{2}=1\Rightarrow \theta =\pi $, also eine Rückwärtsstreuung. Dies entspricht $b=0,\varepsilon =1\Rightarrow L_z=0$, mit $r_{\,\text{min}\,}=\tfrac{|\alpha |}{E_{\,\text{tot}\,}}$. Dieser Ausdruck kann auch mit der Energieerhaltung berechnet werden.\\\indent
+Der totale Wirkungsquerschnitt wird dann mit Integration berechnet
+\begin{align*}
+        &&\sigma &=\int_{\theta _{\,\text{min}\,}}^{\theta _{\,\text{max}\,}}\diff[]{\sigma }{\cos \theta }\td \cos \theta \\
+        &&&=2\pi \left(\dfrac{\alpha }{2mv_i^2}\right)^2\int_{\theta _{\,\text{min}\,}}^{\theta _{\,\text{max}\,}}\dfrac{\sin \theta }{\sin ^4 \tfrac{\theta }{2}}\td \theta 
+.\end{align*}
+Dieser Ausdruck divergiert für $\tfrac{1}{\theta ^2_{\,\text{min}\,}}$ für $\theta _{\,\text{min}\,}\rightarrow 0$, da die Elektronen das $\tfrac{1}{r}$--Potential der Atomkerne abschirmen für $b>r_{\,\text{Atom}\,}$.
+
+\subsection{Mehrkörpersysteme}
+Betrachte Systeme von $N$ Massepunkten, die untereinander und mit einer externen Kraft wechselwirken
+\[ 
+        m_i\ddot{\vv{x}}_i=\vv{F}_{i,\,\text{ext}\,}+\sum_{k\neq i}^{}\vv{F}_{k\rightarrow i}\Rightarrow \underbrace{\sum_{i=1}^{N}m_i\ddot{\vv{x}}_i}_{\diff*[]{\vv{P}}{t}}=\sum_{i=1}^{N}\vv{F}_{i,\,\text{ext}\,}+\underbrace{\sum_{i=1}^{N}\sum_{i \neq k}^{}\vv{F}_{k\rightarrow i}}_{\sum_{\,\text{Paare}\,i,k}^{}\left(\vv{F}_{k\rightarrow i}+\vv{F}_{i\rightarrow k}\right)=0}\equiv \vv{F}_{\,\text{ext}\,}
+.\] 
+Diese Gleichung sieht aus wie die Bewegungsgleichung für ein Teilchen mit dem Impuls $\vv{P}$, auf die totale externe Kraft $\vv{F}_{\,\text{ext}\,}\equiv \sum_{i=1}^{N}\vv{F}_{i,\,\text{ext}\,}$ wirkt. Die dazugehörige Koordinate ist die \textbf{Schwerpunktskoordinate}. Diese ist
+\[ 
+        \vv{X}:=\dfrac{1}{M}\sum_{i=1}^{N}m_i\vv{x}_i
+,\] 
+mit $M=\sum_{i=1}^{m_i}$. Die externe Kraft kann auch mit dieser Koordinate ausgedrückt werden
+\[ 
+        M\ddot{\vv{X}}=\vv{F}_{\,\text{ext}\,}
+.\] 
+Für $N\rightarrow \infty$ existiert ein Kontinuum mit Massendichte $\rho $ 
+\[ 
+        \vv{X}=\dfrac{\int_{}^{}\vv{x}\rho \left(\vv{x}\right)\td ^3x}{\int_{}^{}\rho \left(\vv{x}\right)\td ^3x}
+.\] 
+\indent Des Weiteren betrachtet man \textbf{Relativkoordinaten} 
+\[ 
+        \vv{x}_i':=\vv{x}_i-\vv{X}\qquad \sum_{i=1}^{N}m_i\vv{x}_i'=\sum_{i=1}^{N}m_i\vv{x}_i-\vv{X}M=0
+.\] 
+Der Gesamtimpuls ist dann
+\[ 
+        \vv{P}=\sum_{i=1}^{N}m_i\dot{\vv{x}}_i=M\dot{\vv{X}}
+.\] 
+\indent Der Impuls relativ zum Schwerpunkt $\vv{p}'=m_i\dot{\vv{x}}_i'=m_i\left(\dot{\vv{x}}_i-\dot{\vv{X}}\right)$, also
+\[ 
+        \sum_{i=1}^{N}\vv{p}_i'=\sum_{i=1}^{N}m_i\dot{\vv{x}}_i-\vv{P}=0
+.\] 
+Das Schwerpunktsystem ist im Allgemeinen kein Intertialsystem, nur wenn $\vv{F}_{\,\text{ext}\,}=0$.\\\indent
+Die kinetische Energie ist
+\begin{align*}
+        E_{\,\text{kin}\,}&=\dfrac{1}{2}\sum_{i=1}^{N}m_i\dot{\vv{x}}_i^2\\
+                          &=\dfrac{1}{2}\sum_{i=1}^{N}m_i\left(\dot{\vv{x}}_i'+\dot{\vv{X}}\right)^2\\
+                          &=\dfrac{1}{2}\sum_{i=1}^{N}m_i\left(\dot{\vv{x}}_i'^2+\dot{\vv{X}}^2+2\dot{\vv{x}}_i'\cdot \dot{\vv{X}}\right)\\
+                          &=\dfrac{1}{2}M\dot{\vv{X}}^2+\dfrac{1}{2}\sum_{i}^{}m_i\dot{\vv{x}}_i'^2+\dot{\vv{X}}\sum_{i=1}^{N}m_i\dot{\vv{x}}_i'\\
+                          &\equiv \dfrac{1}{2}M\dot{\vv{X}}^2+E_{\,\text{kin}\,}'
+.\end{align*}
+Der gesamte Drehmipuls ist
+\begin{align*}
+        \vv{L}&=\sum_{i=1}^{N}m_i\vv{x}_i\times \dot{\vv{x}}_i\\
+              &=\sum_{i=1}^{N}m_i\left(\vv{x}_i'+\vv{X}\right)\times \left(\dot{\vv{x}}_i'+\dot{\vv{X}}\right)\\
+              &=\sum_{i=1}^{N}m_i\vv{x}_i'\times \dot{\vv{x}}_i'+\left(\sum_{i=1}^{N}m_i\right)\vv{X}\times \dot{\vv{X}}+\vv{X}\times \underbrace{\sum_{i}^{}m_i\dot{\vv{x}}_i'}_{=0}+\underbrace{\left(\sum_{i}^{m_i\vv{x}_i}\right)}_{=0}\times \dot{\vv{X}}\\
+              &=\vv{L}'+M\vv{X}\times \dot{\vv{X}}
+.\end{align*}
+
+\subsubsection{Zweikörperproblem}
+Ein wichtiger Spezialfall ist das Zweikörperproblem mit $N=2$. Die Bewegungsgleichungen sind
+\begin{align*}
+        m_1\ddot{\vv{x}}_1&=\vv{F}_{1,\,\text{ext}\,}+\vv{F}_{\,\text{int}\,}\\
+        m_2\ddot{\vv{x}}_2&=\vv{F}_{2,\,\text{ext}\,}-\vv{F}_{\,\text{int}\,}
+.\end{align*}
+Man definiert
+\begin{align*}
+        \ddot{\vv{x}}=\ddot{\vv{x}}_1-\ddot{\vv{x}}_2=F_{\,\text{int}\,}\underbrace{\left(\dfrac{1}{m_1}+\dfrac{1}{m_2}\right)}_{=\dfrac{1}{m_{\,\text{red}\,} }}+\dfrac{1}{m_1}\vv{F}_{1,\,\text{ext}\,}-\dfrac{1}{m_2}\vv{F}_{2,\,\text{ext}\,}
+,\end{align*}
+mit $m_{\,\text{red}\,}$ der reduzierten Masse
+\[ 
+        m_{\,\text{red}\,}=\dfrac{1}{\tfrac{1}{m_1}+\tfrac{1}{m_2}}=\dfrac{m_1m_2}{m_1+m_2}
+.\] 
+Die Gleichung für $\ddot{\vv{x}}$ ist eine Einkörpergleichung, falls
+\begin{enumerate}[label=\arabic*.]
+        \item $\vv{F}_{\,\text{int}\,}$ nur von der Relativkoordinate $\vv{x}=\vv{x}_1-\vv{x}_2$ abhängt. Damit folgt ein $\tfrac{1}{r}$--Potential.
+        \item $\dfrac{\vv{F}_{1,\,\text{ext}\,}}{m_1}-\dfrac{\vv{F}_{2,\,\text{ext}\,}}{m_2}=0$.
+\end{enumerate}
+Die kinetische Energie eines Zweikörpersystems ist 
+\begin{align*}
+        E_{\,\text{kin}\,}&=\dfrac{1}{2}M\dot{\vv{X}}^2+\dfrac{1}{2}m_1\dot{\vv{x}}_1'^2+\dfrac{1}{2}m_2\dot{\vv{x}}_2'^2\\
+                          &=\dfrac{1}{2}M\dot{\vv{X}}^2+\dfrac{1}{2}\dot{\vv{x}}^2\left(m_1\dfrac{m_2^2}{\left(m_1+m_2\right)^2}+m_2\dfrac{m_1^2}{\left(m_1+m_2\right)^2}\right)\\
+                          &=\dfrac{1}{2}M\dot{\vv{X}}^2+\dfrac{1}{2}\dot{\vv{x}}^2\dfrac{m_1m_2}{m_1+m_2}\dfrac{m_2+m_1}{m_1m_2}\\
+                          &=\dfrac{1}{2}M\dot{\vv{X}}^2+\dfrac{1}{2}m_{\,\text{red}\,}\dot{\vv{x}}^2
+.\end{align*}
+Analog für den Drehimpuls
+\begin{align*}
+        \vv{L}&=M\vv{X}\times \dot{\vv{X}}+m_{\,\text{red}\,}\vv{x}\times \dot{\vv{x}}
+.\end{align*}
+
+\newpage
+\section{Rotation, beschl. Bezugssysteme und starre Körper}
+Betrachte ein System mit $N$ Massenpunkten. Der totale Impuls ist 
+\[ 
+        \vv{P}=\sum_{i}^{}m_i\dot{\vv{x}}_i
+.\] 
+Der totale Drehimpuls zu einem beliebigen Bezugspunkt $\vv{x}_p$ ist
+\[ 
+        \vv{L}=\sum_{i}^{}m_i\left(\vv{x}_i-\vv{x}_p\right)\times \left(\dot{\vv{x}}_i-\dot{\vv{x}}_p\right)
+,\] 
+mit dem Drehmoment
+\begin{align*}
+        \dot{\vv{L}}&=\sum_{i}^{}m_i\left(\vv{x}_i-\vv{p}\right)\times \left(\ddot{\vv{x}}_i-\ddot{\vv{x}}_p\right)\\
+                    &=\sum_{i}^{}\left(\vv{x}_i-\vv{x}_p\right)\times \vv{F}_{\,\text{ext}\,}-\sum_{i}^{}m_i\left(\vv{x}_i-\vv{x}_p\right)\times \ddot{\vv{x}}_p&&\left|\sum_{i}^{}\left(\vv{x}_i-\vv{x}_p\right)\times \vv{F}_{i,\,\text{int}\,}=0\right.\\
+                    &=\vv{N}_{\,\text{ext}\,}-M\left(\vv{x}-\vv{x}_p\right)\times \ddot{\vv{x}}_p
+.\end{align*}
+Der Term $M\left(\vv{x}-\vv{x}_p\right)\times \ddot{\vv{x}}_p$ ist gleich null für
+\begin{enumerate}[label=\arabic*.]
+        \item $\vv{x}_p\left(t\right)=\vv{x}_{p,0}+t\vv{v}_p$.
+        \item $\vv{x}_p=\vv{x}$ (also dem Schwerpunkt).
+\end{enumerate}
+Beachte, $\vv{L}=0$ hindert einen Körper nicht daran, seine Orientierung zu ändern, wenn zum Beispiel Teile des Körpers gegeneinander bewegt werden.\\\indent
+Das Drehmoment ist die verallgemeinerten Kraft zur Winkelkoordinate zum Beispiel in der $x-y$--Ebene, mit
+\begin{align*}
+        x=r\cos \varphi ,y=r\sin \varphi\qquad  \Rightarrow\qquad  Q_\varphi &=F_x\diffp[]{x}{\varphi }+F_y\diffp[]{y}{\varphi }\\
+                                                                             &=r\left(-F_x\sin \varphi +F_y\cos \varphi \right)\\
+                                                                             &=F_yx-F_xy\\
+                                                                             &=\vv{x}\times \left.\vv{F}\right|_z\\
+                                                                             &=\vv{N}_z
+.\end{align*}
+
+\subsection{Starre Körper}
+Ein starrer Körper ist ein Körper, welcher $N$ Punktmassen besteht, die $\,\forall i,j \in \left\{1,\hdots ,N\right\}$ den selben Abstand $|\vv{x}_i-\vv{x}_j|$ haben. Alle $\vv{x}_i$ können durch sechs Koordinaten festgelegt werden. Eine Aufteilung für einen Massenpunkt sind,
+\begin{enumerate}[label=]
+        \item[3] Koordinaten, um den Abstand zum Schwerpunkt festzulegen.
+        \item[2] Winkel, um einen Massenpunkt $\vv{x}_i$ relativ zum Schwerpunkt festzulegen.
+        \item[1] Winkel, um Rotation zwischen $\vv{X}$ und $\vv{x}_i$ festzulegen.
+\end{enumerate}
+Man braucht also sechs Bewegungsgleichungen, um die Bewegung eines starren Körpers zu beschreiben. Diese sind
+\begin{enumerate}[label=]
+        \item $\dot{\vv{P}}=\vv{F}_{\,\text{ext}\,}$.
+        \item $\dot{\vv{L}}=\vv{N}_{\,\text{ext}\,}$, $\vv{L}$ relativ zum Schwerpunkt, oder einem Inertialsystem. 
+\end{enumerate}
+Ein starrer Körper ist statisch, falls $\vv{F}_{\,\text{ext}\,}=\vv{N}_{\,\text{ext}\,}=\vv{P}\left(t_0\right)=\vv{L}\left(t_0\right)=0$. Für einen beliebigen Bezugspunkt $\vv{x}_p$ gilt, falls sich dieser im statischen Gleichgewicht befindet
+\begin{align*}
+        \vv{N}_{\,\text{ext}\,,p}&=\sum_{i}^{}\left(\vv{x}_i-\vv{x}_p\right)\times \vv{F}_{i,\,\text{ext}\,}\\
+                                 &=\sum_{i}^{}\left(\vv{x}_i-\vv{X}\right)\times \vv{F}_{i,\,\text{ext}\,}+\sum_{i}^{}\left(\vv{X}-\vv{x}_p\right)\times \vv{F}_{i,\,\text{ext}\,}\\
+                                 &=\vv{N}_{\,\text{ext,SP}\,}+\left(\vv{X}-\vv{x}_p\right)\times \vv{F}_{\,\text{ext}\,}\\
+                                 &\equiv 0
+.\end{align*}
+Im Allgemeinen kann das gesamte System der Kräfte auf starre Körper beschrieben werden, durch eine totale Kraft, die auf einen Punkt $p$ im Körper wirkt, und ein totales Kraftpaar (zwei gleich große, entgegengesetzte Kräfte, die an zwei Punkten im Abstand $\vv{c}$ angreift, mit einem Drehmoment $\vv{N}_{\,\text{paar}\,}=\vv{x}_1\times \vv{F}-\vv{x}_2\times \vv{F}=-\vv{c}\times \vv{F}$).
+
+\subsubsection{Rotation eines starren Körpers}
+Die Rotation beschreibt die Bewegung eines Punktes $p$, bei der die Abstände zu allen Punkten auf einer Linie (der Rotationsachse) konstant bleibt
+\begin{align*}
+        \left(\vv{x}+\td \vv{x}-l\hat{\vv{n}}\right)^2&=\left(\vv{x}-l\hat{\vv{n}}\right)^2\qquad \,\forall l\\
+        \left(\vv{x}-l\hat{\vv{n}}\right)^2+2\td \vv{x}\left(\vv{x}-l\hat{\vv{n}}\right)&=\left(\vv{x}-l\hat{\vv{n}}\right)^2\qquad \,\forall l\\
+        \td \vv{x}\cdot \vv{x}&=\td \vv{x}\cdot \hat{\vv{n}}=0
+.\end{align*}
+Der Ansatz ist $\td \vv{x}=\hat{\vv{n}}\times \vv{x}\td \varphi $, mit $\td \varphi $ als infinitesimalen Winkel. Damit folgt
+\begin{align*}
+        |\hat{\vv{n}}\times \vv{x}|&=|\vv{x}|\sin \varphi =r\\
+        |\td \vv{x}|&=r\td \varphi 
+.\end{align*}
+Die Geschwindigkeit des Punktes ist dann
+\begin{align*}
+        \vv{v}_{\,\text{rot}\,}=\diff[]{\vv{x}}{t}=\hat{\vv{n}}\times \vv{x}\cdot \dot{\varphi }\equiv \vv{\omega }\times \vv{x}
+,\end{align*}
+mit $\vv{\omega }=\hat{\vv{n}}\cdot \dot{\varphi }$ der Winkelgeschwindigkeit.\\\indent
+Falls sich zusätzlich ein Punkt $O$ mit einer Geschwindigkeit $\vv{v}_0$ bewegt, dann ist die Gesamtgeschwindigkeit an Punkt $p$
+\[ 
+        \vv{v}=\vv{v}_O+\vv{\omega }\times \vv{x}
+.\] 
+Für starre Körper muss dann gelten
+\begin{align*}
+        \diff*[]{\left(\vv{x}_i-\vv{x}_k\right)^2}{t}&\stackrel{!}{=}O\,\forall i,k\\
+        2\left(\vv{x}_i-\vv{x}_k\right)\left(\dot{\vv{x}}_i-\dot{\vv{x}}_k\right)&=O\,\forall i,k
+.\end{align*}
+Dieser Ausdruck ist erfüllt für $\dot{\vv{x}}_i=\vv{v}_O+\vv{\omega }\times \vv{x}_i$, also
+\begin{align*}
+        \left(\vv{x}_i-\vv{x}_k\right)\left[\vv{\omega }\times \left(\vv{x}_i-\vv{x}_k\right)\right]=O
+.\end{align*}
+\hfill\\\textbf{Drehimpuls}\\ 
+Der Drehimpuls relativ zu dem Punkt $O$ ist
+\begin{align*}
+        \vv{L}&=\sum_{i}^{}m_i\left(\vv{x}_i\times \vv{v}_i\right)\\
+              &=\sum_{i}^{}m_i\left[\vv{x}_i\times \left(\vv{\omega }\times \vv{x}_i\right)\right]\\
+              &=\sum_{i}^{}m_i\left[\vv{\omega }\left(\vv{x}_i\right)^2-\vv{x}_i\left(\vv{\omega }\cdot \vv{x}_i\right)\right]
+\end{align*}
+Dieser zeigt im Allgemeinen nicht in die Richtung von $\vv{\omega }$ (Vergleich: $\vv{P}$ zeigt immer in Richtung von $\vv{v}$).\\\indent
+In kartesischen Koordinaten sind die Komponenten des Drehimpulses
+\begin{align*}
+        L_x&=\sum_{i}^{}m_i\left[\omega _x\left(x_i^2+y_i^2+z_i^2\right)-x_i\left(\omega _xx_i+\omega _yy_i+\omega _zz_i\right)\right]\\
+           &=\sum_{i}^{}m_i\left[\omega _x\left(y_i^2+z_i^2\right)+\omega _y\left(-x_iy_i\right)+\omega _z\left(-x_iz_i\right)\right]
+.\end{align*}
+Analog gilt dies für die $y$ und $z$ Komponenten
+\begin{align*}
+        L_y&=\sum_{i}^{}m_i\left[\omega _y\left(x_i^2+z_i^2\right)+\omega _x\left(-x_iy_i\right)+\omega _z\left(-y_iz_i\right)\right]\\
+        L_z&=\sum_{i}^{}m_i\left[\omega _z\left(x_i^2+y_i^2\right)+\omega _x\left(-x_iz_i\right)+\omega _y\left(-y_iz_i\right)\right]
+.\end{align*}
+In Tensorschreibweise ist der Drehimpuls
+\[ 
+        \vv{L}=\overleftrightarrow{I}\vv{\omega }\qquad I_{ab}=\sum_{i=1}^{N}m_i\left(\delta _{ab}|\vv{x}_i|^2-x_{i,a}x_{i,b}\right)\qquad a,b \in \left\{x,y,z\right\}
+,\] 
+mit $\overleftrightarrow{I}$ dem Trägheitsmoment. Die kontinuierliche Form für $N\rightarrow \infty$ ist 
+\[ 
+        I_{ab}=\int_{}^{}\td ^3x\left(\delta _{ab}|\vv{x}|^2-x_ax_b\right)\rho \left(\vv{x}\right)
+.\] 
+$\overleftrightarrow{I}$ ist zudem symmetrisch, also $\overleftrightarrow{I}=\overleftrightarrow{I}^T$. Dieser kann mit Hilfe einer orthogonalen $3\times 3$--Matrix diagonalisiert werden (in das Hauptachsensystem rotiert werden)
+\[ 
+        \overleftrightarrow{O}\overleftrightarrow{I}\overleftrightarrow{O}^{-1}=\overleftrightarrow{I}_d=\begin{pmatrix}
+                I_1&0&0\\0&I_2&0\\0&0&I_3
+        \end{pmatrix}
+.\] 
+$\overleftrightarrow{O}$ ist dann eine Rotationsmatrix. $\overleftrightarrow{O}$ besitzt 3 freie Parameter; $\overleftrightarrow{I}$ hat 3 unabhängige nicht--diagonal Elemente. Es gilt, dass die Spur der der Matrix die Summe der Diagonalelemente ist
+\[ 
+        \,\text{Sp}\,\left(\overleftrightarrow{I}\right):=I_{xx}+I_{yy}+I_{zz}=\,\text{Sp}\,\left(\overleftrightarrow{I}_d\right)=I_1+I_2+I_3
+.\] 
+Die Diagonalelemente von $\overleftrightarrow{I}_d$ sind die Eigenwerte von $\overleftrightarrow{I}$. Also
+\[ 
+        \overleftrightarrow{I}\vv{\omega }_\lambda =\lambda \vv{\omega }_\lambda 
+.\] 
+Diese werden mit
+\[ 
+        \left(\overleftrightarrow{I}-\lambda \mathds{1}_{3\times 3}\right)\vv{\omega }_\lambda =0
+.\] 
+Da $\overleftrightarrow{I}$ symmetrisch ist, sind alle Eigenwerte $ \in \mathbb{R}$.
+\\\hfill\\\textbf{Kinetische Energie}\\ 
+Die kinetische Energie der Rotation ist
+\begin{align*}
+        E_{\,\text{kin}\,,\,\text{rot}\,}&=\dfrac{1}{2}\sum_{i}^{}m_i\vv{v}_i\cdot \vv{v}_i\\
+                                         &=\dfrac{1}{2}\sum_{i}^{}m_i\left(\vv{\omega }\times \vv{x}_i\right)\cdot \left(\vv{\omega }\times \vv{x}_i\right)\\
+                                         &=\dfrac{1}{2}\vv{\omega }\cdot \sum_{i}^{}m_i\vv{x}_i\times \left(\vv{\omega }\times \vv{x}_i\right)
+.\end{align*}
+Sei $\varphi _i$ der Winkel zwischen $\vv{\omega }$ und $\vv{x}_i$, dann gilt 
+\begin{align*}
+        |\vv{\omega }\times \vv{x}_i|&=|\vv{\omega }| |\vv{x}_i| |\sin \varphi _i|\\
+        \left(\vv{\omega }\times \vv{x}_i\right)\cdot \left(\vv{\omega }\times \vv{x}_i\right)&=\omega ^2x_i^2\sin ^2\varphi _i
+\end{align*}
+Mit $\vv{x}_i\times \left(\vv{\omega }\times \vv{x}_i\right)=\vv{\omega }x_i^2-\vv{x}_i\left(\vv{\omega }\cdot \vv{x}_i\right)$ folgt
+\begin{align*}
+        \vv{\omega }\cdot \left[\vv{x}_i\times \left(\vv{\omega }\times \vv{x}_i\right)\right]&=\omega ^2x_i^2-\left(\vv{\omega }\cdot x_i\right)^2\\
+                                                                                              &=\omega ^2x_i^2\left(1-\cos ^2\varphi _i\right)\\
+                                                                                              &=\sin ^2\varphi _i\cdot \omega ^2x_i^2
+.\end{align*}
+Damit ist die Rotationsenergie
+\[ 
+        E_{\,\text{kin}\,,\,\text{rot}\,}=\dfrac{1}{2}\vv{\omega }\vv{L}=\dfrac{1}{2}\vv{\omega }^T\overleftrightarrow{I}\vv{\omega }
+.\] 
+\indent Für die Rotation um eine feste Achse wählt man $\hat{\vv{n}}=\vv{e}_z$, das heißt $\omega _x=\omega _y=0$. Da die Achse festgehalten wird, ist nur $L_z$ relevant, also nur $L_{zz}$. Zudem wird der Satz von Steiner benötigt, welcher besagt, dass $I_{zz,O}=I_{zz,Sp}+Md^2$, mit $I_{zz,O}$ als Trägheitsmoment um eine Achse durch einen Punkt $O$, $I_{zz,Sp}$ als Trägheitsmoment um eine Achse durch den Schwerpunkt und $d$ als Abstand dieser beiden Achsen. Dieser Satz gilt nur, wenn beide Achsen parallel sind. Der Beweis hierfür ist
+\begin{align*}
+        \vv{L}&=M\vv{X}\times \dot{\vv{X}}+\sum_{i}^{}m_i\vv{x}_i'\times \dot{\vv{x}}_i\\
+        I_{zz,O}&=\vv{L}\times \hat{\vv{\omega }}=L_z\\
+                &=M\left(\vv{X}\times \dot{\vv{X}}\right)\hat{\vv{\omega }}+I_{zz,Sp}
+.\end{align*}
+Daraus folgt
+\begin{align*}
+        I_{zz,O}|\omega |&=M\left(\hat{\vv{\omega }}\times \vv{X}\right)\cdot \vv{X}+I_{zz,Sp}|\omega |\\
+        \left(\hat{\vv{\omega }}\times \vv{X}\right)\cdot \dot{\vv{X}}&=\left(\hat{\vv{\omega }}\times \vv{X}\right)\cdot \left(\vv{\omega }\times \vv{X}\right)\\
+                                                                      &=|\omega |\left(\hat{\vv{\omega }}\times \vv{X}\right)^2\\
+                                                                      &=|\omega | |\vv{X}|^2\sin ^2 \theta \\
+                                                                      &=\omega d^2
+.\end{align*}
+\indent Falls bei der Rotation um die $z$--Achse $I_{xz}$ oder $I_{yz}\neq 0$ sind, hat der Körper eine Umwucht. Diese übt einen Drehmoment auf die Achse aus. Die Zentripetalbeschleunigung ist dann
+\begin{align*}
+        \vv{v}=\vv{\omega }\times \vv{x}\qquad \Rightarrow \dot{\vv{v}}&=\vv{\omega }\times \dot{\vv{x}}\\
+                                                                       &=\vv{\omega }\times \left(\vv{\omega }\times \vv{x}_i\right)\\
+                                                                       &=\vv{\omega }\left(\vv{\omega }\cdot \vv{x}_i\right)-\vv{x}_i\omega ^2\\
+                                                                       &\stackrel{\vv{\omega }=\omega \vv{e}_z}{=}\omega ^2z_i\vv{e}_z-\vv{x}_i\omega ^2\\
+                                                                       &=\omega ^2\left(-\vv{e}_xx_i-\vv{e}_yy_i\right)
+.\end{align*}
+Damit ist die Kraft
+\begin{align*}
+        F_{\,\text{tot}\,,x}&=-\sum_{i}^{}m_ix_i\omega ^2
+.\end{align*}
+Diese verschwindet nur bei Rotation um den Schwerpunkt.
+\\\hfill\\\textbf{Drehmoment}\\ 
+Das Drehmoment der Umwucht ist
+\begin{align*}
+        \vv{N}_i&=\vv{x}_i\times \vv{F}_i\\
+                &=m_i\vv{x}_i\times \left[\vv{\omega }\left(\vv{\omega }\cdot \vv{x}_i\right)-\vv{x}_i\omega ^2\right]\\
+                &=m_i\left(\vv{x}_i\times \vv{\omega }\right)\vv{\omega }\cdot \vv{x_i}\\
+                &\stackrel{\vv{\omega }=\omega \vv{e}_z}{=}\omega ^2m_i\left(y_i\vv{e}_x-x_i\vv{e}_y\right)z_i
+.\end{align*}
+Die Summe aller Drehmomente ist dann
+\begin{align*}
+        \sum_{i}^{}\vv{N}_i&=\omega ^2\left(I_{xz}\vv{e}_y-I_{yz}\vv{e}_x\right)
+.\end{align*}
+$\vv{N}_i=0$ nur für $I_{xz}=I_{yz}=0$.
+\subsubsection{Beispiel: Rollendes Rad}
+Sei ein rollendes Rad mit dem Radius $R$, der Geschwindigkeit $\vv{v}_O$ und Rotation um den Winkel $\td \varphi $. Das überschrittene Wegstück ist
+\[ 
+        \td x=R\td \varphi \Rightarrow \vv{v}_O=\diff[]{x}{t}\vv{e}_x=R\dot{\varphi }\vv{e}_x=R\omega \vv{e}_x
+.\] 
+Die Rotationsgeschwindigkeit ist dann
+\[ 
+        \vv{v}_{\,\text{rot}\,}=\vv{\omega }\times \vv{R}=\dfrac{v_O}{R}\hat{\vv{\omega }}\times \vv{R}=v_O\hat{\vv{\omega }}\times \vv{R}
+;\] 
+und die Gesamtgeschwindigkeit
+\[ 
+        \vv{v}=v_O\left(\vv{e}_x+\hat{\vv{\omega }}\times \vv{R}\right)
+.\] 
+
+\subsection{Lagrange--Funktion eines starren Körpers}
+Die kinetische Energie eines starren Körpers mit Schwerpunkt $O$ ist
+\begin{align*}
+        E_{\,\text{kin}\,}&=\dfrac{1}{2}\sum_{i}^{}m_i\dot{\vv{x}}_i^2\\
+                          &=\dfrac{1}{2}\sum_{i}^{}m_i\left(\vv{v}_O +\vv{\omega }\times \vv{x}_i\right)^2\\
+                          &=\dfrac{1}{2}\left[\sum_{i}^{}m_i\vv{v}_O^2+\sum_{i}^{}m_i\left(\omega \times \vv{x}_i\right)^2+2\vv{v}_O\left(\vv{\omega }\times \sum_{i}^{}m_i\vv{x}_i\right)\right]\\
+                          &=\dfrac{1}{2}M\vv{v}_O^2+\dfrac{1}{2}\sum_{i}^{}\left[\vv{\omega }\times \left(\vv{x}_i'+\vv{X}\right)\right]^2+\vv{v}_O\left[\vv{\omega }\times \sum_{i}^{}m_i\left(\vv{x}_i'+\vv{X}\right)\right]\\
+                          &=\dfrac{1}{2}M\vv{v}_O^2+\dfrac{1}{2}M\left(\vv{\omega }\times \vv{X}\right)^2+M\vv{v}_O\left(\vv{\omega }\times \vv{X}\right)+\dfrac{1}{2}\sum_{i}^{}m_i\left(\omega \times \vv{x}_i'\right)^2\\
+                          &=\dfrac{1}{2}M\left(\vv{v}_O +\vv{\omega }\times \vv{X}\right)+\dfrac{1}{2}\sum_{i}^{}m_I\left(\vv{\omega }\times \vv{x}_i'\right)^2\\
+                          &=\dfrac{1}{2}M\dot{\vv{X}}^2+\dfrac{1}{2}\vv{\omega }^T\overleftrightarrow{I}\vv{\omega }
+.\end{align*}
+Hier sind die Bewegung des Schwerpunktes und der Rotation um den Schwerpunkt entkoppelt. Dies trifft oft auch auf die potentielle Energie zu (es stimmt aber in der Regel nicht für Reibungskräfte). Der zweite Term im Hauptachsensystem ist
+\begin{align*}
+        E_{\,\text{kin}\,,\,\text{rot}\,}&=\dfrac{1}{2}\vv{\omega }^T\overleftrightarrow{I}\vv{\omega }\\
+                                         &=\dfrac{1}{2}\vv{\omega }^T\overleftrightarrow{O}^{-1}\underbrace{\overleftrightarrow{O}\overleftrightarrow{I}\overleftrightarrow{O}^{-1}}_{\overleftrightarrow{I}_d}\overleftrightarrow{O}\vv{\omega }\\
+                                         &=\dfrac{1}{2}\vv{\omega }^T\overleftrightarrow{O}^{-1}\overleftrightarrow{I}_d\underbrace{\overleftrightarrow{O}\vv{\omega }}_{\vv{\omega }'}
+,\end{align*}
+wobei $\vv{\omega }'$ die Winkelgeschwindigkeit im Hauptachsensystem ist. Die kinetische Rotationsenergie ist dann
+\begin{align*}
+        \vv{\omega }'^T&=\left(\overleftrightarrow{O}\vv{\omega }\right)^T=\vv{\omega }^T\overleftrightarrow{O}^T=\vv{\omega }^T\overleftrightarrow{O}^{-1}\\
+        E_{\,\text{kin}\,,\,\text{rot}\,}&=\dfrac{1}{2}\vv{\omega }'^T\overleftrightarrow{I}\vv{\omega }'=\dfrac{1}{2}\sum_{a=1}^{3}\omega _a'^2I_a
+.\end{align*}
+Um eine Lagrange--Funktion aufzustellen, muss $\omega _a'$ noch durch verallgemeinerte Koordinaten in einem Inertialsystem ausgedrückt werden. Dafür können Euler--Winkel verwendet werden. Diese erlauben eine Transformation von dem Inertialsystem zum Hauptachsensystem
+\[ 
+        \vv{X}\xrightarrow[\,\text{rot um $z=z''$}\,\,\text{Winkel $\varphi $}\,]{} \vv{X}''\xrightarrow [\,\text{rot um $x''=x'''$}\,\,\text{Winkel $\theta $}\,]{}\vv{X}'''\xrightarrow [\,\text{rot um $z'''=z'$}\,\,\text{Winkel $\psi $}\,]{}\vv{X}'
+.\] 
+Die gestrichenen Koordinaten sind dann
+\begin{align*}
+        \begin{pmatrix}
+        x'\\y'\\z'
+        \end{pmatrix}&=\begin{pmatrix}
+        \cos \psi &\sin \psi &0\\
+        -\sin \psi &\cos \psi &0\\
+        0&0&1
+        \end{pmatrix}\cdot \underbrace{\begin{pmatrix}
+        1&0&0\\
+        0&\cos \theta &\sin \theta \\
+        0&-\sin \theta &\cos \theta 
+        \end{pmatrix}\cdot \underbrace{\begin{pmatrix}
+        \cos \varphi &\sin \varphi &0\\
+        -\sin \varphi &\cos \varphi &0\\
+        0&0&1
+        \end{pmatrix}\cdot \begin{pmatrix}
+        x\\y\\z
+        \end{pmatrix}}_{\vv{X}''}}_{\vv{X}'''}
+,\end{align*}
+mit der Rotationsmatrix
+\begin{align*}
+        \overleftrightarrow{O}\left(\varphi ,\theta ,\psi \right)=\begin{pmatrix}
+        \cos \psi &\sin \psi &0\\
+        -\sin \psi &\cos \psi &0\\
+        0&0&1
+        \end{pmatrix}\cdot \begin{pmatrix}
+        1&0&0\\
+        0&\cos \theta &\sin \theta \\
+        0&-\sin \theta &\cos \theta 
+        \end{pmatrix}\cdot \begin{pmatrix}
+        \cos \varphi &\sin \varphi &0\\
+        -\sin \varphi &\cos \varphi &0\\
+        0&0&1
+        \end{pmatrix}
+.\end{align*}
+Diese Gleichungen können allgemein benutzt werden, um die relative Ausrichtung zweier Koordinatensysteme zu beschreiben. Sollten $\left(\vv{e}_x',\vv{e}_y',\vv{e}_z'\right)$ und $\left(\vv{e}_x,\vv{e}_y,\vv{e}_z\right)$ bekannt sein, können die Euler--Winkel mit folgendem Algorithmus errechnet werden
+\begin{enumerate}[label=\roman*]
+        \item $\cos \theta =\vv{e}_z\cdot \vv{e}_z'$ 
+        \item $\sin \theta \sin \varphi =\vv{e}_z'\cdot \vv{e}_x$ 
+        \item $\sin \theta \sin \psi =\vv{e}_z\cdot \vv{e}_x'$ 
+.\end{enumerate}
+\indent Zur Anwendung für die Berechnung von $\vv{\omega }'$ definiert man folgende Winkelgeschwindigkeiten
+\[ 
+        \omega _\varphi =\dot{\varphi }\qquad \omega _\theta =\dot{\theta }\qquad \omega _\psi =\dot{\psi }
+.\] 
+Das Problem ist allerdings, dass die Rotation um die Achsen in verschiedenen Systemen definiert sind. Die Vektoren sind dann
+\[ 
+        \vv{\omega }_\varphi =\dot{\varphi }\vv{e}_z\qquad \vv{\omega }_\theta =\dot{\theta }\vv{e}_x''\qquad \vv{\omega }_\psi =\dot{\psi }\vv{e}_z'
+,\] 
+wobei
+\begin{align*}
+        \vv{\omega }_\varphi &=\dot{\varphi }\left(\sin \theta \sin \psi \vv{e}_{x'}+\sin \theta sc\psi \vv{e}_{y'}+sc\theta \vv{e}_{z}'\right)\\
+        \vv{\omega }_\theta &=\dot{\theta }\left(\cos \psi \vv{e}_{x'}-\sin \psi \vv{e}_y'\right)
+\end{align*}
+Insgesamt in mitrotierenden Koordinaten
+\[ 
+        \vv{\omega }'=\vv{\omega }_\varphi +\vv{\omega }_\theta +\vv{\omega }_\psi =\begin{pmatrix}
+                \dot{\varphi }\sin \theta \sin \psi +\dot{\theta }\cos \psi \\
+                \dot{\varphi }\sin \theta \cos \psi -\dot{\theta }\sin \psi \\
+                \dot{\varphi }\cos \theta +\psi 
+        \end{pmatrix}\rightarrow \begin{matrix}
+                \omega _1'\\\omega _2'\\\omega _3'
+        \end{matrix}
+.\] 
+Für die reine Rotationsbewegung gilt dann
+\begin{multline*}
+        L_{\,\text{rot}\,}=\dfrac{1}{2}I_1\left(\dot{\varphi }\sin \theta \sin \psi +\dot{Ta}\cos \psi \right)^2+\dfrac{1}{2}I_s\left(\dot{\varphi }\sin \theta \cos \psi -\dot{\varphi }\sin \psi \right)^2\\+\dfrac{1}{2}I_3\left(\dot{\varphi }\cos \theta +\dot{\psi }\right)^2-V\left(\varphi ,\theta ,\psi \right)
+.\end{multline*}
+Beachte, $I_{1,2,3}$ sind Konstanten, wobei $\overleftrightarrow{I}_{SP}$ ist im Allgemeinen nicht konstant.
+
+\subsection{Beschleunigte Bezugssysteme}
+Das zweite Newton'sche Gesetz gilt in einem Inertialsystem
+\[ 
+        \vv{F}=m\diff[2]{\vv{x}_I}{t}
+.\] 
+Seien $\vv{e}_x,\vv{e}_y,\vv{e}_z$ Einheitsvektoren in einem nicht--Inertialsystem und $\vv{A}$ ein beliebiger Vektor
+\begin{align*}
+        \vv{A}&=A_x\vv{e}_x+A_y\vv{e}_y+A_z\vv{e}_z\\
+        \diff[]{\vv{A}}{t}&=\underbrace{\diff[]{A_x}{t}\vv{e}_x+\diff[]{A_y}{t}\vv{e}_y+\diff[]{A_z}{t}\vv{e}_z}_{\dfrac{\delta \vv{A}}{\delta t}}+A_x\diff[]{\vv{e}_x}{t}+A_y\diff[]{\vv{e}_y}{t}+A_z\diff[]{\vv{e}_z}{t}
+.\end{align*}
+$\vv{A}$ kann also in einem Inertialsystem definiert sein, aber ausgedrückt durch nicht--inertial $\vv{e}_a$. Die Einheitsvektoren bilden ein orthonormales System, sie verhalten sich also wie ein starrer Körper. $\vv{e}_a$ können nur die Richtung durch Rotation ändern, also
+\[ 
+        \diff[]{\vv{e}_a}{t}=\vv{\omega }\times \vv{e}_a\qquad a=x,y,z
+.\] 
+Dann folgt für die Ableitung von $\vv{A}$ 
+\begin{align*}
+        \diff[]{\vv{A}}{t}&=\dfrac{\delta A}{\delta t}+\vv{\omega }\times \left(A_x\vv{e}_x+A_y\vv{e}_y+A_z\vv{e}_z\right)\\
+                          &=\dfrac{\delta \vv{A}}{\delta t}+\vv{\omega }\times \vv{A}
+.\end{align*}
+Sollte $\vv{A}=\vv{\omega }$ dann gilt $\diff[]{\vv{\omega }}{t}=\tfrac{\delta \vv{\omega }}{\delta t}$, da $\vv{\omega }\times \vv{\omega }=0$. Die zweite Ableitung (um das zweite Netwon'sche Gesetz anzuwenden) ist
+\begin{align*}
+        \diff[2]{\vv{x}}{t}&=\diff*[]{\left(\dfrac{\delta \vv{x}}{\delta t}+\vv{\omega }\times \vv{x}\right)}{t}\\
+                           &=\diff*[]{\left[\left(\diff[]{x}{t}\vv{e}_x+\diff[]{y}{t}\vv{e}_y+\diff[]{z}{t}\vv{e}_z\right)+\vv{\omega }\times \vv{x}\right]}{t}\\
+                           &=\underbrace{\diff[2]{x}{t}\vv{e}_x+\diff[2]{y}{t}\vv{e}_y+\diff[2]{z}{t}\vv{e}_z}_{\dfrac{\delta^2 \vv{x}}{\delta t^2}}+\vv{\omega }\times \dfrac{\delta \vv{x}}{\delta t}+\dfrac{\delta \vv{\omega }}{\delta t}\times \vv{x}+\vv{\omega }\times \dfrac{\delta \vv{x}}{\delta t}+\vv{\omega }\times \left(\vv{\omega }\times \vv{x}\right)\\
+                           &=\dfrac{\delta ^2\vv{x}}{\delta t^2}+2\vv{\omega }\times \dfrac{\delta \vv{x}}{\delta t}+\dfrac{\delta \vv{\omega }}{\delta t}\times \vv{x}+\vv{\omega }\times \left(\vv{\omega }\times \vv{x}\right)
+.\end{align*}
+Sei $\vv{R}$ der Vektor, der die Ursprünge der Koordinatensysteme verbindet. Also $\vv{x}_I=\vv{x}+\vv{R}$ 
+\begin{align*}
+        \diff[2]{\vv{x}_I}{t}&=\diff[2]{\vv{x}}{t}+\diff[2]{\vv{R}}{t}\\
+                             &=\diff[2]{R}{t}+\dfrac{\delta \vv{x}}{\delta t^2}+2\vv{\omega }\times \dfrac{\delta \vv{x}}{\delta t}+\dfrac{\delta \vv{\omega }}{\delta t}\times \vv{x}+\vv{\omega }\times \left(\vv{\omega }\times \vv{x}\right)\\
+                             &=\dfrac{F}{m}
+.\end{align*}
+Man erhält dann vier Korrekturterme, die als Scheinkräfte zu verstehen sind
+\begin{align*}
+        m\dfrac{\delta ^2\vv{x}}{\delta t^2}&=\vv{F}-m\left[\diff[2]{\vv{R}}{t}+2\vv{\omega }\times \vv{v}+\dfrac{\delta \vv{\omega }}{\delta t}\times \vv{x}+\vv{\omega }\times \left(\vv{\omega }\times \vv{x}\right)\right]
+.\end{align*}
+Diese sind
+\begin{enumerate}[label=\alph*)]
+        \item Fliehkraft: $\vv{F}_F=-m\vv{\omega }\times \left(\vv{\omega }\times \vv{x}\right)$. Sie ist senkrecht zu $\vv{\omega }$, falls $\hat{\vv{\omega }}=\vv{e}_z$
+                \begin{align*}
+                        \vv{F}_F&=-m\left[\vv{\omega }\left(\omega \cdot \vv{x}\right)-\vv{x}\omega ^2\right]\\
+                                &=-m\left(\omega ^2z\vv{e}_z-\omega ^2x\vv{e}_x-\omega ^2y\vv{e}_y-\omega ^2z\vv{e}_z\right)\\
+                                &=m\omega ^2\left(\vv{x}e_x+\vv{y}e_y\right)\\
+                                &=m\omega ^2\vv{\rho }
+                ,\end{align*}
+                mit $\vv{\rho }$ dem Radialvektor in der $\left(x,y\right)$--Ebene.
+        \item Corioliskraft: $\vv{F}_C=-2m\vv{\omega }\times \vv{v}$. Sie wirkt sich auf Körper aus, die sich in beschleunigten Systemen bewegen. Sie ist orthogonal zu $\vv{\omega }$ und $\vv{v}$.
+        \item Azimutalkraft: $\vv{F}_A=-m\dot{\vv{\omega }}\times \vv{x}$. Sie existiert nur, wenn sich $\vv{\omega }$ ändert. Sie ist orthogonal zu $\vv{x}$. Falls $\dot{\omega }=0$ und $\hat{\vv{\omega }}=\,\text{const}\,$, dann reduziert diese Kraft die Rotationsgeschwindigkeit ($\vv{\omega }\times \vv{x}$) der Testmasse konstant zu halten.
+        \item Translationskraft: $\vv{F}_T=-m\diff[2]{\vv{R}}{t}$. Sie entsteht durch die Beschleunigung des Ursprungs des Koordinatensysetms.
+\end{enumerate}
+\subsubsection{Beispiel: Flüssigkeit in rotierendem Eimer}
+Das Zeil ist die Bestimmung der Oberfläche der Flüssigkeit im Gleichgewicht mit $\vv{\omega }=\,\text{const.}\,$. Im rotierenden System ist auch $\vv{v}=0$. Daraus folgt, dass $\vv{F}_C=0$ . Der Eimer hat keine Translationsbewegung, also $\vv{F}_T=0$. Weil $\vv{\omega }$ konstant ist, ist $\vv{F}_A=0$. Es ist also nur die Fliehkraft und Gravitationskraft relevant. Im Gleichgewicht muss $\vv{F}_F+\vv{F}_{\,\text{Grav}\,}$ senkrecht zur Flüssigkeit sein.\\\indent
+$\theta $ ist der Winkel zwischen der Tangente am Rand der Flüssigkeit und der $x-y$--Ebene, $\rho $ ist der Abstand zwischen der $z$--Achse und dem Schnittpunkt der Flüssigkeit mit der $x-y$--Ebene. Aus
+\begin{align*}
+        \tan \theta &=\diff[]{z\left(\rho \right)}{\rho }=\dfrac{\omega ^2\rho }{g}\qquad \Rightarrow \qquad z\left(\rho \right)=\dfrac{1}{2}\dfrac{\omega ^2\rho ^2}{g}+\,\text{const.}\,
+\end{align*}
+folgt, dass die Oberfläche der Flüssigkeit eine Parabel sein muss.
+
+\subsubsection{Beispiel: Bewegung auf der Erde}
+Das Ziel ist eine Bewegungsgleichung in einem System $S$, das an der Erdoberfläche fixiert ist. Die Kraft $\vv{F}$ in einem Inertialsystem $S_I$ ist gegeben durch $\vv{F}=m\vv{g}+\vv{F}'$. $\vv{F}'$ sind alle weiteren Kräfte außer der Erdanziehung selbst. Der Ursprung von $S_I$ wird in den Erdmittelpunkt gelegt (hier wird die Bewegung der Erde um die Sonne vernachlässigt).\\\indent
+Der erste Schritt ist eine Transformation in das System $S'$ mit dem Urpsung weiterhin im Erdmittelpunkt, aber mit einer Rotation $\vv{\omega }=\vv{\omega }_E\approx \,\text{const.}\,$. Mit $\vv{R}=0=\dot{\vv{\omega }}$ folgt dann
+\begin{align*}
+        m\dfrac{\delta ^2\vv{x}'}{\delta t^2}&=\vv{F}'+m\vv{g}-m\left[2\vv{\omega }_E-x\vv{v}'+\vv{\omega }_E\times \left(\vv{\omega }_E\times \vv{x}'\right)\right]
+.\end{align*}
+Der Ursprung des mitrotierenden Systems $S$ liegt bei $\vv{R}_E'$, nahe der Erdoberfläche, mit $\vv{x}'=\vv{x}+\vv{R}_E'$. In mitrotierenden Koordinaten ist $\vv{R}_E'=\,\text{const.}\,$. Die Geschwindigkeit ist $\vv{v}=\tfrac{\delta \vv{x}}{\delta t}=\tfrac{\delta \vv{x}'}{\delta t}=\vv{v}'$, woraus folgt
+\begin{align*}
+        m\dfrac{\delta ^2\vv{x}}{\delta t^2}&=\vv{F}'+m\vv{g}-m\left[2\vv{\omega }_E\times \vv{v}+\vv{\omega }_E\times \left(\vv{\omega }_E\times \left(\vv{x}'+\vv{R}_E'\right)\right)\right]
+.\end{align*}
+Da $|\vv{x}|\ll |\vv{R}_E'|$ und $\omega _E=\tfrac{2\pi }{\,\text{Tag}\,}$ sehr klein ist, kann in guter Näherung geschrieben werden
+\begin{align*}
+        m\dfrac{elt^2\vv{x}}{\delta t^2}&\approx \vv{F}'+m\vv{g}-m\left[\underbrace{2\vv{\omega }_E\times \vv{v}}_{\,\text{Corioliskraft}\,}+\underbrace{\vv{\omega }_E\times \left(\vv{\omega }_E\times \vv{R}_E'\right)}_{\,\text{Fliehkraft}\,}\right]\\
+                                        &=\vv{F}'+m\vv{g}-2m\vv{\omega }_E\times \vv{v}&|\vv{g}_{\,\text{eff}\,}&=\vv{g}-\vv{\omega }_E\times \left(\vv{\omega }_E\times \vv{R}_E'\right)
+.\end{align*}
+$\vv{g}_{\,\text{eff}\,}$ steht senkrecht (nach Mittelung über große Längenskalen) zur Erdoberfläche. Der Winkel $\theta $ zwischen $\vv{\omega }_E$ und $\vv{R}_E'$ ist $90^\circ$ geographische Breite. Der Term $|\vv{\omega }_E\times \left(\vv{\omega }_E\times \vv{R}_E'\right)|=\omega _E^2R_E|\sin \theta |$ wird maximal für $\theta =\tfrac{\pi }{2}$, das heißt auf dem Äquator. Die Größe des Korrekturterms ist $|\vv{\omega }_E\times \left(\vv{\omega }_E\times \vv{R}_E'\right)|=\omega _E^2R_E|\sin \theta |\approx 0,035|\sin \theta |\tfrac{\,\text{m}\,}{\,\text{s}\,^2}$. Es liegt also eine Korrektur von $\approx 0,35\% $ vor. Diese Korrektur zeigt radial von der Rotationsachse weg, daraus folgt, dass die Erde nicht ganz kugelförmig ist.\\\indent
+Im System $S$ ist $\vv{e}_z$ in $-\vv{g}_{\,\text{eff}\,}$--Richtung (also nach oben); $\vv{e}_x$ ist Osten und $\vv{e}_y$ ist Norden. Die Winkelgeschwindigkeit der Erde ist dann $\vv{\omega }_E=\omega _E\left(\vv{e}_y\sin \theta +\vv{e}_z\cos \theta \right)$ und die Corioliskraft 
+\begin{align*}
+        \vv{F}_C&=-2m\vv{\omega }_E\times \vv{v}\\
+                &=-2m\omega _E \begin{pmatrix}
+                        0\\\sin \theta \\\cos \theta 
+                \end{pmatrix}\times \begin{pmatrix}
+                        v_{\,\text{Osten}\,}\\v_{\,\text{Norden}\,}\\v_{\,\text{nach oben}\,}
+                \end{pmatrix}\\
+                &=2m\omega _E \begin{pmatrix}
+                        \cos \theta v_{\,\text{Norden}\,}-\sin \theta v_{\,\text{nach oben}\,}\\
+                        -\cos \theta v_{\,\text{Osten}\,}\\
+                        \sin \theta v_{\,\text{Osten}\,}
+                \end{pmatrix}
+.\end{align*}
+Daraus ergeben sich folgende Zusammenhänge.
+\begin{table}[h]
+        \centering
+        \begin{tabulary}{1.0\textwidth}{c||c|c}
+                Richtung von $\vv{v}$ & \multicolumn{2}{c}{Ablenkung}\\
+                                      &Nordhalbkugel ($\cos \theta >0$)&Südhalbkugel ($\cos \theta <0$)\\
+                                      \hline
+                Nord&Ost&West\\
+                Süd&West&Ost\\
+                \hline
+                Ost&Süd und hoch&Nord und hoch\\
+                West&Nord und unten&Süd und unten\\
+                \hline
+                Oben&West&West\\
+                Unten&Ost&Ost
+        \end{tabulary}
+\end{table}\\
+Für Richtung parallel zur Erdoberfläche gibt es eine Ablenkung auf der Nordhalbkugel und in die entgegengesetzte Richtung auf der Südhalbkugel.
+\\\hfill\\\textbf{Beispiel 1: Passatwind}\\ 
+Heiße Luft steigt über den Äquator auf; kühlende Luft strömt von höheren Breiten nach. Dadurch entsteht ein Wind auf der Nordhalbkugel aus SW--Richtung und auf der Südhalbkugel aus NW--Richtung.
+\\\hfill\\\textbf{Beispiel 2: Teifdruckgebiet in nördlicher Hemisphäre}\\ 
+In Tiefdruckgebieten existiert eine Rotation gegen den Uhrzeigersinn. Dies ist auch der Ursprung von Tropenstürmen.
+
+\subsection{Bewegungsgleichung für rotierende starre Körper}
+In Hauptachsenkoordinaten ist der Drehimpuls
+\[ 
+        \vv{L}=\overleftrightarrow{I}_d\vv{\omega }\qquad \Rightarrow \qquad L_1=I_1\omega _1;L_2=I_2\omega _2;L_3=I_3\omega _3\qquad I_a=\,\text{const.}\,
+.\] 
+Man definiert das Drehmoment
+\begin{align*}
+        \dot{\vv{L}}=\vv{N}&=\begin{pmatrix}
+        N_1\\N_2\\N_3
+        \end{pmatrix}\\
+                \dfrac{\delta \vv{L}}{\delta t}+\vv{\omega }\times \vv{L}&=\dfrac{\delta }{\delta t}\left(\overleftrightarrow{I}_d\vv{\omega }\right)+\vv{\omega }\times \left(\overleftrightarrow{I}_d\vv{\omega }\right)
+,\end{align*}
+explizit mit $\tfrac{\delta \vv{\omega }}{\delta t}=\dot{\vv{\omega }}$. Also
+\begin{align*}
+        N_a&=I_a\dot{\omega }_a+\begin{pmatrix}
+                \omega _1\\\omega _2\\\omega _3
+        \end{pmatrix}\times \begin{pmatrix}
+                I_1\omega _1\\I_2\omega _2\\I_3\omega _3
+        \end{pmatrix}\\
+           &=I_a\dot{\omega }_a+\begin{pmatrix}
+                   \omega _2\omega _3\left(I_3-I_2\right)\\
+                   \omega _1\omega _3\left(I_1-I_3\right)\\
+                   \omega _1\omega _2\left(I_2-I_1\right)
+           \end{pmatrix}
+.\end{align*}
+Daraus ergeben sich drei Gleichungen, auch Euler--Gleichungen
+\begin{align*}
+        N_1&=I_1\dot{\omega }_1+\omega _2\omega _3\left(I_3-I_2\right)\\
+        N_2&=I_2\dot{\omega }_2+\omega _1\omega _3\left(I_1-I_3\right)\\
+        N_1&=I_3\dot{\omega }_3+\omega _1\omega _2\left(I_2-I_1\right)
+.\end{align*}
+$\vv{N},\vv{L}$ und $\vv{\omega }$ sind definiert in einem Inertialsystem, sodass $\dot{\vv{L}}=\vv{N},N_a,L_a$ Projektionen auf Achsen des Hauptachsensystems sind.
+\\\hfill\\\textbf{1. Anwendung}\\ 
+Ein rotierendes Massenpaar, an Enden eines masselosen Stabes, der mit $\vv{\omega }=\,\text{const.}\,$ rotiert. $\vv{e}_z$ ist in Richtung des Stabes also ist $I_3=0$. $\vv{e}_x$ und $\vv{e}_y$ gehen durch den Mittelpunkt des Stabes und stehen senkrecht zum Stab; also $I_1=I_2=2m\left(\tfrac{l}{2}\right)^2=m\tfrac{l^2}{2}$. Man wählt $\vv{e}_y\cdot \vv{\omega }=0$, also
+\[ 
+        \vv{\omega }=\omega \begin{pmatrix}
+                \sin \theta \\0\\\cos \theta 
+        \end{pmatrix}
+,\] 
+mit $\theta $ dem Winkel zwischen $\vv{e}_z$ und der Rotationsachse. Setzt man mit $\dot{\omega }_a=0$ in die Euler--Gleichungen ein, folgt
+\begin{align*}
+        N_1&=0\\
+        N_2&=\omega \sin \theta \cdot \omega \cos \theta \cos \left(m\dfrac{l^2}{2}-0\right)=\dfrac{1}{4}m\omega ^2l^2\sin 2\theta \\
+        N_3&=0
+.\end{align*}
+Bei einer Rotation um die Haupachse, also $\theta =0\lor \theta =\tfrac{\pi }{2}$ braucht es keinen externes Drehmoment, um die Rotation stabil zu halten.
+\\\hfill\\\textbf{2. Anwendung}\\ 
+Hier wird nach dieser stabilen Rotation ohne externes Drehmoment gesucht, also $\dot{\vv{v\omega }}=\vv{N}=0$. Sei $I_1>I_2>I_3$, das heißt alle ungleich. Sind $\omega _1\omega _2=\omega _1\omega _3=\omega _2\omega _3=0$, dann muss der Körper um die Hauptachse rotieren. Nicht alle dieser Rotationen sind unempfindlich gegen kleine Störungen.\\\indent
+Allgemein gilt $\vv{N}=0$, damit
+\begin{align*}
+        \dot{\omega _1}&=\dfrac{I_2-I_3}{I_1}\omega _2\omega _3=r_1\omega _2\omega _3&r_1&=\dfrac{I_2-I_3}{I_1}\\
+        \dot{\omega _2}&=-\dfrac{I_1-I_3}{I_2}\omega _1\omega _3=-r_2\omega _1\omega _3&r_2&=\dfrac{I_1-I_3}{I_2}\\
+        \dot{\omega _3}&=\dfrac{I_1-I_2}{I_3}\omega _1\omega _2=r_3\omega _1\omega _2&r_3&=\dfrac{I_1-I_2}{I_3}
+\end{align*}
+\hfill\\\textbf{Fall a}, mit $|\omega _1|\gg |\omega _2|,|\omega _3|$ als Anfangsbedingungen. Daraus folgt
+\begin{align*}
+        \dot{\omega _1}&\approx 0\\
+        \dot{\omega _2}&=-r_2\omega _1\omega _3\\
+        \dot{\omega _3}&=r_3\omega _1\omega _2
+.\end{align*}
+Die Gleichungen um $\dot{\omega _2}$ und $\dot{\omega _3}$ sind gekoppelte, lineare Differenzialgleichungen erster Ordnung. Mit dem Ansatz $\omega _a\left(t\right)=A_a\,\text{e}\,^{\lambda t}$, mit $a=2,3$ und $A_a,\lambda  \in \mathbb{C}$, folgt
+\[ 
+        A_2\lambda =-r_2\omega _1A_3\qquad A_3\lambda =r_3\omega _1A_2
+.\] 
+Um das Verhältnis von $A_2$ und $A_3$ zu bestimmen, werden die Gleichungen dividiert
+\[ 
+        \dfrac{A_2}{A_3}=-\dfrac{r_2}{r_3}\dfrac{A_3}{A_2}\qquad \dfrac{A_2}{A_3}=\pm \,\text{i}\,\,\sqrt[]{\dfrac{r_2}{r_3}}=-\dfrac{r_2\omega _1}{\lambda }\qquad \lambda =\pm \,\text{i}\,\omega _1\,\sqrt[]{r_2r_3}
+.\] 
+Daraus folgt, dass ein Oszillator mit fester Amplitude stabil ist.
+\\\hfill\\\textbf{Fall b}, mit $|\omega _2|\gg |\omega _1|,|\omega _3|$, als Anfangsbedingungen. Daraus folgt
+\begin{align*}
+        \dot{\omega _1}&=r_1\omega _2\omega _3\\
+        \dot{\omega _2}&\approx 0\\
+        \dot{\omega _3}&=r_3\omega _1\omega _2
+.\end{align*}
+Mit dem Ansatz $\omega _a\left(t\right)=A_a\,\text{e}\,^{\lambda t}$ mit $a=1,3$ und $A_a,\lambda  \in \mathbb{R}$, folgt direkt für das Verhältnis
+\[ 
+        \dfrac{A_1}{A_3}=\dfrac{r_1}{r_3}\dfrac{A_3}{A_1}\qquad \dfrac{A_1}{A_3}=\pm \,\sqrt[]{\dfrac{r_1}{r_3}}\qquad \lambda =\mp \omega _2\,\sqrt[]{r_1r_3}
+.\] 
+Für $\lambda >0$ ergibt dieser Ausdruck eine instabile Rotation.
+\\\hfill\\\textbf{Fall c}, mit $|\omega _3|\gg |\omega _1|,|\omega _3|$ ist identisch mit Fall a, also stabil.
+
+\newpage
+\section{Gravitation und Kosmologie}
+Der Ausgangpunkt für dieses Kapitel ist das dritte Newton'sche Gesetz
+\begin{align*} 
+        \vv{F}_{2\rightarrow 1}=-\vv{F}_{1\rightarrow 2}=-G_Nm_1m_2\dfrac{\vv{x_1}-\vv{x_2}}{|\vv{x_1}-\vv{x}_2|^3}
+.\end{align*} 
+Ein äquivalenter Ausdruck ist über die potentielle Energie eines 2--Körper Systems
+\begin{align} 
+        V=-G_Nm_1m_2\dfrac{1}{|\vv{x_1}-\vv{x_2}|}\label{eq:8.1}
+.\end{align} 
+Bislang wird von $m_1$ und $m_2$ als Punktmassen ausgegangen. Himmelskörper sind allerdings nicht punktförming.\\\indent
+Newtons Theorem besagt, dass die gravitative Anziehung einer kugelsymmetrischen Massenverteilung, außerhalb dieser Verteilung, genau gleich der Anziehung, einer gleichen Punktmasse im Zentrum dieser Kugel ist. Innerhalb einer kugelsymmetrischen, massiven Schale wirkt keine Gravitationskraft ausgehend von dieser Schale.\\\indent
+Man definiert das Potential
+\begin{align} 
+        \Phi \left(\vv{x}\right)=-\dfrac{G_NM}{|\vv{x}-\vv{x}_P|}\label{eq:8.2}
+,\end{align} 
+für eine Punktmasse $M$ bei $\vv{x}_P$. Für einen Testkörper $m$ gilt das Potential
+\begin{align} 
+        V=m\Phi \label{eq:8.3}
+.\end{align} 
+\eqref{eq:8.2} ist linear in $M$, also gilt für eine kontinuierliche Massenverteilung
+\begin{align} 
+        \Phi \left(\vv{x}\right)=-G_N\int_{}^{}\td ^3x_P\dfrac{\rho \left(\vv{x}_P\right)}{|\vv{x}-\vv{x}_P|}\label{eq:8.4}
+.\end{align} 
+Sei eine Kugelschale mit konstanter Dichte um den Ursprung. Die Masse der Kugelschale ist $M$ und die Masse pro Fläche ist $\sigma =\tfrac{M}{4\pi R^2}\inlineeqno\label{eq:8.5}$. Der erste Schritt ist die Berechnung des Potentials des Rings. Die Fläche ist
+\begin{align} 
+        A\left(\theta \right)=2\pi \underbrace{R\sin \theta }_{\,\text{Radius Ring}\,}\underbrace{R\td \theta }_{\,\text{Dicke Ring}\,}=2\pi R^2\sin \theta \td \theta \label{eq:8.6}
+,\end{align} 
+mit 
+\begin{align} 
+        \td M&=2\pi R^2\sin \theta \td \theta \sigma \nonumber\\
+             &=\dfrac{2\pi R^2\sin \theta \td \theta M}{4\pi R^2}\nonumber\\
+             &=\dfrac{M}{2}\sin \theta \td \theta \label{eq:8.7}
+\end{align} 
+und dem Abstand $\vv{r}$ der Testmasse zur Kugelschale aus \eqref{eq:8.6}
+\begin{align*} 
+        r^2&=x^2+R^2-2xR\cos \theta \qquad \vv{r}=\vv{x}-\vv{R}\qquad \Rightarrow 2r\td r=2xR\sin \theta \td \theta 
+.\end{align*} 
+Daraus folgt
+\begin{align} 
+        \td M=\dfrac{M}{2}\dfrac{r\td r}{xR}\label{eq:8.8}
+.\end{align} 
+Der Beitrag des Rings ist dann
+\begin{align} 
+        \td \Phi \stackrel{\eqref{eq:8.2}}{=}-G_N\dfrac{\td M}{r}=-G_N\dfrac{M\td r}{2xR}\label{eq:8.9}
+.\end{align} 
+Der Beitrag der Kugelschale ist
+\begin{align} 
+        \Phi \left(\vv{x}\right)=-\dfrac{G_NM}{2|\vv{x}|R}\int_{r_{\,\text{min}\,}}^{r_{\,\text{max}\,}}\td r=-\dfrac{G_NM}{2|\vv{x}|R}\left(r_{\,\text{max}\,}-r_{\,\text{min}\,}\right)\label{eq:8.10}
+\end{align} 
+Dabei ist $r_{\,\text{max}\,}=|\vv{x}|+R\,\stepcounter{equation}\inlineeqnoa\label{eq:8.10.a}$
+(dies gilt auch innerhalb der Kugel). $r_{\,\text{min}\,}$ teilt sich auf in 
+\begin{align*} 
+        r_{\,\text{min}\,}\begin{cases}
+              |\vv{x}|-R,|\vv{x}|>R\\
+              R-|\vv{x}|,|\vv{x}|<R
+      \end{cases}=||\vv{x}|-R|\tag{\inlineeqnowob}\label{8.11.b}
+\end{align*} 
+Damit ist das Potential 
+\begin{align} 
+        \Phi \left(\vv{x}\right)&=\dfrac{-G_NM}{2|\vv{x}|R}\left(|\vv{x}+R\begin{cases}
+                -|\vv{x}|+R,|\vv{x}|>R\\
+                -R+|\vv{x}|,|\vv{x}|<R
+        \end{cases}\right)\nonumber \\
+                                &=\begin{cases}
+                                        -\dfrac{G_NM}{|\vv{x}|},|\vv{x}|>R\\
+                                        -\dfrac{G_NM}{R},|\vv{x}|<R
+                                \end{cases}\label{eq:8.12}
+.\end{align} 
+Der erste Fall ist für Punktmassen im Ursprung; der zweite Fall ist konstant also $\vv{F}_G=0$ mit $\vv{F}_G=-m\vv{\nabla }\Phi \eqref{eq:8.12}$.\\\indent
+
+\subsection{Gezeitenkräfte}
+Aber, ausgedehnte Körper in externen Gravitationsfeldern spüren Gezeitenkräfte. Betrachte ein 2--Körper System und die wirkenden Gezeiten auf Körper $B$. Für Kugelsymmetrie gilt, dass die Beschleunigung des Mittelpunktes $\vv{a}_B=\vv{g}\left(\vv{x}_c\right)$ gleich der gravitativen Beschleunigung einer gleichen Punktmasse bei $\vv{x}_c$. Für Koordinatensysteme, die sich mit $B$ bewegen, gilt
+\begin{align} 
+        \vv{g}_{\,\text{eff}\,}&=\vv{g}\left(\vv{x}\right)-\vv{a}_B=\underbrace{\vv{g}_{\,\text{selbst}\,}\left(\vv{x}\right)}_{\,\text{Effekt von $B$ auf Testmasse, $=0$ bei $\vv{x}=\vv{x}_c$}\,}+\underbrace{\left(\vv{g}_{\,\text{ext}\,}-\vv{a}_B\right)}_{\,\text{Gezeiten}\,}\label{eq:8.13}
+.\end{align} 
+Daraus kann man herleiten, dass es zu jeder Zeit zwei mal \glqq Flut\grqq{} und zwei mal \glqq Ebbe\grqq{} auf Körper $B$ geben muss. Am Punkt auf der Oberfläche von $B$ der $A$ (außerhalb des Körpers $B$) am nächsten ist, gilt: $|\vv{g}_{\,\text{ext}\,}|>|\vv{a}_B|$, damit gibt es eine Kraft in Richtung von $A$. Außerdem ist die Fliehkraft durch den Orbit von $B$ minimal, es gibt also eine Scheinkraft in Richtung von $A$. Dies ist die \glqq Flut\grqq{}.\\\indent
+Am Punkt auf der Oberfläche von $B$, der $A$ am fernsten ist, gilt: $|\vv{g}_{\,\text{ext}\,}|<|\vv{a}_B|$, damit gibt es eine Kraft, die von $A$ weg zeigt. Ist die Fliehkraft des Orbits größer als am Zentrum dann zeigt sie von $A$ weg.\\\indent
+Quantitativ kann die Rotation von $B$ um sich selbst igoniert werden. Hier werden die Gezeitenkräfte der fernen Masse $M_A$ behandelt. Es werden folgende Vektoren definiert
+\begin{align}
+        \vv{x}&:=\,\text{Abstand von Mittelpunkt zum Rand von $B$}\,\stepcounter{equation}\tag{\inlineeqnowoa}\label{eq:8.14.a}\\
+        \vv{x}_B&:=\,\text{Koord. Ursprung zu Mittelpunkt von $B$}\,\nonumber \\
+        \vv{x}_P&:=\,\text{Koord. Ursprung zum Rang von $B$}\,\nonumber \\
+        \vv{x}_M&:=\,\text{Koord. Ursprung zu $M_A$}\,\nonumber \\
+        \vv{R}&:=\vv{x}_B-\vv{x}_M\tag{\inlineeqnowob}\label{eq:8.14.b}\\
+        \vv{d}&:=\vv{x}_P-\vv{x}_M=\vv{R}+\vv{x}\tag{\inlineeqnowoc}\label{eq:8.14.c}
+.\end{align}
+Die Bewegungsgleichung der Testmasse bei $\vv{x}_P$, bzw.\,die Bewegungsgleichung im Zentrum von $B$ ist dann
+\begin{align*}
+        \ddot{\vv{x}}_P&=-G_N\left[\dfrac{M_B\hat{\vv{x} }}{|\vv{x}|^2}+\dfrac{M_A\hat{\vv{d} }}{|\vv{d}|^2}\right]\stepcounter{equation}\tag{\inlineeqnowoa}\label{eq:8.15.a}
+.\end{align*} 
+Die Bewegungsgleichung im Zentrum von $B$ ist 
+\begin{align} 
+        \ddot{\vv{x}}_B=-G_N\dfrac{M_A\hat{\vv{R} }}{R^2}\tag{\inlineeqnowob}\label{eq:8.15.b} 
+.\end{align} 
+Aus \eqref{eq:8.14.a} folgt
+\begin{align} 
+        \ddot{\vv{x}}&=\ddot{\vv{x}}_P-\ddot{\vv{x}}_B\nonumber \\
+                     &=-G_N\left[\dfrac{M_B\hat{\vv{x} }}{|\vv{x}|^2}+M_A\left(\dfrac{\hat{\vv{d} }}{|\vv{d}|^2}-\dfrac{\hat{\vv{R} }}{|\vv{R}|^2}\right)\right]\label{eq:8.16}
+.\end{align} 
+Die Gezeitenkräfte sind
+\begin{align} 
+        \dfrac{\hat{\vv{d} }}{|\vv{d}|^2}-\dfrac{\hat{\vv{R} }}{|\vv{R}|}&=\dfrac{\vv{d}}{|\vv{d}|^3}-\dfrac{\vv{R}}{|\vv{R}|}\nonumber \\
+                                                                       &\stackrel{\eqref{eq:8.14.c}}{=}\dfrac{\vv{R}+\vv{x}}{|\vv{d}|^3}-\dfrac{\vv{R}}{|\vv{R}|^3}\nonumber \\
+                                                                       &=\vv{R}\left(\dfrac{1}{|\vv{d}|^3}-\dfrac{1}{|\vv{R}|^3}\right)+\dfrac{\vv{x}}{|\vv{d}|^3}\label{eq:8.17}
+.\end{align} 
+Daraus folgt
+\begin{align*} 
+        \eqref{eq:8.14.c}=|\vv{d}|^2=|\vv{R}|^2+|\vv{x}|^2+2\vv{x}\cdot \vv{R}\Rightarrow |\vv{d}|=|\vv{R}|\left[1+\dfrac{2\vv{x}\cdot \vv{R}}{|\vv{R}|^2}+\dfrac{|\vv{x}|^2}{|\vv{R}|^2}\right]^{\tfrac{1}{2}}
+.\end{align*} 
+Da $|\vv{R}|\gg |\vv{x}|$ ist $|\vv{d}|\approx |\vv{R}|+\dfrac{\vv{x}\cdot \vv{R}}{|\vv{R}|}\inlineeqno\label{eq:8.18}$. Daraus folgt
+\begin{align} 
+        |\vv{d}|^3&\approx |\vv{R}|^3\left(1+\dfrac{3\vv{R}\cdot \vv{x}}{|\vv{R}|^2}\right)+O\left(\dfrac{|\vv{x}|^2}{|\vv{R}|^2}\right)\nonumber \\
+        \dfrac{1}{|\vv{d}|^3}&\approx \dfrac{1}{|\vv{R}|^3}\left(1-\dfrac{3\vv{x}\cdot \vv{R}}{|\vv{R}|^2}\right)\label{eq:8.19}
+.\end{align} 
+Man setzt dann in \eqref{eq:8.17} ein, also
+\begin{align} 
+        \dfrac{\hat{\vv{d} }}{|\vv{d}|^2}-\dfrac{\hat{\vv{R} }}{|\vv{R}|^2}&\approx \dfrac{\vv{R}}{|\vv{R}|^3}\left(1-\dfrac{3\vv{x}\cdot \vv{R}}{|\vv{R}|^2}-1\right)+\dfrac{\vv{x}}{|\vv{R}|^3}\nonumber \\
+                                                                         &=\dfrac{1}{|\vv{R}|^3}\left[\vv{x}-3\hat{\vv{R}}\left(\hat{\vv{R}}-\vv{x}\right)\right]\label{eq:8.20}
+.\end{align} 
+Die Gezeitenkraft fällt mit der dritten Potenz des Abstandes zur externen Masse ab und steigt linear mit dem Abstand zum Mittelpunkt von \glqq Körper $B$\grqq{} an. Zur Bestimmung der Gezeitenkräfte wird ein \textbf{effektives Potential} benötigt. Indem man \eqref{eq:8.20} in \eqref{eq:8.16} einsetzt, folgt
+\begin{align*} 
+        \ddot{\vv{x}}&=-G_N\left[\dfrac{M_B\vv{x}}{|\vv{x}|^2}+M_A\left(\dfrac{\hat{\vv{d} }}{|\vv{d}|^2}-\dfrac{\hat{\vv{R} }}{|\vv{R}|^2}\right)\right]\\
+                     &\approx -G_N\left[\dfrac{M_B\hat{\vv{x} }}{|\vv{x}|^2}+\dfrac{M_A}{|\vv{R}|^3}\left(\vv{x}-3\hat{\vv{R}}\left(\hat{\vv{R}}\cdot \vv{x}\right)\right)\right]
+.\end{align*} 
+Dann kann das Potential durch $\ddot{\vv{x}}=-\vv{\nabla }_{\vv{x}}\Phi \left(\vv{x}\right)$, mit
+\begin{align*} 
+        \Phi &=-\dfrac{G_NM_B}{|\vv{x}|}-\dfrac{G_NM_A}{|\vv{R}|^3}\left[\dfrac{3}{2}\left(\hat{\vv{R}}\cdot \vv{x}\right)^2-\dfrac{1}{2}|\vv{x}|^2\right]
+.\end{align*} 
+Im Gleichgewicht ist die Oberfläche von $B$ bestimmt durch $\Phi =\,\text{const.}\,$. Da sich die Gezeiten im Mittel gleich sind, gilt $\Phi =-\tfrac{G_NM_B}{R_B}$ mit $R_B$ dem Radius von $B$ ohne Gezeiten $\left(\tfrac{M_A}{|\vv{R}|^3}\rightarrow 0\right)$. Daraus folgt
+\begin{align} 
+        -\dfrac{G_NM_B}{|\vv{x}|}-\dfrac{G_NM_A}{|\vv{R}|^3}\left[\dfrac{3}{2}\left(\hat{\vv{R}}\cdot \vv{x}\right)^2-\dfrac{1}{2}|\vv{x}|^2\right]&\stackrel{!}{=}-\dfrac{G_NM_B}{R_B}\nonumber \\
+        \dfrac{M_B}{R_B}-\dfrac{M_B}{|\vv{x}|}&=\dfrac{M_A}{|\vv{R}|^3}\left[\hdots \right]\nonumber \\
+        \dfrac{M_B\left(|\vv{x}|-R_B\right)}{R_B|\vv{x}|}&=\dfrac{M_A}{|\vv{R}|^3}\left[\hdots \right]\nonumber \\
+        |\vv{x}|-R_B&=\dfrac{M_A}{M_B}\dfrac{R_B|\vv{x}|}{|\vv{R}|^3}\left[\dfrac{3}{2}\left(\hat{\vv{R}}\cdot \vv{x}\right)^2-\dfrac{1}{2}|\vv{x}|^2\right]\nonumber 
+.\end{align} 
+Der maximale Gezeitenhub ist die Differenz zwischen Ebbe und Flut, also 
+\begin{align} 
+        \Delta h&\approx \dfrac{3}{2}\dfrac{M_A}{M_B}\dfrac{R_B^4}{R^3}
+.\end{align} 
+Auf der Erde ist das explizit (ausgelöst durch) $\Delta h_{\,\text{Mond}\,}\approx 2,2\Delta h_{\,\text{Sonne}\,}\approx 0,56\,\text{m}\,$. Durch lokale Topographie kann $\Delta h$ auch kleiner oder größer werden.
+
+\subsubsection{Effekt der Gezeiten auf Himmelskörper}
+Durch Gezeiten entsteht Reibung, wodurch die Rotation von Himmelskörpern verlangsamt wird. Durch den Effekt \textbf{tidal lock} zeigt z.B.\ immer nur eine Seite des Mondes zur Erde (oder des Merkurs zur Sonne). Durch Gezeitenkräfte verlängern sich auch die Tage auf der Erde um $\tfrac{1\,\text{h}\,}{10^8\,\text{yr}\,}$. Des Weiteren können sich Himmelskörper aufheizen.
+
+\subsection{Anwendung des Gravitationsgesetzes in Forschung}
+Systeme mit mehr als zwei Körpern müssen im Allgemeinen numerisch behandelt werden. Beispiele dafür sind
+\\\hfill\\\textbf{Planetensysteme}\\ 
+In Planetensystemen \glqq wackelt\grqq{} das Zentralgestirn. Die Geschwindigkeit um den Schwerpunkt für eine Kreisbahn ist
+\begin{align*} 
+        v&=\dfrac{2\pi r_{\,\text{Stern}\,}}{\tau }\qquad r_{\,\text{Stern}\,}=r_{\,\text{Planet}\,}\dfrac{m_{\,\text{Planet}\,}}{m_{\,\text{Stern}\,}}\nonumber \\
+         &\approx \dfrac{2\pi r_Pm_P}{m_S}\dfrac{\,\sqrt[]{G_Nm_S}}{2\pi r_P^{3/2}}\nonumber \\
+         &=m_P\,\sqrt[]{\dfrac{G_N}{m_Sr_P}}
+.\end{align*} 
+Dieser Effekt wird auch für die Suche nach Exoplaneten verwendet. Ein weiterer Effekt ist die Perihelverschiebung.
+\\\hfill\\\textbf{Dynamik von Sternensystemen}\\ 
+Effekte die zu beobachten sind, sind das \glqq abdampfen\grqq{} von hauptsächlich leichteren Planeten und die \glqq Virialisierung\grqq{} $\left(\left\langle E_{\,\text{kin}\,}\right\rangle =-\tfrac{1}{2}\left\langle V\right\rangle \right)$  von gebundenen Körpern im $\tfrac{1}{r}$--Potential. Dies gilt auch für die totale Energie, $\left\langle E_{\,\text{kin,tot}\,}\right\rangle =-\tfrac{1}{2}\left\langle V_{\,\text{tot}\,}\right\rangle \inlineeqno\label{eq:8.22}$. In der Astronomie wird das zeitliche Mittel durch das \glqq Ensemble--Mittel\grqq{} ersetzt, also
+\begin{align*} 
+        \left\langle E_{\,\text{kin}\,}\right\rangle =\dfrac{1}{N}\sum_{i=1}^{N}\dfrac{1}{2}m_iv_i^2\qquad \left\langle V\right\rangle =\dfrac{1}{2}\sum_{i}^{}V_i\qquad \Rightarrow \qquad \left\langle E_{\,\text{kin}\,}\right\rangle \approx -\dfrac{1}{4}\left\langle V\right\rangle 
+,\end{align*} 
+da $\sum_{i=1}^{N}V_i=2V_{\,\text{tot}\,}$, weil jedes Paar zwei mal zählt. Zwicky hat diese Methode 1933 auf das Coma--Supercluster angewandt und hat beobachtet, dass $|V|$ viel größer als die Summe der Beiträge der sichtbaren Materie in den Galaxien ist. Diese Beobachtung lies ihn \glqq Dunkle Materie\grqq{} postulieren. Sie ist dominierend bei der Entstehung von Strukturen (vor Allem Galaxien).
+
+\newpage
+\section{Der anharmonische Oszillator}
+Der anharmonische Oszillator ist ein Paradebeispiel eines (einfachen nicht linearen Systems) das zur Illustration etlicher Techniken und Phänomenen benutzt werden kann.
+
+\subsection{anharmonischer Oszillator mit beliebiger potentieller Energie}
+Betrachte eine eindimensionale, reibungsfreie Bewegung in einem konservativen Kraftfeld, beschrieben durch potentielle Energie $V$ (totale Energie ist erhalten)
+\begin{align} 
+        E&=\dfrac{1}{2}m\dot{x}^2+V\left(x\right)\nonumber \\
+        \dot{x}&=\pm \,\sqrt[]{\dfrac{2}{m}\left(E-V\left(x\right)\right)}\label{eq:9.1}
+.\end{align} 
+Dies ist eine Bewegungsgleichung erster Ordnung. Aus \eqref{eq:9.1} folgt, dass nur Gebiete mit $V\left(x\right)\leq E$ erlaubt sind. Gebiete sind hier Flächen, bei denen ein gewisses $E$ in dem $V\left(x\right)$--$x$--Koordinatensystem größer als $V\left(x\right)$ zwischen zwei Stellen $x_1$ und $x_2$ ist.\\\indent
+Falls $\dot{x}\left(0\right)>0$ und $\dot{x}\left(t\right)>0\,\forall t$, bewegen sich alle Teilchen nach $x\rightarrow \infty$.\\\indent
+Falls $\dot{x}\left(0\right)<0$, bewegen sich alle Teilchen bis zu der Stelle, an der $V\left(x\right)>E$. Dann dreht die Bewegung um (Wendepunkt), da
+\begin{align} 
+        \dot{x}=\diff[]{x}{t}=\pm \,\sqrt[]{\dfrac{2}{m}\left(E-V\right)}\qquad \Rightarrow t=\pm \int_{x\left(0\right)}^{x\left(t\right)}\dfrac{1}{\,\sqrt[]{\tfrac{2}{m}\left(E-V\right)}}\td x\label{eq:9.2}
+.\end{align} 
+Der Wendepunkt wird erreicht nach
+\begin{align*} 
+        \tau =\int_{x\left(V>E\right)}^{x\left(0\right)}\dfrac{1}{\,\sqrt[]{\tfrac{2}{m}\left(E-V\right)}}\td x
+.\end{align*} 
+Befinden sich Teilchen zwischen zwei Stellen, $x_1$ und $x_2$, bei denen $V>E$, dann schwingen sie in dem Bereich hin und her, mit $\dot{x}\left(x_1\right)=\dot{x}\left(x_2\right)$. Es gibt also zwei Wendepunkte. Die Bewegung ist hier periodisch da $\dot{x}$ nur eine Funktion von $x$ ist. Die Periode ist $2x$, also die Zeit, um von $x_1$ zu $x_2$ zu kommen.
+\begin{align} 
+        2x\stackrel{\eqref{eq:9.2}}{=}2\int_{x_1}^{x_2}\dfrac{1}{\,\sqrt[]{\tfrac{2}{m}\left(E-V\right)}}\td x=\,\sqrt[]{2m}\int_{x_1}^{x_2}\dfrac{1}{\,\sqrt[]{E-V}}\td x=\tau \label{eq:9.3}
+.\end{align} 
+Dies ist ein exaktes Ergebnis (aber der Integrand ist nicht notwendigerweise analytisch berechenbar, selbst wenn $V$ bekannt ist).\\\indent
+Beachte, der Integrand divergiert an den Endpunkten, aber das Integral muss existieren. Für $x\approx x_0$ kann das Potential oft mit einer Parabel genähert werden. Man wählt sich dazu die Koordinate $x_0=0$ und approximiert
+\begin{align} 
+        V\left(x\right)&=V\left(0\right)+\underbrace{V'\left(0\right)x}_{=0}+\dfrac{1}{2}V''\left(0\right)x^2+\dfrac{1}{6}V'''\left(0\right)x^3+\hdots \label{eq:9.4}
+.\end{align} 
+Die Approximation durch eine Parabel ist also in Ordnung, solange
+\begin{align} 
+        V''\left(0\right)\gg \dfrac{1}{3}|V'''\left(0\right)x|,\dfrac{1}{12}V''''\left(0\right)x^2|,\hdots \label{eq:9.5}
+.\end{align} 
+Beachte, dass möglicherweise $V''\left(0\right)=0$. Dann ist der anharmonische Oszillator \textbf{inhärent}.
+
+\subsubsection{Beispiel: Masse zwischen zwei Federn}
+Eine Masse $m$ ist zwischen zwei Federn der Länge $l$ befestigt. Die Federn sind jeweils am anderen Ende an einer vertikalen Wand befestigt. $m$ kann also nach links und rechts, sowie nach oben und unten (in $x$ Richtung) schwingen. Sie $l_0$ die Ruhelage jeder Feder. Die Potentielle Energie in $\pm x$--Richtung ist
+\begin{align*} 
+        V\left(x\right)&=2\cdot \dfrac{1}{2}k\left[\underbrace{\,\sqrt[]{l^2+x^2}}_{\,\text{Länge der Feder}\,}-l_0\right]^2
+.\end{align*} 
+Sei $x^2\ll l^2$ dann $k\cdot \left(l \,\sqrt[]{1+\tfrac{x^2}{l^2}}-l_0\right)^2\approx k\left[l\left(1+\tfrac{x^2}{2l^2}\right)-l_0\right]^2$. Für $l\neq l_0$ ist 
+\begin{align*} 
+        V\left(x\right)\approx k\left[\left(l-l_0\right)^2+\dfrac{x^2}{l}\left(l-l_0\right)+O\left(\dfrac{x^4}{l^2}\right)\right]
+.\end{align*} 
+Dieser Term erlaubt eine harmonische Schwingung für $\tfrac{x^4}{l^2}\ll \tfrac{x^2}{l}\left(l-l_0\right)$, das heißt $x^2\ll l\left(l-l_0\right)$. Für $l=l_0$ gilt
+\begin{align*} 
+        V\left(x\right)\approx k\dfrac{x^4}{4l^2}
+.\end{align*} 
+Dieses Potential ist inhärent anharmonisch, selbst für ideale Federn.\\\indent
+Das System ist \textbf{hart} (oder \textbf{weich}), falls eine Korrektur zur linearen Kraft diese vergrößert (oder verkleinert).\\
+Für $V'''\left(0\right)=0$, z.B.\ für symmetrische Funktionen $V\left(x\right)=V\left(-x\right)$:\\\indent
+Das System ist hart für $V''''\left(0\right)>0$.\\\indent
+Das System ist weich für $V''''\left(0\right)<0$.\\
+Für $V'''\left(0\right)>0$:\\\indent
+Das System ist hart für $x>0$.\\\indent
+Das System ist weich für $x<0$.\\
+Für $V'''\left(0\right)<0$:\\\indent
+Das System ist hart für $x<0$.\\\indent
+Das System ist weich für $x>0$.\\
+Solange ein analytischer Ausdruck für $V\left(x\right)$ existiert und Reibung vernachlässigt werden kann, erlaubt Gleichung \eqref{eq:9.1} die Bestimmung des \textbf{Phasendiagramms} $\dot{x}\left(x\right)$. In einigen Fällen ist eine exakte \glqq analytische\grqq{} Lösung möglich.
+
+\subsubsection{Beispiel: Mathematisches Pendel}
+Eine Punktmasse $m$ hängt an masselosem Stab der Länge $l$ im Schwerefeld der Erde. Die Bewegungsgleichungen sind [hier Formeln aus Kapitel 5]. Der Drehmipuls für die Rotation um den Aufhängepunkt (also den Ursprung)
+\begin{align*} 
+        \dot{\vv{L}}&=\vv{N}\\
+        \diff*[]{I\vv{\omega }}{t}&=\vv{l}\times m\vv{g}
+.\end{align*} 
+Daraus folgt
+\begin{align*} 
+        \omega =\dot{\theta }\qquad I_{zz}=l^2m\qquad \vv{l}\times \vv{g}=lg\sin \theta 
+,\end{align*} 
+also
+\begin{align} 
+        l^2m \ddot{\theta }&=-mgl\sin \theta \nonumber \\
+        \ddot{\theta }+\omega _0^2\sin \theta &=0\,\text{mit}\,\omega _0^2=\,\sqrt[]{\dfrac{g}{l}}\label{eq:9.6}
+.\end{align} 
+Für $\theta \ll 1$ und $\sin \theta \approx \theta $ existiert eine harmonische Schwingung mit der Periode $\tau =\tfrac{2\pi }{\omega _0}=2\pi \,\sqrt[]{\tfrac{l}{g}}$. \\\indent
+Für endliche $\theta $ benutzt man $E_{\,\text{kin}\,}+V=E=\,\text{const.}\,$.
+\begin{align*} 
+        E_{\,\text{kin}\,}&=\dfrac{1}{2}I_{zz}\omega ^2=\dfrac{1}{2}ml^2\dot{\theta }^2\stepcounter{equation}\stepcounter{equation}\tag{\inlineeqnowoa}\label{eq:9.8.a}\\%eq:9.7 wird übersprungen
+        v=mgl\left(1-\cos \theta \right)=2mg l \sin ^2\dfrac{\theta }{2}\tag{\inlineeqnowob}\label{eq:9.8.b}
+.\end{align*} 
+Für die Anfangsbedingungen sei $\theta \left(t_0=0\right)=\theta _0,\dot{\theta \left(t_0=0\right)=0}\Rightarrow E_{\,\text{kin}\,}\left(t_0=0\right)=0,v\left(t_0=0\right)=E=mg\left(1-\cos \theta \right)=2mgl \sin ^2 \tfrac{\theta }{2}\inlineeqno\label{eq:9.9}$. Aus \eqref{eq:9.8.b} und \eqref{eq:9.9} folgt
+\begin{align} 
+        \dfrac{1}{2}ml\dot{\theta }^2&=2mgl\left(\sin ^2\dfrac{\theta _0}{2}-\sin ^2\dfrac{\theta }{2}\right)\nonumber \\
+        \dot{\theta }&=\pm 2\omega _0\,\sqrt[]{\sin ^2\dfrac{\theta _0}{2}-\sin ^2\dfrac{\theta }{2}}
+.\end{align} 
+Offensichtlich braucht man $|\sin \tfrac{\theta }{2}|\leq |\sin \tfrac{\theta _0}{2}$, also $|\theta |\leq \theta _0$.\\\indent
+Eine Periode ist dann
+\begin{align*} 
+        \tau &=4x \\
+             &=\dfrac{4}{2\omega _0}\int_{0}^{\theta _0}\dfrac{1}{\,\sqrt[]{\sin ^2\dfrac{\theta _0}{2}-\sin ^2\dfrac{\theta }{2} }}\td \theta 
+.\end{align*} 
+Man substituiert $z=\tfrac{\sin \theta /2}{\sin \theta _0/2} \in \left[-1,1\right]$, $k=\sin \tfrac{\theta _0}{2}=\,\text{const.}\,$
+\begin{align} 
+        \diff[]{z}{\theta }&=\dfrac{1}{2k}\cos \dfrac{\theta }{2}=\dfrac{\,\sqrt[]{1-k^2z^2}}{2k}&&|\cos \dfrac{\theta }{2}>0\,\forall \theta  \in \left[-\pi ,\pi \right]\nonumber \\
+        \tau &=\dfrac{2}{\omega _0}\int_{0}^{1}\dfrac{2k}{\,\sqrt[]{1-k^2z^2}}\dfrac{1}{\,\sqrt[]{k^2-k^2z^2}}\td z\nonumber \\
+             &=\dfrac{4}{\omega _0}\int_{0}^{1}\dfrac{1}{\,\sqrt[]{1-k^2z^2}\,\sqrt[]{1-z^2}}\td z
+.\end{align} 
+Dieser Term ist ein elliptisches Integral erster Ordnung. Für $|k|=|\sin \tfrac{\theta _0}{2}|\leq 1$ existiert eine Taylorentwicklung in $k$
+\begin{align} 
+        \dfrac{1}{\,\sqrt[]{1-k^2z^2}}&=1+\dfrac{k^2z^2}{2}+\dfrac{3k^4z^4}{6}+\hdots \nonumber \\
+        \tau &=\dfrac{4}{\omega _0}\int_{0}^{1}\dfrac{1}{\,\sqrt[]{1-z^2}}\left(1+\dfrac{k^2z^2}{2}+\dfrac{3k^4z^4}{6}+\hdots\right)\td z\nonumber \\
+             &=\begin{aligned}
+             \dfrac{4}{\omega _0}\left[\,\text{arcsin}\,z+\dfrac{k^2}{2}\left(-\dfrac{z}{2}\,\sqrt[]{1-z^2}+\dfrac{1}{2}\,\text{arcsin}\,z\right)\right.\\+\left.\left.\dfrac{3k^4}{64}\left(3\,\text{arcsin}\,-2z^3\,\sqrt[]{1-z^2}-3z\,\sqrt[]{1-z^2}\right)\right]\right|_0^1\end{aligned}\nonumber \\
+             &=\dfrac{4}{\omega _0}\left(\dfrac{\pi }{2}+\dfrac{k^2}{4}\dfrac{\pi }{2}+\dfrac{9k^4}{64}\dfrac{\pi }{2}\right)\nonumber \\
+             &=\dfrac{2\pi }{\omega _0}\left(1+k^2+\dfrac{9k^4}{64}+O\left(k^6\right)\right)\label{eq:9.12}\\
+        k^2&=\sin ^2\dfrac{\theta }{2}\approx \left(\dfrac{\theta _0}{2}-\dfrac{1}{6}\left(\dfrac{\theta _0}{2}\right)^2+\hdots \right)^2=\dfrac{\theta _0^2}{4}-\dfrac{\theta _0}{48}+O\left(\theta _0^6\right)\nonumber \\
+        k^4&\approx \dfrac{\theta _0^4}{16}\nonumber \\
+        \tau &=\dfrac{2\pi }{\omega _0}\left[1+\dfrac{\theta _0^2}{16}+\theta _0^4\left(-\dfrac{1}{4}\dfrac{1}{48}+\dfrac{9}{64}\dfrac{1}{16}\right)\right]+O\left(\theta ^6\right)\nonumber \\
+             &=\dfrac{2\pi }{\omega _0}\left[1+\dfrac{\theta _0^2}{16}+\dfrac{11}{3072}\theta _0^4+O\left(\theta _0^6\right)\right]\label{eq:9.13}
+.\end{align} 
+$\tau $ konvergiert ziemlich schnell. Beachte, das exakte Resultat für $\tau $ divergiert für $\theta \rightarrow \tfrac{\pi }{2}$.
+
+\subsection{Störungstheoretische Behandlung}
+Die Idee ist, die nicht linearen Terme und Bewegungsgleichungen als Störung zu behandeln. Man entwickelt im entsprechenden kleinen Parameter. Sei
+\begin{align} 
+        V\left(x\right)=\dfrac{1}{2}kx^2+\dfrac{1}{3}m\lambda x^3\stepcounter{equation}\label{eq:9.15}
+.\end{align} 
+Die Bewegungsgleichung ist dann
+\begin{align} 
+        m\ddot{x}+kx-m\lambda x^2&=0\nonumber \\
+        \ddot{x}+\omega _0^2x-\lambda x^2&=0\tag{\inlineeqnowoa}\label{eq:9.15.a}
+,\end{align} 
+mit $\omega _0=\,\sqrt[]{\tfrac{k}{m}}\inlineeqnob\label{eq:9.15.b}$.
+Die nichtlinearen Terme sind klein, falls $\omega _0^2\gg |\lambda x|$. Für $\lambda =0x_{\,\text{max}\,}$ aus $\tfrac{1}{2}kx_{\,\text{max}\,}^2=E$ mit
+\begin{align} 
+        x_{\,\text{max}\,}=\,\sqrt[]{\dfrac{2E}{k}}\label{eq:9.16}
+.\end{align} 
+Die Störung ist klein, falls $|\lambda |\ll \tfrac{\omega _0^2}{x_{\,\text{max}\,}}=\tfrac{k}{m\,\sqrt[]{2E/k}}=\tfrac{1}{m}\,\sqrt[]{\tfrac{k^3}{2E}}$.\\\indent
+Der \textbf{Entwicklungsparameter} ist
+\begin{align} 
+        \varepsilon =\lambda m\,\sqrt[]{\dfrac{2E}{k^3}}=\dfrac{\lambda x_{\,\text{max}\,}}{\omega _0^2}\propto \lambda \label{eq:9.17}
+.\end{align} 
+Der Entwicklungsparameter ist einheitenlos. Die Entwicklung in $\lambda $ ist nicht wohldefiniert, da \glqq klein\grqq{} eine dimensionsbehaftete Größe ist.\\\indent
+Für das Potential $V\left(x\right)=\tfrac{1}{2}kx^2-\tfrac{1}{3}m\lambda x^3$ kann der Ansatz $x\left(t\right)=x_0\left(t\right)+\varepsilon x_1\left(t\right)+O\left(\varepsilon ^2\right)\inlineeqno\label{eq:9.18}$ verwendet werden. Für $\lambda =0$ existiert eine harmonische Schwingung mit $x_0\left(t\right)=A\cos \left(\omega _0t\right)\inlineeqno\label{eq:9.19}$ (mit Phase gleich null durch Anfangsbedingungen). Setzt man \eqref{eq:9.15} in \eqref{eq:9.15.a} ein folgt
+\begin{align} 
+        \ddot{x_0}+\omega _0^2x_0+\varepsilon \ddot{x}_1+\omega _0^2\varepsilon x_1-\lambda x_0^2-2\lambda \varepsilon x_0x_1-\lambda \varepsilon ^2x_1^2&=0+O\left(\varepsilon ^2\right)\nonumber \\
+        \ddot{x}_1+\omega _0^2x_1-\dfrac{\lambda }{\varepsilon }x_0^2&=0\nonumber \\
+        \ddot{x}+\omega _0^2x_1&=\dfrac{1}{m}\,\sqrt[]{\dfrac{k^3}{2E}}\nonumber \\
+                               &=\dfrac{1}{m}\,\sqrt[]{\dfrac{k^3}{2E}}A^2\cos ^2\left(\omega _0t\right)\nonumber \\
+                               &=\dfrac{1}{m}\,\sqrt[]{\dfrac{k^3}{2E}}\dfrac{1}{2}A^2\left(1+\cos \left(2\omega _0t\right)\right)\label{eq:9.20}
+.\end{align} 
+Beachte: der homogene Teil der Differenzialgleichung \eqref{eq:9.20} ist die Bewegungsgleichung nullter Ordnung. Sie ist bereits in $x_0\left(t\right)$ enthalten. Man braucht also nur noch eine Lösung der inhomogenen Gleichung. Der Ansatz ist $x_0\left(t\right)=B\cos \left(2\omega _0t\right)+c$. Setzt man in \eqref{eq:9.20} ein folgt
+\begin{align} 
+        -4\omega _0^2B\cos \left(2\omega _0t\right)+\omega _0^2\left[B\cos \left(2\omega _0t\right)+c\right]&=\dfrac{1}{m}\,\sqrt[]{\dfrac{k^3}{2E}}\dfrac{A^2}{m}\left[1+\cos \left(2\omega _0t\right)\right]\nonumber \\
+        -3\omega _0B&=\dfrac{A^2}{2m}\,\sqrt[]{\dfrac{k^3}{2E}}\qquad \omega _0^2c=\dfrac{A^2}{2m}\,\sqrt[]{\dfrac{k^3}{2E}}\label{eq:9.21}
+.\end{align} 
+Beachte dass die Amplitude $A$ in \eqref{eq:9.19} ist gleich $x_{\,\text{max}\,}$. In \eqref{eq:9.16} ist dies $\,\sqrt[]{2E/k}$. Also
+\begin{align} 
+        \dfrac{A^2}{2m}\,\sqrt[]{\dfrac{k^3}{2E}}&=\dfrac{A^2k}{2m}\,\sqrt[]{\dfrac{k^3}{2E}}=\dfrac{A}{2}\omega _0^2\nonumber 
+.\end{align} 
+Setzt man diesen Ausdruck in \eqref{eq:9.21} ein folgt $c=\tfrac{A}{2},B=-\tfrac{A}{6}$ und $\varepsilon =\lambda \tfrac{m}{k}\,\sqrt[]{2E/k}=\lambda \tfrac{A}{\omega _0^2}$. Insgesamt ist \eqref{eq:9.18} also
+\begin{align} 
+        x\left(t\right)&=A\cos \left(\omega _0t\right)-\dfrac{\lambda A^2}{6\omega _0^2}\cos \left(2\omega _0t\right)+\dfrac{\lambda A^2}{2\omega _0}+O\left(\lambda ^2\right)\label{eq:9.22}
+.\end{align} 
+Beachte, dass der Korrekturterm mit doppelter Frequenz schwingt, das heißt, wie der erste Oberton.\\\indent
+Es existieren immernoch $\dot{x}\left(t=0\right)=0,x\left(t=0\right)=A+\tfrac{\lambda A^2}{3\omega _0^2}$.
+\begin{align} 
+        0&=A^2+\dfrac{2\omega _0^2}{\lambda }A-\dfrac{3x\left(0\right)\omega _0^2}{\lambda }\nonumber \\
+        A&=-\dfrac{3\omega _0^2}{2\lambda }\pm\,\sqrt[]{\dfrac{9\omega _0^4}{4\lambda ^2}+\dfrac{3x\left(0\right)\omega _0^2}{\lambda }}\nonumber \\
+         &=-\dfrac{3\omega _0^2}{2\lambda }\pm\dfrac{3\omega _0^2}{2\lambda }\pm \dfrac{3\omega _0^2}{2\lambda }\left[1+\dfrac{4x\left(0\right)\lambda }{3\omega _0^2}\right]^{1/2}\nonumber \\
+         &\approx -\dfrac{3\omega _0^2}{2\lambda }\pm\dfrac{3\omega _0^2}{2\lambda }\left[1+\dfrac{2x\left(0\right)\lambda }{3\omega _0^2}-\dfrac{1}{8}\left(\dfrac{4x\left(0\right)\lambda }{3\omega _0^2}\right)^2\right]\label{eq:9.23}
+.\end{align} 
+Man braucht die positive Lösung damit $A>0\rightarrow A\approx x\left(0\right)-\tfrac{x_0^2\lambda }{3\omega _0^2}\approx x\left(0\right)\left(1-\tfrac{\varepsilon }{3}\right)$. Vergleicht man mit exakten numerischen Lösungen, sieht man, dass
+\begin{enumerate}[label=$\circ$]
+        \item die Näherung gut für kleine $t$ funktioniert, selbst für große $\varepsilon $.
+        \item die Näherung nicht gut für große $t$ funktioniert, selbst für kleine $\varepsilon $. Grund dafür ist, dass der kubische Term in $V$ die Periode ein wenig ändert. Dann laufen die exakte und genäherte Lösung auseinander.
+        \item die Näherung gut für die Extrema funktioniert. $x_{\,\text{max}\,}=x\left(0\right)$ ist die Anfangsbedingung, also exakt. $x_{\,\text{min}\,}$ aus $\dot{x}\left(t\right)=0$ ist dann
+                \begin{align} 
+                        -\omega _0A\sin \left(\omega _0t\right)+\dfrac{\lambda A^2}{3\omega _0}\sin \left(2\omega _0t\right)&=0\nonumber \\
+                        -\omega _0\sin \left(\omega _0t\right)+\dfrac{2\lambda A}{3\omega _0}\sin \left(\omega _0t\right)\cos \left(\omega _0t\right)&=0\nonumber 
+                .\end{align} 
+                Daraus folgt, dass $\omega _0t=\pi $ mit $\omega _0t=0$ als Maximum.
+                \begin{align} 
+                        x_{\,\text{min}\,}&=-A+\dfrac{\lambda A^2}{3\omega _0^2}\nonumber \\
+                                          &=-x\left(0\right)+\dfrac{2\lambda A^2}{3\omega _0^2}\nonumber \\
+                                          &\approx -x\left(0\right)+\dfrac{2\lambda x\left(0\right)^2}{3\omega _0^2}+O\left(\varepsilon ^2\right)\nonumber \\
+                                          &=-x\left(0\right)\left(1-\dfrac{2}{3}\varepsilon \right)\label{eq:9.24}
+                .\end{align} 
+\end{enumerate}
+Ein verbessertes $\omega $ ist erst in der zweiten Ordnung der Störungtheorie zu finden
+\begin{align} 
+        x\left(t\right)&=x_0\left(t\right)+\varepsilon x_1\left(t\right)+\varepsilon ^2x_2\left(t\right)\label{eq:9.25}
+.\end{align} 
+Man versucht wieder $x_0\left(t\right)=A\cos \left(\omega _0t\right)$ und setzt dann \eqref{eq:9.25} in \eqref{eq:9.15.a} ein
+\begin{align} 
+        \ddot{x}_0+\omega _0^2x_0+\varepsilon \ddot{x}_1+\varepsilon \omega _0^2x_1-\lambda A^2\cos ^2\left(\omega _0t\right)+\varepsilon \ddot{x}_2+\varepsilon ^2\omega _0^2x_2-2\lambda \varepsilon A\cos \left(\omega _0t\right)x_1=0+O\left(\varepsilon ^3\right)\nonumber 
+.\end{align} 
+Die Form der Lösung soll für alle $\varepsilon $ also alle $\lambda $ gelten. Das heißt jede Ordnung in $\varepsilon $ muss separat verschwinden. Daraus folgt
+\begin{align} 
+        x_1&=-\dfrac{\lambda A^2}{6\omega _0^2}\cos \left(2\omega _0t\right)+\dfrac{\lambda A^2}{2\omega _0^2}\nonumber \\
+        \ddot{x}_2+\omega _0x_2&=2\dfrac{\lambda }{\varepsilon }A\cos \left(\omega _0t\right)x_1\left(t\right)\nonumber \\
+                               &=2\omega _0^2\cos \left(\omega _0t\right)\left[-\dfrac{A}{6}\cos \left(2\omega _0t\right)+\dfrac{A}{2}\right]\nonumber \\
+                               &=2\omega _0^2\left[-\dfrac{A}{12}\cos \left(\omega _0t\right)+\cos \left(3\omega _0t\right)+\dfrac{A}{2}\cos \left(\omega _0t\right)\right]\nonumber \\
+                               &=A\omega _0^2\left[-\dfrac{1}{6}\cos \left(2\omega _0t\right)+\dfrac{5}{6}\cos \left(\omega _0t\right)\right]\label{eq:9.26}
+.\end{align} 
+Der Ansatz $x_2\left(t\right)=D\cos \left(3\omega _0t\right)+E\cos \left(\omega _0t\right)$ funktioniert nicht, da $\cos \omega _0t$ bereits in der Lösung der homogenen Gleichnung verwendet wird. Man verwendet also $x_2\left(t\right)=D\cos \left(3\omega _0t\right)+Et\cos \left(\omega _0t\right)\inlineeqno\label{eq:9.27}$ (beachte $t$ vor $E$)
+\begin{multline*}
+        -9D\omega _0^2\cos \left(3\omega _0t\right)-Et\omega _0^2\sin \left(\omega _0t\right)+2E\omega _0\cos \left(\omega _0t\right)+\\t\omega _0^2D\cos \left(3\omega _0t\right)+\omega _0^2Et\sin \left(\omega _0t\right)=A\omega _0^2\left[-\dfrac{1}{6}\cos \left(3\omega _0t\right)+\dfrac{5}{6}\cos \left(\omega _0t\right)\right]
+.\end{multline*}
+Die Koeffizienten von $\cos \left(3\omega _0t\right)$ und $\cos \left(\omega _0t\right)$ müssen sich aufheben, also
+\begin{align*} 
+        -8D&=-\dfrac{A}{6}\\
+           &=\dfrac{A}{48}\stepcounter{equation}\tag{\inlineeqnowoa}\label{eq:9.28.a}\\
+        E&=\dfrac{5}{12}A\omega _0\tag{\inlineeqnowob}\label{eq:9.28.b}
+.\end{align*} 
+Ein Problem ist aber, dass \eqref{eq:9.27} nicht physikalisch sinnvoll ist. Der Term um $t$ hat keine Schranken und ist ein sogennanter \textbf{seikulärer} Term. Um den Term $t\sin \left(\omega _0t\right)$ loszuwerden führt man eine Korrektur zur Frequenz ein
+\begin{align*} 
+        \omega ^2=\omega _0^2+a\varepsilon ^2\,\text{mit}\,x_0\left(t\right)=A\cos \left(\omega t\right)\,\text{(und nicht $A\cos \left(\omega _0t\right)$)}\,
+.\end{align*} 
+Da die Korrektur $O\left(\varepsilon ^2\right)$ die $O\left(\varepsilon \right)$--Terme unverändert lässt bleibt $x_1\left(t\right)$ unverändert. Die $\varepsilon ^2$--Terme sind dann
+\begin{align*} 
+        x_0\left(t\right)=-A\omega ^2\cos \left(\omega t\right)=-A\left(\omega _0^2+a\varepsilon ^2\right)\cos \left(\omega t\right)
+.\end{align*} 
+Die Rechte Seite von \eqref{eq:9.26} bekommt zusätzlich einen Beitrag aus $+Aa\cos \left(at\right)$. Dieser soll den problematischen Term $\tfrac{5}{6}A\omega _0^2\cos \left(\omega _0t\right)$ wegheben. Mit $a=-\tfrac{5}{6}\omega _0^2$, folgt
+\begin{align} 
+        \omega ^2&=\omega _0^2\left(1-\dfrac{5}{6}\varepsilon ^2\right)=\omega _0\left(1-\dfrac{5}{6}\dfrac{\lambda A^2}{\omega _0^4}\right)\nonumber \\
+        \omega &\approx \omega _0\left(1-\dfrac{5}{12}\dfrac{\lambda ^2A^2}{\omega _0^4}\right)\stepcounter{equation}\tag{\inlineeqnowo}\label{eq:9.29}
+.\end{align} 
+Die Lösung ist also
+\begin{align} 
+        x\left(t\right)&=A\cos \left(\omega t\right)-\dfrac{\lambda A^2}{6\omega _0^2}\cos \left(2\omega t\right)+\dfrac{\lambda A^2}{2\omega _0^2}+\dfrac{\lambda ^2A^3}{48\omega _0^4}\cos \left(3\omega t\right)\stepcounter{equation}\tag{\inlineeqnowo}\label{eq:9.30}
+.\end{align} 
+Die Anfangsbedingung ist
+\begin{align*} 
+        x\left(0\right)=A+\dfrac{\lambda A^2}{3\omega _0^2}+\dfrac{\lambda ^2A^3}{48\omega _0^2}
+.\end{align*} 
+Daraus folgt $A=x\left(0\right)+\lambda a+\lambda ^2b\leadsto A^2=x^2\left(0\right)+2\lambda ax\left(0\right)$ mit
+\begin{align*} 
+        x\left(0\right)&=x\left(0\right)+\lambda a+\lambda ^2b+\dfrac{\lambda }{3\omega _0^2}x^2\left(0\right)+\dfrac{2\lambda ^2}{3\omega _0^2}ax\left(0\right)+\dfrac{\lambda ^2x^3\left(0\right)}{48\omega _0^4}
+.\end{align*} 
+\begin{align*} 
+        O\left(\lambda \right)&\qquad a+\dfrac{x^2\left(0\right)}{3\omega _0^2}=0\rightarrow a=-\dfrac{x^2\left(0\right)}{3\omega _0^2}\\
+        O\left(\lambda ^2\right)&\qquad b-\dfrac{2}{3}\dfrac{x^3\left(0\right)}{3\omega _0^4}+\dfrac{x^3\left(0\right)}{48\omega _0^4}=0\rightarrow b=\dfrac{x^3\left(0\right)}{\omega _0^4}\left(\dfrac{2}{9}-\dfrac{1}{48}\right)=\dfrac{x^3\left(0\right)}{\omega _0^4}\dfrac{29}{144}
+.\end{align*} 
+\begin{align*} 
+        A&=x\left(0\right)-\dfrac{\lambda x^2\left(0\right)}{3\omega _0^2}+\dfrac{29\lambda ^2x^3\left(0\right)}{144\omega _0^4}\stepcounter{equation}\tag{\inlineeqnowo}\label{eq:9.31}
+.\end{align*} 
+Alternativ
+\begin{align*} 
+        A\cos \left(\omega t\right)&=A\cos \left[\left(\omega _0-\dfrac{5}{12}\dfrac{\lambda ^2A^2}{\omega _0^3}\right)t\right]\\
+                                   &\approx A\left[\cos \left(\omega _0t\right)-\dfrac{5}{12}\dfrac{\lambda ^2A^2}{\omega _0^3}t\sin \left(\omega _0t\right)\right]+O\left(\delta ^2\right)
+.\end{align*} 
+Anmerkungen
+\begin{enumerate}[label=$\circ$]
+        \item Die Periode ist offensichtlich näher dem exakten Wert.
+        \item Die Periode ist immernoch nicht exakt. Sie unterscheidet sich irgendwann trotzdem ($O\left(1\right)$).
+        \item Die Frequenz hängt von der Amplitude ab. Es ist also ein mathematisches Pendel. In realistischen Systemen existiert Reibung: Die Amplitude nimmt also mit der Zeit ab. Die Frequenz ändert sich mit der Zeit (dies ist z.B.\ bei einer Uhr problematisch).a
+\end{enumerate}
+
+\subsubsection{Beispiel: angetriebener, gedämpfter, anharmonischer Oszillator}
+Sie ein quadratisches Potential mit treibender Kraft $\sim \cos \left(\omega t\right)$. Dies fürht auch die \textbf{Duffing--Gleichung} zurück, mit $\omega _0=\lambda =1$ 
+\begin{align*} 
+        \ddot{x}+2\gamma \dot{x}+x+x^3=f\cos \left(\omega t\right)
+.\end{align*} 
+Beachte, dass das $\omega $ die exakte Frequent der treibenden Kraft ist. Hier ist $\varepsilon =x_{\,\text{max}\,}^2$ der Entwicklungsparameter. Ein üblicher Ansatz ist
+\begin{align} 
+        x\left(t\right)=x_0\left(t\right)+\varepsilon x_1\left(t\right)+\varepsilon ^2x_2\left(t\right)+\hdots 
+        \stepcounter{equation}\stepcounter{equation}\stepcounter{equation}\stepcounter{equation}\stepcounter{equation}\stepcounter{equation}\stepcounter{equation}\stepcounter{equation}\stepcounter{equation}\stepcounter{equation}\stepcounter{equation}\stepcounter{equation}\stepcounter{equation}\stepcounter{equation}\stepcounter{equation}
+.\end{align} 
+Daraus folgt
+\begin{align} 
+        \ddot{x}_0+2\gamma \dot{x}_0+x_0=f\cos \left(\omega t\right)
+.\end{align} 
+Alle Lösungen der homogenen Gleichung können mit $e ^{-\gamma t}$ herausgefunden werden. Hier ist allerdings nur das Verhalten für große $t\gg\tfrac{1}{\gamma }$ nach Ende des Einschwingens interessant. Die Lösung der inhomogenen Gleichung funktioniert mit $\omega _0=1$, also
+\begin{align} 
+        x_0\left(t\right)&=\underbrace{\dfrac{t}{\,\sqrt[]{\left(\omega ^2-1\right)^2+4\,\sqrt[]{\omega ^2\gamma ^2} } }}_{A_0}\cos \left(\omega t-\underbrace{\,\text{arctan}\,\left(\dfrac{2\omega \gamma }{1-\omega ^2}\right)}_{\theta _0}\right)\label{eq:9.49}
+.\end{align} 
+Daraus folgt
+\begin{align} 
+        \ddot{x}_1+2\gamma \dot{x}_1+x_1&=\dfrac{f^3}{\left[\left(\omega ^2-1\right)^2+4\omega ^2\gamma ^2\right]^{3/2}}\cos ^3\left(\omega t-\omega _0\right)\nonumber \\
+                                        &=-A_0^3\left(\omega \right)\cdot \dfrac{1}{4}\left[\cos \left(2\omega t-3\theta _0\right)+3\cos \left(\omega t-\theta _0\right)\right]\label{eq:9.50}\\
+                                        &=A_0\cos \left(n\left(\omega t-\theta _0\right)\right)\qquad n=1,3\nonumber 
+.\end{align} 
+\eqref{eq:9.50} ist linear in $x_1$ also können die Terme um $n=1$ und $n=3$ addiert werden. Der komplexe Ansatz ist $x_1=\mathfrak{R}\left(z_1\right)$ mit $z_1=B_ne ^{i\omega nt},B \in \mathbb{C}$. Daraus folgt
+\begin{align} 
+        \left(-n^2\omega ^2+2in\omega \gamma +1\right)B_ne ^{i\omega n t}&=A_ne ^{i\omega n t}e ^{-in \theta _0}\nonumber \\
+        B_n&=\dfrac{A_ne ^{-in \theta _0}}{1-n^2\omega ^2+2i n \omega \gamma }\nonumber 
+.\end{align} 
+\begin{align} 
+        \dfrac{1}{1-n^2\omega ^2+2 i n \omega \gamma }&=\dfrac{e ^{-i \theta _0}}{\left[\left(1-n^2\omega ^2\right)^2+4n^2\omega ^2\gamma ^2\right]^{1/2}}\nonumber \\
+        \theta _n&=\,\text{arctan}\,\left(\dfrac{2n\omega \gamma }{1-\omega ^2n^2}\right)\label{eq:9.51}\\
+        x_{1/n}\left(t\right)&=\dfrac{A_n\cos \left(n\omega t-n \theta _0-\theta _1\right)}{\left[\left(1-n^2\omega ^2\right)^2+4n^2\omega ^2\gamma ^2\right]^{1/2}}\nonumber 
+.\end{align} 
+Man will den $n=1$ Term in $x_1,x_{1/n}$ in Form von $x_0\left(t\right)$ schreiben. Dazu muss man die Phase $\theta $ in $x_0\left(t\right)$ eingrenzen. Dazu
+\begin{align} 
+        \cos \left(\omega t-\theta _0\right)&=\cos \left(\omega t-\theta +\theta -\theta _0\right)\nonumber \\
+                                            &=\cos \left(\omega t-\theta \right)\cos \left(\theta -\theta _0\right)-\sin \left(\omega t-\theta \right)\sin \left(\theta -\theta _0\right)\nonumber \\
+                                            &\approx \cos \left(\omega t-\theta _0\right)-\left(\theta -\theta _0\right)\sin \left(\omega t-\theta \right)+O\left(\left(\theta -\theta _0\right)^2\right)\nonumber 
+.\end{align} 
+\begin{align*} 
+        \cos \left(\omega t-\theta -\theta _0\right)&=\cos \left(\omega t-\theta \right)\cos \theta _0+\sin \left(\omega t-\theta \right)\sin \theta _0
+\end{align*} 
+Daraus folgt für $x\left(t\right)$ 
+\begin{align} 
+        x\left(t\right)&=\dfrac{f}{N}\left[\cos \left(\omega t-\theta \right)-\left(\theta -\theta _0\right)\sin \left(\omega t-\theta \right)\right]\nonumber \\
+                       &=\dfrac{3}{4}\dfrac{f^3}{N^3}\dfrac{1}{N}\left[\cos \left(\omega t-\theta \right)\cos \theta _0+\sin \left(\omega t-\theta \right)\sin \left(\theta _0\right)\right]+x_{1/2}\left(t\right)\nonumber 
+,\end{align} 
+mit $N=\left[\left(1-\omega ^2\right)^2+4\gamma ^2\omega ^2\right]^{1/2}$. Mann will
+\begin{align} 
+        -\dfrac{f}{N}\left(\theta -\theta _0\right)-\dfrac{3}{4}\dfrac{f^3}{N^3}\underbrace{\dfrac{2\gamma \omega }{N}}_{\sin \theta _0}&=0\nonumber \\
+        \left(\theta -\theta _0\right)&=-\dfrac{3f^3\gamma \omega }{2\left[\left(1-\omega ^2\right)^2+4\gamma ^2\omega ^2\right]^2}\label{eq:9.52}
+.\end{align} 
+Also
+\begin{align} 
+        x\left(t\right)&=\dfrac{f}{N}\cos \left(\omega t-\theta \right)\left[1-\dfrac{3}{4}\dfrac{f^2\left(1-\omega ^2\right)}{N^4}\right]-\dfrac{1}{4}\dfrac{f^3}{N^3}\dfrac{\cos \left(3\omega t-3\theta _0-\theta _3\right)}{\left[\left(1-3^2\omega ^2\right)^2+36\omega ^2\gamma ^2\right]^{1/2}}\label{eq:9.53}
+.\end{align} 
+Bemerkungen:
+\begin{enumerate}[label=$\circ$]
+        \item Die äußere Kraft $\cos \left(\omega t\right)$ regt eine Frequenz von $3\omega $ an. $\left(1-3^2\omega ^2\right)^2+36\omega ^2\gamma ^2$ ist also minimal für $\omega ^2=\tfrac{1-2\gamma ^2}{9}$, das heißt für eine Anfangsfrequenz von ca.\ $\tfrac{1}{3}$ der Eigenfrequenz.
+        \item Der Parameter der Entwicklung ist $\varepsilon =\left(\tfrac{f}{N}\right)^2$, wofür die Störungstheorie schnell zusammenbrechen kann, falls $\omega $ nahe der Resonanzfrequenz ist und $\gamma \ll 1$.
+        \item Hier wird auch das Superpositionsprinzip verletzt.
+\end{enumerate}
+
+\subsection{Entwicklung in Fourier--Komponenten}
+Der Ansatz ist $x\left(t\right)=A_1\cos \left(om\eta at-\theta _1\right)+A_3\cos \left(3\omega t-\theta _3\right)+\hdots \inlineeqno\label{eq:9.54}$. Diesen Term setzt man dann in die Duffing--Gleichung ein
+\begin{multline*}
+        -A_1\omega ^2\cos \left(\omega t-\theta _1\right)-2\gamma \omega A_1\sin \left(\omega t-\theta _1\right)+A_1\cos \left(\omega t-\theta _1\right)-9A_3\omega ^2\cos \left(\omega t-\theta _3\right)\\
+        -6\gamma \omega A_3\sin \left(3\omega t-\theta _3\right)+A_3\cos \left(3\omega t-\theta _3\right)+A_1^3\cos ^3\left(\omega t-\theta _1\right)+3A_1A_3\cos \left(\omega t-\theta _1\right)\cos \left(3\omega t-\theta _3\right)\\
+        +3A_1A_3^2\cos ^2\left(\omega t-\theta _1\right)\cos ^2\left(3\omega t-\theta _3\right)+A_3^3\cos ^3\left(3\omega t-\theta _3\right)&=f\cos \left(\omega t\right)
+\end{multline*}
+Sei $\theta _3=3\theta _1+\delta $ also ist
+\begin{align*} 
+        \cos \left(3\omega t-\theta _3\right)&=\cos \left(3\omega t-3\theta _1-\delta \right)\\
+                                             &=\cos \left(3\omega t-3\theta _1\right)\cos \delta +\sin \left(3\omega t-3\theta _1\right)\sin \delta \\
+        \sin \left(3\omega t-\theta _3\right)&=\sin \left(3\omega t-3\theta _1\right)\cos \delta -\cos \left(3\omega t-3\theta _1\right)\sin \delta \\
+        \cos \left(\omega t\right)&=\cdot \left(\omega t-\theta _1\right)\cos \theta _1-\sin \left(\omega -\theta _1\right)\sin \theta _1
+.\end{align*} 
+Daraus folgt
+\begin{align*} 
+        &3A_1^2\cos ^2\left(\omega t-\theta _1\right)\cos \left(3\omega t-\theta _3\right)\\
+        &=\dfrac{3}{2}A_1^2A_3\left[1+\cos \left(2\omega t-2\theta _1\right)\right]\left[\cos \left(3\omega t-3\theta _1\right)\cos \delta +\sin \left(3\omega t-3\theta \right)\sin \delta \right]\\
+        &=\dfrac{3}{2}A_1^2A_3\left[\cos \left(3\omega t-3\theta _1\right)\cos \delta +\sin \left(3\omega t-3\theta _1\right)\sin \delta +\dfrac{1}{2}\cos \delta \cos \left(\omega t-\theta _1\right)+\dfrac{1}{2}\sin \delta \sin \left(\omega -\theta _1\right)\right]
+.\end{align*} 
+Hier muss noch $O\left(5\omega \right)$ addiert werden. Der nächste Term ist
+\begin{align*} 
+        &3A_1A_3^2\cos \left(\omega t-\theta _1\right)\cos ^2\left(3\omega t-\theta _3\right)\\
+        &=\dfrac{3}{2}A_1A_3^2\cos \left(\omega t-\theta _1\right)\left[1+\cos \left(6\omega t-2\theta _3\right)\right]
+.\end{align*} 
+\begin{align*} 
+        &A_3^3\cos ^3\left(3\omega t-\theta _3\right)\\
+        &=\dfrac{A_3^3}{4}\left[\cos \left(9\omega t-3\theta _3\right)+3\cos \left(3\omega t-\theta _3\right)\right]\\
+        &\approx \dfrac{3A_3^3}{4}\left[\cos \left(3\omega t-3\theta _1\right)\cos \delta +\sin \left(3\omega t-3\theta _1\right)\sin \delta \right]
+.\end{align*} 
+Terme mit $\cos \left(n\left(\omega t-\theta _1\right)\right),n=1,3$ müssen separat verschwinden. Der erste Term ist $\cos \left(\omega t-\theta _1\right)$ 
+\begin{align*} 
+        A_1\left(1-\omega ^2\right)+\dfrac{3}{4}A_1^3-f\cos \left(\theta _1\right)+\dfrac{3}{4}A_1^2A_3\cos \delta +\dfrac{3}{2}A_1A^3=0
+.\end{align*} 
+Der zweite Term ist $\sin \left(\omega t-\theta _1\right)$ 
+\begin{align*} 
+        -\gamma \omega A_1+f\sin \theta _1+\dfrac{3}{4}A_1^2A_3\sin \delta &=0
+.\end{align*} 
+Dann folgt $\cos \left(3\omega t-3\theta _1\right)$ 
+\begin{align*} 
+        A_3\left(1-9\omega ^2\right)\cos \delta +6\gamma \omega A_3\sin \delta +\dfrac{A_1^3}{4}+\dfrac{3}{2}A_1A_3\cos \delta +\dfrac{3}{4}A_3^3\cos \delta =0
+.\end{align*} 
+Der letzt Term ist $\sin \left(3\omega t-3\theta _1\right)$ 
+\begin{align} 
+        A_3\left(1-9\omega ^2\right)\sin \delta -6\gamma \omega A_3\cos \delta +\dfrac{3}{2}A_1A_3\sin \delta +\dfrac{3}{4}A_3^3\sin \delta =0\label{eq:9.55}
+.\end{align} 
+Beachte, manchmal sind mehrere Lösungen möglich. Die tatsächliche Amplitude (etc.) hängt von den Anfangsbedingungen ab. Das Superpositionsprinzip gilt nicht für den nicht linearen Teil. Sei die treibende Kraft $f_1\cos \left(\omega _1t\right)+f_2\cos \left(\omega _2t\right)$. In der normalen Störungstheorie bekommt man die Lösung
+\begin{align*} 
+        x_0\left(t\right)=\dfrac{f_1}{\left[\left(1-\omega _1\right)^2+4\gamma ^2\omega _1^2\right]^{1/2}}\cos \left(\omega _1t-\theta _1\right)+\dfrac{f_2}{\left[\left(1-\omega _2^2\right)^2+4\gamma ^2\omega _2^2\right]^{1/2}}\cos \left(\omega _2t-\theta _2\right)
+,\end{align*} 
+mit $\theta _i=\,\text{arctan}\,\left(\tfrac{2\gamma \omega _i}{1-\omega _i^2}\right)$. $x_0^3$ enthält die Frequenzen 
+\begin{align*} 
+        \omega _1,\omega _2,3\omega _1,3\omega _2,|\omega _1-2\omega _2|,|2\omega _1-\omega _2|,2\omega _1+\omega _2,\omega _1+2\omega _2
+\end{align*} 
+Die Terme 2 und 3 können z.B.\ im Ohr sehr niedrige Frequenzen anregen, falls $2\omega _1\approx \omega _2$.\\\indent
+Die erste Ordnung reproduziert die maximale Auslenkung selbst im chaotischen Regime recht gut. Die nullte Ordnung überschätzt die maximale Auslenkung. Man kann die erlaube Region des Phasenraums \glqq analytisch\grqq{} einschränken.\\\indent
+Für kleine Zeiten: Im chaotischen Regime $\left(f\geq 25,\omega =1,5\right)$ wird $x\left(t\right)$ schnell $O\left(1\right)$ selbst wenn $|x\left(0\right)|\ll 1$. Die normale Störungstheorie funktioniert also nicht gut. Man entwickelt in der Zeit $t$, also $\cos \left(\omega t\right)=-\tfrac{1}{2}\left(\omega t\right)^2$ und man ignoriert $\gamma x$ (also keine Reibung). Daraus folgt
+\begin{align} 
+        x\left(t\right)&=x\left(0\right)\left(1-\dfrac{1}{2}t^2\right)+\dfrac{1}{2}ft^2-\dfrac{1}{8}f\omega ^2t^4-\dfrac{ft^4}{8}+O\left(t^6\right)\label{eq:9.56}
+.\end{align} 
+Dies funktioniert recht gut bis fast zum ersten Maximum.\\\indent
+Naiv ist zu sagen, dass die Näherung zusammenbricht, selbst wenn $x\left(t\right)\approx 1$, das heißt sobald $t\sim \,\sqrt[]{\tfrac{2}{t}}$ zu pessimistisch ist.\\\indent
+Merke, man kann auch nützliche Ergebnisse für chaotische Systeme (semi--)analytisch behandeln. Chaotisch heißt nicht, dass keine Aussage getroffen werden kann
+
+\subsection{Übergang zum Chaos}
+Falls die Energie erhalten ist, kann $\dot{x}\left(t\right)$ berechnet werden. Dies gilt hier allerdings nicht. Für periodische Bewegung ist $\dot{x}\left(x\right)$ eine geschlossene Kurve (eindimensionales Obejkt in zweidimensionalem Phasenraum). Die Duffing--Gleichung ist maximal unter $x\rightarrow -x,\omega t\rightarrow \omega t+\pi $ und $\cos \omega t\rightarrow \cos \omega t$. Die Lösung ist
+\begin{align*} 
+        x\left(t\right)&=\sum_{n}^{}A_n\cos \left( \left(2n+1\right)\omega t+\theta _{2n+1}\right)\rightarrow -x\left(t\right)\qquad \cos \left(2\omega t\right)\rightarrow \cos \left(2\omega t\right)
+.\end{align*} 
+Die gesamte Lösung ist nicht invariant, also ist die Phasenraumskizze nicht symmetrisch.
+
+%}}}
+
+\end{document}

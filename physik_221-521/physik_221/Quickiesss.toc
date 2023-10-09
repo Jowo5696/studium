@@ -1,0 +1,7 @@
+\babel@toc {nil}{}\relax 
+\contentsline {section}{\numberline {1}Quickies}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Übungszettel}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}2022 Klausur I}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}2022 Klausur II}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}2021 Klausur I}{5}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}2019 Klausur I}{6}{subsection.1.5}%

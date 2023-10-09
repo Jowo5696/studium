@@ -1,0 +1,1844 @@
+%:LLPStartPreview
+%:VimtexCompile(SS)
+
+%{{{ Formatierung
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{physics_notetaking}
+\usepackage{textcomp}
+
+%%% dark red
+%\definecolor{bg}{RGB}{60,47,47}
+%\definecolor{fg}{RGB}{255,244,230}
+%%% space grey
+%\definecolor{bg}{RGB}{46,52,64}
+%\definecolor{fg}{RGB}{216,222,233}
+%%% purple
+%\definecolor{bg}{RGB}{69,0,128}
+%\definecolor{fg}{RGB}{237,237,222}
+%\pagecolor{bg}
+%\color{fg}
+
+\newcommand{\td}{\,\text{d}}
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+%\renewcommand*\contentsname{Contents}
+
+\pagestyle{fancy}
+
+\sloppy
+
+%}}}
+
+\begin{document}
+
+%{{{ Titelseite
+
+\title{Notizen - B.Sc. Physik $|$ physik211}
+\author{Jonas Wortmann}
+\maketitle
+\pagenumbering{gobble}
+
+%}}}
+
+\newpage
+
+%{{{ Inhaltsverzeichnis
+
+\pagenumbering{arabic}
+\fancyhead[L]{\thepage}
+\fancyfoot[C]{}
+
+\tableofcontents
+
+%}}}
+
+\newpage
+
+%{{{ physik211
+
+\fancyhead[R]{\leftmark\\\rightmark}
+
+\section{Grundzüge der Wärmelehre}
+\indent Die \textbf{Wärme} als makroskopische Eigenschaft eines Objekts ist definiert als der statistische Mittelwert der kinetischen Energie für mikroskopische Konstitutionen, wobei die makroskopische kinetische Energie dabei nicht berücksichtigt wird. Die Wärme kann also als \glqq innere\grqq{} Energie eines Körpers verstanden werden.\\\indent
+Wärme kann einem Körper durch mechanische Reibung und Absorption von Strahlung (Schall, elektromag\-ne\-tisch, radioaktiv) hinzugefügt, bzw. durch Abstrahlung von elektromagnetischen Wellen oder durch Umwandlung von Wärme in mechanische Arbeit entzogen werden.\\\indent
+Die \textbf{Temperatur} hat eine tiefe Verbindung zu mikroskopischen Eigenschaften. Im Alltag wird die Temperatur auf einer Skala mit Fixpunkten angegeben.
+\begin{enumerate}[label=]
+        \item Celsius-Skala in $\,\text{$^\circ$C }$ mit dem Buchstaben $\nu $. Fixpunkte sind:
+                \begin{enumerate}[label=]
+                        \item $\nu =0\,\text{$^\circ$C }$, der Gefrierpunkt von $H_2O$ 
+                        \item $\nu =100\,\text{$^\circ$C }$, der Siedepunkt von $H_2O$
+                \end{enumerate}
+        \item Kelvin-Skala in K mit dem Buschstaben $T$. Fixpunkte sind:
+                \begin{enumerate}[label=]
+                        \item $T=0\,\text{K}$, der Zustand totaler Erstarrung der Bewegung von Atomen (QM nicht zu erreichen, annähernd sind alle Teilchen in ihrem Grundzustand) 
+                        \item $T_{\text{Trip}}=273,16\,\text{K}\approx 0,0098\,\text{$^\circ$C }$ und $p=613\,\text{Pa}$, der Tripelpunkt von $H_2O$, bei dem alle Phasen von $H_2O$ auftreten (also wenn alle Aggregatzustände auftreten und miteinander in Gleichgewicht stehen).
+                \end{enumerate}
+\end{enumerate}
+Eine Messung von konstanten Änderungen von Materialeigenschaften kann als eine Funktion der Temperatur angegeben werden.
+\\\hfill\\\textbf{Wärmeänderung von Stoffen}\\ 
+Feste Stoffe haben bei einer Temperatur einen mittleren Abstand bei einer bestimmten potenziellen Energie. Wenn der mittlere Abstand wächst, steigt auch die Schwingungsamplidute, bzw.\, die potenzielle Energie, was zur Erhöhung der Temperatur führt.\\\indent
+Im Umkehrschluss führt Wärme zu Längenänderung $\Delta l=l-l_0=l\left(\nu \right)-l\left(\nu _0\right)$. Das $\Delta l$ ist Materialabhängig. Die relativen Längenänderungen zwischen zwei Temperaturen $\left(\nu ,\nu _0\right)$ und zwei unterschiedlichen Stoffen bleibt approximativ konstant.
+\[ 
+        \dfrac{\alpha _{l_0}^a}{\alpha _{l_0}^b}=\dfrac{\left(\tfrac{\Delta l}{l_0}\right)_a}{\left(\tfrac{\Delta l}{l_0}\right)_b}\approx \,\text{const.}\Rightarrow \dfrac{\left(\tfrac{\Delta V}{V_0}\right)_a}{\left(\tfrac{\Delta V}{V_0}\right)_b}\approx \,\text{const.}
+\] 
+wobei $\alpha _{l_0}^a$ und $\alpha _{l_0}^b$ Längenänderungskoeffizienten sind. Für $l$ und $V$ gilt dann
+\begin{align*}
+        l&=l_0\left[1+\alpha _{l_0}\left(\nu -\nu _0\right)+\beta _{l_0}\left(\nu -\nu _0\right)^2+\hdots \right]\\
+        V&=V_0\left[1+\alpha _{V_0}\left(\nu -\nu _0\right)+\beta _{V_0}\left(\nu -\nu _0\right)^2+\hdots \right]
+.\end{align*}
+Diese Größen sind aber nicht gleich für alle Stoffe (deshalb zeigen Thermometer mit verschiedenen Stoffen unterschiedliche Temperaturen an). Für Gase gilt allerdings
+\[ 
+        \dfrac{\left(\tfrac{\Delta V}{V}\right)_a}{\left(\tfrac{\Delta V}{V}\right)_b}\stackrel{\,\text{ideale Gase}}{=}1
+.\] 
+\hfill\\\textbf{Wärmeausdehnung von Gasen}\\ 
+Im folgenden wird $V_0$ als das Volumen eines Gases bei einer Temparatur von $\nu =0\,\text{$^\circ$C}$ festgelegt. Die Volumenänderung eines Gases fällt wesentlich größer aus als bei Festkörpern. Misst man aber das Volumen eines Gases muss man den Druck sehr konstant halten. Einen solchen Prozess nennt man \textbf{isobaren Prozess}.\\\indent
+Das \textbf{Gesetz von Gay--Lussac} besagt
+\[ 
+        V\left(\nu \right)=V_0\left(1+\alpha \nu \right)
+\] 
+mit $\alpha =\alpha _{V_0}=\left(273,15\,\text{$^\circ$C}\right)^{-1}$. Gase haben also ein universelles $\alpha _{V_0}$ und $\beta _{V_0}=0$. Gase welche dem GL--Gesetz folgen werden ideale Gase genannt.\\\indent
+Wird der Druck $p$ berücksichtigt, dann betrachtet man das Volumen als Funktion des Drucks und der Temperatur $V\left(p,\nu \right)$. Für $\nu =\,\text{const.}$ heißt dieser Prozess \textbf{isotherm}.\\\indent Mit dem \textbf{Boyle--Mariotte Gesetz} folgt
+\[ 
+        p\cdot V\left(p,\nu \right)=p_0\cdot V\left(p_0,\nu \right)
+.\] 
+Daraus folgt das \textbf{Boyle--Mariotte--Gay--Lussac Gesetz} 
+\[ 
+        p\cdot V=p_0\cdot V\left(p_0,\nu _0=0\,\text{$^\circ$C}\right)\cdot \left(1+\alpha \nu \right)=p_0\cdot V_0\cdot \left(1+\alpha \nu \right)\qquad \alpha =\left(273,15\,\text{$^\circ$C}\right)^{-1}
+.\] 
+Dieses Gesetz ist eine Zustandsgleichung und stellt einen Zusammenhang zwischen den Größen eines idealen Gases her. Weiterhin gilt
+\[ 
+        p,V \propto \nu \Rightarrow \dfrac{p\cdot V}{\nu }=\,\text{const.}\Rightarrow \dfrac{p_1}{p_2}=\dfrac{\nu _1}{\nu _2}\Rightarrow p\left(T\right)=p_0\left(1+\alpha \left(T-T_0\right)\right)
+.\] 
+
+\subsection{Ideale Gaskonstante}
+Ideale Gase weisen ein homogene Dichteverteilung auf und die Teilchen bewegen sich gradlinig mit konstanter Geschwindigkeit. Zudem gilt, dass sie bei gleicher Anzahl von Molekülen, Druck und Temperatur das gleiche Volumen einnehmen. Deswegen lässt sich eine Gasmenge in Einheiten von Molekülzahlen messen. Dazu wird ein \textbf{Mol} verwendet. Ein Mol ist die Menge von $N_A$ (Avogadro--Konstante) Molekülen eines Stoffes. Daraus folgt das \textbf{Molvolumen}, also das Volumen von einem Mol idealen Gases unter Normalbedingungen ($p=p_A=1\,\text{Atm}=101\,325\,\text{Pa},\nu =0\,\text{$^\circ$C}$). Der Messwert liegt bei
+\[ 
+        V_M=22,4\,\text{dm}^3\qquad p\cdot V=n\cdot p_N\cdot V_M\cdot \left(1+\alpha \nu \right)=n\cdot \dfrac{p_N\cdot V_M}{T_0}\cdot T=n\cdot R\cdot T
+\] 
+wobei $R$ die allgemeine Gaskonstante ist. Sie gibt die Energie pro Mol pro Kelvin an und hat einen Wert von $8.314\tfrac{\,\text{J}\,}{\,\text{K}\,\cdot \,\text{Mol}\,}$.
+\\\hfill\\\textbf{Boltzmann--Konstante}\\ 
+Später wird durch eine stochastische Analyse einzelner Atome pro Mol durchgeführt. Dabei verwendet man die Boltzmann--Konstante
+\[ 
+        k=\dfrac{R}{N_A}
+.\] 
+Diese entspricht der Energie pro Atom bzw.\,Molekül pro Kelvin und liegt bei $k=1,381\cdot 10^{-23}\tfrac{\,\text{J}\,}{\,\text{K}\,}$.
+
+\subsection{Wärmemenge und Wärmetransport}
+Wenn zwei Stoffe mit unterschiedlicher Temperatur in Konakt kommen kommt es zu einem Wärmeausgleich durch \textbf{Wärmeleitung, --strahlung} oder \textbf{Konvektion} (bei Gasen und Flüssigkeiten). Zu welcher Mischtemperatur sich ein System ausgleich wird durch die Wärmemenge $Q$ angegeben
+\[ 
+        \Delta Q=\underbrace{c}_{\,\text{spez. Wärmekapazität}\,}\cdot \underbrace{m}_{\,\text{Stoffmenge}\,}\cdot \Delta T
+.\] 
+Die Energie der Mischtemperatur bleibt immer Erhalten
+\[ 
+        \Delta E=\Delta Q_{\,\text{warm}\,}+\Delta Q_{\,\text{kalt}\,}=0
+.\] 
+Daraus ergeben sich folgende Proportionalitäten
+\[ 
+        \Delta E\propto \left(T_{\,\text{warm}\,}-T_{\,\text{misch}\,}\right)c _{\,\text{warm}\,}\cdot m_{\,\text{warm}\,}+\left(T_{\,\text{kalt}\,}-T_{\,\text{misch}\,}\right)c _{\,\text{kalt}\,}\cdot m_{\,\text{kalt}\,}=0
+.\] 
+Daraus folgt für die Mischtemperatur
+\[ 
+        T_{\,\text{misch}\,}=\dfrac{T_{\,\text{kalt}\,}c _{\,\text{kalt}\,}m_{\,\text{kalt}\,}+T_{\,\text{warm}\,}c _{\,\text{warm}\,}m_{\,\text{warm}\,}}{c _{\,\text{kalt}\,}\cdot m_{\,\text{kalt}\,}+c _{\,\text{warm}\,}\cdot m_{\,\text{warm}\,}}
+.\] 
+
+\subsubsection{Wärmekapazität}
+Die Wärmekapazität eines Körpers beschreibt die ihm zugeführte Wärme $Q$ und der damit bewirkten Temperaturerhöhung $\Delta T$ 
+\[ 
+        C=\dfrac{Q}{\Delta T}
+.\] 
+\hfill\\\textbf{Wärmekapazität von Festkörpern}\\ 
+In der Nähe von Normalbedingungen lässt sich die Wärmekapazität von Festkörpern mithilfe eines vereinfachten Modell beschreiben. Das \textbf{Dulong--Petit--Gesetz} beschreibt, dass ein mol eines Festkörpers, unabhängig seiner Stoffeigenschaften, fast die gleiche Wärmemenge speichert
+\[ 
+        C=\dfrac{r}{2}R=3R
+,\] 
+mit $r$ gleich 3 Schwingungsfreiheitsgraden plus 3 potenziellen Energien.
+
+\newpage
+\section{Grundzüge zur kinetischen Gastheorie}
+Das Ziel ist es die Wärmelehre auf mikroskopischen Grundlagen zu erarbeiten. Gasmoleküle bewegen sich zufällig durch ein Medium, was es erschwert sich die Trajektorie jedes einzelnen Gasmoleküls zu berechnen. Zur genaueren Analyse werden also zum Beispiel die einzelnen Geschwindigkeiten der Moleküle histogrammiert. Wenn man Histogramme als eine Funktion von $x$ genügend ausgemessen hat, dann kann mit den Messwerten $N$ der Ausdruck $\tfrac{\Delta N\left(x\right)}{\Delta x}$ aufgestellt werden, um eine Verteilungsfunktion $f\left(x\right)$ abzuschätzen. $f\left(x\right)$ ist dabei die PDF (Probability Density Function). Daraus folgt
+\[ 
+        c\cdot f\left(x\right)=\lim_{\Delta x\rightarrow 0,z\rightarrow \infty}\dfrac{\Delta N\left(x\right)}{\Delta x}=\diff[1]{N\left(x\right)}{x}
+\] 
+wobei $z$ die Anzahl der Messungen ist. Damit folgt für $N$ und die Konstante $c=N$ 
+\[ 
+        N=\int_{-\infty}^{\infty}c\cdot f\left(x\right)\td x=N\cdot \int_{-\infty}^{\infty}f\left(x\right)\td x=N\cdot 1
+.\] 
+
+\subsection{Gasdruck als dynamischer Druck stoßender Moleküle}
+In einem Zeitintervall $\Delta t$ treffen $\Delta N$ Moleküle oder Atome auf ein Wandstück $\Delta A$, welche einen Druck bzw.\, Impulsübertragung $\Delta P$ auf die Wand ausüben. Diese kompensiert mit $\Delta F=\tfrac{\Delta P}{\Delta t}$ oder sie wird weggedrückt. Der Druck wird beschrieben durch
+\[ 
+        p_a=\dfrac{\Delta F}{\Delta A}=\dfrac{\Delta P}{\Delta t\cdot \Delta A}
+.\] 
+Auf mikroskopischer Ebene treffen die Atome mit dem Impuls $p=m\cdot v$ auf die Wand und werden reflektiert mit einem neuen Impuls von $p'=m\cdot v'$. Zur resultierenden Kraft auf die Wand trägt nur die Normalkomponente bei. Die Anzahl an Molekülen pro Volumeninhalt ist $n=\diff[1]{N}{V}$. Wenn alle $n$ Moleküle mit einer fixen Geschwindigkeit $v_x$ gegen eine Wand der Fläche $\Delta A$ auftreffen, kann man dies als Teilchenstrom 
+\[ 
+        \Delta I=\underbrace{j_x}_{=\tfrac{n}{2}v_x}\cdot \hat{n}_A\cdot \Delta A=\dfrac{n}{2}v_x\cdot \hat{n}_A\cdot \Delta A
+\] 
+bezeichnen. $\hat{n}_A$ ist die Normale zur Fläche $A$. Der Teilchenstrom ist hier als die pro Zeiteinheit durch eine Querschnittsfläche durchtretende Menge an Teilchen. Im allgemeinen Fall kann ein Volumenstrom als $I_{\,\text{vol}\,}=A\cdot \left(\vv{v}\cdot \hat{n}_A\right)$ geschrieben werden. Die Stöße die von einem Teilchenstrom ausgehen sind
+\[ 
+        \Delta Z=\Delta I\cdot \Delta t
+.\] 
+Pro Molekül wird ein Impuls von $m\cdot v_x$ übertragen. Also ist der Gesamtimpuls
+\[ 
+        \Delta P=\Delta Z\cdot m\cdot v_x=\dfrac{n}{2}mv_x^2\cdot \Delta A\cdot \Delta t
+;\] 
+Und der Druck
+\[ 
+        p_a=\dfrac{\Delta P}{\Delta t\cdot \Delta A}=\dfrac{n}{2}mv_x^2=mv_xj_x
+.\] 
+
+\subsubsection{Geschwindigkeitsverteilung}
+Da offensichtlich nicht jedes Teilchen dieselbe Geschwindigkeit $v_x$ hat, folgt $v_x$ einer Geschwindigkeitsverteilung $f\left(v_x\right)$ 
+\[ 
+        n=\int_{-\infty}^{+\infty}\diff[1]{n\left(v_x\right)}{v_x}\td v_x=\int_{-\infty}^{\infty}n f\left(v_x\right)\td v_x
+.\] 
+Für die Stomdichte $j_x$ folgt also
+\[ 
+        j_x\rightarrow \text{d}j_x\left(v_x\right)\Rightarrow p_a\rightarrow \,\text{d}p_a=mv_x\,\text{d}j_x\left(v_x\right)=mv_x^2\diff[1]{n}{v_x}\,\text{d}v_x
+.\] 
+Der Druck ist dann
+\[ 
+        p_a=\int_{0}^{+\infty}mv_x^2\diff[1]{n}{v_x}\td v_x=\dfrac{1}{2}\int_{-\infty}^{+\infty}mv_x^2n f\left(v_x\right)\td v_x=\dfrac{n\cdot m}{2}\cdot \overline{v_x^2}
+.\] 
+Daraus folgt der totale Druck, welcher zwei mal $p_a$ ist, da die Teilchen wieder von der Wand zurück geworfen werden. Die Energie pro Raumrichtung ist jeweils $\tfrac{1}{3}$ der gesamten kinetischen Energie.
+\[ 
+        p=n\cdot m\cdot \overline{v_x^2}=\dfrac{2}{3}\cdot n\cdot \overline{E_{\,\text{kin}\,}}
+.\] 
+Auch für das ideale Gasgesetz lässt sich ein Ausdruck finden
+\[ 
+        p\cdot V=\dfrac{2}{3}\cdot n\cdot V\cdot \overline{E_{\,\text{kin}\,}}=\dfrac{2}{3}\cdot N\cdot \overline{E_{\,\text{kin}\,}}\stackrel{\,\text{$1$ Mol Teilchen}\,}{=}\dfrac{2}{3}N_A\cdot \overline{E_{\,\text{kin}\,}}=R\cdot T
+,\] 
+wobei $N$ die Gesamtanzahl an Teilchen ist. Die mittlere Energie pro Teilchen ist dann
+\[ 
+        \overline{E_{\,\text{kin}\,}}=\dfrac{3}{2}\cdot k\cdot T
+,\] 
+wobei $k$ die Boltzmann--Konstante ist. Pro Kelvin Temperaturanstieg steigt die kinetische Energie also um $\tfrac{3}{2}k$.
+
+\subsubsection{Partialdrücke}
+Unter dem Gesamtdruck versteht man die Addition aller Partialdrücke verschiedener Gase bzw.\,Moleküle auf dieselbe Fläche. Die mittlere Geschwindigkeit von Molekülen eines Gases kann mithilfe der \textbf{Brownschen--Bewegung} angegeben werden
+\[ 
+        v_{\,\text{rms}\,}=\sqrt[ ]{\overline{v^2}}=\sqrt[ ]{\dfrac{2\overline{E_{\,\text{kin}\,}} }{m}}=\sqrt[ ]{\dfrac{3kT}{m}}
+.\] 
+
+\newpage
+\section{Innere Energie}
+Die innere Energie eines Gases wird definiert als die Gesamtenergie aus der Wärmebewegung von Molekülen.
+
+\subsection{Einatomige Gase -- Äquipartitionsgesetz}
+Bei einatomigen Gasen entspricht die innere Energie der kinetischen Energie also der Summe der Energien aller Atome
+\[ 
+        U=E_{\,\text{kin}\,}=\sum_{i=1}^{N}\dfrac{1}{2}m\overline{v^2}=\dfrac{3}{2}\cdot N\cdot k\cdot T
+.\] 
+Jeder translatonische Freiheitsgrad $\left(x,y,z\right)$ bekommt die gleiche mittlere Energie. Pro Atom gibt es also $\tfrac{1}{2}kT$ Freiheitsgrade. Wenn jedes Atom den gleichen Beitrag zum Druck leistet, heißt dies \textbf{Äquipartitionsgesetz}.
+
+\subsection{Zweiatomige Gase}
+Zweiatomige Gase sind Gase, in denen jedes Molekül aus zwei Atomen besteht (und nicht, dass das Gas aus zwei Molekülen besteht), welche elastisch aneinander gebunden sind. Die Freiheitsgrade werden um zwei Winkel erweitert, da sich die Atome umeinander rotieren können, sowie um eine Schwingung der Verbindungsachse. Auch hier erhält jeder der sechs Freiheitsgrade den gleichen Energieanteil. Die kinetische Energie ist damit
+\[ 
+        \overline{E_{\,\text{kin}\,}}=6\cdot \dfrac{1}{2}kT=3\cdot k\cdot T
+.\] 
+Dies teilt sich auf in Translation mit $\tfrac{3}{2}kT$, Rotation $kT$ und Schwingung $\tfrac{1}{2}kT$ Freiheitsgraden. Die innere Energie dieses Gases ist dann
+\[ 
+        U=\dfrac{7}{2}\cdot N\cdot k\cdot T\qquad U=\dfrac{r}{2}\cdot N\cdot k\cdot T
+,\] 
+wobei $r$ die Anzahl der Freiheitsgrade sind. Dieser Wert wird häufig aufgrund quantenmechnischer Prinzipien nicht erreicht. Die Ursache dafür ist, dass die Schwingungsfreiheitsgrade nicht angeregt werden, da es nur ganzzahlige Anregungen geben darf.
+
+\subsection{Zusammenhang: innere Energie und Wärme}
+Wird einem Gas $\Delta Q$ Wärme hinzugefügt, wird seine Energie um den gleichen Betrag erhöht
+\[ 
+        \Delta U=\Delta Q=mc_v\Delta T
+,\] 
+mit $C_V$ als die spezifische Wärmekapazität. Diese Gleichung gilt nur, wenn es keine andere Energieumsetzung gibt. $c_v$ kann als Molwärme 
+\[ 
+        c_v=\dfrac{r}{2}R=\dfrac{r}{2}N_Ak
+\] 
+definiert werden. Diese ist kein Stoffabhängiger Wert, sondern sie ist für ideale Gase proportional zu ihren Freiheitsgraden.
+
+\subsection{Maxwell--Boltzmann--Verteilung}
+Die Maxwell--Boltzmann--Verteilung beschreibt die Geschwindigkeitsverteilung von Molekülen eines idealen Gases. Die Verteilung hat die Form
+\[ 
+        \td W(v)\td v=f(v)\td v=\left(\dfrac{2\pi kT}{m}\right)^{-\tfrac{3}{2}}e^{-\tfrac{mv^2}{2kT}}4\pi v^2\td v
+.\] 
+Das Maximum der Verteilung ist 
+\[ 
+        v_w=\sqrt[]{\dfrac{2kT}{m}}
+;\]  
+der Mittelwert liegt bei
+\[ 
+        \overline{v}=\sqrt[]{\dfrac{8kT}{\pi m}}=\int_{0}^{+\infty}vf(w)\td v
+.\] 
+
+\newpage
+\section{Thermodynamik}
+Vorab sollten vier verschiedene Zustandsänderungen dargestellt werden
+\begin{align*}
+        \,\text{isochor}\,\td V&=0\\
+        \,\text{isobar}\,\td p&=0\\
+        \,\text{adiabatisch}\,\td Q&=0\\
+        \,\text{isoterm}\,\td T&=0
+.\end{align*}
+
+\subsection{Erster Hauptsatz der Thermodynamik}
+Der erste Hauptsatz der Thermodynamik beschreibt die Energieerhaltung in thermodynamischen Systemen. Er sagt aus, dass die Energie eines abgeschlossenen Systems konstant ist.\\\\
+Die zugeflossene Wärme eines isochoren Systems ohne, dass Arbeit am Gas verrichtet wird, kann vollständig mit
+\[ 
+        \td U=\td Q=C_V\td T\tag{1}\label{1} %\eqref{1}
+\] 
+beschrieben werden.\\\\
+Energie kann auch durch mechanische Arbeit zugeführt werden. Hier wird ein Stempel betrachtet, welcher ein ideales Gas mit einer Kraft
+\[ 
+        F_a=p_a\cdot q
+\] 
+komprimiert. $p_a$ ist der durch die Kraft hervorgerufene Druck und $q$ die Querschnittsfläche des Stempels. Die resultierende Volumenänderung ist
+\[ 
+        \td V=-q\td x
+.\] 
+Die geleistete Arbeit ist dann
+\[ 
+        \td W_a=F_a\td x=pq\td x=-p\td V
+,\] 
+was mit Zusammenführung von \eqref{1} zu dem Ausdruck des ersten Hauptsatzes der Wärmelehre führt
+\[ 
+        \td U=\td Q-p\td V
+.\] 
+Die innere Energie ändert sich also als Funktion der thermischen und mechanischen Energiezufuhr. Der erste Hauptsatz besagt zudem, dass es kein \textbf{Perpetuum Mobile 1. Art} geben kann.
+
+\subsubsection{Isobare Zustandsänderung}
+Wird einem Gas mit $n=1\,\text{mol}\,,p=\,\text{const.}\,$ eine Wärmemenge $\td Q$ zugeführt, so erwärmt sich das Gas und sein Volumen vergrößert sich um
+\[ 
+        V=nRTp^{-1}=RTp^{-1}
+.\] 
+In dem obigen Kompressionsversuch wird der Stempel herausgedrückt und das Gas verrichtet eine mechanische Arbeit. $\td U$ wird dann um den Betrag dieser mechanischen Arbeit kleiner als die zugeführte Wärme. Diese Änderung kann durch
+\[ 
+        \td U=C_V\td T
+\] 
+dargestellt werden. Mit $p\td V=R\td T$ und $p=\,\text{const.}\,$ folgt
+\[ 
+        \td Q=C_V\td T+R\td T=\left(C_V+R\right)\td T
+.\] 
+Man definiert $C_P=C_V+R$ als \textbf{isobare Molwärme}. Der unterschied zur Molwärme von $R$ ergibt sich aus dem Mehrbedarf an Energie, welche in mechanische Arbeit umgewandelt umgesetzt wird. \\\\
+Vergleicht man die im folgenden Eingeführte adiabatische und isothermische Zustandsänderung, kann man sehen, dass Adiabaten einen steileren Verlauf in einem p--V--Diagram haben. Das müssen sie auch, da bei der Kompression die auftretende Erhitzung nicht abgekühlt werden kann (da kein Wärmetransport stattfindet erhöht sich $T$ schneller). Durch diesen steileren Verlauf muss jede Adiabate jede Isotherme schneiden, woraus sich ein Kreisprozess bilden lässt. Die geleistete isotherme Arbeit entspricht dann der Fläche unter der Kurve von $V_1\rightarrow V_2$.
+\[ 
+        A=\int_{V_1}^{V_2}p\td V=-W_{a,V_1\rightarrow V_2}
+.\] 
+
+\subsubsection{Adiabatische Zustandsänderung}
+Prozesse mit $\td Q=0$ heißen \textbf{adiabatisch}. Daraus folgt für die Gleichung des ersten Hauptsatzes
+\[ 
+        \td U=-\td Q-p\td V=-p\td V\qquad U=C_VT=\dfrac{r}{2}RT=\dfrac{r}{2}pV
+.\] 
+Betrachtet man nun $\td(U)=\td(pV)$ folgt
+\[ 
+        \td U=\dfrac{r}{2}\td(pV)=\dfrac{r}{2}(p\td V+V\td p)=-p\td V
+,\] 
+wobei die letzte Gleichung aus dem ersten Hauptsatz folgt. Stellt man diese Terme um erhält man
+\[ 
+        \dfrac{\tfrac{r}{2}+1}{\tfrac{r}{2}}\dfrac{\td V}{V}=-\dfrac{\td p}{p}
+.\] 
+Durch integration beider Seiten erhält man
+\begin{align*}
+        \gamma \ln V&=-\ln p+\,\text{const.}\,\\
+        \ln \left(V^\gamma \right)&=\ln\left(\dfrac{1}{p}\cdot \,\text{const.}\,\right)\\
+        V^\gamma &=\dfrac{\,\text{const.}\,}{p}
+.\end{align*}
+Daraus folgt die \textbf{Adiabatengleichung} und der \textbf{Adiabatenkoeffizient}
+\[ 
+        pV^\gamma =p_0V_0^\gamma =\,\text{const.}\,\qquad \gamma =\dfrac{r+2}{r}=\dfrac{C_P}{C_V}
+.\] 
+Mit $pV=RT$ folgt
+\[ 
+        TV^{\gamma -1}=\,\text{const.}\,\qquad \dfrac{T^\gamma }{p^{\gamma -1}}=\,\text{const.}\,
+.\] 
+Für einen Temperaturanstieg von $T_1\rightarrow T_2$ gilt
+\[ 
+        W_{a,1\rightarrow 2}=C_V(T_2-T_1)=\dfrac{r}{2}R(T_2-T_1)
+.\] 
+
+\subsubsection{Isotherme Zustandsänderung}
+Bei der isothermen Kompression erhält man einen Spezialfall der Gesetzmäßigkeiten des Boyle--Mariotte--Gesetz
+\[ 
+        pV=\,\text{const.}\,
+.\] 
+Zur realisierung von $T=\,\text{const.}\,$ wird ein Versuch mit einem Wärmebad gemacht. Dieses wird thermisch an ein ideales Gas gekoppelt mithilfe einer thermisch leitenden Wand. Die Idee ist es \glqq unendlich\grqq{} viel Energie aus dem Wärmebad in das ideale Gas zu geben oder vom idealen Gas aufzunehmen, dass sich die Temperatur des Gases nicht ändert, wenn das Gas von einem Stempel kompriemiert oder expandiert wird. Das ideale Gas ist thermisch von der Umgebung isoliert. Der erste Hauptsatz ist dann
+\[ 
+        \td U=C_V\td T=0
+.\] 
+Das bedeutet das die mechanische Arbeit der Kompression vollständig in Wärme umgesetzt wird
+\[ 
+        \td Q=p\td V
+.\] 
+Diese wird vom Wärmebad absorbiert. Wird das Gas isotherm expandiert, dann fließt die gesamte entnommene Wärme in mechanische Arbeit. Es gilt
+\[ 
+        \td W_a=-p\td V=-\dfrac{RT}{V}\td V
+.\] 
+Hier aus kann explizit die isotherme Arbeit bei Volumenänderung von $V_1\rightarrow V_2$ bestimmt werden
+\[ 
+        W_{a,V_1\rightarrow V_2}=-\int_{V_1}^{V_2}\dfrac{RT}{V}\td V=RT\ln\left(\dfrac{V_1}{V_2}\right)
+.\]  
+
+\subsection{Zweiter Hauptsatz der Thermodynamik}
+Es gibt vier verschiedene Modellprozesse, mit deren Verknüpfungen Wärmekraftmaschinen \glqq gebaut\grqq{} werden können. Jede Wärmekraftmaschine folgt dem Wirkungsgrad von
+\[ 
+        \eta \leq \eta _i=\dfrac{T_1-T_2}{T_1}
+,\] 
+wbei $T_1$ das warme und $T_2$ das kalte Reservoir ist. $\eta $ ist beschränkt, es gibt also kein \textbf{Perpetuum Mobile zweiter Art}, welches Arbeit aus bloßem Abkühlen gewinnt.
+
+\subsubsection{Kreisprozess}
+Kreisprozesse sind Prozesse, bei denen ein System von einem thermodynamischen Zustand in einen anderen Zustand geht und dann wieder in den selben thermodynamischen Zustand zurückkehrt. Dabei muss auch das Arbeitsmedium, sowie mechanische Teile berücksichtigt werden, welche auch in die selben thermodynamischen Zustände zurückkehren müssen. Das Medium durchläuft dann auf dem $p-V$--Diagram eine geschlossene Kurve.
+
+\subsubsection{Carnot--Maschine}
+Eine Carnot--Maschine ist eine idealisierte Modellmaschine, mit zwei Isothermen und zwei Adiabaten. Diese Prozesse funktionieren ohne Reibung und ohne Wärmeverlust. Zudem gibt es keinen Druckunterschied auf beiden Seiten des Kolbens, sowie keiner Temperaturdifferenz zwischen den Medium und den Wärmebädern. Die Prozesse sind auch quasistatisch (der Kreisprozess ist vollständig reversibel). Die Carnot--Maschine funktioniert wie folgt.
+\begin{enumerate}[label=\arabic*.]
+        \item Das Gas ist in einem Kolben an ein Wärmebad der Temperatur $T_1$ angeschlossen. Der Stempel expandiert das Gas isotherm
+                \[ 
+                        p_1\rightarrow p_2\qquad V_1\rightarrow V_2\qquad T_1\qquad W_1=-Q_1=RT_1\ln\left(\dfrac{V_1}{V_2}\right)<0\because V_1<V_2
+                .\] 
+        \item Das Gas wird von dem Wärmebad abgeschirmt. Der Stempel expandiert das Gas adiabatisch
+                \[ 
+                        p_2\rightarrow p_3\qquad V_2\rightarrow V_3\qquad T_1\rightarrow T_2\qquad W_2=C_V(T_2-T_1)<0\because T_2<T_1
+                .\] 
+        \item Das Gas wird an ein Wärmebad der Temperatur $T_2$ angeschlossen. Der Stempel komprimiert das Gas isotherm
+                \[ 
+                        p_3\rightarrow p_4\qquad V_3\rightarrow V_4\qquad T_2\qquad W_3=-Q_2=RT_2\ln\left(\dfrac{V_3}{V_4}\right)>0\because V_3>V_4
+                .\] 
+        \item Das Gas wird von dem Wärmebad abgeschirmt. Der Stempel komprimiert das Gas adiabatisch
+                \[ 
+                        p_4\rightarrow p_1\qquad V_4\rightarrow V_1\qquad T_2\rightarrow T_1\qquad W_4=C_V(T_2-T_1)>0\because T_1>T_2
+                .\] 
+\end{enumerate}
+Zu sehen ist, dass das Gas vollständig durch einen Kreisprozess gelaufen ist und wieder seinen thermodynamischen Ausgangszustand erreicht hat. Wenn die Arbeit $W<0$ ist, dann leistet die Maschine arbeit; wenn $W>0$ ist, konsumiert die Maschine arbeit. Daraus folgt
+\[ 
+        W_a=\sum_{i=1}^{4}W_i=W_1+W_3<0
+.\] 
+Diese vier Volumina können allerdings nicht unabhängig voneinander sein, da es sonst nicht zu einem Kreisprozess kommen würde.\\\indent
+Betrachtet man nur die Adiabaten sieht man, dass
+\begin{align*}
+        T_1V_2^{\gamma -1}&=T_2V_3^{\gamma -1}\\
+        T_1V_1^{\gamma -1}&=T_2V_4^{\gamma -1}\\
+        \Rightarrow \dfrac{V_2}{V_1}&=\dfrac{V_3}{V_4}\\
+        \Rightarrow W_a&=R(T_1-T_2)\ln\left(\dfrac{V_2}{V_1}\right)
+\end{align*}
+\hfill\\\textbf{Wirkungsgrad}\\ 
+Der Wirkungsgrad wird als Verhältnis zwischen der geleisteten Arbeit $W_a$ über der hineingesteckten Wärme. Speziell für die Carnot--Maschine ergibt sich
+\[ 
+        \eta _i=\dfrac{-W_a}{Q_1}=\dfrac{|W_a|}{Q_2}=\dfrac{T_1-T_2}{T_1}
+.\] 
+\hfill\\\textbf{Wärmepumpen}\\ 
+Diese können realisiert werden, indem der Kreisprozess im $p-V$--Diagram gegen den Uhrzeigersinn läuft. Mit dieser Maschine wird mechanische Arbeit aufgenommen und dadurch wird Wärme produziert. Gleichzeitig wird dem kühleren Reservoir Wärme entzogen und dem wärmeren Reservoir zugefügt. Der Wirkungsgrad hier ist
+\[ 
+        \eta _i=\dfrac{|Q_1|}{|W_a|}=\dfrac{T_1}{T_1-T_2}=\dfrac{1}{\eta _i}
+.\] 
+Je kleiner also der Wärmeunterschied zwischen den beiden Reservoiren, desto effizienter läuft die Wärmepumpe.
+
+\subsubsection{Stirling--Motor}
+Hier Erklärung von Motor
+
+\subsection{Entropie}
+Die Entropie beschreibt das Maß an Unordnung in einem System. Bei einem reversiblen Prozess ist der thermodynamische Zustand des Arbeitsgases nach einem Zylkus identisch. Abweichungen können über die reduzierte Wärmemenge beschrieben werden mit $\tfrac{Q_n}{T_n}$. Es gilt weiterhin für die Arbeit, bzw. für die Summe der reduzierten Wärmemengen im Carnot--Prozess
+\[ 
+        -W_a=Q_1+Q_2=\eta _iQ_1\qquad \dfrac{Q_1}{T_1}+\dfrac{Q_2}{T_2}=0
+.\] 
+In der Realität ist die WKM nicht ideal, also ist der Wärmefluss auch nicht ideal, dann folgt
+\[ 
+        \dfrac{Q_1'}{T_1}+\dfrac{Q_2'}{T_2}<0
+.\] 
+Auch durch Reibungsverluste wird den beiden Reservoiren Wärme hinzugeführt
+\[ 
+        \dfrac{Q_1-Q_{1R}}{T_1}-\dfrac{Q_2+Q_{2R}}{T_2}=-\dfrac{Q_{1R}}{T_1}-\dfrac{Q_{2R}}{T_2}<0
+.\] 
+Verallgemeinert man diese Ausdrücke auf Kreisprozesse, dann gilt
+\[ 
+        \lim_{\Delta Q_K\rightarrow 0}\sum_{K}^{}\dfrac{\Delta Q_K}{T_K}=\oint_{}^{}\dfrac{1}{T}\td Q=\oint_{}^{}\dfrac{1}{T(s)}\diff[]{Q(s)}{s}\td s
+.\] 
+Dabei unterschiedet man zwischen reversibel und irreversibel
+\begin{align*}
+        \,\text{reversibel}\,&:\oint_{}^{}\dfrac{1}{T}\td Q=0\qquad \Delta S=S(P_1)-S(P_2)=\int_{P_1}^{P_2}\dfrac{1}{T}\td Q\\
+        \,\text{irreversibel}\,&:\oint_{}^{}\dfrac{1}{T}\td Q<0\qquad \Delta S=S(P_1)-S(P_2)>\int_{P_{1,irrev.}}^{P_2}\dfrac{1}{T}\td Q
+.\end{align*}
+In allen abgeschlossenen Systemen nimmt die Entropie im Laufe der Zeit zu, denn $\td Q=0$. Reversible Systeme haben eine konstante Entropie, irreversible eine Entropiezunahme. Bei Systemen in denen Energie gewonnen wird ohne das Arbeit geleistet wird, nimmt die Entropie ab. Die Entropie eines idealen Gases im $p-V$--Diagram ist
+\[ 
+        S(V,T)=R\cdot \ln\left(\dfrac{V}{V_n}\right)+C_V\ln\left(\dfrac{T}{T_0}\right)
+.\] 
+Bei mikroskopischen Prozessen gilt für die Entropie
+\[ 
+        S=k_B\ln W
+,\] 
+mit $W$ als die Anzahl der möglichen Konfigurationen eines Gases.
+
+\newpage
+\section{Reale Gase und Van der Waals--Gleichung}
+Bisher ist die Vereinfachung getroffen worden, dass Moleküle keine Ausdehung (Eigenvolumen: $V_a$) und Attraktion (Bindungskräfte) besitzen. In der Realität ist dies nicht der Fall, also brauchen Druck und Volumen einen Korrekturterm
+\[ 
+        \left(p+\dfrac{a}{V^2}\right)\left(V-b\right)=nRT
+.\] 
+Der Term $\tfrac{a}{V^2}$ heißt Binnendruck, welcher den gemessenen Druck verringert. Die Ursache ist, dass das Lennard--Jones--Potential 
+\[ 
+        V(r)=V_0\left[\left(\dfrac{r_0}{r}\right)^{12}-\left(\dfrac{r_0}{r}\right)^{6}\right]
+\] 
+zwischen zwei Molekülen einen anziehenden und abstoßenden Zweig hat. Die Summe der anziehenden Kräfte am Rand eines Gases ist nicht null und es ergibt sich eine nach innen gerichtete Kraft (da das Molekül nicht von allen Seiten angezogen wird). Das hat zur Folge, dass der Druck eines Gases verringert wird. Schaut man sich den Zusammenhang zwischen der Kraft und der Dichte ergibt sich
+\[ 
+        |\vv{F}_a|\propto \rho =\dfrac{m}{V}\qquad F\propto \rho ^2=\dfrac{m^2}{V^2}\Rightarrow \dfrac{a}{V^2}=p_b
+,\]
+wobei $a$ ein Parameter ist, welcher die Stärke der Anziehung parametrisiert.\\\indent
+Der Term $b$ heißt Kovolumen und entspricht $b\approx 4\cdot V_a\cdot n$. Die Existenz geht daraus hervor, dass sich Gasmoleküle nicht beliebtig nahe kommen können, die besitzen also einen Grenzabstand von $\approx 2r_a=d_a$. Zudem kann das Gasmolekül nur bis zum Rand $L$ von dem Behältnis / Umgebung das es umgibt, womit das korrigierte Volumen $V'=\left(L-2r_a\right)^3$ ist.
+
+\subsection{Innere Energie}
+Das Gas muss jetzt Arbeit gegen den Binnendruck leisten
+\[ 
+        U(V)=\int_{0}^{V}p_b\td V'=\int_{0}^{V}\dfrac{a}{V^2}\td V'=-\dfrac{a}{V}
+.\] 
+Dieser Vorgang reduziert die zur Verfügung stehende innere Energie. Also gilt für ein reales Gas
+\[ 
+        U=C_VT-\dfrac{a}{V}
+.\] 
+
+\subsection{Joule--Thomson--Effekt und Enthalpie}
+In einem thermisch isoliertem System existiert ein Volumen, welches von einem Vakuum, im selben thermisch isolierten System, abgeschirmt ist. Dann wird ein Spalt geöffnet, sodass das Gas in das Vakuum gelangen kann. Es wird keine mechanische Arbeit geleistet und keine Wärme zugeführt. Bei einem idealen Gas ist also $\td U=0$ und $\td T=0$. Bei einem realen Gas ist $\td T\neq 0$ also gilt
+\begin{align*}
+        0=\td U=\left(\diffp[]{U}{T}\right)\td T+\left(\diffp[]{U}{V}\right)\td V=C_V\td T+\dfrac{a}{V^2}\td V\\
+        \td T=-\dfrac{a}{C_VV^2}\td V
+.\end{align*}
+$T$ reduziert sich also. Dieser Effekt ist der Joule--Thomson--Effekt.\\\\
+Ein anderer adiabatischer Prozess ist zum Beispiel, wenn zwei Stempel ein Gas durch eine kleine Öffnung in einem thermisch isoliertem System drücken. Die Druckdifferenz ist $p_1-p_2$ also 
+\[ 
+        U_1-U_2=\Delta W_a=-p_1V_1+p_2V_2
+.\] 
+Man definiert dann die \textbf{Enthalpie} als 
+\[ 
+        H=U_1+p_1V_1=U_2+p_2V_2=\,\text{const.}\,
+.\] 
+Bei konstantem $H$ gilt für ein ideales Gas
+\[ 
+        \td H=0=\td (U+pV)=\td (C_VT+RT)=(C_V+R)\td T
+.\] 
+Für ein VdW--Gas gilt
+\[ 
+        \td H=\diffp[]{H}{T}\td T+\diffp[]{H}{V}\td V=0\Rightarrow \diff[]{T}{V}\approx \dfrac{RTb-2a}{(C_V+R)V^2}
+.\] 
+Die Temperatur wird auch Inversionstemperatur 
+\[ 
+        T_I=\dfrac{2a}{Rb}
+.\] 
+genannt. 
+
+\subsubsection{Verflüssigung und Verfestigung}
+Bei hohem $V,T$ geht die VdW--Gleichung in das ideale Gasgesetzt über. Das ideale Gasgesetz weist eindeutige $p,V$--Paare auf, das VdW--Gesetz allerdings bis zu drei $V$ pro $p$.
+\\\hfill\\\textbf{Van der Waals--Kurve}\\ 
+Die Verflüssigung eines Gases beginnt bei einem tiefen $T$ mit den Volumina $V_1,V_2,V_3$ sowie $p_S,p$. Bei einer isothermen Kompression beginnt das Gas bei $V_2$ zu kondensieren. Die Verringerung des Volumens bei konstantem Druck nennt man Sättigungsdruck $p_S$. Es gibt also die gleiche Menge an Gas und Flüssigkeit, id est die Verdampfungsrate $f_V$ ist gleich der Kondensierungsrate $f_K$. Die Bestimmung dieses Sättigungsdrucks funktioniert mit Hilfe der Maxwell--Konstruktion. In der Isothermen schneidet der Sättigungsdruck die Kurve so, dass zwei gleichgröße Flächenstücke entstehen (über und unter dem Sättigungsdruck). Es gibt einen Grenzbereich jeder Isothermen, bei dem die beiden Volumina $V_1(T)$ und $V_2(T)$ für größer werdendes $T$ zusammenfallen. Dies passiert bei einer Temperatur $T_k$ und Druck $p_k$, wobei diese als kritischer Punkt bezeichnet wird. Sie beschreibt den Übergang eines VdW--Gases in ein ideales Gas. Der Wert für diese Temperatur ist
+\[ 
+        \diffp[]{p_k}{V_k}=\diffp[2]{p_k}{V_k}=0\qquad T_k=\dfrac{8a}{27Rb}=\dfrac{4}{27}T_I
+.\] 
+Isotherme mit $T>T_k$ haben für alle $p$ ein eindeutiges $V$. Diese Substanzen sind bei allen $p$ gasförmig.
+\\\hfill\\\textbf{Sieden und Verdunsten}\\ 
+Ist bei gegebener Temperatur der Sättigungsdampfdruck größer als der Luftdruck, dann bilden sich Gasblasen welche die Flüssigkeit verdrängen und in die Luft übergehen. Dieser Prozess bedeutet Sieden. Ist der Sättigungsdampfdruck kleiner als der Luftdruck, dann bilden sich keine Gasblasen, sondern nur einzelne Moleküle entkommen an der Oberfläche. Dieser Prozess wird Verdunsten genannt.
+\\\hfill\\\textbf{Linde--Verfahren}\\ 
+Ein Gas lässt sich mit Hilfe des Linde--Verfahrens verflüssigen. Dabei kühlt man ein Gas isotherm bei einem hohen Druck mit $T<T_I$. Ein Drosselventil entspannt das Gas und aufgrund des Joule--Thomson--Effekts geht $T$ unter den Kondensationspunkt.
+
+\subsection{Verdampfungswärme, Clausius Clapeyronsche Gleichung}
+Zum Verdampfen entlang des Sättigungsdrucks muss der Substanz Wärme zugeführt werden. Die Verdampfungswärme
+\[ 
+        \dfrac{Q_V}{T}=\diff[]{p_S}{T}\left(V_{\,\text{g}\,}-V_{\,\text{fl}\,}\right)
+.\] 
+\begin{enumerate}[label=\arabic*.]
+        \item Es wird eine mechanische Ausdehnungsarbeit gegen den äußeren Druck geleistet
+                \[ 
+                        W_a=p_S(V_2-V_1)
+                .\] 
+        \item Die innere Verdampfungswärme ist die Arbeit gegen den anziehenden Teil des Lennard--Jones--Potentials
+\end{enumerate}
+Die Summe dieser beiden Arbeiten nennt man latente (verborgene) Wärme. Man nennt sie so, weil der Stoff die Wärme aufnimmt, sich die Temperatur aber nicht ändert. Die wird vollständig genutzt, um gegen die mechanische Ausdehnungsarbeit und gegen das Potential zu arbeiten. Einen ähnlichen Effekt gibt es auch beim Schmelzen.\\\indent
+Die hineingesteckte Wärme wird bei der Kondensation wieder frei.
+\\\hfill\\\textbf{WKM als Wärmepumpe}\\ 
+Bei einer WKM als Wärmepumpe werden die Phasenübergänge genutzt um viel Energie zu speichern bzw. wieder abzugeben.
+\begin{enumerate}[label=\arabic*.]
+        \item Arbeitsgas wird verdichtet
+        \item Arbeitsgas verflüssigt sich $\rightarrow $ Abgabe der Wärme an Reservoir
+        \item Flüssigkeit wird mit Ventil entspannt
+        \item Flüssigkeit verdampft $\rightarrow $ Aufnahme von Wärme bei konstantem Druck
+\end{enumerate}
+Die Wärme entspricht der Enthalpie bei konstantem Druck.
+\begin{align*}
+        \td H+\td Q\begin{cases}
+                \td Q&=\td U+p\td V\\
+                \td H&=\td U+p\td V+\underbrace{V\td p}_{\,\text{const.}\,}
+        \end{cases}
+\end{align*}
+\hfill\\\textbf{Arbeitszahl}\\ 
+Die Arbeitszahl ist
+\[ 
+        \varepsilon =\dfrac{I_Q+I_{\,\text{el}\,}}{I_{\,\text{el}\,}}
+.\] 
+
+\newpage
+\section{Elektrostatik}
+\subsection{Elementarladungen}
+Ladungsträger kommen als freie Ladungen vor. Mit dem Milikanversuch wurde gezeigt, dass sie als ganzzahlige Veilfache einer positiven oder negativen Elementarladung $Q=\pm n_\mathbb{N} e$ vorkommen, mit
+\[ 
+        e\approx 1,602\cdot 10^{-19}\,\text{C}\,
+.\] 
+Die Ladungen entsprechen den Angriffspunkten der elektromagnetischen Kräften (analog wie die Masse der Angriffspunkt der Gravitation ist). Ruhende Ladungen führen zu anziehenden oder abstoßenden Kräften. Zu sehen ist auch, dass das Abstandsverhalten dasselbe, wie das der Gravitation ist. Zudem weisen bewegte Ladungen eine geschwindigkeitsabhängige Kraft auf. Dies ist der Ursprung des Magnetismus und der Lorentzkraft.\\\indent
+Der Wert der Elementarladung ist eine Naturkonstante und hängt nicht von dem Bewegungszustand.\\\indent
+Die Zahl der Elementarladungen ist erhalten
+\[ 
+        \sum_{i,j}^{}\left(q^-_i+q^+_j\right)=\,\text{const.}\,
+.\] 
+\textbf{Neutronen} sind elektrisch neutrale Teilchen. Sie haben eine Lebensdauer von $\tau _n\approx 16\cdot 60\,\text{s}\,$ und zerfallen in
+\[ 
+        n\rightarrow p^++e^-+\overline{\nu }_{e^-}
+.\] 
+Dies zeigt, dass Ladungserhaltung auch gilt, wenn Ladungsträger erzeugt oder vernichtet werden.\\\\\indent
+Die \textbf{Stromstärke} wird in Amp\`ere \,\text{A}\, angegeben. Die \textbf{Ladung} in \,\text{As}\, oder \,\text{C}\, und entspricht der Ladung, die durch den Querschnitt eines elektrischen Leiters mit der Stromstärke von \,\text{1A}\, in einer Sekunde fließt. Die \textbf{Spannung} \,\text{V}\, wird in $\tfrac{\,\text{J}\,}{\,\text{As}\,}=\tfrac{\,\text{J}\,}{\,\text{C}\,}$ angegeben. Die \textbf{Faraday--Konstante} ist die Ladung von einem Mol eines Stoffes, also $F=e\cdot N_A$.  
+\\\hfill\\\textbf{Ladungsinfluenz}\\ 
+Wenn sich ein Körper mit Ladungsträgern einem leitenden Körper nähert, verschieben sich die beweglichen Ladungsträger des leitenden Körpers in Abhängigkeit der Ladung des sich annähernden Körpers.
+
+\subsection{Coulomb--Gesetz}
+Zwischen gleichnamigen Ladungen wirkt eine abstoßende Kraft
+\[ 
+        F\propto Q_1\cdot Q_2
+.\]
+Bei konstanten Ladungen und größer werdendem Abstand sinkt diese Kraft mit 
+\[
+        \dfrac{1}{r_{12}^2}
+,\]
+wobei $r_{12}$ der Abstand zwischen den Ladungen 1 und 2 ist. Daraus folgt das \textbf{Coulombsche Kraftgesetz} 
+\[ 
+        \vv{F}_2=-\vv{F}_1=f\cdot \dfrac{Q_1\cdot Q_2}{r_{12}^2}\cdot \hat{r}_{12}^2\qquad f=\dfrac{1}{4\pi \varepsilon \varepsilon _0}\,\text{in SI mit}\,[f]=\dfrac{\,\text{V}\,}{\,\text{As}\,}\,\text{m}\,
+.\] 
+$f$ beinhaltet die Komponente des Schwächungsfaktors $\varepsilon ^{-1}$. Im Vakuum beträgt dieser 1, in Luft $\approx 1$, in Wasser 80. $\varepsilon _0$ ist die \textbf{elektrische Feldkonstante} mit einem Wert von $\varepsilon _0\approx 8,854\cdot 10^{-12}\,\text{As}\,\,\text{V}^{-1}\,\text{m}^{-1}$. Im Vakuum ist $\varepsilon =1$ und $\tfrac{1}{4\pi \varepsilon _0}\approx 9\cdot 10^{9}\tfrac{\,\text{Vm}\,}{\,\text{As}\,}$, was zur Folge hat, dass wenige Ladungsträger genügen um große Spannungen zu erzeugen.
+
+\subsection{Potentielle Energie}
+Die Coulomb--Kraft ist ein, analog zur Gravitationskraft, konservatives Kraftfeld. Um die potentielle Energie zu errechnen wird sich zuerst die potentielle Energie zwischen zwei Ladungen in einem Abstand von $r=\infty$ als $E_p(\infty)=0$ definiert. Man kann dann zeigen, dass
+\begin{align*}
+        E_p(r)=E_p(r)-E_p(\infty)=W_{a,\infty\rightarrow r}&=-\int_{\infty}^{r}\vv{F}_c\left(\vv{r}'\right)\td \vv{r}'\\
+                                                           &=\int_{r}^{\infty}\vv{F}_c\left(\vv{r}'\right)\td \vv{r}'\\
+                                                           &=\dfrac{Q_1Q_2}{r}\dfrac{1}{4\pi \varepsilon \varepsilon _0}
+.\end{align*}
+Dies entspricht der Arbeit die benötigt wird, Ladungen von einem Abstand $r$ zu einem Abstand von $r=\infty$ zu bringen. Sind drei Ladungen in einem System gilt
+\begin{align*}
+        W_a&=\dfrac{1}{4\pi \varepsilon \varepsilon _0}\left(\dfrac{Q_1Q_2}{r_{12}}+\dfrac{Q_1Q_3}{r_{13}}+\dfrac{Q_2Q_3}{r_{23}}\right)
+.\end{align*}
+Für $N$ Ladungen gilt dann
+\[ 
+        E_p=\sum_{i=1}^{N}\sum_{j=1}^{i-1}\dfrac{Q_iQ_j}{r_{ij}}\dfrac{1}{4\pi \varepsilon \varepsilon _0}
+.\] 
+Besser ist allerdings mit einer kontinuierlichen Ladungsverteilung zu rechnen
+\begin{align*}
+        E_p&=\left[\int_{V}^{}\int_{V}^{}\dfrac{\rho (r')\rho (r'')}{|\vv{r}'-\vv{r}''|}\td \tau '\td \tau ''\right]\dfrac{1}{4\pi \varepsilon \varepsilon _0}
+,\end{align*}
+mit $\rho (r)_i$ als Ladungsdichte und $\tau $ als infinitesimales Volumenelement. Zudem gilt
+\[ 
+        \Delta Q_i=\Delta \tau \cdot \rho (r_i)
+.\] 
+
+\subsection{Elektrisches Feld}
+Die Kraft die auf eine Testladung wirkt, wenn sie in einem Abstand von $\vv{r}_{jq}$ zu einem Körper mit elektrischer Ladung ist, ist
+\begin{align*}
+        F_q=\sum_{j}^{}F_{jq}&=q\sum_{j}^{}\dfrac{Q_j\cdot \hat{r}_{jq}}{r_{jq}^2}\dfrac{1}{4\pi \varepsilon \varepsilon _0}\\
+                             &=q\cdot \underbrace{\vv{E}(\vv{r})}_{\,\text{el. Feldstärke}\,}
+.\end{align*}
+Besteht das System nur aus zwei Ladungen, so gelten äquivalente Ausdrücke
+\begin{align*}
+        \vv{E}_1(\vv{r}_1)&=\dfrac{q_1\hat{r}_1}{r_1^2}\dfrac{1}{4\pi \varepsilon \varepsilon _0}\\
+        \vv{E}_2(\vv{r}_2)&=\dfrac{q_2\hat{r}_2}{r_2^2}\dfrac{1}{4\pi \varepsilon \varepsilon _0}\\
+                          &=-\dfrac{q_2\hat{r}_1}{r_1^2}\dfrac{1}{4\pi \varepsilon \varepsilon _0}
+.\end{align*}
+Bei der Ermittlung des elektrischen Feldes muss die Probeladung ausgeschlossen werden.
+
+\subsubsection{Wirbelfreiheit eines el. Feldes}
+Wenn ein elektrisches Feld durchschritten wird und wieder am Anfangspunkt angekommen wird, wird keine Arbeit verrichtet
+\begin{align*}
+        W&=\oint_{}^{}\left(\vv{F}(\vv{r})\cdot \td \vv{s}\right)\\
+        \dfrac{W}{q}&=\oint_{}^{}\left(\dfrac{\vv{F}(\vv{r})}{q}\cdot \td \vv{s}\right)=\oint_{}^{}\left(\vv{E}(\vv{r})\cdot \td \vv{s}\right)=0
+.\end{align*}
+Dies ist eine fundamentale Eigenschaft von elektrostatischen Feldern. Alternativ lässt sich auch die Rotation betrachten
+\begin{align*}
+        \,\text{rot}\,\vv{E}(\vv{r})=0=\vv{\nabla }\times \vv{E}=\begin{pmatrix}
+                                            \partial_x\\\partial_y\\\partial_z
+                                    \end{pmatrix}\times \begin{pmatrix}
+                                            E_x\\E_y\\E_z
+                                    \end{pmatrix}=\begin{pmatrix}
+                                            0\\0\\0
+                                    \end{pmatrix}
+.\end{align*}
+
+\subsection{Elektrisches Potential}
+Wird ein Weg von $p_1$ nach $p_2$ durch ein elektrisches Feld gewählt gilt
+\begin{align*}
+        \dfrac{W_{q,1\rightarrow 2}}{q}&=\dfrac{1}{q}\int_{p_1}^{p_2}\left(\vv{F}_c\cdot \td \vv{s}\right)\\
+                                       &=\int_{p_2}^{p_1}\left(\vv{E}\cdot \td \vv{s}\right)\\
+                                       &=\varphi _2-\varphi _1\\
+                                       &=U_{21}
+.\end{align*}
+$\varphi _2,\varphi _1$ ist dann das elektrische Potential mit $U_{21}$ der Potentialsdifferenz. Anders ausgedrückt, da $\vv{E}$ konservativ ist
+\[ 
+        \vv{E}\left(\vv{r}\right)=-\vv{\nabla }\varphi \left(\vv{r}\right)
+.\] 
+Die Einheit ist $[\varphi ]=\tfrac{\,\text{W}_{\,\text{el}\,}}{\,\text{Q}\,}=\tfrac{\,\text{J}\,}{\,\text{As}\,}=\,\text{V}\,$, sowie $[\vv{E}]=\tfrac{\,\text{V}\,}{\,\text{m}\,}$.
+
+\subsubsection{Punktladungen}
+Das Potential einer Punktladung ist
+\begin{align*}
+        \varphi (r)&=\varphi (r)-\underbrace{\varphi (\infty)}_{=0}\\
+                   &=\int_{r}^{\infty}\left(\vv{E}\left(\vv{r}\right)\cdot \td \vv{r}\right)\\
+                   &=\int_{r}^{\infty}\dfrac{Q\left(\hat{r}\cdot \td \vv{r}\right)}{4\pi \varepsilon \varepsilon _0r^2}
+.\end{align*}
+Das Potential einer Ladungsverteilung mit $N$ Punktladungen $Q_i$ and Orten $\vv{r}_i$ mit $i \in \mathbb{N}$ 
+\begin{align*}
+        \varphi \left(\vv{r}_p\right)&=\sum_{i}^{}\dfrac{1}{4\pi \varepsilon \varepsilon _0}\dfrac{Q_i}{|\vv{r}_i-\vv{r}_p|}
+,\end{align*}
+wobei $\vv{r}_p$ der Abstand zur Probeladungs / zum Betrachtungspunkt ist.
+
+\subsubsection{Kontinuierliche Ladungsverteilung mit Ladungsdichte}
+Eine kontinuierliche Ladungsverteilung mit der Ladungsdichte $\rho \left(\vv{r}_i\right)$ im Volumenelement $\Delta \tau _i$ ist
+\[ 
+        \Delta Q_i=\rho \left(\vv{r}_i\right)\cdot \Delta \tau _i
+.\] 
+Das elektrostatische Potential im Beobachtungspunkt $\vv{r}_p$ ist
+\begin{align*}
+        \varphi \left(\vv{r}_p\right)&=\left[\lim_{\Delta \tau \rightarrow \td \tau ,N\rightarrow \infty}\sum_{i=n}^{N}\dfrac{\rho \left(r_i\right)\Delta \tau _i}{|\vv{r}_i-\vv{r}_p|}\dfrac{1}{4\pi \varepsilon \varepsilon _0}\right]\\
+                                     &=\dfrac{1}{4\pi \varepsilon \varepsilon _0}\int_{V}^{}\left(\dfrac{\rho \left(\vv{r}\right)}{|\vv{r}-\vv{r}_p|}\cdot \td \tau \right)
+.\end{align*}
+Ein einfaches Beispiel ist das Wasserstoffatom, wessen Potential einem $\tfrac{1}{r}$--Verhalten folgt. Da das Proton viel schwerer als das Elektron ist, kann es als fast statisch angenommen werden und beide Ladungen sind Punktladungen. Schwerere Atome sind deutlich komplexer. Der Kern kann weiterhin als Punktladungs angenommen werden, aber die Elektronen werden zahlreicher, also kommt es zu einer Ladungsverteilung, und die Elektronen beeinflussen sich gegenseitig. Im Kern wirken zudem die langreichweitigen abstoßenden Kräfte zwischen den Protonen, mit der potentiellen Energie
+\[ 
+        E_p=\sum_{i=1}^{N}\sum_{j=1}^{i-1}\dfrac{Q_iQ_j}{r_{ij}}\dfrac{1}{4\pi \varepsilon \varepsilon _0}\propto \,\text{Z}\,
+;\] und die kurzreichweitigen starken Wechselwirkungen der Nukleonen, welche dieses Potential kompensieren, mit
+\[ 
+        E_a\propto \,\text{A}\,
+.\] 
+Existieren (vor Allem in schweren Kernen) mehr Neutronen als Protonen, dann ist der Kern stabil. Ab einer gewissen Massezahl, bzw.\,Ungleichgewicht von Protonen und Neutronen ist der Kern nicht mehr stabil. Dies ist die Ursache für Kernspaltung. Die dabei freiwerdende Energie ist zu einem kleinen Teil die Coulomb--Abstoßung, zum größeren Teil allerdings die starke Wechselwirkung.
+
+\subsection{1. Maxwell--Gesetz}
+Mit der $\tfrac{1}{r^2}$--Abhängigkeit und dem Gauß'schen Satz lässt sich eine Beziehung zwischen der Ladungsverteilung und einem elektrischen Feld herstellen.
+\\\hfill\\\textbf{Gauß'scher Satz und Stromdichte}\\ 
+Der Strom $I=\tfrac{\td Q}{\td t}$ ist die Ladung pro Zeiteinheit. Er lässt sich auch als Fläche mal Stromdichte $\vv{A}\cdot \vv{j}=A\cdot \hat{n}\cdot \vv{j}$ darstellen. Für eine beliebige Fläche $A$ lässt sich schreiben
+\[ 
+        I=\int_{A}^{}\left(\vv{j}\left(\vv{r}\right)\cdot \td \vv{A}'\right)
+.\] 
+Für eine geschlossene Fläche (integration über die Oberfläche) gilt
+\[ 
+        I=\oint_{O}^{}\left(\vv{j}\left(\vv{r}\right)\cdot \td \vv{O}'\right)
+.\] 
+Benutzt man einen Quader als Volumenelement, dann fließt auf einer Seite eine Stromdichte von $j_x(x)$ bzw.\,$\td Q_x^-$ rein und auf der anderen Seite eine Stromdichte von $j_x(x+\td x)$ bzw.\,$\td Q_x^+$ wieder raus
+\begin{align*}
+        \td Q_x^+&=j_x\left(x+\td x\right)\td y\td z\td t\\
+        \td Q_x^-&=j_x\left(x\right)\td y\td z\td t
+.\end{align*}
+Daraus folgt
+\begin{align*}
+        \td Q_x&=\td Q_x^+-\td Q_x^-\\
+               &=\left[j_x\left(x+\td x\right)-j_x\left(x\right)\right]\td y\td z\td t\\
+               &=\diffp[]{j_x}{x}\underbrace{\td x\td y\td z}_{=\td V}\td t\\
+        \diff[]{Q_x^2}{V\td t}&=\diffp[]{j_x}{x}
+.\end{align*}
+Analog für $y$ und $z$ Richtung ist dann die Gesamtladung
+\[ 
+        \diff[]{Q^2}{V\td t}=\diffp[]{j_x}{x}+\diffp[]{j_y}{y}+\diffp[]{j_z}{z}=\,\text{div}\,\vv{j}=\vv{\nabla }\vv{j}
+.\] 
+Falls $\,\text{div}\,\vv{j}=0$, dann ist $\vv{j}$ Quellenfrei. Der Gauß'sche Satz besagt dann
+\begin{align*}
+        I=\diff[]{Q}{t}&=\int_{V}^{}\,\text{div}\,\vv{j}\td V\\
+                       &\stackrel{!}{=}\oint_{}^{}\left(\vv{j}\td \vv{A}\right) 
+.\end{align*}
+\hfill\\\textbf{Elektrischer Kraftfluss}\\ 
+Der elektrische Kraftfluss $\Phi $ ist proportional zur Zahl der durch $A$ hindurchtretende Feldlinien
+\begin{align*}
+        \Phi _E&=\int_{A}^{}\left(\vv{E}\cdot \td \vv{A}'\right)\\
+               &=\int_{A}^{}E\cos \alpha \td A'\\
+        \td \Phi _E&=E\cdot \td A'\cos \alpha \\
+                   &=\left(\vv{E}\cdot \td \vv{A}'\right)
+,\end{align*}
+mit $\alpha $ dem Winkel zwischen der Flächennormalen und den elektrischen Feldlinien. Ist eine Ladung von einer Kugel eingeschlossen ist der elektrische Kraftfluss
+\begin{align*}
+        \Phi _E&=\oint_{\,\text{Kugelschale}\,}^{}\left(\vv{E}\cdot \td \vv{A}\right)\\
+               &=\dfrac{1}{4\pi \varepsilon \varepsilon _0}\int_{0}^{2\pi }\int_{0}^{\pi }\dfrac{Q}{r^2}r^2\cdot \sin \theta \td \theta \td \varphi \\
+               &=\dfrac{Q}{4\pi \varepsilon \varepsilon _0}\oint_{}^{}\td R\\
+               &=\dfrac{Q}{\varepsilon \varepsilon _0}
+.\end{align*}
+Der Abfall der Feldstärke mit $\tfrac{1}{r^2}$ wird durch den Zuwachs der Kugeloberfläche mit $r^2$ kompensiert. Dies ist auch der Fall, wenn die Integration über eine beliebige geschlossene Fläche durchgeführt wird. Sollte die Ladung keine Punktladungs, sondern eine Ladungsverteilung sein, dann gelten diese Zusammenhänge solange, wie die Ladungsverteilung die gleichen Symmetrien wie die Punktladung aufweist. Man kann also jedem Volumenelement $\td \tau $ ein Ladungselement $\td Q$ zuordnen, also $\td Q=\rho _E\left(\vv{r}\right)\cdot \td \tau $. Der Beitrag zum elektrischen Kraftfluss ist dann $\td \Phi _E=\tfrac{\td Q}{\varepsilon \varepsilon _0}$. Im allgemeinen, bzw die \textbf{erste Maxwell'sche Gleichung}
+\begin{align*}
+        \Phi _E&=\int_{V}^{}\dfrac{\td Q}{\varepsilon \varepsilon _0}\\
+               &=\dfrac{1}{\varepsilon \varepsilon _0}\int_{V}^{}\left(\rho _E\left(\vv{r}\right)\cdot \td \tau \right)\\
+               &\stackrel{!}{=}\int_{}^{}\left(\vv{E}\cdot \td A'\right)
+.\end{align*}
+\textbf{1. Maxwell'sche Gesetz:} Die Quelldichte des elektrostatischen Feldes $\,\text{div}\,\vv{E}$ ist proportional zur Ladungsdichte $\rho $ mit dem Proportionalitätsfaktor $\varepsilon \varepsilon _0$ 
+\begin{align*}
+        \oint_{A}^{}\left(\vv{E}\cdot \td\vv{A}\right)=\int_{V}^{}\,\text{div}\,\vv{E}\td \tau \Rightarrow  \varepsilon \varepsilon _0\,\text{div}\,\vv{E}=\rho 
+.\end{align*}
+Da das elektrostatische Feld ein konservatives Kraftfeld ist kann man es mit dem Gradienten des skalaren Feld eines elektrostatischen Potentials herleiten $\vv{E}=-\vv{\nabla }\varphi \left(\vv{r}\right)$. Setzt man diesen Ausdruck noch ein erhält man die \textbf{Poissongleichung}
+\begin{align*}
+        -\,\text{div}\,\text{grad}\,\varphi =-\Delta \varphi =\dfrac{\rho }{\varepsilon \varepsilon _0}
+.\end{align*}
+Betrachtet man den Kraftfluss im Außenraum $r>R$ einer kugelsymmetrischen Ladung mit Radius $R$, so gilt
+\[ 
+        \oint_{A_{\,\text{Kugel}\,}}^{}\left(\vv{E}\cdot \td \vv{A}'\right)=\int_{A_{\,\text{Kugel}\,}}^{}E\left(r\right)\cdot \underbrace{\left(\hat{r}\cdot \hat{r}\right)}_{=1}\cdot \td A=E\left(r\right)\cdot 4\pi r^2
+.\] 
+Wendet man nun das erste Maxwell'sche Gesetz an, folgt (für $r>R$)
+\begin{align*}
+        \dfrac{1}{\varepsilon \varepsilon _0}\int_{V}^{}\rho \left(r\right)\td \tau &=\oint_{A}^{}\left(\vv{E}\cdot \td \vv{A}'\right)\qquad |r>R\\
+        \dfrac{Q}{\varepsilon \varepsilon _0}&=E\left(r\right)\cdot 4\pi r^2\\
+        \vv{E}\left(r\right)&=\dfrac{Q}{r^2}\dfrac{1}{4\pi \varepsilon \varepsilon _0}\hat{r}
+.\end{align*}
+Das bedeutet, dass das Feld einer kugelsymmetrischen Ladungsverteilung im Außenraum identisch mit einer gleichstarken Punktladung im Mittelpunkt ist. Dies ist auch der Grund, warum im Coulomb--Gesetz $4\pi $ vorkommt. Das Potential ist dann
+\[ 
+        \varphi \left(\vv{r}\right)=\varphi \left(r\right)=\dfrac{Q}{4\pi \varepsilon \varepsilon _0r}
+.\] 
+Sollte man das elektrische Feld innerhalb einer Ladungsverteilung, mit $\rho =\,\text{const.}\,$ betrachten, also $r<R$, folgt
+\begin{align*}
+        q=\int_{V_{\,\text{Kugel}\,r<R}}^{}\rho \left(r\right)\td \tau &=\rho _0\dfrac{4\pi }{3}r^3\\
+                                                                       &=Q\dfrac{r^3}{R^3}\\
+        \vv{E}\left(\vv{r}\right)&=\dfrac{q}{r^2}\dfrac{1}{4\pi \varepsilon \varepsilon _0}\hat{r}\\
+                                 &=\dfrac{Qr}{R^3}\dfrac{1}{4\pi \varepsilon \varepsilon _0}\hat{r}
+\end{align*}
+und das Potential
+\[ 
+        \varphi \left(r\right)=\dfrac{Q}{R}\dfrac{1}{4\pi \varepsilon \varepsilon _0}\left(\dfrac{3}{2}-\dfrac{r^2}{2R^2}\right)
+.\] 
+Ein wichtiges Beispiel ist der Atomkern mit $\rho =\,\text{const.}\,$. Die Protonen bauen ein Coulombpotential auf, welches andere Atomkerne auf Distanz hält.
+
+\subsection{Oberflächenladung auf Leitern}
+\textbf{Leiter} sind makroskopische Objekte, in denen sich Elektronen frei bewegen können und ortsfeste Ionen hinterlassen. Wird ein Leiter mit einer Ladung \glqq beladen\grqq{}, dann verteilt sich die Ladung in einem elektrostatischen Gleichgewicht auf der Oberfläche und das Innere des Leiters bleibt neutral. Befindet sich im Inneren eine nicht kompensierte überschüssige Ladung, dann induziert diese ein el.\,Feld, welches die freien Ladungsträger anzieht und somit die Ladung kompensiert (die gleiche Ladung wird dann auf die Oberfläche geschoben).\\\indent
+Im folgenden wird von elektrostatischen Situationen ausgegangen, also die Ladungsträger bewegen sich nicht.\\\\\indent
+Betrachtet man nun eine Ladungsverteilung auf einer beliebigen gekrümmten Oberfläche und die Ladungen befinden sich in einem Gleichgewicht, dann baut jede Ladung ein zur Oberfläche orthogonales $E_{\perp}$--Feld auf (mit $E_{||}=0$, da sich die Ladungen sonst nicht mehr in einem Gleichgewicht befinden würden). Im Inneren ist $\vv{E}=0$. In einem Abstand $d$ zur Oberfläche ist das elektrische Potential $\varphi \left(d\right)=\,\text{const.}\,$. Diese Flächen werden \textbf{Äquipotentialflächen} genannt. Jeder Weg $\vv{s}$ parallel zu der Oberfläche steht immer senkrecht zu $\vv{E}$. $\diff[]{\varphi }{\vv{s}}=0$.\\\indent
+Man führt die Größe \textbf{Oberflächenladungsdichte} $\sigma $ ein, welche die Ladungsdichte an der Oberfläche beschreibt, da die Ladungsdichte selbst nur an der Oberfläche $\rho \neq 0$ ist. Entferne man sich also ein $\varepsilon $ von der Oberfläche wäre sie wieder $\rho =0$. Sie wird definiert als Ladung pro Fläche
+\[ 
+        \td Q=\sigma \cdot \td A\qquad \left[\sigma \right]=\dfrac{\,\text{C}\,}{\,\text{m}\,^2}
+.\] 
+Der elektrische Kraftfluss ist dann
+\[ 
+        \td \Phi _E=\left(\vv{E}\cdot \td \vv{A}\right)=E\cdot \td A=\dfrac{\td Q}{\varepsilon \varepsilon _0}=\dfrac{\sigma \td A}{\varepsilon \varepsilon _0}
+,\] 
+also
+\[ 
+        \sigma =\varepsilon \varepsilon _0\cdot E
+.\] 
+Die Gesamtladung $Q$ ist geometrieabhängig, aber im allgemeinen
+\[ 
+        Q=A\cdot \sigma 
+.\] 
+Sie ist auf der Oberfläche gleichverteilt. Das Potential mit $R$ als Radius der Ladungsverteilung
+\[ 
+        \varphi =\dfrac{Q}{R}\dfrac{1}{4\pi \varepsilon \varepsilon _0}\Rightarrow E=\dfrac{\sigma }{\varepsilon \varepsilon _0}=\dfrac{\varphi }{R}
+.\] 
+Je kleiner also der Radius $R$, desto größer wird das elektrische Feld $E$. Da die Coulomb--Kraft proportional zur Feldstärke ist, führt dies zur Emission von Ladungsträgern bei hohen Spannungen. Zum Beispiel fängt sich ein $S$--förmiger Leiter an zu drehen, wenn die angelegte Spannung hoch genug ist, sodass die Ladungsträger in die Luft emittiert werden.
+\\\hfill\\\textbf{Faraday'scher Käfig}\\ 
+Ist ein Raum von elektrischen Leitern umschlossen, so bleibt der Raum innerhalb des Käfigs feldfrei und es existiert nur ein Feld am Rand des Käfigs. Dies geschieht aufgrund des ersten Maxwell'schen Gesetzes.
+
+\subsection{Influenz}
+Wird ein elektrisch neutraler Leiter in ein $E$--Feld gebracht, dann sammeln sich negative Ladungsträger auf der einen und hinterlassen potivie Löcher auf der anderen Seite. Durch diese Ladungsverschiebung baut sich ein Gegenfeld $E'$ auf, welches genau so stark ist, dass das ursprüngliche Feld im Inneren des Leiters kompensiert wird
+\[ 
+        \vv{E}\left(\vv{r}\right)+\vv{E}'\left(\vv{r}'\right)=0
+.\] 
+Das selbe Phänomen ist auch zu beobachten, wenn man zwei Leiter zwischen zwei Kondensatorplatten, welche ein $E$--Feld aufgebaut haben, hält. Zieht man die beiden Leiter etwas auseinander, dann wird zwischen diesen Leitern ein $E$--Feld aufgebaut, und sie werden geladen.\\\indent
+Der Grund für diese \textbf{Influenz} ist die sogenannte \textbf{Spiegelladung}. Wirkt ein elektrisches Feld einer Punktladung $Q$ auf einen Leiter im Abstand $d$, dann wird in diesem eine Spiegelladung $-Q$ im Abstand $d$ induziert. Ladung und Spiegelladung ziehen sich aufgrund der Coulomb--Kraft mit dem Abstand $2d$ an.
+
+\subsection{Kondensatoren und Kapazität von Leitern}
+Man betrachtet einen einzelnen, isolierten Leiter. Das Potential ist streng proportional zur Ladung $Q$ auf dem Leiter. Die Kapazität eines solchen Leiters ist
+\[ 
+        C=\dfrac{Q}{\varphi \left(Q\right)-\varphi \left(Q=0\right)}=\dfrac{Q}{U}\qquad \left[C\right]=\dfrac{\,\text{C}\,}{\,\text{V}\,}=\,\text{F}\,
+,\] 
+mit $U$ der Spannung. Die Kapazität ist also die Ladung geteilt durch die Potentialdifferenz des Leiters mit und ohne Ladung gegenüber seiner Umgebung.
+\\\hfill\\\textbf{Beispiel: Kapazität einer leitenden Kugel}\\ 
+Das elektrostatische Potential einer leitenden Kugel ist
+\[ 
+        \varphi =\dfrac{1}{4\pi \varepsilon \varepsilon _0}\dfrac{Q}{R}
+.\] 
+Die Kapazität ist dann
+\[ 
+        C=4\pi \varepsilon \varepsilon _0R
+.\] 
+\hfill\\\textbf{Kondensatoren}\\ 
+Bei Kondensatoren kann die Kapazität durch Influenz gesteigert werden. Wird auf Kondensatorplatte eine Spannung angelegt, dann baut sich auf der anderen Platte eine Spiegelladung auf. Die Gesamtladung sowie das $\vv{E}$--Feld im elektrostatischen Fall bleibt konstant
+\[ 
+        \sigma =\varepsilon \varepsilon _0E=\dfrac{Q}{A}=\,\text{const.}\,
+.\] 
+Zwischen den Platten ist die Ladung sowie die Ladungsdichte $Q=0\Rightarrow \rho =0$. Daraus folgt, dass $-\,\text{div}\,\text{grad}\,\varphi =0$. In einer Dimension gilt dann
+\begin{align*}
+        \diffp[2]{\varphi }{x}&=0\\
+        \varphi \left(x\right)&=ax+b\qquad \left|\begin{aligned}
+                \varphi \left(0\right)&=\varphi _1\\\varphi \left(d\right)&=\varphi _2
+        \end{aligned}\right.\Rightarrow \varphi _2-\varphi _1=U\\
+        \varphi \left(x\right)&=-\dfrac{U}{d}+\varphi _1
+.\end{align*}
+Dann ist das elektrische Feld
+\begin{align*}
+        \vv{E}&=-\,\text{grad}\,\varphi \\
+              &=-\left(\diffp[]{\varphi }{x},\underbrace{\diffp[]{\varphi }{y}}_{=0},\underbrace{\diffp[]{\varphi }{z}}_{=0}\right)\\
+              &=\left(\dfrac{U}{d},0,0\right)
+.\end{align*}
+Damit folgt für die Kapazität
+\[ 
+        C=\dfrac{Q}{U}=\dfrac{Q}{E_xd}=\dfrac{\varepsilon \varepsilon _0E_xA}{E_xd}=\varepsilon \varepsilon _0\dfrac{A}{d}
+.\] 
+Je kleiner als oder Abstand $d$, desto größer die Kapazität $C$.\\\indent
+Schaltet man zwei Kondensatoren parallel, so addieren sich die Kapazitäten, da sich die Flächen addieren. Schaltet man zwei Kondensatoren in Reihe, dann ist an dem ersten Kondensator eine Spannung $+Q$ welche eine Spiegelladung $-Q$ induziert, welche eine Speigelladung $+Q$ am nächsten Kondensator induziert, welche eine Spiegelladung $-Q$ induziert. Bei dieser Schaltung gilt $\tfrac{1}{C}=\tfrac{1}{C_1}+\tfrac{1}{C_2}$.
+
+\subsection{Energiedichte}
+Feldlinien lassen sich in die zwei Komponenten der positiven Ladungen mit dem $\vv{E}^+$--Feld und negativen Ladungen mit dem $\vv{E}^-$--Feld aufteilen, wobei gilt $|\vv{E}^++\vv{E}^-|=E=\tfrac{Q}{\varepsilon \varepsilon _0A}$. Die beiden Feldstärken haben die Relation $|\vv{E}^+|=|\vv{E}^-|=\tfrac{1}{2}\tfrac{Q}{\varepsilon \varepsilon _0A}$. Die korrespondierenden Kräfte sind $\vv{F}^+=\left(+Q\right)\vv{E}^-=-\vv{F}^-=\left(-Q\right)\vv{E}^+$, mit $|\vv{F}^+|=\tfrac{1}{2}\tfrac{Q^2}{\varepsilon \varepsilon _0A}=|\vv{F}^-|$. Mit $d$ dem Abstand der Kondensatorplatten folgt für die Arbeit (entspricht der potentiellen Energie des $\vv{E}$--Feldes)
+\[ 
+        W_{d\rightarrow 0}:=|\vv{F}^+|\cdot d=\dfrac{1}{2}\dfrac{Q^2}{\varepsilon \varepsilon _0A}\cdot d:=E_p(d)-E_p(0)
+.\] 
+Für den Plattenkondensator gilt dann
+\begin{align*}
+        \sigma =\dfrac{Q}{A}&=\varepsilon \varepsilon _=E\\
+        E_p\left(d\right)&=\dfrac{1}{2}\dfrac{\left(\varepsilon \varepsilon _0AE\right)^2}{\varepsilon \varepsilon _0A}d\\
+                         &=\dfrac{1}{2}\varepsilon \varepsilon _0E^2\underbrace{A\cdot d}_{=\tfrac{1}{2}\varepsilon \varepsilon _0E^2V}
+.\end{align*}
+Pro Volumenelement gilt
+\[ 
+        \diff[]{E_p}{V}=\rho _{E_p}=\dfrac{1}{2}\varepsilon \varepsilon _0E^2
+,\] 
+was der Energiedichte des elektrischen Feldes entspricht.\\\indent
+Der Kondensator kann auch als Energiespeicher benutzt werden. Es gilt $C\cdot d=\varepsilon \varepsilon _0A$, womit
+\[ 
+        E_p\left(C,Q,U\right)=\dfrac{1}{2}\dfrac{Q^2d}{\varepsilon \varepsilon _0A}=\dfrac{1}{2}\dfrac{Q^2d}{Cd}=\dfrac{1}{2}U^2C=\dfrac{1}{2}QU
+.\] 
+Dieser Ausdruck gilt für alle Kondensatoren.
+
+\subsection{Elektrischer Dipol und elektrisches Dipolmoment}
+Das elektrische \textbf{Potential eines Dipols} setzt sich aus den Beiträgen beider Ladungen zusammen
+\[ 
+        \varphi _D\left(\vv{r}\right)=\dfrac{1}{4\pi \varepsilon \varepsilon _0}\left(\dfrac{+Q}{|\vv{r}_+|}+\dfrac{-Q}{|\vv{r}_-|}\right)
+,\] 
+mit $d$ dem Abstand der Ladungen und $\vv{r}_+,\vv{r}_-$ dem Abstand der jeweiligen Ladung zur Probeladung. Man betrachtet hier nur Fälle für $r\gg d$, da der Dipol auf mikroskopischer und der Abstand zur Probeladung auf makroskopischer Skala ist. Mit $\theta $ dem Winkel zwischen $\tfrac{d}{2}$ und $\vv{r}$ folgen die Näherungen $|\vv{r}^+\approx |\vv{r}|-\tfrac{d}{2}\cos \theta $ und $|\vv{r}^-|\approx |\vv{r}|+\tfrac{d}{2}\cos \theta $, also
+\begin{align*}
+        \varphi \left(r,\theta \right)\approx \dfrac{Q}{4\pi \varepsilon \varepsilon _0}\left(\dfrac{1}{r-\tfrac{d}{2}\cos \theta  }-\dfrac{1}{r+\tfrac{d}{2}\cos \theta }\right)
+,\end{align*}
+mit $\tfrac{1}{r-a}+\tfrac{1}{r+a}=\tfrac{2a}{r^2-a^2}$ folgt
+\[ 
+        \approx \dfrac{Q}{4\pi \varepsilon \varepsilon _0}\dfrac{d\cos \theta }{r^2-\tfrac{d^2}{4}\cos ^2\theta }
+.\] 
+Also gilt für das Potential eines Dipols
+\[ 
+        \varphi _D\left(r,\theta \right)=\dfrac{Q}{4\pi \varepsilon \varepsilon _0}\dfrac{d\cos \theta }{r^2}\qquad \varphi _M=\dfrac{Q}{4\pi \varepsilon \varepsilon _0}\dfrac{1}{r}
+.\] 
+Dieses fällt im Gegensatz zum Monopol mit $\tfrac{1}{r^2}$ ab. Hätte das Dipol zwei gleichnamige Ladungen würde es wiederum mit $\tfrac{1}{r}$ abfallen.\\\indent
+Mit $d\cos \theta =\vv{d}\cdot \hat{r}$ folgt das \textbf{Dipolmoment} 
+\[ 
+        \vv{p}=\vv{d}\cdot Q
+.\] 
+Schreibt man das Potential mit dem Dipolmoment um, gilt
+\[ 
+        \varphi \left(r,\theta \right)\approx \dfrac{\vv{p}\cdot \hat{r}}{4\pi \varepsilon \varepsilon _0r^2}
+.\] 
+
+\subsubsection{Elektrisches Feld des Dipolmoments}
+Das elektrische Feld des Dipolmoments ist
+\[ 
+        -\vv{\nabla }\cdot \varphi =\vv{E}
+.\] 
+Es bietet sich an hier Kugelkoordinaten zu verwenden
+\begin{align*}
+        \vv{\nabla }_{r,\theta ,\varphi }&=\partial_r \hat{r}+\dfrac{1}{r}\partial_\theta \hat{\theta }+\dfrac{1}{\cos \theta }\partial_\Phi \hat{\Phi }
+.\end{align*}
+Also folgt
+\begin{align*}
+        \vv{E}\left(r,\theta \right)&=-\vv{\nabla }_{r,\theta ,\Phi }\cdot \varphi \left(r,\theta \right)\\
+                                    &=\dfrac{Q}{4\pi \varepsilon \varepsilon _0}\dfrac{1}{r^3}\left(2\cos \theta \hat{r}+\sin \theta \hat{\theta }\right)
+.\end{align*}
+Man erkennt, dass das $\vv{E}$--Feld eines Dipols mit $\tfrac{1}{r^3}$ abfällt, wohingegen das $\vv{E}$--Feld eines Monopols mit $\tfrac{1}{r^2}$ abfällt. Zudem kann man erkennen, dass das $\vv{E}$--Feld nicht mehr kugelsymmetrisch ist.
+
+\subsubsection{Dipolmoment im elektrischen Feld}
+Existiert ein Dipolmoment in einem $\vv{E}$--Feld, dann wirkt darauf eine Kraft $\vv{F}^{\pm}=\pm Q\vv{E}$, sowie ein Drehmoment
+\[ 
+        M=M^++M^-=\left(\dfrac{\vv{d}}{2}\times \vv{F}^+\right)+\left(\dfrac{-\vv{d}}{2}\times \vv{F}^-\right)=Q\left(\vv{d}\times \vv{E}\right)=\vv{p}\times \vv{E}
+.\] 
+Die potentielle Energie ist dann abhängig von dem Winkel $\theta $ (der Winkel zwischen dem $\vv{E}$--Feld und dem Dipolmoment)
+\[ 
+        E_p\left(\theta =\dfrac{\pi }{2}\right)-E_p\left(\theta \right)=\vv{x}\vv{F}^++\left(-\vv{x}\vv{F}^-\right)=d\cos \theta QE=pE\cos \theta 
+.\] 
+Viele Moleküle haben einen permanenten Dipol, wonach sie sich unter Einfluss eines $\vv{E}$--Feldes ausrichten.
+
+\subsubsection{Isolatoren im elektrischen Feld, Dielektrika}
+Leiter besitzen freie Ladungsträger, welche sich durch das Material bewegen und so das $\vv{E}$--Feld im Inneren vollständig kompensieren können. Bei \textbf{Dielektrika} können sich Ladungsträger nicht frei bewegen, aber lokal verschieben, indem sich zum Beispiel Dipole nach dem $\vv{E}$--Feld ausrichten. Dies kann allerdings, nicht wie bei Leitern, ein $\vv{E}$--Feld vollständig kompensieren, sondern nur abschwächen.\\\indent
+Füllt man ein Kondensatorfeld mit einem Dielektrikum, dann erhöht sich die Kapazität um $\varepsilon $ 
+\[ 
+        C_D=\dfrac{\varepsilon Q_0}{U_0}=\varepsilon C_0
+,\] 
+mit $Q_0,U_0$ und $C_0$ als Ausgangsgrößen des Kondensators. Die potentielle Energie ist dann
+\[ 
+        E_p=\dfrac{1}{2}C_dU^2=\dfrac{1}{2}\varepsilon C_0U^2
+.\] 
+
+\subsubsection{Zylinderkondensator}
+Ein Zylinder der Länge $l$ und mit dem Radius $r$ erzeugt mit der Außenwand und einem Stab durch die Mitte, mit dem Radius $R_1$ ein radialsymmetrisches elektrisches Feld
+\begin{align*}
+        \int_{A}^{}\vv{E}\td \vv{A}&=\dfrac{1}{\varepsilon \varepsilon _0}\int_{V}^{}\rho \td V\\
+        2\pi rlE&=\dfrac{Q}{\varepsilon \varepsilon _0}\\
+        E&=\dfrac{Q}{2\pi \varepsilon \varepsilon _0rl}
+.\end{align*}
+Mit dem Abstand zur Zylinderwand $R_2$ ergibt sich die Spannung zu
+\begin{align*}
+        U&=\int_{R_1}^{R_2}E\td r\\
+         &=\int_{R_1}^{R_2}\dfrac{Q}{2\pi \varepsilon \varepsilon _0rl}\dfrac{1}{r}\td r\\
+         &=\dfrac{Q}{2\pi \varepsilon \varepsilon _0}\ln \left(\dfrac{R_2}{R_1}\right)
+.\end{align*}
+Die Kapazität ist dann
+\begin{align*}
+        C=\dfrac{Q}{U}=2\pi \varepsilon \varepsilon _0l\dfrac{1}{\ln \left(\tfrac{R_2}{R_1}\right)}
+.\end{align*}
+Mit dem Faktor $\varepsilon $ lässt sich auch ein Dielektrikum zwischen die Kondensatorplatten einbauen.
+
+\subsubsection{Dielektrische Verschiebung}
+Bisher gilt der Ausdruck
+\[ 
+        \dfrac{1}{\varepsilon \varepsilon _0}\int_{V}^{}\rho \left(\vv{r}\right)\td r=\oint_{A}^{}\left(\vv{E}\cdot \td\vv{A}\right) 
+.\] 
+Man definiert nun $\varepsilon \varepsilon _0\vv{E}=\vv{D}$, also
+\[ 
+        \int_{}^{}\left(\vv{D}\cdot \td \vv{A}\right)=\int_{V}^{}\rho \left(\vv{r}\right)\td V=Q \qquad \,\text{div}\,\vv{D}=\rho 
+.\] 
+Es ist nützlich den Einfluss des Dielektrikums explizit kenntlich zu machen. Man führt also die \textbf{dielektrische Polarisation} $\vv{P}$ ein
+\[ 
+        \vv{D}:=\varepsilon \varepsilon _0\vv{E}:=\vv{P}+\varepsilon _0\vv{E}\qquad \vv{P}=\left(\varepsilon -1\right)\varepsilon _0\vv{E}=\chi \varepsilon _0\vv{E}
+,\] 
+mit $\chi$ als \textbf{dielektrische Suszeptibilität}.\\\\\indent
+Wenn ein $\vv{E}$--Feld auf ein Atom wirkt, dann verschiebt es dort die positiven und negativen Ladungen. Der mittlere Abstand dieser Ladungen sei $d$ und das produzierte Feld sei $\vv{E}_{\,\text{pol}\,}$ mit den Ladungen $Q^-_{\,\text{pol}\,}$ und $Q^+_{\,\text{pol}\,}$. Dann ergibt sich für die Oberflächenladungsdichte
+\begin{align*}
+        \sigma _{\,\text{pol}\,}=\dfrac{Q_{\,\text{pol}\,}}{A}=\dfrac{N\cdot d\cdot A\cdot q}{A}=Nqd=Np
+,\end{align*}
+mit $N$ der Dichte der Dipole, $q$ der Ladung $\mathbb{Z}e$ eines Dipols und $p$ der Polarisation eines einzelnen Dipols. Für die Dichte gilt
+\[ 
+        Np:=\dfrac{1}{V}\sum_{i}^{}|\vv{p}_i|=|\vv{P}|
+,\] 
+also für die Oberflächendichte
+\[ 
+        \sigma _{\,\text{pol}\,}=|\vv{P}|
+.\] 
+Solange $|\vv{E}|$ klein gegenüber der Feldstärke im Molekül / Atom ist, dann ist
+\[ 
+        \vv{p}_i\propto \vv{E}=\vv{E}_D\Rightarrow \vv{p}_i=\alpha \cdot \vv{E}_D
+,\] 
+mit $\alpha $ als Materialkonstante welche die Polarisierbarkeit eines Materials angibt.\\\indent
+Betrachtet man nun die elektrische Feldstärke einer Punktladung $Q$ im Dielektrikum, gilt (mit $\vv{E}_V=\tfrac{\sigma }{\varepsilon _0}$ im Vakuum)
+\begin{align*}
+        E_D&=\dfrac{\sigma -\sigma _{\,\text{pol}\,}}{\varepsilon _0}\\
+           &=E_V-\dfrac{|\vv{P}|}{\varepsilon _0}\\
+        \vv{E}_D&=\dfrac{\vv{E}_V}{1+\chi}\\
+                &=\dfrac{\vv{E}_V}{\varepsilon }
+.\end{align*}
+Dann folgt
+\[ 
+        \vv{P}=\varepsilon _0\chi\vv{E}_D=\varepsilon _0\left(\varepsilon -1\right)\vv{E}_D=\varepsilon _0\left(\vv{E}_V-\vv{E}_D\right)
+.\] 
+
+\subsection{Dielektrischer Verschiebungsstrom}
+Der dielektrische Verschiebungsstrom ist die effektive Formulierung der elektrostatik in Materie. Mit dem ersten Maxwell--Gesetz
+\begin{align*}
+        \oint_{}^{}\left(\vv{E}_D\cdot \td \vv{A}\right)&=\dfrac{1}{\varepsilon _0}Q_{\,\text{ges}\,}=\dfrac{1}{\varepsilon _0}\left(Q_{\,\text{frei}\,}+Q_{\,\text{fest}\,}\right)\\
+        \,\text{div}\,\vv{E}_D&=\dfrac{1}{\varepsilon _0}\rho _{\,\text{ges}\,}=\dfrac{1}{\varepsilon _0}\left(\rho _{\,\text{frei}\,}+\rho _{\,\text{pol}\,}\right)\\
+        \,\text{div}\,\left[\vv{E}_V-\dfrac{1}{\varepsilon _0}\vv{P}\right]&=\dfrac{1}{\varepsilon _0}\left(\rho _{\,\text{frei}\,}+\rho _{\,\text{fest}\,}\right)
+.\end{align*}
+Mit $\,\text{div}\,\vv{P}=-\rho _{\,\text{fest}\,}$ und $\vv{D}=\varepsilon _0\vv{E}_V+\vv{P}$ folgt
+\begin{align*}
+        \,\text{div}\,\vv{D}&=\,\text{div}\,\varepsilon _0\vv{E}_D+\,\text{div}\,\vv{P}\\
+                            &=\rho _{\,\text{frei}\,}+\rho _{\,\text{fest}\,}-\rho _{\,\text{fest}\,}\\
+                            &=\rho _{\,\text{frei}\,}
+.\end{align*}
+Die Divergenz des dielektrischen Verschiebungsfeld ist also die freie Ladung
+\[ 
+        \oint_{}^{}\left(\vv{D}\cdot \td \vv{A}\right)=Q_{\,\text{frei}\,}\hat{=}\,\text{Ladungsträger auf den Kondensatorplatten}\,
+.\] 
+
+\subsection{Elektrisches Feld an Grenzflächen}
+Wenn ein elektrisches Feld orthogonal auf ein Dielektrum trifft, dann staucht sich dieses Feld um den Faktor $\varepsilon ^{-1}$. Trifft das $\vv{E}$--Feld in einem Winkel auf ein Dielektrum, lässt sich dieses in eine orthogonale und parallele Komponente aufteilen. Die orthogonale Komponente wird wie gehabt mit $\varepsilon ^{-1}$ gestaucht, die parallele allerdings nicht. Stellt man sich einen Weg von $A$ nach $B$ in einem Vakuum, von $B$ nach $C$ von Vakuum in Dielektrikum, von $C$ nach $D$ im Dielektrikum und schließlich von $D$ nach $A$ von Dielektrikum nach Vakuum vor, dann ist
+\[ 
+        \oint_{}^{}\vv{E}\td \vv{s}=0
+,\] 
+da das $\vv{E}$--Feld konservativ ist und die Übertritte $BC$ und $DA$ verschwinden. Für die Strecke $AB$ und $CD$ gilt also
+\begin{align*}
+        \int_{A}^{B}\vv{E}_{| |}^{\,\text{außen}\,}\td \vv{s}_1+\int_{C}^{D}\vv{E}_{| |}^{\,\text{innen}\,}\td \vv{s}_2\rightarrow \td \vv{s}_1=-\td \vv{s}_2
+.\end{align*}
+Daraus folgt
+\[ 
+        \vv{E}_{| |}^{\,\text{außen}\,}=\vv{E}_{| |}^{\,\text{innen}\,}
+,\] 
+sonst würde auf einem geschlossenen Weg Arbeit verrichtet werden. Betrachtet man nun dem Winkel $\alpha $ zwischen der orthogonalen und schrägen Komponente des $\vv{E}$--Feldes im Vakuum und $\beta $ analog in dem Dielektrikum, gilt
+\begin{align*}
+        \tan \alpha &=\dfrac{|\vv{E}_{\perp}|}{|\vv{E}_{| |}|}\qquad \tan \beta =\dfrac{|\vv{E}_{\perp}|\tfrac{1}{\varepsilon }}{|\vv{E}_{| |}|}
+\end{align*}
+womit das Brechungsgesetz für elektrische Felder folgt
+\[ 
+        \tan \alpha =\varepsilon \tan \beta 
+.\] 
+\hfill\\\textbf{Versuch: Öl zwischen Kondensatorplatten}\\ 
+Werden zwei Kondensatorplatten in ein Öl getaucht, so steigt das Öl die Platten um $h$ nach oben, wenn eine Spannung angelegt wird. Dabei wird eine mechanische Arbeit verrichtet
+\[ 
+        W_{\,\text{mech}\,}=\int_{z=0}^{h}\rho _{\,\text{fl.}\,}\underbrace{bdz}_{V\left(z\right)}\td z=\dfrac{1}{2}\rho _{\,\text{fl.}\,}ghV(h)
+,\] 
+mit $b$ der Tiefe und $d$ dem Abstand der Platten. Diese Arbeit muss gleich der elektrischen Arbeit verrichtet von dem Kondensator sein
+\[ 
+        W_{\,\text{el.}\,}=\dfrac{1}{2}U^2C\varepsilon -\dfrac{1}{2}U^2C=\hdots =\dfrac{1}{2}\varepsilon _0\left(\varepsilon -1\right)E^2V
+.\] 
+Daraus folgt die Höhe, die das Öl steigt
+\[ 
+        W_{\,\text{mech}\,}=W_{\,\text{el.}\,}\Rightarrow h=\dfrac{\varepsilon _0\left(\varepsilon -1\right)}{\rho _{\,\text{fl.}\,}g}E^2
+.\] 
+
+\newpage
+\section{Elektrischer Strom}
+Strom beschreibt eine bewegte Ladung (im Gegensatz zur Elektrostatik). Dabei ist die Größe der \textbf{Stromstärke} wichtig. Sie ist die bewegte Ladung pro Zeit
+\[ 
+        I=\diff[]{Q}{t}=\dot{Q}\qquad [I]=\dfrac{\,\text{As}\,}{\,\text{s}\,}=\dfrac{\,\text{C}\,}{\,\text{s}\,}=\,\text{A}\,
+.\] 
+Die Vorzeichen werden so gewählt, dass die Ladungsträger von $+$ nach -- fließen (auch technischer Strom).\\\indent
+Die \textbf{Stromdichte} $j$ ist der Strom pro Fläche, bzw.\,der \textbf{Fluss} 
+\[ 
+        \vv{j}=\diff[]{I}{\vv{A}}\qquad I=\int_{A}^{}\vv{j}\cdot \td \vv{A}\qquad [j]=\dfrac{\,\text{C}\,}{\,\text{sm$^2$ }\,}
+.\] 
+\hfill\\\textbf{Strom mikroskopisch}\\ 
+In einem Würfel mit der Querschnittsfläche $A$, in dem Ladungsträger mit der Geschwindigkeit $\vv{v}$, der Ladung $q$ und der Dichte $n$, ist der Strom
+\[ 
+        I=\diff[]{Q}{t}=\dfrac{nA\td lq}{\tfrac{\td l}{v}}=nqAv\qquad v=\dfrac{I}{nqA}
+.\] 
+In einem Leiter aus Cu mit $n\approx 10^{29}\tfrac{e^-}{m^3}$, $I=1\,\text{A}\,$ und $A=1\,\text{mm$^2$}\,$ ist die Geschwindigkeit der Teilchen nur $v\approx 62,5\tfrac{\,\text{$\mu $m}\,}{\,\text{s}\,}$. Dies ist allerdings nicht mit der Geschwindigkeit mit der sich das $\vv{E}$--Feld ausbreitet zu verwechseln. In einem Leiter aus Cu ist sie immernoch $\approx c$.\\ Fließende Elektronen weisen drei verschiedene Effekte auf\\\indent
+Wärme: Wenn Elektronen durch einen Leiter fließen, dann geben sie kinetische Energie an die Gitteratome ab und heizen somit makroskopisch den Leiter auf. Dadurch dehnt sich dieser aus.\\\indent
+Elektrische Wirkung: Bewegte Ladungsträger ziehen zum Beispiel Bleistaub in einer Flüssigkeit an. Dieser Ordnet sich um die Kathoden an.\\\indent
+Magnetische Wirkung: Bewegte Ladungsträger erzeugen ein magnetisches Feld.
+
+\subsection{Ladungserhaltung}
+Aus der Definition des Flusses
+\begin{align*}
+        I&=\oint_{A}^{}\vv{j}\cdot \td \vv{A}\\
+         &=\int_{V}^{}\,\text{div}\,\vv{j}\td V\\
+         &=\diff*[]{\int_{V}^{}\rho \td V}{t}\\
+         &=\int_{V}^{}\diff*[]{\rho }{t}\td V
+\end{align*}
+folgt die \textbf{Kontinuitätsgleichung} 
+\[ 
+        \,\text{div}\,\vv{j}=\dot{\rho }
+.\] 
+Wenn $\dot{\rho }=0\Rightarrow \,\text{div}\,\vv{j}=0$ dann handelt es sich um einen stationären Strom. Durch ändern des Vorzeichen bei $\rho $ lassen sich positive oder negative Ladungsträger betrachten.
+
+\subsection{Elektrischer Widerstand, Ohm'sches Gesetz}
+Da sich Ladungsträger durch einen Leiter bewegen, benötigen sie eine Kraft $\vv{F}=q\vv{E}$. Die Ladung bewegt sich dann entlang eines elektrisches Feldes $\vv{E}=-\vv{\nabla }\varphi $ (die Differenz von $\varphi $ ist die Spannung $U$). Die Frage ist dann, wie $I$ und $U$ zusammenhängen. In einem Diagramm mit $I$ auf der $Y$--Achse und $U$ auf der $X$--Achse, sieht man, dass ein idealer Leiter ohne Widerstand eine Parallele zur $Y$--Achse bei $U=0$ ist. Die Elektronen können sich also frei bewegen. Ein nicht idealer Leiter mit Widerstand ist eine Gerade (bei $U=0$ ist $I=0$).
+
+\subsubsection{Dioden}
+Eine Diode hingegen besitzt eine \textbf{Sperrspannung} $U_S$ bei der kein Stromfluss erlaubt, und eine \textbf{Durchbruchspannung} $U_D$ bei der Stromfluss erlaubt ist. Die maximale Sperrspannung ist die Spannung entgegen der Durchflussrichtung bis zu der kein Strom fließen kann. Den Bereich, bei dem kein Stromfluss vorhanden ist, nennt man auch \textbf{Sperrbereich}. \\\indent
+Betrachtet man zum Beispiel einen Leiter aus Si mit vier Valenzelektronen. Ersetzt man in einem Gitter aus Si ein Atom mit Phosphor (fünf Valenzelektronen), dann ist das eine Elektron von Phorphor im Gitter quasi frei bewegbar. Diesen Vorgang nennt man \textbf{n--Dotierung} (n für negativ). Ersetzt man ein Si Gitter mit Bor (drei Valenzelektronen), dann entsteht nahe dem Bor ein positives Loch, da es insgesamt ein Elektron zu wenig gibt. Dieses positive Loch ist auch frei bewegbar, da die Elektronen zwischen den Atomen wandern können. Diesen Vorgang nennt man \textbf{p--Dotierung} (p für positiv).\\\indent
+Sind ein p--dotiertes und ein n--dotiertes Material nebeneinander, so entsteht eine Raumladungszone, in der sich die positiven Löcher und negativen Elektronen anziehen. Dadurch entsteht eine Potentialbarriere, die dafür sorgt, dass der Strom nur in eine Richtung fließen kann. Es muss erst genügend Spannung angelegt werden, damit Elektronen diese Barriere überkommen können.\\\indent
+Wird bei dem p--dotierten Material eine positive und bei dem n--dotierten Material eine negative Spannung angelegt, das wird die Raumaldungszone kleiner und Strom fließt. Wird die Spannung andersherum angelegt, so vergrößert sie die Raumladungszone und es fließt kein Strom. Wird allerdings genügend Spannung angelegt, kann der Strom bei jeder Polung fließen.\\\indent
+Der Zustand in einem Atom, bei denen sich Elektronen frei bewegen können, nennt man Leitungsband; der Zustand bei denen sich Elektronen nicht bewegen können heißt Valenzband.
+
+\subsubsection{Ohm'sches Gesetz}
+Der mikroskopische Grund für unterschiedliche Steigungen der Proportionalität $U\propto I$ ist die Reibung die durch Elektronenstöße verursacht wird. Wenn sich ein Gleichgewicht zwischen der elektrischen Kraft und der Reibungskraft einstellt, spricht man von statischem Strom. Die Geschwindigkeit der Elektronen ist proportional zum $\vv{E}$--Feld
+\[ 
+        \vv{v}\propto \mu \vv{E}
+,\] 
+mit $\mu $ der \textbf{Beweglichkeit / Mobilität}. Diesen Zusammenhang kann man in den Ausdruck für die Stromdichte einsetzen
+\[ 
+        \vv{j}=nq\cdot \vv{v}=nq\cdot \mu \cdot \vv{E}=\sigma \cdot \vv{E}=\dfrac{1}{\rho }\cdot \vv{E}\qquad [\sigma ]=\dfrac{\,\text{A}\,}{\,\text{Vm}\,}=\dfrac{1}{\Omega \,\text{m}\,}
+,\] 
+mit $\sigma $ der \textbf{spezifischen Leitfähigkeit} und $\rho =\tfrac{1}{\sigma }$ dem \textbf{spezifischen Widerstand} eines Materials. Dieser Ausdruck ist das \textbf{Ohm'sche Gesetz}.\\\indent
+Der Strom ist dann
+\[ 
+        I=A\cdot j=A\cdot \sigma \cdot \vv{E}=A\cdot \sigma \cdot \dfrac{U}{l}=\dfrac{U}{R}\qquad R=\dfrac{l}{A\cdot \sigma }=\dfrac{l\cdot \rho }{A}\qquad [R]=\Omega =\dfrac{\,\text{V}\,}{\,\text{A}\,}
+,\]
+mit $R$ dem \textbf{elektrischen Widerstand}.
+\\\hfill\\\textbf{Potentiometer}\\ 
+Wird Strom an einer Stelle $x$ von einem Wiederstand der Länge $l$ abgegriffen, dann reduziert sich der Widerstand um das Stück $R_x$, welches nach dem Abgriffpunkt kommt und es wird nur das Stück $R_y$ vorher berücksichtigt. Die gemessene Spannung ist dann $U=R_x\cdot I$. Das Verhältnis aus Abgriffpunkt und Länge des Gesamtwiderstandes ist proportional zum Verhältnis des Widerstandes nach dem Abgriffpunkt und dem Gesamtwiderstand
+\[ 
+        \dfrac{x}{l}=\dfrac{R_x}{R}
+.\] 
+Daraus folgt für die gemessene Spannung
+\[ 
+        U=\dfrac{x}{l}U_0=\dfrac{R_x}{R}U_0
+.\] 
+
+\subsection{Temperaturabhängigkeit des elektrischen Widerstandes}
+Der Ohm'sche Widerstand ist eine Materialeigenschaft, welche die Stöße der Leitungselektronen beschreibt. Man erwartet, dass der Widerstand sinkt, wenn die Temperatur sinkt, da sich bei hoher Temperatur mehr Elektronen im Leitungsband befinden, also die mittlere freie Weglänge sinkt, bei denen Elektronen nicht miteinander stoßen.
+\\\hfill\\\textbf{Metalle}\\ 
+Bei Metallen nimmt die mittlere freie Weglänge ab, wenn die Temperatur steigt. Der spezifische Widerstand ist also abhängig von $T$ 
+\[ 
+        \rho \left(T\right)=\rho _0\left(1+\alpha T+\beta T^2+\hdots \right)
+.\] 
+Metalle sind in der Regel \textbf{Kaltleiter}. $\rho $ ist minimal bei niedrigem $T$.
+\\\hfill\\\textbf{Halbleiter}\\ 
+Bei niedrigen Temperaturen in Halbleiter existieren keine freien Ladungsträger mehr. Die Elektronen müssen die sogenannte Bandlücke $\Delta E$ überwinden, um von dem Valenzband in das Leitungsband zu kommen. Dazu brauchen sie eine thermische Anregung. Die Anzahl der Elektronen, die in das Leitungsband gelangen ist Boltzmann--verteilt, mit
+\[ 
+        n\left(T\right)\propto e^{-\tfrac{\Delta E}{k_BT}}
+,\]
+$\rho $ ist also maximal bei hohem $T$.
+\\\hfill\\\textbf{Supraleiter}\\ 
+Bei einer gewissen Temperatur (für $T\rightarrow 0$, wobei es mittlerweile möglich ist diese Temperaturen durch verschiedene Legierungen zu erhöhen) ist der spezifische Widerstand eines Materials gleich 0. Diese Temperatur ist Materialabhängig und wird kritische Temperatur $T_c$ genannt. Die Erklärung dafür liegt der Quantenmechanik zugrunde.
+
+\subsection{Stromleistung}
+Strom ist Ladungstransport, also wird Arbeit verrichtet
+\[ 
+        W=q\left(\varphi _2-\varphi _1\right)=qU
+.\] 
+Strom ist also eine Ladungsmenge $Q=\int_{}^{}I\td t$, die über eine Spannung $U$ transportiert wird
+\[ 
+        W=\int_{}^{}I\td t\cdot U
+.\] 
+Die Leistung ist dann
+\[ 
+        P=\diff[]{W}{t}=IU=I^2R=\dfrac{U^2}{R}\qquad [P]=\,\text{V}\,\cdot \,\text{A}\,=\,\text{W}\,
+.\] 
+In ohm'schen Leitern wird diese Arbeit durch Reibung in \textbf{joule'sche Wärme} umgewandelt.
+
+\subsection{Stromkreise und Kirchhoff'sche Regeln}
+\subsubsection{1. Kirchhoff'sche Regel / Knotenregel}
+\glqq Verzweigen sich mehrere Leiter in einem Punkt, ist die Summe der einlaufenden Ströme gleich der Summe der auslaufenden Ströme.\grqq{},
+\[ 
+        \sum_{k}^{}I_k=0
+.\] 
+Die Kontinuitätsgleichung für stationäre Ströme ist
+\[ 
+        \,\text{div}\,\vv{j}=0\qquad \rightarrow 0=\int_{V}^{}\,\text{div}\,\vv{j}\td V=\oint_{}^{}\vv{j}\td \vv{A}=\sum_{k}^{}I_k
+.\] 
+
+\subsubsection{2. Kirschhoff'sche Regel / Maschenregel}
+\glqq In jedem geschlossenen Stromkreis ist die Summe der Spannungen null.\grqq{},
+\[ 
+        \sum_{k}^{}U_k=0
+.\]
+Es existiert ein Spannungsanstieg bei der Spannungsquelle und in --abfall über Widerstände. Diese Vorzeichen sind in der Summe zu berücksichtigen.
+
+\subsubsection{Widerstände}
+Für serielle Schaltungen gilt
+\[ 
+        \sum_{k}^{}R_k=R_{\,\text{ges}\,}
+.\] 
+Für parallele Schaltungen gilt
+\[ 
+        \sum_{k}^{}\dfrac{1}{R_k}=\dfrac{1}{R_{\,\text{ges}\,}}
+.\] 
+
+\subsection{Stromtransport durch verschiedene Materialien}
+\subsubsection{Gase}
+In nicht ionisierten Gasen fließt kein Strom; in vollständig ionisierten Gasen (Plasma) sind die Ladungsträger (sowohl positiv als auch negativ) frei beweglich. Die Ladungsträgerdichte in einem neutralen Gas ist identisch über alle Ladungen $n_+=n_-=n$. Die Erzeugungsrate der Ladungsdichte über eine Zeit ist konstant, also $\diff[]{n}{t}=\alpha $. Die Vernichtungsrate, durch Rekombination von $e^-$ und $\,\text{Ion}\,^+$, ist $\diff[]{n}{t}=\beta $. Die Wahrscheinlichkeit, dass sich ein $e^-$ und $\,\text{Ion}\,^+$ treffen ist proportional zu $n^-\cdot n^+=n^2$. Die Gesamtdichte ist dann
+\[ 
+        \diff[]{n}{t}=\alpha -\beta n^2
+.\] 
+Es existiert ein Gleichgewicht bei
+\[ 
+        n=\,\sqrt[]{\dfrac{\alpha }{\beta }}\qquad \Rightarrow \qquad \diff[]{n}{t}=0
+.\] 
+\hfill\\\textbf{Erzeugungsmechanismen}\\ 
+Es gibt verschiedene Methoden ein Plasma zu erzeugen.
+\begin{enumerate}[label=\arabic*.]
+        \item Thermisch, durch Fusion von Atomen: Atom + Atom $\rightarrow $ $2\,\text{Ion}\,^++2e^-$. Dieser Vorgang benötigt allerdings sehr hohe Temperaturen.
+        \item Elektronenstöße, wenn Elektronen ausreichend kinetische Energie haben. Mit $E_{\,\text{kin}\,}>E_{\,\text{ion}\,}$, folgt $e^-+\,\text{Atom}\,\rightarrow e^-+e^-+\,\text{Ion}\,^+$. Werden die Elektronen durch ein $\vv{E}$--Feld beschleunigt, fangen sie an mit Atomen zu stoßen und produzieren weitere Elektronen sowie Ionen. Da die Ionen aber viel langsamer als die Elektronen sind, wird in dem $\vv{E}$--Feld auf einer Seite eine positive Ladungsverteilung erzeugt, welche die Elektronen wieder abbremsen.
+        \item Photonionisation, indem ein Atom mit einem Photon beschossen wird, also $\gamma +\,\text{Atom}\,\rightarrow \,\text{Ion}\,^++e^-$.
+\end{enumerate}
+
+\subsubsection{Festkörper}
+In Festkörpern können sich Elektronen durch das \textbf{Leitungsband} bewegen. Das Leitungsband ist der Bereich, in dem Elektronen nur noch lose an die Atome gebunden sind. Dies ermöglicht ihnen, sich zwischen den Atomen zu bewegen, da die Leitungsbänder in einem Atomgitter überlappen. 
+
+\subsubsection{Thermoelektrische Phänomene}
+Werden Materialen auf einer Seite aufgeheitzt und auf der anderen abgekühlt, dann bildet bildet sich auf der kalten Seite ein negativer Ladungsüberschuss, da die Dichte der Elektronen, aufgrund der niedrigeren kinetischen Energie, zunimmt. Werden die heißen und kalten Seiten von zwei verschiedenen Materialien zusammengebracht, dann bildet sich an der Kontaktstelle eine Raumladungszone, die ein $\vv{E}$--Feld erzeugt, wodurch eine Spannung aufgebaut wird. Dieser Effekt heißt \textbf{Seebeck--Effekt}
+\[ 
+        T_A\neq T_B\qquad \Rightarrow \qquad U=\left(S_A-S_B\right)\left(T_A-T_B\right)\neq 0
+,\] 
+mit $S$ dem Seebeck--Koeffizienten (Materialeigenschaft). Sollte kein Temperaturunterschied vorhanden sein, dann findet nur eine Diffusion von Elektronen zwischen dem Materialien statt.\\\indent
+In Abhängigkeit davon, in welche Richtung der Strom fließt, kann man die Kontaktstelle aufheizen oder abkühlen. Da die Elektronen unterschiedliche mittlere kinetische Energien haben, findet ein Temperaturaustausch statt, da sich bei dem Übergang von Elektronen in das jeweils andere Material die jeweilige mittlere kinetische Energie erhöht.
+
+\newpage
+\section{Magnetismus}
+Magnetische Kraft wird druch bewegte Ladungsträger hervorgerufen. Es existiert kein magnetischer Monopol und keine magnetischen Ladungsträger. 
+
+\subsection{Magnetische Felder}
+Ein Magnetfeld besteht aus \textbf{geschlossenen Feldlinien}, von Nord nach Süd. Das von Strom aufgebaute Magnetfeld dreht rechts um die technische Stromrichtung und seine Flächennormale ist parallel zur Stromrichtung
+\[ 
+        \psi _m:=\int_{A}^{}\vv{B}\cdot \td \vv{A}\qquad [B]=\dfrac{\,\text{Vs}\,}{\,\text{m}\,^2}=\,\text{T}\,=\,\text{Tesla}\,
+.\] 
+Über eine geschlossene Oberfläche $A$ treten gleichviele Feldlinien ein, wie diese verlassen. Dieser Ausdruck ist äquivalent dazu, dass Feldlinien geschlossen sind
+\[ 
+        \oint_{A}^{}\vv{B}\cdot \td \vv{A}=0\qquad \Rightarrow \qquad \int_{V}^{}\,\text{div}\,\vv{B}\cdot \td V=0\qquad \Rightarrow \qquad \,\text{div}\,\vv{B}=0
+.\] 
+Die Divergenz des Magnetischen Feldes entspräche der magnetischen Ladungsdichte, diese existiert allerdings nicht. $\vv{B}$ ist also \textbf{Quellenfrei}.\\\indent
+$\vv{B}$--Felder sind allerdings \textbf{nicht Wirbelfrei}, also
+\[ 
+        \oint_{s}^{}\vv{B}\td s \neq 0\qquad \Rightarrow \qquad \,\text{rot}\,\vv{B}\neq 0
+,\] 
+mit $s$ einem Wegstück entlang einer Feldlinie.\\\indent
+Das Magnetfeld ist gegeben durch
+\[ 
+        B=\dfrac{\mu \mu _0}{2\pi }\dfrac{I}{r}
+,\] 
+mit $\mu $ der Permeabilität und $\mu _0$ der magnetischen Feldkonstante.
+
+\subsubsection{Hall--Sonde}
+Mit einer Hall--Sonde kann die Stärke eines Magnetfeldes gemessen werden. In der Hall--Sonde befindet sich ein flacher Leiter, durch den ein Strom fließt. Wird dieser Leiter in ein Magnetfeld geführt, werden die Elektronen in dem Leiter abgelenkt und bewegen sich zu einer der Seiten parallel zur Stromrichtung. Dadurch entsteht die Hall--Spannung quer durch den Leiter, welche mit der Stärke des Magnetfeldes in Zusammenhang gebracht werden kann.
+
+\subsection{Lorentzkraft}
+Magnetfelder üben eine Kraft aus, diese ist allerdings nicht proportional zur magnetischen Feldstärke, da sie orthogonal dazu wirkt
+\[ 
+        \vv{F}\perp \vv{B}\qquad \vv{F}\cdot \vv{B}=0
+.\] 
+Diesen Effekt kann man in einem Fadenstrahlrohr zeigen, bei dem Elektronen durch ein Magnetfeld auf eine Kreisbahn gezwungen werden. Die Kraft, die auf die Elektronen wirkt ist
+\[ 
+        \vv{F}_L=q\cdot \left(\vv{v}\times \vv{B}\right)
+.\]
+\hfill\\\textbf{Magnetische Feldkonstante}\\ 
+Mit Hilfe der Lorentzkraft kann die magnetische Feldkonstante hergeleitet werden
+\begin{align*}
+        F\left(\,\text{ein Ladungsträger}\,\right)&=qvB&&\\
+        F\left(\,\text{ganzer Leiter}\,\right)&=N\cdot qvB&&N=nAl\\
+                                              &=\underbrace{nAl\cdot qv}_{I}B&&\\
+                                              &=I\cdot B&&B=\dfrac{\mu _0}{2\pi }\dfrac{I}{r}\\
+                                              &=\dfrac{\mu _0}{2\pi }\dfrac{I^2}{r}
+.\end{align*}
+Mit $F=2\cdot 10^{-7}\,\text{N}\,$, als die Kraft, die auf zwei Leiter in einem Abstand von einem Meter mit einer Stromstärke von einem Ampere wirkt, folgt
+\[ 
+        \mu _0=4\pi \cdot 10^{-7}\dfrac{\,\text{Nm}\,}{\,\text{A}\,^2}
+.\] 
+\indent Mit der elektrischen Feldkonstante, gilt folgender Zusammenhang
+\[ 
+        \,\sqrt[]{\dfrac{1}{\varepsilon _0\mu _0}}=c
+.\] 
+
+\subsection{Magnetischer Fluss, Ampere'sches Gesetz, Stoke'scher Satz}
+Vergleicht man $\vv{B}$-- und $\vv{E}$--Felder, sieht man, dass
+\begin{align*}
+        \psi _m&=\int_{A}^{}\vv{B}\cdot \td \vv{A}&\Phi _e&=\int_{A}^{}\vv{E}\cdot \td \vv{A}\\
+        \oint_{A}^{}\vv{B}\cdot \td \vv{A}&=0&\oint_{A}^{}\vv{E}\cdot \td \vv{A}&=\dfrac{Q}{\varepsilon _0}\\
+        \,\text{div}\,\vv{B}&=0&\,\text{div}\,\vv{E}&=\dfrac{\rho _0}{\varepsilon _0}
+.\end{align*}
+Für einen Leiter mit konstantem $\vv{B}$--Feld über ein Wegstück $\td \vv{s}$ auf den Feldlinien des Magnetfeldes gilt
+\begin{align*}
+        \oint_{C}^{}\vv{B}\cdot \td \vv{s}&=2\pi rB&\oint_{C}^{}\vv{E}\cdot \td \vv{s}&=0\\
+                                          &=\mu _0I
+.\end{align*}
+Dieser Ausdruck ist das \textbf{Ampere'sche Gesetz}. Für einen Spule mit Windungsdichte $n$ gilt
+\begin{align} 
+        \oint_{C}^{}\vv{B}\cdot \td \vv{s}&=n\cdot \mu _0I
+.\end{align} 
+Der Strom durch eine geschlossene Oberfläche ist
+\begin{align*}
+        I&=\int_{A}^{}\vv{j}\cdot \td \vv{A}
+.\end{align*}
+Nach dem \textbf{Stoke'schen Satz} gilt allgemein
+\begin{align*}
+        \oint_{C}^{}\vv{k}\cdot \td \vv{s}&=\int_{A}^{}\,\text{rot}\,\vv{k}\cdot \td \vv{A}\\
+                                          &=\int_{A}^{}\left(\vv{\nabla }\times \vv{k}\right)\td \vv{A}
+,\end{align*}
+mit $\vv{k}$ einem beliebigen Vektorfeld. Konkret für den Magnetismus
+\begin{align*}
+        \oint_{C}^{}\vv{B}\cdot \td \vv{s}&=\int_{A}^{}\left(\vv{\nabla }\times \vv{B}\right)\td \vv{A}\\
+                                          &=\mu _0\int_{A}^{}\vv{j}\cdot \td \vv{A}
+.\end{align*}
+Daraus folgert man
+\begin{align*}
+        \,\text{rot}\,\vv{B}&=\mu _0\vv{j}&\,\text{rot}\,\vv{E}&=0
+\end{align*}
+
+\subsubsection{Helmholtz--Spule}
+Das Magnetfeld von zwei Spulen mit dem Radius $R$ im Abstand $z$ ist gegeben durch
+\[ 
+        B\left(z\right)=\dfrac{\mu _0I}{\left(\tfrac{5}{4}\right)^{3/2}R}\cdot \left[1+\dfrac{144}{125}\dfrac{z^4}{R^4}+\hdots \right]
+.\] 
+Sind beide Spulen nah genug aneinander, so entsteht zwischen den Spulen ein konstantes Magnetfeld.
+
+\subsection{Magnetisches Vektorpotential und Biot--Savart--Gesetz}
+Da $\,\text{div}\,\vv{B}=0$ kann man die vektorielle Größe $\vv{A}\left(r\right)$ einführen, sodass
+\[ 
+        \,\text{rot}\,\vv{A}=\vv{B}
+,\] 
+denn
+\[ 
+        \,\text{div}\,\vv{B}=\,\text{div}\,\left(\,\text{rot}\,\vv{A}\right)=\vv{\nabla }\left(\vv{\nabla }\times \vv{A}\right)=0
+.\] 
+$\vv{A}$ ist allerdings nicht eindeutig, kann aber mit einer beliebigen Funktion $f$ in Bezug gesetzt werden 
+\[ 
+        \vv{A}'=\vv{A}+\,\text{grad}\,f
+,\] 
+da $\,\text{rot}\,\,\text{grad}\,f=0$ ist, also
+\[ 
+        \,\text{rot}\,\vv{A}'=\,\text{rot}\,\vv{A}+\,\text{rot}\,\,\text{grad}\,f=\vv{B}
+.\] 
+Weiter kann man
+\[ 
+        \,\text{rot}\,\vv{B}=-\nabla ^2\vv{A}=-\triangle \vv{A}\stackrel{!}{=}\mu _0\vv{j}
+,\] 
+betrachten, woraus folgt
+\[ 
+        \vv{A}\left(\vv{r}_1\right)=\dfrac{\mu _0}{4\pi }\int_{}^{}\dfrac{\vv{j}\left(\vv{r}_2\right)}{r_{12}}\td V_2
+,\] 
+mit $\vv{r}_1$ als Ortsvektoren zu einem Volumenelement $\td V_2$, $\vv{r}_1$ als Ortsvektor zu $\vv{A}\left(\vv{r}_1\right)$ und $\vv{r}_{12}$ als Vektor von $\vv{A}\left(\vv{r}_1\right)$ zu dem Volumenelement. Daraus kann das $\vv{B}$--Feld bestimmt werden. Auch das \textbf{Biot--Savart--Gesetz} 
+\[ 
+        \vv{B}=\,\text{rot}\,\vv{A}=\vv{\nabla }\times \dfrac{\mu _0}{4\pi }\int_{}^{}\dfrac{\vv{j}\left(\vv{r}_2\right)}{r_{12}}\td V_2
+.\] 
+
+\subsection{Magnetische Dipole}
+Das Magnetfeld einer Leiterschleife entspricht dem Magnetfeld eines kurzen Stabmagneten. Entlang der Flächennormale existiert ein \textbf{magnetisches Dipolmoment} 
+\begin{align*} 
+        \vv{p}_m=I\cdot \vv{A}
+,\end{align*} 
+mit $I$ der Stromstärke.\\\indent
+Eine Leiterschleife der Höhe $a$ und Breite $b$ wird an der breiten Kante an einem Faden aufgehangen. Befindet sich diese Leiterschleife in einem Magnetfeld und es fließt ein Strom, dann dreht sie sich aufgrund der Lorentz--Kraft um ihren Aufhängepunkt. Die Kraft ist
+\begin{align*} 
+        \vv{F}_L=a\cdot I\left(\hat{e}_a\times \vv{B}\right)
+.\end{align*} 
+Das Drehmoment ist dann
+\begin{align*} 
+        \vv{D}&=2\cdot \dfrac{b}{2}\cdot \left(\hat{e}_a\times \vv{F}_L\right)\\
+              &=a\cdot b \cdot I\cdot \left(\hat{e}_b\times \hat{e}_a\right)\times \vv{B}\\
+              &=I\cdot \vv{A}\times \vv{B}
+.\end{align*} 
+Verwendet man zudem den magnetischen Dipolmoment, folgt
+\begin{align*} 
+        \vv{D}&=\vv{p}_m\times \vv{B}
+.\end{align*} 
+Die potenzielle Energie bzw.\ die Kraft ist dann
+\begin{align*} 
+        W=-\vv{p}_m\cdot \vv{B}\qquad \vv{F}=\left(\vv{p}_m\cdot \vv{\nabla }\right)\cdot \vv{B}
+.\end{align*} 
+
+\subsubsection{Atomare magnetische Momente}
+Im Bohr'schen Atommodell kreist das Elektron um den Atomkern auf diskreten Bahnen. Dieser Orbit entspricht einem Strom, also
+\begin{align*} 
+        \,\text{Strom}\,&=\dfrac{\,\text{Ladung}\,}{\,\text{Periode}\,}&&\,\text{Periode}\,=\dfrac{2\pi }{\omega }\\
+                        &=\dfrac{e^-\omega }{2\pi }&&\omega =\dfrac{v}{r}\\
+                        &=\dfrac{e^-v}{2\pi r}
+.\end{align*} 
+Das magnetische Dipolmoment ist dann
+\begin{align*} 
+        p_m=\mu &=I\cdot A\\
+                &=\dfrac{e^-v}{2\pi r}r^2\pi \\
+                &=\dfrac{1}{2}e^-vr
+.\end{align*} 
+Mit dem Drehimpuls $L=mvr$ folgt
+\begin{align*} 
+        \mu &=\dfrac{e^-}{2m}L
+.\end{align*} 
+In der Quantenmechanik ist der Drehimpuls allerdings quantisiert, mit
+\begin{align*} 
+        L_z=\left(\hdots ,-2,-1,0,1,2,\hdots \right)\cdot \hbar
+,\end{align*} 
+mit $\hbar$ dem Planck'schen Wirkungsquantum. Dann gilt 
+\begin{align*} 
+        |\vv{\mu }|=n\cdot \dfrac{e^-\hbar}{2m_e}=n\cdot \mu _B
+,\end{align*} 
+mit $\mu _B$ dem \textbf{Bohr'schen Magneton}.
+
+\subsection{Materie im Magnetfeld}
+Elektronen \glqq drehen\grqq{} sich um sich selbst. Dies wird als Spin bezeichnet. Der Spin selbst, der Orbit der Elektronen und der Atomkern besitzen alle ein magnetisches Dipolmoment
+\begin{align*} 
+        \vv{\mu }=\sum_{}^{}\vv{\mu }_{\,\text{Spin}\,}+\sum_{}^{}\vv{\mu }_{\,\text{Orbit}\,}+\sum_{}^{}\vv{\mu }_{\,\text{Kern}\,}
+.\end{align*} 
+$\vv{\mu }_{\,\text{netto}\,}$ ist relativ klein, da sich diese Momente gegenseitig aufheben. Die Atome beeinflussen sich mit ihren Magnetfeldern trotzdem gegenseitig, was dazu führt, dass das magnetische Dipolmoment alternierend in die andere Richtung zeigt. Man unterscheidet
+\begin{enumerate}[label=$\circ$]
+        \item Diamagnetismus: Befinden sich benachbarte Atome in einem Magnetfeld, dann wirkt eine Lorentz--Kraft auf ein Elektron zum Atomkern hin bzw.\ vom Atomkern weg. Dabei vergößert sich $v$ und $\mu $ bzw.\ reduziert sich $v$ und $\mu $, was dazu führt, dass sich ein Magnetfeld in die Richtung des größeren $\mu $s bildet.
+        \item Paramagnetismus: Beim Paramagnetismus werden Atome mithilfe eines Magnetfeldes geordnet. Sie richten sich alle entlang der Feldlinien. Wird das Magnetfeld wieder entfernt, gehen die Atome wieder in ihre Ausgangsrichtung zurück.
+        \item Ferromagnetismus: Bei Ferromagneten sind die Dipole auch ohne äußeres Feld ausgerichtet. 
+\end{enumerate}
+
+\subsubsection{Magnetisierung}
+Ein externes Magnetfeld in Materie wird durch Dipole modifiziert. Also
+\begin{align*} 
+        \vv{B}_{\,\text{Materie}\,}=\mu \vv{B}_{\,\text{Vakuum}\,}
+,\end{align*} 
+mit $\mu _0$ der Permeabilität. Die Ursache für die Abweichung von 1 der Permeabilität ist die \textbf{Magnetisierung}
+\begin{align*} 
+        \vv{M}=\dfrac{1}{V}\sum_{}^{}\vv{\mu }\qquad [M]=\dfrac{\,\text{A}\,}{\,\text{m}\,}
+.\end{align*} 
+Dann ist das Magnetfeld
+\begin{align*} 
+        \vv{B}_{\,\text{Mat}\,}=\vv{B}_{\,\text{Vak}\,}+\mu _0\vv{M}=\mu \vv{B}_{\,\text{Vak}\,}
+.\end{align*} 
+Vergleicht man mit dem $\vv{E}$--Feld, gilt
+\begin{align*} 
+        \vv{E}_D=\vv{E}_{\,\text{Vak}\,}-\dfrac{1}{\varepsilon _0}\vv{p}=\dfrac{\vv{E}_{\,\text{Vak}\,}}{\varepsilon }
+.\end{align*} 
+In der Elektrodynamik kann $\varepsilon $ nicht kleiner als 1 werden. Die Permeabilität allerdings schon. Es ist also möglich das Magnetfeld in Materie größer als im Vakuum zu machen.\\\indent
+Man definiert das \textbf{magetisierende Feld} oder \textbf{magnetische Erregung} mit
+\begin{align*} 
+        \vv{H}&=\dfrac{1}{\mu _0}\left(\vv{B}_{\,\text{Mat}\,}-\mu _0\vv{M}\right)\qquad [H]=\dfrac{[B]}{[\mu _0]}=\dfrac{\,\text{A}\,}{\,\text{m}\,}\\
+              &=\dfrac{1}{\mu _0}\vv{B}_{\,\text{Vak}\,}\\
+              &=\dfrac{1}{\mu \mu _0}\vv{B}_{\,\text{Mat}\,}
+.\end{align*} 
+Damit kann das Ampere'sche Gesetz modifiziert werden
+\begin{align*} 
+        \oint_{c}^{}\vv{B}\td \vv{r}&=\mu _0\sum_{}^{}I_i\\
+                                    &=\mu _0I_{\,\text{ext}\,}+\mu _0I_{\,\text{Mat}\,}\\
+                                    &=\oint_{c}^{}\vv{B}_{\,\text{Vak}\,}\td \vv{r}+\mu _0\oint_{c}^{}\vv{M}\td \vv{r}
+\end{align*} 
+Damit ist
+\begin{align*} 
+        \oint_{}^{}\left(\vv{B}-\mu _0\vv{M}\right)\td &=\mu _0I_{\,\text{ext}\,}\\
+        \,\text{rot}\,\left(\vv{B}-\mu _0\vv{M}\right)&=\mu _0\vv{j}_{\,\text{ext}\,}\\
+        \,\text{rot}\,\vv{H}&=\vv{j}_{\,\text{ext}\,}
+.\end{align*} 
+Die Größe des Feldes ist dann
+\begin{align*} 
+        \vv{M}&=\dfrac{1}{\mu _0}\chi_m\vv{B}
+,\end{align*} 
+mit $\xi _m$ der \textbf{magnetischen Suszeptibilität}.
+\begin{align*} 
+        \vv{B}_{\,\text{Mat}\,}&=\vv{B}_{\,\text{Vak}\,}+\chi_m\vv{B}_{\,\text{Vak}\,}\\
+                               &=\left(1+\chi_m\right)\vv{B}_{\,\text{Vak}\,}\\
+                               &=\mu B_{\,\text{Vak}\,}
+.\end{align*} 
+Für 
+\begin{align*} 
+        \chi _m<0&:\,\text{diamagnetisch}\,\vv{B}_{\,\text{Mat}\,}<\vv{B}_{\,\text{Vak}\,}\\
+        \chi_m>0&:\,\text{paramagnetisch}\,\vv{B}_{\,\text{Mat}\,}>\vv{B}_{\,\text{Vak}\,}
+.\end{align*} 
+
+\subsubsection{Diamagnetismus}
+Das \glqq induzierte\grqq{} magnetische Dipolmoment impliziert dass $\vv{M}\propto -\vv{B}$ ist. Dies gilt für alle Stoffe und ist abhängig von der Temperatur.
+
+\subsubsection{Paramagnetismus}
+Es existieren Moleküle mit permanentem magnetischem Dipolmoment. Ist kein externes Feld angelegt, dann sind diese Dipolmomente stark verteilt, also $\vv{M}=0$. Wird $\vv{B}_{\,\text{Vak}\,}$ angelegt, dann richten sich diese Dipolmomente aus, mit $\vv{M}\propto+\vv{B}$, was das $\vv{B}$--Feld verstärkt.
+
+\subsubsection{Ferromagnetismus}
+Hier ist $\chi_m\gg 0, \mu \gg 1$ also ist $\vv{B}_{\,\text{Mat}\,}\gg \vv{B}_{\,\text{Vak}\,}$. Man erreicht eine kollektive Ausrichtung der magnetischen Dipolmomente. Das Dipolmoment wird durch den Spin--Effekt getragen und das Magnetfeld verschwindet nicht mit $\vv{B}_{\,\text{Vak}\,}=0$. Es bilden sich makroskopische Domänen.
+
+\newpage
+\section{Einschub: Spezielle Relativitätstheorie}
+In der klassischen Physik existieren folgende Probleme
+\begin{enumerate}[label=\arabic*.]
+        \item Die Lorentz--Kraft hängt vom Bezugssystem ab.
+        \item Die Maxwell--Gleichungen sind nicht invariant unter Galileitransformation.
+\end{enumerate}
+Bisher wird der dreidimensionale Raum als ein $\mathbb{R}^3$--Vektorraum beschrieben. Die Annahme ist, dass die Zeit absolut und identisch für alle Orte ist. In der SRT ist das allerdings nicht mehr der Fall; es wird ein vierdimensionaler Vektor
+\begin{align*} 
+        u=\left(t_u,u_x,u_y,u_z\right)
+,\end{align*} 
+mit einer Zeit und drei Geschwindigkeiten verwendet.
+\\\hfill\\\textbf{Prinzip der Relativität}\\
+Die SRT folgert aus dem speziellen Relativitätsprinzip,
+\begin{enumerate}[label=\arabic*.]
+        \item dass die Naturgesetze der Mechanik und Elektrodynamik in allen Inertialsystemen gleich sind.
+        \item dass die Lichtgeschwindigkeit in allen Inertialsystemen gleich ist.
+\end{enumerate}
+
+\subsection{Lorentz--Transformation}
+Bisher galt immer die Galileitransformation, mit
+\begin{align*} 
+        x'&=x-v_x\cdot t\\
+        y'&=y-v_y\cdot t\\
+        z'&=z-v_z\cdot t\\
+        t'&=t
+.\end{align*} 
+Die Galilei'sche Addition der Geschwindigkeit bzw.\ der Beschleunigung ist
+\begin{align*} 
+        v'=\diff[]{x'}{t}=\diff[]{x}{t}-u=v-u\qquad a'=\diff[]{v'}{t}=\diff[]{v}{t}=a
+.\end{align*} 
+Die Geschwindigkeit ändert sich aber die Beschleunigung bleibt gleich. Ein Problem ergibt sich aber, wenn man Teilchen mit Lichtgeschwindigkeit Galilei--transformiert, da sich dabei die Lichtgeschwindigkeit ändern würde.
+
+\subsubsection{Konsequenz für die Gleichzeitigkeit}
+In einem $ct$--$x$--Diagramm wird an Stelle $\left(O,0\right)$ ein Lichtsignal in der Form eines Kegels in einem Winkel von $45^\circ$ zur $x$--Achse ausgesandt. An den zwei Punkten $\left(A,0\right)$ links und $\left(B,0\right)$ rechts von Kegel sind zwei Beobachter in Ruhe in gleicher Entfernung zur Lichtquelle, also $d\left(A,O\right)=d\left(B,O\right)$. Die Punkte $\left(x,ct\right)$ werden in diesem Diagramm als \textbf{Ereignisse} bezeichnet. Die beiden Beobachter $A$ und $B$ sehen zur selben Zeit das selbe Ereignis des Lichtkegels, $\left(A,t_1\right)$ und $\left(B,t_1\right)$, da sich $A$ und $B$ in Ruhe befinden. Die Orthogonale zur $x$--Achse vom Beobachter zum Lichtkegel wird \textbf{Weltlinie} genannt.\\\indent
+Jetzt werden $O,A$ und $B$ mit einer Geschwindigkeit $u$ in $x$--Richtung verschoben. Die Weltlinien der drei Stellen werden um einen Winkel $\delta $ zur Normalen der $x$--Achse verschoben. Die Gegenkathete zu diesem Winkel am Zeitpunkt $t_1$ hat die Länge von $u\cdot t_1$. Da das Licht eine Stercke von $c\cdot t_1$ zurücklegt und in einem Winkel von $45^\circ$ zur $x$--Achse steht, ergibt sich für den Winkel $\delta =\tan \tfrac{u}{c}$.\\\indent
+Aus diesem Winkel folgt, dass der Lichtkegel die Weltlinien von $A$ und $B$ zu verschiedenen Zeitpunkten schneidet. $A$ bewegt sich auf den Lichtblitz zu und sieht ihn bei $t_A$; $B$ bewegt sich von dem Lichtblitz weg und sieht in bei $t_B$; $t_A<t_B$. Die Begriffe \glqq vorher\grqq{}, \glqq nachher\grqq{} und \glqq gleichzeitig\grqq{} sind also vom Inertialsystem abhängig.\\\indent
+Mit $t$ der Zeit im System $S$ ($A$ und $B$ in Ruhe) und $t'$ der Zeit im System $S'$ ($A$ und $B$ bewegen sich mit $u$) folgt, dass $t \neq t'$, also gibt es keine absolute Zeit mehr. Vereint man beide Inertialsysteme in einer Darstellung, dann bleibt die $x$--Achse gleich und die $ct'$--Achse wird um einen Winkel $\delta =\tan \tfrac{u}{c}$ zur $ct$--Achse verschoben. Die $x'$--Achse verschoben um den Winkel $\delta $ zur $x$--Achse verbindet die Punkte gleicher Zeit in $S'$. Es gilt $\angle \left(t,t'\right)=\angle \left(x,x'\right)=\delta $. Alle Achsen werden in ein Koordinatensystem gezeichnet. Der Lichtkegel aus dem Ursprung in beiden Systemen ist die Winkelhalbierende, also identisch.
+
+\subsubsection{Herleitung der Lorentztransformation}
+Die Lorentz--Transformation ist eine Transformation, die das System $S$ in das System $S'$ überführen kann. Folgende Bedingungen sind zu erfüllen
+\begin{enumerate}[label=\arabic*.]
+        \item $c=c'$.
+        \item Für $u\ll c$, sollte die Lorentz-- in die Galilei--Transformation übergehen.
+        \item Die Transformation muss linear sein.
+\end{enumerate}
+Ein Lichtblitz breitet sich im Vakuum Kugelförmig mit dem Radius von $x^2+y^2+z^2=c^2t^2$ aus. Da sich Licht in jedem Inertialsystem mit der selben Geschwindigkeit ausbreitet, gilt auch $x'^2+y'^2+z'^2=c^2t'^2$.\\\indent
+Um die Bedingung 1.\ und 2.\ zu erfüllen gibt es einen einfachen Ansatz, mit
+\begin{align*}
+        x'&=A\left(x-ut\right)\\
+        y'&=y\\
+        z'&=z\\
+        t'&=Bx+Dt
+,\end{align*}
+mit $A,B$ und $D$ als unbekannte. Daraus folgt
+\begin{align*} 
+        x'^2+y'^2+z'^2&=c^2t'^2\\
+        \left(A\left(x-ut\right)^2\right)+y^2+z^2&=c^2\left(Bx+Dt\right)^2\\
+        A^2x^2+A^2u^2t^2-2Axut+y^2+z^2&=c^2\left(B^2x^2+D^2t^2+2BxDt\right)\\
+        A^2x^2-c^2B^2x^2+y^2+z^2-2Axut-2cBxDt&=c^2D^2t^2-A^2u^2t^2
+.\end{align*} 
+Dieser Term muss mit $x^2+y^2+z^2=c^2t^2$ gleich sein. Damit das erfolgt, muss
+\begin{align*} 
+        \underbrace{A^2x^2-c^2B^2x^2}_{=x^2}+y^2+z^2\underbrace{-2Axut-2cBxDt}_{=0}&=\underbrace{c^2D^2t^2-A^2u^2t^2}_{=c^2t^2}
+\end{align*} 
+gelten. Daraus folgt ein Gleichungssystem mit drei Gleichungen und drei Unbekannten. Diese Unbekannten sind
+\begin{align*} 
+        A=\dfrac{1}{\,\sqrt[]{1-\dfrac{u^2}{c^2} }}\qquad B=-\dfrac{u}{c^2}\cdot A\qquad D=A
+.\end{align*} 
+Im Allgemeinen wird eine andere Notation verwendet
+\begin{align*} 
+        A=D=\gamma \qquad B=-\dfrac{\beta }{c}\gamma \qquad \gamma =\dfrac{1}{\,\sqrt[]{1-\beta ^2}}\qquad \beta =\dfrac{u}{c}
+.\end{align*} 
+Dann erhält man die \textbf{Lorentz--Transformation} 
+\begin{align*} 
+        x'&=\gamma \left(x-ut\right)&x'&=-\gamma \left(x-\beta ct\right)\\
+        y'&=y&y'&=y\\
+        z'&=z&z'&=z\\
+        t'&=\gamma \left(-\dfrac{\beta }{c}x+t\right)&ct'&=-\gamma \beta x+\gamma ct
+.\end{align*} 
+Damit ist auch die 1.\ Bedingung erfüllt, also $u\ll c\Rightarrow \beta \rightarrow 0,\gamma \rightarrow 1$ und die Lorentz--T geht in eine Galilei--T über.\\\indent
+Für den anderen Grenzfall gilt $u\rightarrow c\Rightarrow \beta \rightarrow 1,\gamma \rightarrow \infty$.\\\indent
+Für $u>c\Rightarrow \beta >1,\mathfrak{I}\left(y\right)\neq 0$, also eine komplexe Transformation.
+
+\subsection{Längenkontraktion}
+Sei ein Stab der Länge $l$ im System $S$. Der Stab bewegt sich mit der Geschwindigkeit $u$. Sei ein identischer Stab der Länge $l'$ im Ruhesystem $S'$. Um die Länge des Stabes zu messen, müssen die Endkoordinaten $x_1$ und $x_2$ \glqq gleichzeitig\grqq{} abgelesen werden, id est, man liest zum Zeitpunkt $t_1$ den Endpunkt ab und transformiert diesen Endpunkt in $S'$.\\\indent
+Die Länge des Stabes im Ruhesystem $S'$ ist dann $L'=x_2'-x_1'$ und die Länge in $S$ ist $L=x_2-x_1$. Vergleicht man diese Längen mit einer Transformation, folgt
+\begin{align*} 
+        x_1'&=\gamma \left(x_1-\beta ct_1\right)\\
+        x_2'&=\gamma \left(x_2-\beta ct_1\right)
+.\end{align*} 
+Das bedeutet allerdings, dass $L=x_2-x_1=\tfrac{1}{\gamma }\left(x_2'-x_1'\right)$. Die Länge des Stabes hat sich also bei der Transformation von $S$ nach $S'$ um den Faktor $\tfrac{1}{\gamma }$ verkleinert. Eine Erklärung dafür ist, dass die Zeitpunkte die in $S'$ gleichzeitig sind, in $S$ nicht mehr gleichzeitig sind, da die Weltlinien der Systeme nicht parallel zueinander sind.
+
+\subsection{Zeitdilatation}
+Von einem Ort $x_1$ werden Lichtblitze ausgesandt. Der erste Blitz kommt bei dem Empfänger zum Zeitpunkt $t_1$ an. An dem Zeitpunkt $t_1$ wird dann an der Stelle $\left(x,t_1\right)$ ein zweiter Lichtblitz ausgesandt, der bei $t_2$ beim Empfänger ankommt. Die Zeit zwischen den Lichtblitzen ist $\Delta t=t_2-t_1$. In einem verschobenen Inertialsystem $S'$ gilt dann $\Delta t'=t_2'-t_1'$. Mit der Lorentz--T folgt
+\begin{align*} 
+        t_1'&=\gamma \left(t_1-\dfrac{\beta }{c}x_1\right)\\
+        t_2'&=\gamma \left(t_2-\dfrac{\beta }{c}c_1\right)
+.\end{align*} 
+Das bedeutet, dass $\Delta t'=\gamma \Delta t$. Von einem relativ zur Uhr bewegten Inertialsystem scheint also die Uhr langsamer zu laufen. Die Uhr läuft in ihrem Ruhesystem am schnellsten. Dies ist die \textbf{Eigenzeit} oder \textbf{proper time} $\tau $.\\\indent
+Für den Grenzfall $\beta \rightarrow 1$ und $\gamma \rightarrow \infty$ bleibt die Zeit im mitbewegten System stehen. Betrachtet man ein infinitesimales Zeitintervall gilt $\td t=\gamma \td \tau $ 
+
+\subsection{4er--Vektor}
+Da die Zeit nicht mehr absolut ist, wird ein Vektor mit drei Raum-- und einer Zeitkoordinate eingeführt
+\begin{align*} 
+        x^\mu :=\left(x^0,x^1,x^2,x^3\right)=\left(ct,\vv{x}\right)\qquad x_\nu :=\left(x_0,-x_1,-x_2,-x_3\right)
+.\end{align*} 
+Das \textbf{4er--Produkt} ist 
+\begin{align*} 
+        \left(x^\mu ,y^\nu \right)&:=x^0y^0-x^1y^1-x^2y^2-x^3y^3\qquad \sum_{\mu ,\nu }^{}g_{\mu \nu }x^\mu x^\nu\,\text{mit}\,g_{\mu \nu }=\,\text{diag}\,\left(1,-1,-1,-1\right)\\
+                               &=x^0y^0-\vv{x}\vv{y}
+,\end{align*} 
+mit $g$ der Metrik des Minkowski--Raums. Mit der Einstein'schen Summenkonvention ist dieser Vektor
+\begin{align*} 
+        g_{\mu \nu }x^\mu x^\nu \qquad x^\mu x_\mu 
+.\end{align*} 
+Der Abstand von $x^\mu =\left(ct,\vv{x}\right)$ ist
+\begin{align*} 
+        s&=\,\sqrt[]{c^2t^2-\vv{x}\cdot \vv{x}}
+.\end{align*} 
+
+\subsubsection{Matrixdarstellung der Lorentz--T}
+Die Matrixdarstellung der Lorentz--T ist
+\begin{align*} 
+        \left(x^\mu \right)'&=\Lambda x^\mu 
+.\end{align*} 
+Falls $S\rightarrow S'$ und $\beta $ in $x$--Richtung, dann ist 
+\begin{align*} 
+        \Lambda =\begin{pmatrix}
+                \gamma &-\beta \gamma &0&0\\
+                -\beta \gamma &\gamma &0&0\\
+                0&0&1&0\\
+                0&0&0&1
+        \end{pmatrix}
+,\end{align*} 
+also
+\begin{align*} 
+        \begin{pmatrix}
+                ct'\\x'\\y'\\z'
+        \end{pmatrix}=\begin{pmatrix}
+                \gamma &-\beta \gamma &0&0\\
+                -\beta \gamma &\gamma &0&0\\
+                0&0&1&0\\
+                0&0&0&1
+        \end{pmatrix}\cdot \begin{pmatrix}
+                ct\\x\\y\\z
+        \end{pmatrix}
+.\end{align*} 
+$\Lambda $ wird auch als \textbf{Lorentz--boost} in $x$--Richtung bezeichnet.
+
+\subsection{Kausalität}
+Das Prinzip der Kausalität bedeutet, dass keine Information mit $v>c$ übertragen werden kann. Ein Punkt im Lichtkegel wird \textbf{zeitartig} genannt, da er mit $v<c$ erreicht werden kann. Ein Punkt auf dem Lichtkegel ist \textbf{lichtartig}, weil er nur mit $v=c$ erreicht werden kann. Ein Punkt unter dem Lichtkegel ist \textbf{raumartig} und kann nicht kausal erreicht werden, da dies nur mit $v>c$ gänge. Gäbe es unendlich schnelle Signale, könnten sich raumartige Ereignisse verständigen und durch Reflexion ihre Vergangenheit beeinflussen.\\\indent
+Man betrachte
+\begin{align*} 
+        s^2=c^2\left(\Delta t\right)^2-\left(\Delta \vv{x}\right)^2=\Delta x^\mu \Delta x_\mu 
+.\end{align*} 
+Es gelten folgende Zusammenhänge
+\begin{align*} 
+        s^2>0&:\,\text{zeitartig und kausal verknüpft}\,\\
+        s^2=0&:\,\text{lichtartig und auf dem Lichtkegel kausal verknüpft}\,\\
+        s^2<0&:\,\text{raumartig und kausal nicht verknüpfbar}\,
+.\end{align*} 
+
+\newpage
+hier vl 19% vl 19.mp4
+\newpage
+
+Betrachtet man eine Spule mit $N=nl$ Windungen, mit $n$ der Windungen pro Meter und $l$ der Länge der Spule, dann ist der magnetische Fluss, der durch die Spule induziert wird
+\begin{align*} 
+        \Psi _m=B\cdot A=\mu _0\cdot n\cdot A\cdot I
+.\end{align*} 
+Der induzierte Strom ist dann
+\begin{align*} 
+        U_{\,\text{ind}\,}=-N\cdot \dot{\Psi }_m&=-\mu _0\cdot n^2\cdot l\cdot A\cdot \dot{I}\\
+        &=-L\cdot \dot{I}\qquad L=\mu _0\cdot n^2\cdot \underbrace{V}_{=A\cdot l}
+\end{align*} 
+% zu selbstinduktion: Lösung von I(t)
+Der Strom ist dann
+\begin{align*} 
+        I\left(t\right)=\dfrac{U_0}{R}\left(1-e ^{-\tfrac{R}{L}t}\right)
+.\end{align*} 
+Es existiert also eine Zeitverzögerung bis sich der Strom als $\tfrac{U}{R}$ einstellt. Bei der Abschaltung gilt
+\begin{align*} 
+        I\left(t\right)=I_0e ^{-\tfrac{R}{L}t}
+\end{align*} 
+Die Induktivität hemmt also den Stromfluss.
+
+\subsection{Gegeninduktion}
+Seien zwei Leiterschleifen mit Strömen $I_1$ und $I_2$ beliebiger Geometrie mit den Flächen $A_1$, und der Normale $\td \vv{A}_1$ und $A_2,\td \vv{A}_2$. Seien zudem zwei Wegstücke $\td \vv{s}_1$ und $\td \vv{s}_2$ mit dem Verbindungsvektor $\vv{r}_{12}$. Das magnetische Vektorpotential durch den Stromfluss $I_1$ ist
+\begin{align*} 
+        \vv{A}\left(\vv{r}_{12}\right)&=\dfrac{\mu _0I_1}{4\pi }\int_{C_1}^{}\dfrac{1}{r^2}\td \vv{s}_1
+.\end{align*} 
+Der magnetische Fluss durch die zweite Spule ist dann
+\begin{align*} 
+        \Psi _m&=\int_{A_2}^{}\vv{B}\cdot \td \vv{A}_2\\
+               &=\int_{A_2}^{}\left(\vv{\nabla }\times \vv{A}\right)\td \vv{A}_2\\
+               &=\int_{C_2}^{}\vv{A}\cdot \td \vv{s}_2\\
+               &=\dfrac{\mu _0I_1}{4\pi }\int_{C_1}^{}\int_{C_2}^{}\dfrac{1}{r_{12}}\td \vv{s}_2\td \vv{s}_1\\
+               &=L_{12}\cdot I_1
+.\end{align*} 
+Daraus folgt der Ausdruck der \textbf{gegenseitigen Induktivität},
+\begin{align*} 
+        L_{12}=L_{21}=\dfrac{\mu _0}{4\pi }\int_{C_1}^{}\int_{C_2}^{}\dfrac{1}{r_{12}}\td \vv{s}_2\td \vv{s}_1
+.\end{align*} 
+Ist $\td \vv{s}_1\perp \td \vv{s}_2\Rightarrow L_{12}=0$; ist $\td \vv{s}_1| |\td \vv{s}_2\Rightarrow L_{12}=\,\text{max}\,\left(L_{12}\right)$.\\\\
+Betrachtet man eine große Spule 1 mit einer kleinen Spule 2 im Inneren, dann gilt für das Magnetfeld der ersten Spule
+\begin{align*} 
+        B_1=\mu _0\dfrac{N_1}{l_1}I_1\qquad \Psi _m&=B_1\cdot A_1\\
+        U_{\,\text{int}\,}&=-N_2\dot{\Psi }_m\\
+                          &=-N_2A_2\dot{B}_1\\
+                          &=-\mu _0\dfrac{N_1N_2}{l_1}A_2\dot{I}_1\\
+                          &=L\cdot \dot{I}_1
+\end{align*} 
+Es wird allerdings angenommen, dass $A_1,l_1\gg A_2,l_2$.
+
+\subsection{Energie des magnetischen Feldes}
+Betrachtet man wieder einen Stromkreis mit Spule, dann fließt beim Abschalten noch ein Strom über den Widerstand. Dadurch bleibt noch Energie im Magnetfeld der Spule gespeichert
+\begin{align*} 
+        W&=\int_{0}^{\infty}P\td t\\
+         &=\int_{0}^{\infty}UI\td t\\
+         &=\int_{0}^{\infty}IR^2\td \\
+         &=\int_{0}^{\infty}I_0^2e ^{-2 \tfrac{R}{L}t}R\td t\\
+         &=I_0^2\left[-\dfrac{L}{2R}e ^{-2 \tfrac{R}{L}t}\right]_0^\infty R\\
+         &=\dfrac{1}{2}I_0^2L
+.\end{align*} 
+Die Energiedichte ist dann
+\begin{align*} 
+        W&=\dfrac{W_{\,\text{mag}\,}}{V}\\
+         &=\dfrac{1}{2}\mu _0n^2I_0^2\\
+         &=\dfrac{1}{2}\dfrac{B^2}{\mu _0}
+\end{align*} 
+Die Energie und die Energiedichte von elektrischen Feldern ist
+\begin{align*} 
+        W_{\,\text{el}\,}=\dfrac{1}{2}CU^2\qquad W_{\,\text{el}\,}=\dfrac{1}{2}\varepsilon _0E^2
+.\end{align*} 
+Fügt man die Ausdrücke des elektrischen und magnetischen Feldes zusammen, folgt
+\begin{align*} 
+        W_{\,\text{em}\,}=\dfrac{1}{2}\varepsilon _0\left(E^2+c^2B^2\right)\qquad \varepsilon _0\mu _0=\dfrac{1}{c^2}
+.\end{align*} 
+In Materie gilt dann
+\begin{align*} 
+        W_{\,\text{em}\,}&=\dfrac{1}{2}\varepsilon _0\left(\varepsilon E^2+\dfrac{c^2}{\mu }B^2\right)\\
+                         &=\dfrac{1}{2}\varepsilon _0\left(E\cdot D+B\cdot H\right)\qquad D=\varepsilon \varepsilon _0E\quad H=\dfrac{1}{\mu \mu _0}B
+\end{align*} 
+
+\subsection{Maxwell'scher Verschiebungsstrom}
+Man betrachte zwei Ladungen $q,Q$ mit der Geschwindigkeit $v$ im Inertialsystem $S$. $S'$ ist das Ruhesystem beider Ladungen. Die Kräfte, die in $S$ bzw.\ $S'$ wirken, sind
+\begin{align*} 
+        F_x&=qE_x&F_x&=F_x'=qE_x'\\
+        F_y&=q\left(E_y-v_xB_z\right)&F_y&=\gamma F_y'=qE_y'\\
+        F_z&=q\left(E_z+v_xB_y\right)&F_z&=\gamma F_z'=qE_z'
+.\end{align*} 
+Die Felder sind jeweils
+\begin{align*} 
+        E_x'&=E_x&B_x'&=B_x\\
+        E_y'&=\gamma \left(E_y-v_xB_z\right)&B_y'&=\gamma \left(B_y+\dfrac{v_x}{c^2}E_z\right)\\
+        E_z'&=\gamma \left(E_z+v_xB_y\right)&B_z'&=\gamma \left(B_z-\dfrac{v_x}{c^2}E_y\right)
+\end{align*} 
+Damit zwei Beobachter in $S$ und $S'$ zu den gleichen Naturgesetzen kommen, müssen die Feldgleichungen symmetrisch unter $\left(\vv{E},\vv{B}\right)\mapsto \left(-\vv{B},\tfrac{1}{c^2}\vv{E}\right)$ sein.\\\indent
+Im ladungsfreien Raum gilt
+\begin{align*} 
+        \vv{\nabla }\times \vv{E}&=-\diffp[]{\vv{B}}{t}
+.\end{align*} 
+Symmetrisch muss also gelten
+\begin{align*} 
+        \vv{\nabla }\times \vv{B}=\dfrac{1}{c^2}\diffp[]{\vv{E}}{t}
+.\end{align*} 
+Damit ist die vierte Maxwell--Gleichung
+\begin{align*} 
+        \vv{\nabla }\times \vv{B}=\mu _0\vv{j}+\dfrac{1}{c^2}\diffp[]{\vv{E}}{t}
+\end{align*} 
+\hfill\\\textbf{Verschiebungsstrom}\\
+Betrachtet man einen Kondensator bei Wechselstrom, gilt
+\begin{align*} 
+        \dot{Q}:=I_v=\varepsilon _0A\diff[]{E}{t}
+,\end{align*} 
+mit $I_v$ dem Verschiebungsstrom
+\begin{align*} 
+        I_v&=\varepsilon _0\diff*[]{\int_{}^{}\vv{E}\td \vv{A}}{t}\\
+           &=\varepsilon _0\Phi _{\,\text{el}\,}
+.\end{align*} 
+Die vierte Maxwell--Gleichung in Integralform ist dann
+\begin{align*} 
+        \oint_{}^{}\vv{B}\td \vv{r}&=\mu _0I+\mu _0I_v\\
+                                   &=\mu _oI+\dfrac{1}{c^2}\diff*[]{\int_{}^{}\vv{E}\td \vv{A}}{t}
+.\end{align*} 
+
+\subsection{Vollständige Maxwell--Gleichungen}
+Integralform
+\begin{align*} 
+        \oint_{A}^{}\vv{E}\cdot \td \vv{A}&=\dfrac{Q}{\varepsilon _0}\\
+        \oint_{A}^{}\vv{B}\cdot \td \vv{A}&=0\\
+        \oint_{C}^{}\vv{E}\cdot \td \vv{r}&=-\diff*[]{\int_{A}^{}\vv{B}\cdot \td \vv{A}}{t}\\
+        \oint_{C}^{}\vv{B}\cdot \td \vv{r}&=\mu _0I+\dfrac{1}{c^2}\diff*[]{\int_{}^{}\vv{E}\cdot \td \vv{A}}{t}
+\end{align*} 
+Differentialform
+\begin{align*} 
+        \,\text{div}\,\vv{E}&=\dfrac{\rho }{\varepsilon _0}\\
+        \,\text{div}\,\vv{B}&=0\\
+        \,\text{rot}\,\vv{E}&=-\diffp[]{\vv{B}}{t}\\
+        \,\text{rot}\,\vv{B}&=\mu _0\vv{j}+\dfrac{1}{c^2}\diff[]{\vv{E}}{t}
+\end{align*} 
+In Materie
+\begin{align*} 
+        \,\text{div}\,\vv{D}&=\rho _{\,\text{frei}\,}\\
+        \,\text{div}\,\vv{B}&=0\\
+        \,\text{rot}\,\vv{E}&=-\diffp[]{\vv{B}}{t}\\
+        \,\text{rot}\,\vv{H}&=j+\diffp[]{\vv{D}}{t}\\
+        \vv{D}&=\varepsilon \varepsilon _0\vv{E}\\
+        \vv{H}&=\dfrac{1}{\mu \mu _0}\vv{B}
+\end{align*} 
+
+\subsection{Freie EM--Wellen}
+Es gilt
+\begin{align*} 
+        \vv{\nabla }\times \vv{\nabla }\times \vv{E}=-\dfrac{1}{c^2}\diffp[2]{\vv{E}}{t}
+,\end{align*} 
+sowie
+\begin{align*} 
+        \vv{\nabla }\times \vv{\nabla }\times \vv{E}&=\Delta \vv{E}
+.\end{align*} 
+Daraus folgt die \textbf{Wellengleichung} für $\vv{E}\left(x,t\right)$ 
+\begin{align*} 
+        \Delta \vv{E}=\dfrac{1}{c^2}\diffp[2]{\vv{E}}{t}
+.\end{align*} 
+Analog gilt für das $\vv{B}$--Feld
+\begin{align*} 
+        \Delta \vv{B}=\dfrac{1}{c^2}\diffp[2]{\vv{B}}{t}
+.\end{align*} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%}}}
+
+\end{document}

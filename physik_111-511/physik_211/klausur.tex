@@ -1,0 +1,523 @@
+%:LLPStartPreview
+%:VimtexCompile(SS)
+
+%{{{ Formatierung
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{physics_notetaking}
+
+%%% dark red
+%\definecolor{bg}{RGB}{60,47,47}
+%\definecolor{fg}{RGB}{255,244,230}
+%%% space grey
+%\definecolor{bg}{RGB}{46,52,64}
+%\definecolor{fg}{RGB}{216,222,233}
+%%% purple
+%\definecolor{bg}{RGB}{69,0,128}
+%\definecolor{fg}{RGB}{237,237,222}
+%\pagecolor{bg}
+%\color{fg}
+
+\newcommand{\td}{\,\text{d}}
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+
+\newcommand\inlineeqno{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnoa{(\theequation.\text{a})}
+\newcommand\inlineeqnob{(\theequation.\text{b})}
+\newcommand\inlineeqnoc{(\theequation.\text{c})}
+
+\newcommand\inlineeqnowo{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnowoa{\theequation.\text{a}}
+\newcommand\inlineeqnowob{\theequation.\text{b}}
+\newcommand\inlineeqnowoc{\theequation.\text{c}}
+
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+%\renewcommand*\contentsname{Contents}
+
+\pagestyle{fancy}
+
+\sloppy
+
+\numberwithin{equation}{section}
+
+%}}}
+
+\begin{document}
+
+%{{{ Titelseite
+
+\title{physik211 $|$ Klausurvorbereitung}
+\author{Jonas Wortmann}
+\maketitle
+\pagenumbering{gobble}
+
+%}}}
+
+\newpage
+
+%{{{ Inhaltsverzeichnis
+
+\fancyhead[L]{\thepage}
+\fancyfoot[C]{}
+\pagenumbering{arabic}
+
+\tableofcontents
+
+%}}}
+
+\newpage
+
+\fancyhead[R]{\leftmark\\\rightmark}
+
+%{{{ Thermodynamik
+
+\section{Thermodynamik}
+
+%{{{ Formeln
+
+\subsection{Formeln}
+Falls nicht anders angegeben
+\begin{align} 
+        V&:\,\text{Volumen}\,\nonumber \\
+        T&:\,\text{Temperatur}\,\nonumber \\
+        p&:\,\text{Druck}\,\nonumber \\
+        R&:\,\text{ideale Gaskonstanet}\,\nonumber 
+\end{align} 
+
+\begin{align} 
+        pV&=nRT\\
+        n&:\,\text{Mol}\,\nonumber 
+\end{align} 
+\begin{align} 
+        V\left(\nu \right)&=V_0\left(1+\alpha \nu \right)\\
+        \alpha &:\left(273,15^\circ\,\text{C}\,\right)\nonumber 
+\end{align} 
+\begin{align} 
+        C_V&=\dfrac{Q}{\Delta T}=\dfrac{r}{2}R\\
+        C_V&:\,\text{isochore Molwärme}\,\nonumber \\
+        Q&:\,\text{zugeführte Wärme}\,\nonumber \\
+        r&:\,\text{Freiheitsgrade}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \overline{E_{\,\text{kin}\,}}&=\dfrac{r}{2}kT\\
+        \overline{E_{\,\text{kin}\,}}&:\,\text{mittlere kin.\ Energie pro Teilchen}\,\nonumber \\
+        r&:\,\text{Freiheitsgrade}\,\nonumber \\
+        k&:\,\text{Boltzmann--Konstante}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \td U&=\td Q-\td W=C_V\td T\\
+        U&:\,\text{innere Energie}\,\nonumber \\
+        Q&:\,\text{Wärme}\,\nonumber \\
+        W&:\,\text{Arbeit}\,\nonumber \\
+        C_V&:\,\text{isochore Molwärme}\,\nonumber 
+\end{align} 
+\begin{align} 
+        U_{\,\text{Van--der--Waals}\,}&=C_VT-\dfrac{a}{V}\\
+        U&:\,\text{innere Energie von Van--der--Waals Gasen}\,\nonumber \\
+        C_V&:\,\text{isochore Molwärme}\,\nonumber \\
+        a&:\,\text{Parameter für die Stärke der Anziehung im Gas}\,\nonumber 
+\end{align} 
+\begin{align} 
+        U_{\,\text{Gas}\,}&=\dfrac{r}{2}NkT\\
+        U_{\,\text{Gas}\,}&:\,\text{innere Energie}\,\nonumber \\
+        r&:\,\text{Freiheitsgrade}\,\nonumber \\
+        N&:\,\text{Anzahl Atome}\,\nonumber \\
+        k&:\,\text{Boltzmann--Konstante}\,\nonumber 
+\end{align} 
+\begin{align} 
+        C_P&=C_V+R\\
+        C_P&:\,\text{isobare Molwärme}\,\nonumber \\
+        C_V&:\,\text{isochore Molwärme}\,\nonumber 
+\end{align} 
+\begin{align} 
+        pV^\gamma &=\,\text{const.}\,\qquad \gamma =\dfrac{r+2}{r}=\dfrac{C_P}{C_V}\\
+        TV^{\gamma -1}&=\,\text{const.}\,\\
+        \dfrac{T^\gamma }{p^{\gamma -1}}&=\,\text{const.}\,\\
+        \gamma &:\,\text{Adiabatenkoeffizient}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \td W&=p\td V\\
+        W_{\td Q=0}&=C_V\Delta T=\dfrac{r}{2}R\Delta T\\
+        W_{\td T=0}&=RT\ln\left(\dfrac{V_2}{V_1}\right)\\
+        W_{\td V=0}&=0\\
+        W_{\td p=0}&=p\Delta V\\
+        W_{\td Q=0}&:\,\text{Arbeit adiabatischer Zustandsänderung}\,\nonumber \\
+        W_{\td T=0}&:\,\text{Arbeit isothermer Zustandsänderung}\,\nonumber \\
+        W_{\td V=0}&:\,\text{Arbeit isochorer Zustandsänderung}\,\nonumber \\
+        W_{\td p=0}&:\,\text{Arbeit isobarer Zustandsänderung}\,\nonumber \\
+        C_V&:\,\text{isochore Molwärme}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \eta &=\dfrac{T_1-T_2}{T_1}\\
+        \eta &:\,\text{Wirkungsgrad}\,\nonumber 
+\end{align} 
+\begin{align} 
+        S&=R\ln\left(\dfrac{V_a}{V_n}\right)+C_V\ln\left(\dfrac{T_a}{T_0}\right)\\
+        S&=k\ln W\\
+        k&:\,\text{Boltzmann--Konstante}\,\nonumber \\
+        W&:\,\text{Konfigurationen eines Gases}\,\nonumber \\
+        S&:\,\text{Entropie}\,\nonumber \\
+        C_V&:\,\text{isochore Molwärme}\,\nonumber 
+\end{align} 
+\begin{align} 
+        H&=U+pV=\,\text{const.}\,\\
+        H&:\,\text{Enthalpie}\,\nonumber \\
+        U_1&:\,\text{innere Energie}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \left(p+\dfrac{a}{V^2}\right)\left(V-b\right)&=RT\\
+        \dfrac{a}{V^2}&:\,\text{Binnendruck}\,\nonumber 
+\end{align} 
+
+
+%}}}
+
+\newpage
+
+%{{{ Konstanten
+
+\subsection{Konstanten}
+\begin{align} 
+        R&\approx 8,314\dfrac{\,\text{J}\,}{\,\text{K}\,\,\text{mol}\,}=N_Ak\\
+        N_A&\approx 6,022\cdot 10^{23}\dfrac{1}{\,\text{mol}\,}\\
+        V_m&=22,4\,\text{dm}\,^3\\
+        k&\approx 1,381\cdot 10^{-23}\dfrac{\,\text{J}\,}{\,\text{K}\,}\\
+        T_{\,\text{abs. Nullpunkt}\,}&=0\,\text{K}\,\approx -273,15\,^\circ\text{C}\,\\
+        1\,\text{atm}\,&=101325\,\text{Pa}\,\\
+        1\,\text{bar}\,&=10^5\,\text{Pa}\,
+\end{align} 
+
+%}}}
+
+\newpage
+
+%{{{ Wichtige Begriffe
+
+\newpage
+\subsection{Wichtige Begriffe}
+\begin{enumerate}[label=$\circ$]
+        \item isochor: $\td V=0$. Es wird keine mechanische Arbeit an dem Gas verrichtet.
+        \item isobar: $\td p=0$.
+        \item isoterm: $\td T=0$.
+        \item adiabatisch: $\td Q=0$.
+        \item Erster Hauptsatz der Thermodynamik: Die Energie eines abgeschlossenen Systems bleibt konstant. Es kann kein Perpetuum Mobile erster Art geben (also Arbeit aus nichts gewinnen).
+        \item Zweiter Hauptsatz der Thermodynamik: Es kein Perpetuum Mobile zweiter Art geben ($\eta >1$, also Arbeit durch abkühlen gewinnen)
+        \item Kreisprozesse: Kreisprozesse sind Prozesse, bei denen ein System von einem thermodynamischen Zustand in einen anderen Zustand und dann wieder in den selben thermodynamischen Zustand zurückkehrt. Dabei muss auch das Arbeitsmedium, sowie mechanische Teile berücksichtigt werden. Das Medium durchläuft dann auf dem $p$--$V$--Diagramm eine geschlossene Kurve. Es existieren reversible Prozesse, bei denen der Anfangspunkt im $p$--$V$--Diagramm wieder; und irreversible Prozesse bei denen der Anfangspunkt nicht wieder erreicht werden kann.
+        \item Carnot--Maschine: Eine Carnot--Maschine ist eine idealisierte Modellmaschine mit zewi isothermen und zwei adiabatischen Prozessen. Diese Prozesse funktionieren ohne Wärmeverlust. Es gibt keinen Druckunterschied bzw.\ Temperaturdifferenz zwischen den beiden Seiten des Kolbens bzw.\ den beiden Wärmebädern.
+        \item Wärmepumpen: Bei Wärmepumpen laufen Kreisprozesse im $p$--$V$--Diagramm gegen den Uhrzeigersinn. Mit dieser Maschine wird mechanische Arbeit aufgenommen und dadurch Wärme produziert. Die Wärmepumpe entzieht dem kalten Reservior Wärme und fügt es dem warmen Reservior hinzu. Der Wirkungsgrad ist $\tfrac{1}{\eta }$.
+        \item Kältemaschine: 
+        \item Entropie: Entropie beschreibt das Maß an Chaos in einem System. In jedem realen irreversiblen System steigt die Entropie mit der Zeit. In reversiblen Systemen bleibt die Entropie gleich.
+        \item Sättigungsdruck: Wenn der Druck konstant bleibt aber das Volumen verringert wird, erreicht man den Sättigungsdruck.
+        \item Sieden: Ist bei gegebener Temperatur der Sättigungsdruck größer als der Luftdruck, dann bilden sich Gasblasen, welche die Flüssigkeit verdrängen und in die Luft übergehen.
+        \item Verdunsten: Ist bei gegebener Tmeperatur der Sättigungsdruck kleiner als der Luftdruck, dann können einzelne Moleküle an der Oberfläche entkommen.
+\end{enumerate}
+
+%}}}
+
+%}}}
+
+\newpage
+
+%{{{ Elektrodynamik
+
+\section{Elektrodynamik}
+
+%{{{ Formeln
+
+\subsection{Formeln}
+Falls nicht anders angegeben
+\begin{align} 
+        E,\vv{E}&:\,\text{elektrisches Feld}\,\nonumber \\
+        B,\vv{B}&:\,\text{magnetisches Feld}\,\nonumber \\
+        Q_i,q_i&:\,\text{Ladung}\,\nonumber \\
+        \varepsilon _0&:\,\text{elektrische Feldkonstante}\,\nonumber \\
+        \varepsilon &:\,\text{Permitivität}\,\nonumber \\
+        \mu _0&:\,\text{magnetische Feldkonstante}\,\nonumber \\
+        \mu &:\,\text{Permeabilität}\,\nonumber \\
+        I&:\,\text{Stromstärke}\,\nonumber 
+\end{align} 
+
+\begin{align} 
+        \vv{F}&=\dfrac{1}{4\pi \varepsilon \varepsilon _0}\dfrac{Q_1Q_2}{r_{12}^2}\hat{r}_{12}\\
+        \vv{F}&:\,\text{Coloumb--Kraft}\,\nonumber \\
+        r_{12}&:\,\text{Abstand Ladungen}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \vv{F}&=q\vv{E}\\
+        \vv{F}&:\,\text{Kraft auf Testladung}\,\nonumber \\
+        q&:\,\text{Testladung}\,\nonumber \\
+\end{align} 
+\begin{align} 
+        \vv{E}&=\dfrac{1}{4\pi \varepsilon \varepsilon _0}\dfrac{Q}{r^2}\hat{r}\\
+        r&:\,\text{Entfernung}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \varphi &=\dfrac{1}{4\pi \varepsilon \varepsilon _0}\dfrac{Q}{r}\\
+        \varphi &:\,\text{Potential}\,\nonumber \\
+        r&:\,\text{Entfernung}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \varphi _D&=\dfrac{1}{4\pi \varepsilon \varepsilon _0}\dfrac{Q}{r^2}d\cos \theta \\
+        \varphi _D&:\,\text{Potential eines Dipols}\,\nonumber \\
+        r&:\,\text{Entfernung}\,\nonumber \\
+        d&:\,\text{Abstand der Ladungen}\,\nonumber \\
+        \theta &:\angle\left(\dfrac{d}{2},r\right)\nonumber 
+\end{align}
+\begin{align} 
+        \vv{E}_D&=\dfrac{1}{4\pi \varepsilon \varepsilon _0}\dfrac{Q}{r^3}\left(2\cos \left(\theta \right)\hat{r}+\sin \left(\theta \right)\hat{\theta }\right)=\dfrac{1}{4\pi \varepsilon \varepsilon _0}\dfrac{p}{r^3}\\
+        \vv{E}_D&:\,\text{el.\ Feld eines Dipols}\,\nonumber \\
+        r&:\,\text{Abstand}\,\nonumber \\
+        \theta &:\angle\left(\dfrac{d}{2},r\right)\nonumber \\
+        p&:\,\text{Dipolmoment}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \vv{p}&=\vv{d}Q\\
+        \vv{p}&:\,\text{Dipomoment}\,\nonumber \\
+        \vv{d}&:\,\text{Abstand der Ladungen}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \vv{M}&=\vv{p}\times \vv{E}\\
+        \vv{M}&:\,\text{Drehmoment eines Dipols}\,\nonumber \\
+        \vv{p}&:\,\text{Dipolmoment}\,\nonumber \\
+        \vv{E}&:\,\text{el.\ Feld in dem sich der Dipol befindet}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \vv{E}&=-\vv{\nabla }\varphi \\
+        \varphi &:\,\text{Potential}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \Phi _E&=\int_{A}^{}\vv{E}\td \vv{A}\\
+        \Phi _E&:\,\text{el.\ Fluss}\,\nonumber 
+\end{align} 
+\begin{align} 
+        V&=\dfrac{1}{4\pi \varepsilon \varepsilon _0}\dfrac{Q_1Q_2}{r_{12}}\\
+        V&:\,\text{pot.\ Energie}\,\nonumber \\
+        r_{12}&:\,\text{Abstand Ladungen}\,\nonumber 
+\end{align} 
+\begin{align} 
+        W&=qU=\int_{}^{}I\td tU\\
+        W&:\,\text{Arbeit}\,\nonumber \\
+        U&:\,\text{Spannung}\,\nonumber 
+\end{align} 
+\begin{align} 
+        I&=\diff[]{Q}{t}=\int_{A}^{}\vv{j}\td \vv{A}\\
+        \vv{j}&:\,\text{Stromdichte}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \vv{B}&=\dfrac{\mu \mu _0}{2\pi }\dfrac{I}{r}\\
+        r&:\,\text{Entfernung}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \oint_{C}^{}\vv{B}\td \vv{s}&=\left(n\right)\mu _0I\\
+        (n&:\,\text{Windungsdichte}\,)\nonumber 
+\end{align} 
+\begin{align} 
+        \vv{B}&=\vv{\nabla }\times \dfrac{\mu _0}{4\pi }\int_{V}^{}\dfrac{\vv{j}}{r}\td V\\
+        \vv{j}&:\,\text{Flussdichte}\,\nonumber \\
+        r_{12}&:\,\text{Ortsvektor zum Volumenelement}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \Phi &=\int_{A}^{}\vv{B}\td \vv{A}\\
+        \Phi &:\,\text{mag.\ Fluss}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \vv{F}&=q\left(\vv{v}\times \vv{B}\right)=l\left(\vv{I}\times \vv{B}\right)\\
+        \vv{F}&:\,\text{Lorentz--Kraft}\,\nonumber \\
+        \vv{v}&:\,\text{Geschwindigkeit der Elektronen}\,\nonumber \\
+        l&:\,\text{Länge Leiter}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \vv{p}&=I\vv{A}\\
+        \vv{p}&:\,\text{mag.\ Dipolmoment}\,\nonumber \\
+        \vv{A}&:\,\text{Fläche}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \vv{D}&=I\vv{A}\times \vv{B}=\vv{p}\times \vv{B}\\
+        \vv{D}&:\,\text{Drehmoment}\,\nonumber \\
+        \vv{A}&:\,\text{Fläche}\,\nonumber \\
+        \vv{p}&:\,\text{mag.\ Dipolmoment}\,\nonumber 
+\end{align} 
+Maxwell--Gleichungen in Formelschreibweise
+\begin{align} 
+        \,\text{div}\,\vv{E}&=\dfrac{\rho }{\varepsilon _0}&\oint_{A}^{}\vv{E}\td \vv{A}&=\dfrac{1}{\varepsilon _0}\oint_{V}^{}\rho \td V\\
+        \,\text{div}\,\vv{B}&=0&\oint_{A}^{}\vv{B}\td \vv{A}&=0\\
+        \,\text{rot}\,\vv{E}&=-\diffp[]{\vv{B}}{t}&\oint_{C}^{}\vv{E}\td \vv{s}&=-\diffp*[]{\oint_{A}^{}\vv{B}\td \vv{A}}{t}\\
+        \,\text{rot}\,\vv{B}&=\mu _0\vv{j}+\diffp[]{\vv{E}}{t}&\oint_{C}^{}\vv{B}\td \vv{s}&=\mu _0\int_{A}^{}\vv{j}\td \vv{A}+\dfrac{1}{c^2}\diffp*[]{\int_{A}^{}\vv{E}\td \vv{A}}{t}
+\end{align} 
+Maxwell--Gleichungen in Worten
+\begin{enumerate}[label=$\circ$]
+        \item Das elektrische Feld ist ein Quellenfeld. Die Ladung ist Quelle des elektrischen Feldes. / Der elektrische Fluss durch eine geschlossene Oberfläche eines Volumens ist direkt proportional zu seiner elektrischen Ladung im Inneren.
+        \item Das magnetische Feld ist Quellenfrei. Es gibt keine magnetische Ladungen. / Der magnetische Fluss durch eine geschlossene Oberfläche eines Volumens ist direkt proportional zu seiner Ladung im Inneren, nämlich null, da keine magnetischen Monopole existieren.
+        \item Die Änderung des magnetischen Feldes führt zu einem elektrischen Gegenfeld. Die Wirbel des elektrischen Feldes sind von der zeitlichen Änderung des magnetischen Flussdichte abhängig. / Die elektrische Zirkulation über eine geschlossene Kurve einer Fläche ist gleich der negativen zeitlichen Änderung des magnetischen Flusses durch diese Fläche.
+        \item Die Wirbel eines magnetischen Feldes hängen von der Leitungsstromdichte und der Verschiebungsstromdichte ab. / Die magnetische Zirkulation über eine geschlossene Kurve einer Fläche ist gleicher der Summe aus dem Leitungsstrom und der zeitlichen Änderung des elektrischen Flusses durch diese Fläche.
+\end{enumerate}
+\begin{align} 
+        C&=\varepsilon \dfrac{Q}{\Delta \varphi }=\varepsilon \dfrac{Q}{U}\\
+        C&:\,\text{Kapazität}\,\nonumber \\
+        \varphi &:\,\text{Potential}\,\nonumber \\
+        U&:\,\text{Spannung}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \vv{E}&=\dfrac{U}{d}\hat{d}\\
+        \vv{E}&:\,\text{Potential Kondensator}\,\nonumber \\
+        U&:\,\text{angelete Spannung}\,\nonumber \\
+        d&:\,\text{Abstand der Platten}\,\nonumber 
+\end{align} 
+\begin{align} 
+        C&=\varepsilon \varepsilon _0\dfrac{A}{d}=\dfrac{Q}{U}\\
+        C&:\,\text{Kapazität Kondensator}\,\nonumber \\
+        A&:\,\text{freie Fläche zwischen den Platten}\,\nonumber \\
+        d&:\,\text{Abstand der Platten}\,\nonumber \\
+        U&:\,\text{angelegte Spannung}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \dfrac{1}{C}&=\sum_{i}^{}\dfrac{1}{C_i}\\
+        C&:\,\text{für Reihenschaltung}\,\nonumber \\
+        C&=\sum_{i}^{}C_i\\
+        C&:\,\text{für Parallelschaltung}\,\nonumber 
+\end{align} 
+\begin{align} 
+        V&=\dfrac{1}{2}QU=\varepsilon \dfrac{1}{2}CU^2\\
+        V&:\,\text{pot.\ Energie Kondensator}\,\nonumber \\
+        U&:\,\text{Spannung}\,\nonumber \\
+        C&:\,\text{Kapazität}\,\nonumber 
+\end{align} 
+\begin{align} 
+        U&=RI\\
+        U&:\,\text{Spannung}\,\nonumber \\
+        R&:\,\text{Widerstand}\,\nonumber \\
+\end{align} 
+\begin{align} 
+        \sigma &=\dfrac{1}{\rho }\qquad \rho \left(T\right)=\rho _0\left(1+\alpha T\right)\\
+        \sigma &:\,\text{spezifischer Widerstand}\,\nonumber \\
+        \rho &:\,\text{spezifische Leitfähigkeit}\,\nonumber \\
+        T&:\,\text{Temperatur}\,
+\end{align} 
+\begin{align} 
+        \sum_{i}^{}I_i&=0\\
+        \sum_{i}^{}U_i&=0\\
+        U&:\,\text{Spannung}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \sum_{i}^{}R_i&=R_{\,\text{ges}\,}\\
+        R&:\,\text{Widerstand einer Reihenschaltung}\,\nonumber \\
+        \sum_{i}^{}\dfrac{1}{R_i}&=R_{\,\text{ges}\,}\\
+        R&:\,\text{Widerstand einer Parallelschaltung}\,\nonumber 
+\end{align} 
+
+
+
+%}}}
+
+\newpage
+
+%{{{ Konstanten und Einheiten
+
+\subsection{Konstanten}
+\begin{align} 
+        e&\approx 1,602\cdot 10^{-19}\,\text{C}\,\\
+        \varepsilon _0&\approx 8,854\cdot 10^{-12}\dfrac{\,\text{A}\,\,\text{s}\,}{\,\text{V}\,\,\text{m}\,}\\
+        \mu _0&=4\pi \cdot 10^{-7}\dfrac{\,\text{V}\,\,\text{s}\,}{\,\text{A}\,\,\text{m}\,}\\
+        c&\approx 2,998\cdot 10^8\dfrac{\,\text{m}\,}{\,\text{s}\,}=\,\sqrt[]{\dfrac{1}{\varepsilon _0\mu _0}}
+\end{align} 
+
+\subsection{Einheiten}
+\begin{align} 
+        \,\text{C}\,&=\,\text{A}\,\,\text{s}\,\\
+        \,\text{V}\,&=\dfrac{\,\text{kg}\,\,\text{m}\,^2}{\,\text{A}\,\,\text{s}\,^3}=\dfrac{\,\text{J}\,}{\,\text{C}\,}\\
+        \,\text{T}\,&=\dfrac{\,\text{V}\,\,\text{s}\,}{\,\text{m}\,^2}\\
+        \,\text{F}\,&=\dfrac{\,\text{C}\,}{\,\text{V}\,}\\
+        \Omega &=\dfrac{\,\text{V}\,}{\,\text{A}\,}
+\end{align} 
+
+
+
+%}}}
+
+\newpage
+
+%{{{ Wichtige Begriffe
+
+\subsection{Wichtige Begriffe}
+\begin{enumerate}[label=$\circ$]
+        \item Leiter: Leiter sind Materialien, in denen sich Elektronen frei bewegen können und ortsfeste Ionen hinterlassen. Wird ein Leiter mit Ladungen beladen, dann verteilen sie sich auf seiner Oberfläche und im Inneren bleibt der Leiter feldfrei. Das Valenz-- und Leitungsband liegen unmittlebar übereinander.
+        \item Halbleiter: Halbleiter sind Materialien, bei denen das Valenz-- und Leitungsband nicht direkt nebeneinander liegen. Es existieren nur wenige Ladungsträger im Leitungsband.
+        \item Supraleiter: Supraleiter sind Leiter, mit einem spezifischen Widerstand von $\rho =0$. Dies ist meistens der Fall für Metalle bei sehr niedrigen Temperaturen.
+        \item Dielektrika: Dielektrika sind Materialien, in denen sich Elektronen nicht frei bewegen, aber lokal verschieben können. Sie können nicht wie Leiter ein $\vv{E}$--Feld vollständig kompensieren, sondern nur abschwächen.
+        \item Faraday'scher Käfig: Ist ein Raum von elektrischen Leitern umschlossen, so bleibt der Raum innerhalb des Käfigs feldfrei und es existiert nur ein Feld am Rand des Käfigs. Grund dafür ist das erste Maxwell'sche Gesetz.
+        \item Diode: Eine Diode ist ein Bauteil in einem Stromkreis, welches Strom nur in eine Richtung fließen lässt. Es gibt einen Sperrbereich zwischen zwei gewissen Sperrspannungen entgegen der Flussrichtung in der kein Stromfluss erlaubt ist. Übersteigt der Strom die maximale Sperrspannung trotzdem, kann ein Strom entgegen der Flussrichtung fließen (und die Diode geht im Allgemeinen kaputt). Die Spannung in Flussrichtung die von der Diode zugelassen wird, heißt Durchflussspannung. Eine Diode wird mit einer Raumladungszone von einem n-- und einem p--dotiertem Material realisiert. Die Stromrichtung und Sperrspannung wird von der Potentialbarriere in der Raumladungszone bestimmt.
+        \item n--Dotierung: Wird in einem Atomgitter ein Atom mit einem anderem Atom ersetzt, welches ein Elektron mehr hat, dann wird ein Material n--dotiert, da sich dieses Elektron frei durch das Material bewegen kann.
+        \item p--Dotierung: Wird in einem Atomgitter ein Atom mit einem anderem Atom ersetzt, welches ein Elektrone weniger hat, dann wird ein Materiel p--dotiert, da sich dieses positive Loch frei durch das Material bewegen kann.
+        \item Kirchhoff'schen Regeln: Verzweigen sich mehrere Leiter in einem Punkt, ist die Summe der einlaufenden Ströme gleich der Summe der auslaufenden Ströme. In jedem geschlossenen Stromkreis ist die Summe der Spannungen gleich null.
+        \item Diamagnetismus: Materialien in denen ein Magnetfeld ein entgegengerichtetes Magnetfeld im Material selbst induziert, heißen diamagnetisch.
+        \item Paramagnetismus: Materialien in denen Moleküle mit permanenten magnetischen Dipolmomenten existieren, heißen paramagnetisch. Die Dipolmomente richten sich nach einem angelegtem Magnetfeld aus.
+        \item Ferromagnetismus: In Materialien in denen ein Magnetfeld angelegt und eine kollektive Ausrichtung der Dipolmomente erreicht wird, heißen ferromagnetisch. Wird das Magnetfeld abgeschaltet, dann bilden sich Weisse--Bezirke, mit Dipolmomenten, die in die gleich ausgerichtet sind.
+\end{enumerate}
+
+%}}}
+
+%}}}
+
+\newpage
+
+%{{{ Relativitätstheorie
+
+\section{Relativitätstheorie}
+
+%{{{ Formeln
+
+\subsection{Formeln}
+
+%}}}
+
+\newpage
+
+%{{{ Wichtige Begriffe
+
+\subsection{Wichtige Begriffe}
+
+%}}}
+
+%}}}
+
+\newpage
+
+%{{{ Klausuren
+
+\newpage
+\section{Klausuren}
+\subsection{2019 Klausur II}
+\hfill\\\textbf{Frage 1: Wer die Wahl hat, hat die Qual}
+\begin{enumerate}[label=\arabic*.)]
+        \item steigt der Druck.
+        \item bleibt die Entropie konstant.
+        \item (proprotional zu $T$)
+        \item Halbleiter
+        \item $P=UI=RI^2=U^2/R$ Die am Widerstand dissipierte Leistung hängt quadratisch von der Spannung und linear vom Kehrwert des Widerstandes ab.
+        \item (senkrecht auf dem magnetischen Feld.)
+        \item senkrecht zum Geschwindigkeitsvektor und senkrecht zum magnetischen Feld steht.
+        \item Ein sich zeitlich änderndes $B$--Feld erzeugt ein elektrisches Wirbelfeld.
+        \item $\,\text{div}\,\vv{E}=\tfrac{\rho }{\varepsilon _0}$
+        \item $\,\text{div}\,\vv{B}=0$ 
+\end{enumerate}
+\hfill\\\textbf{Frage 2: Kreisprozesse}
+\begin{enumerate}[label=(\alph*)]
+        \item $pV=RT$. Mit $p_B=10^5\,\text{Pa}\,,T_B=350\,\text{K}\,$ 
+                \begin{align*} 
+                        V_B&=\dfrac{RT_B}{p_B}\\
+                           &\approx 0,029\,\text{l}\,
+                \end{align*} 
+               Mit $p_C=10^5\,\text{Pa}\,,V_C=0,5V_B\approx 0,015\,\text{l}\,$ 
+               \begin{align*} 
+                        T_C&=\dfrac{p_CV_C}{R}\\
+                           &\approx 174,41\,\text{K}\,
+               \end{align*} 
+               Mit 
+\end{enumerate}
+\hfill\\\textbf{Aufgabe 4: Kondensator}
+
+
+\end{document}

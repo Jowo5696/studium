@@ -1,0 +1,44 @@
+Versuch 102
+
+{Theorie}
+Es gibt drei verschiedene Arten der Schwingung. 1: Die freie Schwingung ohne Dämpfung: Dies ist der simpelste Fall, bei dem die Gleichung für die Schwingung [gleichung] ist, mit omega_0^2=D/Tea. 
+Der Lösungsansatz ist q(t)=Ae^mbdt und die allgemeine lösung ist q(t)=Ae^+Be^.
+Der zweite Fall ist die freie Schwingung mit Dämpfung. Die Gl dazu lautet dootvph+2btadotvph+omega_0^2vph=0 mit bta= und omega_0^2=. Ein Lösungsansatz ist hier wieder e^mbdt mit mbd=. 
+dabei sind 3 fälle zu unterscheiden: bta>omega: Kriechfall (keine schwingung), bta=omega: Grenzfall (system schwingt gerade eben nicht), bta<omega: Schwingfall (system schwingt).
+Der letzte Fall ist eine erzwungene Schwingung mit dämpfung mit der bewegungsgleichung Teadootvphi+rdotvph+Dvph=M_=cs((omegat, oder in der normalform dootvph+2btadotvph+omega_0^2vphi=mucs((omegat mit mu=dfM_0jkTea. In diesem fall überlagern am ende die schwingung des schwingfähigen systems mit der schwingung des erregers. Die Amplitude ist vph(omega)=/; für den resonanzfall wird diese amplitude maximal mit vph(omega_0=omega)=(muQ)/(omega_0^2).
+Des weiteren gibt es das dämpfungsverhältnis K=formeln, welches angibt, um welchen konstanten faktor sich die amplituden unterscheiden. Die Güte Q=formeln gibt das Verhältnis der gespeicherten Energie zum thermischen energieverlust der schwingungsperiode an.
+bei diesem versuch geht um die bestimmung der eigenfrequenz nu_0 des pohlschen drehpendels sowie der dämpfung seiner wirbelstrombremse. 
+später wird auch der zusammenhang zwischen der frequenz und der an das gerät angelegten spannung hergestellt.
+anschließend wird die amplidute vphi sowie die güte Q aus der frequenz und amplitude bestimmt.
+
+102.A das amplitudenquadrat ist einheitenlos, da die amplitude selbst einheitenlos ist
+
+[skizze] das gerät ist das pohlsche drehpendel welches mithilfe eines pendelkörpers und einer schnekenfeder eine pendelbewegung herbeiführt.
+es gibt zwei vergleichszeiger sowie einen skalenring um die amplituden abzulesen.
+der motor ist für die erzwungene schwingung da.
+an ihm wird eine spannung angeschlossen mit der ein per schubstange mit dem schwingungserreger verbundenes antriebsrad betrieben wird.
+weiterhin findet sich ein elektromagnet neben dem rad welcher für die wirbelstrombremse zuständig ist.
+die benötigten Eigenschaften des geräts sind also
+- eigenfrequenz und die erregerfrequenz
+- Motorspannung und stromaufnahme
+- Wirbelstromdämpfung
+- belastbareit der spulen.
+
+102.a
+In diesem Versuchsteil wird die Eigenfrequenz sowie die Amplituden unter einer Dämpfung gemessen.
+Zuerst wird das Gerät justiert, indem der Zeiger des Drehkörpers auf den Nullpunkt der Skala gebracht wird.
+Dann wird das Pendel per Hand ausgelenkt, um eine Schwingung zu erzeugen, dabei sollte möglichst kein Drehimpuls abgegeben werden.
+Jetzt wird die Eigenfrequenz nu_0 bestimmt, indem die Schwingungsdauer bei abgeschalteter Wirbelstrombremse gemessen wird.
+Es gilt über viele Perioden insg. 3 mal zu messen, da es gut sein kann, dass ungenau abgelesen wird, bzw. ein Drehimpuls beim Loslassen erteilt worden ist.
+nu_0=1/T [insg. 3 messungen: T_1-3 einf. als formel]
+
+102.b
+Jetzt werden für 3 verschiedene Stärken der Dämpfung (in abhängigkeit der Stromstärke der Magnetströme) die abklingenden Amplituden als Funktion der Zahl n der Schwingungsperioden gemessen.
+vphi(t)=vphi_0e^(-bta t) 
+[tabelle]
+bta/T        0.1A    0.3A    0.5A  
+T1
+T2
+T3
+.
+T15

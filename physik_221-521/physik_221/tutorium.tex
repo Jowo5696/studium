@@ -1,0 +1,129 @@
+%:LLPStartPreview
+%:VimtexCompile(SS)
+
+%{{{ Formatierung
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{physics_notetaking}
+
+%%% dark red
+%\definecolor{bg}{RGB}{60,47,47}
+%\definecolor{fg}{RGB}{255,244,230}
+%%% space grey
+%\definecolor{bg}{RGB}{46,52,64}
+%\definecolor{fg}{RGB}{216,222,233}
+%%% purple
+%\definecolor{bg}{RGB}{69,0,128}
+%\definecolor{fg}{RGB}{237,237,222}
+%\pagecolor{bg}
+%\color{fg}
+
+\newcommand{\td}{\,\text{d}}
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+
+\newcommand\inlineeqno{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnoa{(\theequation.\text{a})}
+\newcommand\inlineeqnob{(\theequation.\text{b})}
+\newcommand\inlineeqnoc{(\theequation.\text{c})}
+
+\newcommand\inlineeqnowo{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnowoa{\theequation.\text{a}}
+\newcommand\inlineeqnowob{\theequation.\text{b}}
+\newcommand\inlineeqnowoc{\theequation.\text{c}}
+
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+%\renewcommand*\contentsname{Contents}
+
+\pagestyle{fancy}
+
+\sloppy
+
+\numberwithin{equation}{section}
+
+%}}}
+
+\begin{document}
+
+%{{{ Titelseite
+
+\title{physik221 $|$ Ferientutorium}
+\author{Jonas Wortmann}
+\maketitle
+\pagenumbering{gobble}
+
+%}}}
+
+\newpage
+
+%{{{ Inhaltsverzeichnis
+
+\fancyhead[L]{\thepage}
+\fancyfoot[C]{}
+\pagenumbering{arabic}
+
+\tableofcontents
+
+%}}}
+
+\newpage
+
+%{{{
+
+\fancyhead[R]{\leftmark\\\rightmark}
+
+\newpage
+\section{01.09.}
+\subsection{Gedämpfter harmonischer Oszillator}
+\begin{align} 
+        F\left(x,\dot{x}\right)&=kx+2\gamma m\dot{x}&&\\
+        \ddot{x}+2\gamma \dot{x}+\omega _0^2x&=0&\omega _0&=\,\sqrt[]{\dfrac{k}{m}}
+\end{align} 
+Der Lösungsansatz ist
+\begin{align} 
+        x\left(t\right)&=Ae^{\lambda _1t}+Be^{\lambda _2t}
+.\end{align} 
+$A$ und $B$ sind komplex; die Summe muss allerdings reell sein, da $x$ reell ist.
+
+\subsection{Konservative Kräfte}
+$\,\forall \gamma  \in \left[a,b\right]$ mit $\gamma \left(a\right)=\gamma \left(b\right)$ gilt
+\begin{align} 
+        \int_{\gamma }^{}\vv{F}\td x=\,\text{const.}\,
+.\end{align} 
+$\exists V:\vv{F}=-\vv{\nabla }V\land V\left(t\right)=V\left(0\right)$.
+
+\subsection{Moden}
+Moden bezeichnen die Eigenfrequenzen eines schwingfähigen Systems.
+
+\subsection{Hamilton--Formalismus}
+Der kanonische Impuls ist
+\begin{align} 
+        p_q=\diffp[]{\mathcal{L}}{\dot{q}}
+.\end{align} 
+Die Hamilton--Funktion ist die Legendre--Transformation der Lagrange--Funktion
+\begin{align} 
+        H=\sum_{i}^{}p_i\dot{q}_i-\mathcal{L}
+.\end{align} 
+Die Bewegungsgleichungen sind
+\begin{align} 
+        \dot{p}=-\diffp[]{\mathcal{H}}{q}\qquad \dot{q}=\diffp[]{\mathcal{H}}{p}
+.\end{align} 
+
+\subsection{Neother--Theorem}
+{
+        \centering
+        \begin{tabulary}{\textwidth}{c|c}
+                kontinuierliche Symmetrie&Erhaltungsgröße\\
+                \hline
+                Zeit&Energie\\
+                Ort&Impuls\\
+                Rotation&Drehimpuls\\
+                Richtung des Perihels&Laplace--Runge--Lenz--Vektor
+        \end{tabulary}
+\par}
+
+%}}}
+
+\end{document}

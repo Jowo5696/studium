@@ -1,0 +1,75 @@
+\contentsline {section}{\numberline {1}Physikalische Größen}{5}{}%
+\contentsline {subsection}{\numberline {1.1}Impuls}{5}{}%
+\contentsline {subsection}{\numberline {1.2}Drehimpuls}{5}{}%
+\contentsline {subsection}{\numberline {1.3}Trägheitsmoment}{5}{}%
+\contentsline {subsection}{\numberline {1.4}Kraft}{5}{}%
+\contentsline {subsection}{\numberline {1.5}Drehmoment}{5}{}%
+\contentsline {subsection}{\numberline {1.6}Energie}{6}{}%
+\contentsline {subsection}{\numberline {1.7}Arbeit}{6}{}%
+\contentsline {subsection}{\numberline {1.8}Leistung}{6}{}%
+\contentsline {section}{\numberline {2}Einführung}{6}{}%
+\contentsline {subsection}{\numberline {2.1}Was ist Physik?}{6}{}%
+\contentsline {subsection}{\numberline {2.2}Maßsysteme}{6}{}%
+\contentsline {subsection}{\numberline {2.3}Maßstandards}{7}{}%
+\contentsline {subsection}{\numberline {2.4}Zeit}{8}{}%
+\contentsline {subsection}{\numberline {2.5}Masse}{9}{}%
+\contentsline {subsection}{\numberline {2.6}Normen der SI-Einheiten}{9}{}%
+\contentsline {subsection}{\numberline {2.7}Dimensionsanalyse}{10}{}%
+\contentsline {section}{\numberline {3}Massenpunkte}{10}{}%
+\contentsline {subsection}{\numberline {3.1}Kinematik}{10}{}%
+\contentsline {subsection}{\numberline {3.2}Wechsel des Koordinatensystems}{15}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Galilei-Transformation}{15}{}%
+\contentsline {section}{\numberline {4}Dynamik}{15}{}%
+\contentsline {subsection}{\numberline {4.1}Kinematik}{15}{}%
+\contentsline {subsection}{\numberline {4.2}Der Impuls}{16}{}%
+\contentsline {subsection}{\numberline {4.3}Drehimpuls}{18}{}%
+\contentsline {subsection}{\numberline {4.4}Impulserhaltung}{19}{}%
+\contentsline {subsection}{\numberline {4.5}Klassifikation von Stößen}{20}{}%
+\contentsline {subsection}{\numberline {4.6}Ortsabhängige Kräfte und Kraftfelder}{20}{}%
+\contentsline {subsection}{\numberline {4.7}Konservative Kraftfelder}{21}{}%
+\contentsline {section}{\numberline {5}Energie}{21}{}%
+\contentsline {subsection}{\numberline {5.1}Potenzielle Energie}{21}{}%
+\contentsline {subsection}{\numberline {5.2}Kinetische Energie}{21}{}%
+\contentsline {subsection}{\numberline {5.3}Energieerhaltung der Mechanik}{22}{}%
+\contentsline {subsection}{\numberline {5.4}Potential}{22}{}%
+\contentsline {subsection}{\numberline {5.5}Arbeit}{23}{}%
+\contentsline {subsection}{\numberline {5.6}Leistung}{24}{}%
+\contentsline {section}{\numberline {6}Labor- und Schwerpunktsystem}{24}{}%
+\contentsline {subsection}{\numberline {6.1}Stöße im Schwerpunktsystem (CMS)}{25}{}%
+\contentsline {subsection}{\numberline {6.2}Eindimensionales Stoßgesetz}{25}{}%
+\contentsline {subsection}{\numberline {6.3}Zwei- und dreidimensionale Stöße}{26}{}%
+\contentsline {subsection}{\numberline {6.4}Zusammenfassung der Erhaltungssätze}{26}{}%
+\contentsline {section}{\numberline {7}Trägheitskräfte und beschleunigte Bezugssysteme}{27}{}%
+\contentsline {subsection}{\numberline {7.1}Gleichförmig rotierendes Bezugssystem}{27}{}%
+\contentsline {subsection}{\numberline {7.2}Äquivalenz von träger und schwerer Masse}{29}{}%
+\contentsline {subsection}{\numberline {7.3}Trägheitsmoment}{29}{}%
+\contentsline {subsubsection}{\numberline {7.3.1}Translationsbeschleunigung}{31}{}%
+\contentsline {subsection}{\numberline {7.4}Rotation um eine freie Achse (Trägheitstensor)}{31}{}%
+\contentsline {subsubsection}{\numberline {7.4.1}Hauptträgheitsachsensystem (HTA)}{32}{}%
+\contentsline {subsection}{\numberline {7.5}Eulersche Gleichungen}{33}{}%
+\contentsline {section}{\numberline {8}Gravitationsfeld ausgedehnter Massenverteilungen}{34}{}%
+\contentsline {subsection}{\numberline {8.1}Kugel}{34}{}%
+\contentsline {subsection}{\numberline {8.2}Mechanik starrer Körper}{35}{}%
+\contentsline {section}{\numberline {9}Mechanische Schwingungen}{35}{}%
+\contentsline {subsection}{\numberline {9.1}Harmonische Schwingungen}{35}{}%
+\contentsline {subsubsection}{\numberline {9.1.1}Physikalisches und mathematisches Pendel}{36}{}%
+\contentsline {subsection}{\numberline {9.2}Komplexe Zahlen}{37}{}%
+\contentsline {subsection}{\numberline {9.3}Überlagerungen von Schwingungen}{38}{}%
+\contentsline {subsubsection}{\numberline {9.3.1}$\omega _1=\omega _2=\omega $}{38}{}%
+\contentsline {subsubsection}{\numberline {9.3.2}$\omega _1\neq \omega _2$}{39}{}%
+\contentsline {subsubsection}{\numberline {9.3.3}$\omega _1\approx \omega _2$ (Schwebung)}{39}{}%
+\contentsline {subsection}{\numberline {9.4}Energie und Leistung von Schwingungen}{39}{}%
+\contentsline {section}{\numberline {10}Deformierbare Körper}{40}{}%
+\contentsline {subsection}{\numberline {10.1}Aggregatszustände}{40}{}%
+\contentsline {subsection}{\numberline {10.2}Verformung fester Körper}{41}{}%
+\contentsline {subsection}{\numberline {10.3}Hookesches Gesetz}{41}{}%
+\contentsline {subsection}{\numberline {10.4}Mechanische Spannung}{41}{}%
+\contentsline {subsection}{\numberline {10.5}Volumenänderung}{42}{}%
+\contentsline {subsection}{\numberline {10.6}Biegung eines Balken}{42}{}%
+\contentsline {section}{\numberline {11}Reibung}{43}{}%
+\contentsline {section}{\numberline {12}Ruhende Flüssigkeiten und Gase}{43}{}%
+\contentsline {subsection}{\numberline {12.1}Kompression und Druck}{44}{}%
+\contentsline {subsection}{\numberline {12.2}Flüssigkeiten und Gase im Schwerefeld}{44}{}%
+\contentsline {subsection}{\numberline {12.3}Auftrieb}{45}{}%
+\contentsline {subsection}{\numberline {12.4}Oberflächeneffekte bei Flüssigkeiten}{45}{}%
+\contentsline {section}{\numberline {13}Notizen}{47}{}%

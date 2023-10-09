@@ -1,0 +1,108 @@
+%:LLPStartPreview
+%:VimtexCompile(SS)
+
+%{{{ Formatierung
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{physics_notetaking}
+
+%%% dark red
+%\definecolor{bg}{RGB}{60,47,47}
+%\definecolor{fg}{RGB}{255,244,230}
+%%% space grey
+%\definecolor{bg}{RGB}{46,52,64}
+%\definecolor{fg}{RGB}{216,222,233}
+%%% purple
+%\definecolor{bg}{RGB}{69,0,128}
+%\definecolor{fg}{RGB}{237,237,222}
+%\pagecolor{bg}
+%\color{fg}
+
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+%\renewcommand*\contentsname{Contents}
+
+%\bibliographystyle{alphadin}
+\pagestyle{fancy}
+
+\sloppy
+%\pagenumbering{gobble}
+
+\lhead{Jonas Wortmann}\chead{Notizen}\rhead{physik261}
+
+%}}}
+
+\begin{document}
+
+%{{{ Inhaltsverzeichnis
+\rhead{Inhaltsverzeichnis}
+\tableofcontents
+
+%}}}
+
+\newpage
+
+%{{{ physik261
+
+\rhead{physik261}
+\section{Statistik}
+\subsection{Binomialverteilung}
+Die Binomialverteilung ist eine diskrete Wahrscheinlichkeitsverteilung, welche besagt, mit welcher Wahrscheinlichkeit $P$ von $n$ unabhängigen \glqq ja/nein\grqq{}--Entscheidungen, deren jede mit der Wahrscheinlichkeit $p$ positiv verläuft, insgesamt $k$ positiv verlaufen, wobei $0\leq k\leq n$
+\[ 
+        P_B\left(k;p,n\right)={n\choose k}p^k\left(1-p\right)^{n-k}\qquad {n\choose k}=\dfrac{n!}{k!\left(n-k\right)!}
+.\] 
+Der \textbf{Erwartungswert} ist
+\[ 
+        \left\langle k\right\rangle =\sum_{k=0}^{n}kP_B\left(k;n,p\right)=np
+.\] 
+Die \textbf{Varianz} ist
+\[ 
+        V=\left\langle \left(k-\left\langle k\right\rangle \right)^2\right\rangle =np\left(1-p\right)
+.\] 
+Die \textbf{Standardabweiung} ist
+\[ 
+        \sigma =\sqrt[ ]{V}
+.\] 
+
+\subsection{Poisson--Verteilung}
+Die Poisson--Verteilung fungiert als Binomialverteilung für sehr große $n$ mit sehr kleinen $p$
+\[ 
+        P_P\left(k;\mu \right)=\dfrac{\mu ^k}{k!}e^{-\mu }
+.\] 
+Der \textbf{Erwartungswert} ist
+\[ 
+        \left\langle k\right\rangle =\sum_{k=0}^{\infty}kP_P\left(k;\mu \right)=np=\mu \qquad n\gg1,p\ll1
+.\] 
+Die \textbf{mittlere Streuung} oder \textbf{Fehler} ist
+\[ 
+        \sigma _k=\sqrt[ ]{\left\langle k\right\rangle }
+.\] 
+
+\subsection{Gauss--Verteilung}
+Die Gauss--Verteilung behält weiterhin ein sehr großes $n$ und ein beliebiges $p$ sodass gilt $\sqrt[ ]{np\left(1-p\right)}=\sigma \gg1$
+\[ 
+        P_G\left(k\right)=\dfrac{1}{\sqrt[ ]{2\pi \sigma ^2}}e^{-\tfrac{\left(k-\mu \right)^2}{2\sigma ^2}}
+.\] 
+Der \textbf{Mittelwert} ist
+\[ 
+        \left\langle k\right\rangle =\mu =np
+.\] 
+Die \textbf{Streuung} ist
+\[ 
+        \sigma =\sqrt[ ]{np\left(1-p\right)}=\sqrt[ ]{\mu \left(1-p\right)}=\sqrt[ ]{\left\langle k\right\rangle \left(1-p\right)}
+.\] 
+Die \textbf{Varianz} ist
+\[ 
+        V=\sigma ^2
+.\] 
+Für eine zu errechnende Größe $g$ und eine Messung $U_1,\hdots ,U_n$ mit Messunsicherheit $\Delta U_1,\hdots ,\Delta U_n$ ergibt sich
+\[ 
+        g=\sqrt[ ]{\sum_{i=1}^{n}\left(\diffp[1]{g}{U_i}\Delta U_i\right)^2}
+.\] 
+
+%}}}
+
+\end{document}

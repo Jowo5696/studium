@@ -1,0 +1,115 @@
+%:LLPStartPreview
+%:VimtexCompile(SS)
+
+%{{{ Formatierung
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{physics_notetaking}
+
+%%% dark red
+%\definecolor{bg}{RGB}{60,47,47}
+%\definecolor{fg}{RGB}{255,244,230}
+%%% space grey
+%\definecolor{bg}{RGB}{46,52,64}
+%\definecolor{fg}{RGB}{216,222,233}
+%%% purple
+%\definecolor{bg}{RGB}{69,0,128}
+%\definecolor{fg}{RGB}{237,237,222}
+%\pagecolor{bg}
+%\color{fg}
+
+\newcommand{\td}{\,\text{d}}
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+
+\newcommand\inlineeqno{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnoa{(\theequation.\text{a})}
+\newcommand\inlineeqnob{(\theequation.\text{b})}
+\newcommand\inlineeqnoc{(\theequation.\text{c})}
+
+\newcommand\inlineeqnowo{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnowoa{\theequation.\text{a}}
+\newcommand\inlineeqnowob{\theequation.\text{b}}
+\newcommand\inlineeqnowoc{\theequation.\text{c}}
+
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+%\renewcommand*\contentsname{Contents}
+
+\pagestyle{fancy}
+
+\sloppy
+
+\numberwithin{equation}{section}
+
+%}}}
+
+\begin{document}
+
+%{{{ Titelseite
+
+\title{Mathe 2, 1. Klausur}
+\author{Dr. Illia Karabash}
+\maketitle
+\pagenumbering{gobble}
+\hfill\\\textbf{Aufgabe 1: 30 Punkte}\\ 
+Seien
+\begin{align} 
+        A=\left\{\left(x,y,z\right) \in \mathbb{R}^3:x^2+z^2\leq y\,\text{und}\,y\leq 4\right\}
+\end{align} 
+und
+\begin{align} 
+        B=\bigcup _{n=1}^\infty K_{r_n}\left(p_n\right)\,\text{wobei}\,p_n=\left(n,0,0\right)\,\text{und}\,r_n=2^{-n},n  \in \mathbb{N}
+.\end{align} 
+\textit{Zur Erinnerung:} $K_r\left(a\right)=\left\{b \in \mathbb{R}^3:|a-b|<r\right\}$.
+\begin{enumerate}[label=(\alph*)]
+        \item Zeichnen Sie den Schnitt $\left\{\left(x,y,z\right) \in A:z=0\right\}$ von $A$ mit der $xy$--Ebene. Ist die Menge $A$ wegzuasmmenhängend?
+        \item Ist $A$ abgeschlossen? Ist $A$ kompakt?
+        \item Berechnen Sie das 3--dimensionale Jordan--Maß von $A$.
+        \item Ist $B$ offen? Ist $B$ ein Gebiet? Ist $B$ quadrierbar?
+        \item Berechnen Sie das 3--dimensionale Lebesgue--Maß von $B$.
+\end{enumerate}
+\hfill\\\textbf{Aufgabe 2: 15 Punkte}\\ 
+Sei $\alpha  \in \mathbb{R}$ ein Parameter. Sei
+\begin{align} 
+        M_\alpha :=\left\{x=\left(x_1,x_2\right) \in \mathbb{R}^2:1\leq x_1\leq \alpha ,0\leq x_2\leq x_1\right\}
+.\end{align} 
+Berechnen Sie das 2--dimensionale Riemann--Integral
+\begin{align} 
+        \int_{M_\alpha }^{}\left(x_1^2x_2+x_1^2\cos \left(x_1x_2\right)\right)\td v_2\left(x\right)
+\end{align} 
+für jedes $\alpha  \in \mathbb{R}$, wobei $v_2$ das 2--dimensionale Jordan--Maß ist.
+\\\hfill\\\textbf{Aufgabe 3: 25 Punkte}\\ 
+Für einen Parameter $\alpha  \in \mathbb{R}$, sei
+\begin{align} 
+        U_\alpha =\left\{\left(x,y\right) \in \mathbb{R}^2:0<x<1,0<y<x^\alpha \right\}
+.\end{align} 
+\begin{enumerate}[label=(\alph*)]
+        \item Zeichnen Sie $U_\alpha $ für $\alpha =-1,\alpha =0$ und $\alpha =2$.
+        \item Für welche $\alpha  \in \mathbb{R}$ ist $U_\alpha $ ein einfach zusammenhängendes Gebiet?
+        \item Bestimmen Sie die Menge $M$ aller $\alpha  \in \mathbb{R}$, sodass man den Rand $\partial U_\alpha $ als Spur eines geschlossenen Jordan--Wegs $\gamma _\alpha $, der zusätzlich ein stückweise $C^1$--Weg ist, darstelllen kann. Konstruieren Sie die entsprechenden Wege $\gamma _\alpha \,\forall \alpha  \in M$.
+        \item Berechnen Sie das 2--dimensionale Lebesgue--Integral $I_\alpha =\int_{U_\alpha }^{}x^2\td \mu _2\left(x,y\right)\,\forall \alpha <0$, wobei $\mu _2$ das 2--dimensionale Lebensgue--Maß ist.
+\end{enumerate}
+\hfill\\\textbf{Aufgabe 4: 20 Punkte}\\ 
+Betrachten wir eine $3\times 3$--Matrix $A_{x,y}=\begin{pmatrix}
+        x&y\\x&y\\x&y
+\end{pmatrix}$, wobei $x \in \mathbb{R}$ und $y \in \mathbb{R}$ zwei Parameter sind. Definieren wir $f:\mathbb{R}^2\rightarrow \mathbb{R}$ durch
+\begin{align} 
+        f\left(x,y\right)=||A_{x,y}||
+.\end{align} 
+Dabei betrachten wir $A_{x,y}:u\mapsto A_{x,y}\left(u\right)$ als einen linearen Operator vom normierten Raum $\mathbb{R}^2$ in den normierten Raum $\mathbb{R}^3$. Die Operatornorm ist definiert als
+\begin{align} 
+        ||A_{x,y}||=\,\text{sup}_{u \in \mathbb{R}^2,|u|=1}|A_{x,y}\left(u\right)|
+.\end{align} 
+\begin{enumerate}[label=(\alph*)]
+        \item Untersuchen Sie die Stetigkeit von $f$ auf $\mathbb{R}^2$.
+        \item Untersuchen Sie die partielle Differenzierbarkeit von $f$ auf $\mathbb{R}^2$. Gilt $f \in C^1\left(\mathbb{R}^2\right)$?
+        \item Bestimmen Sie das Infimum und das Supremum der Funktion $f$ auf $\mathbb{R}^2$.
+\end{enumerate}
+\hfill\\\textbf{Aufgabe 5: 10 Punkte}\\ 
+Seien $M=\left\{\left(x,y,z\right) \in \mathbb{R}^3:x^2+y^2=1,0\leq z\leq 1\right\}$ und $f\left(x,y,z\right)=x^2+y^2+z^2$. Bestimmen Sie das Flächenintegral $\int_{\mathcal{M}}^{}f\td \mathcal{A}$ bezüglich des skalaren Flächenelements $\td \mathcal{A}$.
+
+%}}}
+
+\end{document}

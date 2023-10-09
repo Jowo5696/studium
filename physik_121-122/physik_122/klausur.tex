@@ -1,0 +1,656 @@
+%:LLPStartPreview
+%:VimtexCompile(SS)
+
+%{{{ Formatierung
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{physics_notetaking}
+
+%%% dark red
+%\definecolor{bg}{RGB}{60,47,47}
+%\definecolor{fg}{RGB}{255,244,230}
+%%% space grey
+%\definecolor{bg}{RGB}{46,52,64}
+%\definecolor{fg}{RGB}{216,222,233}
+%%% purple
+%\definecolor{bg}{RGB}{69,0,128}
+%\definecolor{fg}{RGB}{237,237,222}
+%\pagecolor{bg}
+%\color{fg}
+
+\newcommand{\td}{\,\text{d}}
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+
+\newcommand\inlineeqno{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnoa{(\theequation.\text{a})}
+\newcommand\inlineeqnob{(\theequation.\text{b})}
+\newcommand\inlineeqnoc{(\theequation.\text{c})}
+
+\newcommand\inlineeqnowo{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnowoa{\theequation.\text{a}}
+\newcommand\inlineeqnowob{\theequation.\text{b}}
+\newcommand\inlineeqnowoc{\theequation.\text{c}}
+
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+%\renewcommand*\contentsname{Contents}
+
+\pagestyle{fancy}
+
+\sloppy
+
+\numberwithin{equation}{section}
+
+%}}}
+
+\begin{document}
+
+%{{{ Titelseite
+
+\title{Klausurvorbereitung $|$ physik122}
+\author{Jonas Wortmann}
+\maketitle
+\pagenumbering{gobble}
+
+%}}}
+
+\newpage
+
+%{{{ Inhaltsverzeichnis
+
+\pagenumbering{arabic}
+
+\fancyhead[L]{\thepage}
+\fancyfoot[C]{}
+
+\tableofcontents
+
+%}}}
+
+\newpage
+
+%{{{ Klausurvorbereitung
+
+\fancyhead[R]{\leftmark\\\rightmark}
+
+%{{{ Altklausuren
+
+\section{Altklausuren}
+
+%{{{ 2021 Testat II
+
+\subsection{2010 Testat II}
+\hfill\\\textbf{Aufgabe 1: Multiple Choice}
+\begin{enumerate}[label=\arabic*.]
+        \item Dunkle Energie
+        \item $a=\left(1+z\right)^{-1}$ 
+        \item $27,3\,\text{K}\,$ 
+        \item Existenz des CMB, 25\% Anteil von Helium, Beschleunigte Expansion
+\end{enumerate}
+\hfill\\\textbf{Aufgabe 2: Friedmann--Gleichung}\\
+\begin{enumerate}[label=\arabic*.]
+        \item Nur Strahlung: $\Omega _r=1,\Omega _m=\Omega _\Lambda =0$. Die Friedmann--Gleichung bzw.\ der Skalenfaktor als Funktion der Zeit ist dann
+        \begin{align*} 
+                \left(\dfrac{\dot{a}}{a}\right)^2&=H_0^2\left(\dfrac{1}{a^4}\right)\\
+                \dfrac{\dot{a}}{a}&=H_0\dfrac{1}{a^2}\\
+                a&=H_0\dfrac{1}{\dot{a}}\\
+                a&=H_0\diff[]{t}{a}\\
+                \dfrac{1}{2}a^2&=H_0t\\
+                a&=\,\sqrt[]{2H_0t}
+        \end{align*} 
+        \item \glqq{}Die Strahlungsdichte hat drei Raumkoordinaten und die Rotverschiebung.\grqq{}
+\end{enumerate}
+\hfill\\\textbf{Aufgabe 3: Nukleosynthese}
+\begin{enumerate}[label=\arabic*.]
+        \item Bei der Neutronenentkopplung hat sich die Lebensdauer von Neutronen so weit erhöht, dass sich Deuterium bilden konnte. Aus Deuterium bildet sich dann Helium.
+        \item Gibt es eine höhere Baryonendichte, kommt es auch früher zur Entkopplung, wodruch die Lebensdauer von Neutronen erhöht wird und sich mehr Helium bilden kann.
+\end{enumerate}
+\hfill\\\textbf{Aufgabe 4: Kosmologie}
+\begin{enumerate}[label=\arabic*.]
+        \item $\Omega _m=0,3;\Omega _r=4,2\cdot 10^{-5}h^{-2};\Omega _b=0,05;\Omega _\Lambda =0,7;H_0=70\tfrac{\,\text{km}\,}{\,\text{s}\,\,\text{Mpc}\,}$
+        \item 
+\end{enumerate}
+
+%}}}
+
+\newpage
+
+%{{{ 2021 Testat III
+
+\subsection{2010 Testat III}
+\hfill\\\textbf{Aufgabe 1: Multiple Choice}
+\begin{enumerate}[label=\arabic*.]
+        \item starke Emissionslinien. flache Rotationskurve. Emission über einen sehr breiten Spekralbereich.
+        \item Absorption bei verschiedenen Rotverschiebungen entlang der Sichtlinie.
+        \item Streuung von CMB--Photonen im heißen Clustergas.
+        \item Kleine Strukturen bilden sich zuerst.
+\end{enumerate}
+\hfill\\\textbf{Aufgabe 2: Galaxienhaufen}
+\begin{enumerate}[label=\arabic*.]
+        \item Masse zu Leuchtkraft Beziehung: Durch die Messung der Rotationskurve kann eine Beziehung zur Leuchtkraft hergestellt werden, die wiederum in Beziehung zur Masse steht.\\
+                Gravitationslinseneffekte: . \\
+                Optische und röntgen Surveys: Mit einer Röngenaufnahme kann die Potentialtiefe und damit die Masse des Galaxienhaufens bestimmt werden.\\
+                Virialsatz: $E_{\,\text{kin}\,}=-\tfrac{1}{2}E_{\,\text{pot}\,}\Leftrightarrow m=\tfrac{3\sigma ^2r}{G_N}$. 
+\end{enumerate}
+\hfill\\\textbf{Aufgabe 3: Schwarze Löcher}
+\begin{enumerate}[label=\arabic*.]
+        \item Mit $L=10^{13}L_\odot$ folgt
+                \begin{align*} 
+                        L_{\,\text{edd}\,}=30000L_\odot\dfrac{M}{M_\odot}&=10^{13}L_\odot\\
+                        M&=\dfrac{10^{13}M_\odot}{3\cdot 10^4}\\
+                         &=\dfrac{10^{13}\cdot 2\cdot 10^{30}}{3\cdot 10^4}\\
+                         &=\dfrac{1}{3}\cdot 10^{9}M_\odot\\
+                         &\approx \dfrac{2}{3}\cdot 10^{39}\,\text{kg}\,
+                \end{align*} 
+                Die Zeit, die der Quasar bei konstanter Leuchtkraft und Akkretionsrate aktiv bleiben muss, um eine Masse zu verdoppeln
+                \begin{align*} 
+                        \dot{m}&=\dfrac{L_{\,\text{edd}\,}}{\varepsilon c^2}\\
+                        \diff[]{m}{t}&=\dfrac{L_{\,\text{edd}\,}}{\varepsilon c^2}\\
+                        \td m&=\dfrac{L_{\,\text{edd}\,}}{\varepsilon c^2}\td t\\
+                        \dfrac{1}{m}\td m&=\dfrac{3\cdot 10^4L_\odot}{\varepsilon c^2M_\odot}\td t\\
+                        \ln\left(2\right)&=\dfrac{3\cdot 10^4L_\odot}{\varepsilon c^2M_\odot}t\\
+                        t&=\dfrac{\ln\left(2\right)\varepsilon c^2M_\odot}{3\cdot 10^4L_\odot}\\
+                        t&=\dfrac{\tfrac{2}{3}\cdot 10^{-1}\cdot 9\cdot 10^{16}\cdot 3\cdot 10^{30}}{3\cdot 10^4\cdot 4\cdot 10^{26}}\,\text{s}\,\\
+                         &=\dfrac{3}{2}\cdot 10^{15}\,\text{s}\,\\
+                         &=3\cdot 10^7\,\text{yr}\,
+                \end{align*} 
+\end{enumerate}
+\hfill\\\textbf{Aufgabe 4: AGN}
+\begin{enumerate}[label=\arabic*.]
+        \item In einem AGN wird Energie durch die hohen Geschwindigkeiten der Materie in der Akkretionsscheibe erzeugt. Beobachtung sind hochenergetische Strahlung und Materiejets.
+\end{enumerate}
+
+%}}}
+
+\newpage
+
+%{{{ 2011 Probeklausur
+
+\subsection{2011 Probeklausur}
+\hfill\\\textbf{Teil 1: Multiple Choice}
+\begin{enumerate}[label=\arabic*.]
+        \item ein SMBH
+        \item euklidisch
+        \item $\Omega _m=0,3$
+\end{enumerate}
+\hfill\\\textbf{Teil 2: Multiple Choice}
+\begin{enumerate}[label=\arabic*.]
+        \item röter.
+        \item Spiralgalaxien sind blauer als Ellipsen.
+        \item 180\,Mpc
+        \item $\tfrac{M_{\,\text{tot}\,}}{L_{\,\text{tot}\,}}\approx 300h\tfrac{M_\odot}{L_\odot}$ 
+        \item falsch.
+        \item thermische Strahlung aus der Frühzeit des Universums.
+        \item $v=H_0D$ mit $H_0 =70\tfrac{\,\text{km}\,}{\,\text{s}\,\,\text{Mpc}\,}$ 
+\end{enumerate}
+\hfill\\\textbf{Teil 3: Aufsatz-- und Rechenaufgaben}
+\begin{enumerate}[label=\arabic*.]
+        \item $\Omega _r=1$ also
+                \begin{align*} 
+                        \left(\dfrac{\dot{a}}{a}\right)^2&=H_0^2\left(\dfrac{1}{a^4}\right)\\
+                        \dot{a}&=\dfrac{H_0}{a}
+                \end{align*} 
+        \item Standardkerzen sind Objekte am Himmel, die alle eine gleiche absolute Helligkeit haben. Sobald man die scheinbare Helligkeit dieser Standardkerze misst, kann man mit $m-M=5\log \left(\tfrac{D}{10\,\text{pc}\,}\right)$ die Entfernung bestimmen. Für kosmologische Distanzen sind Supernovae Typ Ia geeignet.
+        \item $z=\tfrac{\lambda _{\,\text{b}\,}}{\lambda _0}-1=\tfrac{1}{a}-1$.
+\end{enumerate}
+\hfill\\\textbf{Aufgabe 1: Multiple Choice}
+\begin{enumerate}[label=\arabic*.]
+        \item (5), (1), (3), (2), (4)
+        \item 25\%
+        \item 1100
+        \item 14 Milliarden Jahre. $H_0^{-1}$. das 3--fache dse Alters der Erde.
+        \item $\rho \propto a^{-4}$
+\end{enumerate}
+\hfill\\\textbf{Aufgabe 1: Multiple Choice}
+\begin{enumerate}[label=\arabic*.]
+        \item anhand der Sichtlinie, unter der sie beobachtet werden. durch den Energieerzeugungsprozess.
+        \item Absorption bei verschiedenen Rotverschiebungen entlang der Sichtlinie.
+        \item Die Grenzleuchtkraft ab der der Strahlungsdruck die Gravitationskraft übersteigt.
+        \item 80\%
+\end{enumerate}
+\hfill\\\textbf{Aufgabe 2: Thermische Geschichte}
+\begin{enumerate}[label=\arabic*.]
+        \item Ausfrieren beschreibt den Prozess, bei dem das Universum expandiert und dabei kälter wird, sodass es zu immer weniger Wechselwirkung zwischen den Teilchen kommt. Sobald die Expansionsrate eine gewisse Geschwindigkeit erreicht, entkoppeln die Teilchen, da sie gar nicht mehr wechselwirken können.
+        \item Der CMB entsteht dadurch, dass das Universum in der Epoche der Rekombination durchsichtiger wurde, wodurch sich die mittlere freie Weglänge von Photonen erhöht, welche heute den CMB bilden.
+\end{enumerate}
+\hfill\\\textbf{Aufgabe 2: Standardmodell}
+\begin{enumerate}[label=\arabic*.]
+       \item CMB, Expansion, Heliumanteil von 25\% im Universum
+\end{enumerate}
+\hfill\\\textbf{Aufgabe 3: Akkretionsleuchkraft}
+\begin{enumerate}[label=\arabic*.]
+        \item $L=\dot{m}\varepsilon c^2$ 
+\end{enumerate}
+\hfill\\\textbf{Aufgabe 4: Sunyaev--Zeldovich}
+\begin{enumerate}[label=\arabic*.]
+        \item s. wichtige Begriffe
+        \item Zur Lokalisierung von Galaxienhaufen. Zur Entfernungsbestimmung von Galaxienhaufen.
+\end{enumerate}
+
+%}}}
+
+\newpage
+
+%{{{ 2012 Klausur
+
+\subsection{2012 Klausur}
+\hfill\\\textbf{Teil 1: Multiple Choice}
+\begin{enumerate}[label=\arabic*.]
+        \item Das Universum ist homogen und isotrop.
+        \item Die Sterne im Bulge befinden sich auf Keplerbahnen. Die Scheibenstruktur einer Galaxie. Hohe Energieemission in kleinem Bereich im Zentrum der Galaxie (entsteht durch die Akkretionsscheibe, da die Masse durch Reibung hochenergetische Strahlung emittiert).
+        \item Ist die maximale Temperatur der Akkretionsscheibe kleiner. 
+        \item Rotationskurven von Spiralgalaxien. Gravitationslinseneffekte in Galaxienhaufen. Die geringe Amplitude der CMB Winkelfluktuationen.
+        \item Berechne mit \eqref{eq:Hubbleentfernung}. $400\,\text{Mpc}\,$.
+        \item Bestimmung des $\,\text{He}\,^4$--Anteils in Galaxien. WIP
+        \item Dunkle Energie.
+        \item sie an der kosmologischen Expansion teilnimmt.
+        \item Die CMB--Photonen werden an heißen Cluster--Elektronen gestreut, daher haben sie im Mittel eine höhere Frequenz.
+        \item $\left(10^{14}-10^{15}\right)\,\text{M}\,_\odot$ 
+        \item Fluss. Raumwinkel.
+        \item In Population $A$ gibt es Kern--Kollaps--Supernovae. $A$ hat mehr massereiche Sterne.
+        \item eine monoton wachsende Funktion.
+        \item ist eine rein histosiche Bezeichnung ohne physikalisch Interpretation. kommt daher, dass Hubble erst die Ellipsen entdeckte, später die Spiralgalaxien.
+        \item durch die Bahnbewegung von Sternen nahe des Zentrums.
+        \item starker Gravitationslinseneffekt. richtungsabhängige Abweichung im CMB. charakteristische Emissionslinien.
+        \item Bewegung der Komponenten mit nahezu Lichtgeschwindigkeit. kleiner Winkel zwischen Jet und Sichtlinie.
+        \item $L\propto \sigma ^4$.
+        \item Isotropie des CMB. 
+        \item (Koordinaten bewegen sich mit Expansion mit) Der Abstand wird größer. Das Verhalten hängt vom Abstand der Objekte ab.
+        \item Wenn die Reaktionsrate unter die Expansionsrate fällt.
+        \item Gravitationslinsen. Masse--Leuchtkraft--Verhältnis ($\tfrac{M}{L}=300h\tfrac{M_\odot}{L_\odot}$. 
+        \item besteht hauptsächlich aus Wasserstoff. ist hochionisiert.
+        \item Die kosmologische Konstante hat einen von null verschiedenen Wert. Die Expansion des Universums ist beschleunigt.
+        \item flach.
+        \item Die Anzahldichte von Galaxienhaufen.
+\end{enumerate}
+
+%}}}
+
+\newpage
+
+%{{{ 2021 (open book)
+
+\subsection{2021 (open book)}
+\hfill\\\textbf{Teil I: Vervollständigungsaufgaben} 
+\begin{enumerate}[label=\arabic*.]
+        \item großen Energieausstoß von sehr heißen Sternen. Dies bedeutet, dass Sterne nicht seit Beginn des Universums vorhanden sein konnten, sondern sich vor endlicher Zeit gebildet haben müssen.
+        \item sich das interstellare Gas bei der Kollision von der Galaxie getrennt hat.
+        \item der Rotationskurve der Sterne.
+        \item den meisten anderen Galaxien (z.B.\ Ellipsen).
+        \item große Strukturen auf großen Skalen gleich aussehen.
+        \item kleiner als 25\%.
+        \item Emission im Röntgenspektrum.
+        \item 
+        \item ca.\ 20\% der Dunklen Materie MACHOs sind.
+        \item die Entfernung zur Gravitationslinse bzw.\ zur Quelle
+        \item die Leuchtkraft
+        \item das Alter des Universums übersteigen.
+        \item die Galaxien auf die Milchstraße zufliegen und dadurch eine negative Rotverschiebung haben.
+        \item die AGNs in verschiedenen Winkeln zur Erde stehen und Jets haben bzw.\ nicht haben.
+        \item 
+        \item eine Rotverschiebung des Galaxienspektrums.
+\end{enumerate}
+\hfill\\\textbf{Teil II: Kurze Aufsatzaufgaben}
+\begin{enumerate}[label=\arabic*.]
+        \setcounter{enumi}{16}
+        \item Die Fundamentalebene ist die Ebene in einem dreidimensionalem Koordinatensystem auf der alle elliptischen Galaxien sind. Die Parameter sind die Geschwindigkeitsdispersion, Helligkeit und Effektivradius. [Entfernungsbestimmnug]
+        \item Hinweise auf AGN: hochenergetische Emission nicht stellaren Ursprungs; Materiejets; ... . Diese Beobachtungen lassen auf Aktivität schließen, da ...
+        \item s.Horizontproblem
+        \item Die obere Schranke für die Leuchtkraft eines AGNs ist die Eddington--Leuchtkraft $L_{\,\text{edd}\,}=3\cdot 10^4L\tfrac{M}{M_\odot}$, ab welcher die Masse in der Akkretionsscheibe nicht mehr in das BH fallen kann, da der Strahlungsdruck zu hoch ist.
+        \item Durch die $e^-,e^+$--Paarvernichtung wurde die Energie der Elektronen und Positronen auf die Photonen übertragen, welche den CMB des heutigen Universums darstellen. Die Neutrinos des Neutrinohintergrund hatte bis zu diesem Zeitpunkt noch dieselbe Energie wie die Photonen. Nach der Paarvernichtung war sie also niedriger.
+        \item 
+        \item s.W. (die steigt erst stark und sinkt dann wieder, die gemessene steigt stark an und flacht nur leicht ab)
+        \item \begin{enumerate}[label=\alph*)]
+                \item $B$ ist die röteste, da elliptische Galaxien die ältesten Galaxien sind und fast keine Sternentstehung mehr haben. $C$ hat die blaueste Sternpopulation, da dort nur junge Sterne zu finden sind, welche durch Fusion noch am meisten Energie erzeugen können.
+                \item In $B$, da dort ältere Sterne zu finden sind, in dessen Kernen schon schwerere Elemente vorzufinden sind.
+                \item
+                \item In $B$, da die Sterne bereits zu schwereren Elementen fusioniert haben.
+                \item In $B$, da die Sterne bereits ihre äußeren Hüllen abgestoßen haben.
+                \item In $B$, da die Sterne die größte Masse haben.
+                \item 
+        \end{enumerate}
+        \item Gravitationslinseneffekte, Masse zu Leuchtkraft Beziehung, Röntgensurveys
+\end{enumerate}
+\hfill\\\textbf{Teil III: Kurze Rechenaufgaben}
+\begin{enumerate}[label=\arabic*.]
+        \setcounter{enumi}{25}
+        \item \begin{enumerate}[label=\alph*)]
+                \item Die Akkretionsrate eines SMBHs ist
+                        \begin{align*} 
+                                \dot{m}&=\dfrac{L}{\varepsilon c^2}\\
+                                \diff[]{m}{t}&=\dfrac{L}{\varepsilon c^2}
+                        .\end{align*} 
+                Mit $L=L_{\,\text{edd}\,}=3\cdot 10^4L_\odot \tfrac{m}{M_\odot}$ folgt
+                \begin{align*} 
+                        \int_{M_\bullet}^{2M_\bullet}\dfrac{1}{m}\td m&=\int_{0}^{t}\dfrac{3\cdot 10^4L_\odot}{\varepsilon c^2M_\odot}\td t\\
+                        \ln\left(2\right)&=\dfrac{3\cdot 10^4L_\odot}{\varepsilon c^2M_\odot}t\\
+                        t&=\ln\left(2\right)\dfrac{\varepsilon c^2M_\odot}{3\cdot 10^4L_\odot}
+                \end{align*} 
+                \item Wie in a) gilt
+                        \begin{align*} 
+                                \int_{100M_\odot}^{10^8M_\odot}\dfrac{1}{m}\td m&=\int_{0}^{t}\dfrac{3\cdot 10^4L_\odot}{\varepsilon c^2M_\odot}\td t\\
+                                \ln\left(\dfrac{10^8}{100}\right)&=\dfrac{3\cdot 10^4L_\odot}{\varepsilon c^2M_\odot}t\\
+                        t&=\ln\left(\dfrac{10^8}{100}\right)\dfrac{\varepsilon c^2M_\odot}{3\cdot 10^4L_\odot}
+                        \end{align*} 
+                \item Solch ein SMBH ist ... 
+        \end{enumerate}
+        \item Die Entfernung berechnet sich aus
+                \begin{align*} 
+                        z&=\dfrac{\lambda _{\,\text{beob}\,}}{\lambda _0}-1\\
+                         &=\dfrac{7220\si{\angstrom}}{6563\si{\angstrom}}-1
+                \end{align*} 
+        \item Die Rotverschiebung des CMB bei $a=\tfrac{1}{2}$ ist
+                \begin{align*} 
+                        z&=\dfrac{1}{a}-1\\
+                         &=1
+                .\end{align*} 
+                Daraus folgt für die Temperatur
+                \begin{align*} 
+                        T'&=T_0\left(1+z\right)\\
+                          &=2\cdot 2,7\,\text{K}\,
+                .\end{align*} 
+                Der CMB war also doppelt so heiß.
+        \item Für ein Universum in dem es nur Dunkle Energie gibt gilt $\Omega _\Lambda =1$ und $\Omega _r=\Omega _m=0$, also
+                \begin{align*} 
+                        \left(\dfrac{\dot{a}}{a}\right)^2&=H_0^2\\
+                        \dfrac{1}{a}\dot{a}&=H_0\\
+                        \dfrac{1}{a}\diff[]{a}{t}&=H_0\\
+                        \ln\left(a\right)&=H_0t\\
+                        a&=e ^{H_0t}
+                .\end{align*} 
+                Für frühe Zeiten hat sich das Universum verhältnismäßig langsam ausgebreitet, da der Skalenfaktor exponentiell mit der Zeit steigt.
+        \item 
+        \item \begin{enumerate}[label=\alph*)]
+                \item Damit der Einstein--Ring entsteht, müssen Beobachter, Linse und Quelle koliniear sein. Zudem
+                \item Der Einstein--Winkel ist der Winkel, bei dem der Einstein--Ring entsteht, also $\beta =0$. [dann Formel umstellen zu $\theta $ ($\vv{\theta }$ kürtzt sich, $\theta ^2$ ergibt die Wurzel)]
+                \item \begin{align*} 
+                                \theta &=\,\sqrt[]{\dfrac{D_{\,\text{ds}\,}}{D_{\,\text{s}\,}D_{\,\text{d}\,}}\dfrac{4G_NM}{c^2}}\\
+                                       &=\,\sqrt[]{\dfrac{1}{2\,\text{Gpc}\,}\dfrac{2\,\text{km}\,}{3M_\odot}M}\\
+                                       &=\,\sqrt[]{\dfrac{1}{2\,\text{Gpc}\,}\dfrac{2\,\text{km}\,}{3M_\odot}10^{15}M_\odot}
+                \end{align*} 
+        \end{enumerate}
+        \item 
+\end{enumerate}
+
+%}}}
+
+%}}}
+
+\newpage
+
+%{{{ Formeln
+
+\section{Formelverzeichnis}
+\subsection{Formeln}
+\begin{align} 
+        H_0\cdot d&=z\cdot c=v\label{eq:Hubbleentfernung}\\
+        H_0&:\,\text{Hubbelkonstante heute}\,\nonumber \\
+        d&:\,\text{Entfernung}\,\nonumber \\
+        z&:\,\text{Rotverschiebung}\,\nonumber \\
+        c&:\,\text{Lichtgeschwindigkeit}\,\nonumber \\
+        v&:\,\text{Expansionsgeschwindigkeit}\,\nonumber 
+\end{align} 
+\begin{align} 
+        a&=\dfrac{1}{1+z}\qquad z=\dfrac{1}{a}-1\qquad z=\dfrac{\lambda _{\,\text{beob.}\,}}{\lambda _{\,\text{emittiert}\,}}-1\\
+        a&:\,\text{Skalenfaktor}\,\nonumber \\
+        z&:\,\text{Rotverschiebung}\,\nonumber 
+\end{align} 
+\begin{align} 
+        a&=\dfrac{\vv{r}}{\vv{x}}\\
+        \vv{r}&:\,\text{physikalische Koordinate}\,\nonumber \\
+        \vv{x}&:\,\text{mitbewegte Koordinate}\,\nonumber 
+\end{align} 
+\begin{align} 
+        r_s&=\dfrac{2G_NM}{c^2}\\
+        r_s&:\,\text{Schwarzschildradius}\,\nonumber \\
+        G_N&:\,\text{Gravitationskonstante}\,\nonumber \\
+        M&:\,\text{Masse des Himmelskörper}\,\nonumber 
+\end{align} 
+\begin{align} 
+        m-M&=5\log\left(\dfrac{D}{10\,\text{pc}\,}\right)\\
+        m&:\,\text{scheinbare Helligkeit}\,\nonumber \\
+        M&:\,\text{absolute Helligkeit}\,\nonumber \\
+        D&:\,\text{Entfernung}\,\nonumber 
+\end{align} 
+\begin{align} 
+        L&\propto M^3\\
+        L&:\,\text{Leuchtkraft}\,\nonumber \\
+        M&:\,\text{Masse}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \tau &\propto M^{-2}\\
+        \tau &:\,\text{Hauptreihenlebensdauer}\,\nonumber \\
+        M&:\,\text{Masse}\,\nonumber 
+\end{align} 
+\begin{align} 
+        L&\propto v_{\,\text{max}\,}^\alpha \label{eq:TFR}\\
+        L&:\,\text{Leuchtkraft einer Spiralgalaxie}\,\nonumber \\
+        v_{\,\text{max}\,}&:\,\text{maximale Rotationsgeschwindigkeit}\,\nonumber \\
+        \alpha &:\,\text{Proportionalitätsfaktor $\approx 4$}\,\nonumber 
+\end{align} 
+\begin{align} 
+        L&\propto \sigma ^4\label{eq:FJR}\\
+        L&:\,\text{Leuchtkraft einer elliptischen Galaxie}\,\nonumber \\
+        \sigma &:\,\text{Geschwindigkeitsdispersion}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \lambda _{\,\text{max}\,}&\propto \dfrac{1}{T}\\
+        \lambda _{\,\text{max}\,}&:\,\text{Maximum des Spektrums}\,\nonumber \\
+        T&:\,\text{Temperatur}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \theta _E&=\,\sqrt[]{\dfrac{4G_NM_{\,\text{Linse}\,}}{c^2}\dfrac{D_{ds}}{D_dD_s}}\label{eq:Einsteinwinkel}\\
+        \theta _E&:\,\text{Einsteinwinkel}\,\nonumber \\
+        D_{ds}&:\,\text{Abstand Quelle Linse}\,\nonumber \\
+        D_d&:\,\text{Abstand Beobachter Linse}\,\nonumber \\
+        D_s&:\,\text{Abstand Beobachter Quelle}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \alpha &=\dfrac{4G_NM_{\,\text{Linse}\,}}{c^2R}\\
+        \alpha &:\,\text{Winkel zwischen Bild und Quelle}\,\nonumber \\
+        R&:D_d\theta \,\text{Abstand zwischen Linse und Schnittpunkt von Bild-- und Quellenlichtstrahl}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \beta &=\theta -\dfrac{D_{ds}}{D_s}\alpha \\
+        \beta &:\,\text{wahrer Winkel zwischen Beobachter und Quelle}\,\nonumber \\
+        \theta &:\,\text{Winkel zwischen Bild und Linse}\,\nonumber \\
+        \alpha &:\,\text{Winkel zwischen Quelle und Bild}\,\nonumber 
+\end{align} 
+\begin{align} 
+        T\cdot \lambda _{\,\text{max}\,}&=2,9\cdot 10^{-6}\,\text{m}\,\\
+        T&:\,\text{Temperatur eines Schwarzkörpers}\,\nonumber \\
+        \lambda _{\,\text{max}\,}&:\,\text{Wellenlänge bei der die Intensität maximal ist}\,\nonumber 
+\end{align} 
+\begin{align} 
+        t_H&=\dfrac{1}{H_0}\\
+        t_H&:\,\text{Weltalter}\,\nonumber \\
+        H_0&:\,\text{Hubble--Konstante}\,\nonumber 
+\end{align} 
+\begin{align} 
+        M&=M_\odot-2,5\log \left(\dfrac{L}{L_\odot}\right)\\
+        M&:\,\text{absolute Magnitude}\,\nonumber \\
+        L&:\,\text{Leuchtkraft}\,\nonumber \\
+        \odot&:\,\text{Sonneneigenschaft}\,\nonumber 
+\end{align} 
+\begin{align} 
+        H^2=\left(\dfrac{\dot{a}}{a}\right)^2&=H_0^2\left(\dfrac{\Omega _r}{a^4}+\dfrac{\Omega _m}{a^3}+\Omega _\Lambda +\dfrac{\Omega _0-1}{a^2}\right)\qquad \dfrac{\rho _x}{\rho _{\,\text{crit}\,}}=\dfrac{\Omega _x}{a^x}\\
+        H&:\,\text{Hubble--Parameter}\,\nonumber \\
+        H_0&:\,\text{Hubble--Konstante}\,\nonumber \\
+        a&:\,\text{Skalenfaktor}\,\nonumber \\
+        \Omega _r&:\,\text{Dichteparameter: Strahlung}\,\nonumber \\
+        \Omega _m&:\,\text{Dichteparameter: baryonische Materie}\,\nonumber \\
+        \Omega _\Lambda&:\,\text{Dichteparameter: Vakuumsenergie}\,\nonumber \\
+        \Omega _0&:\,\text{Dichteparameter: gesamt}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \vv{r}&=a\vv{x}\\
+        \vv{r}&:\,\text{physikalische Koordinate}\,\nonumber \\
+        \vv{x}&:\,\text{mitbewegte Koordinate}\,\nonumber \\
+        a&:\,\text{Skalenfaktor}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \Lambda &=\dfrac{8\pi G_N}{c^2}\rho _{\,\text{Vak}\,}=1,9\cdot 10^{-26}\dfrac{\,\text{m}\,}{\,\text{kg}\,}\rho _{\,\text{Vak}\,}\\
+        \Lambda &:\,\text{Kosmologische Konstante}\,\nonumber \\
+        \rho _{\,\text{Vak}\,}&:\,\text{Energiedichte des Vakuums}\,\nonumber 
+\end{align} 
+\begin{align} 
+        K&=D_H^{-2}\left(\Omega _r+\Omega _m+\Omega _\Lambda -1\right)\\
+        K&:\,\text{Krümmung des Universums}\,\nonumber \\
+        D_H&:\,\text{Hubbleradius}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \dfrac{M_{\,\text{tot}\,}}{L_{\,\text{tot}\,}}&\approx 300h \dfrac{M_\odot}{L_\odot}\\
+        M_{\,\text{tot}\,}&:\,\text{totale Masse Galaxienhaufen}\,\nonumber \\
+        L_{\,\text{tot}\,}&:\,\text{totale Leuchtkraft Galaxienhaufen}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \dot{m}&=\dfrac{L}{\varepsilon c^2}\\
+        \dot{m}&:\,\text{Akkretionsrate}\,\nonumber \\
+        L&:\,\text{Leuchtkraft}\,\nonumber \\
+        \varepsilon &:\,\text{Effizienz}\,\nonumber 
+\end{align} 
+\begin{align} 
+        T'&=T_0\left(1+z\right)\\
+        T'&:\,\text{Temperatur CMB bei $z$}\,\nonumber \\
+        T_0&\approx 2,7\,\text{K}\,\nonumber 
+\end{align} 
+
+%}}}
+
+\newpage
+
+%{{{ Konstanten
+
+\subsection{Konstanten}
+\begin{align} 
+        M_\odot&=2\cdot 10^{30}\,\text{kg}\,\\
+        L_\odot&=4\cdot 10^{26}\,\text{W}\,
+\end{align} 
+\begin{align} 
+        H_0=70\dfrac{\,\text{km}\,}{\,\text{s}\,\cdot \,\text{Mpc}\,}
+\end{align} 
+\begin{align} 
+        \rho _{\,\text{crit}\,}=\dfrac{3H_0^2}{8\pi G_N}\approx 8,5\cdot 10^{-27}\dfrac{\,\text{kg}\,}{\,\text{m}\,^3}
+\end{align} 
+\begin{align} 
+        \Omega _r&\approx 4,2\cdot 10^{-5}h^{-2}=\dfrac{\Lambda }{3H_0^2}=\dfrac{\rho _{\,\text{Vak}\,}}{\rho _{\,\text{crit}\,}}\\
+        \Omega _m&\approx 0,3\\
+        \Omega _\Lambda &\approx 0,7\\
+        \Omega _0&=\Omega _r+\Omega _m+\Omega _\Lambda \approx 1
+\end{align} 
+\begin{align} 
+        R_H&=\dfrac{c}{H_0}\approx 3\,\text{Gpc}\,\\
+        R_H&:\,\text{Hubbleradius (etwa die Größe des beobachtbaren Univerums)}\,\nonumber 
+\end{align} 
+\begin{align} 
+        \Lambda &=\dfrac{8\pi G_N}{c^2}\rho _{\,\text{Vak}\,}=1,9\cdot 10^{-26}\dfrac{\,\text{m}\,}{\,\text{kg}\,}\rho _{\,\text{Vak}\,}\\
+        \Lambda &:\,\text{Kosmologische Konstante}\,\nonumber \\
+        \rho _{\,\text{Vak}\,}&:\,\text{Energiedichte des Vakuums}\,\nonumber 
+\end{align} 
+\begin{align} 
+        1\,\text{pc}\,\approx 3,3\,\text{Lj}\,\approx 2\cdot 10^5\,\text{AU}\,\approx 3\cdot 10^{16}\,\text{m}\,
+\end{align} 
+\begin{align} 
+        L_{\,\text{edd}\,}&:=\dfrac{4\pi G_Nm_pc}{\sigma _T}M_{BH}\approx 3,3\cdot 10^4L_\odot\dfrac{M}{M_\odot}\\
+        M_{\,\text{edd}\,}&:=\dfrac{\sigma _TL_{\,\text{edd}\,}}{4\pi m_pc}\approx 3,1\cdot 10^{-5}L_{BH}\dfrac{M_\odot}{L_\odot}
+\end{align} 
+
+%}}}
+
+\newpage
+
+%{{{ Wichtige Begriffe
+
+\subsection{Wichtige Begriffe}
+\begin{enumerate}[label=$\circ$]
+        \item Planck--Gesetz: Das Strahlungsspektrum eines Schwarzkörpers bei bestimmer Temperatur.
+        \item Rayleigh--Jeans--Näherung: Näherung für das Planck--Gesetz bei großen Wellenlängen. Es wird mit $e^x-1\approx x$ genähert. Ab einer Wellenlänge von Ultraviolet divergiert die Näherung, auch Ultravioletkatastrophe
+        \item Wien--Näherung: Eine Näherung für das Planck--Gesetz bei kleinen Wellenlängen.
+        \item Jeans--Masse: Die Masse, ab der eine Wasserstoffwolke kollabiert und zu einem Protostern wird. Sobald dieser Protostern entsteht, beginnt Kernfusion was ein weiteres Kollabieren verhindert.
+        \item Schwarzschild--Radius: Der Radius, auf den ein Himmelskörper komprimiert werden muss, um ein Schwarzes Loch zu werden ($r_s=\tfrac{2GM}{c^2}$ oder $r_S=3\,\text{km}\,\tfrac{M}{M_\odot}$).
+        \item Chandrasekhar--Grenze: Die Massengrenze, ab der in einem weißen Zwerg die Kernfusion wieder beginnt.
+        \item Typ Ia Supernovae: Ein weißer Zwerg der explodiert, da er ab circa $1,4M_\odot$ wieder anfängt Elemente zu fusionieren. Der Gravitationsdruck kann dem Fusionsdruck allerdings nicht mehr standhalten und der weiße Zwerg explodiert. (Spektrum: wenig H, viel C)
+        \item Typ Ib Supernovae: Ein Stern mit circa $25M_\odot$, welcher seine äußere Hülle aus Wasserstoff bereits verloren hat, implodiert aufgrund des Gravitationsdrucks und explodiert kurz danach. (Spektrum: viel He)
+        \item Typ Ic Supernova: Analog zu Typ 1b, aber der Stern hat zudem die äußere Schicht Helium verloren.
+        \item Typ II Supernova: Ein Stern mit circa $8M_\odot$ implodiert aufgrund des fehlenden Fusionsdrucks, da ab Nickel keine Fusion mehr stattfindet. Ist der Kern nach einer Zeit schwerer als die Chandrasekhar--Grenze, so implodiert und explodiert er kurz darauf. Dabei hinterlässt er ein Neutronenstern oder Schwarzes Loch, in Abhängigkeit der Masse. (Spektrum: viel H und He)
+        \item Population 1 Sterne: Junge Sterne mit hoher Metallizität (aufgrund von früherer Fusion durch ältere Sterne), zu finden in der Scheibe einer Galaxie.
+        \item Population 2 Sterne: Alte Sterne ($<6\cdot 10^9$ Jahre) mit niedriger Metallizität, zu finden im Bulge, Halo oder in Kugelsternhaufen.
+        \item Population 3 Sterne: Theoretische erste Sterne mit Metallizität von null, welche zu Beginn des Universums entstanden sein sollten.
+        \item Kugelsternhaufen: Sterne, die gleichzeitig aus der selben Molekülwolke gebildet worden sind. Zu finden im Halo einer Galaxie.
+        \item Offene Sternhaufen: Sterne, die zu unterschiedlichen Zeiten aus der selben Molekülwolke gebildet worden sind. Zu finden in der Scheibe von Galaxien.
+        \item Hubble--Sequenz: Galaxien werden je nach Aussehen in verschiedene Typen unterteilt. E0--E7 sind elliptische Galaxien mit der Ziffer als Angabe ihrer Elliptizität. S0 beschreibt eine Spiralgalaxie von der Seite (keine Sicht auf die Arme) und Sa--Sc Spiralgalaxien, welche verdreht / geschlossen (a) bzw.\ fast gar nicht verdreht / offen (c) sind. SBa--SBc beschreibt Spiralgalaxien mit Balken analog. Die Spiralarme sind Dichtewellen aus Materie, die durch identische Umlaufzeiten von Sternen um das BH im Zentrum entstehen.
+        \item Galaxiengruppe: Sammlung von $\leq 50$ Galaxien und Durchmesser $\leq \tfrac{1,5}{h}\,\text{Mpc}\,$.
+        \item Galaxienhaufen: Sammlung von $\geq 50$ Galaxien, Druchmesser $\geq \tfrac{1,5}{h}\,\text{Mpc}\,$ und Masse von $10^{14}-10^{15}M_\odot$.
+        \item Aufbau der Milchstraße
+                \begin{enumerate}[label=]
+                        \item Galaktisches Zentrum: SMBH.
+                        \item Bulge: Ellipsoidischer Zentralkörper mit Sternen der Population II.
+                        \item Dünne Scheibe: Beinhaltet vorwiegend Gas und neu gebildete Sterne.
+                        \item Dicke Scheibe: Beinhaltet vorwiegend Sterne der Population I.
+                        \item Halo: Weit verstreute Sterne in Kugelsternhaufen der Population II um die Galaxie herum. Vermuteter Platz der Dunklen Materie.
+                \end{enumerate}
+        \item Tully--Fisher--Relation \eqref{eq:TFR}: Die Rotationsgeschwindigkeit einer Spiralgalaxie steht im Zusammenhang mit ihrer Leuchtkraft, sodass $L\propto v_{\,\text{max}\,}^\alpha ,\alpha \approx 4$.
+        \item Faber--Jackson--Relation \eqref{eq:FJR}: Die Geschwindigkeitsdispersion von Sternen einer elliptischen Galaxie ist proportional zu ihrer Leuchtkraft, sodass $L\propto \sigma ^4$.
+        \item Effektivradius: Der Effektivradius einer Galaxie ist der Radius, bei dem die Hälfte des gesamten Lichts emittiert wird.
+        \item Olbers Paradoxon \glqq Der Nachthimmel ist dunkel\grqq{}: Der Nachthimmel ist dunkel. Das Universum kann also nicht unendlich, statisch und euklidisch sein, da man am Himmel sonst das Licht von unendlich Sternen sähe.
+        \item Horizontproblem: Das Horizontproblem beschreibt das Phänomen, dass die physikalischen Eigenschaften (z.B.\ Temperatur) an gegenüberliegenden Punkten des Universums identisch sind, obwohl diese Punkte zu weit auseinander sind, um kausal zusammenhängend sein zu können.
+        \item Einsteinwinkel \eqref{eq:Einsteinwinkel}: Der Winkel zwischen der Linse und dem Schnittpunkt von Bild-- und Quellenlichtstrahl, wenn Quelle, Linse und Beobachter koliniear sind. $\beta =0$.
+        \item Einsteinradius: Der Radius des kreisförmigen Bildes wenn die Quelle, Linse und Beobachter koliniear sind.
+        \item Kosmologisches Prinzip: Das kosmologische Prinzip besagt, dass das Weltall zur selben Zeit an an jedem Raumpunkt und in alle Richtungen für große Entfernungen gleich aussieht. Die Annahme, dass das Universum von einem Punkt aus in jede Richtung gleich ist, heißt isotrop. Das Universum ist homogen, da es von jedem Punkt aus isotrop ist.
+        \item Starburst--Galaxien: Galaxien, die eine sehr starke Sternentstehung haben. Dies kann auch bei Kollision von Galaxien entstehen.
+        \item Pekuliarbewegung: Die Pekuliarbewegung bezeichnet die relative Bewegung eines Beobachters zum CMB. (Im Allgemeinen eines Beobachters zu einem Himmelskörper.) Dadurch bilden sich im CMB zwei Pole.
+        \item Super--Luminal--Motion: Super--Luminal--Motion ist die scheinbare Überlichgeschwindigkeit von Materiejets aus einem AGN. Ist der Jet in Richtung des Beobachters gerichtet, dann braucht das Licht weniger Zeit zum Beobachter, was darauf schließen lässt, dass sich der Jet mit Überlichtgeschwindigkeit bewegt.
+        \item AGN: Ein \textbf{A}ctive \textbf{G}alactic \textbf{N}ucleus ist ein SMBH im Kern einer Galaxie. Es leuchtet im Vergleich zur Galaxie deutlich heller. Das Licht wird von der Akkretionsscheibe ausgesandt, da sich die Materie mit sehr hoher Geschwindigkeit um das SMBH dreht, wodurch Reibung entsteht und die Materie Strahlung aussendet. Ein AGN wird in Abhängigkeit von dem Blickwinkel in verschiedene Kategorien eingeteilt. Sie sind weiter aufgeteilt in \textbf{Radio--laut}, also mit Jet 
+                \begin{enumerate}[label=]
+                        \item $\approx 10^\circ$: Narrow line Radio Galaxies
+                        \item $\approx 45^\circ$: Broad line Radio Galaxies
+                        \item $\approx 80^\circ$: Quasare
+                        \item $\approx 90^\circ$: Blazare
+                \end{enumerate}
+                und \textbf{Radio--leise} also ohne Jet 
+                \begin{enumerate}[label=]
+                        \item $\approx 10^\circ$: Seyfert II
+                        \item $\approx 45^\circ$: Seyfert I
+                        \item $\approx 90^\circ$: Quasare
+                \end{enumerate}
+                Das Spektrum des AGN ist kein reines Schwarzkörperspektrum, da auch viel Strahlung durch Compton--Streuung entsteht.
+        \item MACHOs: \textbf{MA}ssive \textbf{C}ompact \textbf{H}alo \textbf{O}bjects sind eine Erklärung für die Dunkle Materie. Kandidaten sind massearme Sterne, Weisse Zwerge, Braune Zwerge, Schwarze Löcher. Es ist möglich, dass sie 20\% der vermuteten Dunklen Materie ausmachen.
+        \item WIMPs: \textbf{W}eakly \textbf{M}assive \textbf{I}nteracting \textbf{P}articles sind die Teilchen, aus der die Dunkle Materie bestehen soll. Ihre masse ist 10 bis 1000 mal die Masse von Neutronen oder Protonen. Sie besitzen quasi keine bzw.\ eine sehr schwache Wechselwirkung mit anderen Teilchen.
+        \item CMB: Der \textbf{C}osmic \textbf{M}irowave \textbf{B}ackground ab $z\approx 1100$ ist die aus dem Urknall verbliebene Schwarzkörperstrahlung (nahezu ein perfektes Spektrum mit Abweichung von $10^{-5}$) im Mikrowellenbereich. 
+        \item Farbindex: Der Farbindex ist definiert als die Differenz zwischen der scheinbaren Helligkeit eines Himmelskörpers in einem kurzwelligen und langwelligen Bereich.
+        \item Ausfrieren: Aufgrund der Expansion des Universums verringert sich die Temperatur, was dazu führt, dass Teilchen weniger miteinander reagieren und ausfrieren.
+        \item Entkoppeln: Der Zeitpunkt, an dem die Expansionsrate des Universums größer als die Reaktionsrate der Teilchen ist, nennt man Entkopplung. 
+        \item Geometrie des Universums: Das Universum ist euklidisch und flach. Die Flachheit wird durch die kritische Dichte bestimmt.\\\indent
+                $\rho _{\,\text{crit}\,}<\Omega _\Lambda $: hyperbolisch\\\indent
+                $\rho _{\,\text{crit}\,}=\Omega _\Lambda $: flach\\\indent
+                $\rho _{\,\text{crit}\,}>\Omega _\Lambda $: sphärisch\\
+                Ist das Universum sphärisch, kommt die Ausdehnung irgendwann zum Stillstand und das Universum kollabiert.
+        \item $\Lambda $CDM--Modell: Das $\Lambda $ (kosmologische Konstante) \textbf{C}old \textbf{D}ark \textbf{M}atter Modell ist ein kosmologisches Modell, das mit sechs Parametern die Entwicklung des Urknalls seit dem Universum beschreibt. Es besagt, dasss die kosmologische Konstante $\Lambda $ einen von null verschiedenen Wert hat.
+        \item Eddington--Leuchtkraft: Die Obergrenze der Leuchtkraft eines AGNs, ab der kein Gas mehr in die Akkretionsscheibe fallen kann. Der Strahlungsdruck übersteigt die Gravitationskraft.
+        \item Sunyaev--Zeldovich Effekt: Der Sunyaev--Zeldovich Effekt beschreibt den Mangel niederenergetischer Photonen und den Überschuss höherenergetischer Photonen im CMB aus der Richtung von Galaxienhaufen. In Galaxienhaufen wird die Energie der Photonen des CMB durch den inversen Compton--Effekt erhöht. Dies ist auch eine Methode Galaxienhaufen zu lokalisieren.
+        \item Einstein de--Sitter Universum: Das Einstein de--Sitter Universum ist ein materiedominiertes Universum mit $\Omega _m=1$ und $\Omega _r=\Omega _\Lambda =0$.
+        \item de--Vaucouleur--Profil: Das de--Vaucouleur--Profil ist das Helligkeitsprofil von Spiralgalaxien.
+        \item Ly--$\alpha $--Wald: Der Ly--$\alpha $--Wald ist ein Spektrum an Absorptionslinienvon neutralem Wasserstoff der Ly--$\alpha $--Linie. Das globale Maximum in diesem Spektrum ist die Emissionslinie selbst; die Minima sind Absorptionslinien von neutralem Wasserstoff. Diese Absoptionslinien sind bei verschiedenen Wellenlängen zu sehen, da der Wasserstoff bei verschiedenen $z$ in der Sichtlinie vorhanden ist. Im Gegensatz zum Gunn--Peterson--Through werden nicht alle Photonen absorbiert, da auch ionisierter Wasserstoff zwischen neutralen Wolken existiert.
+        \item Gunn--Peterson--Through: Der Gunn--Peterson--Through ist das Spektrum nach der Ly--$\beta $--Linie, bei dem alle Photonen von neutralem Wasserstoff absorbiert werden. Es sind nicht wie im Ly--$\alpha $--Wald viele Absorptionslinien zu sehen, da der Wasserstoff aus der Epoche vor der Reionisation stammt, also nicht ionisiert ist.
+        \item Leuchtkraft: Energie pro Zeit.
+        \item Fluss: Energie pro Zeit pro Einheitsfläche.
+        \item Intensität: Energie pro Zeiteinheit pro Einheitsfläche pro Einheitswinkel .
+        \item Fundamentalebene: Die Fundamentalebene stellt eine Beziehung von elliptischen Galaxien zwischen dem Effektivradius, der durchschnittlichen Helligkeit und der Geschwindigkeitsdispersion her. Alle elliptischen Galaxien finden sich auf dieser (Fundamental--)Ebene in einem dreidimensionalem Koordinatensystem.
+        \item Skalenfaktor: Der Skalenfaktor beschreibt die Größe des Universums. Heute ist $a=1$.
+\end{enumerate}
+\textbf{Das frühe Universum}\\
+\textbf{Kosmische Inflation} ($10^{-35}\,\text{s}\,$ bis $10^{-32}\,\text{s}\,$): Ausdehnung um einen Faktor zwischen $10^{30}$ und $10^{50}$. Die Inflation könnte die globale Homogenität des Universums; die geringe Krümmung des Raumes; die Tatsache, dass keine magnetischen Monopole beobachtet werden; die großräumige Struktur der Galaxienhaufen; das Spektrum des CMB erklären.\\
+\textbf{$\nu $-- und $p,n$--Entkopplung} ($\sim 0,3\,\text{s}\,$; $T\approx 1\,\text{MeV}\,\approx 10^{10}\,\text{K}\,$): Neutronen und Protonen sind nicht mehr im Gleichgewicht, da aufgrund der geringen Energie zwar Neutronen zu Protonen zerfallen, aber keine neuen Neutronen mehr gebildet werden können. Neutrinos werden entkoppelt. Ein Neutrino--Hintergrund mit $T\approx 1,9\,\text{K}\,$ wird vorhergesagt. Das Verhältnis von Neutronen zu Protonen wird kleiner. Da die Neutronen entkoppeln kommt es nicht mehr zur Paarvernichtung und es konnte sich Deuterium bilden. Aus dem Deuterium bildet sich Helium (zu einem Anteil von 25\%).\\
+\textbf{$e^+,e^-$--Paarvernichtung} ($\sim >0,3\,\text{s}\,$; $T\approx 500\,\text{keV}\,$): $e^+,e^-$--Paare werden nicht mehr effizient erzeugt. Alle Paare werden in Photonen verwandelt; ein winziger Elektronenanteil bleibt übrig (Materie--Antimaterie Asymmetrie). Die Temepratur des Photonengases nimmt zu.\\
+\textbf{BBN, H--/He--Bildung} ($10^2\,\text{s}\,$ bis $10^3\,\text{s}\,$; $T\approx 8\,\text{keV}\,$): Bildung von $^4$He und anderer leichterer Nuklide aus Protonen und Neutronen\\
+\textbf{Ende Strahlungsdominierung}\\
+\textbf{Rekombination} ($3,78\cdot 10^{5}\,\text{y}\,$; $z\approx 1100$): Elektronen und Protonen bilden neutralen H. Ab diesem Zeitpunkt wird das Universum durchsichtig, da immer weniger Thomson--Streuung stattfindet. Dies erhöht die mittlere freie Weglänge von Photonen, woraus sich der CMB gebildet hat.\\
+\textbf{Reionisation} ($15\cdot 10^7\,\text{yr}\,$ bis $10^9\,\text{yr}\,$; $20>z>6$): Erste Galaxien und Quasare haben sich gebildet, die genügend Energie ausstoßen, um den neutralen Wasserstoff zu ionisieren.
+
+%}}}
+
+%}}}
+
+\end{document}

@@ -1,0 +1,498 @@
+%:LLPStartPreview
+%:VimtexCompile(SS)
+
+%{{{ physik211 - Elektrostatik
+
+\section{Elektrostatik}
+\subsection{Elementarladungen}
+Ladungsträger kommen als freie Ladungen vor. Mit dem Milikanversuch wurde gezeigt, dass sie als ganzzahlige Veilfache einer positiven oder negativen Elementarladung $Q=\pm n_\mathbb{N} e$ vorkommen, mit
+\[ 
+        e\approx 1,602\cdot 10^{-19}\,\text{C}\,
+.\] 
+Die Ladungen entsprechen den Angriffspunkten der elektromagnetischen Kräften (analog wie die Masse der Angriffspunkt der Gravitation ist). Ruhende Ladungen führen zu anziehenden oder abstoßenden Kräften. Zu sehen ist auch, dass das Abstandsverhalten dasselbe, wie das der Gravitation ist. Zudem weisen bewegte Ladungen eine geschwindigkeitsabhängige Kraft auf. Dies ist der Ursprung des Magnetismus und der Lorentzkraft.\\\indent
+Der Wert der Elementarladung ist eine Naturkonstante und hängt nicht von dem Bewegungszustand.\\\indent
+Die Zahl der Elementarladungen ist erhalten
+\[ 
+        \sum_{i,j}^{}\left(q^-_i+q^+_j\right)=\,\text{const.}\,
+.\] 
+\textbf{Neutronen} sind elektrisch neutrale Teilchen. Sie haben eine Lebensdauer von $\tau _n\approx 16\cdot 60\,\text{s}\,$ und zerfallen in
+\[ 
+        n\rightarrow p^++e^-+\overline{\nu }_{e^-}
+.\] 
+Dies zeigt, dass Ladungserhaltung auch gilt, wenn Ladungsträger erzeugt oder vernichtet werden.\\\\\indent
+Die \textbf{Stromstärke} wird in Amp\`ere \,\text{A}\, angegeben. Die \textbf{Ladung} in \,\text{As}\, oder \,\text{C}\, und entspricht der Ladung, die durch den Querschnitt eines elektrischen Leiters mit der Stromstärke von \,\text{1A}\, in einer Sekunde fließt. Die \textbf{Spannung} \,\text{V}\, wird in $\tfrac{\,\text{J}\,}{\,\text{As}\,}=\tfrac{\,\text{J}\,}{\,\text{C}\,}$ angegeben. Die \textbf{Faraday--Konstante} ist die Ladung von einem Mol eines Stoffes, also $F=e\cdot N_A$.  
+\\\hfill\\\textbf{Ladungsinfluenz}\\ 
+Wenn sich ein Körper mit Ladungsträgern einem leitenden Körper nähert, verschieben sich die beweglichen Ladungsträger des leitenden Körpers in Abhängigkeit der Ladung des sich annähernden Körpers.
+
+\subsection{Coulomb--Gesetz}
+Zwischen gleichnamigen Ladungen wirkt eine abstoßende Kraft
+\[ 
+        F\propto Q_1\cdot Q_2
+.\]
+Bei konstanten Ladungen und größer werdendem Abstand sinkt diese Kraft mit 
+\[
+        \dfrac{1}{r_{12}^2}
+,\]
+wobei $r_{12}$ der Abstand zwischen den Ladungen 1 und 2 ist. Daraus folgt das \textbf{Coulombsche Kraftgesetz} 
+\[ 
+        \vv{F}_2=-\vv{F}_1=f\cdot \dfrac{Q_1\cdot Q_2}{r_{12}^2}\cdot \hat{r}_{12}^2\qquad f=\dfrac{1}{4\pi \varepsilon \varepsilon _0}\,\text{in SI mit}\,[f]=\dfrac{\,\text{V}\,}{\,\text{As}\,}\,\text{m}\,
+.\] 
+$f$ beinhaltet die Komponente des Schwächungsfaktors $\varepsilon ^{-1}$. Im Vakuum beträgt dieser 1, in Luft $\approx 1$, in Wasser 80. $\varepsilon _0$ ist die \textbf{elektrische Feldkonstante} mit einem Wert von $\varepsilon _0\approx 8,854\cdot 10^{-12}\,\text{As}\,\,\text{V}^{-1}\,\text{m}^{-1}$. Im Vakuum ist $\varepsilon =1$ und $\tfrac{1}{4\pi \varepsilon _0}\approx 9\cdot 10^{9}\tfrac{\,\text{Vm}\,}{\,\text{As}\,}$, was zur Folge hat, dass wenige Ladungsträger genügen um große Spannungen zu erzeugen.
+
+\subsection{Potentielle Energie}
+Die Coulomb--Kraft ist ein, analog zur Gravitationskraft, konservatives Kraftfeld. Um die potentielle Energie zu errechnen wird sich zuerst die potentielle Energie zwischen zwei Ladungen in einem Abstand von $r=\infty$ als $E_p(\infty)=0$ definiert. Man kann dann zeigen, dass
+\begin{align*}
+        E_p(r)=E_p(r)-E_p(\infty)=W_{a,\infty\rightarrow r}&=-\int_{\infty}^{r}\vv{F}_c\left(\vv{r}'\right)\td \vv{r}'\\
+                                                           &=\int_{r}^{\infty}\vv{F}_c\left(\vv{r}'\right)\td \vv{r}'\\
+                                                           &=\dfrac{Q_1Q_2}{r}\dfrac{1}{4\pi \varepsilon \varepsilon _0}
+.\end{align*}
+Dies entspricht der Arbeit die benötigt wird, Ladungen von einem Abstand $r$ zu einem Abstand von $r=\infty$ zu bringen. Sind drei Ladungen in einem System gilt
+\begin{align*}
+        W_a&=\dfrac{1}{4\pi \varepsilon \varepsilon _0}\left(\dfrac{Q_1Q_2}{r_{12}}+\dfrac{Q_1Q_3}{r_{13}}+\dfrac{Q_2Q_3}{r_{23}}\right)
+.\end{align*}
+Für $N$ Ladungen gilt dann
+\[ 
+        E_p=\sum_{i=1}^{N}\sum_{j=1}^{i-1}\dfrac{Q_iQ_j}{r_{ij}}\dfrac{1}{4\pi \varepsilon \varepsilon _0}
+.\] 
+Besser ist allerdings mit einer kontinuierlichen Ladungsverteilung zu rechnen
+\begin{align*}
+        E_p&=\left[\int_{V}^{}\int_{V}^{}\dfrac{\rho (r')\rho (r'')}{|\vv{r}'-\vv{r}''|}\td \tau '\td \tau ''\right]\dfrac{1}{4\pi \varepsilon \varepsilon _0}
+,\end{align*}
+mit $\rho (r)_i$ als Ladungsdichte und $\tau $ als infinitesimales Volumenelement. Zudem gilt
+\[ 
+        \Delta Q_i=\Delta \tau \cdot \rho (r_i)
+.\] 
+
+\subsection{Elektrisches Feld}
+Die Kraft die auf eine Testladung wirkt, wenn sie in einem Abstand von $\vv{r}_{jq}$ zu einem Körper mit elektrischer Ladung ist, ist
+\begin{align*}
+        F_q=\sum_{j}^{}F_{jq}&=q\sum_{j}^{}\dfrac{Q_j\cdot \hat{r}_{jq}}{r_{jq}^2}\dfrac{1}{4\pi \varepsilon \varepsilon _0}\\
+                             &=q\cdot \underbrace{\vv{E}(\vv{r})}_{\,\text{el. Feldstärke}\,}
+.\end{align*}
+Besteht das System nur aus zwei Ladungen, so gelten äquivalente Ausdrücke
+\begin{align*}
+        \vv{E}_1(\vv{r}_1)&=\dfrac{q_1\hat{r}_1}{r_1^2}\dfrac{1}{4\pi \varepsilon \varepsilon _0}\\
+        \vv{E}_2(\vv{r}_2)&=\dfrac{q_2\hat{r}_2}{r_2^2}\dfrac{1}{4\pi \varepsilon \varepsilon _0}\\
+                          &=-\dfrac{q_2\hat{r}_1}{r_1^2}\dfrac{1}{4\pi \varepsilon \varepsilon _0}
+.\end{align*}
+Bei der Ermittlung des elektrischen Feldes muss die Probeladung ausgeschlossen werden.
+
+\subsubsection{Wirbelfreiheit eines el. Feldes}
+Wenn ein elektrisches Feld durchschritten wird und wieder am Anfangspunkt angekommen wird, wird keine Arbeit verrichtet
+\begin{align*}
+        W&=\oint_{}^{}\left(\vv{F}(\vv{r})\cdot \td \vv{s}\right)\\
+        \dfrac{W}{q}&=\oint_{}^{}\left(\dfrac{\vv{F}(\vv{r})}{q}\cdot \td \vv{s}\right)=\oint_{}^{}\left(\vv{E}(\vv{r})\cdot \td \vv{s}\right)=0
+.\end{align*}
+Dies ist eine fundamentale Eigenschaft von elektrostatischen Feldern. Alternativ lässt sich auch die Rotation betrachten
+\begin{align*}
+        \,\text{rot}\,\vv{E}(\vv{r})=0=\vv{\nabla }\times \vv{E}=\begin{pmatrix}
+                                            \partial_x\\\partial_y\\\partial_z
+                                    \end{pmatrix}\times \begin{pmatrix}
+                                            E_x\\E_y\\E_z
+                                    \end{pmatrix}=\begin{pmatrix}
+                                            0\\0\\0
+                                    \end{pmatrix}
+.\end{align*}
+
+\subsection{Elektrisches Potential}
+Wird ein Weg von $p_1$ nach $p_2$ durch ein elektrisches Feld gewählt gilt
+\begin{align*}
+        \dfrac{W_{q,1\rightarrow 2}}{q}&=\dfrac{1}{q}\int_{p_1}^{p_2}\left(\vv{F}_c\cdot \td \vv{s}\right)\\
+                                       &=\int_{p_2}^{p_1}\left(\vv{E}\cdot \td \vv{s}\right)\\
+                                       &=\varphi _2-\varphi _1\\
+                                       &=U_{21}
+.\end{align*}
+$\varphi _2,\varphi _1$ ist dann das elektrische Potential mit $U_{21}$ der Potentialsdifferenz.Anders ausgedrückt, da $\vv{E}$ konservativ ist
+\[ 
+        \vv{E}\left(\vv{r}\right)=-\vv{\nabla }\varphi \left(\vv{r}\right)
+.\] 
+Die Einheit ist $[\varphi ]=\tfrac{\,\text{W}\,_{\,\text{el}\,}}{\,\text{Q}\,}=\tfrac{\,\text{J}\,}{\,\text{As}\,}=\,\text{V}\,$, sowie $[\vv{E}]=\tfrac{\,\text{V}\,}{\,\text{m}\,}$.
+
+\subsubsection{Punktladungen}
+Das Potential einer Punktladung ist
+\begin{align*}
+        \varphi (r)&=\varphi (r)-\underbrace{\varphi (\infty)}_{=0}\\
+                   &=\int_{r}^{\infty}\left(\vv{E}\left(\vv{r}\right)\cdot \td \vv{r}\right)\\
+                   &=\int_{r}^{\infty}\dfrac{Q\left(\hat{r}\cdot \td \vv{r}\right)}{4\pi \varepsilon \varepsilon _0r^2}
+.\end{align*}
+Das Potential einer Ladungsverteilung mit $N$ Punktladungen $Q_i$ and Orten $\vv{r}_i$ mit $i \in \mathbb{N}$ 
+\begin{align*}
+        \varphi \left(\vv{r}_p\right)&=\sum_{i}^{}\dfrac{1}{4\pi \varepsilon \varepsilon _0}\dfrac{Q_i}{|\vv{r}_i-\vv{r}_p|}
+,\end{align*}
+wobei $\vv{r}_p$ der Abstand zur Probeladungs / zum Betrachtungspunkt ist.
+
+\subsubsection{Kontinuierliche Ladungsverteilung mit Ladungsdichte}
+Eine kontinuierliche Ladungsverteilung mit der Ladungsdichte $\rho \left(\vv{r}_i\right)$ im Volumenelement $\Delta \tau _i$ ist
+\[ 
+        \Delta Q_i=\rho \left(\vv{r}_i\right)\cdot \Delta \tau _i
+.\] 
+Das elektrostatische Potential im Beobachtungspunkt $\vv{r}_p$ ist
+\begin{align*}
+        \varphi \left(\vv{r}_p\right)&=\left[\lim_{\Delta \tau \rightarrow \td \tau ,N\rightarrow \infty}\sum_{i=n}^{N}\dfrac{\rho \left(r_i\right)\Delta \tau _i}{|\vv{r}_i-\vv{r}_p|}\dfrac{1}{4\pi \varepsilon \varepsilon _0}\right]\\
+                                     &=\dfrac{1}{4\pi \varepsilon \varepsilon _0}\int_{V}^{}\left(\dfrac{\rho \left(\vv{r}\right)}{|\vv{r}-\vv{r}_p|}\cdot \td \tau \right)
+.\end{align*}
+Ein einfaches Beispiel ist das Wasserstoffatom, wessen Potential einem $\tfrac{1}{r}$--Verhalten folgt. Da das Proton viel schwerer als das Elektron ist, kann es als fast statisch angenommen werden und beide Ladungen sind Punktladungen. Schwerere Atome sind deutlich komplexer. Der Kern kann weiterhin als Punktladungs angenommen werden, aber die Elektronen werden zahlreicher, also kommt es zu einer Ladungsverteilung, und die Elektronen beeinflussen sich gegenseitig. Im Kern wirken zudem die langreichweitigen abstoßenden Kräfte zwischen den Protonen, mit der potentiellen Energie
+\[ 
+        E_p=\sum_{i=1}^{N}\sum_{j=1}^{i-1}\dfrac{Q_iQ_j}{r_{ij}}\dfrac{1}{4\pi \varepsilon \varepsilon _0}\propto \,\text{Z}\,
+;\] und die kurzreichweitigen starken Wechselwirkungen der Nukleonen, welche dieses Potential kompensieren, mit
+\[ 
+        E_a\propto \,\text{A}\,
+.\] 
+Existieren (vor Allem in schweren Kernen) mehr Neutronen als Protonen, dann ist der Kern stabil. Ab einer gewissen Massezahl, bzw.\,Ungleichgewicht von Protonen und Neutronen ist der Kern nicht mehr stabil. Dies ist die Ursache für Kernspaltung. Die dabei freiwerdende Energie ist zu einem kleinen Teil die Coulomb--Abstoßung, zum größeren Teil allerdings die starke Wechselwirkung.
+
+\subsection{1. Maxwell--Gesetz}
+Mit der $\tfrac{1}{r^2}$--Abhängigkeit und dem Gauß'schen Satz lässt sich eine Beziehung zwischen der Ladungsverteilung und einem elektrischen Feld herstellen.
+\\\hfill\\\textbf{Gauß'scher Satz und Stromdichte}\\ 
+Der Strom $I=\tfrac{\td Q}{\td t}$ ist die Ladung pro Zeiteinheit. Er lässt sich auch als Fläche mal Stromdichte $\vv{A}\cdot \vv{j}=A\cdot \hat{n}\cdot \vv{j}$ darstellen. Für eine beliebige Fläche $A$ lässt sich schreiben
+\[ 
+        I=\int_{A}^{}\left(\vv{j}\left(\vv{r}\right)\cdot \td \vv{A}'\right)
+.\] 
+Für eine geschlossene Fläche (integration über die Oberfläche) gilt
+\[ 
+        I=\oint_{O}^{}\left(\vv{j}\left(\vv{r}\right)\cdot \td \vv{O}'\right)
+.\] 
+Benutzt man einen Quader als Volumenelement, dann fließt auf einer Seite eine Stromdichte von $j_x(x)$ bzw.\,$\td Q_x^-$ rein und auf der anderen Seite eine Stromdichte von $j_x(x+\td x)$ bzw.\,$\td Q_x^+$ wieder raus
+\begin{align*}
+        \td Q_x^+&=j_x\left(x+\td x\right)\td y\td z\td t\\
+        \td Q_x^-&=j_x\left(x\right)\td y\td z\td t
+.\end{align*}
+Daraus folgt
+\begin{align*}
+        \td Q_x&=\td Q_x^+-\td Q_x^-\\
+               &=\left[j_x\left(x+\td x\right)-j_x\left(x\right)\right]\td y\td z\td t\\
+               &=\diffp[]{j_x}{x}\underbrace{\td x\td y\td z}_{=\td V}\td t\\
+        \diff[]{Q_x^2}{V\td t}&=\diffp[]{j_x}{x}
+.\end{align*}
+Analog für $y$ und $z$ Richtung ist dann die Gesamtladung
+\[ 
+        \diff[]{Q^2}{V\td t}=\diffp[]{j_x}{x}+\diffp[]{j_y}{y}+\diffp[]{j_z}{z}=\,\text{div}\,\vv{j}=\vv{\nabla }\vv{j}
+.\] 
+Falls $\,\text{div}\,\vv{j}=0$, dann ist $\vv{j}$ Quellenfrei. Der Gauß'sche Satz besagt dann
+\begin{align*}
+        I=\diff[]{Q}{t}&=\int_{V}^{}\,\text{div}\,\vv{j}\td V\\
+                       &\stackrel{!}{=}\oint_{}^{}\left(\vv{j}\td \vv{A}\right) 
+.\end{align*}
+\hfill\\\textbf{Elektrischer Kraftfluss}\\ 
+Der elektrische Kraftfluss $\Phi $ ist proportional zur Zahl der durch $A$ hindurchtretende Feldlinien
+\begin{align*}
+        \Phi _E&=\int_{A}^{}\left(\vv{E}\cdot \td \vv{A}'\right)\\
+               &=\int_{A}^{}E\cos \alpha \td A'\\
+        \td \Phi _E&=E\cdot \td A'\cos \alpha \\
+                   &=\left(\vv{E}\cdot \td \vv{A}'\right)
+,\end{align*}
+mit $\alpha $ dem Winkel zwischen der Flächennormalen und den elektrischen Feldlinien. Ist eine Ladung von einer Kugel eingeschlossen ist der elektrische Kraftfluss
+\begin{align*}
+        \Phi _E&=\oint_{\,\text{Kugelschale}\,}^{}\left(\vv{E}\cdot \td \vv{A}\right)\\
+               &=\dfrac{1}{4\pi \varepsilon \varepsilon _0}\int_{0}^{2\pi }\int_{0}^{\pi }\dfrac{Q}{r^2}r^2\cdot \sin \theta \td \theta \td \varphi \\
+               &=\dfrac{Q}{4\pi \varepsilon \varepsilon _0}\oint_{}^{}\td R\\
+               &=\dfrac{Q}{\varepsilon \varepsilon _0}
+.\end{align*}
+Der Abfall der Feldstärke mit $\tfrac{1}{r^2}$ wird durch den Zuwachs der Kugeloberfläche mit $r^2$ kompensiert. Dies ist auch der Fall, wenn die Integration über eine beliebige geschlossene Fläche durchgeführt wird. Sollte die Ladung keine Punktladungs, sondern eine Ladungsverteilung sein, dann gelten diese Zusammenhänge solange, wie die Ladungsverteilung die gleichen Symmetrien wie die Punktladung aufweist. Man kann also jedem Volumenelement $\td \tau $ ein Ladungselement $\td Q$ zuordnen, also $\td Q=\rho _E\left(\vv{r}\right)\cdot \td \tau $. Der Beitrag zum elektrischen Kraftfluss ist dann $\td \Phi _E=\tfrac{\td Q}{\varepsilon \varepsilon _0}$. Im allgemeinen, bzw die \textbf{erste Maxwell'sche Gleichung}
+\begin{align*}
+        \Phi _E&=\int_{V}^{}\dfrac{\td Q}{\varepsilon \varepsilon _0}\\
+               &=\dfrac{1}{\varepsilon \varepsilon _0}\int_{V}^{}\left(\rho _E\left(\vv{r}\right)\cdot \td \tau \right)\\
+               &\stackrel{!}{=}\int_{}^{}\left(\vv{E}\cdot \td A'\right)
+.\end{align*}
+\textbf{1. Maxwell'sche Gesetz:} Die Quelldichte des elektrostatischen Feldes $\,\text{div}\,\vv{E}$ ist proportional zur Ladungsdichte $\rho $ mit dem Proportionalitätsfaktor $\varepsilon \varepsilon _0$ 
+\begin{align*}
+        \oint_{A}^{}\left(\vv{E}\cdot \td\vv{A}\right)=\int_{V}^{}\,\text{div}\,\vv{E}\td \tau \Rightarrow  \varepsilon \varepsilon _0\,\text{div}\,\vv{E}=\rho 
+.\end{align*}
+Da das elektrostatische Feld ein konservatives Kraftfeld ist kann man es mit dem Gradienten des skalaren Feld eines elektrostatischen Potentials herleiten $\vv{E}=-\vv{\nabla }\varphi \left(\vv{r}\right)$. Setzt man diesen Ausdruck noch ein erhält man die \textbf{Poissongleichung}
+\begin{align*}
+        -\,\text{div}\,\text{grad}\,\varphi =-\Delta \varphi =\dfrac{\rho }{\varepsilon \varepsilon _0}
+.\end{align*}
+Betrachtet man den Kraftfluss im Außenraum $r>R$ einer kugelsymmetrischen Ladung mit Radius $R$, so gilt
+\[ 
+        \oint_{A_{\,\text{Kugel}\,}}^{}\left(\vv{E}\cdot \td \vv{A}'\right)=\int_{A_{\,\text{Kugel}\,}}^{}E\left(r\right)\cdot \underbrace{\left(\hat{r}\cdot \hat{r}\right)}_{=1}\cdot \td A=E\left(r\right)\cdot 4\pi r^2
+.\] 
+Wendet man nun das erste Maxwell'sche Gesetz an, folgt (für $r>R$)
+\begin{align*}
+        \dfrac{1}{\varepsilon \varepsilon _0}\int_{V}^{}\rho \left(r\right)\td \tau &=\oint_{A}^{}\left(\vv{E}\cdot \td \vv{A}'\right)\qquad |r>R\\
+        \dfrac{Q}{\varepsilon \varepsilon _0}&=E\left(r\right)\cdot 4\pi r^2\\
+        \vv{E}\left(r\right)&=\dfrac{Q}{r^2}\dfrac{1}{4\pi \varepsilon \varepsilon _0}\hat{r}
+.\end{align*}
+Das bedeutet, dass das Feld einer kugelsymmetrischen Ladungsverteilung im Außenraum identisch mit einer gleichstarken Punktladung im Mittelpunkt ist. Dies ist auch der Grund, warum im Coulomb--Gesetz $4\pi $ vorkommt. Das Potential ist dann
+\[ 
+        \varphi \left(\vv{r}\right)=\varphi \left(r\right)=\dfrac{Q}{4\pi \varepsilon \varepsilon _0r}
+.\] 
+Sollte man das elektrische Feld innerhalb einer Ladungsverteilung, mit $\rho =\,\text{const.}\,$ betrachten, also $r<R$, folgt
+\begin{align*}
+        q=\int_{V_{\,\text{Kugel}\,r<R}}^{}\rho \left(r\right)\td \tau &=\rho _0\dfrac{4\pi }{3}r^3\\
+                                                                       &=Q\dfrac{r^3}{R^3}\\
+        \vv{E}\left(\vv{r}\right)&=\dfrac{q}{r^2}\dfrac{1}{4\pi \varepsilon \varepsilon _0}\hat{r}\\
+                                 &=\dfrac{Qr}{R^3}\dfrac{1}{4\pi \varepsilon \varepsilon _0}\hat{r}
+\end{align*}
+und das Potential
+\[ 
+        \varphi \left(r\right)=\dfrac{Q}{R}\dfrac{1}{4\pi \varepsilon \varepsilon _0}\left(\dfrac{3}{2}-\dfrac{r^2}{2R^2}\right)
+.\] 
+Ein wichtiges Beispiel ist der Atomkern mit $\rho =\,\text{const.}\,$. Die Protonen bauen ein Coulombpotential auf, welches andere Atomkerne auf Distanz hält.
+
+\subsection{Oberflächenladung auf Leitern}
+\textbf{Leiter} sind makroskopische Objekte, in denen sich Elektronen frei bewegen können und ortsfeste Ionen hinterlassen. Wird ein Leiter mit einer Ladung \glqq beladen\grqq{}, dann verteilt sich die Ladung in einem elektrostatischen Gleichgewicht auf der Oberfläche und das Innere des Leiters bleibt neutral. Befindet sich im Inneren eine nicht kompensierte überschüssige Ladung, dann induziert diese ein el.\,Feld, welches die freien Ladungsträger anzieht und somit die Ladung kompensiert (die gleiche Ladung wird dann auf die Oberfläche geschoben).\\\indent
+Im folgenden wird von elektrostatischen Situationen ausgegangen, also die Ladungsträger bewegen sich nicht.\\\\\indent
+Betrachtet man nun eine Ladungsverteilung auf einer beliebigen gekrümmten Oberfläche und die Ladungen befinden sich in einem Gleichgewicht, dann baut jede Ladung ein zur Oberfläche orthogonales $E_{\perp}$--Feld auf (mit $E_{||}=0$, da sich die Ladungen sonst nicht mehr in einem Gleichgewicht befinden würden). Im Inneren ist $\vv{E}=0$. In einem Abstand $d$ zur Oberfläche ist das elektrische Potential $\varphi \left(d\right)=\,\text{const.}\,$. Diese Flächen werden \textbf{Äquipotentialflächen} genannt. Jeder Weg $\vv{s}$ parallel zu der Oberfläche steht immer senkrecht zu $\vv{E}$. $\diff[]{\varphi }{\vv{s}}=0$.\\\indent
+Man führt die Größe \textbf{Oberflächenladungsdichte} $\sigma $ ein, welche die Ladungsdichte an der Oberfläche beschreibt, da die Ladungsdichte selbst nur an der Oberfläche $\rho \neq 0$ ist. Entferne man sich also ein $\varepsilon $ von der Oberfläche wäre sie wieder $\rho =0$. Sie wird definiert als Ladung pro Fläche
+\[ 
+        \td Q=\sigma \cdot \td A\qquad \left[\sigma \right]=\dfrac{\,\text{C}\,}{\,\text{m}\,^2}
+.\] 
+Der elektrische Kraftfluss ist dann
+\[ 
+        \td \Phi _E=\left(\vv{E}\cdot \td \vv{A}\right)=E\cdot \td A=\dfrac{\td Q}{\varepsilon \varepsilon _0}=\dfrac{\sigma \td A}{\varepsilon \varepsilon _0}
+,\] 
+also
+\[ 
+        \sigma =\varepsilon \varepsilon _0\cdot E
+.\] 
+Die Gesamtladung $Q$ ist geometrieabhängig, aber im allgemeinen
+\[ 
+        Q=A\cdot \sigma 
+.\] 
+Sie ist auf der Oberfläche gleichverteilt. Das Potential mit $R$ als Radius der Ladungsverteilung
+\[ 
+        \varphi =\dfrac{Q}{R}\dfrac{1}{4\pi \varepsilon \varepsilon _0}\Rightarrow E=\dfrac{\sigma }{\varepsilon \varepsilon _0}=\dfrac{\varphi }{R}
+.\] 
+Je kleiner also der Radius $R$, desto größer wird das elektrische Feld $E$. Da die Coulomb--Kraft proportional zur Feldstärke ist, führt dies zur Emission von Ladungsträgern bei hohen Spannungen. Zum Beispiel fängt sich ein $S$--förmiger Leiter an zu drehen, wenn die angelegte Spannung hoch genug ist, sodass die Ladungsträger in die Luft emittiert werden.
+\\\hfill\\\textbf{Faraday'scher Käfig}\\ 
+Ist ein Raum von elektrischen Leitern umschlossen, so bleibt der Raum innerhalb des Käfigs Feldfrei und es existiert nur ein Feld am Rand des Käfigs. Dies geschieht aufgrund des ersten Maxwell'schen Gesetzes.
+
+\subsection{Influenz}
+Wird ein elektrisch neutraler Leiter in ein $E$--Feld gebracht, dann sammeln sich negative Ladungsträger auf der einen und hinterlassen potivie Löcher auf der anderen Seite. Durch diese Ladungsverschiebung baut sich ein Gegenfeld $E'$ auf, welches genau so stark ist, dass das ursprüngliche Feld im Inneren des Leiters kompensiert wird
+\[ 
+        \vv{E}\left(\vv{r}\right)+\vv{E}'\left(\vv{r}'\right)=0
+.\] 
+Dasselbe Phänomen ist auch zu beobachten, wenn man zwei Leiter zwischen zwei Kondensatorplatten, welche ein $E$--Feld aufgebaut haben, hält. Zieht man die beiden Leiter etwas auseinander, dann wird zwischen diesen Leitern ein $E$--Feld aufgebaut, und sie werden geladen.\\\indent
+Der Grund für diese \textbf{Influenz} ist die sogenannte \textbf{Spiegelladung}. Wirkt ein elektrisches Feld einer Punktladung $Q$ auf einen Leiter im Abstand $d$, dann wird in diesem eine Spiegelladung $-Q$ im Abstand $d$ induziert. Ladung und Spiegelladung ziehen sich aufgrund der Coulomb--Kraft mit dem Abstand $2d$ an.
+
+\subsection{Kondensatoren und Kapazität von Leitern}
+Man betrachtet einen einzelnen, isolierten Leiter. Das Potential ist streng proportional zur Ladung $Q$ auf dem Leiter. Die Kapazität eines solchen Leiters ist
+\[ 
+        C=\dfrac{Q}{\varphi \left(Q\right)-\varphi \left(Q=0\right)}=\dfrac{Q}{U}\qquad \left[C\right]=\dfrac{\,\text{C}\,}{\,\text{V}\,}=\,\text{F}\,
+,\] 
+mit $U$ der Spannung. Die Kapazität ist also die Ladung geteilt durch die Potentialdifferenz des Leiters mit und ohne Ladungs gegenüber seiner Umgebung.
+\\\hfill\\\textbf{Beispiel: Kapazität einer leitenden Kugel}\\ 
+Das elektrostatische Potential einer leitenden Kugel ist
+\[ 
+        \varphi =\dfrac{1}{4\pi \varepsilon \varepsilon _0}\dfrac{Q}{R}
+.\] 
+Die Kapazität ist dann
+\[ 
+        C=4\pi \varepsilon \varepsilon _0R
+.\] 
+\hfill\\\textbf{Kondensatoren}\\ 
+Bei Kondensatoren kann die Kapazität durch Influenz gesteigert werden. Wird auf Kondensatorplatte eine Spannung angelegt, dann baut sich auf der anderen Platte eine Spiegelladung auf. Die Gesamtladung sowie das $E$--Feld im elektrostatischen Fall bleibt konstant
+\[ 
+        \sigma =\varepsilon \varepsilon _0E=\dfrac{Q}{A}=\,\text{const.}\,
+.\] 
+Zwischen den Platten ist die Ladung sowie die Ladungsdichte $Q=0\Rightarrow \rho =0$. Daraus folgt, dass $-\,\text{div}\,\text{grad}\,\varphi =0$. In einer Dimension gilt dann
+\begin{align*}
+        \diffp[2]{\varphi }{x}&=0\\
+        \varphi \left(x\right)&=ax+b\qquad \left|\begin{aligned}
+                \varphi \left(0\right)&=\varphi _1\\\varphi \left(d\right)&=\varphi _2
+        \end{aligned}\right.\Rightarrow \varphi _2-\varphi _1=U\\
+        \varphi \left(x\right)&=-\dfrac{U}{d}+\varphi _1
+.\end{align*}
+Dann ist das elektrische Feld
+\begin{align*}
+        \vv{E}&=-\,\text{grad}\,\varphi \\
+              &=-\left(\diffp[]{\varphi }{x},\underbrace{\diffp[]{\varphi }{y}}_{=0},\underbrace{\diffp[]{\varphi }{z}}_{=0}\right)\\
+              &=\left(\dfrac{U}{d},0,0\right)
+.\end{align*}
+Damit folgt für die Kapazität
+\[ 
+        C=\dfrac{Q}{U}=\dfrac{Q}{E_xd}=\dfrac{\varepsilon \varepsilon _0E_xA}{E_xd}=\varepsilon \varepsilon _0\dfrac{A}{d}
+.\] 
+Je kleiner als oder Abstand $d$, desto größer die Kapazität $C$.\\\indent
+Schaltet man zwei Kondensatoren parallel, so addieren sich die Kapazitäten, da sich die Flächen addieren. Schaltet man zwei Kondensatoren in Reihe, dann ist an dem ersten Kondensator eine Spannung $+Q$ welche eine Spiegelladung $-Q$ induziert, welche eine Speigelladung $+Q$ am nächsten Kondensator induziert, welche eine Spiegelladung $-Q$ induziert. Bei dieser Schaltung gilt $\tfrac{1}{C}=\tfrac{1}{C_1}+\tfrac{1}{C_2}$.
+
+\subsection{Energiedichte}
+Feldlinien lassen sich in die zwei Komponenten der positiven Ladungen mit dem $\vv{E}^+$--Feld und negativen Ladungen mit dem $\vv{E}^-$--Feld aufteilen, wobei gilt $|\vv{E}^++\vv{E}^-|=E=\tfrac{Q}{\varepsilon \varepsilon _0A}$. Die beiden Feldstärken haben die Relation $|\vv{E}^+|=|\vv{E}^-|=\tfrac{1}{2}\tfrac{Q}{\varepsilon \varepsilon _0A}$. Die korrespondierenden Kräfte sind $\vv{F}^+=\left(+Q\right)\vv{E}^-=-\vv{F}^-=\left(-Q\right)\vv{E}^+$, mit $|\vv{F}^+|=\tfrac{1}{2}\tfrac{Q^2}{\varepsilon \varepsilon _0A}=|\vv{F}^-|$. Mit $d$ dem Abstand der Kondensatorplatten folgt für die Arbeit (entspricht der potentiellen Energie des $\vv{E}$--Feldes)
+\[ 
+        W_{d\rightarrow 0}:=|\vv{F}^+|\cdot d=\dfrac{1}{2}\dfrac{Q^2}{\varepsilon \varepsilon _0A}\cdot d:=E_p(d)-E_p(0)
+.\] 
+Für den Plattenkondensator gilt dann
+\begin{align*}
+        \sigma =\dfrac{Q}{A}&=\varepsilon \varepsilon _=E\\
+        E_p\left(d\right)&=\dfrac{1}{2}\dfrac{\left(\varepsilon \varepsilon _0AE\right)^2}{\varepsilon \varepsilon _0A}d\\
+                         &=\dfrac{1}{2}\varepsilon \varepsilon _0E^2\underbrace{A\cdot d}_{=\tfrac{1}{2}\varepsilon \varepsilon _0E^2V}
+.\end{align*}
+Pro Volumenelement gilt
+\[ 
+        \diff[]{E_p}{V}=\rho _{E_p}=\dfrac{1}{2}\varepsilon \varepsilon _0E^2
+,\] 
+was der Energiedichte des elektrischen Feldes entspricht.\\\indent
+Der Kondensator kann auch als Energiespeicher benutzt werden. Es gilt $C\cdot d=\varepsilon \varepsilon _0A$, womit
+\[ 
+        E_p\left(C,Q,U\right)=\dfrac{1}{2}\dfrac{Q^2d}{\varepsilon \varepsilon _0A}=\dfrac{1}{2}\dfrac{Q^2d}{Cd}=\dfrac{1}{2}U^2C=\dfrac{1}{2}QU
+.\] 
+Dieser Ausdruck gilt für alle Kondensatoren.
+
+\subsection{Elektrischer Dipol und elektrisches Dipolmoment}
+Das elektrische \textbf{Potential eines Dipols} setzt sich aus den Beiträgen beider Ladungen zusammen
+\[ 
+        \varphi _D\left(\vv{r}\right)=\dfrac{1}{4\pi \varepsilon \varepsilon _0}\left(\dfrac{+Q}{|\vv{r}_+|}+\dfrac{-Q}{|\vv{r}_-|}\right)
+,\] 
+mit $d$ dem Abstand der Ladungen und $\vv{r}_+,\vv{r}_-$ dem Abstand der jeweiligen Ladung zur Probeladung. Man betrachtet hier nur Fälle für $r\gg d$, da der Dipol auf mikroskopischer und der Abstand zur Probeladung auf makroskopischer Skala ist. Mit $\theta $ dem Winkel zwischen $\tfrac{d}{2}$ und $\vv{r}$ folgen die Näherungen $|\vv{r}^+\approx |\vv{r}|-\tfrac{d}{2}\cos \theta $ und $|\vv{r}^-|\approx |\vv{r}|+\tfrac{d}{2}\cos \theta $, also
+\begin{align*}
+        \varphi \left(r,\theta \right)\approx \dfrac{Q}{4\pi \varepsilon \varepsilon _0}\left(\dfrac{1}{r-\tfrac{d}{2}\cos \theta  }-\dfrac{1}{r+\tfrac{d}{2}\cos \theta }\right)
+,\end{align*}
+mit $\tfrac{1}{r-a}+\tfrac{1}{r+a}=\tfrac{2a}{r^2-a^2}$ folgt
+\[ 
+        \approx \dfrac{Q}{4\pi \varepsilon \varepsilon _0}\dfrac{d\cos \theta }{r^2-\tfrac{d^2}{4}\cos ^2\theta }
+.\] 
+Also gilt für das Potential eines Dipols
+\[ 
+        \varphi _D\left(r,\theta \right)=\dfrac{Q}{4\pi \varepsilon \varepsilon }\dfrac{d\cos \theta }{r^2}\qquad \varphi _M=\dfrac{Q}{4\pi \varepsilon \varepsilon _0}\dfrac{1}{r}
+.\] 
+Dieses fällt im Gegensatz zum Monopol mit $\tfrac{1}{r^2}$ ab. Hätte das Dipol zwei gleichnamige Ladungen würde es wiederum mit $\tfrac{1}{r}$ abfallen.\\\indent
+Mit $d\cos \theta =\vv{d}\cdot \hat{r}$ folgt das \textbf{Dipolmoment} 
+\[ 
+        \vv{p}=\vv{d}\cdot Q
+.\] 
+Schreibt man das Potential mit dem Dipolmoment um, gilt
+\[ 
+        \varphi \left(r,\theta \right)\approx \dfrac{\vv{p}\cdot \hat{r}}{4\pi \varepsilon \varepsilon _0r^2}
+.\] 
+
+\subsubsection{Elektrisches Feld des Dipolsmoments}
+Das elektrische Feld des Dipolmoments ist
+\[ 
+        \vv{\nabla }\cdot \varphi =\vv{E}
+.\] 
+Es bietet sich an hier Kugelkoordinaten zu verwenden
+\begin{align*}
+        \vv{\nabla }_{r,\theta ,\varphi }&=\partial_r \hat{r}+\dfrac{1}{r}\partial_\theta \hat{\theta }+\dfrac{1}{\cos \theta }\partial_\Phi \hat{\Phi }
+.\end{align*}
+Also folgt
+\begin{align*}
+        \vv{E}\left(r,\theta \right)&=-\vv{\nabla }_{r,\theta ,\Phi }\cdot \varphi \left(r,\theta \right)\\
+                                    &=\dfrac{Q}{4\pi \varepsilon \varepsilon _0}\dfrac{1}{r^3}\left(2\cos \theta \hat{r}+\sin \theta \hat{\theta }\right)
+.\end{align*}
+Man erkennt, dass das $\vv{E}$--Feld eines Dipols mit $\tfrac{1}{r^3}$ abfällt, wohingegen das $\vv{E}$--Feld eines Monopols mit $\tfrac{1}{r^2}$ abfällt. Zudem kann man erkennen, dass das $\vv{E}$--Feld nicht mehr kugelsymmetrisch ist.
+
+\subsection{Dipolmoment im elektrischen Feld}
+Existiert ein Dipolmoment in einem $\vv{E}$--Feld, dann wirkt darauf eine Kraft $\vv{F}^\pm=\pm Q\vv{E}$, sowie ein Drehmoment
+\[ 
+        M=M^++M^-=\left(\dfrac{\vv{d}}{2}\times \vv{F}^+\right)+\left(\dfrac{-\vv{d}}{2}\times \vv{F}^-\right)=Q\left(\vv{d}\times \vv{E}\right)=\vv{p}\times \vv{E}
+.\] 
+Die potentielle Energie ist dann abhängig von dem Winkel $\theta $ (der Winkel zwischen dem $\vv{E}$--Feld und dem Dipolmoment)
+\[ 
+        E_p\left(\theta =\dfrac{\pi }{2}\right)-E_p\left(\theta \right)=\vv{x}\vv{F}^++\left(-\vv{x}\vv{F}^-\right)=d\cos \theta QE=pE\cos \theta 
+.\] 
+Viele Moleküle haben einen permanenten Dipol, wonach sie sich unter Einfluss eines $\vv{E}$--Feldes ausrichten.
+
+\subsubsection{Isolatoren im elektrischen Feld, Dielektrika}
+Leiter besitzen freie Ladungsträger, welches sich durch das Material bewegen können und so das $\vv{E}$--Feld im Inneren vollständig kompensieren können. Bei \textbf{Dielektrika} können sich Ladungsträger nicht frei bewegen, aber lokal verschieben, indem sich zum Beispiel Dipole nach dem $\vv{E}$--Feld ausrichten. Dies kann allerdings, nicht wie bei Leitern, ein $\vv{E}$--Feld vollständig kompensieren, sondern nur abschwächen.\\\indent
+Füllt man ein Kondensatorfeld mit einem Dielektrikum, dann erhöht sich die Kapazität um $\varepsilon $ 
+\[ 
+        C_D=\dfrac{\varepsilon Q_0}{U_0}=\varepsilon C_0
+,\] 
+mit $Q_0,U_0$ und $C_0$ als Ausgangsgrößen des Kondensators. Die potentielle Energie ist dann
+\[ 
+        E_p=\dfrac{1}{2}C_dU^2=\dfrac{1}{2}\varepsilon C_0U^2
+.\] 
+
+\subsubsection{Zylinderkondensator}
+Ein Zylinder der Länge $l$ und mit dem Radius $r$ erzeugt mit der Außenwand und einem Stab durch die Mitte, mit dem Radius $R_1$ ein radialsymmetrisches elektrisches Feld
+\begin{align*}
+        \int_{A}^{}\vv{E}\td \vv{A}&=\dfrac{1}{\varepsilon \varepsilon _0}\int_{V}^{}\rho \td V\\
+        2\pi rlE&=\dfrac{Q}{\varepsilon \varepsilon _0}\\
+        E&=\dfrac{Q}{2\pi \varepsilon \varepsilon _0rl}
+.\end{align*}
+Mit dem Abstand von der Außenseite des Stabs zur Zylinderwand $R_2$ ergibt sich die Spannung zu
+\begin{align*}
+        U&=\int_{R_1}^{R_2}E\td r\\
+         &=\int_{R_1}^{R_2}\dfrac{Q}{2\pi \varepsilon \varepsilon _0rl}\dfrac{1}{r}\td r\\
+         &=\dfrac{Q}{2\pi \varepsilon \varepsilon _0}\ln \left(\dfrac{R_2}{R_1}\right)
+.\end{align*}
+Die Kapazität ist dann
+\begin{align*}
+        C=\dfrac{Q}{U}=2\pi \varepsilon \varepsilon _0l\dfrac{1}{\ln \left(\tfrac{R_2}{R_1}\right)}
+.\end{align*}
+Mit dem Faktor $\varepsilon $ lässt sich auch ein Dielektrikum zwischen die Kondensatorplatten einbauen.
+
+\subsubsection{Dielektrische Verschiebung}
+Bisher gilt der Ausdruck
+\[ 
+        \dfrac{1}{\varepsilon \varepsilon _0}\int_{V}^{}\rho \left(\vv{r}\right)\td r=\oint_{A}^{}\left(\vv{E}\cdot \td\vv{A}\right) 
+.\] 
+Man definiert nun $\varepsilon \varepsilon _0\vv{E}=\vv{D}$, also
+\[ 
+        \int_{}^{}\left(\vv{D}\cdot \td \vv{A}\right)=\int_{V}^{}\rho \left(\vv{r}\right)\td V=Q \qquad \,\text{div}\,\vv{D}=\rho 
+.\] 
+Es ist nützlich den Einfluss des Dielektrikums explizit kenntlich zu machen. Man führt also die \textbf{dielektrische Polarisation} $\vv{P}$ ein
+\[ 
+        \vv{D}:=\varepsilon \varepsilon _0\vv{E}:=\vv{P}+\varepsilon _0\vv{E}\qquad \vv{P}=\left(\varepsilon -1\right)\varepsilon _0\vv{E}=\chi \varepsilon _0\vv{E}
+,\] 
+mit $\chi$ als \textbf{dielektrische Suszeptibilität}.\\\\\indent
+Wenn ein $\vv{E}$--Feld auf ein Atom wirkt, dann verschiebt es dort die positiven und negativen Ladungen. Der mittlere Abstand dieser Ladungen sei $d$ und das produzierte Feld sei $\vv{E}_{\,\text{pol}\,}$ mit den Ladungen $Q^-_{\,\text{pol}\,}$ und $Q^+_{\,\text{pol}\,}$. Dann ergibt sich für die Oberflächenladungsdichte
+\begin{align*}
+        \sigma _{\,\text{pol}\,}=\dfrac{Q_{\,\text{pol}\,}}{A}=\dfrac{N\cdot d\cdot A\cdot q}{A}=Nqd=Np
+,\end{align*}
+mit $N$ der Dichte der Dipole, $q$ der Ladungs $\mathbb{Z}e$ eines Dipols und $p$ der Polarisation eines einzelnen Dipols. Für die Dichte gilt
+\[ 
+        Np:=\dfrac{1}{V}\sum_{i}^{}|\vv{p}_i|=|\vv{P}|
+,\] 
+also für die Oberflächendichte
+\[ 
+        \sigma _{\,\text{pol}\,}=|\vv{P}|
+.\] 
+Solange $|\vv{E}|$ klein gegenüber der Feldstärke im Molekül / Atom ist, dann ist
+\[ 
+        \vv{p}_i\propto \vv{E}=\vv{E}_D\Rightarrow \vv{p}_i=\alpha \cdot \vv{E}_D
+,\] 
+mit $\alpha $ als Materialkonstante welche die Polarisierbarkeit eines Materials angibt.\\\indent
+Betrachtet man nun die elektrische Feldstärke einer Punktladung $Q$ im Dielektrikum, gilt (mit $\vv{E}_V=\tfrac{\sigma }{\varepsilon _0}$ im Vakuum)
+\begin{align*}
+        E_D&=\dfrac{\sigma -\sigma _{\,\text{pol}\,}}{\varepsilon _0}\\
+           &=E_V-\dfrac{|\vv{P}|}{\varepsilon _0}\\
+        \vv{E}_D&=\dfrac{\vv{E}_V}{1+\chi}\\
+                &=\dfrac{\vv{E}_V}{\varepsilon }
+.\end{align*}
+Dann folgt
+\[ 
+        \vv{P}=\varepsilon _0\chi\vv{E}_D=\varepsilon _0\left(\varepsilon -1\right)\vv{E}_D=\varepsilon _0\left(\vv{E}_V-\vv{E}_D\right)
+.\] 
+
+\subsection{Dielektrischer Verschiebungsstrom}
+Der dielektrische Verschiebungsstrom ist die effektive Formulierung der elektrostatik in Materie. Mit dem ersten Maxwell--Gesetz
+\begin{align*}
+        \oint_{}^{}\left(\vv{E}_D\cdot \td \vv{A}\right)&=\dfrac{1}{\varepsilon _0}Q_{\,\text{ges}\,}=\dfrac{1}{\varepsilon _0}\left(Q+Q_{\,\text{pol}\,}\right)\\
+        \,\text{div}\,\vv{E}_D&=\dfrac{1}{\varepsilon _0}q_{\,\text{ges}\,}=\dfrac{1}{\varepsilon _0}\left(q+q_{\,\text{pol}\,}\right)\\
+        \,\text{div}\,\left[\vv{E}_V-\dfrac{1}{\varepsilon _0}\vv{P}\right]&=\dfrac{1}{\varepsilon _0}\left(q+q_{\,\text{pol}\,}\right)
+.\end{align*}
+Mit $\,\text{div}\,\vv{P}=-q_{\,\text{pol}\,}$ und $\vv{D}=\varepsilon _0\vv{E}_V$ folgt
+\begin{align*}
+        \,\text{div}\,\vv{D}&=\,\text{div}\,\varepsilon _0\vv{E}_D+\,\text{div}\,\vv{P}\\
+                            &=q+q_{\,\text{pol}\,}-q_{\,\text{pol}\,}\\
+                            &=q
+.\end{align*}
+Die Divergenz des dielektrischen Verschiebungsfeld ist also die freie Ladung
+\[ 
+        \oint_{}^{}\left(\vv{D}\cdot \td \vv{A}\right)=Q_{\,\text{frei}\,}\hat{=}\,\text{Ladungsträger auf den Kondensatorplatten}\,
+.\] 
+
+\subsection{Elektrisches Feld an Grenzflächen}
+Wenn ein elektrisches Feld orthogonal auf ein Dielektrum trifft, dann staucht sich dieses Feld um den Faktor $\tfrac{1}{\varepsilon }$. Trifft das $\vv{E}$--Feld in einem Winkel auf ein Dielektrum, lässt sich dieses in eine orthogonale und parallele Komponente aufteilen. Die orthogonale Komponente wird wie gehabt mit $\tfrac{1}{\varepsilon }$ gestaucht, die parallele allerdings nicht. Stellt man sich einen Weg von $A$ nach $B$ in einem Vakuum, von $B$ nach $C$ von Vakuum in Dielektrikum, von $C$ nach $D$ im Dielektrikum und schließlich von $D$ nach $A$ von Dielektrikum nach Vakuum, dann ist
+\[ 
+        \oint_{}^{}\vv{E}\td \vv{s}=0
+,\] 
+da das $\vv{E}$--Feld konservativ ist und die Übertritte $BC$ und $DA$ verschwinden. Für die Strecke $AB$ und $CD$ gilt also
+\begin{align*}
+        \int_{A}^{B}\vv{E}_{| |}^{\,\text{außen}\,}\td \vv{s}_1+\int_{C}^{D}\vv{E}_{| |}^{\,\text{innen}\,}\td \vv{s}_2\rightarrow \td \vv{s}_1=-\td \vv{s}_2
+.\end{align*}
+Daraus folgt
+\[ 
+        \vv{E}_{| |}^{\,\text{außen}\,}=\vv{E}_{| |}^{\,\text{innen}\,}
+,\] 
+sonst würde auf einem geschlossenen Weg Arbeit verrichtet werden. Betrachtet man nun dem Winkel $\alpha $ zwischen der orthogonalen und schrägen Komponente des $\vv{E}$--Feldes im Vakuum und $\beta $ analog in dem Dielektrikum, gilt
+\begin{align*}
+        \tan \alpha &=\dfrac{|\vv{E}_{\perp}|}{|\vv{E}_{| |}|}\qquad \tan \beta =\dfrac{|\vv{E}_{\perp}|\tfrac{1}{\varepsilon }}{|\vv{E}_{| |}|}
+\end{align*}
+womit das Brechungsgesetz für elektrische Felder folgt
+\[ 
+        \tan \alpha =\varepsilon \tan \beta 
+.\] 
+\fi
+
+%}}}

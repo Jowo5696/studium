@@ -1,0 +1,141 @@
+%:LLPStartPreview
+%:VimtexCompile(SS)
+
+%{{{ Formatierung
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{physics_notetaking}
+
+%%% dark red
+%\definecolor{bg}{RGB}{60,47,47}
+%\definecolor{fg}{RGB}{255,244,230}
+%%% space grey
+%\definecolor{bg}{RGB}{46,52,64}
+%\definecolor{fg}{RGB}{216,222,233}
+%%% purple
+%\definecolor{bg}{RGB}{69,0,128}
+%\definecolor{fg}{RGB}{237,237,222}
+%\pagecolor{bg}
+%\color{fg}
+
+\newcommand{\td}{\,\text{d}}
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+
+\newcommand\inlineeqno{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnoa{(\theequation.\text{a})}
+\newcommand\inlineeqnob{(\theequation.\text{b})}
+\newcommand\inlineeqnoc{(\theequation.\text{c})}
+
+\newcommand\inlineeqnowo{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnowoa{\theequation.\text{a}}
+\newcommand\inlineeqnowob{\theequation.\text{b}}
+\newcommand\inlineeqnowoc{\theequation.\text{c}}
+
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+%\renewcommand*\contentsname{Contents}
+
+\pagestyle{fancy}
+
+\sloppy
+
+\numberwithin{equation}{section}
+
+%}}}
+
+\begin{document}
+
+%{{{ Titelseite
+
+\title{physik311 $|$ Notizen}
+\author{Jonas Wortmann}
+\maketitle
+\pagenumbering{gobble}
+
+%}}}
+
+\newpage
+
+%{{{ Inhaltsverzeichnis
+
+\fancyhead[L]{\thepage}
+\fancyfoot[C]{}
+\pagenumbering{arabic}
+
+\tableofcontents
+
+%}}}
+
+\newpage
+
+%{{{
+
+\fancyhead[R]{\leftmark\\\rightmark}
+
+%{{{ Einführung
+\section{Einführung}
+Licht ist eine elektromagnetische Welle. Die Wellenlänge ist im Bereich von $\SI{400}{nm}$ bis $\SI{800}{nm}$, das entspricht einer Frequenz von $\SI{750}{THz}$ bis $\SI{375}{THz}$. Ein Lichtpuls kann nie kürzer als ein Zyklus sein.
+
+\subsection{Lichtquellen}
+\begin{enumerate}[label=--]
+        \item Lampe: Inkoherentes (\glqq ungeordnetes\grqq{}) Licht
+        \item Laser: Koherentes (\glqq geordnetes\grqq{}, auch Wellen in \glqq gleichschritt\grqq{}) Licht
+\end{enumerate}
+
+\newpage
+\section{Die elektromagnetische Theorie des Lichts}
+Für diesen Fall betrachtet man nur die Lichtausbreitung in großer Entfernung von allen Quellen. Also ist $\rho =0$ und $\vv{j}=0$. Die Maxwell--Gleichungen sind dann
+\begin{align}
+        \,\text{div}\,\vv{D}&=0\\
+        \,\text{div}\,\vv{B}&=0\\
+        \,\text{rot}\,\vv{E}&=-\diffp[]{\vv{B}}{t}\\
+        \,\text{rot}\,\vv{H}&=\diffp[]{\vv{D}}{t}
+.\end{align}
+In Materialien gilt dann
+\begin{align} 
+        \vv{D}&=\varepsilon \varepsilon _0\vv{E}\\
+        \vv{B}&=\mu \mu _0\vv{H}
+.\end{align} 
+Hier ist $\varepsilon $ die Dielektrizitätskonstante und $\mu $ die relative Permeabilität (in der Optik ist sie üblicherweise 1). \\\indent
+\begin{align} 
+        \,\text{rot}\,\left(\,\text{rot}\,\vv{E}\right)&=\underbrace{\,\text{div}\,\left(\,\text{div}\,\vv{E}\right)}_{=0}-\left(\vv{\nabla }\cdot \vv{\nabla }\right)\vv{E}&&|\left(\vv{\nabla }\cdot \vv{\nabla }\right)=\,\text{div}\,\,\text{grad}\,=\triangle\\
+                                                       &=\,\text{rot}\,\left(-\diffp[]{\vv{B}}{t}\right)
+.\end{align} 
+Mit $\,\text{rot}\,\vv{B}=\varepsilon\mu \varepsilon _0 \mu _0\diffp[]{\vv{E}}{t}$ folgt
+\begin{align} 
+        \triangle \vv{E}&=\varepsilon \mu \varepsilon _0\mu _0\diffp[2]{\vv{E}}{t}
+.\end{align} 
+Dies ist die \textbf{Wellengleichung} für das elektrische Feld. Man erwartet eine Ausbreitungsgeschwindigkeit mit
+\begin{align} 
+        v_{\,\text{ph}\,}&=\dfrac{1}{\,\sqrt[]{\varepsilon \mu \varepsilon _0\mu _0}}\equiv \dfrac{c}{n}
+,\end{align} 
+wobei $c=\,\sqrt[]{\varepsilon _0\mu _0}^{-1}$ die Vakuumslichtgeschwindigkeit und $n=\,\sqrt[]{\varepsilon \mu }$ der Brechungsindex ist. Dann lässt sich die Wellengleichung wie folgt schreiben
+\begin{align} 
+        \triangle \vv{E}&=\dfrac{1}{v_{\,\text{ph}\,}^2}\diffp[2]{\vv{E}}{t}\stackrel{\,\text{Vakuum}\,}{=}\dfrac{1}{c^2}\diffp[2]{\vv{E}}{t}
+.\end{align} 
+Eine analoge Rechnung kann auch für das $\vv{B}$--Feld verwendet werden.\\\indent
+
+\subsection{Einfachste Lösung der Wellengleichung: Ebene elektromag.\ Welle}
+Hier wird die Lichtausbreitung nur entlang einer Koordinate (z.B.\ $z$) betrachtet. Also ist $\vv{E}\left(\vv{r},t\right)=\vv{E}\left(z,t\right)$, bzw.\ $\diffp[]{\vv{E}}{x}=\diffp[]{\vv{E}}{y}=0$. Die Wellengleichung vereinfacht sich dann zu
+\begin{align} 
+        \diffp[2]{\vv{E}}{z}=\dfrac{1}{c^2}\diffp[2]{\vv{E}}{t}
+.\end{align} 
+Mit $\,\text{div}\,\vv{E}=0$ folgt für ebene Wellen $\diffp[]{E}{z}=0$, also ist $E_z=\,\text{const.}\,$.\\\indent
+Jetzt wählt man die Randbedingungen, dass $E_z=0$. Also ist $\vv{E}=\begin{pmatrix}
+        E_x\left(z\right)\\E_y\left(z\right)\\0
+\end{pmatrix}$. Die Lösung der Wellengleichung ist dann
+\begin{align} 
+        \vv{E}\left(z,t\right)&=\vv{E}_0\cos \left(kz-\omega t\right)\\
+                              &=\vv{E}_0\cos \left(k\left(z-ct\right)\right)
+,\end{align} 
+wobei $\tfrac{\omega }{k}=c$, mit $k=\tfrac{2\pi }{\lambda }$ der \textbf{Wellenzahl} ($\lambda $ der Wellenlänge) und $E_0$ der Amplitude. 
+
+
+
+%}}}
+
+%}}}
+
+\end{document}

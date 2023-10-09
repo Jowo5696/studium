@@ -1,0 +1,585 @@
+%:LLPStartPreview
+%:VimtexCompile(SS)
+
+%{{{ Formatierung
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{physics_notetaking}
+
+%%% dark red
+%\definecolor{bg}{RGB}{60,47,47}
+%\definecolor{fg}{RGB}{255,244,230}
+%%% space grey
+%\definecolor{bg}{RGB}{46,52,64}
+%\definecolor{fg}{RGB}{216,222,233}
+%%% purple
+%\definecolor{bg}{RGB}{69,0,128}
+%\definecolor{fg}{RGB}{237,237,222}
+%\pagecolor{bg}
+%\color{fg}
+
+\newcommand{\td}{\,\text{d}}
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+%\renewcommand*\contentsname{Contents}
+
+%\bibliographystyle{alphadin}
+\pagestyle{fancy}
+
+\sloppy
+%\pagenumbering{gobble}
+
+\lhead{Jonas Wortmann}\chead{Notizen}\rhead{math241}
+
+%}}}
+
+\begin{document}
+
+%{{{ Titelseite
+
+\thispagestyle{empty}
+\hfill
+\Huge
+\begin{center}
+        Notizen - B.Sc. Physik $|$ math241
+\end{center}
+\normalsize
+\hfill
+
+%}}}
+
+\newpage
+
+%{{{ Inhaltsverzeichnis
+
+\rhead{Inhaltsverzeichnis}
+\tableofcontents
+
+%}}}
+
+\newpage
+
+%{{{ math241
+
+\rhead{math241}
+
+\section{Topologie metrischer Räume}
+Ein metrischer Raum $\left(X,d\right)$ besteht aus einer Menge $X$ und einer Abstandsfunktion 
+\[ 
+        d:X\times X\rightarrow [0,+\infty)
+\] 
+die die folgenden Eigenschaften $\,\forall x,y,z \in X$ haben
+\begin{enumerate}[label=(\alph*)]
+        \item $d\left(x,y\right)\geq 0$ $d$ ist positiv semidefinit
+        \item $d\left(x,y\right)=0\Leftrightarrow x=y$ zusammen mit (a) ist $d$ positiv definit
+        \item $d\left(x,y\right)=d\left(y,x\right)$ Symmetrie
+        \item $d\left(x,z\right)\leq d\left(x,y\right)+d\left(y,z\right)$ Dreiecksungleichung
+\end{enumerate}
+Die Funktion $d\left(\cdot ,\cdot \right)$ heißt auch der Abstand oder die Metrik.\\\indent
+Sei $M$ eine Teilmenge des metrischen Raums $\left(X,d\right)$. Dann ist $\left(M,d\right)$ auch ein metrischer Raum
+\[ 
+        \left(M,\rho \right)\,\text{ mit }\rho =d|_{M\times M}\,\text{ist ein metrischer Raum}
+.\] 
+Der Abstand $\rho $ heißt induzierter Abstand durch den Abstand $d$. Man sagt auch, dass die Betragsnorm $|\cdot |$ den Abstand $d_2\left(x,y\right)=|x-y|$ in $\mathbb{K}^n$ induziert.
+
+\subsection{Norm}
+Sei ein $V$ Vektorraum. Eine Funktion $||\cdot ||:V\rightarrow \mathbb{R}$ heißt Norm, wenn sie folgende Eigenschaften $\,\forall u,v \in V$ besitzt
+\begin{enumerate}[label=(\alph*)]
+        \item $||u|| \geq 0$ (positive Semidefinitheit)
+        \item $||u|| =0$ genau wenn $u=0_V$ (zusammen mit (a) positive Definitheit)
+        \item $||\alpha u|| =|\alpha |\,||u|| \,\forall \alpha  \in \mathbb{K}$ 
+        \item $||u+v|| \leq ||u|| +||v|| $ (Dreiecksungleichung)
+\end{enumerate}
+
+\subsubsection{Normierter Raum}
+Ein Vektorraum $V$ über $\mathbb{K}$ heißt normierter Vektorraum, wenn $V$ mit einer Norm $||\cdot ||$  ausgerüstet wird. In diesem Fall schreibt man den normierten Raum als $\left(V,||\cdot ||\right)$.\\\\\noindent
+Sei $\left(V,||\cdot ||\right)$ ein normierter Raum. Mit $d\left(v,u\right)=||v-u|| $ ist $\left(V,d\right)$ dann ein metrischer Raum.
+\\\hfill\\\textbf{Beispiel: Einheitsspähre}\\ 
+Sei $S^2=\partial K_1\left(0\right)$ die Einheitssphäre in $\left(\mathbb{R}^3,d_2\right),d_2\left(x,y\right):=|x-y|$. Dann ist $\left(S^2,d_2\right)=\left(S^2,d_2|_{S^2\times S^2}\right)$ der metrische Raum mit dem induzierten Abstand $d_2|_{S^2\times S^2}$.
+\\\hfill\\\textbf{Beispiel: $l^2$--Raum}\\ 
+Sei $l^2=l^2\left(\mathbb{N}\right)=l^2_{\mathbb{K}}\left(\mathbb{N}\right)$ die Menge aller Folgen $x=\left(x_1,x_2,\hdots ,x_n\right)$ mit den Koordinaten $x_j \in \mathbb{K}\,\forall j$, sodass $\sum_{j=1}^{+\infty}|x_j|^2<+\infty$. Das heißt
+\[ 
+        l^2=\left\{x=\left(x_j\right)^\infty_{j=1} \in \mathbb{K}^{\mathbb{N}}:\sum_{j=1}^{+\infty}|x_j|^2<+\infty\right\}
+\] 
+wobei $\mathbb{K}^{\mathbb{N}}=\mathbb{K}\times \mathbb{K}\times \hdots $ also abzählbar unendlich ist. Dann ist $l^2$ ein Vektorraum und ein normierter Raum mit der Norm
+\[ 
+        ||x||_2=\left(\sum_{j=1}^{+\infty}|x_j|^2\right)^{\tfrac{1}{2}}
+.\] 
+
+\subsection{Innenprodukträume}
+Das innere Produkt oder auch Skalarprodukt findet sich in dem $l^2$--Raum wieder, also als unendliche Aufsummierung
+\[ 
+        \left\langle x,y\right\rangle _{l^2}=\sum_{j=1}^{\infty}x_j\overline{y_j}
+.\] 
+Das innere Produkt induziert die Norm $||x|| _2=\sqrt[ ]{\left\langle x,x\right\rangle _{l^2}}$ und den Abstand $||x-y||_2$.\\\\\noindent
+Das innere Produkt bzw.\, Skalarprodukt auf $V$ ist eine Abbildung 
+\[ 
+        \left\langle \cdot ,\cdot \right\rangle =\left\langle \cdot ,\cdot \right\rangle _V:V\times V\rightarrow \mathbb{K}
+\] 
+mit folgenden Eigenschaften $\,\forall x,y,z \in V$ 
+\begin{enumerate}[label=(\alph*)]
+        \item $\left\langle x,y\right\rangle =\overline{\left\langle y,x\right\rangle }$ (komplexe Konjugation)
+        \item $\left\langle \alpha x+\beta y,z\right\rangle =\alpha \left\langle x,z\right\rangle +\beta \left\langle y,z\right\langle \,\forall \alpha ,\beta  \in \mathbb{K}$ (Linearität bezogen auf die zweite Variable)
+        \item[(b')] $\left\langle z,\alpha x+\beta y\right\langle =\overline{\alpha }\left\langle z,x\right\rangle +\overline{\beta }\left\langle z,y\right\rangle $ (im Fall von $\mathbb{K}=\mathbb{C}$)
+        \item $\left\langle x,x\right\rangle \geq 0$ 
+        \item $\left\langle x,x\right\rangle =0\Leftrightarrow x=0_V$ 
+\end{enumerate}
+Ein Vektorraum $\left(V,\left\langle \cdot ,\cdot \right\rangle \right)$ mit einem inneren Produkt heißt \textbf{Innenproduktraum}. Wenn die Eigenschaften (a)--(c) erfüllt werden heißt der Vektorraum \textbf{Halbhilbertraum}.
+\\\hfill\\\textbf{Norm}\\ 
+Sei $\left(V,\left\langle \cdot ,\cdot \right\rangle _V\right)$ ein Innenproduktraum. Dann ist $||x|| :=\sqrt[ ]{\left\langle x,x\right\rangle }$ eine Norm auf $V$.
+
+\subsubsection{Cauchy--Bunjakowski--Schwarz--Ungleichung}
+Sei $\left(V,\left\langle \cdot ,\cdot \right\rangle _V\right)$ ein Halbhilbertraum. Dann gilt
+\[ 
+        |\left\langle x,y\right\rangle _V|\leq ||x||_V||y||_V\qquad ||x||_V:=\sqrt[ ]{\left\langle x,x\right\rangle _V}
+.\] 
+
+\subsection{$L^2$--Raum}
+Seien $-\infty<a<b<+\infty$. Die Menge $C_\mathbb{K}\left[a,b\right]$ der stetigen $\mathbb{K}$--wertigen Funktionen auf $\left[a,b\right]$ ist ein Vektorraum bzgl.\, der Addition und Multiplikation der Funktionen mit Skalaren. Mit dem inneren Produkt
+\[ 
+        \left\langle f,g\right\rangle _{L^2}:=\int_{a}^{b}f\left(x\right)\overline{g\left(x\right)}\td x\qquad f,g \in C_\mathbb{K}\left[a,b\right]
+\] 
+ist $C_\mathbb{K}\left[a,b\right]$ ein Innenproduktraum. Wobei $\overline{g}:x\mapsto \overline{g\left(x\right)}$.
+
+\subsection{Offene und punktierte offene Kugel}
+Sei $\left(X,d\right)$ ein metischer Raum. Sei $E\subseteq X$. Eine offene Kugel mit einem Radius $r>0$ und Mittelpunkt $z \in X$ ist die Menge
+\[ 
+        K_r\left(z\right):=\left\{x \in K:d\left(z,x\right)<r\right\}
+.\] 
+Eine punktierte offene Kugel ist eine Kugel ohne Zentrum, also die Menge
+\[ 
+        K_r^\bullet \left(z\right):=\left\{x \in K:0<d\left(z.x\right)<r\right\}=K_r\left(z\right)\backslash \left\{z\right\}
+.\] 
+\hfill\\\textbf{innere, Häufungs- und isolierte Punkte}\\ 
+Ein Punkt $p \in E$ heißt innerer Punkt von $E$, wenn es eine offene Kugel $K_r\left(p\right)$ gibt, sodass $K_r\left(p\right)\subseteq E$. Die Menge aller inneren Punkte von $E$ bezeichnet man als $E^o$.\\\\\noindent
+Ein Punkt $p \in X$ heißt Häufungspunkt von $E$, wenn $E\cap K_r^{\bullet}\left(p\right)\neq\{\} \,\forall r>0$. Die Menge aller Häufungspunkte von $E$ wird als $E'$ bezeichnet.\\\\\noindent
+Falls $p \in E$ und $p \notin E'$, wird $p$ als isolierter Punkt bezeichnet.\\\\\noindent
+Eine Menge $E\subseteq X$ heißt offen, falls $E=E^o$. Eine Menge heißt abgeschlossen, wenn ihr Komplement $X^c:=X\backslash E$ offen ist. Sie ist auch genau dann abgeschlossen, wenn $E'\subseteq E$.\\\\\noindent
+Wenn $p \in E'$, gibt es in jeder $K_r\left(p\right)$ unendlich viele Punkte von $E$, da sich immer ein Punkt in einer $\varepsilon $--Umgebung befindet.
+\\\hfill\\\textbf{Vereinigungen und Schnitte}\\ 
+Für jede Familie $\left\{G_\alpha \right\}_{\alpha  \in \mathbb{A}}$ offener Mengen $G_\alpha $ ist ihre Vereinigung $\bigcup_{\alpha  \in \mathbb{A}}G_\alpha $ offen.\\
+Für jede endliche Familie $\left\{G_j\right\}_{j=1}^n$ offener Mengen $G_j$ ist ihre Schnittmenge $\bigcap_{j=1}^nG_j$ offen.\\
+Für jede Familie $\left\{F_\alpha \right\}_{\alpha  \in \mathbb{A}}$ abgeschlossener Mengen $F_\alpha $ ist ihre Schnittmenge $\bigcap_{\alpha  \in \mathbb{A}}F_\alpha $ abgeschlossen.\\
+Für jede endliche Familie $\left\{F_j\right\}_{j=1}^n$ abgeschlossener Mengen $F_j$ ist ihre Vereinigung $\bigcup_{j=1}^nF_j$ abgeschlossen.\\
+Es glit immer für beliebige Familien und Mengen
+\[ 
+        \left(\bigcup_{\alpha  \in \mathbb{A}}E_\alpha \right)^c=\bigcap_{\alpha  \in \mathbb{A}}E_{\alpha }^c\qquad \left(\bigcap_{\alpha  \in \mathbb{A}}E_\alpha \right)^c=\bigcup_{\alpha  \in \mathbb{A}}E_\alpha ^c
+.\] 
+
+
+\subsection{Vollständige Räume}
+Es gibt verschiedene vollständige Räume:
+\begin{enumerate}[label=(\alph*)]
+        \item Falls jede Cauchy--Folge im metrischen Raum $\left(X,d\right)$ konvergiert, heißt $\left(X,d\right)$ vollständig.
+        \item Ein normierter Raum $\left(V,||\cdot || \right)$ heißt vollständig, wenn $V$ mit dem induzierten Abstand $d\left(u,v\right)=||u-v|| $ vollständig ist.
+        \item Ein Innenproduktraum $\left(V,\left\langle \cdot ,\cdot \right\rangle \right)$ heißt vollständig, wenn der induzierte Raum $\left(V,||\cdot || \right)$ mit $||u||=\sqrt[ ]{\left\langle u,u\right\rangle }$ vollständig ist.
+\end{enumerate}
+Ein vollständiger normierter Vektorraum heißt \textbf{Banachraum}. Ein vollständiger Innenproduktraum heißt \textbf{Hilberraum} ($l^2_\mathbb{K}\left(\mathbb{N}\right)$ und $l^2_\mathbb{K}\left(\mathbb{Z}\right)$ sind Hilberräume).\\\noindent
+Sei $(X,d)$ vollständig. Betrachten wir $E\subset X$ als ein metrischen Unterraum $(E,d)$ von $(X,d)$. Dann ist $(E,d)$ genau dann vollständig, wenn $E$ im $(X,d)$ abgeschlossen ist. 
+
+\subsection{Abschluss und Rand}
+Sei $\left\{E_\alpha \right\}_{\alpha  \in \mathbb{A}}$ die Familie aller abgeschlossenen Teilmengen von $(X,d)$ mit der Eigenschaft $E\subseteq E_\alpha $. Dann heißt die abgeschlossene Menge $\overline{E}:=\bigcap_{\alpha  \in \mathbb{A}}E_\alpha $ Abschluss von $M$. Die Menge $\partial E=\overline{E}\cap \overline{E^c}$ heißt Rand von $M$. Es gelten zudem
+\begin{enumerate}[label=\arabic*.]
+        \item $\overline{E}=( (E^c)^o)^c$ 
+        \item $\partial E=( (E^c)^o\cup E^o)^c=\overline{E}\backslash E^o$ 
+\end{enumerate}
+$E$ ist genau dann abgeschlossen, wenn $E=\overline{E}$.\\\noindent
+Der Abschluss und Rand kann auch durch Konvergenz beschrieben werden.
+\begin{enumerate}[label=\arabic*.]
+        \item $p \in \overline{E}$ genau dann, wenn $\exists \left\{p_n\right\}^\infty_{n=1}\subset E$, sodass $\lim p_n=p$.
+        \item $p \in \partial E$ genau dann, wenn $\exists \left\{x_n\right\}^\infty_{n=1}\subset E$ und $\exists \left\{y_n\right\}_{n=1}^\infty\subset E^c$, sodass $\lim x_n=0=\lim y_n$.
+\end{enumerate}
+$\overline{E}=E\cup E'=E\cup \partial E$.
+
+\subsection{Dichte Mengen}
+Eine Menge $E\subseteq X$ heißt dicht in $X$, wenn $\overline{E}=X$. Sei $(X,d)$ vollständig. Sei $E\subseteq X$ und sei $(E,d)$ der induzierte metrische Raum. Dann ist $(\overline{E},d)$ eine Vervollständigung von $(E,d)$. Falls $E$ zusätzlich dicht in $X$ ist, ist $(X,d)$ eine Vervollständigung von $(E,d)$. 
+
+\subsection{Isometrie und isometrische Isomorphie}
+Seien $(X,d_X)$ und $(Y,d_Y)$ metrische Räume.
+\begin{enumerate}[label=\arabic*.]
+        \item Eine Abbildung $\varphi :X\rightarrow Y$ heißt Isometrie, wenn $d_Y(\varphi (x_1),\varphi (x_2))=d_X(x_1,x_2)\,\forall x_1,x_2 \in X$.
+        \item Eine Isometrie $\varphi $ heißt isometrischer Isomorphismus, wenn $\varphi $ surjektiv ist.
+\end{enumerate}
+Ein vollständiger metrischer Raum $(\hat{X},\hat{d})$ heißt Vervollständigung von $(X,d)$, wenn es eine solche Isometrie $\varphi :X\rightarrow \hat{X}$, sodass das Bild $\varphi (X)=\left\{\varphi (x):x \in X\right\}$ dicht in $\hat{X}$ ist. Jeder metrische Raum kann vervollständigt werden. Eine Vervollständigung ist wesentlich eindeutig, in dem Sinn, dass zwei Vervollständigungen $\hat{X}_1,\hat{X}_2$ immer isometrisch isomorph sind, das heißt es existiert ein isometrischer Isomorphismus $\Phi:\hat{X}_1\rightarrow \hat{X}_2$.
+
+\subsection{Äquivalenzrelationen von Normen}
+Eine Relation $\sim$ auf einer abstrakten Menge $M$ heißt Äquivalenzrelation wenn $\sim$ die folgenden Eigenschaften hat
+\begin{enumerate}[label=\arabic*.]
+        \item Reflexivität $x\sim x\,\forall x \in M$.
+        \item Transitivität $(x\sim y\land y\sim z)\Rightarrow x\sim z$.
+        \item Symmetrie $x\sim y\Rightarrow y\sim x$.
+\end{enumerate}
+Normen $|\cdot |_\alpha $ und $|\cdot |_\beta $ auf einem Vektorraum $W$ sind äquivalent, wenn es Konstanten $c_1,c_2>0$ gibt, sodass 
+\[
+        c_2|w|_\alpha \leq |w|_\beta \leq c_1|w|_\alpha \,\forall w \in W
+.\]
+Auf $\mathbb{K}^m$ sind alle Normen äquivalent. Auf jedem endlichdimensionalem Vektorraum $V$ sind alle Normen äquivalent.
+
+\subsection{Abstand zu einer kompakten Menge}
+Sei $(X,d_X)$ ein metrischer Raum. Sei
+\[ 
+        \,\text{dist}(E,M)=\,\text{inf}_{y \in M}^{x \in E}d_X(x,y)
+\] 
+der Abstand zwischen den Mengen $E,M\subseteq X$. Falls $E=\{x\}$ schreibt man
+\[ 
+        \,\text{dist}(x,M)=\,\text{dist}_M(x)
+.\] 
+
+\section{Folgen und Stetigkeit}
+\subsection{Konvergenz und Cauchy--Folgen}
+\subsubsection{Konvergenz}
+Sei $\left(X,d\right)$ ein metrischer Raum. Eine Folge $\left\{p_n\right\}_{n=1}^\infty\subseteq X$ konvergiert gegen $p \in X$, wenn $\lim_{n\rightarrow \infty}d\left(p_n,p\right)=0$. In diesem Fall sagt man, dass $p$ der Grenzwert oder Limes von $\left\{p_n\right\}_{n=1}^\infty$ ist.
+\\\hfill\\\textbf{Cauchy--Folgen}\\ 
+Eine Folge $\left\{p_n\right\}_{n=1}^\infty\subseteq X$ heißt Cauchy--Folge, wenn es $\,\forall \varepsilon >0$ eine Zahl $N_\varepsilon  \in \mathbb{N}$ gibt, sodass $d\left(p_n,p_m\right)<\varepsilon $ für alle $n,m\geq n_\varepsilon $.
+
+\subsubsection{Konvergenz in $\mathbb{K}^m$}
+Sei $\left\{x^{[n]}\right\}^\infty_{n=1}$ mit $x^{[n]}=\left(x^{[n]}_1,x^{[n]}_2,\hdots ,x^{[n]}_m\right) \in \mathbb{K}^m$ eine Folge in $\left(\mathbb{K},|\cdot |\right)$. Dann sind folgende Aussagen äquivalent
+\begin{enumerate}[label=\arabic*.]
+        \item $\left\{x^{[n]}\right\}^\infty_{n=1}$ konvergiert in $\mathbb{K}^m$ gegen $x=(x_1,\hdots ,x_m)$
+        \item $\left\{x^{[n]}\right\}^\infty_{n=1}$ konvergiert gegen $x$ komponentenweise
+\end{enumerate}
+Diese Äquivalenzen stimmen mit den Analogen Sätzen zu Cauchy--Folge überein.
+\\\hfill\\\textbf{Häufungspunkt}\\ 
+Die Menge aller Häufungspunkte ist $E'$. $p \in E'$ genau dann, wenn $\exists \left\{p_n\right\}_{n=1}^\infty\subset E\backslash\{p\}$, sodass $lim p_n=p$.\\
+Eine Teilmenge $M$ des normierten Raums $\mathbb{K}^m$ ist genau dann kompakt, wenn $M$ abgeschlossen und beschränkt in $\mathbb{K}^m$ ist.
+
+\subsection{Teilfolgen und kompakte Mengen}
+Sei $\left\{p_n\right\}_{n=1}^\infty$ eine Folge im metrischen Raum $(X,d)$. Betrachtet man eine streng monoton steigende Teilfolge $\left\{n_k\right\}_{k=1}^\infty \subset \mathbb{N}$. Dann heißt die Folge $\left\{p_{n_k}\right\}_{n=1}^\infty$ eine Teilfolge von $\left\{p_n\right\}_{n=1}^\infty$. Wenn diese Folge gegen $p \in X$ konvergiert, dann heißt $p$ Teilfolgengrenzwert. Wenn $\lim_{n\rightarrow \infty}p_n=p\Leftrightarrow \lim_{n\rightarrow \infty}p_{n_k}=p$.
+\\\hfill\\\textbf{Folgenkompaktheit}\\ 
+Eine Menge $K\subseteq X$ heißt folgenkompakt, wenn jede Folge $\left\{p_n\right\}_{n=1}^\infty\subset K$ einen Teilfolgengrenzwert in $K$ hat. In einem metrischen Raum $(X,d)$ ist eine Menge $K$ genau dann kompakt, wenn $K$ folgenkompakt ist.\\\\
+Eine Teilmenge $E$ eines metrischen Raums $(X,d)$ heißt beschränkt, wenn $E\subseteq K_r(z)$ für offene Kugeln $K_r(x)$ in $X$ ist. Jede kompakte Menge ist abgeschlossen und beschränkt. Im $l^2$ ist die Einheitskugel $\overline{K_1(0)}$ abgeschlossen und beschränkt, aber nicht kompakt.
+
+\subsubsection{Überdeckung}
+Eine offene Überdeckung der Menge $E$ ist eine Familie $\left\{G_\alpha \right\}_{\alpha  \in \mathbb{A}}$ von offenen Mengen, sodass $E\subseteq \bigcup_{\alpha  \in \mathbb{A}}$. Wenn zusätzlich $E\subseteq \bigcup _{\alpha  \in \mathbb{A}_1}$ für eine Teilindexmenge $\mathbb{A}_1\subseteq \mathbb{A}$, sagt man, dass $\left\{G_\alpha \right\}_{\alpha  \in \mathbb{A}_1}$ eine Teilüberdeckung ist. Falls die Indexmenge endlich ist, sagt man, dass $G$ eine endliche Überdeckung ist. Eine Menge $K$ heißt kompakt, wenn jede offene Überdeckung von $K$ eine endliche Teilüberdeckung enthält.
+
+\subsubsection{Erweiterte reelle Zahlengrade}
+Sei 
+\[ 
+        \hat{\mathbb{R}}=\{-\infty\}\cup \mathbb{R}\cup \{+\infty\}|-\infty<x<\infty\,\forall x \in \mathbb{R}
+\] 
+die erweiterte reelle Zahlengrade und sei $\arctan(\pm \infty):=\pm \tfrac{\pi }{2}$. Definiert man 
+\[ 
+        d_{\,\text{arctan}\,}(x,y)=|\arctan(x)-\arctan(y)|,x,y \in \hat{\mathbb{R}}
+,\] dann ist $\left(\hat{\mathbb{R}},d_{\,\text{arctan}\,}\right)$ ein kompakter metrischer Raum.\\\\
+Für eine reelle Folge $\left\{x_n\right\}_{n=1}^\infty\subset \mathbb{R}$ bedeutet definitionsgemäß, dass der Limes $\lim_{n\rightarrow +\infty}x_n=\pm\infty$ gegen $\pm\infty$ im metrischen Raum $\left(\hat{\mathbb{R}},d_{\,\text{arctan}\,}\right)$ konvergiert.\\\\
+Für jede Folge $\left\{s_n\right\}_{n  \in \mathbb{N}}\subseteq \hat{\mathbb{R}}$ ist die Menge $T$ aller Teilfolgengrenzwerte nicht leer.
+
+\subsubsection{Obere und untere Grenzwerte}
+Sei $T$ wie oben, dann
+\begin{enumerate}[label=\arabic*.]
+        \item $\lim_{n\rightarrow \infty}\text{inf}x_n:=\,\text{inf}\,T$ heißt unterer Grenzwert von $\left\{x_n\right\}_{n  \in \mathbb{N}}$ 
+        \item $\lim_{n\rightarrow \infty}\text{sup}x_n:=\,\text{sup}\,T$ heißt oberer Grenzwert von $\left\{x_n\right\}_{n  \in \mathbb{N}}$ 
+\end{enumerate}
+Eine Folge $\left\{x_n\right\}_{n  \in \mathbb{N}}\subseteq \hat{\mathbb{R}}$ konvergiert genau dann in $\hat{\mathbb{R}}$, wenn $\lim_{n\rightarrow \infty}\text{inf}x_n=\lim_{n\rightarrow \infty}\text{sup}x_n$. Dann ist $\lim_{n\rightarrow \infty}x_n=\lim_{n\rightarrow \infty}\text{inf}x_n=\lim_{n\rightarrow \infty}\text{sup}x_n$.\\
+Eine Folge $\left\{x_n\right\}_{n  \in \mathbb{N}}\subseteq \mathbb{R}$ konvergiert genau dann im $\mathbb{R}$, wenn die oberen und unteren Grenzwerte gleich und endlich sind.
+\\\hfill\\\textbf{Konvergenzradius der Potenzreihe}\\ 
+Für jede Potenzreihe
+\[ 
+        \sum_{k \in \mathbb{N}}^{}a_k\left(z-z_0\right)^k\qquad a_k \in \mathbb{C}\,\forall 
+,\] 
+gibt es eine Zahl $\rho \in [0,+\infty]$, die Konvergenzradius heißt, sodass
+\begin{enumerate}[label=\arabic*.]
+        \item die Reihe konvergiert absolut $\,\forall z \in K_\rho (z0)$.
+        \item die Reihe divergiert in $\mathbb{C}$ $\,\forall z \in \left\{z \in \mathbb{C}\,|\, z-z_0|>\rho \right\}$.
+        \item $\rho =\left(\lim_{}\text{sup}|a_n|^{\tfrac{1}{n}}\right)^{-1}$, wobei
+                \[ 
+                        \rho =\begin{cases}
+                                0&,\,\text{wenn}\,\lim_{}\text{sup}|a_n|^{\tfrac{1}{n}}=+\infty\\
+                                +\infty&,\,\text{wenn}\,\lim_{}\text{sup}|a_n|^{\tfrac{1}{n}}=0
+                        \end{cases}
+                .\] 
+\end{enumerate}
+Die Kreisscheibe $K_\rho (z_0)\subseteq \mathbb{C}$ heißt Konvergenzkreis.
+
+\subsection{Grenzwerte und Stetigkeit von Funktionen}
+Seien $(X,d_X)$ und $(Y,d_Y)$ zwei metrische Räume. Sei $E\subseteq X$ und sei $f:E\rightarrow Y$ eine Funktion. Sei $p \in E'$. Die Funktion $f$ hat einen Grenzwert $q$ an der Stelle $p$, wenn
+\[ 
+        \lim_{n\rightarrow \infty}f(x_n)=q\,\forall \left\{x_n\right\}_{n  \in \mathbb{N}}\subset E\,\text{mit}\,\lim_{}x_n=p
+.\] 
+In diesem Fall schreibt man $\lim_{x\rightarrow p}f(x_n)=q$ oder $f(x)\rightarrow p$ als $x\rightarrow p$. Eine äquivalente Definition ist: Eine Funktion $f:E\rightarrow Y$ heißt stetig an der Stelle $x_0 \in E$, falls
+\[ 
+        \,\forall \varepsilon >0\exists \delta =\delta (\varepsilon )>0|d_Y(f(x),f(x_0))<\varepsilon \,\forall x \in K_\delta (x_0)
+.\] 
+Falls $x_0$ ein isolierter Punkt von $E$ ist, ist $f$ an $x_0$ immer stetig. Falls $x_0 \in E'$, ist $f$ und $x_0$ genau dann stetig, wenn $\lim_{x\rightarrow x_0}f(x)=f(x_0)$. Falls $f$ an der Stelle $x_0$ stetig ist, heißt $x_0$ eine Stetigkeitsstelle von $f$. Wenn $f$ an der Stelle $x_0$ unstetig ist, heißt $x_0$ eine Unstetigkeitsstelle von $f$. In metrischen Räumen sind Stetigkeit und Folgenstetigkeit äquivalent. In topologischen Räumen generell nicht.  Ist eine Funktion $f$ stetig für jedes $x \in M\subseteq E$, so heißt $f$ stetig auf der Menge $M$. Falls hier $M=E$ der Definitionsbereicht ist, sagt man, dass $f$ eine stetige Funktion ist.
+\\\hfill\\\textbf{Stetigkeit der Norm}\\
+Sei $(V,||\cdot ||)$ ein normierter Raum. Die Norm sei $||\cdot ||:V\rightarrow [0,+\infty)$. Alle Vektoren $u \in V$ sind Stetigkeitsstellen von $||\cdot || $. 
+\\\hfill\\\textbf{Stetigkeit von Kompositionen}\\ 
+Seien $f:E\rightarrow Y$ und $g:M\rightarrow Z$, wobei $f(E)\subseteq M\subseteq Y$. Dann ist die Komposition von $f$ mit $g$ die Funktio $h:E\rightarrow Z$, die durch $h(X)=g(f(X)),x \in E$ definiert wird. Die Bezeichnung für die Komposition ist $h=g\circ f$.
+\begin{enumerate}[label=\arabic*.]
+        \item Ist $f$ stetig in $x \in E$ und $g$ stetig in $f(x) \in M$, so ist $h$ stetig in $x$.
+        \item Ist $f$ stetig auf $E$ und ist $g$ stetig auf $f(E)$, dann ist $h$ stetig auf $E$.
+\end{enumerate}
+\hfill\\\textbf{Stetigkeit der quadratischen Form $\left\langle u,u\right\rangle $}\\ 
+Sei $(V,\left\langle u,u\right\rangle )$ ein Innenproduktraum über $\mathbb{K}$. Dann ist die Funktion $q:V\rightarrow \mathbb{R},q(u)=\left\langle u,u\right\rangle $ stetig auf $V$. $||u||=\sqrt[]{\left\langle u,u\right\rangle }\Rightarrow q(u)=||u||^2$ ist die Komposition von der stetigen Funktion $||\cdot || $ mit der stetigen Funktion $g(y)=y^2,g:\mathbb{R}\rightarrow \mathbb{R}$. Daraus folgt, dass die quadratische Form $q$ stetig ist.
+
+\subsection{Topologische Stetigkeit}
+Seien $X$ und $Y$ zwei metrische Räume. Sei $f:X\rightarrow Y$. Dann sind die folgenden Aussagen äquivalent.
+\begin{enumerate}[label=\arabic*.]
+        \item $f$ ist stetig auf $X$ 
+        \item Für jede offene Menge $G\subset Y$ ist ihr Urbild
+                \[ 
+                        f^{-1}(G):=\left\{x \in X|f(x) \in G\right\}
+                \] 
+                eine offene Menge in $X$. Dies ist auch die Definition der Stetigkeit in topologischen Räumen.
+        \item Für jede abgeschlossene Menge $F\subseteq Y$ ist $f^{-1}(F)$ abgeschlossen.
+\end{enumerate}
+
+\subsection{Komponentenweise Stetigkeit}
+Sei $(X,d_X)$ ein metrischer Raum. Sei $R\subseteq X$ und $m \in \mathbb{N}$. Eine Funktion $f:E\rightarrow \mathbb{K}^m$ kann man komponentenweise als $f(x)=\left(f_1(x),f_2(x),\hdots ,f_m(x)\right),x \in E$ dargestellt werden. $f_j:E\rightarrow \mathbb{K}$ ist dann die $j$--te Komponentenfunktion von $f$. Wenn dies gilt sind folgende zwei Aussagen äquivalent.
+\begin{enumerate}[label=\arabic*.]
+        \item $f$ ist stetig an der Stelle $x \in E$.
+        \item Alle $f_j$ mit $j=1,\hdots ,m$ sind stetig an der Stelle $x \in E$.
+\end{enumerate}
+
+\subsection{$l^p$--Produktnormen}
+Die Funktion $||\cdot ||_\infty:V\rightarrow [0,+\infty)$, mit $||u||_{(+)\infty}:=\,\text{max}\,_{1\leq j\leq m}||u_j||_{V_j}$, ist eine Norm im Produktvektorraum $V=V_1\times \hdots \times V_m$.\\\indent
+Sei $1\leq p<+\infty$. Die Funktion $||\cdot ||_p:V\rightarrow [0,+\infty)$, mit $||u||_p:=\left(\sum_{j=1}^{m}||u_j||_{V_j}^p\right)^{\tfrac{1}{p}}$, ist eine Norm im Produktvektorraum $V=V_1\times \hdots \times V_m$.
+\\\hfill\\\textbf{Stetigkeit im Produktvektorraum}\\ 
+Sei $1\leq p\leq +\infty$. Sei $f:E\rightarrow X$. Dann gilt
+\begin{enumerate}[label=\arabic*.]
+        \item Die Funktion $f$ heißt stetig an der Stelle $v=(v_1,\hdots ,v_m) \in E$, wenn sie stetig an der Stelle $v$, wenn es im Produktvektorraum $(V,||\cdot ||_p)$ zu jedem $\varepsilon >0$ eine Zahl $\delta =\delta (\varepsilon )>0$ gibt, sodass
+                \[ 
+                        d_X\left(f(u),f(v)\right)<\varepsilon \,\forall u \in E:||u-v||_p<\delta 
+                .\] 
+        \item Die Funktion $f$ heißt stetig auf $E$, wenn $f$ stetig an jeder Stelle $v \in E$ ist.
+\end{enumerate}
+Die Stetigkeit der Funktion ist unabhängig von dem Wert des Parameters $p$, weil alle Produktnormen $||\cdot ||_p$ mit verschiedenen $p$ äquivalent sind.
+\\\hfill\\\textbf{Äquivalente Normen}\\ 
+Normen $|\cdot |_\alpha $ und $|\cdot |_\beta $ auf einem Vektorraum $W$ sind äquivalent, wenn es Konstanten $c_1,c_2>0$ gibt, sodass
+\[ 
+        c_2|w|_a\leq |w|_\beta \leq c_1|w|_\alpha \,\forall w \in W
+.\] 
+Äquivalente Normen generieren gleiche Topologie und gleiche Systeme der Umgebung.\\\\
+Das Skalarprodukt $f(u_1,u_2)=\left\langle u_1,u_2\right\rangle $ ist stetig auf dem Produktraum $V=H\times H$ bezüglich einer der Produktnormen $||\cdot ||_p$.
+\\\hfill\\\textbf{Stetigkeit bezüglich einer Variablen}\\ 
+Sei $(X,d_X)$ ein metrischer Raum. Sei $E\subseteq V=V_1\times \hdots \times V_m$. Sei $f:E\rightarrow X$ eine Funktion $f(u_1,\hdots ,u_m)$, die für die Werte der Variablen $u_1 \in V_1,\hdots ,u_m \in V_m$ mit $(u_1,\hdots ,u_m) \in E$ definiert ist. Die Funktion $f$ heißt stetig bezüglich der Variablen $u_j$ an der Stelle $v=(v_1,\hdots ,v_m) \in E$, wenn die Funktion $g(u_j)=f(v_1,\hdots ,v_{j-1},u_j,v_{j+1},\hdots ,v_m)$ von der Variablen $u_j$ stetig an der stelle $u_j=v_j$ ist (hier sind alle $v_k$ mit $k\neq j$ fixiert und sind keine Variablen für $g$). Wenn $f$ an der Stelle $v=(v_1,\hdots ,v_m) \in E$ stetig im Sinne des Produktraums ist, ist $f$ stetig an der Stelle $v$ bezüglich jeder Variablen $u_j,j=1,\hdots ,m$. Generell impliziert die Stetigkeit für jede Variable nicht die Stetigkeit im Sinne des Produktraumes.
+
+\subsection{Stetigkeit von Einschränkungen}
+Seien $(X,d_X)$ und $(Y,d_Y)$ metrische Räume. Sei $E\subseteq X$. Sei $f:E\rightarrow Y$. Falls $f:E\rightarrow Y$ stetig auf $E$ ist und $M\subseteq E$, ist die Einschränkung $f|_M:M\rightarrow Y$ auch stetig auf $M$. (Erinnerung: $g=f|_M$ ist die solche Funktion $g:M\rightarrow Y$, sodass $g(x)=f(x)\,\forall x \in M$.)\\\indent
+Sei $M_x=\left\{x\right\}$ mit $x \in E$. Dann ist $f|_M$ stetig für beliebige Funktionen $f$. Dies ist allerdings nicht verbunden mit der Stetigkeit von $f$ an der Stelle $x$. In der Tat ist $x$ ein isolierter Punkt von der einpunktigen Menge $M_x$. So ist $f|_{M_x}$ immer stetig in einem isolierten Punkt ihres Definitionsbereichs in $M_x$.\\\indent
+Sei $E=\bigcup_{\alpha  \in \mathbb{A}}E_\alpha $ und sei $f|_{E_\alpha }$ stetig $\,\forall \alpha  \in \mathbb{A}$. Das impliziert nicht, dass $f$ stetig auf $E$ ist.
+
+\subsection{Lipschitz--Stetigkeit}
+Seien $(X,d_X)$ und $(Y,d_Y)$ metrische Räume. Sei $E\subseteq X$. Eine Funktion $f:E\rightarrow Y$ heißt Lipschitz--stetig, wenn
+\[ 
+        \exists \alpha >0|d_Y\left(f(p),f(q)\right)\leq \alpha d_X(p,q)\,\forall p,q \in E
+.\] 
+In diesem Fall heißt $\alpha $ eine Lipschitz--Konstante von $f$. Jede Isometrie ist Lipschitz--stetig mit der Lipschitz--Konstante $\alpha =1$, weil dann gilt
+\[ 
+        d_Y\left(f(p),f(q)\right)=d_X(p,q)
+.\] 
+Jede Lipschitz--stetige Funktion ist stetig auf ihrem Definitionsbereich.
+
+\subsection{Stetige Funktionen auf kompakten Mengen}
+Sei $f:[a,b]\rightarrow \mathbb{R}$ stetig, wobei $[a,b]\subset \mathbb{R}$ mit $a\leq b$. Sei $m:=\,\text{inf}_{x \in [a,b]}f(x)$ und $M:=\,\text{sup}_{x \in [a,b]}f(x)$. Dann 
+\begin{enumerate}[label=\arabic*.]
+        \item $-\infty<m\leq M<+\infty$.
+        \item $\exists x_{\,\text{min}\,},x_{\,\text{max}\,} \in [a,b]$, sodass $f\left(x_{\,\text{min}\,}\right)=m$ und $f\left(x_{\,\text{max}\,}\right)=M$.
+\end{enumerate}
+Seien $(X,d_X)$ und $(Y,d_Y)$ metrische Räume. Sei $E\subseteq X$. Sei $E$ kompakt. Sei $f:E\rightarrow Y$ stetig. Dann 
+\begin{enumerate}[label=\arabic*.]
+        \item ist $f(E)$ eine kompakte Teilmenge von $Y$.
+        \item ist $f(E)$ abgeschlossen und beschränkt.
+        \item ist $f$ beschränkt (eine Funktion heißt beschränkt, wenn ihr Bild beschränkt ist).
+\end{enumerate}
+
+\subsection{Wegzusammenhängende Mengen und stetige Funktionen}
+\hfill\\\textbf{Zwischenwertsatz von Bolzano}\\ 
+Sei $I\subseteq \mathbb{R}$ ein Intervall. Sei $f:I\rightarrow \mathbb{R}$ stetig. Dann ist $f(I)$ ein Intervall. Im Besonderen, falls $f(x_1)\leq y\leq f(x_2)$ für $x_1,x_2 \in I$, dann besitzt die Gleichung $f(x)=y$ mindestens eine Lösung $x \in I$.
+\\\hfill\\\textbf{Wege}\\ 
+Seien $(X,d_X)$ und $(Y,d_Y)$ metrische Räume. Sei $E\subseteq X$. Sei $-\infty<a<b<+\infty$. Jede stetige Funktion $w \in \mathcal{C}\left([a,b],X\right)$ heißt Weg in $X$. Dieser Weg hat den Anfangspunkt $w(a)$ und Endpunkt $w(b)$. Die Spur $\,\text{Spur}(w)=w\left([a,b]\right)$ des Weges $w$ ist definitionsgemäß sein Bild.
+\\\hfill\\\textbf{Wegzusammenhängende Mengen}\\ 
+Eine Menge $E$ heißt wegzusammenhängend, falls es zu jedem Paar $x,y \in E$ ein Weg $w:[a,b]\rightarrow E$ gibt, mit $x=w(a)$ und $y=w(b)$. In diesem Falls ist $\,\text{Spur}(w)\subseteq E$.\\\indent
+Sei $V$ ein normierter Raum. Jede Spur eines Weges ist wegzusammenhängend. Eine einpunktige Menge ist wegzusammenhängend. Die leere Menge ist auch wegzusammenhängend.\\\indent
+Seien $u,v \in V$. Die Strecke 
+\[ 
+        [u,v]=\left\{(1-t)u+tv:t \in [0,1]\right\}\subset V
+\] 
+ist die Spur des Weges
+\[ 
+        w(t)=(1-t)u+tv,t \in [0,1]
+.\] 
+Die Strecke $[u,v]$ ist wegzusammenhängend.
+\\\hfill\\\textbf{Konvexe Mengen}\\ 
+Eine Menge $M\subseteq V$ heißt konvex, falls für jede Strecke $[u,v]$  mit Endpunkten $u,v \in M$ gilt
+\[ 
+        [u,v]\subseteq M
+.\] 
+Jede konvexe Teilmenge $M$ eines normierten Raums ist wegzusammenhängend.\\\indent
+Sei $m \in \mathbb{N}$ und $m\geq 2$. Sei $x \in \mathbb{K}^m$.
+\begin{enumerate}[label=\arabic*.]
+        \item Die Mengen $K_r(x)$ und $\overline{K_r(x)}$ sind konvex und so wegzusammenhängend.
+        \item Die Menge $\partial K_r(x)$ ist nicht konvex, aber wegzusammenhängend.
+\end{enumerate}
+Sei $E\subseteq X$ wegzusammenhängend und sei $f:E\rightarrow Y$ stetig. Dann ist $f(E)$ wegzusammenhängend.\\\\\indent
+Sei $E\subseteq \mathbb{R}$. Dann sind die folgenden Aussagen äquivalent
+\begin{enumerate}[label=\arabic*.]
+        \item $E$ ist ein Intervall.
+        \item $E$ ist konvex.
+        \item $E$ ist wegzusammenhängend.
+\end{enumerate}
+\hfill\\\textbf{Mehrdimensionaler Zwischenwertsatz}\\ 
+Sei $E\subseteq X$ wegzusammenhängend und sei $f:E\rightarrow \mathbb{R}$ stetig. Dann
+\begin{enumerate}[label=\arabic*.]
+        \item ist $f(E)$ ein Intervall.
+        \item ist hat die Gleichung $f(x)=y$ mindestens eine Lösung $x \in E$, wenn es für $y \in \mathbb{R}:x_1,x_2 \in E:f(x_1)\leq y\leq f(x_2)$.
+\end{enumerate}
+
+\section{Stetige Lineare Operatoren}
+Eine Abbildung $A:V\rightarrow W$ heißt linearer Operator (Homomorphismus) falls
+\[ 
+        A(\alpha u_1+\beta u_2)=\alpha A(u_1)+\beta A(u_2)\,\forall u_1,u_2 \in V\land \,\forall \alpha ,\beta  \in \mathbb{K}
+.\] 
+
+\subsection{Beschränkte Funktionen}
+Seien $(V,||\cdot ||_V)$ und $(W,||\cdot ||_W)$ zwei normierte Räume über $\mathbb{K}$. 
+\begin{enumerate}[label=\arabic*.]
+        \item Eine Funktion $f:E\rightarrow Y$ heißt beschränkt, wenn ihr Bild $f(E)$ beschränkt ist.\\ Eine Funktion $f$ heißt beschränkt auf $M\subseteq E$, wenn $f(M)$ beschränkt ist.
+        \item Ein linearer Operator $A:V\rightarrow W$ heißt beschränkt, wenn $A$ auf der Einheitskugel $K_1(0)\subseteq V$ beschränkt ist.
+\end{enumerate}
+Ein linearer Operator kann gleichzeitig als linearer Operator beschränkt und als Funktion unbeschränkt sein. Ein linearer Operator $A:V\rightarrow W$ ist genau dann beschränkt, wenn $||A||<+\infty$.
+\\\hfill\\\textbf{Raum der beschränkten linearen Operatoren}\\ 
+Die Menge $\mathbb{L}(V,W)$ aller beschränkten linearen Operatoren $A:V\rightarrow W$ ist ein Vektorraum mit der natürlichen Vektorraumstruktur $(\alpha A+\beta B)(u)=\alpha Au+\beta Bu,\alpha ,\beta  \in \mathbb{K}$. $\mathbb{L}(V,W)$ ist ein normierter Raum mit der Norm
+\[ 
+        ||A||:=\,\text{sup}_{||u||_V<1}||Au||_W
+.\] 
+Äquivalente Formen in der Norm $\mathbb{L}(V,W)$ 
+\[ 
+        ||A||=\,\text{sup}_{||u||_V<1}||Au||_W=\,\text{sup}_{||u||_V\leq 1}||Au||_W=\,\text{sup}_{||u||_V=1}||Au||_W=\,\text{sup}_{u\neq 0_V}\dfrac{||Au||_W}{||u||_V}
+.\] 
+\hfill\\\textbf{Einheitsoperator}\\ 
+Sei $V=W$. Dann betrachtet man den Einheitsoperator als
+\[ 
+        I=I_V:V\rightarrow W,Iu=u\,\forall u \in V
+.\] 
+Dann ist
+\[ 
+        ||I||=\,\text{sup}_{u\neq 0_V}\dfrac{||Iu||_V}{||u||_V}=\,\text{sup}_{u\neq 0_V}\dfrac{||u||_V}{||u||_V}=1
+.\] 
+Die folgenden Aussagen sind für lineare Operatoren äquivalent.
+\begin{enumerate}[label=\arabic*.]
+        \item $A$ ist beschränkt.
+        \item $A$ ist stetig auf $V$. 
+        \item $A$ ist stetig in einem Punkt $u \in V$.
+        \item $A$ ist stetig im Nullvektor $u=0_V$.
+\end{enumerate}
+Sei $n,m \in \mathbb{N}$. 
+\begin{enumerate}[label=\arabic*.]
+        \item Jeder lineare Operator $A:\mathbb{K}^m\rightarrow \mathbb{K}^n$ ist stetig und so beschränkt
+        \item Sei $V$ endlichdimensional. Dann ist jeder linearer Operator $A:V\rightarrow W$ beschränkt und so stetig.
+\end{enumerate}
+\hfill\\\textbf{Linearform}\\ 
+Man betrachte den Fall, wenn $W=\mathbb{K}$ endlichdimensional ist. Ein linearer Operator $L:V\rightarrow \mathbb{K}$ heißt Linearform.
+
+\subsection{Polynome mehrerer Variablen}
+Sei $V=\mathbb{K}^m=\left\{x=(x_1,\hdots ,x_m):x_j \in \mathbb{K}\,\forall j\right\}$. Sei $c \in \mathbb{K}$. Generell heißt $f:\mathbb{K}^m\rightarrow \mathbb{K}$ \textbf{Monom}, wenn
+\[ 
+        f(x_1,\hdots ,x_m)=c_nx^n:=c _{n_1,\hdots ,n_m}\cdot x_1^{n_1}\cdot \hdots \cdot x_m ^{n_m}\qquad n_j \in \mathbb{N}_0\,\forall j
+.\] 
+Hier ist $n=(n_1,\hdots ,n_m)$ ein Multiindex. Die Konstanten $c_n=c _{n_1,\hdots ,n_m} \in \mathbb{K}$ heißt Koeffizient. Falls $c_n\neq 0$, heißt die Summe der Exponenten
+\[ 
+        ||n||_1=\sum_{j=1}^{m}n_j
+\] 
+\textbf{Grad} des Monoms. Falls $c_n=0$, dann ist das Monom eine Konstante und hat definitionsgemäß den Grad 0.\\\\\indent
+Eine Summe von Monomen
+\[ 
+        P(x)=\sum_{||n||_1\leq N}^{}c_nx^n,P:\mathbb{K}^m\rightarrow \mathbb{K}
+\] 
+heißt \textbf{Polynom}. Der Grad von einem Polynom ist $\,\text{deg}\,P=\,\text{max}\,\left\{||n||_1:c_n\neq 0\right\}$. Jedes Polynom ist stetig.
+
+\subsection{Operationen mit Grenzwerten der Funktionen}
+Sei $E\subseteq X$ mit $(X,d_X)$. Sei $p \in E'$. Seien $f,g \in \,\text{Abb}\,(E,\mathbb{C})$, sodass
+\[ 
+        \lim_{x\rightarrow p}f(x)=a \in \mathbb{C}\land \lim_{x\rightarrow p}g(x)=b \in \mathbb{C}
+.\] 
+Dann
+\begin{enumerate}[label=\arabic*.]
+        \item $\lim_{x\rightarrow p}(f+g)(x)=a+b$.
+        \item $\lim_{x\rightarrow p}(fg)(x)=ab$.
+        \item Falls zusätzlich $b\neq 0$ und $p$ ein Häufungspunkt von $g^{-1}(\mathbb{C}\textbackslash\{0\}=\left\{x \in E:g(x)\neq 0\right\}$ ist, dann gilt $\lim_{x\rightarrow p}(\tfrac{f}{g})(x)=\tfrac{a}{b}$.
+\end{enumerate}
+Sei $(V,||\cdot ||)$ ein normierter Raum über $\mathbb{K}$. Seien $f,g \in \,\text{Abb}\,(E,V),\alpha  \in \,\text{Abb}\,(E,\mathbb{K})$, sodass $\lim_{x\rightarrow p}f(x)=u \in V,\lim_{x\rightarrow p}g(x)=w \in V,\lim_{x\rightarrow p}\alpha (x)=a \in \mathbb{K}$. Dann gilt
+\begin{enumerate}[label=\arabic*.]
+        \item $\lim_{x\rightarrow p}(f+g)(x)=u+w$.
+        \item $\lim_{x\rightarrow p}(\alpha f)(x)=au$.
+        \item Falls zusätzlich $a\neq 0$ und $p$ ein Häufungspunkt von $\alpha ^{-1}(\mathbb{C}\textbackslash\{0\}=\left\{x \in E:\alpha (x)\neq 0\right\}$ ist, dann gilt $\lim_{x\rightarrow p}(\tfrac{f}{\alpha })(x)=\tfrac{u}{\alpha }$.
+        \item Wenn $(V,\left\langle \cdot ,\cdot \right\rangle )$ ein Innenproduktraum ist, gilt $\lim_{x\rightarrow p}\left\langle f,g\right\rangle =\left\langle u,w\right\rangle $.
+\end{enumerate}
+
+\subsubsection{Links-- und rechtsseitige / obere und untere Grenzwerte von Funktionen}
+Sei $(Y,d_Y)$ ein metrischer Raum. Seien $a \in \mathbb{R},m\subseteq \mathbb{R}$ und $f:M\rightarrow Y$.
+\begin{enumerate}[label=\arabic*.]
+        \item Falls $a$ ein Häufungspunkt von $M_{a-}:=M\cap (-\infty,a)$ ist, definiert man \[
+                        \lim_{x\rightarrow a-0}f(x):=\lim_{x\rightarrow a}f|_{M_{a-}}
+                .\]
+                Andere Bezeichnungen sind
+                \[ 
+                        f(a-o)=\lim_{x\rightarrow a-}f(x)=\lim_{x\rightarrow a^-}f(x)=\lim_{x\rightarrow a-0}f(x)
+                .\] 
+        \item Falls $a$ ein Häufungspunkt von $M_{a+}:=M\cap (a,+\infty)$ ist, definiert man 
+                \[
+                        \lim_{x\rightarrow a+0}f(x):=\lim_{x\rightarrow a}f_{M_{a+}}
+                .\]
+                Andere Bezeichnungen sind
+                \[ 
+                       f(a+o)=\lim_{x\rightarrow a+}f(x)=\lim_{x\rightarrow a^+}f(x)=\lim_{x\rightarrow a+0}f(x)
+                .\] 
+\end{enumerate}
+Sei $(X,d_X)$ ein metrischer Raum. Sei $E\subseteq X$. Sei $p \in E'$. Sei $f:E\rightarrow \hat{\mathbb{R}}$.
+\begin{enumerate}[label=\arabic*.]
+        \item $\lim_{x\rightarrow p}\text{inf}f(x):=\lim_{\delta \rightarrow 0+0}\text{inf}_{x \in E\cap K_\delta ^\bullet (p)}f(x)$.
+        \item $\lim_{x\rightarrow p}\text{sup}f(x):=\lim_{\delta \rightarrow 0+0}\text{inf}_{x \in E\cap K_\delta ^\bullet (p)}f(x)$.
+\end{enumerate}
+Mit $K_\delta ^\bullet(p)=K_\delta (p)\textbackslash \{p\}=\left\{x \in X:0<d_X(x,p)<\delta \right\}$.
+
+\section{Matrizen}
+\subsection{Spektralsatz für selbstadjungierte Matrizen}
+Sei $m,n  \in \mathbb{N}$. Sei $\mathbb{K}^{m\times n}=\,\text{Mat}\,\left(m\times n,\mathbb{K}\right)$ die Menge aller $m\times n$--Matrizen $A=\left(a_{j,k}\right)_{1\leq j\leq m}^{1\leq k\leq n}$ mit Einträgen $a_{j,k} \in \mathbb{K}$. Dann ist $\mathbb{K}^{m\times n}$ ein Vektorraum über $\mathbb{K}$ mit gewöhnlicher Addition und Multiplikation mit Skalaren $\gamma  \in \mathbb{K}$ 
+\[ 
+        A+B=\left(a_{j,k}+b_{j,k}\right)_{1\leq j\leq m}^{1\leq k\leq n}\qquad \gamma A=\left(\gamma a_{j,k}\right)_{1\leq l\leq m}^{1\leq k\leq n}\qquad A,b \in \mathbb{K}^{m\times n}
+.\] 
+
+\subsubsection{Adjungierte und selbstadjungierte quadratische Matrizen}
+Sei jetzt $n=m \in \mathbb{N}$. Eine quadratische Matrix $B=\left(b_{j,k}\right)_{j,k=1}^n  \in \mathbb{C}^{n\times n}$ heißt adjungierte Matrix von $A \in \mathbb{C}^{n\times n}$, falls
+\[ 
+        \left\langle Ax,y\right\rangle =\left\langle x,By\right\rangle \qquad \,\forall x,y \in \mathbb{C}^n
+.\] 
+In diesem Fall schreibt man $B=A^*$, was äquivalent zu $b_{j,k}=\overline{a_{k,j}}\,\forall j,k$ ist. Adjungiert bedeutet also transponiert--konjugiert.\\\indent
+$A=\left(a_{j,k}\right)_{j,k=1}^n  \in \mathbb{C}^{n\times n}$ heißt selbstadjungierte Matrix, falls $A=A^*$, also falls $a_{j,k}=\overline{a_{k,j}}\,\forall j,k$.
+
+\subsubsection{Spektralsatz}
+Sei $A=\left(a_{j,k}\right)_{j,k=1}^n  \in \mathbb{C}^{n\times n}$ selbstadjungiert. Dann gibt es eine Orthonormalbasis $\left\{u^k\right\}_{k=1}^n$ des Raums $\mathbb{C}^n$, sodass
+\begin{enumerate}[label=\arabic*.]
+        \item $Au^k=\lambda _ku^k\,\forall k$, das heißt $u^k$ sind Eigenvektoren von $A$ zu den Eigenwerten $\lambda _k$.
+        \item $\lambda _k \in \mathbb{R}\,\forall k$ und $\left\{\lambda _k\right\}$ ist die Menge aller Eigenwerte von $A$ mit den entsprechenden Vielfachen.
+\end{enumerate}
+\hfill\\\textbf{Spektralsatz für symmetrische Matrizen}\\ 
+Falls alle $a_{j,k} \in \mathbb{R}$ sind, ist $A=A^*$ äquivalent mit $a_{j,k}=a_{k,j}\,\forall j,k$. Das heißt $A \in \mathbb{R}^{n\times n}$ stellt in $\left(\mathbb{C}^n,\left\langle \cdot ,\cdot \right\rangle \right)$ genau dann einen selbstadjungierten linearen Operator dar, wenn $A$ symmetrisch ist. In diesem Fall sind für jeden Eigenvektor $u^k$ zu $\lambda _k$, $v^k=\mathfrak{R}\left(u^k\right)$ und $w^k=\mathfrak{R}\left(u^k\right)$ auch Eigenvektoren zu $\lambda _k$.In diesem Fall kann man eine Orthonormalbasis $\left[u^k\right]_{k=1}^n$ so wählen, dass $u_j^k \in \mathbb{R}\,\forall j,k$ ist.\\\\\indent
+Sei $A=\left(a_{j,k}\right)_{j,k=1}^n  \in \mathbb{C}^{n\times n}$ selbstadjungiert. Seien $\lambda _1\leq \lambda _2\leq \hdots \leq \lambda _n$ die Eigenvektoren von $A$ und sei $\left\{u^k\right\}_{k=1}^n$ die entsprechende Orthonormalbasis der Eigenvektoren. Betrachte $q_A(x)=\left\langle Ax,x\right\rangle _{\mathbb{C}^n}$ als eine $\mathbb{R}$--werte Funktion auf $\overline{K_1(0)}=\left\{x \in \mathbb{C}^n:|x|\leq 1\right\}$. Dann ist
+\begin{enumerate}[label=\arabic*.]
+        \item $m=\,\text{min}_{|x|\leq 1}q_A(x)=\lambda _1$ und $M=\,\text{max}_{|x|\leq 1}q_A(x)=\lambda _n$.a
+        \item $u^1$ und $u^n$ globale Minima und Maxima von $q_A\left|_{\overline{K_1(0)}}\right.$, das heißt $q_A\left(u^1\right)=\lambda _1$ und $q_A\left(u^n\right)=\lambda _n$.
+\end{enumerate}
+
+\section{Mehrdimensionale Differenzialgleichungen}
+
+\section{Mehrdimentionale Integralrechnung}
+
+\section{Vektoranalysis}
+
+\section{Hilberträume, $L^2$--Räume und Fourierreihen}
+
+\section{Variationsrechnung und Laplace--Operator}
+
+%}}}
+
+%{{{ Notizen
+
+\section{Notizen}
+
+%}}}
+
+\end{document}

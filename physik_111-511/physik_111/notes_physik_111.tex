@@ -1,0 +1,1586 @@
+%:LLPStartPreview
+%:VimtexCompile(SS)
+
+%{{{ Formatierung
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{physics_notetaking}
+
+%\definecolor{bg}{RGB}{69,0,128}
+%\definecolor{fg}{RGB}{237,237,222}
+%\pagecolor{bg}
+%\color{fg}
+
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*\contentsname{Inhaltsverzeichnis}
+\newcommand{\td}{\,\text{d}}
+
+%\bibliographystyle{alphadin}
+\pagestyle{fancy}
+\sloppy
+%\pagenumbering{gobble}
+
+\lhead{Jonas Wortmann}\chead{Notizen}\rhead{Physik}
+
+%}}}
+
+\begin{document}
+
+%{{{ Titelseite
+
+\thispagestyle{empty}
+\hfill
+\Huge
+\begin{center}
+        Notizen - B.Sc. Physik $|$ physik111
+\end{center}
+\normalsize
+\hfill
+
+%}}}
+
+\newpage
+
+%{{{ Inhaltsverzeichnis
+
+\rhead{Inhaltsverzeichnis}
+\tableofcontents
+
+%}}}
+
+\newpage
+
+%{{{ physik111
+
+\rhead{physik111}
+
+\section{Physikalische Größen}
+\subsection{Impuls}
+Der Impuls
+\[ 
+        \vv{p}\left[\,\text{kg}\,\cdot \,\text{m}\, \cdot \,\text{s}\, ^{-1}=\,\text{N}\,\cdot \,\text{s}\, ^{-1}\right]=m\cdot \vv{v} 
+\] 
+ist die Größe, die den mechanischen Bewegungszustand einer Masse charakterisiert. Sie vergrößert sich mit der Masse bzw.\ der Geschwindigkeit. Der Impuls ist eine vektorielle Größe, ausschließlich für die Translation.
+
+\subsection{Drehimpuls}
+Der Drehimpuls
+\[ 
+        \vv{L}\left[\,\text{kg}\,\cdot \,\text{m}\,^2\cdot \,\text{s}\, ^{-1}=\,\text{N}\,\cdot \,\text{m}\,\cdot \,\text{s}\, ^{-1}\right]=\vv{r}\times \vv{p}=I\cdot \vv{\omega }
+\]
+ist die Größe, die den mechanischen Bewegungszustand einer Masse charakterisiert. Sie ist eine pseudovektorielle Größe, ausschließlich für die Rotation.
+
+\subsection{Trägheitsmoment}
+Das Trägheitsmoment
+\[ 
+        I\left[\,\text{kg}\,\cdot \,\text{m}\,^2\right]=\rho \int\limits_{V}^{}r_\perp^2\td V\qquad I_{ij}=\rho \int_{V}^{}\left[\left(\vv{r}\cdot \vv{r}\right)\delta _{ij}-\left(r_i\cdot r_j\right)\right]\td V
+.\] 
+ist die Größe, die die Trägheit eines Körpers gegenüber seiner Winkelgeschwindigkeit angibt. Sie ist eine skalare Größe oder ein Tensor.
+
+\subsection{Kraft}
+Die Kraft
+\[ 
+        \vv{F}\left[\,\text{kg}\,\cdot \,\text{m}\,\cdot \,\text{s}\, ^{-2}=N\right]=m\cdot \vv{a}
+\] 
+ist die Größe, die die Einwirkung auf eine Masse beschreibt, die sie beschleunigt, das heißt, ihre Geschwindigkeit oder Richtung ändert, bzw.\ verformt; dabei wird Arbeit verrichtet, also ändert sich die Energie der Masse oder des Systems verändert. Sie ist eine vektorielle Größe. 
+
+\subsection{Drehmoment}
+Das Drehmoment
+\[ 
+        \vv{M}\left[\,\text{kg}\,\cdot \,\text{m}\,^2\cdot \,\text{s}\, ^{-2}=\,\text{N}\,\cdot \,\text{m}\,\right]=\vv{r}\times \vv{F}=I\cdot \dot{\vv{\omega }}
+\] 
+ist die Größe, die die Einwirkung einer Kraft beschreibt, welche in einer Rotationsbewegung resultiert, wenn sie in einem Winkel an eine Masse angreift. Sie ist eine vektorielle Größe.
+
+\subsection{Energie}
+Die Energie
+\[ 
+        E\left[\,\text{kg}\,\cdot \,\text{m}\,^2\cdot \,\text{s}\, ^{-2}=\,\text{N}\,\cdot \,\text{m}\,=\,\text{W}\,\cdot \,\text{s}\,=\,\text{J}\,\right]=\sum_{i}^{}E_i\quad E_{\text{kin}}=\dfrac{1}{2}mv^2\quad E_{\text{rot}}=\dfrac{1}{2}I\omega ^2\quad E_{\text{pot}}=mgh
+\] 
+ist die Größe, die die abgegebene Strahlung oder verrichtete Arbeit beschreibt. In einem abgeschlossenem System bleibt sie immer erhalten.
+
+\subsection{Arbeit}
+Die Arbeit
+\[ 
+        \vv{W}\left[\,\text{kg}\,\cdot \,\text{m}\,^2\cdot \,\text{s}\, ^{-2}=\,\text{N}\,\cdot \,\text{m}\,=\,\text{W}\,\cdot \,\text{s}\,=\,\text{J}\,\right]=\vv{F}\cdot s
+\] 
+ist die Größe, die die Energiedifferenz bei einer Kraft über eine bestimmte Strecke beschreibt. Sie ist eine vektorielle Größe.
+
+\subsection{Leistung}
+Die Leistung
+\[ 
+        P\left[\,\text{kg}\,\cdot \,\text{m}\,^2\cdot \,\text{s}\, ^{-3}=\,\text{W}\,=\,\text{J}\,\cdot \,\text{s}\, ^{-1}\right]=\dfrac{\Delta E}{\Delta t}=\dfrac{\Delta W}{\Delta t}
+\] 
+ist die Größe, die die verrichtete Arbeit, bzw.\ aufgewendete Energie über einen Zeitraum beschreibt.
+
+\section{Einführung}
+
+\subsection{Was ist Physik?}
+\begin{center}
+        Modell $\xrightarrow{\text{Vorhersage}} $ Beobachtung $\rightarrow $ Experiment $\xrightarrow{\text{Messung}} $ Theorie (falsifizierbar)
+\end{center}
+\begin{align*}
+        \text{empirisch}&:\text{Natur beobachten, erkennen}\\
+        \text{quantitativ}&:\text{Messungen}\\
+        \text{reduktionistisch}&:\text{möglichst wenige Gesetze}\\
+        \text{abstrahierend}&:\text{vereinfachte Annahmen + Korrektionen}
+\end{align*}
+
+\subsection{Maßsysteme}
+\hfill\\\textbf{SI-System}
+\begin{enumerate}[wide,label=$\cdot$]
+        \item Länge: $1\,\text{m}\,$ (Meter)
+        \item Zeit: $1\,\text{s}\,$ (Sekunde)
+        \item Masse: $1\,\text{kg}\,$ (Kilogramm)
+        \item Stoffmenge: $1\text{mol}$ (Mol)
+        \item Temperatur: $1\,\text{K}\,$ (Kelvin)
+        \item el. Lichtstärke: $1\,\text{A}\,$ (Ampere)
+        \item Lichtstärke: $1\,\text{Cd}\,$ (Candela)
+        \item[] --
+        \item Elektronenvolt: Die Energie, die ein Elektron $e^{-}$ erhält, wenn es $1\,\text{V}\,$ druchläuft. $\left( 1\,\text{eV}\,\right) $ 
+        \item astronomische Einheit: $1\,\text{Ae}\, \approx 1.5\cdot 10^{11}\,\text{m}\,$, der Abstand von der Erde zur Sonne.
+        \item Lichtjahr: $1\,\text{Lj}\,\approx \pi \cdot 10^{7}\,\text{s}\,\cdot 3\cdot 10^{8}\tfrac{\,\text{m}\,}{\,\text{s}\,}\approx 9,45\cdot 10^{15}\,\text{m}\,$, die Strecke die das Licht in einem Jahr zurücklegt.
+        \item Parsec: $1\,\text{pc}\,=\tfrac{1\,\text{AE}\,}{tan\left( \tfrac{2\pi }{360\cdot 3600}\right) }\approx 2\cdot 10^{5}\,\text{AE}\,\approx 3\cdot 10^{16}\,\text{m}\,\approx 3,26\,\text{Lj}\,$ Die Scheinbare Bewegung eines nahen Sterns um eine Bogensekunde.
+        \item \si{\angstrom}ngström: $1\,\text{\si{\angstrom}}\,=10^{-10}\,\text{m}\,\approx \text{Atomradius}$ 
+        \item Fermi- / Femtometer: $1\,\text{fm}\,=10^{-15}\,\text{m}\,\approx \text{Protonenradius}$ 
+\end{enumerate}
+
+\subsection{Maßstandards}
+Messungen werden mit Eichnormalen verglichen. Standards:
+\begin{enumerate}[wide,label=$\cdot$]
+        \item genügend genau
+        \item Reproduzierbar
+        \item 'wenig' technischer Aufwand
+\end{enumerate}
+andere Methoden:
+\begin{enumerate}[wide,label=$\cdot$]
+        \item Messungen mit der Laufzeit des Lichts (LIDAR = light detection and ranging). Zum Messen der Distanz zwischen Erde und Mond: Licht wird von der Erde auf einen Spiegel auf dem Mond geschossen, reflektiert, und die Zeit gemessen bis das Licht wieder an der Erde ankommt.
+        \item Triangulation: allgemeines Dreieck, $\tfrac{a}{\sin \alpha }=\tfrac{b}{\sin \beta}=\tfrac{c}{\sin \gamma } \rightarrow $ messe $c,\alpha,\beta,\gamma \Rightarrow a,b $  
+        \item Extragalaktische Messungen indirekt über Rotverschiebung \item Messung mit Beugung von Wellen: optische Mikroskope $\lambda 500nm$, Elektronenmikroskope $\lambda 0,1nm$. Streuexperimente $\lambda 10^{-18}m$ 
+
+\end{enumerate}
+
+\subsection{Zeit}
+Messungen von Zeitintervallen $\Delta t$, z.B.
+\begin{enumerate}[wide,label=$\cdot$]
+        \item Zählen periodischer Prozesse mit Frequenz $\nu =[\nu ]=\tfrac{1}{s}=\,\text{Hz}\,$ 
+\end{enumerate}
+Schwingungsdauer Pendel:
+\[ 
+T=2\pi \sqrt[]{\dfrac{l}{g}}\Leftrightarrow l=\left( \dfrac{T}{2\pi }\right) ^2\cdot g
+.\] 
+Sonnenzeit:
+\[ 
+        d_{Stern}=\dfrac{2\pi }{\omega _E}\qquad \omega _E:\text{ Winkelgeschw. der Erde}
+.\] 
+Wird noch zum Abgleichen mit der Atomzeit genutzt. Die Präzision $\tfrac{\Delta \nu }{\nu }$  einer solchen Uhr liegt zwischen $10^{-14}$ und $10^{-17}$ \\\\
+Zum Messen von kurzen Zeiten, z.B. eines Teilchens mit der Geschw. $v\approx c$:
+\begin{center} Ein Teilchen durchfliegt 2 Detektoren (Szintilatoren) in denen jeweils bei Durchlauf ein Signal abgegeben wird und mit einer \glqq Clock\grqq{} verglichen wird. Weiß man die Frequenz der Clock, so kann man die Zeit zwischen den Beiden Signalen messen. Diese Apparatur hat eine Auflösung von $10^{-10}$.\end{center}
+Zum messen von langen Zeiten wird der radioaktive Zerfall genutzt:
+\begin{align*}
+        t=0&:N_0\text{ Kerne}\\
+        t=T_{1/2}&:N_0\cdot \dfrac{1}{2}\\
+        t=2T_{1/2}&:N_0\cdot \left( \dfrac{1}{2}\right) ^2\\
+        t=3T_{1/2}&:N_0\cdot \left( \dfrac{1}{2}\right) ^2\\
+\end{align*}
+\[ 
+        \Leftrightarrow N\left( t\right) =N_0\cdot \dfrac{1}{2}^{\tfrac{t}{T_{1/2} }}=N_0\cdot e^{-\lambda t}\qquad \lambda =\dfrac{\ln 2}{T_{1/2}}\qquad [\lambda ]=\,\text{s}\,^{-1}
+.\] 
+alternativ als DGL:
+\[ 
+dN=N\left( t+dt\right) -N\left( t\right) \Leftrightarrow \dfrac{dN\left( t\right) }{dt}=-\lambda N\left( t\right) 
+.\]
+Nutzen zur Zeitmessung: $^{14}_{6}C$ 
+\[ 
+^{14}_{6}C\rightarrow ^{14}_{7}N+e^{-}+\nu ^{-}_{e}\qquad T_{1/2}=5700\,\text{a}\,
+.\] 
+Produktion in der Atmosphäre:
+\[ 
+^{14}_{7}N+^{1}_{0}n\rightarrow ^{14}_{6}C+^{1}_{1}p
+.\] 
+Wenn eine Pflanze stirbt, findet kein $CO_{2}$ Austausch mehr statt. $^{14}C$ zerfällt $\rightarrow $ Aktivität nimmt mit $e^{-\lambda t}$ ab. Messungen der $^{14}C$-Aktivität im Vergleich mit lebenden Pflanzen führt zur Bestimmung des Alters von organischen Materialien.\\\\
+Zeiten in der Natur:
+\begin{align*}
+        \text{Alter des Universums}&:5\cdot 10^{17}\,\text{s}\,\\
+        \text{Erde um die Sonne}&:\pi \cdot 10^{7}\,\text{s}\,\\
+        \text{Lichtweg }1\,\text{m}\,&:3\,\text{ns}\,
+\end{align*}
+
+\subsection{Masse}
+Die Definition erfolgt über die atomare Masse und Avogardozahl. Man stellt eine hochreine Si-Kugel her und berechnet den Gitterabstand sowie den Radius. Damit kann man die Anzahl der Atome auf $10^{-13}$ bis $10^{-14}$ genau bestimmen. Die Abweichung der Kugel liegt bei $50nm$.\\\\
+Atomare Masseinheit:
+\[ 
+        1\,\text{u}\,=\dfrac{1}{12}\,\text{m}\,_{^{12}C}=1,6605656\cdot 10^{-27}\,\text{kg}\,
+.\] 
+Das mol eines Systems ist die Stoffmenge, das aus eben so vielen Teilchen wie $12\,\text{g}\,$ $^{12}C$ besteht.\\
+Avogadrozahl $N_{A}$:
+\[ 
+1\text{mol}=6,02214179\left( 30\right) \cdot 10^{23}\text{ Teilchen}
+.\] 
+Massen der Natur:
+\begin{align*}
+        \text{Elektron}&:10^{-30}\left( \approx 511\,\text{kev}\,\right) 
+\end{align*}
+
+\subsection{Normen der SI-Einheiten}
+\begin{enumerate}[label=$\cdot$]
+        \item Sekunde: Sie wird definiert durch die Konstante der Cäsiumfrequenz $\Delta v$, der Frequenz des ungestörten Hyperfeinübergang des Grundzustandes des Cäsium-Isotops $^{133}$Cs. Der Zahlenwert ist auf $9192631770$ festgelegt, wenn sie in der Einheit Hz bzw s$^{-1}$ angegeben wird. 
+        \item Meter: Er wird definiert durch die Konstante der Lichtgeschwindigkeit im Vakuum $c$. Der Zahlenwert ist auf $299792458$ festgelegt, wenn sie in der Einheit $\,\text{m}\,\cdot \,\text{s}\,^{-1}$ angegeben wird und die Sekunde durch $\Delta v$ definiert ist.
+        \item Kilogramm: Es wird definiert durch die Konstante des Planck'schen Wirkungsquantum $h$. Der Zahlenwert ist auf $6,62607015\cdot 10^{-34}$ festgelegt, wenn sie in der Einheit $\,\text{J}\,\cdot \,\text{s}\,$ bzw. $\,\text{kg}\,\cdot \,\text{m}\,^2\cdot \,\text{s}\, ^{-1} $ angegeben wird und die Sekunde und der Meter durch $\Delta v$ und $c$ definiert sind.
+        \item Ampere: Es wird definiert durch die Konstante der Elementarladung $e$. Der Zahlenwert ist auf $1,602176634\cdot 10^{-19}$ festgelegt, wenn sie in der Einheit \,\text{C}\, bzw. $\,\text{A}\,\cdot \,\text{s}\,$ angegeben wird und die Sekunde durch $\Delta v$ definiert ist.
+        \item Kelvin: Es wird definiert durch die Boltzmann-Konstante $k$. Der Zahlenwert ist auf $1,380649\cdot 10^{-23}$ festgelegt, wenn sie in der Einheit $\,\text{A}\,\cdot \,\text{K}\,^{-1}$ bzw $\,\text{kg}\,\cdot \,\text{m}\,^2\cdot \,\text{s}\,^{-2}\cdot \,\text{K}\,^{-1}$ angegeben wird und das Kilogramm, der Meter und die Sekunde durch $h,c$ und $\Delta v$ definiert sind.
+        \item Mol: Ein Mol enthält genau $6,02214076\cdot 10^{23}$ Einzelteilchen. Diese Zahl ist der festgelegte numerische Wert der Avogadrokonstante $N_A$, ausgedrückt in der Einheit $\text{mol}^{-1}$, und wird als Avogadrozahl bezeichnet. Die Stoffmenge, Symbol $n$, eines Systems ist ein Maß für eine Anzahl spezifischer Einzelteilchen. Dies kann ein Atom, Molekül, Ion, Elektron sowie ein anderes Teilchen oder eine Gruppe solcher Teilchen genau angegebener Zusammensetzung sein.
+        \item Candela: Sie wird definiert durch die Konstante $K_{\,\text{cd}\,}$, das photometrische Strahlungsäquivalent einer monochromatischen Strahlung von $540\cdot 10^{12}\,\text{Hz}\,$. Der Zahlenwert ist auf $683$ festgelegt, wenn sie in der Einheit $\,\text{Im}\,\cdot \,\text{W}\,^{-1}$ bzw. $\,\text{cd}\,\cdot \,\text{sr}\,\cdot \,\text{kg}\,^{-1}\cdot \,\text{m}\, ^{-2}\cdot \,\text{s}\, ^{3}$ angegeben wird und das Kilogramm, der Meter und die Sekunde durch $h,c$ und $\Delta v$ definiert sind.
+\end{enumerate}
+
+\subsection{Dimensionsanalyse}
+Mit der Dimensionsanalyse lässt sich die Zusammensetzung der Einheiten einer Gleichung bestimmen. Es wird angenommen, dass eine Größe nur von den anderen Größen des Systems beschrieben werden kann. Zum Beispiel gilt für ein Pendel:
+\[ 
+        T=m ^{a}\cdot l^{a}\cdot g^{c}
+.\] 
+$T$ hängt also von einer Potenz der Masse, der Länge und der Gravitationskraft ab.
+\begin{gather*}
+        \,\text{s}\,=\,\text{kg}\,^{a}\,\text{m}\, ^{a}\left(\dfrac{\,\text{m}\,}{\,\text{s}\, ^2}\right)^{c}\\
+        \Leftrightarrow a=0,b=\dfrac{1}{2},c=-\dfrac{1}{2}
+\end{gather*}
+
+\section{Massenpunkte}
+\subsection{Kinematik}
+In der Kinematik wird die Beschreibung der Bewegung und nicht deren Ursache behandelt. Der Massenpunkt ist eine Idealisierung mit Vernachlässigung der Ausdehnung und oft eine Reduktion auf die Bewegung des Schwerpunkts (also keine Rotation, Verformung, ...).
+\\\hfill\\\textbf{Masse}\\ 
+Bei der Masse wird zwischen den beiden Definitionen der schweren Masse (die Gravitationskraft die auf einen Körper wirkt) und der trägen Masse (die Kraft die auf einen Körper wirkt, wenn er beschleunigt wird). Die Unterscheidung zwischen beiden Massen findet nur auf sprachlicher Ebene statt, also gilt immer $\,\text{m}\,_{\text{schwer}}=\,\text{m}\,_{\text{träge}}$. 
+\\\hfill\\\textbf{Ortsvektor und Bahnkurve}\\
+$\vv{r}$ beschreibt den Ort eines Massenpunktes zur Zeit $t:\vv{r}\left(t\right)$ in einem Koordinatensystem mit
+\[ 
+        \vv{r}=x\vv{e_x}+y\vv{e_y}+z\vv{e_z}=\left(\begin{matrix}
+                x\\y\\z
+        \end{matrix}\right)
+.\] 
+\\\hfill\\\textbf{Zylinderkoordinaten}\\ 
+\begin{align*}
+        \vv{r}=\left(\begin{matrix}
+                r\\\theta \\\varphi 
+                \end{matrix}\right)&&\left(\begin{matrix}
+                x=&\rho \cos \varphi\\
+                y=&\rho \sin \varphi\\
+                z=&z
+                \end{matrix}\right)&&\left(\begin{matrix}
+                \rho =&\sqrt[]{x^2+y^2}\\
+                \varphi=&\arctan \tfrac{y}{x}\\
+                z=&z
+                \end{matrix}\right)
+\end{align*}
+\\\hfill\\\textbf{Polarkoordinaten}\\ 
+\begin{align*}
+        \vv{r}=\left(\begin{matrix}
+                r\\\theta \\\varphi
+                \end{matrix}\right)&&\left(\begin{matrix}
+                x=&r\cos \varphi \sin \theta \\
+                y=&r\sin \varphi \sin \theta \\
+                z=&r\cos \theta 
+\end{matrix}\right)&&\left(\begin{matrix}
+r=&\,|\, \vv{r}\,|\, =\sqrt[]{x^2+y^2+z^2}\\
+\theta =&\arccos \tfrac{z}{r}\\
+\varphi =&\arctan \tfrac{y}{x}
+\end{matrix}\right)
+\end{align*}
+\\\hfill\\\textbf{beliebige Bewegung im Raum}\\ 
+Eine beliebige Bewegung im Raum lässt sich als Funktion $\vv{r}\left(t\right)$ beschreiben. Darauf folgt für die Geschwindigkeit
+\[ 
+        \dfrac{\Delta \vv{r}}{\Delta t}=\dfrac{\vv{r}\left(t+\Delta t\right)-\vv{r}\left(t\right)}{t_2-t_1}={\vv{v}_{\text{mittel}} }
+.\] 
+\[ 
+        \lim_{\Delta t\rightarrow 0}\dfrac{\Delta \vv{r}}{\Delta t}=\dfrac{d\vv{r}\left(t\right)}{dt}=\dot{\vv{r}}\left(t\right)=\vv{v}\left(t\right)
+.\] 
+$\vv{v}$ ist ein Vektor tangential zur Bahnkruve $\vv{r}$ und hat im allgemeinen nicht dieselbe Richtung wie $\vv{r}$. Die Geschwindigkeit $v=\,|\, \vv{v}\,|\, $ und wird in $\dfrac{v}{\tfrac{m}{s}}$ angegeben.\\\\
+Berechnung der Bahnkurve wenn $\vv{v}\left(t\right)$ bekannt ist
+\[ 
+        \int_{t_0}^{t_1}\vv{v}\left(t'\right)\td t'=\int_{t_0}^{t}\dfrac{d\vv{r}}{dt'}\td t'=\int_{\vv{r}_0}^{\vv{r}\left(t\right)}\td\vv{r}=\vv{r}\left(t\right)-\vv{r}_0
+.\] 
+Das bedeutet für $\vv{r}\left(t\right)$
+\[ 
+        \vv{r}\left(t\right)=\vv{r}_0+\int_{t_0}^{t}\vv{v}\left(t'\right)\td t'
+.\] 
+Für verschiedene Bewegungen gilt
+\begin{align*}
+        \text{gleichförmig}&:\vv{v}\left(t\right)=\vv{\text{const}}\rightarrow \vv{r}\left(t\right)=\vv{r}_0\left(t\right)\cdot t\cdot \vv{v}\\
+        \text{geradlinig}&:\text{Richtung von $\vv{v}$ konstant }\vv{v}\left(t\right)=\vv{e}_v v\left(t\right)
+\end{align*}
+Die Beschleunigung wird durch die Änderung der Geschwindigkeit angegeben.
+\[ 
+        \lim_{\Delta t\rightarrow 0}\dfrac{\Delta \vv{v}}{\Delta t}=\dfrac{d\vv{v}\left(t\right)}{dt}=\ddot{\vv{r}}\left(t\right)=\dot{\vv{v}}\left(t\right)=\vv{a}\left(t\right)
+.\] 
+$\vv{a}$ ist ein Vektor tangential zur Bahnkruve $\vv{v}$ und hat im allgemeinen nicht dieselbe Richtung wie $\vv{v}$. Die Geschwindigkeit $a=\,|\, \vv{a}\,|\, $ und wird in $\dfrac{a}{\tfrac{m}{s ^2}}$ angegeben.\\\\
+Falls $\vv{a}\left(t\right)=\text{const}$ ist, gilt
+\[ 
+        \vv{r}\left(t\right)=\vv{r}_0+\vv{v}_0\left(t-t_0\right)+\tfrac{1}{2}\vv{a}\left(t-t_0\right)^2
+.\] 
+Für $t_0=0$ 
+\[ 
+\vv{r}\left(t\right)=\vv{r}_0+\vv{v}_0t+\tfrac{1}{2}\vv{a}t^2
+.\] 
+Die Geschwindigkeit kann dann durch
+\[ 
+\vv{v}\left(t\right)=\vv{v}_0+\int_{t_0}^{t}\vv{a}\left(t'\right)\td t'
+.\] 
+angegeben werden.\\\\
+Das heißt für die verallgemeinerte Gleichung einer Bahnkurve gilt
+\[ 
+\vv{r}\left(t\right)=\vv{r}_0+\int_{t_0}^{t}\left(\vv{v}_0+\int_{t_0}^{t'}\vv{a}\left(t''\right)\td t''\right)\td t'
+.\] 
+\\\hfill\\\textbf{Schiefer Wurf}\\ 
+Der schiefe Wurf ist ein System mit einer ...
+\begin{enumerate}[label=...]
+        \item gleichförmigen Bewegung in $x$ 
+        \item gleichmäßigen Beschleunigung in $z$ 
+\end{enumerate}
+Darauf folgt
+\begin{align*}
+        x\left(t\right)&=v_{0x}t\\
+        y\left(t\right)&=0\\
+        z\left(t\right)&=-\dfrac{1}{2}gt^2+v_{0z}t+h
+\end{align*}
+Also folgt für die Wurfparabel $z\left(x\right)$ 
+\[ 
+        z\left(x\right)=-\dfrac{1}{2}\dfrac{g}{v_{0x}^2}x^2+\dfrac{v_{0z}}{v_{0x}}x+h
+.\] 
+\\\hfill\\\textbf{Kreisbewegung}\\ 
+Eine gleichförmige Kreisbewegung wird mit $\dfrac{d\varphi }{dt}=\text{const}$. Für die Winkelgeschwindigkeit gilt dann $\omega :=\dfrac{d\varphi }{dt}$ mit $\dfrac{\omega }{\tfrac{1}{\,\text{s}\,}}$. Die Umlauffrequenz $\nu =\dfrac{1}{T}=\dfrac{\omega }{2\pi }$ mit $\dfrac{\nu }{\tfrac{1}{\,\text{s}\,}}=\dfrac{\nu }{\text{Hz}}$, bzw für die Umlaufzeit $T=\dfrac{2\pi }{\omega }$  
+\[ 
+        \varphi \left(t\right)=\int_{t'=0}^{t}\omega \td t=\omega \cdot t\left(+\varphi _0\right)
+.\] 
+Für eine Kreisbahn in der x-y-Ebene gelten folgende Zusammenhänge.\\\\
+Der Ort auf der Kreisbahn kann mit $\vv{R}\left(t\right)$ angegeben werden
+\[ 
+        \vv{R}\left(t\right)=\left(\begin{matrix}
+                x\left(t\right)\\y\left(t\right)\\0
+        \end{matrix}\right)=\left(\begin{matrix}
+                R\cos \varphi \left(t\right)\\R\sin \varphi \left(t\right)\\0
+        \end{matrix}\right)=\left(\begin{matrix}
+                R\cos \omega t\\R\sin \omega t\\0
+        \end{matrix}\right)=R\vv{e}_R
+.\] 
+Für die Geschwindigkeit gilt dann
+\[ 
+        \vv{v}\left(t\right)=\dfrac{d\vv{R}}{dt}=\left(\begin{matrix}
+                \dot{x}\left(t\right)\\\dot{y}\left(t\right)\\0
+        \end{matrix}\right)=\left(\begin{matrix}
+                -\omega R\sin \omega t\\\omega R\cos \omega t\\0
+        \end{matrix}\right)=\omega R\vv{e}_T
+.\] 
+Analog für die Beschleunigung (welche in das Zentrum zeigt: $\vv{e}_a=-\vv{e}_R$)
+\[ 
+        \vv{a}\left(t\right)=\dfrac{d\vv{v}}{dt}=\left(\begin{matrix}
+                \dot{v}_x\left(t\right)\\\dot{v}_y\left(t\right)\\0
+        \end{matrix}\right)=\left(\begin{matrix}
+                \ddot{x}\left(t\right)\\\ddot{y}\left(t\right)\\0
+        \end{matrix}\right)=\left(\begin{matrix}
+                -\omega ^2R\cos \omega t\\-\omega ^2R\sin \omega t\\0
+        \end{matrix}\right)=-\omega ^2R\vv{e}_a=-\dfrac{v^2}{R}\vv{e}_a
+.\] 
+Diese Gleichungen gelten für $\vv{v}\perp \vv{R}$.\\\\
+Für eine allgemeine Kreisbewegung im Raum wird $\vv{\omega }$ so gewählt, dass $\vv{\omega } \perp \vv{v} \perp \vv{R}$ ist. Dann gilt $\vv{v}=\vv{\omega }\times \vv{R}$.
+\\\hfill\\\textbf{Allgemeine krummlinige Bewegung}\\
+Für eine allgemeine krummlinige Bewegung gilt für $\vv{v}$, dass dieser immer tangential zur Bahnkurve ist. 
+\begin{gather*}
+        \vv{v}=v \vv{e}_T\\
+        \vv{a}=\dot{\vv{v}}=\underbrace{\dot{v}\vv{e}_T}_{\vv{a}_T}+\underbrace{v \dot{\vv{e}}_T}_{\vv{a}_N}
+\end{gather*}
+Mit 
+\begin{align*}
+        \vv{a}_N=0&:\text{geradelinige Bewegung}\\
+        \vv{a}_T=0&:\text{krummlinige Bewegung mit }\,|\, \vv{v}\,|\, =\text{const}\text{. Für }\,|\, \vv{a}_N\,|\, =\text{const}\Rightarrow \text{ Kreisbahn}
+\end{align*}
+Für die allgemeine Bewegung in der x-y-Ebene gilt
+\begin{align*}
+        \vv{e}_T=\underbrace{\,|\, \vv{e}_T\,|\,}_{=1} \left(\begin{matrix}
+                \cos \varphi \\
+                \sin \varphi 
+        \end{matrix}\right)&&\vv{e}_N=\underbrace{\,|\, \vv{e}_N\,|\,}_{=1} \left(\begin{matrix}
+                -\sin \varphi \\
+                \cos \varphi 
+        \end{matrix}\right)
+\end{align*}
+Für die Ableitung gilt
+\[ 
+        \dot{\vv{e}}_T=\dfrac{d}{dt}=\vv{e}_T=\dfrac{d}{dt}\left(\begin{matrix}
+                \cos \varphi \\
+                \sin \varphi 
+        \end{matrix}\right)=\left(\begin{matrix}
+                -\sin \varphi \cdot \dot{\varphi }\\
+                \cos \varphi \cdot \dot{\varphi }
+        \end{matrix}\right)=\dot{\varphi }\vv{e}_N
+.\] 
+Bei einer Kreisbahn gilt, dass $\dot{\varphi }=\omega =\text{const}$. Mithilfe einer lokalen Approximation durch einer Kreisbahn kann die krummlinige Bahn beschrieben werden.
+\begin{align*}
+        ds=\rho d\varphi &&\dfrac{d\varphi }{dt}=\dot{\varphi} =\dfrac{1}{\rho }\dfrac{ds}{dt}=\dfrac{1}{\rho }v
+\end{align*}
+Für die Beschleunigung gilt dann
+\[ 
+        \vv{a}=\dot{v}\vv{e}_T+v\dot{\vv{e}}_T=\dot{v}\vv{e}_T+\dfrac{v^2}{\rho }\vv{e}_N
+.\] 
+\[
+        \,|\, \vv{a}\,|\, =\sqrt[]{\dot{v}^2+\dfrac{v^{4}}{\rho ^{2} }}
+.\]
+In einem Kreis gilt dann der Zusammenhang
+\[ 
+        \dot{v}=0\rightarrow \,|\, \vv{a}\,|\, =\,|\, \vv{a}_N\,|\, =\dfrac{v^2}{r}
+.\] 
+
+\subsection{Wechsel des Koordinatensystems}
+Translation: \begin{align*}
+        \vv{r}'&=\vv{r}-\vv{\theta}\\
+        \vv{v}'&=\vv{v}\\
+        \vv{a}'&=\vv{a}
+\end{align*}
+Wobei $\vv{\theta}$ die Verschiebung des Koordinatensystems ist. Es gilt die Annahme $t'=t$.
+
+\subsubsection{Galilei-Transformation}
+\begin{align*}
+        \vv{r}'&=\vv{r}-\vv{u}t\\
+        t'&=t
+\end{align*}
+Die Geschwindigkeit $\vv{u}$ ist konstant. $\vv{\theta }=\vv{\theta _0}+\vv{u}t$ und $\vv{\theta _0}=\vv{0}$.
+\begin{align*}
+        \text{Länge}&:\Delta \vv{r}=\vv{r_2}-\vv{r_1} &\text{Galilei-invariant}\\
+        \text{Geschwindigkeit}&:\vv{v}'=\vv{v}-\vv{u}&\text{nicht Galilei-invariant}\\
+        \text{Geschw.-Differenzen}&:\Delta \vv{v}'=\vv{v_2}'-\vv{v_1}'&\text{Galilei-invariant}
+\end{align*}
+Die Grundgesetze der nicht-relativistischen Physik sind Galilei-invariant.
+
+\section{Dynamik}
+\subsection{Kinematik}
+Die Kraft als Ursache der Bewegungsänderung:
+\begin{enumerate}[label=\arabic*.]
+        \item Trägheitsgesetz
+        \item Aktionsgesetz $F=ma$ 
+        \item Reaktionsgesetz actio=reactio
+\end{enumerate}
+\textbf{Trägheitsgesetz}\\ 
+Wenn keine äußere Kraft auf einen Körper wirkt, so bleibt er im Zustand der ...
+\begin{enumerate}[label=...]
+        \item Ruhe, wenn er vorher in Ruhe war.
+        \item gleichförmigen Bewegung, wenn er vorher in Bewegung war.
+\end{enumerate}
+Wobei die Ruhe nur ein Spezialfall der gleichförmigen Bewegung mit $v=0$ ist.\\\\
+Das Trägheitsgesetz ist Galilei-invariant und die Bewegung braucht keinen stetigen Antrieb (falls er keine Reibung erfährt, also eine Kraft die entgegen der Bewegungsrichtung zeigt).\\\\
+Des Weiteren wird ein einheitliches Bezugssystem benötigt, da Bewegung relativ zum Beobachter ist. Dazu wird oft ein Inertialsystem benutzt, welches relativ zu einem Fixstern ruht.
+\\\hfill\\\textbf{Aktionsgesetz}\\ 
+Die Beschleunigung die ein Körper erfährt ist ...
+\begin{enumerate}[label=...]
+        \item proportional zur Kraft, die auf ihn wirkt.
+        \item umgekehrt proportional zu seiner Masse.
+\end{enumerate}
+Also: \[
+        \vv{a}=\dfrac{1}{m}\vv{F}
+.\]
+Dieser Zusammenhang gilt unter folgenden Annahmanen:
+\begin{enumerate}[label=]
+        \item $\vv{F}=m\vv{a}$ gilt für $m=\text{const}$ 
+        \item $\dfrac{dm}{dt}=0$ 
+        \item nicht wenn $v\approx c$ 
+\end{enumerate}
+Die Einheit der Kraft ist 
+\[
+        1\text{Newton}=\dfrac{N}{\tfrac{kg\cdot m}{s ^2}}
+.\]
+Da die Kraft eine vektorielle Größe ist gilt für mehrere angreifende Kräfte:
+\[ 
+\vv{F_{ges}}=\sum_{i}^{}\vv{F_i}
+.\] 
+Mit der resultierenden Beschleunigung:
+\[ 
+\vv{a}=\dfrac{1}{m}\sum_{i}^{}\vv{F_i}
+.\] 
+\\\hfill\\\textbf{Reaktionsgesetz}\\ 
+Übt ein Körper auf einen zweiten eine Kraft $\vv{F_{12}}$ aus, so übet dieser ebenfalls eine Kraft $\vv{F_{21}}$ auf den ersten auf.
+\[ 
+        \vv{F_{12}}=-\vv{F_{21}}
+.\] 
+
+\subsection{Der Impuls}
+Der Impuls wird definiert als
+\[ 
+        \vv{p}=m\cdot \vv{v}
+.\] 
+Mit
+\[ 
+        \dfrac{p}{kg\tfrac{m}{s}}=\dfrac{p}{Ns}
+.\] 
+Die Verallgemeinerungen der Newton-Gesetze:
+\begin{enumerate}[label=\arabic*. NG,wide]
+        \item $\vv{F}=0\Rightarrow \vv{p}=\text{const}$ 
+        \item $\vv{F}=\dfrac{d}{dt}\left(m\vv{v}\right)=\dot{\vv{p}}$ 
+        \item $\dot{\vv{p_{12} }}=-\dot{\vv{p_{21} }}\Leftrightarrow \vv{p_{12}}=-\vv{p_{21}}$: Impulserhaltung
+\end{enumerate}
+Für die Impulsänderung (\grqq Kraftstoß\grqq) gilt
+\[ 
+        \vv{p_2}-\vv{p_1}=\int_{t_1}^{t_2}\vv{F}\td t
+.\] 
+Für $\Delta \vv{p} $ macht es keinen unterschied, ob viel Kraft in kurzer Zeit, oder wenig Kraft in langer Zeit wirkt.
+\\\hfill\\\textbf{Systeme mit veränderlicher Masse}\\ 
+Beispiele:
+\begin{enumerate}[label=]
+        \item Rakete (Treibstoff wird verbraucht): $\dot{m}<0$ 
+        \item Flugzeug, das betankt wird $\dot{m}>0$ 
+        \item relativistisch beschleunigte Teilchen
+\end{enumerate}
+Konkret für die Rakete:
+\begin{align*}
+        \text{Massenänderung}&:dm<0\\
+        \text{Geschw. Rakete relativ zur Erde}&:\vv{v}\\
+        \text{Geschw. Rakete relativ zum Gas}&:\vv{v}_{\text{gas}}=\text{const}\\
+        \text{Schubkraft}&:\vv{F}=\dot{\vv{p}}=\dot{m}\cdot \vv{v}_{\text{gas}}
+\end{align*}
+$\vv{v}$ und $\vv{v}_{\text{gas}}$ ist relativ zu unterschiedlichen Bezugssystemen definiert.
+\begin{align*}
+        \text{relativ zur Erde}&:\vv{v}+\vv{v}_{\text{gas}}=\left(v-v_{\text{gas}}\right)\vv{e}_x
+\end{align*}
+Der Impuls als eine Funktion der Zeit im Ruhesystem der Erde
+\begin{align*}
+        t&:\vv{p}\left(t\right)=m\vv{v}\left(t\right)=mv \vv{e}_x\\
+        \text{d}t&:\vv{p}\left(\text{d}t\right)=\text{d}m\text{d}v\\
+        t+\text{d}t&:\vv{p}\left(t+\text{d}t\right)=\underbrace{\left(m+\text{d}m\right)\left(v\left(t\right)+\text{d}v\right)\vv{e}_x}_{\text{Rakete}}-\underbrace{\text{d}m\left(v\left(t\right)-v_{\text{gas}}\right)\vv{e}_x}_{\text{Gas}}
+\end{align*}
+Ohne eine äußere Kraft gilt die Impulserhaltung $\vv{p}\left(t+\text{d}t\right)-\vv{p}\left(t\right)=0=m \text{d}v+\text{d}mv_{\text{gas}}$ 
+\begin{gather*}
+        \text{d}v=-v_{\text{gas}}\dfrac{\text{d}m}{m}\\
+        v\left(t\right)=v_0+v_{\text{gas}}\ln\dfrac{m_0}{m\left(t\right)}\qquad \left(\text{Raketengleichung}\right)
+\end{gather*}
+Nach der Brenndauer $T_s$ 
+\[ 
+        v\left(T_s\right)=v_0+v_{\text{gas}}\ln\left(1+\dfrac{m_{\text{Treibstoff} }}{m_{\text{Nutzlast} }}\right)
+.\] 
+Steighöhe (mit $m\left(t\right)=qt$: der Massenverlust pro Zeit)
+\[ 
+        z\left(t\right)=\int_{}^{}v\left(t\right)\td t=\left(v_0+v_{\text{gas}}\right)t+v_{\text{gas}}\left(\dfrac{m_0}{q}-t\right)\ln\left(1-\dfrac{q}{m_0}t\right)-\dfrac{1}{2}gt^2
+.\]
+
+\subsection{Drehimpuls}
+Der Drehimpuls eines Massepunkts bezüglich des Koordinatenursprungs mit dem Impuls $p$ ist gegeben durch
+\[ 
+        \vv{L}=\vv{r}\times\vv{p} 
+.\] 
+Wobei $\vv{L}\perp\vv{r}$ und $\vv{L}\perp\vv{p}$ mit dem Betrag $\,|\, \vv{L}\,|\, =\,|\, \vv{r}\times m\vv{v}\,|\, =m\cdot r\cdot v\cdot \sin \left(\angle\left(\vv{r},\vv{v}\right)\right)$
+\\\hfill\\\textbf{Kreisbewegung $\vv{r}\left(t\right)$ um dem Urspung}\\ 
+\[ 
+        \vv{L}=\vv{r}\times\vv{p}=m\left(\vv{r}\times\vv{v}\right)=mr^2\vv{\omega }\qquad \,|\, \vv{L}\,|\, =m\omega r^2=mvr
+.\] 
+Die Richtung von $\vv{L}$ ist auch die Richtung von $\vv{\omega }$.
+\\\hfill\\\textbf{Verallgemeinerte Bewegung $\vv{r}\left(t\right)$}\\ 
+\[ 
+        \vv{L}=m\left(\vv{r}\times\vv{v}\right)=mr^2\vv{\omega }
+.\] 
+Hier ist $\vv{\omega }$ die momentane Kreisfrequenz der Kreisbewegung.\\\\
+$\vv{L}$ hängt immer vom Bezugspunkt (Ursprung) ab und wird angegeben durch $\tfrac{\vv{L}}{Js}$.
+\\\hfill\\\textbf{Drehmoment}\\ 
+\[ 
+        \dot{\vv{L}}=\dfrac{\text{d}}{\text{d}t}\vv{L}=\vv{r}\times\vv{F}:=\vv{M}\qquad \dfrac{M}{Nm}
+.\] 
+Wenn auf ein System kein äußeres Drehmoment wirkt, dann ist $\dot{\vv{L}}=0;\vv{L}=\text{const}$. 
+\\\hfill\\\textbf{Impulserhaltung}\\ 
+Wenn $r$ reduziert wird, dann muss $\omega $ vergrößert werden, um $L$ zu erhalten. Wenn $\vv{L}$ gedreht wird, dann benötigt man $\vv{M}$. Der Gesamtdrehimpuls des Systems verändert sich nicht.\\Bei einer Kollision von zwei Kugeln mit geringem Drehimpuls, werden sie außeinandergestoßen (wenig Drehimpuls bleibt erhalten). Wenn diese Kugeln einen großen Drehimpuls haben, rollen sie nach der Kollision weiter in die Bewegungsrichtung.
+\\\hfill\\\textbf{Drehimpuls und Ursprung}\\ 
+Für einen MP und der Ursprung im Zentrum
+\begin{align*}
+        \vv{L}&=\vv{r}\times \vv{p}\\
+        \vv{F}&=-m\omega ^2\vv{r}\\
+        \vv{M}&=\vv{r}\times \vv{R}=0
+\end{align*}
+Für den Ursprung versetzt entlang der $\vv{\omega }$-Achse
+\begin{align*}
+        \vv{r}&=\vv{r}_{||}+\vv{r}_{\perp}\\
+        \vv{M}&=\vv{r}_{||}\times\vv{F}\neq 0
+\end{align*}
+Zwei MP mit $\Delta \varphi =\pi $
+\begin{align*}
+        \vv{M}&=0
+\end{align*}
+
+\subsection{Impulserhaltung}
+Laut dem 3. Newton-Gesetz ist ein System abgeschlossen, wenn keine äußere Kraft auf das System wirkt, also $\dot{\vv{p}}_{\text{ges}}=0$, also
+\[ 
+        \sum_{i}^{}\vv{p}_i=\text{const}
+.\] 
+Damit ist der Impuls erhalten.\\\\
+Beispiele:\\
+Für zwei Massen $m_1=m_2$ mit $\vv{p}_1=m_1\vv{v}_1$ und $\vv{p}_2=0$ gilt
+\begin{gather*}
+        \vv{p}'_1=0\\
+        \vv{p}'_2\neq 0\\
+        \vv{p}_{\text{ges}}=\vv{p}_1=\vv{p}'_2
+\end{gather*}
+Für zwei Massen $2m_1=m_2$ mit $\vv{p}_1=m_1\vv{v}_1$ und $\vv{p}_2=0$ gilt
+\begin{gather*}
+        \vv{p}'_1=0\\
+        \vv{p}'_2\neq 0\\
+        \vv{p}_{\text{ges}}=\vv{p}_1=\vv{p}'_2
+\end{gather*}
+Für zwei Massen $m_1<<m_2$ mit $\vv{p}_1=m_1\vv{v}_1$ und $\vv{p}_2=0$ gilt
+\begin{gather*}
+        \vv{p}'_1=-\vv{p}_1\\
+        \vv{p}'_2=?\\
+        \vv{p}_{\text{ges}}=\vv{p}_1=\vv{p}'_2
+\end{gather*}
+Für einen inelastischen Stoß (Zusammenhaltung durch z.B. Knete; Hier wird die kinetische Energie nicht erhalten, da ein Teil von ihr bei der Verformung der Knete verloren geht.) mit $m_1$ und $m_2$, sowie $\vv{v}_1\neq 0$ und $\vv{v}_2=0$ gilt
+\begin{gather*}
+        m=m_1+m_2\\
+        mv=\left(m_1+m_2\right)v'\rightarrow v'=\dfrac{1}{2}v
+\end{gather*}
+
+\subsection{Klassifikation von Stößen}
+Abhängig von der Veränderung der kinetischen Energie
+\begin{align*}
+        \text{Impuls}&:\vv{p}'_1+\vv{p}'_2=\vv{p}_1+\vv{p}_2\\
+        \text{Energie}&:\dfrac{m_1}{2}\vv{v}'^2_1+\dfrac{m_2}{2}\vv{v}'^2_2=\dfrac{m_1}{2}\vv{v}^2_1+\dfrac{m_2}{2}\vv{v}^2_2+Q\\
+\end{align*}
+Für 
+\begin{align*}
+        Q=0&:\text{elastischer Stoß}\\
+        Q<0&:\text{inelastischer Stoß (Umwandlung von $E_{\text{kin}}$)}\\
+        Q>0&:\text{superelastischer Stoß (Stoßpartner gibt gesamte Energie ab)}
+.\end{align*}
+2-dimensionale Stöße
+\begin{align*}
+        \text{zentraler Stoß}&:\vv{p}_1\neq 0;\vv{p}_2=0\rightarrow \vv{p}'_1=0;\vv{p}_2=\vv{p}_1\\
+        \text{nicht zentraler Stoß}&:\vv{p}_1\neq 0;\vv{p}_2=0\rightarrow \vv{p}'_{T1}=-\vv{p}_{T2}
+\end{align*}
+
+\subsection{Ortsabhängige Kräfte und Kraftfelder}
+Ortsabhängige Kraft werden druch ein Kraftfeld beschrieben.
+\[ 
+        \vv{F}=\vv{F}\left(\vv{r}\right)=\vv{F}\left(x,y,z\right)\text{ oder }\vv{F}\left(r,\theta ,\varphi \right)
+.\] 
+Das Kraftfeld mathematisch ausgedrückt ist es eine Abbildung $\vv{r}\mapsto\vv{F}\left(\vv{r}\right)$, bzw $\mathbb{R}^{3}\mapsto\mathbb{R}^{3}$, also ein Vektorfeld.\\\\
+Ein Spezialfall ist die Zentralkraft $\vv{F}\left(\vv{r}\right)=f\left(r\right)\vv{e}_r$ welche Kugelsymmetrisch um einen Massepunkt nach außen (bzw innen) wirkt. Beispiele für Zentralkraftfelder ist die Gravitationskraft oder Coloumbkraft.\\\\
+In der theoretischen Physik wird für ein Feld $\vv{F}\left(\vv{r}\right)$ die Bahnkurve $\vv{r}\left(t\right)$ gesucht.
+
+\subsection{Konservative Kraftfelder}
+Wenn die Arbeit nicht vom gewählten Weg $A\rightarrow B$ abhängt, heißt das Kraftfeld $\vv{F}\left(\vv{r}\right)$ konservativ. Es gilt für $W_{\text{geschlossener Weg}}$ 
+\[ 
+        W_{\text{g.W.}}=\oint_{}^{}\vv{F}\td\vv{r}=0
+.\] 
+Zum Beispiel sind homogene Felder oder zeitunabhängige Zentralfelder ($\vv{F}=f\left(r\right)\cdot \vv{e}_r$  konservative Felder. Die Reibungskraft hingegen ist nicht konservativ, weil sie immer entgegen der Bewegungsrichtung steht, also abhängig vom Weg von $A\rightarrow B$ ist.\\\\
+In der Vektoranalysis lässt sich eine konservative Kraft wie folgt schreiben
+\[ 
+        \text{rot}\vv{F}=\vv{\nabla }\times\vv{F}\left(\vv{r}\right)=0
+.\] 
+Wobei $\nabla=\left(\dfrac{\partial }{\partial x},\dfrac{\partial }{\partial y},\dfrac{\partial }{\partial z}\right)$.
+
+\section{Energie}
+
+\subsection{Potenzielle Energie}
+In einem konservativen Kraftfeld ist die Arbeit unabhängig vom Weg $A\rightarrow B$ 
+\[ 
+        W=\int_{A}^{B}\vv{F}\td\vv{r}
+.\] 
+Da die Arbeit nur von dem Ortsvektor $\vv{r}_{A/B}$ abhängig ist, lässt sich schreiben
+\[ 
+        W=\int_{A}^{B}\vv{F}\td\vv{r}=E_{\text{pot}}\left(\vv{r}_A\right)-E_{\text{pot}}\left(\vv{r}_B\right)
+.\] 
+Die geleistete Arbeit ist dann die Differenz $\Delta E_{\text{pot}}$. Die zu leistende Arbeit ist negativ, wenn die Kraft entgegen zur Bewegung gerichtet ist, also $\vv{F}d\vv{r}<0$. Der Nullpunkt der potentiellen Energie kann willkürlich gesetzt werden, da das System immer zu einem Bezugspunkt definiert ist.
+
+\subsection{Kinetische Energie}
+Die Arbeit kann auch geschrieben werden als
+\[ 
+        W=\int_{A}^{B}\vv{F}\td\vv{r}=\int_{t_0}^{t}\vv{F}\cdot \vv{v}\td t'
+.\] 
+Mit $\vv{F}=m\cdot \vv{a}=m\cdot \dfrac{\text{d}\vv{v}}{\text{d}t}$ folgt
+\[ 
+        =m\int_{\vv{v}_0}^{\vv{v}}\vv{v}'\td\vv{v}'=m\dfrac{1}{2}[v^2-v_0^2]=\underbrace{E_{\text{kin}}\left(B\right)}_{\vv{v}}-\underbrace{E_{\text{kin}}\left(A\right)}_{\vv{v}_0}
+.\] 
+Also lässt sich für die kinetische Energie schreiben
+\[ 
+        E_{\text{kin}}\left(v\right):=\dfrac{1}{2}mv^2
+.\] 
+
+\subsection{Energieerhaltung der Mechanik}
+Mit
+\begin{gather*}
+        \int_{A}^{B}\vv{F}\td\vv{r}=E_{\text{pot}}\left(A\right)-E_{\text{pot}}\left(B\right)\\
+        =\int_{A}^{B}\vv{F}\td\vv{r}=E_{\text{kin}}\left(B\right)-E_{\text{kin}}\left(A\right)
+\end{gather*}
+folgt
+\[ 
+        E_{\text{pot}}\left(A\right)+E_{\text{pot}}\left(B\right)=E_{\text{kin}}\left(B\right)+E_{\text{kin}}\left(A\right)
+\] 
+also (für konservative Kraftfelder)
+\[ 
+        E=E_{\text{kin}}+E_{\text{pot}}=\text{const}
+.\] 
+Im allgemeinen gilt
+\[ 
+        \sum_{E-\text{Formen}}^{}E_i=\text{const}
+.\] 
+Damit ergeben sich zusammenhänge wie der freie Fall mit $v=\sqrt[]{2gh}$  
+
+\subsection{Potential}
+Die potenzielle Energie in einem Kraftfeld hängt oft von Eigenschaften des Objekts ab, auf das die Kraft ausgeübt wird.
+\begin{align*}
+        \text{Gravitation}&:G=6.674\cdot 10^{-11}\dfrac{m ^{3}}{kgs ^2}\\
+        \text{elektrische Feldkonstante}&:\varepsilon _0=8.854\cdot 10^{-12}\dfrac{As}{Vm}
+\end{align*}
+Das Potential im allgemeinen ist die potentielle Energie pro Probemasse (eine Masse die die Eigenschaft des Feldes erzeugt)
+\[ 
+        \text{d}W=\underbrace{\vv{F}\cdot \text{d}\vv{r}}_{F_x\text{d}x+F_y\text{d}y+F_z\text{d}z}=-\text{d}E_{\text{pot}}
+.\] 
+Die Kraft ist dann der Gradient von der potentiellen Energie (diese zeigt immer in die Richtung der größten positiven Änderung)
+\[ 
+        \vv{F}=-\text{grad}E_{\text{pot}}\left(\vv{r}\right)=-\vv{\nabla}E_{\text{pot}}\left(\vv{r}\right)
+.\] 
+Damit folgt (für konservative Felder)
+\begin{align*}
+        E_{\text{pot}}=-\int_{}^{}\vv{F}\td\vv{r}&&\mathbb{R}^{3}\rightarrow \mathbb{R}\\
+        \vv{F}=-\vv{\nabla}E_{\text{pot}}&&\mathbb{R}\rightarrow \mathbb{R}^{3}\\
+\end{align*}
+
+\subsection{Arbeit}
+Die Arbeit $W$ beschreibt die Energie die benötigt wird um ein Massenpunkt mit einer Kraft über eine Strecke zu bewegen.
+\[ 
+        \text{d}W=\underbrace{\vv{F}\cdot \text{d}\vv{r}}_{F_x\text{d}x+F_y\text{d}y+F_z\text{d}z}=F_{||}\text{d}s=\,|\, \vv{F}\,|\, \,|\, \text{d}\vv{r}\,|\, \cos \alpha =-\text{d}E_{\text{pot}}\left(\vv{r}\right)
+.\] 
+Für die Gesamtarbeit auf dem Weg von A nach B gilt
+\[ 
+        W=\int_{A}^{B}\vv{F}\left(\vv{r}\right)\td\vv{r}=\int_{t_1}^{t_2}\vv{F}\cdot \vv{v}\td t
+.\] 
+Wenn $\vv{F}\perp \text{d}\vv{r}$ dann gilt $\vv{F}\cdot \text{d}\vv{r}=0$ also wird keine Arbeit verrichtet.\\\\
+Die Arbeit angegeben in $\tfrac{W}{Nm}$ bzw $\tfrac{W}{J}$ oder $\tfrac{W}{W_{\text{Watt}}s}$ 
+\\\hfill\\\textbf{Beispiele}\\ 
+Wagen auf schiefer Ebene
+\[ 
+        W=\int_{A}^{B}\vv{F}\td\vv{r}=\int_{A}^{B}\left(mg\sin \alpha \right)\vv{e}_R\td\vv{r}=-mgh
+.\] 
+Federkraft
+\[ 
+        W=\int_{A}^{B}\vv{F}_H\td\vv{r}=-\int_{0}^{x}Dx'\td x'=\dfrac{1}{2}Dx^2
+.\] 
+Freier Fall
+\begin{gather*}
+        W=\int_{h}^{0}\vv{F}\td\vv{r}=-mg[0-h]=mgh>0=\dfrac{1}{2}mv^2
+        v_{\text{end}}=\sqrt[]{2gh} 
+\end{gather*}
+Reibungskraft
+\[ 
+        W=\int_{A}^{B}\vv{F}_R\td\vv{r}=-F_Rl
+.\] 
+
+\subsection{Leistung}
+Die Leistung wird definiert als Arbeit pro Zeit
+\[ 
+        P=\dfrac{\text{d}W}{\text{d}t}
+.\] 
+Mit $\tfrac{P}{Js}$ oder $\tfrac{P}{W_{\text{Watt} }}$\\
+Das beudetet für den Zusammenhang zwischen der Leistung und Arbeit
+\begin{gather*}
+        W=\int_{A}^{B}\vv{F}\td\vv{r}=\int_{A}^{B}\vv{F}\cdot \vv{v}\td t=\int_{t_1}^{t_2}P\td t\\
+        P=\vv{F}\cdot \vv{v}
+\end{gather*}
+
+\section{Labor- und Schwerpunktsystem}
+Der Wechsel zwischen gleichförmig bewegten Bezugssystemen (die Galilei-transformation) verändert die wirkenden Kräfte nicht. Also ist $m,\vv{a}$ G-invariant.\\
+Für das zweite Newton-Gesetz für Systeme aus $n$ Massepunkten gilt 
+\[ 
+        \sum_{i=1}^{n}\dot{\vv{p}}_i=\sum_{i=1}^{n}\vv{F}_i
+.\] 
+Das System aus $n$ Massepunkten verhält sich gegenüber externen Kräften wie ein MP mit
+\[ 
+        \vv{P}=\sum_{i}^{}m_i\vv{V}
+.\] 
+Für 
+\[ 
+        \vv{F}_{\text{extern}}=\dfrac{\text{d}}{\text{d}t}\sum_{i=1}^{n}\vv{p}_i
+.\] 
+Der Schwerpunkt oder Massemittelpunkt eines Systems wird angegeben durch
+\[ 
+        \vv{R}=\dfrac{\sum_{i}^{}m_i\vv{r}_i}{\sum_{i}^{}m_i}
+.\] 
+In einem System bei dem der Startpunkt der Nullpunkt ist: $\vv{R}^{*}:=0$. Der Schwerpunkt bewegt sich also mit $\vv{V}$ gegen das ortsfeste Laborsystem. Der Zusammenhang zwischen den Ortsvektoren im Laborsystem ($\vv{r}_i$) und Schwerpunktsystem ($\vv{r}^{*}_i$).
+\[ 
+        \vv{r}_i=\vv{r}^{*}_i+\vv{R}
+.\] 
+Damit gilt für zwei Massepunkte ($\vv{r}_{12}^{*}=\vv{r}_2^{*}-\vv{r}_1^{*}$)
+\[ 
+        \vv{r}_1^{*}=-\dfrac{m_2}{m_1+m_2}\vv{r}^{*}_{12}\qquad \vv{r}_2^{*}=\dfrac{m_1}{m_1+m_2}\vv{r}_{12}^{*}
+.\] 
+Die Kraftwirkung in einem Schwerpunktsystem mit der Gravitation (wobei $\vv{F}_{12}=-\vv{F}_{21}$)
+\[ 
+        \vv{F}_{21}=\mu \dfrac{\text{d}\vv{v}_{21}}{\text{d}t}\qquad \mu =\dfrac{m_1m_2}{m_1+m_2}
+.\] 
+
+\subsection{Stöße im Schwerpunktsystem (CMS)}
+Galilei-Transformation:
+\begin{align*}
+        \vv{r}_i^{*}&=\vv{r}_i-\vv{R}=\vv{r}_i-\vv{v}t\\
+        \vv{v}_i^{*}&=\vv{v}_i-\vv{v}\\
+        \vv{a}_i^{*}&=\vv{a}_i
+\end{align*}
+Mit $\vv{v}$ 
+\[ 
+        \vv{v}=\dfrac{\text{d}\vv{R}}{\text{d}t}=\dfrac{\sum_{i}^{}m_i\vv{v}_i}{\sum_{i}^{}m_i}
+.\]
+Konkret für den zwei-Körper-Stoß
+\[ 
+        \vv{v}_1^{*}=\dfrac{m_2}{m_1+m_2}\left(\vv{v}_1-\vv{v}_2\right)
+.\] 
+Daraus folgt für den Impuls
+\[ 
+        \vv{p}_1^{*}=\mu \vv{v}_{12}\qquad \vv{p}_2^{*}=\mu \vv{v}_{21}
+.\] 
+Bei einem elastischen Stoß $\left(\,|\, \vv{p}_1^{*'}\,|\, =\,|\, \vv{p}_1^{*'}\,|\, \right)$ wird der Impuls vollständig übertragen, wohingegen bei einem unelastisches Stoß $\left(\,|\, \vv{p}_1^{*'}\,|\, <\,|\, \vv{p}_1^{*'}\,|\, \right)$ nicht. In einem CMS ist der Gesamtimpuls immer null
+\[ 
+        \vv{p}_1^{*}+\vv{p}_2^{*}=0=\vv{p}_1^{*'}+\vv{p}_2^{*'}
+.\] 
+
+\subsection{Eindimensionales Stoßgesetz}
+\textbf{elastisch}\\
+Die kinetische Energie bleibt erhalten.
+\begin{align*}
+        \text{Impulssatz}&:m_1\left(v_1-v_1'\right)=m_2\left(v_2'-v_2\right)\\
+        \text{Energiesatz}&:m_1\left(v_1^2-v_1^{'2}\right)=m_2\left(v_2^{'2}-v_2^2\right)
+\end{align*}
+Für die Geschwindigkeiten gilt
+\[ 
+        \underbrace{v_1-v_2}_{\text{Annäherungsgeschw.}}=\underbrace{v_2'-v_1'}_{\text{Separationsgeschw.}}
+.\] 
+Im Zusammenhang mit den Massen
+\begin{align*}
+        v_1'&=\dfrac{2m_2}{m_1+m_2}v_2+\dfrac{m_1-m_2}{m_1+m_2}v_1\\
+        v_2'&=\dfrac{2m_1}{m_1+m_2}v_1+\dfrac{m_2-m_1}{m_1+m_2}v_2
+\end{align*}
+Wenn $v_2=0\text{ und }m_1=m_2$ ist, dann gilt für $v_2'$ 
+\[ 
+        v_2'=v_1
+.\] 
+Wenn $v_2=0\text{ und }m_2>>m_1$ ist, dann gilt für $v_2'$ 
+\[ 
+        v_2'=\dfrac{2m_1}{m_1+m_2}v_1\approx 0
+.\] 
+\\\hfill\\\textbf{inelastisch}\\ 
+Die kinetische Energie bleibt nicht erhalten $\rightarrow $ sie hängt von der Inelastizität $Q$ ab. 
+\[ 
+        m_1v_1+m_2v_2=\left(m_1+m_2\right)v'\Leftrightarrow v'=\dfrac{m_1v_1+m_2v_2}{m_1+m_2}=\dfrac{1}{2}v_1\qquad \text{falls }m_1=m_2,v_2=0
+.\] 
+Damit folgt für $E_{\text{kin}}$ 
+\[ 
+        E'_{\text{kin}}=\dfrac{1}{2}\left(2m\right)v^{'2}=\dfrac{1}{2}E_{\text{kin}}
+.\] 
+
+\subsection{Zwei- und dreidimensionale Stöße}
+Im CMS gibt es $n-1$ unbekannte Streuwinkel für $n$ Dimensionen. Bei Kugelsymmetrie der Kraftwirkung gibt es auch in drei Dimensionen nur einen Streuwinkel. Die Umrechnung von $\theta ^{*}\leftrightarrow \theta $ mithilfe der Galileitransformation.\\Für den Speziafall $\vv{v}_2=0,m_1=m_2$ dann gilt
+\[ 
+        \vv{p}_1'+\vv{p}_2'=\vv{p}_1\Rightarrow \vv{p}_1'\perp\vv{p}_2'
+.\] 
+
+\subsection{Zusammenfassung der Erhaltungssätze}
+Noether-Theorem: Jede Erhaltungsgröße eines Systems steht in Symmetrie zueinander.
+\begin{align*}
+        \dfrac{\text{d}}{\text{d}t}E_{\text{gesamt}}&=0&\Delta E_{\text{extern}}&=0&t&\rightarrow t'\\
+        \dfrac{\text{d}}{\text{d}t}\vv{p}_{\text{gesamt}}&=0&\vv{F}_{\text{extern}}&=0&\vv{x}&\rightarrow \vv{x}'+\vv{r}\\
+        \dfrac{\text{d}}{\text{d}t}\vv{L}_{\text{gesamt}}&=0&\vv{M}_{\text{extern}}&=0&\vv{x}&\rightarrow \vv{x}'=V_{\text{Drehung}}\left(\vv{x}\right)
+\end{align*}
+
+\section{Trägheitskräfte und beschleunigte Bezugssysteme}
+In einem Inertialsystem gilt $\vv{F}=m\vv{a},\vv{F}=0,\dot{\vv{p}}=0$ (Trägheitsgesetz). Wenn dieses System beschleunigt wird, dann wirkt eine Scheinkraft (Trägheitskraft) auf die Objekte in dem Bezugssystem, obwohl das Objekt in dem Bezugssystem nicht beschleunigt wird. In einem Aufzug wird zum Beispiel die Gewichtskraft bei der Beschleunigung des Aufzugs verringert; Und erhöht, wenn der Aufzug bremst. Falls die Beschleunigungskraft gleich der Normalkraft ist, befindet sich das Objekt im freien Fall.
+\begin{align*}
+        \text{beschl. System}&&\text{Laborsystem}\\
+        \vv{a}'&=\vv{a}-\vv{A}&\vv{a}&=\vv{a}'+\vv{A}\\
+        \vv{v}'&=\vv{v}-\vv{A}t&\vv{v}&=\vv{v}+\vv{A}t\\
+        \vv{r}'&=\vv{r}-\tfrac{1}{2}\vv{A}t^2&\vv{v}&=\vv{r}'+\tfrac{1}{2}\vv{A}t^2
+\end{align*}
+Für das Objekt im beschl. System gilt $\vv{r}'=\text{const},\vv{v}'=\vv{a}'=0$, aber auf ihn wird eine Kraft $\vv{F}=-m\vv{A}$. Der Beobachter sieht $\vv{a}=\vv{A}$ und $\vv{F}=+m\vv{A}$. Also treten im beschl. System Trägheitskräfte auf.
+
+\subsection{Gleichförmig rotierendes Bezugssystem}
+Ein System rotiert um die $x_3$-Achse mit $\omega =\text{const}$ und $w_3=\tfrac{\text{d}\varphi }{\text{d}t},w_{1,2}=0$. Der MP bleibt stationär zu einem Beobachter von au0en. Der Ortsvektor ändert sich nicht, also gilt
+\[ 
+        \vv{r}=\sum_{i}^{}x_i\left(t\right)\vv{e}_i=\sum_{i}^{}x_i'\left(t\right)\vv{e}_i'=\vv{r}'
+.\] 
+Für einen Beobachter der von außen ruht gilt
+\[ 
+        S\left(x_i,\vv{e}_i\right)
+.\] 
+Für einen Beobachter der in dem rotierenden System ruht gilt
+\[ 
+        S'\left(x_i',\vv{e}_i'\right)
+.\] 
+Die Geschwindigkeit des MP ist
+\[ 
+        \vv{v}=\dot{\vv{r}}=\sum_{}^{}\dot{x}_i\vv{e}_i=\dot{\vv{r}'}=\underbrace{\sum_{}^{}\dot{x}_i\vv{e}_i'}_{\vv{v}'}+\underbrace{\sum_{}^{}x_i'\dot{\vv{e}_i'}}_{\vv{u}'}
+.\] 
+Die Beschleunigung des MP
+\begin{align*}
+        \vv{a}&=\ddot{\vv{r}}=\dot{\vv{v}}=\sum_{}^{}\ddot{x_i}\vv{e}_i=\ddot{\vv{r}'}=\dfrac{\text{d}}{\text{d}t}\left(\vv{v}'+\vv{u}\right)\\
+              &=\vv{a}'+\text{Beschleunigung durch Scheinkräfte}
+\end{align*}
+Mit $\vv{\omega }=\text{const}$ gilt
+\begin{gather*}
+        \dot{\vv{r}}=\vv{v}=\vv{\omega }\times\vv{r}=r\left(\vv{\omega }\times\vv{e}_r\right)\\
+        r\left(\vv{\omega }\times \sum_{}^{}\vv{e}_i\right)=r\left(\vv{\omega }\times \sum_{}^{}\vv{e}_i'\right)
+\end{gather*}
+Die Bewegung des S'-System 
+\begin{align*}
+        \dot{\vv{e}_i'}&=\vv{\omega }\times \vv{e}_i'\\
+        \ddot{\vv{e}_i'}&=\vv{\omega }\times \dot{\vv{e}_i'}
+\end{align*}
+Also gilt für die Geschw.
+\[
+        \vv{v}=\vv{v}'+\vv{u}=\vv{v}'+\vv{\omega }\times \sum_{}^{}x_i'\vv{e}_i'=\vv{v}'+\vv{\omega }\times\vv{r} 
+\]
+bzw. für die Beschl.
+\[ 
+        \vv{a}=\vv{a}'+2\sum_{}^{}\dot{x}_i'\dot{\vv{e}}_i'+\sum_{}^{}x_i'\ddot{\vv{e}}_i'=\vv{a}'+2\left(\vv{\omega }\times\vv{v}'\right)+\vv{\omega }\times\left(\vv{\omega }\times\vv{r}\right)
+.\] 
+Darauf folgt
+\[ 
+        \vv{a}'=\vv{a}+\underbrace{\vv{a}_c}_{\text{Coriolisb.}}+\underbrace{\vv{a}_{ZF}}_{\text{Zentrifugalb.}}
+.\] 
+Für die Coriolis- und Zentrifugalkraft gilt dann
+\begin{align*}
+        F_c&=2m\left(\vv{v}'\times \vv{\omega }\right)=-2m\left(\vv{\omega }\times\vv{v}'\right)\\
+        \vv{F}_{ZF}&=m\vv{\omega }\times\left(\vv{r}\times\vv{\omega }\right)=-\vv{F}_{\text{Zentipetal}}
+\end{align*}
+$\vv{F}_{ZF}$ existiert immer, auch wenn der MP in S' ruht. $\vv{F}_c$ nur dann, wenn sich der MP in S' mit der Komponente $\vv{v}'\perp \vv{\omega }$ bewegt.
+\\\hfill\\\textbf{Erde als rotierendes Bezugssystem}\\
+Die Trägheitskräfte $\vv{F}_c,\vv{F}_{ZF}$ sind im Betrag ca. $0.35\%$ der Gravitationskraft.
+\begin{align*}
+        \text{Winkelgeschw.}&:\omega _E=7\cdot 10^{-5}s ^{-1}\\
+        \text{Rotationsgeschw. Äquator}&:v_E=470m s ^{-1}\\
+        \text{Rotationsgeschw. eines Breitengrads}&:v\left(\theta \right)=\omega _ER_e\cos \theta 
+\end{align*}
+
+\hfill\\\textbf{Messung der Gravitationskonstante}\\ 
+Die Gravitationskonstante wird mit Hilfe eines Pendels bestimmt. Zwei Massen im Abstand $l$ an einem Stab hängen an einem flachen Seil. Neben diesem Massen befinden sich zwei schwerere Obejekte, die sich nicht frei bewegen können. Aufgrund der Gravitationskraft werden die kleineren Massen von den größeren Angezogen und das Pendel lenkt sich aus, bis die Rückstellkraft gleich der Gravitationskraft ist
+\[ 
+        F_r=ma=\gamma \dfrac{mM}{r^2}=F_g
+.\] 
+Befestigt man in der Mitte des Pendels einen Laser, so kann man über eine große Distanz $L$ die bewegung des Lasers auslesen und so den Winkel der Auslenkung bestimmen, sowie $r$, die Stercke, die die kleinen Massen zurücklegen.
+\begin{align*}
+        \dfrac{\Delta s}{2L}&=\sin \left(\Delta \varphi \right)\approx \Delta \varphi \\
+        \Delta r&=\dfrac{l}{2}\cdot \Delta \varphi 
+.\end{align*} 
+Daraus folgt für $\Delta r$ 
+\[ 
+        \Delta r=\dfrac{l}{2}\cdot \dfrac{\Delta s}{2L}
+.\] 
+$\gamma $ lässt sich dann wie folgt bestimmen
+\[ 
+        F=2\cdot \gamma \dfrac{mM}{r^2}\Leftrightarrow \gamma =\dfrac{ar^2}{2M}\qquad a=\dfrac{2\Delta r}{t^2}=\dfrac{2}{t^2}\dfrac{l}{2}\dfrac{\Delta s}{2L}
+.\] 
+
+\subsection{Äquivalenz von träger und schwerer Masse}
+\[ 
+        \underbrace{m_Ta}_{\text{Trägheit}}\stackrel{?}{=}\underbrace{\gamma \dfrac{m_SM_S}{r^2}}_{\text{Schwere}}
+.\] 
+Mithilfe verschiedener Experiemnte (z.B. Masse an einem Seil in einem rotierenden Bezugssystem; Eötvös-Experiment) kann bestätigt werden, dass sich diese Massen nicht unterscheiden. Experimentell konnte eine Präzision von
+\[ 
+        \dfrac{m_S-m_T}{m_S}<10^{-15}
+\] 
+nachgewiesen werden.
+
+\subsection{Trägheitsmoment}
+Die Trägheit eines Körpers beschreibt sein Bestreben danach, in Ruhe bzw. gleichförmiger Bewegung zu Verharren, solange keine äußeren Kräfte auf diesen einwirken. Die Trägheit gegenüber der Beschleunigung ist die Masse und die Trägheit gegenüber dem Drehbeschleunigung ist das Trägheitsmoment.\\\\
+Konkret für das Trägheitsmoment gilt
+\begin{align*}
+        I&:=\int_{V}^{}r_{\perp}^2\td m=\int_{V}^{}r_{\perp}^2\varrho\td V\\
+        E_{\text{rot}}&:=\lim_{N\rightarrow \infty,\Delta V_i\rightarrow 0}\left(\dfrac{1}{2}\sum_{i=1}^{N}\Delta m_ir_{i\perp}^2\omega ^2\right)\\
+                      &=\dfrac{1}{2}\omega ^2\int_{V}^{}r_{\perp}^2\td m
+\end{align*}
+wobei $r_{\perp}$ der Abstand orthogonal zur Drehachse ist. Für die Kreisbewegung gilt $\vv{v}_{i\perp}=\vv{\omega }\times\vv{r}_{i\perp}$. Dann folgt für die Rotationsenergie
+\[ 
+        E_{\text{rot}}=\dfrac{1}{2}I\omega ^2\qquad E_{\text{kin}}=\dfrac{1}{2}mv^2
+.\] 
+Wenn man die Translation und Rotation vergleicht kann man folgende Parallelen feststellen.
+\begin{align*}
+        m&\Leftrightarrow I\\
+        v&\Leftrightarrow \omega \\
+        \vv{p}=m\vv{v}&\Leftrightarrow \vv{L}=I\vv{\omega }\\
+        E=\tfrac{p^2}{2m}&\Leftrightarrow E=\tfrac{L^2}{2I}
+\end{align*}
+Für den Gesamtdrehimpuls gilt also
+\[ 
+        \vv{L}_{\text{ges}}=\int_{V}^{}r_{\perp}^2\vv{\omega }\td m=\vv{\omega }\int_{V}^{}r_{\perp}^2\td m=I\vv{\omega }
+.\] 
+Konkret für verschiedene Körper gilt
+\begin{align*}
+        \text{Hohlzylinder}&:I=MR^2\\
+        \text{Vollzylinder}&:I=\dfrac{1}{2}MR^2\\
+        \text{dünner Stab}&:I=\dfrac{1}{12}Ml ^2\\
+        \text{homogene Kugel}&:I=\dfrac{2}{5}MR^2\\
+        \text{Hohlkugel}&:I=\dfrac{2}{3}MR^2\\
+        \text{Hantel}&:I=2MR^2
+\end{align*}
+wobei $R$ der orthogonale Abstand zur Drehachse ist.
+\\\hfill\\\textbf{Steiner'scher Satz}\\ 
+Falls die Drehachse nicht im Schwerpunkt des Körpers ist gilt für $I'$ 
+\[ 
+        I'=I+a^2M
+.\] 
+$a$ ist der Abstand des Schwerpunkt zur Drehachse. Hierzu muss gelten $I'\perp I$.
+
+\subsubsection{Translationsbeschleunigung}
+Die Translationsbeschleunigung eines SP ist gleich der Umfangsbeschleunigung $r\dot{\omega }$ des herabrollenden Körpers (Zylinder).
+\[ 
+        \dfrac{\text{d}^2s}{\text{d}t^2}=r\dot{\omega }=r\dfrac{Mgr\sin \alpha }{I_{SP}+Mr^2}=\dfrac{g\sin \alpha }{I+\tfrac{I_{SP}}{Mr^2}}=a
+.\] 
+\hfill\\\textbf{Maxwell Rad}\\ 
+Für ein rotierendes Rad gilt folgender Zusammenhang
+\begin{align*}
+        \text{Vollrad}&:a=\dfrac{r^2Mg}{\tfrac{1}{2}MR^2+Mr^2}\\
+        \text{Hohlrad}&:a=\dfrac{r^2Mg}{MR^2Mr^2}
+.\end{align*}
+Im Allgemeinen gilt dann
+\[ 
+        a=\dfrac{g}{1+\tfrac{R^2}{br^2}}
+.\] 
+Für das Vollrad gilt $b=2$ und das Hohlrad $b=1$.
+
+\subsection{Rotation um eine freie Achse (Trägheitstensor)}
+Der Drehimpuls von Masselementen $\Delta m_i$ eines Körpers mit Winkelgeschwindigkeit $\vv{\omega }$ um eine beliebige Achse durch den SP
+\begin{align*}
+        \vv{L}=\vv{r}\times \vv{p}&=\sum_{i}^{}\Delta m_i\left(\vv{r}_i\times \vv{v}_i\right)\\
+                                  &=\sum_{i}^{}\Delta m_i\left(\vv{r}_i\times\left(\vv{\omega }\times \vv{r}_i\right)\right)\\
+                                  &=\sum_{i}^{}\Delta m_i\left(r_i^2\vv{\omega }-\vv{r}_i\left(\vv{r}_i\cdot \vv{\omega }\right)\right)
+\end{align*}
+Daraus folgt
+\[ 
+        \vv{L}=\underbrace{\int_{V}^{}r^2\vv{\omega }\td m}_{||\vv{\omega }}-\underbrace{\int_{V}^{}\left(\vv{r}\cdot \vv{\omega }\right)\vv{r}\td m}_{\text{nicht}||\vv{\omega }}
+.\] 
+Für die einzelnen Komponenten gilt
+\begin{align*}
+        L_x&=\int_{V}^{}\left(r^2\omega _x-x\left(x\omega _x+y\omega _y+z\omega _z\right)\right)\td m\\
+           &=\omega _x\underbrace{\int_{V}^{}\left(r^2-x^2\right)\td m}_{I_{xx}}-\omega _y\underbrace{\int_{V}^{}xy\td m}_{-I_{xy}}-\omega _z\underbrace{\int_{V}^{}xz\td m}_{-I_{xz}}\\
+        L_y&=I_{xy}\omega _x+I_{yy}\omega _y+I_{zy}\omega _z\\
+        L_z&=I_{zx}\omega _x+I_{zy}\omega _y+I_{zz}\omega _z
+\end{align*}
+Es gilt im Allgemeinen
+\[ 
+        \vv{L}=I\vv{\omega }\qquad I=\left(\begin{matrix}
+                        I_{xx}&I_{xy}&I_{xz}\\I_{yx}&I_{yy}&I_{yz}\\I_{zx}&I_{zy}&I_{zz}
+        \end{matrix}\right)
+.\] 
+Für die Rotationsenergie gilt
+\[ 
+        E_{\text{rot}}=\dfrac{1}{2}\int_{V}^{}\left(\omega ^2r^2-\left(\vv{\omega }\cdot \vv{r}\right)^2\right)\td m=\dfrac{1}{2}\left(\omega _x,\omega _y,\omega _z\right)\left(\begin{matrix}
+                        I_{xx}\omega _x+I_{xy}\omega _y+I_{xz}\omega _z\\
+                        I_{yx}\omega _x+I_{yy}\omega _y+I_{yz}\omega _z\\
+                        I_{zx}\omega _x+I_{zy}\omega _y+I_{zz}\omega _z
+        \end{matrix}\right)=\dfrac{1}{2}\omega ^TI\omega 
+.\] 
+Es tragen also alle Elemente von $I$ zur Rotationsenergie bei.\\\\
+$\omega $ kann auch nicht parallel zu den Koordinatenachsen liegen
+\begin{align*} %\intertext
+        \omega _x&=\omega \cos \alpha \\
+        \omega _y&=\omega \cos \beta \\
+        \omega _z&=\omega \cos \gamma 
+\end{align*}
+
+\subsubsection{Hauptträgheitsachsensystem (HTA)}
+Die Diagonalelemente des Trägheitstensors sind die Trägheitsmomente um die jeweiligen Achsen. Alle nicht-Diagonalelemente sind symmetrisch zueinander. (Zum Berechnen des Trägheitstensors muss also die Diagonalmatrix bestimmt werden. Die EW sind die Hauptträgheitsmomente und die EV sind parallel zu den Trägheitsachsen.)
+\[ 
+        I=\left(\begin{matrix} %\intertext
+                        I_a&0&0\\
+                        0&I_b&0\\
+                        0&0&I_c
+        \end{matrix}\right)
+.\] 
+Für den Trägheitsmoment um eine beliebige Achse $\vv{\omega }$ im HTA-System mit den Winkeln $\alpha ,\beta $ und $\gamma $ gilt
+\[ 
+        I=I_a\cos ^2\alpha +I_b \cos ^2\beta +I_c\cos ^2\gamma \qquad \vv{L}=\{L_a,L_b,L_c\}=\{\omega _aI_a,\omega _bI_b,\omega _cI_c\}
+.\] 
+\[ 
+        E_{\text{rot}}=\dfrac{L_a^2}{2I_a}+\dfrac{L_b^2}{2I_b}+\dfrac{L_c^2}{2I_c}
+.\] 
+\\\hfill\\\textbf{Ellipsoid}\\ 
+Für einen allgemeinen Ellipsoiden kann mithilfe von einem Vektor $R$ 
+\begin{align*} %\intertext
+        x&=R\cos \alpha \\
+        y&=R\cos \beta \\
+        z&=R\cos \gamma 
+\end{align*}
+welcher in Richtung von $\omega _{x,y,z}$ zeigt, lässt sich folgender Ausdruck schreiben
+\[ 
+        R^2I=x^2I_{xx}+y^2I_{yy}+z^2I_{zz}+2xyI_{xy}+2xzI_{xz}+2yzI_{yz}
+.\] 
+Der Ausdruck $R^2I=k=\text{const}$. $I_\omega $ lässt sich dann ausdrücken als
+\[ 
+        I_\omega =\dfrac{k}{R^2}
+\] 
+wobei $R$ der mittlere Abstand vom Ursprung ist.\\\\
+Für die Rotationsenergie gilt dann
+\[ 
+        E_{\text{rot}}=\dfrac{L^2}{2I}
+.\] 
+Die Rotation richtet sich immer entlang dem größtem $I$ aus.
+
+\subsection{Eulersche Gleichungen}
+Die Euelersche Gleichung beschreibt die Rotation um eine freie Achse bei beliebiger Drehachse $\vv{\omega }$.
+\begin{align*} %\intertext
+        \text{Laborsystem}&:\dfrac{\text{d}\vv{L}}{\text{d}t}=\vv{D}\\
+        \text{Hauptachsensystem}&:\dfrac{\text{d}\vv{L'}}{\text{d}t}=\dfrac{\text{d}\vv{L}}{\text{d}t}-\left(\vv{\omega }\times \vv{L'}\right)\qquad \text{Coriolisbeschl. }\vv{a'}=\vv{a}-\left(\vv{\omega }\times \vv{v'}\right)\\
+                                &\quad \vv{D}=\dfrac{\text{d}\vv{L'}}{\text{d}t}+\left(\vv{\omega }\times \vv{L'}\right)
+\end{align*}
+Für die Komponenten $a,b$ und $c$ gilt schließlich
+\begin{align*} %\intertext
+        D_a&=I_a\dfrac{\text{d}\omega _a}{\text{d}t}+\left(I_c-I_b\right)\omega _c\omega _b\\
+        D_b&=I_b\dfrac{\text{d}\omega _b}{\text{d}t}+\left(I_a-I_c\right)\omega _a\omega _c\\
+        D_c&=I_c\dfrac{\text{d}\omega _c}{\text{d}t}+\left(I_b-I_a\right)\omega _b\omega _a
+\end{align*}
+
+\section{Gravitationsfeld ausgedehnter Massenverteilungen}
+Die bisherige Anschauung von Massen war immer nur in Massepunkten, allerdings lässt sich Mithilfe des Superpositionsprinzips die Kraftwirkung zwischen ausgedehnten MP herleiten. Es gilt
+\begin{align*}
+        \vv{F}_{\text{ges}}&=\sum_{i}^{}\vv{F}_i\\
+        E_{\text{pot}}&=\sum_{i}^{}E_{\text{pot}\,i}
+\end{align*}
+
+\subsection{Kugel}
+Das Gravitationspotential einer Kugel besitzt folgende zwei Eigenschaften.
+\begin{enumerate}[label=\arabic*]
+        \item Außerhalb der Kugel $\left(d\geq r\right)$ hängt das Potential nur vom Abstand zum Zentrum der Kugel ab, $E_{\text{pot}}=E_{\text{pot}}\left(d\right)$.
+        \item Innerhalb der Kugel $\left(d<r\right)$ hängt es nur vom Teil der Masse ab, der näher am Zentrum liegt. Die Massenanteile außerhalb der Kugel $\,|\, \vv{r}\,|\, >d$ spielen keine Rolle.
+\end{enumerate}
+\begin{align*}
+        R&:\text{Abstand zwischen Probemasse und Volumenelement}\\
+        r&:\text{Abstand Volumenelement zum Ursprung}\\
+        a&:\text{Abstand Probemasse zum Ursprung}
+\end{align*}
+\hfill\\\textbf{Kugelschale}\\
+Das Potential aufgrund von $\text{d}M$ am Ort $\vv{a}$ ist dann
+\[ 
+        \text{d}E_{\text{pot}}=-\gamma m\rho \dfrac{r^2\sin \theta\, \text{d}r\,\text{d}\phi \,\text{d}\theta }{R\left(\theta \right)}\qquad R\left(\theta \right)=\sqrt[]{a^2-2ar\cos \theta +r^2}
+.\] 
+Für 
+\begin{align*}
+        a>r&:\text{d}E_{\text{pot}}=-\gamma \dfrac{m\text{d}M}{a}\qquad F_z=-\gamma \dfrac{m\text{d}M}{a^2}\\
+        r>a>0&:\text{d}E_{\text{pot}}=-\gamma \dfrac{m\text{d}M}{r}\qquad F_z=0
+\end{align*}
+wobei $r$ der Radius und $M$ die Masse der Kugelschale ist.
+\\\hfill\\\textbf{Vollkugel}\\ 
+Bei der Vollkugel wird über das Kugelvolumen integriert. Für $a>R_0>r$ 
+\[ 
+        E_{\text{pot}}=-\gamma m\rho 4\pi \dfrac{1}{a}\int_{0}^{R_0}r^2\td r=-\gamma \dfrac{mM}{a}\qquad F_z=-\gamma \dfrac{mM}{a^2}
+.\] 
+Für $r<a<R_0$ und $a<r<R_0$
+\[ 
+        E_{\text{pot}}=-\gamma m\rho 4\pi \left[\int_{0}^{a}\dfrac{r^2}{a}\td r+\int_{a}^{R}r\td r\right]=\gamma \dfrac{mM}{2{R_0}^3}\left[a^2-3{R_0}^2\right]\qquad F_z=-\gamma \dfrac{mM}{{R_0}^3}a
+.\] 
+
+\subsection{Mechanik starrer Körper}
+Die Betrachtung räumlich ausgedehnter aber nicht verformbarer Körper in einem System von MP mit $\,|\, \vv{r}_i-\vv{r}_j\,|\, =\text{const}$. Die Bewegungsgleichungen werden auf 3 Koordinaten des Schwerpunkts und 3 Rotationswinkel beschränkt.
+\begin{align*}
+        \text{Masse}&\qquad M=\sum_{i=1}^{N}\Delta m_i\\
+        \text{Volumen}&\qquad V=\sum_{i=1}^{N}\Delta V_i\\
+        \text{Dichte}&\qquad \varrho=\dfrac{\Delta m}{\Delta V}
+\end{align*}
+Für den Grenzfall $N\rightarrow \infty,\Delta V_i\rightarrow 0$:
+\begin{align*}
+        V&=\lim_{N\rightarrow \infty,\Delta V_i\rightarrow 0}\sum_{i=1}^{N}\Delta V_i=:\int_{V}^{}\td V\\
+        M&=\int_{V}^{}\varrho\left(x,y,z\right)\td V=:\int_{V}^{}\td m
+\end{align*}
+Das Volumenelement $\text{d}V$ wird in kartesischen- bzw. Kugelkoordinaten wie folgt definiert
+\begin{align*}
+        \text{d}V_{\text{kartesisch}}&=\text{d}x\ \text{d}y\ \text{d}z\\
+        \text{d}V_{\text{polar}}&=r^2\sin \theta \text{d}r\ \text{d}\theta\ \text{d}\varphi 
+\end{align*}
+
+\section{Mechanische Schwingungen}
+\subsection{Harmonische Schwingungen}
+Die harmonische Schwingung ist eine mechanische Bewegung, die ein System beschreibt, welches wiederholt zwischen zwei Amplituden immer wieder durch einen Ruhepunkt schwingt. Jede harmonische Schwingung lässt sich durch die Gleichung
+\[ 
+        m\ddot{x}=-kx
+\] 
+beschreiben, wobei $k$ die Materialeigenschaft ist, die maximale Amplitude begrenzt, bevor eine Schwingung in einer Resonanzkatastrophe endet (die Auslenkungskraft ist also größer als die Konstante mal die Strecke). Um die Eigenfrequenz eines Systems zu berechnen kann folgender Ansatz verwendet werden
+\[ 
+        x\left(t\right)=A\sin \left(\omega _0t+\varphi \right)+B\cos \left(\omega _0t+\varphi \right)
+.\] 
+Mit den Anfangsbedingungen
+\[ 
+        x\left(0\right)=0\qquad \varphi =0
+\]
+folgt dann
+\begin{align*}
+        A\sin \left(\omega _0t+\varphi \right)+B\cos \left(\omega _0t+\varphi \right)&=0\\
+        A\sin \left(0\right)+B\cos \left(0\right)&=0\\
+        B&=0
+.\end{align*}
+Die Gleichung ist also
+\[ 
+        x\left(t\right)=A\sin \left(\omega _0t+\varphi \right)
+.\] 
+Setzt man nun $x\left(t\right)$ in die Differenzialgleichung ein, folgt für die Eigenfrequenz
+\begin{align*}
+        \ddot{x}&=-\dfrac{k}{m}x\\
+        \diff*[2]{A\sin \left(\omega _0t+\varphi \right)}{t}&=-\dfrac{k}{m}A\sin \left(\omega _0t+\varphi \right)\\
+        -\omega _0^2A\sin \left(\omega _0t+\varphi \right)&=-\dfrac{k}{m}A\sin \left(\omega _0t+\varphi \right)\\
+        \omega _0&=\sqrt[]{\dfrac{k}{m}}
+.\end{align*}
+
+\subsubsection{Physikalisches und mathematisches Pendel}
+Weiter unterschiedet man zwischen physikalischen und mathematischen Pendeln. Physikalische Pendel haben eine ausgedehnte Massenverteilung (z.\,B.\ ein pendelnder Stab), also auch einen Trägheitsmoment, sowie einen durch die Gravitation verursachten Drehmoment
+\[ 
+        \vv{D}=\vv{r}\times \vv{F}\qquad \vv{r}=r\left(\begin{matrix}
+                \sin \varphi \\\cos \varphi \\0
+        \end{matrix}\right)
+.\] 
+Daraus folgt folgende Gleichung
+\begin{align*}
+        D&=-rmg\sin \varphi \\
+         &\approx -rmg\varphi \\
+         &=I\ddot{\varphi }
+.\end{align*}
+Hier lassen sich Symmetrien mit der Gleichung der harmonische Schwingung, bzw.\ Eigenfrequenz sehen
+\begin{align*}
+        \ddot{\varphi }&=-\dfrac{rmg}{I}\varphi\\
+        \omega _0&=\sqrt[]{\dfrac{rmg}{I}}
+.\end{align*}
+Bei mathematischen Pendeln hingegen betrachtet man nur eine Punktmasse an einem langen masselosen Stab der Länge $l$. Für die Eigenfrequenz gilt dann mit $I=mR^2+mr^2$, wobei $mR^2=0$ 
+\[ 
+        \ddot{\varphi }=-\dfrac{g}{l}\varphi \qquad \omega =\sqrt[]{\dfrac{g}{l}}
+.\] 
+Die Periode lässt sich jeweils durch
+\[ 
+        T=\dfrac{2\pi }{\omega _0}
+\] 
+ausdrücken.
+
+\subsection{Komplexe Zahlen}
+Die Schwingung kann auch in komplexen Zahlen $\,|\, z\,|\, e^{i\varphi }$ ausgedrückt werden, da folgende Gleichungen gelten
+\begin{align*}
+        e^{i\varphi }&=\cos \varphi +i\sin \varphi \\
+        e^{i\tfrac{\pi }{2}}&=i\\
+        e^{i\pi }&=-1\\
+        e^{i\tfrac{3}{2}\pi }&=-i\\
+        e^{i2\pi }&=1\\
+        e^{i\varphi }+e^{-i\varphi }&=2\cos \varphi \\
+        e^{i\varphi }-e^{-i\varphi }&=2i\sin \varphi 
+\end{align*}
+Die Schwingnugsgleichung sieht dann wie folgt aus
+\[ 
+        \ddot{z}+\omega _0^2z=0\qquad z\left(t\right)=z_0e^{i\omega t}
+.\] 
+Die Ableitungen sind
+\begin{align*} %\intertext
+        \dot{z}\left(t\right)&=i\omega z_0e^{i\omega t}=i\omega z\left(t\right)\\
+        \ddot{z}\left(t\right)&=-\omega ^2z_0e^{i\omega t}=-\omega ^2z\left(t\right)
+\end{align*}
+Für eine allgemeine Lösung gilt
+\[ 
+        z\left(t\right)=z_{01}e^{i\omega _0t}+z_{02}e^{-i\omega _0t}
+.\] 
+Die Lösung eines physikalischen Problems muss allerdings immer reell sein, insofern
+\[ 
+        z_{01}=z_{02}^*=:z_0\left(=a+ib\right)\qquad z\left(t\right)=z_0e^{i\omega _0t}+z_0^*e^{-i\omega _0t}=\zeta +\zeta ^*=2 \mathfrak{R}[\zeta ]=x\left(t\right) \in \mathbb{R}
+.\] 
+Es gibt zwei Anfangsbedingungen, auslenken und loslassen
+\begin{align*} %\intertext
+        z\left(t=0\right)&=:x_0=z_0+z_0^*\\
+        \dot{z}\left(t=0\right)&=:0=i\omega _0z_0-i\omega _0z_0^*
+\end{align*}
+sowie ausstoßen
+\begin{align*}
+        z\left(t=0\right)&=:0=z_0+z_0^*\\
+        \dot{z}\left(t=0\right)&=:v_0=i\omega _0z_0-i\omega _0z_0^*
+\end{align*}
+
+\subsection{Überlagerungen von Schwingungen}
+Ein MP kann gleichzeichtig in mehreren Richtung schwingen, also gibt es eine Überlagerung in 2 oder 3 Dimensionen. Mehrere MP, die gekoppelt sind, können schwingen, also gibt es eine Überlagerung in einer Dimension.
+\subsubsection{$\omega _1=\omega _2=\omega $}
+\[ 
+        x_1\left(t\right)=a\cos \left(\omega _1t+\varphi _1\right)\qquad x_2\left(t\right)=\cos \left(\omega _2t+\varphi _2\right)
+.\] 
+Die Überlagerung ergebe sich aus
+\[ 
+        x\left(t\right)=x_1\left(t\right)+x_2\left(t\right)
+.\] 
+Wenn beide Schwingungen harmonisch sind, folgt daraus, dass die überlagerte Schwingung auch wieder harmonisch ist
+\[ 
+        A\cos \omega t+B\cos \omega t=C\cos \left(\omega t+\varphi \right)
+\] 
+mit 
+\begin{align*} %\intertext
+        A&=a\cos \varphi _1+b\cos \varphi _2\\
+        B&=-a\sin \varphi _1-b\sin \varphi _2\\
+        C&=\sqrt[]{A^2+B^2}\\
+        \tan \varphi &=-\dfrac{B}{A}
+\end{align*}
+Es gibt zwei Spezialfälle
+\\\hfill\\\textbf{$a=b\text{ und }\varphi _1=\varphi _2=\varphi $}
+\[ 
+        x\left(t\right)=2a\cos \left(m\omega t+\varphi \right)
+.\] 
+\hfill\\\textbf{$a=b\text{ und }\varphi _1\neq \varphi _2$}
+\[ 
+        x\left(t\right)=a\sqrt[]{2+2\cos \left(\varphi _1-\varphi _2\right)}\cos \left(\omega t+\varphi \right)\qquad \varphi =\dfrac{\varphi _1+\varphi _2}{2}
+.\] 
+Die Amplidute ist dann
+\[ 
+        a\sqrt[]{2+2\cos \left(\varphi _1-\varphi _2\right)}<2a\qquad \text{für }\varphi _1-\varphi _2=\pi \Rightarrow \cos \left(\varphi _1-\varphi _2\right)=-1\text{ Amplitude verschiwndet}
+.\] 
+
+\subsubsection{$\omega _1\neq \omega _2$}
+Die Annahmen $\varphi _1=\varphi _2=0$ und $a=b$ werden getroffen. Dann folgt daraus, dass die Überlagerte Schwingung keine harmonische Schwingung mehr ist
+\[ 
+        x\left(t\right)=2a\cos \left(\dfrac{\omega _1-\omega _2}{2}t\right)\cos \left(\dfrac{\omega _1+\omega _2}{2}t\right)
+.\] 
+
+\subsubsection{$\omega _1\approx \omega _2$ (Schwebung)}
+Die approximative harmonische Schwingung mit mittlerer Frequenz $\bar{\omega }=\tfrac{\omega _1+\omega _2}{2}$ deren Amplidute die langsam veränderliche Funktion
+\[ 
+        \cos \left(\dfrac{\omega _1-\omega _2}{2}t\right)
+\] 
+gegenüber der Periodendauer $T=\tfrac{2\pi }{\bar{\omega }}$. Das ist die sogennante Schwebung.
+
+\subsection{Energie und Leistung von Schwingungen}
+Bei einer freien Schwingung ohne Dämpfung wird kinetische in potenzielle Energie umgewandelt
+\begin{align*}
+        E_{\text{pot}}-\int_{x}^{0}kx'\td x'=\dfrac{1}{2}kx^2&=\dfrac{1}{2}m\omega _0^2x^2\qquad \omega _0^2=\dfrac{k}{m}\\
+        E_{\text{kin}}&=\dfrac{1}{2}m\dot{x}^2
+\end{align*}
+Für die mittlere Energie des Systems gilt, dass sie indentisch sind und jeweils $\tfrac{1}{2}$ der Gesamtenergie des Systems haben
+\begin{align*}
+        \left\langle E_{\text{pot}}\right\rangle &=\dfrac{1}{T}\int_{0}^{T}E_{\text{pot}}\td t=\dfrac{1}{T}\dfrac{m\omega _0^2}{2}\int_{0}^{T}x^2\left(t\right)\td t\\
+        \left\langle E_{\text{kin}}\right\rangle &=\dfrac{1}{T}\int_{0}^{T}E_{\text{kin}}\td t=\dfrac{1}{T}\dfrac{m}{2}\int_{0}^{T}\dot{x}^2\left(t\right)\td t
+\end{align*}
+wobei
+\begin{align*}
+        x\left(t\right)&=A\sin \omega _0t\\
+        \dot{x}\left(t\right)&=A\omega _0\cos \omega _0t
+\end{align*}
+Für die Gesamtenergie gilt
+\[ 
+        E_{\text{ges}}=\underbrace{\dfrac{1}{4}m\omega _E^2A^2}_{\text{pot}}+\underbrace{\dfrac{1}{4}m\omega _E^2A^2}_{\text{kin}}=\dfrac{1}{2}m\omega _E^2A^2=\dfrac{1}{2}m\omega _E^2\dfrac{f_0^2}{\left(\omega _0^2-\omega _E^2\right)^2+\left(2\delta \omega _W\right)^2}
+.\] 
+
+\section{Deformierbare Körper}
+\subsection{Aggregatszustände}
+Aggregatszustände beruhen auf dem Verhältnis von potentieller (Bindungsenergie) und kinetischer Energie der Atome. Die Kraft die auf ein Atom wirkt ist gegeben durch 
+\[ 
+        \vv{F}=-\vv{\nabla}E_{\text{pot}}
+\] 
+bzw. in einem Gitter
+\[ 
+        \vv{F}_{\text{Atom}i}=\sum_{j}^{}\vv{F}_j\left(\vv{r}_{ij}\right)
+.\] 
+Die potentielle Energie ist proportional zu verschiedenen Materialeigenschaften
+\[ 
+        E_{\text{pot}}\propto \dfrac{\alpha }{r^2}-\dfrac{\beta }{r}
+.\] 
+Wenn sich die potentielle Energie im Gleichgewichtszustand (also im Minumum $E_{\text{pot}}\left(r_0\right)=E_{\text{min}}$) befinden, dann ordnen sich die Atome in einem Gitter an. Der Verlauf der Energie ist allerdings auch von der Temperatur abhängig. Die Anordnung im Gitter kann ausgedrückt werden als
+\[ 
+        \vv{r}_{ij}=n _{ij}^a\vv{a}+n _{ij}^b\vv{b}+n _{ij}^c\vv{c}\qquad \text{Gitter}:\{n _{ij}^a\vv{a}+n _{ij}^b\vv{b}+n _{ij}^c\vv{c}\,|\, n _{ij}^k \in \mathbb{Z}\}
+.\] 
+\hfill\\\textbf{Fest: $\left\langle E_{\text{kin}}\right\rangle <<\left\langle E_{\text{bind}}\right\rangle $}\\ 
+Materialien die sich elastisch Verformen lassen, erhalten ihre Gitterstruktur bei und sind reversibel. Bei plastischer Verformung geht die Deformation über die Elastizitätgrenze hinaus und es entstehen neue Strukturen nach der Krafteinwirkung oder es kommt zum Bruch. Die Dichte liegt bei $\rho \approx 1--20\tfrac{g}{cm^3}$. 
+\\\hfill\\\textbf{Gas: $\left\langle E_{\text{kin}}\right\rangle >>\left\langle E_{\text{bind}}\right\rangle $}\\ 
+Bei Gasen herrscht eine Unordnung, sie haben keine Oberfläche, Eigenvolumen oder Form. Sie sind hoch kompressibel und füllen jeden Raum aus. Die Dichte liegt bei $\rho \approx 10^{-3}\tfrac{g}{cm^3}$.
+\\\hfill\\\textbf{Flüssig: $\left\langle E_{\text{kin}}\right\rangle \approx \left\langle E_{\text{bind}}\right\rangle $}\\ 
+Die Atome in einer Flüssigkeit sind leicht verschiebbar aber das Volumen bleibt ungefähr konstant, was dazu führt das Flüssigkeiten imkompressibel sind. Die Dichte liegt bei $\rho \approx 0.5--1.3 \tfrac{g}{cm^3}$.
+
+\subsection{Verformung fester Körper}
+Wirkt auf einen Körper der Länge $l$ und Querschnitt $A$ eine Zugkraft $F$ in x--Richtung so verlängert sich die Länge um $\Delta l$. Es gilt für ausreichend kleine $\Delta l$ 
+\[ 
+        F=\underbrace{E}_{\text{Elastizität}}\cdot A\cdot \dfrac{\Delta l}{l}
+.\] 
+$E$ ist das Elastizitätsmodul mit $[E]=[\tfrac{N}{m^2}]$. Bei Materialen mit großen $E$ benötigt man eine große Kraft um eine Verlängerung zu erziehlen. 
+\subsection{Hookesches Gesetz}
+Aus der Zugspannung $\sigma =\tfrac{F}{A}$ folgt 
+\[ 
+        \sigma =\dfrac{F}{A}=\dfrac{E\cdot A\cdot \tfrac{\Delta l}{l}}{A}=E\cdot \epsilon
+\] 
+mit $\epsilon=\tfrac{\Delta l}{l}$ als die Dehnung. Entwickelt man $E_{\text{pot}}$ in einer Taylorreihe um $r_0$ $\left(E_{\text{pot}}\left(r_0\right)=E_{\text{min}}\right)$, so kann man für kleine Auslenkungen $r-r_0$ alle Terme mit Potenzen $n\geq 3$ vernachlässigen; es folgt
+\begin{gather*}
+        E_{\text{pot}}\left(r\right)=\sum_{n=0}^{\infty}\dfrac{\left(r-r_0\right)^n}{n!}\left(\diffp[n]{E_{\text{pot} }}{r}\right)\\
+        F=\dfrac{\partial}{\partial r}\left[\dfrac{1}{2}\left(r-r_0\right)^2\right]\cdot \left(\diffp[2]{E_{\text{pot} }}{r}\right)_{r=r_0}=\left(r-r_0\right)\cdot \left(\diffp[2]{E_{\text{pot}} }{r}\right)_{r=r_0}=\left(r-r_0\right)\cdot k
+\end{gather*}
+Plottet man den Graphen für $\sigma \left(\epsilon\right)$ dann steigt die Funktion erst linear, bist die dann langsam abschwacht bis sie fast gerade wird (Fließgrenze: Das Material wird obwohl keine Kraft mehr wirkt trotzdem noch gedehnt $\rightarrow $ es ist energetisch Vorteilhafter für das Material sich zu verschieben, anstatt zu seiner Urpsrungsform zurückzugehen.); dann kommt die Zereißgrenze und der Graph knickt ab.
+
+\subsection{Mechanische Spannung}
+Als Scherung bezeichnet man eine tangential angreifende Kraft, die einen Körper um den Winkel $\alpha $ an einer Fläche $A$ verschiebt. Für die Scherspannung gilt
+\[ 
+        \vv{\tau }=\dfrac{\vv{F}}{A}\qquad \tau =\underbrace{G}_{\text{Schermodul}}\cdot \alpha 
+.\] 
+
+\subsection{Volumenänderung}
+Das anlegen einer Zugspannung führt zu einer Volumenänderung des Körpers. Die Längendehnung $\Delta l>0$ führt zu einer Querkontraktion mit $\Delta d<0$.
+\[ 
+        \Delta V=\left(d+\Delta d\right)^2\cdot \left(l+\Delta l\right)-d^2l\qquad \dfrac{\Delta V}{V}\approx \dfrac{\Delta l}{l}+2\dfrac{\Delta d}{d}
+.\] 
+Analog gilt für eine Kompression, also $\Delta d>0,\Delta l<0$, durch einen Druck $p$, wobei 
+\[ 
+        p=\dfrac{F}{A}=-\underbrace{K}_{\text{Kompressionsmodul}}\cdot \dfrac{\Delta V}{V}
+.\] 
+Der Bezug zum Elastizitätsmodul entsteht über die Querkontraktionszahl oder Poissonzahl $\mu $ 
+\[ 
+        \mu =-\dfrac{\tfrac{\Delta d}{d}}{\tfrac{\Delta l}{l}}\qquad \dfrac{1}{K}=\dfrac{3}{E}\left(1-2\mu \right)\qquad \sigma =E\cdot \varepsilon=-p
+.\] 
+
+\subsection{Biegung eines Balken}
+Bei der Biegung eines Balken gibt es einen Teil, der gestaucht und einen Teil der gedehnt wird. Dazwischen liegt die neutrale Faser. Dieses Verhalten kann mit einem Kreis genähert werden, wobei der Radius des Kreises $r$, mit der neutralen Faser $l=r\varphi $ der Rand des Kreises ist. Darüber und -runter befindet sich der gedehnte bzw. gestauchte Teil des Balken. Dann gilt $l\pm \Delta l=\left(r+y\right)\cdot \varphi \Rightarrow \Delta l=y\varphi =y\tfrac{l}{r}$, sowie
+\begin{align*}
+        \text{Zug- bzw. Druckspannung}&:\sigma =E\cdot \varepsilon =E\cdot \dfrac{\Delta l}{l}=E\cdot \dfrac{y}{r}\\
+        \text{Druck}&:p=-E\cdot \dfrac{y}{r}
+.\end{align*}
+Für die Kraft am Flächenelement $\text{d}A$ gilt dann
+\[ 
+        \text{d}F=\sigma \cdot \text{d}A=E\dfrac{y}{r}\text{d}A
+\]  
+bzw. für den Drehmoment
+\begin{align*}
+        \text{d}M_z&=y\cdot \text{d}F=\dfrac{E\cdot y^2}{r}\cdot \text{d}A\\
+        M_z&=\underbrace{\int_{}^{}y^2\td A}_{\text{Biegemoment }B}\cdot \dfrac{E}{r}\\
+        \text{Krümmungsradius }r&=B\cdot E\cdot \dfrac{1}{M_z}
+\end{align*} 
+Weitere Biegemomente für verschiedene Flächen
+\begin{align*}
+        \text{Quadrat }h\times b&:B=2b\int_{0}^{\tfrac{h}{2}}y^2\td y=\dfrac{2}{3}b\left(\dfrac{h}{2}\right)^2=\dfrac{1}{12}h^3b\\
+        \text{Kreis}&:B=\dfrac{\pi }{4}R^4\\
+        \text{Hohlkreis mit Wanddicke }r&:B=\dfrac{\pi }{4}\left(R^4-r^4\right)\\
+        \text{Stahlträger mit }b\times h,H&:B=\dfrac{1}{12}\left(h^3b-H^3b\right)
+\end{align*}
+
+\section{Reibung}
+Da die Oberflächen realer Körper nicht idealisiert glatt sind, sondern kleine Unebenheiten haben, wirkt eine Kraft entgegen der Bewegungsrichtung. Dabei wird zwischen Haft- und Gleitreibung unterschieden
+\\\hfill\\\textbf{Haftreibung}\\ 
+Die Haftreibung ist die Reibung, die überwunden werden muss, um einen Körper in Bewegung zu setzen. Es gilt
+\[ 
+        F_H=\mu _H\cdot F_N\cdot \cos \alpha 
+\] 
+wobei $\mu _H$ der Haftreibungskoeffizient -- eine Materialeigenschaft -- ist.
+\\\hfill\\\textbf{Gleitreibung}\\ 
+Sobald der Körper in Bewegung ist führt dies oft zu einer Reduktion der Reibung. Es gilt
+\[ 
+        F_G=\mu _G\cdot F_N
+\] 
+wobei $\mu _G$ der Gleitreibungskoeffizient -- eine Materialeigenschaft -- ist.
+\\\hfill\\\textbf{Rollreibnug}\\ 
+Analog gibt es auch beim Abrollen eines Rades oder einer Kugel eine Reibung. Es gilt
+\[ 
+        F_R=\mu _R\cdot F_N
+\] 
+wobei $\mu _R$ der Rollreibungskoeffizient -- eine Materialeigenschaft -- ist.\\\\
+Zum Vergleich
+\[ 
+        \dfrac{\mu _R}{r}\ll\mu _G\ll\mu _H
+.\] 
+
+\section{Ruhende Flüssigkeiten und Gase}
+Die Besonderheit von Flüssigkeiten ist, dass die Atome frei querverschiebar sind. Das Schermodul ist also 0, bzw. existieren keine Tangentialkräfte. Wird z.B. Wasser in einer Zentrifuge an die Außenwände gedrückt, kann die Höhe in Abhängigkeit von dem Abstand zum Mittelpunkt angegeben werden, mit
+\[ 
+        z\left(r\right)=\dfrac{\omega ^2}{g}\int_{0}^{r}r'\td r'=\dfrac{\omega ^2}{2g}r^2
+.\] 
+
+\subsection{Kompression und Druck}
+Die Definition des Drucks ist 
+\[ 
+        p=\dfrac{F_N}{A}
+\] 
+was zur Volumenänderung
+\[ 
+        \dfrac{\text{d}V}{V}=-\underbrace{\kappa}_{\text{Kompressibilität}}\cdot \text{d}p
+.\] 
+Die Relation zum Kompressionsmodul ist $\kappa=K^{-1}$ bzw.
+\[ 
+        \kappa=-\dfrac{1}{V}\diff[]{V}{p}
+.\] 
+Der Druck selbst wirkt von alles Seiten und ist in der Flüssigkeit bzw. im Gas konstant verteilt. Für eine Flüssigkeit der Fläche $A_2$, auf die ein Druck zur Flüssigkeit der Fläche $A_1$ übertragen wird, gilt
+\[ 
+        p_1=p_2\qquad F_2=F_1\cdot \dfrac{A_2}{A_1} 
+.\] 
+\hfill\\\textbf{Boyle-Mariotte Gesetz für Gase}\\ 
+Bei konstanter Temperatur gilt 
+\[ 
+        p\propto \dfrac{1}{V}\Rightarrow p\cdot V=p\cdot \dfrac{m}{\rho }=\text{const}\Rightarrow \dfrac{p_1}{p_2}=\dfrac{V_2}{V_1}\Rightarrow \dfrac{p}{\rho }=\text{const}
+.\] 
+Die Kompressibilität von Gasen ist also 
+\[ 
+        \kappa=-\dfrac{1}{V}\diff[]{V}{p}=\dfrac{1}{p}
+.\] 
+
+\subsection{Flüssigkeiten und Gase im Schwerefeld}
+Wenn sich ein Gas oder eine Flüssigkeit in einem Schwerefeld befindet, dann wirkt eine Gravitationskraft auf sie, welche Druck erzeugt
+\[ 
+        \text{d}p=-\dfrac{\text{d}mg}{A}=-\rho \text{d}V\dfrac{g}{A}\stackrel{\text{d}V=A\text{d}z}{=}-g\rho \left(z\right)\text{d}z
+.\] 
+Dabei treten unterschiedliche Effekte für Flüssigkeiten und Gase auf
+\begin{align*}
+        \text{Flüssigkeiten}&:\rho \left(z\right)\approx \rho =\text{const}\\
+        \text{Gase}&:\dfrac{\rho \left(z\right)}{p\left(z\right)}=\text{const}=\dfrac{\rho _0}{p_0}\rightarrow \rho \left(z\right)=p\left(z\right)\cdot \dfrac{\rho _0}{\rho _0}
+\end{align*}
+Es folgt also für den Druck bei Flüssigkeiten in Abhängigkeit der Tiefe (hydrostatischer Druck), bzw.\ bei Gase in Abhängigkeit der Höhe (barometrische Höhenformel)
+\begin{align*}
+        p\left(z_1\right)&=p\left(z_2\right)-g\int_{z_1}^{z_2}\rho \left(z\right)\td z&\text{d}p&=-g\dfrac{\rho _0}{p_0}p\left(z\right)\text{d}z\\
+        p\left(z_1\right)&\stackrel{\rho \left(z\right)\approx \rho }{=}p\left(z_2\right)-g\rho \left(z_2-z_1\right)&\int_{p_0}^{p}\dfrac{1}{p'}\td p'&=-g\dfrac{\rho _0}{p_0}\int_{z_0}^{z}\td z'\\
+        p\left(h\right)&=p_0+\rho gh&\ln \dfrac{p}{p_0}&=-g\dfrac{\rho _0}{p_0}\underbrace{z-z_0}_{h}\\
+                       &&\ln p_0&=\ln p+\ln\left(e^{-g\tfrac{\rho _0}{p_0}h}\right)\\
+                       &&p\left(h\right)&=p_0\cdot e^{-g\tfrac{\rho _0}{p_0}h}
+\end{align*}
+
+\subsection{Auftrieb}
+Der hydrostatische Druck steigt in Abhängigkeit der Tiefe an und erzeugt einen Auftrieb. Die wirkdenden Kräfte sind
+\[ 
+        F_L=-F_R\qquad F_{\text{ges}}=F_G+F_A
+.\] 
+Der Druck von links und rechts gleich sich aus, es bleibt also nur die Gravitationskraft nach unten und die Auftriebskraft nach oben. Es folgt
+\begin{align*}
+        F_{\text{ges}}&=F_G+F_A\\
+                      &=-m\cdot g+\underbrace{A\left(p_2-p_1\right)}_{p=\tfrac{F}{A}}\\
+                      &=-\rho _K\cdot V_K\cdot g+A\cdot \rho _{Fl.}\cdot g\cdot \left(z_2-z_1\right)\\
+                      &=\left(\rho _{Fl.}-\rho _K\right)\cdot V_K\cdot g
+.\end{align*}
+Diese Gleichung lässt sich auf das Archimedesprinzip -- Gewicht der verdrängten Flüssigkeit -- zurückführen. Dieses Prinzip gilt für beliebige Formen und Volumen. Man unterschiedet zwischen drei Fällen
+\begin{align*}
+        F_A>F_G&:\text{schwimmt}\\
+        F_A=F_G&:\text{schwebt}\\
+        F_A<F_G&:\text{sinkt}
+\end{align*}
+
+\subsection{Oberflächeneffekte bei Flüssigkeiten}
+Im inneren einer Flüssigkeit sind Atome immer von anderen Atomen umgeben und es gilt näherungweise, dass sich die Kräfte der Atome aufeinander ausgleichen. An der Oberfläche wirkt allerdings eine Kraft nach innen, da keine Atome mehr über den Atomen am Rand sind. Es ist also Energie nötig, um Atome an die Oberfläche zu bringen, da
+\[ 
+        E_{\text{pot}}\left(\text{Oberfl.}\right)>E_{\text{pot}}\left(\text{Innen}\right)
+.\] 
+Flüssigkeiten \glqq versuchen\grqq{} also ihre Oberfläche zu minimieren (schwerelose Flüssigkeiten nehmen also eine Kugelform an). Vergrößert man also die Oberfläche um $\Delta A$ muss also eine Arbeit $\Delta W$ verrichtet werden. Man definiert die spezifische Oberflächenenergie als
+\[ 
+        \varepsilon \left[\dfrac{J}{m^2}\right]=\dfrac{\Delta W}{\Delta A}
+.\] 
+Daraus folgt für die Oberflächenspannung
+\[ 
+        \varepsilon =\dfrac{F}{2l}=\diff[]{W}{A}=:\sigma \left[\dfrac{N}{m}\right]
+.\] 
+Die Oberflächenspannung hat zur Folge, dass \textbf{benetzte} Flüssigkeiten sich an senkrechten Wänden hochziehen und \textbf{nicht benetzte} Flüssigkeiten absenken. Die Benetztheit bezeichnet die Materialeigenschaft, wie weit sich eine Flüssigkeit an einen Festkörper anlegt, bzw.\ wie groß die Krümmung der Oberfläche wird. Dieses Phänomen hat mit Kraftwirkung der Luft, Flüssigkeit und Wand zu tun (jedes Material will seine Oberfläche minimieren). Es existieren drei Oberflächenspannungen und Kräfte über dem Grenzlinienstück (dem Stück, bei dem die Flüssigkeit die Wand berührt) $l$
+\begin{align*}
+        \sigma _{WF}&:\text{Wand -- Flüssigkeit}&F_{WF}&=\sigma _{WF}\cdot l\\
+        \sigma _{WL}&:\text{Wand -- Luft}&F_{WL}&=\sigma _{WL}\cdot l\\
+        \sigma _{FL}&:\text{Flüssigkeit -- Lust}&F_{FL}&=\sigma _{FL}\cdot l
+.\end{align*}
+Im Gleichgewicht gilt
+\[ 
+        F_{WL}=F_{FW}+F_{FL}\cos \varphi \qquad \cos \varphi =\dfrac{\sigma _{WL}-\sigma _{WF}}{\sigma _{FL}}
+.\] 
+$\varphi $ ist der Winkel zwischen der Tangente an der Krümmung und der Wand. Folgende zwei Fälle werden unterschieden
+\begin{align*}
+        \sigma _{WL}>\sigma _{WF}\Rightarrow \cos \varphi >0\Rightarrow \varphi <\dfrac{\pi }{2}&:\text{konkav}\\
+        \sigma _{WL}<\sigma _{WF}\Rightarrow \cos \varphi <0\Rightarrow \varphi >\dfrac{\pi }{2}&:\text{konvex}
+\end{align*}
+
+%}}}
+
+%{{{ Notizen
+
+\section{Notizen}
+Hier könnten Ihre Notizen stehen.\\
+Zusammenhang zwischen Einheiten
+\begin{align*}
+        \text{Impuls }P\left[kg\dfrac{m}{s}\right]&=\int_{}^{}F\td t\\
+        \text{Kraft }F[N]&=\diff[]{E}{r}=\diff[]{P}{t}\\
+        \text{Energie }E[J]&=\int_{}^{}F\td r\\
+        \text{Leistung }P\left[\dfrac{J}{s}\text{ oder }W\right]&=\diff[]{E}{t}\\
+        \text{Arbeit }W[J]&=\Delta E=E_2-E_1\\
+        \text{Deformierung }\sigma ,\tau ,p[\dfrac{N}{m^2}]\\
+        \text{Kompressionsmodul }\kappa[Pa^{-1}=\dfrac{m^2}{N}]
+\end{align*}
+
+%}}}
+
+\end{document}

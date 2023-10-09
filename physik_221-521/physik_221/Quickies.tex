@@ -1,0 +1,451 @@
+%:LLPStartPreview
+%:VimtexCompile(SS)
+
+%{{{ Formatierung
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{physics_notetaking}
+
+%%% dark red
+%\definecolor{bg}{RGB}{60,47,47}
+%\definecolor{fg}{RGB}{255,244,230}
+%%% space grey
+%\definecolor{bg}{RGB}{46,52,64}
+%\definecolor{fg}{RGB}{216,222,233}
+%%% purple
+%\definecolor{bg}{RGB}{69,0,128}
+%\definecolor{fg}{RGB}{237,237,222}
+%\pagecolor{bg}
+%\color{fg}
+
+\newcommand{\td}{\,\text{d}}
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+
+\newcommand\inlineeqno{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnoa{(\theequation.\text{a})}
+\newcommand\inlineeqnob{(\theequation.\text{b})}
+\newcommand\inlineeqnoc{(\theequation.\text{c})}
+
+\newcommand\inlineeqnowo{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnowoa{\theequation.\text{a}}
+\newcommand\inlineeqnowob{\theequation.\text{b}}
+\newcommand\inlineeqnowoc{\theequation.\text{c}}
+
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+%\renewcommand*\contentsname{Contents}
+
+\pagestyle{fancy}
+
+\sloppy
+
+\numberwithin{equation}{section}
+
+%}}}
+
+\begin{document}
+
+%{{{ Titelseite
+
+\title{Klausurvorbereitung $|$ physik221}
+\author{Stella Hoffmann, Jonas Wortmann}
+\maketitle
+\pagenumbering{gobble}
+
+%}}}
+
+\newpage
+
+%{{{ Inhaltsverzeichnis
+
+\fancyhead[L]{\thepage}
+\fancyfoot[C]{}
+\pagenumbering{arabic}
+
+\tableofcontents
+
+%}}}
+
+\newpage
+
+%{{{
+
+\fancyhead[R]{\leftmark\\\rightmark}
+
+\section{Quickies}
+\subsection{Übungszettel}
+\begin{enumerate}[label=\arabic*.]
+        \item Wie ist die Lagrange--Funktion definiert?
+        \item Wie wird die Wirkung aus der Lagrange--Funktion definiert?
+        \item Wie lauten die Euler--Lagrange--Gleichungen?
+        \item Welche Eigenschaften muss die Lagrange--Funktion erfüllen, damit die Gesamtenergie erhalten ist?
+        \item Welche Zwangsbedingungen gelten in Kartesischen Koordinaten für die folgenden Beispiele?
+                \begin{enumerate}[label=\alph*)]
+                        \item Ein Massenpunkt hängt an einem nicht dehnbaren Faden.
+                        \item Ein Gummiball springt auf dem Boden.
+                \end{enumerate}
+        \item Wie viele Erhaltungsgrößen hat das Kepler--Problem?
+        \item Welche sind dies?
+        \item Wie lautet die Hamilton--Funktion?
+        \item Wie lauten die Bewegungsgleichungen im Hamilton--Formalismus?
+        \item Wie lauten die Kepler'schen Gesetze?
+        \item Wann ist der Drehimpuls erhalten?
+        \item Wie ist der Trägheitstensor eines Systems aus $N$ Massenpunkten definiert?
+        \item Was sind Hauptträgheitsmomente?
+        \item Wie lautet der Satz von Steiner?
+        \item Wie viele Koordinaten werden benötigt, um die Bewegung eines starren Körpers zu beschreiben?
+        \item Nenne 3 Scheinkräfte.
+        \item Wie lautet Newtons Theorem?
+        \item Wie lauten die Euler--Gleichungen?
+        \item Wie lautet Newtons Theorem?
+        \item Was ist der Virialsatz?
+\end{enumerate}
+
+\newpage
+\subsubsection{Lösungen Übungszettel}
+\begin{enumerate}[label=\arabic*.]
+        \item $$L=T-V$$
+        \item $$S=\int_{t_1}^{t_2}L\left(q, \dot{q}, t\right)\td t$$
+        \item $$\diff*{\frac{\partial L}{\partial \dot{q_i} }}{t}-\frac{\partial L}{\partial {q_i}}=0 $$
+        \item Wenn $L$ nicht explizit von der Zeit abhängt, also: $$\frac{\partial L}{\partial t} = 0$$
+        \item Zwangsbedingung
+        \begin{enumerate}[label=\alph*)]
+                \item $$l^2 = x^2+y^2+z^2=\text{const.}$$
+                \item $$ z \geq 0$$
+        \end{enumerate}
+        \item 5
+        \item Kepler-Erhaltungsgrößen
+        \begin{enumerate}[label=\alph*)]
+                \item Runge-Lenz-Vektor
+                \item Gesamtdrehimpuls
+                \item Gesamtimpuls
+                \item Energie
+                \item Schwerpunkt
+        \end{enumerate}
+        \item $$H=\sum_{i}^{}\dot{q}_i p_i - L$$
+        \item $$\dot{p}_i = - \diffp{H}{q_i} \qquad \land \qquad \dot{q}_i = \diffp{H}{{p}_i}  $$
+        \item Kepler'schen Gesetze
+        \begin{enumerate}[label=\alph*)]
+                \item Die Planeten kreisen auf elliptischen Bahnen um ihr Zentralgestirn.
+                \item $$\frac{a^3}{T^2} = \text{const.}$$
+                \item Die Ortsvektoren der Planeten überstreichen in gleichen Zeiten, die gleichen Flächen.
+        \end{enumerate}
+        \item Der Drehimpuls ist erhalten, wenn das System invariant unter einer Rotation aller Koordinaten $\vv{x}_i$ ist.
+        \item $$I_{ij}=\sum_{n}^{N} m_n \left( x_{ij}^2\cdot\delta_{ij}-x_{ni} \cdot x_{nj}\right)$$
+        \item Die Hauptträgheitsmomente sind die Diagonalelemente/Eigenwerte des diagonalisierten Trägheitstensors.
+        \item $$I_{\text{ges}}=I_{\text{SP}}+ma^2$$
+        \item 6: Dazu gehören 3 Ortskoordinaten und 3 Eulerinkel.
+        \item Scheinkräfte
+        \begin{enumerate}[label=\alph*)]
+                \item Azimutalkraft $$\vv{F} = -m\dot{\vv{\omega}} \times \vv{r}$$
+                \item Fliehkraft $$\vv{F}= -m{\vv{\omega}} \times \left(\vv{\omega} \times \vv{r}\right) $$
+                \item Corioliskraft $$\vv{F}= - 2m \left(\vv{\omega} \times \vv{v}\right)$$
+                \item Translationskraft $$\vv{F}= -m \diff*[2]{\vv{R}}{t}$$
+        \end{enumerate}
+        \item Sphärisch symmetrische Körper erzeugen die gleiche Kraft wie ein Massenpunkt im Mittelpunkt. Innerhalb dieser sphärisch symmetrischen Körper mit homogener Massenverteilung (z.B.\ Hohlkugel) wirkt keine Kraft.
+        \item Euler-Gleichungen
+        \begin{align*}
+                \vv{M} &= I \dot{\vv{\omega}} + \vv{\omega} \times (I \vv{\omega})\\
+                M_1 &= I_{11} \dot{\omega_1} + (I_{33}-I_{22})\cdot \omega_3 \omega_2\\
+                M_2 &= I_{22} \dot{\omega_2} + (I_{11}-I_{33})\cdot \omega_1 \omega_3\\
+                M_3 &= I_{33} \dot{\omega_3} + (I_{22}-I_{11})\cdot \omega_2 \omega_1
+        \end{align*}
+        \item Außerhalb einer kugelsymmetrischen Massenverteilung wirkt die gleiche Gravitationskraft wie eine Punktmasse in dessen Mitte. Innerhalb einer z.B.\ Hohlkugel wirkt keine Gravitationskraft.
+        \item $\left\langle E_{\,\text{kin}\,}\right\rangle =\tfrac{k}{2}\left\langle E_{\,\text{pot}\,}\right\rangle $, mit $\left\langle .\right\rangle $ als Mittelwert. $E_{\,\text{pot}\,}$ ist ein Potential $k$--ter Ordnung.
+\end{enumerate}
+
+\newpage
+\subsection{Zettel\_14}
+\begin{enumerate}[label=\arabic*.]
+        \item Wann ist eine Kraft $\vv{F}$ konservativ?
+        \item Wie lautet die Lagrangefunktion?
+        \item Wie lauten die Bewegungsgleichungen zur Lagrangefunktion?
+        \item In einer Dimension sei das Potential $V=kx^2$. Wie lautet die Lösung der Bewegungsgleichung?
+        \item Wie lautet die kinetische Energie in Kugelkoordinaten?
+        \item Wie lautet die Galilei-Transformation?
+        \item Wie ist der kanonisch konjugierte Impuls definiert?
+        \item Wie lautet die Beziehung zwischen Lagrange- und Hamilton-funktion?
+        \item Wie lauten die Bewegungsgleichungen im Hamiltonformalismus?
+        \item Leite die Bewegungsgleichung des harmonischen Oszillators im Hamiltonformalismus her.
+        \item Wie ist ein starrer Körper definiert?
+        \item Wie ist der Trägheitstensor $I_{ij}$ definiert?
+        \item Bestimme die Komponente des Trägheitstensors eines Stabes für die Rotationsachse orthogonal zum Stab durch den Schwerpunkt.
+        \item Wie lautet das Trägheitsmoment, wenn die Rotationsachse nicht durch den Schwerpunkt sondern durch das Ende des Stabes geht? Welchen Satz kann man hier benutzen?
+        \item Wie lauten die Bewegungsgleichungen eines starren Körpers?
+        \item Was sind Hauptträgheitsmomente?
+        \item Wie lautet Newtons Theorem?
+        \item Wie lauten die Keplerschen Gesetze?
+        \item Wann ist der Drehimpuls erhalten?
+        \item Was sind zyklische Koordinaten?
+\end{enumerate}
+
+\newpage
+\subsubsection{Lösungen Zettel\_14}
+\begin{enumerate}[label=\arabic*.]
+        \item Wenn eine der drei folgenden Bedingungen erfüllt ist
+                \begin{enumerate}[label=\alph*)]
+                        \item Wenn das geschlossene Integral über den Weg gleich null ist, oder die Arbeit wegunabhängig ist,
+                                \begin{align*} 
+                                        \oint_{}^{}\vv{F}\td \vv{x}&=0\\
+                                        \int_{1}^{2}\vv{F}\td \vv{x}&=W_{12}
+                                .\end{align*} 
+                        \item Es existiert ein Potential, sodass 
+                                \begin{align*} 
+                                        \vv{F}&=-\vv{\nabla }V
+                                .\end{align*} 
+                        \item Wenn die Rotation der Kraft gleich null ist, also
+                                \begin{align*} 
+                                        \vv{\nabla }\times \vv{F}=0
+                                .\end{align*} 
+                \end{enumerate}
+        \item $L=T-V$
+        \item $\diff*[]{\diffp[]{\mathcal{L}}{\dot{q}_i}}{t}-\diffp[]{\mathcal{L}}{q_i}=0$
+        \item Für ein Teilchen gilt
+                \begin{align*} 
+                        \mathcal{L}&=\dfrac{1}{2}m\dot{x}^2-kx^2
+                .\end{align*} 
+                Mit \begin{align*} 
+                        \diff*[]{\diffp[]{\mathcal{L}}{\dot{q}_i}}{t}-\diffp[]{\mathcal{L}}{q_i}&=0
+                ,\end{align*} 
+                folgt
+                \begin{align*} 
+                        m\ddot{x}+2kx&=0\\
+                        \ddot{x}&=-\dfrac{2k}{m}x
+                .\end{align*} 
+                Der Ansatz ist $A\cos \left(\omega t\right)+B\sin \left(\omega t\right)$, da es sich um einen harmonischen Oszillator handelt. Das ergibt
+                \begin{align*} 
+                        \omega ^2&=\dfrac{2k}{m}
+                \end{align*} 
+        \item Kugelkoordinaten sind
+                \begin{align*} 
+                        \vv{r}&=\begin{pmatrix}
+                                r\cos \varphi \sin \theta \\
+                                r\sin \varphi \sin \theta  \\
+                                r\cos \theta 
+                        \end{pmatrix}
+                .\end{align*} 
+                Die kinetische Energie ist
+                \begin{align*} 
+                        T&=\dfrac{1}{2}m\dot{r}^2\\
+                         &=\dfrac{1}{2}m\left(\diff[]{r}{t}\right)^2\\
+                         &=\dfrac{1}{2}m\left(\dot{r}^2+r^2\dot{\theta }^2+r^2\dot{\varphi }^2\sin ^2\theta \right)
+                \end{align*} 
+        \item \begin{align*} 
+                        \vv{x}\mapsto \vv{x}'&=\mathcal{R}\vv{x}+\vv{v}t+\vv{a}\qquad t\mapsto t'=t+t_0\\
+                                             &\mathcal{R} \in \mathbb{R}^{3\times 3}\,\text{mit}\,\mathcal{R}^T=\mathcal{R}^{-1}
+        ,\end{align*} 
+        mit $\mathcal{R}$ unabhängig von $t$, $\vv{v}$ einer konstanten Geschwindigkeit und $\vv{a}$ einer konstanten Raumverschiebung.
+        \item $p_i=\diffp[]{\mathcal{L}}{\dot{q}_i}$ 
+        \item $\mathcal{H}=\sum_{i}^{}p_i\dot{q}_i-\mathcal{L}$ 
+        \item \begin{align*} 
+                        \dot{p}_i&=-\diffp[]{\mathcal{H}}{q_i}\\
+                        \dot{q}_i&=\diffp[]{\mathcal{H}}{p_i}
+        \end{align*} 
+        \item Man nimmt eine Dimension an, mit
+                \begin{align*} 
+                        T=\dfrac{1}{2}m\dot{x}^2\qquad V=\dfrac{1}{2}kx^2
+                .\end{align*} 
+                Also ist die Lagrange--Funktion
+                \begin{align*} 
+                        \mathcal{L}&=\dfrac{1}{2}m\dot{x}^2-\dfrac{1}{2}kx^2
+                .\end{align*} 
+                Der kanonische Impuls ist
+                \begin{align*} 
+                        p&=\diffp[]{\mathcal{L}}{\dot{x}}\\
+                         &=m\dot{x}
+                .\end{align*} 
+                Die Hamilton--Funktion ist dann
+                \begin{align*} 
+                        \mathcal{H}&=p\dot{x}-\mathcal{L}\\
+                                   &=p\dot{x}-\dfrac{1}{2}m\dot{x}^2+\dfrac{1}{2}kx^2
+                .\end{align*} 
+                $\mathcal{H}=\mathcal{H}\left(x,p,t\right)$ ist nur eine Funktion von $x,p$ und $t$, also muss $\dot{x}$ mit $\dot{x}=\tfrac{p}{m}$ ersetzt werden
+                \begin{align*} 
+                        \mathcal{H}&=\dfrac{p^2}{m}-\dfrac{1}{2}\dfrac{p^2}{m}+\dfrac{1}{2}kx^2\\
+                                   &=\dfrac{p^2}{2m}+\dfrac{1}{2}kx^2
+                .\end{align*} 
+                Die Bewegungsgleichungen sind dann
+                \begin{align*} 
+                        \dot{p}&=-\diffp[]{\mathcal{H}}{x}&\dot{x}&=\diffp[]{\mathcal{H}}{p}\\
+                               &=-kx&&=\dfrac{p}{m}\\
+                               &&\ddot{x}&=\dfrac{\dot{p}}{m}
+                .\end{align*} 
+                Daraus folgt $m\ddot{x}=-kx$.
+        \item Der starre Körper ist der idealisierte Festkörper, dessen Massenelemente einen festen Abstand zueinander haben. Verformungen werden vernachlässigt. (Für diskrete Massenverteilung gilt $\,\forall \vv{x}_i,\vv{x}_j:|\vv{x}_i-\vv{x}_j|=\,\text{const.}\,$.)
+        \item Für diskrete Massenverteilungen
+                \begin{align*} 
+                        I_{ij}&=\sum_{n=1}^{N}m_n\left(|\vv{x}_n|^2\delta _{ij}-x_{ni}x_{nj}\right)
+                .\end{align*} 
+                Für kontinuierliche Massenverteilungen
+                \begin{align*} 
+                        I_{ij}&=\int_{}^{}\td ^3x\rho \left(|\vv{x}|\right)\left(\vv{x}^2\delta _{ij}-x_ix_j\right)
+                .\end{align*} 
+        \item Der Stab wird entlang der $x$--Achse gelegt. Das Trägheitsmoment ist dann
+                \begin{align*} 
+                        I_{yy}&=\int_{}^{}\td V\rho \left(\vv{x}\right)\left(|\vv{x}|^2\delta _{yy}-yy\right)\\
+                              &\equiv \rho \int_{}^{}\td x\left(x^2+y^2+z^2-y^2\right)\\
+                              &=\rho \int_{}^{}\td x\left(x^2+z^2\right)&&z=0\\
+                              &=\rho \int_{-l}^{l}x^2\td x\\
+                              &=\left.\rho \dfrac{1}{3}x^3\right|_{-l}^l\\
+                              &=\dfrac{m}{2l}\dfrac{2}{3}l^3&&\rho =\dfrac{m}{2l}\\
+                              &=\dfrac{1}{3}ml^2
+                \end{align*} 
+        \item (Mit Satz von Steiner)
+        \item (Wahrscheinlich) Euler--Gleichungen
+                \begin{align*} 
+                        \vv{M}&=I\dot{\vv{\omega }}+\vv{\omega }\times \left(I\vv{\omega }\right)
+                \end{align*} 
+        \item Die HTM sind die Diagonalelemente der Trägheitsmatrix, im Falle dass diese diagonalisiert wurde. Um diese zu diagonalisieren muss über Rotationsmatrizen $\mathcal{R} \in \mathbb{R}^{3\times 3}$ in das HTS transformiert werden. Die HTM beziehen sich auf Drehungen bzgl.\ der HTA.
+        \item (Newtons Theorem)
+        \item (Keplers Gesetze)
+        \item Der Drehimpuls ist erhalten, wenn das System invariant unter einer Rotation aller Koordinaten $\vv{x}_i$ ist.
+        \item Eine zyklische Koordinate ist eine Koordinate $q_i$ von der die Lagrange--Funktion nicht abhängt. Sei $q_i$ zyklisch, dann gilt
+                \begin{align*} 
+                        \mathcal{L}&=\mathcal{L}\left(\hdots ,q_{i-1},q_{i+1},\hdots ;\hdots \dot{q}_{i-1},\dot{q}_i,\dot{q}_{i+1},\hdots \right)\\
+                        \diffp[]{\mathcal{L}}{q_i}&=0
+                .\end{align*} 
+\end{enumerate}
+        
+\newpage
+\subsection{2022 Klausur I}
+\begin{enumerate}[label=\arabic*.]
+        \item Wie viele und welche Erhaltungsgrößen gibt es im Zentralkraftproblem im Allgemeinen? Woraus folgen diese Erhaltungsgrößen?
+        \item Welche weitere Erhaltungsgröße findet man beim Keplerproblem und welche Funktion mit zentraler Bedeutung für das Keplerproblem kann hieraus leicht berechnet werden?
+        \item Wie ist die Lagrange--Funktion definiert und wie lauten die Euler--Lagrange--Gleichungen?
+        \item Was ist das Hamilton'sche Prinzip? Wie ist die Wirkung definiert?
+        \item Betrachten Sie eine Lagrange--Funktion mit generalisierten Koordinaten $q:\mathcal{L}=\mathcal{L}\left(q,\dot{q},t\right)$. Was sind zyklische Koordinaten und wie stehen diese in Zusammenhang mit den Euler--Lagrange--Gleichungen?
+        \item Was ist eine Legendre--Transformation? Berechnen Sie aus $f\left(x\right)=ax^2$ die zugehörige Legendre--Transformierte $g\left(y\right)$ mit $y=\diffp[]{f}{x}$.
+        \item Wie lautet das Neother--Theorem, wenn die Lagrange--Funktion unter einer kontinuierlichen, stetig differenzierbaren Koordinatentransformation bis auf eine Eichtransformation invariant ist?
+        \item Wie sind Poisson--Klammern definiert? Wie lauten die Hamilton'schen Bewegungsgleichungen, ausgedrückt durch Poisson--Klammern?
+        \item Zeige, für welche $a,b$ die Transformation $Q=q^a\cos \left(bp\right),P=q^a\sin \left(bp\right)$ kanonisch ist.
+\end{enumerate}
+
+\newpage
+\subsubsection{Lösungen 2022 Klausur I}
+\begin{enumerate}[label=\arabic*.]
+        \item 5:
+                \begin{enumerate}[label=\alph*)]
+                        \item Energie, da es sich bei Gravitation um ein konservatives Kraftfeld handelt.
+                        \item Gesamtdrehmipuls, da kein Drehmoment ausgeübt wird.
+                        \item Gesamtimpuls, da keine äußere Kraft ausgeübt wird.
+                        \item Schwerpunkt, da
+                        \item Runge--Lenz--Vektor, da
+                \end{enumerate}
+        \item (wahrscheinlich Runge--Lenz--Vektor)
+        \item Lagrange--Funktion: $L=T-V$. \\
+                Euler--Lagrange: $\diff*[]{\diffp[]{L}{\dot{q}} }{t}=\diffp[]{L}{q}$.
+        \item Das Hamilton--Prinzip ist ein Extremalprinzip. Es besagt, dass Felder und Teilchen für eine bestimmte Größe einen extremalen Wert annehmen. Dies wird auch Wirkung genannt. Sie ist
+                \begin{align*} 
+                        S=\int_{t_1}^{t_2}\mathcal{L}\td t
+                .\end{align*} 
+        \item Man bezeichnet die Koordinate $q_j$, für die $\diffp[]{\mathcal{L}}{q_j}=0$ gilt, als zyklische Koordinate. Man nennt das System translationsinvariant in der zyklischen Koordinate; diese ist widerum äquivalent zur Erhaltung des Impulses, welcher der zyklischen Koordinate zugeordnet ist.
+        \item Die Legendre--Transformation beschreibt den Übergang der Variablen $x$ in einer Funktion $f\left(x\right)$ zu den neuen Variablen $u:=\diffp[]{f}{x}$ in einer neuen Funktion $g\left(u\right)=ux\left(u\right)-f$. Also ist
+                \begin{align*} 
+                        f\left(x\right)&=ax^2\\
+                        g\left(u\right)&=ux\left(u\right)-f&&\left|u=\diffp[]{f}{x}=2ax\Leftrightarrow x\left(u\right)=\dfrac{u}{2a}\right.\\
+                                       &=u\cdot \dfrac{u}{2a}-a\cdot \dfrac{u^2}{4a^2}\\
+                                       &=\dfrac{u^2}{4a}
+                \end{align*} 
+        \item \begin{align*} 
+                I\left(q,\dot{q},t\right):=\left.\sum_{i=1}^{3N-k}\diffp[]{\mathcal{L}}{\dot{q}}\cdot \diffp[]{q_i\left(q',t,\alpha \right)}{\alpha }\right|_{\alpha =0}
+        \end{align*} 
+        \item (nicht behandelt, stand: 2023 Dreeeeeeeeeeeeeeeeeeeeees)
+        \item s.o.\
+\end{enumerate}
+
+\newpage
+\subsection{2022 Klausur II}
+\begin{enumerate}[label=\arabic*.]
+        \item Erläutern Sie kurz die drei Newton'schen Axiome.
+        \item Was sagt das Noether--Theorem im Lagrange--Formalismus aus?
+        \item Wie lautet die totale zeitliche Ableitung $\diff[]{f}{t}$ einer Funktion $f\left(q,p,t\right)$? Drücken Sie $\diff[]{f}{t}$ durch die Hamilton--Funktion aus und zeigen Sie, dass sich das Ergebnis kompakt mit Hilfe der Poisson--Klammern schreiben lässt. Wann ist $f$ eine Erhaltungsgröße wenn sie nicht explizit zeitabhängig ist?
+        \item Berechne aus $f\left(x\right)=ax^2$ die zugehörige Legendre--Transformation $g\left(y\right)$ mit $y=\diffp[]{f}{x}$.
+        \item Wie ist der Trägheitstensor eines starren Körpers bestehend aus $N$ Punktmassen definiert?
+        \item Untersuche ob folgende Kraftfelder konservativ sind ($c_i$ sind Konstanten, $x,y,z$ sind Ortskoordinaten, $t$ ist die Zeit)
+                \begin{enumerate}[label=\roman*.]
+                        \item $\vv{F}_1=c_1\left(x^2z,xy,xz\right)^T$ 
+                        \item $\vv{F}_2=c_2\left(y^3z,3xy^2z,xy^3\right)^T$ 
+                        \item $\vv{F}_3=c_3t^2\left(x^2\,\sqrt[]{z}\tan \left(xyz\right),\,\sqrt[]{y}z^5,x^{3/2}\cos y\right)^T$ 
+                \end{enumerate}
+        \item Wann ist die Anwendung der Störungstheorie sinnvoll?
+        \item Betrachten Sie die Bewegungsgleichung $\ddot{x}\left(t\right)+\omega ^2_0x\left(t\right)=\varepsilon \zeta \,\text{i}\,x^2\left(t\right)+O\left(\varepsilon ^2\right)$ des anharmonischen Oszillators, die für alle Werte $\varepsilon $ eine Lösung besitzen soll. Skizzieren Sie (ohne explizite Rechnung), wie man vorgehen muss, um für diese inhomogene Differenzialgleichung mit beliebig fixierten Anfangsbedingungen perturbativ eine explizite Lösung für $x\left(t\right)$ bis zur ersten Ordnung in $\varepsilon $ zu finden.
+        \item Zeigen Sie, für welche $a,b$ die Transformation $Q=q ^{a/2}\sin \left(bp\right),P= q ^{a/2}\cos \left(bp\right)$ kanonisch ist.
+\end{enumerate}
+
+\newpage
+\subsubsection{Lösungen 2022 Klausur II}
+\begin{enumerate}[label=\arabic*.]
+        \item \begin{enumerate}[label=\alph*)]
+                \item Ein kräftefreier Körper bleibt in Ruhe oder bewegt sich geradelinig mit konstanter Geschwindigkeit.
+                \item $\vv{F}=m\cdot \vv{a}$.
+                \item $\vv{F}_{A\rightarrow B}=-\vv{F}_{B\rightarrow A}$.
+        \end{enumerate}
+        \item Wenn die Lagrange--Funktion unter der kontinuierlichen, stetig differenzierbaren Koordinatentransformation, dann ist die Funktion eine Erhaltungsgröße. Das bedeutet insbesondere, dass zu jeder Transformation die die Lagrange--Funktion nicht ändert, eine Erhaltungsgröße gehört. Sie wird mit
+                \begin{align*} 
+                I\left(q,\dot{q},t\right):=\left.\sum_{i=1}^{3N-k}\diffp[]{\mathcal{L}}{\dot{q}}\cdot \diffp[]{q_i\left(q',t,\alpha \right)}{\alpha }\right|_{\alpha =0}
+                \end{align*} 
+                berechnet.
+        \item \begin{align*} 
+        \diff[]{f}{t}=\diffp[]{f}{q}\diffp[]{q}{t}+\diffp[]{f}{p}\diffp[]{p}{t}+\diffp[]{f}{t}
+        \end{align*} 
+        \begin{align*} 
+                H=\sum_{i}^{}p_i\dot{q}_i-f\qquad ?
+        \end{align*} 
+        \item Die Legendre--Transformation beschreibt den Übergang der Variablen $x$ in einer Funktion $f\left(x\right)$ zu den neuen Variablen $u:=\diffp[]{f}{x}$ in einer neuen Funktion $g\left(u\right)=ux\left(u\right)-f$. Also ist
+                \begin{align*} 
+                        f\left(x\right)&=ax^2\\
+                        g\left(u\right)&=ux\left(u\right)-f&&\left|u=\diffp[]{f}{x}=2ax\Leftrightarrow x\left(u\right)=\dfrac{u}{2a}\right.\\
+                                       &=u\cdot \dfrac{u}{2a}-a\cdot \dfrac{u^2}{4a^2}\\
+                                       &=\dfrac{u^2}{4a}
+                \end{align*} 
+        \item \begin{align*} 
+                I_{ij}:=\sum_{n}^{N}m_n\left(|\vv{x}|^2\delta _{ij}-x_{ni}\cdot x_{nj}\right)
+        \end{align*} 
+        \item konservativ, wenn $\vv{\nabla }\times \vv{F}=0$ oder $\oint_{C}^{}\vv{F}\td s=0$.
+        \item (gibts nicht)
+        \item s.o.\
+        \item s.o.\
+\end{enumerate}
+
+\newpage
+\subsection{2021 Klausur I}
+\begin{enumerate}[label=\arabic*.]
+        \item Geben Sie die Euler--Lagrange Gleichungen zu einer Lagrangefunktion $\mathcal{L}\left(q,\dot{q},t\right)$ an.
+        \item Zeigen Sie die Energieerhaltung bei der eindimensionalen Bewegung in einem Potential $U\left(x\right)$ ausgehend von der Newton'schen Bewegungsgleichung $m\ddot{x}=-\diff[]{U}{x}$.
+        \item Es sei die Zwangsbedingung $\tfrac{x^2}{a}+\tfrac{y^2}{b}=1$ für eine Bewegung gegeben. Was bedeutet diese Bedingung geometrisch? Berechnen Sie die zugehörige Zwangskraft $Z$.
+        \item Zeigen Sie, dass für eine Lagrange--Funktion $\mathcal{L}\left(q,\dot{q}\right)$, die nicht explizit von der Zeit abhängt, auf der physikalischen Bahnkurve $q\left(t\right),\dot{q}\left(t\right)$ (welche die Bewegungsgleichung erfüllt) gilt $\diff*[]{\left(\mathcal{L}-\diffp[]{\mathcal{L}}{\dot{q}}\dot{q}\right)}{t}=0$.
+        \item Was bedeutet es, wenn eine Variable $q$ zyklisch ist? Was gilt dann für den kanonischen Impuls $p$ bezüglich der Variablen $q$?
+        \item Welche Erhaltungsgrößen hat das Keplerproblem?
+        \item Wie lauten die Hamilton'schen Bewegungsgleichungen allgemein?
+        \item Wie sind die Poissonklammern definiert?
+        \item Wie ist das Skalarprodukt im Minkowski--Raum definiert? Geben Sie den metrischen Tensor im Minkowski--Raum in Matrixform an.
+        \item Wie lautet die relativistische Energie--Impuls--Beziehung?
+        \item Wie hängt die Rotationsenergie mit dem Trägheitstensor zusammen?
+        \item Was besagt der Satz von Steiner? (Formel angeben).
+\end{enumerate}
+
+\newpage
+\subsection{2019 Klausur I}
+\begin{enumerate}[label=\arabic*.]
+        \item Wie lauten die Newton'schen Axiome?
+        \item Zeigen Sie, dass für den Drehimpuls $\vv{L}$ im Zentralpotential $\diff[]{\vv{L}}{t}=0$ gilt.
+        \item Was ist das Hamilton'sche Prinzip? Wie ist die Wirkung definiert?
+        \item Was besagt das Neother--Theorem im Lagrange--Formalismus?
+        \item Wann ist eine Verschiebung der Frequenz bei der Störungstheorie eines anharmonischen Oszillators notwendig? Was passiert wenn man diese nicht berücksichtigt?
+        \item Wie lautet der Satz von Steiner?
+        \item Wie lauten die Hamilton'schen Bewegungsgleichungen?
+        \item Wie lautet die totale zeitliche Ableitung einer Funktion $f\left(q,p,t\right)$ ausgedrückt durch Poisson--Klammern? Wann ist $f$ eine Erhaltungsgröße, wenn sie nicht explizit zeitabhängig ist?
+\end{enumerate}
+
+\newpage
+
+\begin{align} 
+        \ddot{\theta }&=-\dfrac{g\theta }{l\left(1-\dfrac{m}{M+m}\right)}
+\end{align} 
+
+
+%}}}
+
+\end{document}

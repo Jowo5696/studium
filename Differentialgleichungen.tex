@@ -1,0 +1,179 @@
+%:LLPStartPreview
+%:VimtexCompile(SS)
+
+%{{{ Formatierung
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{physics_notetaking}
+
+%%% dark red
+%\definecolor{bg}{RGB}{60,47,47}
+%\definecolor{fg}{RGB}{255,244,230}
+%%% space grey
+%\definecolor{bg}{RGB}{46,52,64}
+%\definecolor{fg}{RGB}{216,222,233}
+%%% purple
+%\definecolor{bg}{RGB}{69,0,128}
+%\definecolor{fg}{RGB}{237,237,222}
+%\pagecolor{bg}
+%\color{fg}
+
+\newcommand{\td}{\,\text{d}}
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+
+\newcommand\inlineeqno{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnoa{(\theequation.\text{a})}
+\newcommand\inlineeqnob{(\theequation.\text{b})}
+\newcommand\inlineeqnoc{(\theequation.\text{c})}
+
+\newcommand\inlineeqnowo{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnowoa{\theequation.\text{a}}
+\newcommand\inlineeqnowob{\theequation.\text{b}}
+\newcommand\inlineeqnowoc{\theequation.\text{c}}
+
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+%\renewcommand*\contentsname{Contents}
+
+\pagestyle{fancy}
+
+\sloppy
+
+\numberwithin{equation}{section}
+
+%}}}
+
+\begin{document}
+
+%{{{ Titelseite
+
+\title{Differentialgleichungen}
+\author{Jonas Wortmann}
+\maketitle
+\pagenumbering{gobble}
+
+%}}}
+
+\newpage
+
+%{{{ Inhaltsverzeichnis
+
+\fancyhead[L]{\thepage}
+\fancyfoot[C]{}
+\pagenumbering{arabic}
+
+\tableofcontents
+
+%}}}
+
+\newpage
+
+%{{{
+
+\fancyhead[R]{\leftmark\\\rightmark}
+
+\section{Gewöhnliche DGL}
+\subsection{Lineare DGL}
+\textbf{Lineare gewöhnliche DGL} sind DGL der Form
+\begin{align} 
+        x^{\left(n\right)}\left(t\right)&=\sum_{k=0}^{n-1}a_k\left(t\right)x^{\left(k\right)}\left(t\right)+b\left(t\right)
+,\end{align} 
+mit $x^{\left(k\right)}$ der $k$--ten Ableitung der gesuchten Funktion, $b$ der Inhomogenität (ist $b$ die Nullfunktion, wird die DGL homogen) und $a_k$ den Koeffizientenfunktionen (ist $a$ nicht von $t$ abhängig, so wird die DGL zu einer DGL mit konstanten Koeffizienten).
+
+\subsubsection{Homogene lin.\ DGL}
+\subsubsection{Hom.\ lin.\ DGL mit konstanten Koeffizienten}
+Ist die DGL in der Form
+\begin{align} 
+        x^{\left(n\right)}\left(t\right)&=\sum_{k=0}^{n-1}a_kx^{\left(k\right)}\left(t\right)
+,\end{align} 
+gegeben, so kann der \textbf{Exponentialfunktionsansatz} gewählt werden. Man stellt die DGL um, sodass sich die Form
+\begin{align} 
+        x^{\left(n\right)}\left(t\right)-\sum_{k=0}^{n-1}a_kx^{\left(k\right)}\left(t\right)&=0
+,\end{align} 
+ergibt. Dann wählt man den Ansatz 
+\begin{align} 
+        x\left(t\right)&:=Ce^{\lambda t}\qquad \Rightarrow \qquad x^{\left(n\right)}\left(t\right)=\lambda ^nCe^{\lambda t}
+.\end{align} 
+Daraus ergibt sich das charakteristische Polynom
+\begin{align} 
+        \left(\lambda ^k-\sum_{k=0}^{n-1}a_k\lambda ^k\right)Ce^{\lambda t}&=0\qquad \Rightarrow \qquad \lambda ^k-\sum_{k=0}^{n-1}a_k\lambda ^k=0
+.\end{align} 
+Die Lösung des charakteristischen Polynoms werden in die Gleichung
+\begin{align} 
+        x_H\left(t\right)=\sum_{k=1}^{n}C_ke^{\lambda _kt}
+\end{align} 
+eingesetzt, um mit den Anfangsbedingungen die Integrationskoeffizienten $C_k$ zu bestimmen.\\\\
+Ein weiterer Ansatz ist die \textbf{Trennung der Variablen}. Falls die DGL in der Form
+\begin{align} 
+        \dot{x}&=f\left(x\right)g\left(t\right)
+\end{align} 
+vorliegt, kann dieser Ansatz verwendet werden
+\begin{align}
+        \diff[]{x}{t}&=f\left(x\right)g\left(t\right)\\
+        \dfrac{1}{f\left(x\right)}\td x&=g\left(t\right)\td t\\
+        \int_{}^{}\dfrac{1}{f\left(x\right)}\td x&=\int_{}^{}g\left(t\right)\td t&&\left|\int_{}^{}\dfrac{1}{f\left(x\right)}\td x:=F\left(x\right)\right.\\
+        F\left(x\right)&=G\left(t\right)+C\\
+        x&=F^{-1}\left(G\left(t\right)\right)+F^{-1}\left(C\right)
+.\end{align} 
+Die Integrationskonstante $C$ kann mit Hilfe der Anfangsbedingungen herausgefunden werden.\\\indent Diese Vorgehensweise ist mathematisch nicht korrekt, da mit Differentialen nicht wie mit Brüchen gerechnet werden darf, ist aber mit dem Endergebnis einer mathematisch richtigen Rechnung identisch.
+
+\subsubsection{Inhomogene lin.\ DGL}
+Falls die DGL in der Form
+\begin{align} 
+        \dot{x}\left(t\right)=a\left(t\right)x\left(t\right)+b\left(t\right)
+\end{align} 
+auftritt, kann der Ansatz \textbf{Variation der Konstanten} verwendet werden. Dazu wird die Lösung in einen homogenen $x_H\left(t\right)$ und einen inhomogenen / partikulären Teil $x_{P}\left(t\right)$ aufgeteilt. Die gesamte Lösung ist die Summe beider Teile.\\\indent
+Der homogene Teil kann mit Hilfe der Exponentialfunktion gelöst werden
+\begin{align} 
+        \dot{x}\left(t\right)&=a\left(t\right)x\left(t\right)\\
+        x_H\left(t\right)&=Ce^{A\left(t\right)t}
+.\end{align} 
+$A\left(t\right)$ ist hier die Stammfunktion von $a\left(t\right)$. Wäre $a$ konstant, dann wäre $\lambda =a$ und nicht die Stammfunktion.\\\indent
+Für den partikulären Teil wird nun die Variation der Konstanten verwendet. Man definiert $C\left(t\right)$ ($C$ wird jetzt abhängig von $t$). Die Lösung ist also
+\begin{align} 
+        x_P\left(t\right)&=C\left(t\right)e^{A\left(t\right)t}
+.\end{align} 
+Daraus folgt für die Ableitung
+\begin{align} 
+        \dot{x}\left(t\right)&=C\left(t\right)a\left(t\right)e^{A\left(t\right)t}+\dot{C}\left(t\right)e^{A\left(t\right)t}\\
+                             &=a\left(t\right)x\left(t\right)+\dot{C}\left(t\right)e^{A\left(t\right)t}
+.\end{align} 
+Diese Gleichung ist dann für
+\begin{align} 
+        \dot{C}\left(t\right)&=b\left(t\right)e^{-A\left(t\right)t}\\
+        C\left(t\right)&=\int_{}^{}b\left(t\right)e^{-A\left(t\right)t}\td t
+\end{align} 
+gelöst. Die Lösung für den partikulären Teil ist also
+\begin{align} 
+        x_{P}\left(t\right)&=e^{A\left(t\right)t}\cdot \int_{}^{}b\left(t\right)e^{-A\left(t\right)t}\td t
+.\end{align} 
+Die Summe der homogenen und partikulären Lösung ist dann die gesamte Lösung der DGL
+\begin{align} 
+        x\left(t\right)&=e^{A\left(t\right)t}\left[C+\int_{}^{}b\left(t\right)e^{-A\left(t\right)t}\td t\right]
+.\end{align}
+
+\subsubsection{Inhom.\ lin.\ DGL mit konstanten Koeffizienten}
+Falls die DGL die Form 
+\begin{align} 
+        \ddot{x}\left(t\right)+a\dot{x}\left(t\right)+bx\left(t\right)&=g\left(t\right)
+,\end{align} 
+mit $a$ und $b$ als konstante Koeffizienten und $g\left(t\right)$ der Störfunktion, ein Polynom, kann weiterhin der Ansatz $x\left(t\right)=x_H\left(t\right)+x_P\left(t\right)$ verwendet werden. Die Lösung des Störterms kann allerdings nicht mehr durch die Variation der Konstanten gelöst werden. Der Ansatz ist 
+\begin{align} 
+        x_P\left(t\right)&=P_n\left(t\right)&&b\neq 0\\
+        x_P\left(t\right)&=tP_n\left(t\right)&&a\neq 0,b=0\\
+        x_P\left(t\right)&=t^2P_n\left(t\right)&&a=b=0
+,\end{align} 
+mit $P_n\left(t\right)$ einem Polynom von Grade der Störfunktion.
+
+\newpage
+\section{Notation}
+Es wird verwendet
+\begin{align} 
+        \dot{x}&:=\diff[]{x}{t}
+.\end{align} 
+
+%}}}
+
+\end{document}

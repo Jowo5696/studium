@@ -1,0 +1,1568 @@
+%:LLPStartPreview
+%:VimtexCompile(SS)
+
+%{{{ Formatierung
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{physics_notetaking}
+
+%\definecolor{bg}{RGB}{69,0,128}
+%\definecolor{fg}{RGB}{237,237,222}
+%\pagecolor{bg}
+%\color{fg}
+
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*\contentsname{Inhaltsverzeichnis}
+\newcommand{\td}{\,\text{d}}
+
+%\bibliographystyle{alphadin}
+\pagestyle{fancy}
+\sloppy
+%\pagenumbering{gobble}
+
+\lhead{Jonas Wortmann}\chead{Notizen}\rhead{Physik}
+
+%}}}
+
+\begin{document}
+
+%{{{ Titelseite
+\thispagestyle{empty}
+\hfill
+\Huge
+\begin{center}
+        Notizen - B.Sc. Physik $|$ math141
+\end{center}
+\normalsize
+\hfill
+
+%}}}
+
+\newpage
+
+%{{{ Inhaltsverzeichnis
+\rhead{Inhaltsverzeichnis}
+\tableofcontents
+
+%}}}
+
+\newpage
+
+%{{{ math141
+
+%{{{ Analysis
+\section*{Analysis}\addcontentsline{toc}{section}{Analysis}
+
+
+\section{Mathematik als Sprache}
+\begin{align*}
+        +&:\text{Funktionssymbol o. Operatoren}\\
+        0&:\text{Konstantensymbol}\\
+        x&:\text{Variable}\\
+        =&:\text{Relationssymbol}\\
+        \text{Verschachtelung mehrerer Symbole}&:\text{Term}\\
+        \text{Verschachtelung mehrerer Terme}&:\text{Formeln}
+\end{align*}
+
+\subsection{Vollständige Induktion}
+Eine Methode zum Beiweisen von Aussagen $A\left( n\right) ,\ n  \in \mathbb{N}$.
+\[ 
+A\left( n\right) :\sum_{k=1}^{n}k_n=\dfrac{1}{2}n\left( n+1\right) 
+.\] 
+Induktionsverankerung: zeige, dass für ein bestimmtes $n_0,\ A\left( n_0\right) $ gilt.
+\[ 
+n_0=1:\sum_{k=1}^{1}k_n=\dfrac{1}{2}\cdot 1\cdot \left( 1+1\right) =1
+.\] 
+Induktionsschritt: Zeige, dass für $n\geq n_0$ aus der Aussage $A\left( n\right),\ A\left( n+1\right) $ folgt.
+\[ 
+n+1:\sum_{k=1}^{n+1}k_n=\dfrac{1}{2}n\left( n+1\right) +n+1=\dfrac{1}{2}\left( n+1\right) \left( n+2\right) 
+.\] 
+
+\subsection{Rekursion}
+Eine Methode, um Funktionen auf allen natürlichen Zahlen gleichzeitig zu definieren.
+\[ 
+f\left( n+1\right) :=\text{t}\left( f\left( n\right) ,n+1\right) 
+.\] Rekursionsanfang:
+\[ 
+0!=1
+.\] 
+Rekursionsschritt:
+\[ 
+        \left( n+1\right) !=n!\cdot \left( n+1\right) 
+.\] 
+
+\subsection{Kombinatorik}
+\begin{center}
+        \glqq Wenn $k$ Gegenstände in $n$ Schubfächern gelegt werden und es ist $k>n$, so gibt es in mindestens einem der Schubfächer mindestens zwei Gegenstände.\grqq
+\end{center}
+Mathematisch ausgedrückt:
+\begin{center}
+        Seien $A$ und $B$ zwei endliche Teilmengen mit $\,|\, A\,|\, >\,|\, B\,|\, $ und $f:A\rightarrow B$ eine Funktion. Dann gibt es $a,a' \in A,a\neq a'$ mit $f\left( a\right) =f\left( a'\right) $, das heißt, die Abbildung $f:A\rightarrow B$ ist nicht injektiv.
+\end{center}
+
+\subsection{Algebraische Strukturen}
+\textbf{Körper}\\ 
+Körper $\mathbb{K}$ $\left( K,\cdot ,+,e_{+},e_{\cdot }\right) $ mit zwei Verknüpfungen
+\[ 
++:\mathbb{K}\times \mathbb{K}\rightarrow \mathbb{K}\qquad \cdot :\mathbb{K}\times \mathbb{K}\rightarrow \mathbb{K}
+\] 
+und 
+\[ 
+        \mathbb{K}\times \mathbb{L}=\{\left( k,l\right) \,|\, k \in \mathbb{K},l \in \mathbb{L}\}
+.\] 
+In einem Körper gelten folgende Körperaxiome
+\begin{enumerate}[wide,label=(K\arabic*)]
+        \item [(K0)] Abgeschlossenheit der Verknüpfung $\circ:\mathbb{K}\times \mathbb{K}\rightarrow \mathbb{K}$ 
+        \item Assoziativgesetz der Addition
+        \item neutrales Element der Addition $0$
+        \item inverses Element der Addition $-x$ 
+        \item Kommutativgesetz der Addition
+        \item Assoziativgesetz der Multiplikation
+        \item neutrales Element der Multiplikation $1$ 
+        \item inverses Element der Multiplikation $x^{-1}$ 
+        \item Kommutativgesetz der Multiplikation
+        \item Distributivgesetz
+        \item $0\neq 1$ 
+\end{enumerate}
+\hfill\\\textbf{Gruppe}\\ 
+Gruppe $\mathbb{G}$ $\left( G,+,e\right) $  mit einer Verknüpfung
+\[ 
++:\mathbb{G}\times \mathbb{G}\rightarrow \mathbb{G}
+.\] 
+In einer Gruppe gelten folgende Körperaxiome
+\begin{enumerate}[wide,label=]
+        \item[(K0)] Abgeschlossenheit der Verknüpfung $+:\mathbb{G}\times \mathbb{G}\rightarrow \mathbb{G}$ 
+        \item[(K1)] Assoziativgesetz der Addition
+        \item[(K2)] neutrales Element der Addition $0$ 
+        \item[(K3)] inverses Element der Addition $-x$ 
+\end{enumerate}
+Falls die Gruppe auch noch (K4) erfüllt, heißt sie kommutativ oder ablesch.
+\\\hfill\\\textbf{Ring}\\ 
+Ist $\mathbb{R}$ eine Menge mit den Verknüpfungen $+$ und $\cdot $, so heißt $\left(\mathbb{R},+,\cdot \right)$ Ring, wenn gilt
+\begin{enumerate}[label=(\alph*)]
+        \item ${R}$ ist bzgl $+$ eine ablesche Gruppe
+        \item $\cdot $ ist assoziativ
+        \item Es gelten die Distributivgesetze
+\end{enumerate}
+Ist weiterhin $\cdot $ kommutativ, so heißt $\mathbb{R}$ kommutativer Ring. Hat ein Ring ein neutrales Element bzgl $\cdot $, so heißt $\mathbb{R}$ Ring mit Eins und dann heißt weiterhin $a \in \mathbb{R}$ invertierbar oder Einheit, wenn $a$ bzgl $\cdot $ invertierbar ist.
+\\\hfill\\\textbf{Permutation}\\
+Eine Permutation ist eine bijektive Abbildung zwischen zwei Gruppen oder Körpern. Die Menge der Permutation der Menge $\{1,2,\hdots,n\}$ bildet die symmetrische Gruppe
+\[
+        S_{n}=\left( S_n,\circ,^{-1},\text{id}\right)
+.\]
+Die Verknüpfungen zweier Permutation ist definiert als
+\[ 
+        \left( a_1,\hdots,a_n\right) \circ\left( b_1,\hdots,b_n\right) =\left( a_{b_{1}},a_{b_{2}},\hdots,a_{b_{n}}\right) 
+.\] 
+(Man nimmt die $a$s in $b$ Reihenfolge)
+\[ 
+        \left( f^{-1}\circ f\right) \left( x\right) =f^{-1}\left( f\left( x\right) \right) =f^{-1}\left( y\right) =x
+.\] 
+Das neutrale Element id: $\text{id}\left( x\right) =x$\\\\ 
+$\left( 4,2,1,3\right) $, also ist die Zuordnung $1\mapsto 4,2\mapsto 2,3\mapsto 1,4\mapsto 3 $, also $\left(
+        \begin{matrix}
+                1&2&3&4\\
+                4&2&1&3
+        \end{matrix}
+\right)
+$\\\\
+Zwei verknüpfte Permutationen $\left( 4,3,2,1\right) \circ\left( 4,2,1,3\right) =\left( 1,3,4,2\right) $ 
+\[ 
+\left(
+        \begin{matrix}
+                1&2&3&4\\
+                4&3&2&1
+        \end{matrix}
+\right)
+\circ
+\left( 
+        \begin{matrix}
+                1&2&3&4\\
+                4&2&1&3
+        \end{matrix}
+\right) 
+=
+\left( 
+        \begin{matrix}
+                1&2&3&4\\
+                1&3&4&2
+        \end{matrix}
+\right) 
+.\] 
+Das heißt
+\[ 
+1\mapsto4\mapsto4\mapsto1,2\mapsto2\mapsto2\mapsto3,3\mapsto1\mapsto1\mapsto4,4\mapsto3\mapsto3\mapsto2
+.\] 
+Verknüpfungen mit $S_{n}$ sind im Allgemeinen für $n\geq 2$ nicht kommutativ.
+\\\hfill\\\textbf{Zyklen}\\
+Der Zykel der Permutation 
+$\left( \begin{matrix}
+        1&2&3&4\\
+        2&3&1&4
+\end{matrix}\right) $
+ist $\left( 123\right) \left( 4\right)  $, da $1\mapsto2\mapsto3\mapsto1,4\mapsto4$.
+\\\hfill\\\textbf{Relationen}\\
+Eine Relation $R$ zwischen zwei Körpern $R\subset M\times M$, $\left( m_1,m_2\right)  \in R$, $\left( m_1Rm_2\right) $ heißt Äquivalenzrelation, wenn gilt:
+\begin{enumerate}[wide,label=(\alph*)]
+        \item Reflexivität: $\forall x \in M\left( xRx\right) $ 
+        \item Symmetrie: $\forall x,y \in M\left( xRy\rightarrow yRx\right) $ 
+        \item Transitivität: $\forall x,y,z \in M\left( \left( xRy\land yRz\right) \rightarrow xRz\right) $ 
+\end{enumerate}
+\textbf{Ordnungsaxiome und angeordnete Körper}\\
+Die Ordnung $<$ (echt kleiner) auf der Menge $\mathbb{R}$ der reellen Zahlen erfüllt die folgenden Axiome einer linearen Ordnung:
+\begin{enumerate}[wide,label=]
+        \item[(O1)] $x\nless x$ (Irreflexivität) 
+        \item[(O2)] $x<y$ und $y<z$ $\Rightarrow $ $x<z$ (Transitivität)
+        \item[(O3)] $x<y$ oder $x=y$ oder $y<z$ (Linearität)
+\end{enumerate}
+Falls eine Struktur $\left( S,<\right) $ die Axiome (O1) und (O2) erfüllt, heißt sie partielle Ordnung. Falls sie auch (O3) erfüllt, dann lineare Ordnung.\\\\
+Beispiel: Für eine beliebige Menge $M$ der Struktur $\left( \mathfrak{P}\left( M\right) ,\subset \right) $ partiell geordnet aber für $\,|\, M\,|\, >1$ nicht linear. Hierbei ist $\mathfrak{P}$ eine Potenzmenge von $M$.\\\\
+Im geordneten Körper der reellen Zahlen gilt:
+\begin{enumerate}[wide,label=]
+        \item[(AK1)] wenn $x<y$, so gilt $x+z<y+z$ 
+        \item[(AK2)] wenn $x>0$ und $y>0$, so auch $x\cdot y>0$ 
+\end{enumerate}
+\textbf{Strukturen}\\
+Eine Struktur $\left( S,+,\cdot ,-,^{-1},0,1,<\right) $ ist ein geordneter Körper, wenn folgendes gilt:
+\begin{enumerate}[wide,label=(\alph*)]
+        \item $\left( S,+,\cdot ,-,^{-1},0,1,<\right) $ ist ein Körper
+        \item $\left( S,<\right) $ ist eine lineare Ordnung
+        \item $\left( S,+,\cdot ,-,^{-1},0,1,<\right) $ erfüllt die Axiome (AK1) und (AK2)
+\end{enumerate}
+
+\subsection{Das archimedische Prinzip}
+Das Prinzip des Archimedes besagt, dass es in den natürlichen Zahlen immer eine reelle Zahl gibt, die kleiner als eine natürliche Zahl ist.
+\[ 
+\text{Für jedes }x \in \mathbb{R} \text{ gibt es ein }n  \in N,\text{ sodass }x<n
+.\] 
+Daraus lassen sich folgende Sätze beweisen:
+\[ 
+\text{Zu jeder reellen Zahl }\epsilon>0\text{ gibt es ein }n  \in \mathbb{N}\text{ mit }\dfrac{1}{n}<\epsilon
+.\] 
+\[ 
+\text{Sei }b>1\text{ und }K \in \mathbb{R}.\text{ Dann gibt es ein }n  \in \mathbb{N}\text{ mit }b^{n}>K
+.\] 
+\[ 
+\text{Sei }b \in \mathbb{R},\,|\, b\,|\, <1\text{ und sei }\epsilon>0.\text{ Dann gibt es ein }n  \in \mathbb{N} \text{ mit }\,|\, b^{n}\,|\, <\epsilon
+.\] 
+\[ 
+\text{Zu jeder reellen Zahl }x\text{ gibt es genau eine ganze Zahl }n,\text{ sodass: }n\leq x<n+1
+.\] 
+
+\section{Die Komplexe Ebene}
+Die Konstruktion der komplexen Zahlen wird durch das Fehlen der Wurzel negativer reeller Zahlen motiviert
+\[ 
+i^{2}=-1\qquad x+iy\text{ mit }x,y \in \mathbb{R},i \in \mathbb{C}
+.\] 
+Wegen eindeutiger Zurodnung kann die komplexe Zahl als ein Punkt in einer Ebene ($X_{Re},Y_{Im}$) gesehen werden
+\[ 
+x+iy\mapsto\left(x_{Re},y_{Im}\right)
+.\] 
+\hfill\\\textbf{Das Koordinatensystem}
+\begin{enumerate}[label=]
+        \item X-Achse: Re (Realteil aus $\mathbb{R}$)
+        \item Y-Achse: Im (Imaginärteil aus $\mathbb{C}$)
+\end{enumerate}
+\textbf{Operationen}\\
+Für $+:\mathbb{C}\times \mathbb{C}\rightarrow \mathbb{C}$ gilt
+\[ 
+        \left(x,y\right)+\left(x',y'\right):=\left(x+x',y+y'\right)
+.\] 
+Mit dem additiven Inversen
+\[ 
+        -\left(x,y\right)=\left(-x,-y\right)
+.\] 
+Für $\cdot :\mathbb{C}\times \mathbb{C}\rightarrow \mathbb{C}$ gilt
+\[ 
+        \left(x+iy\right)\cdot \left(x'+iy'\right):=\left(xx'-yy'\right)+i\left(xy'+yx'\right)
+.\] 
+Mit dem multiplikativen Inversen
+\[ 
+        \left(x,y\right)^{-1}=\left(\dfrac{x}{x^2+y^2},-\dfrac{y}{x^2+y^2}\right)
+.\] 
+Mit diesen Verknüpfungen bildet $\mathbb{C}$ einen Körper.
+\\\hfill\\\textbf{Geometrische Interpretation komplexer Operationen}\\
+Das Addieren zweier komplexer Zahlen kann als Addition zweier Vektoren in $\mathbb{R}^2$ verstanden werden. Der Betrag einer komplexen Zahl wird als euklidischer Abstand definiert
+\[
+        \,|\, z\,|\, =\sqrt[]{x^2+y^2}\qquad \varphi =\arctan\left(\tfrac{\text{Im}\left(z\right)}{\text{Re}\left(z\right)}\right)
+.\]
+\hfill\\\textbf{Polarkoordinaten}\\
+Der Auslenkungswinkel des $z$-Vektors von der X-Achse und der Abstand vom Nullpunkt $\,|\, z\,|\, $ kann geschrieben werden als $\left(\,|\, z\,|\, \cos \varphi ,\,|\, z\,|\, \sin \varphi\right)$ .
+\begin{gather*}
+        z=x+iy=:\,|\, z\,|\, e^{i\varphi }\\
+        x=\,|\, z\,|\, \cdot \cos \varphi \\
+        y=\,|\, z\,|\, \cdot \sin \varphi
+\end{gather*}
+\textbf{Einheitskreis}\\
+Der Einheitskreis kann in den komplexen Zahlen als $S^{1}=\{z \in \mathbb{C}\,|\, \,|\, z\,|\, =1\}$ geschrieben werden und ist mit der Multiplikation die Gruppe der Drehungen der Ebene.
+\\\hfill\\\textbf{Wurzel ziehen unter komplexen Zahlen}
+\[ 
+\text{Zu jedem }k \in \mathbb{N}\text{ und jedem }x \in \mathbb{C},\text{ gibt es ein }b \in \mathbb{C}\text{ mit }b^{k}=x
+.\] 
+Die Wurzel folgender komplexer Zahl ist dann
+\[ 
+        z^k=a=a\cdot e^{i\left(0+2\pi\right)}\Rightarrow z=\sqrt[k]{a\cdot e^{i2\pi}}=\sqrt[k]{a}\cdot e^{i\tfrac{2\pi}{k}n}\qquad n  \in [1,k]
+.\] 
+\hfill\\\textbf{Fundamentalsatz der Algebra}
+\begin{center}
+        Jedes nicht konstante Polynom mit komplexen Koeffizienten, besitzt eine Nullstelle in $\mathbb{C}$.
+\end{center}
+
+\section{Folgen und Reihen}
+\subsection{Folgen}
+Eine Folge ist eine unendlich lange Sequenz
+\[ 
+        \left(a_n\right)_{n  \in \mathbb{N}}=\left(a_0,a_1,a_2,\hdots\right)
+\] 
+von komplexen Zahlen. Folgen können auch als eine Abbildung 
+\[
+        a:\mathbb{N}\mapsto\mathbb{C}
+\]
+verstanden werden.\\\\
+Zwei Folgen $\left(a_n\right)$ und $\left(b_n\right)$ sind dann gleich wenn $\forall n  \in \mathbb{N}\,|\, a_n=b_n$ gilt.\\\\
+Eine Folge $\left(a_n\right)$ heißt gegen $a$ konvergent, falls es für alle $\varepsilon>0$ ein $N_{\varepsilon} =N  \in \mathbb{N}$ gibt, sodass
+\[ 
+        \,|\, a_n-a\,|\, <\varepsilon
+\] 
+für alle $n>N$. Wir schreiben dann $\lim_{n\rightarrow \infty}a_n=a$ und nennen $a$ den Grenzwert der Folge. Eine Folge die gegen $0$ konvergiert heißt Nullfolge. In Quantorenschreibweise
+\[ 
+        \forall \varepsilon \exists N \forall n>N\,|\, \,|\, a_n-a\,|\, <\varepsilon
+.\]
+Zum Beispiel:
+\[ 
+        \lim_{n\rightarrow \infty}\dfrac{n^2+2n}{3n^2+n}=\lim_{n\rightarrow \infty}\dfrac{n^2\left(1+\tfrac{2}{n}\right)}{n^2\left(3+\tfrac{1}{n}\right)}=\lim_{n\rightarrow \infty}\dfrac{1+\tfrac{2}{n}}{3+\tfrac{1}{n}}=\dfrac{1+0}{3+0}=\dfrac{1}{3}
+.\] 
+Konvergenz:
+\begin{center}
+        Eine Folge $\left(a_n\right)$ konvergiert genau dann gegen $a$, wenn die Menge\\ $M=\{n  \in \mathbb{N}\,|\, \,|\, a_n-a\,|\, \geq \varepsilon \}$ für alle $\varepsilon >0$ endlich ist.
+\end{center}
+Es seien $\left(a_n\right)$ und $\left(b_n\right)$ zwei Folgen mit den Limiten $a$ und $b$, dann gilt
+\begin{enumerate}[label=]
+        \item Die Folge $\left(a_n+b_n\right)$ ist konvergent mit dem Grenzwert $a+b$ 
+        \item Die Folge $\left(a_n\cdot b_n\right)$ ist konvergent mit dem Grenzwert $a\cdot b$ 
+        \item Die Folge $\left(\tfrac{a_n}{b_n}\right)$ für $b\neq 0$ ist konvergent mit dem Grenzwert $\tfrac{a}{b}$ 
+\end{enumerate}
+\textbf{Cauchy-Folge}
+\begin{center}
+Eine Cauchy-Folge ist eine Folge aus Elementen $a_n$ die zu einem $a$ konvergieren, aber das $a$ nicht bekannt ist. Zum Beipsiel die Folge rationaler Zahlen zu dem Grenzwert $\sqrt[]{2}$ existiert, aber kann niemals $\sqrt[]{2}$ erreichen, da es in den rationalen Zahlen $\sqrt[]{2}$ nicht gibt. Es kann nur der Abstand zum Grenzwert verringert werden.
+\[ 
+        \forall \varepsilon >0\exists N \in \mathbb{N}\forall n,m>N\,|\, \,|\, a_n-a_m\,|\, <\varepsilon 
+.\] 
+\end{center}
+Eigenschaften von konvergenten Folgen sind
+\begin{align*}
+        \text{strikt monoton wachsend}&: m<n\Rightarrow a_m<a_n \\
+        \text{monoton wachsend}&: m<n\Rightarrow a_m\leq a_n \\
+        \text{nach oben beschränkt}&: \exists b \in \mathbb{R}\,|\, \forall n:a_n<b \\
+        \text{strikt monoton fallend}&: m<n\Rightarrow a_m>a_n \\
+        \text{monoton fallend}&: m<n\Rightarrow a_m\geq a_n \\
+        \text{nach unten beschränkt}&: \exists b \in \mathbb{R}\,|\, \forall n:a_n>b \\
+        \text{beschränkt}&: \text{nach oben und unten beschränkt}
+\end{align*}
+\textbf{Häufungspunkt}
+\begin{center}
+In einer Folge gibt es einen Häufungspunkt falls in jeder $\varepsilon $-Umgebung unendlich viele Folgeglieder von $\left(a_n\right)_{n  \in \mathbb{N}}$ liegen. Das bedeutet dass für alle $\varepsilon >0$ die Menge 
+\[
+        \{n  \in \mathbb{N}\,|\, \,|\, a_n-x\,|\, <\varepsilon \}
+\]
+stets unendlich viele Elemente enthält. Insofern ist jeder Grenzwert ein Häufungspunkt, aber nicht jeder Häufungspunkt ein Grenzwert. Ein Grenzwert wird also dadurch bestimmt, dass die Elemente außerhalb endlich viele sind.
+\end{center}
+\textbf{Bolzano-Weierstraß}
+\begin{center}
+Eine konvergente Folge ist beschränkt.\\Eine beschränkte Folge reeller Zahlen hat mind. einen Häufungspunkt.\\Eine monoton wachsende nach oben beschränkte Folge $\left(a_n\right)$ reeller Zahlen ist eine Cauchy-Folge.
+\end{center}
+
+\subsection{Reihen}
+\textbf{Partialsummenfolge}\\ 
+Für eine gegebene Zahlenfolge $\left(a_i\right)$ können Teilsummen, sowie die Folgen dieser Teilsummen betrachtet werden.
+\begin{align*}
+        s_0&:=a_0\\
+        s_1&:=a_0+a_1\\
+        s_2&:=a_0+a_1+a_2\\
+        s_3&:=a_0+a_1+a_2+a_3\\
+        \vdots&
+\end{align*}
+Sei $\left(a_n\right)_{m\leq n}$ eine reelle oder komplexe Folge, dann definiere
+\[ 
+        \sum_{i=m}^{\infty}a_i=\lim_{n\rightarrow \infty}\sum_{i=m}^{n}a_i=\lim_{n\rightarrow \infty}s_n
+.\] 
+Der Wert $\sum_{i=m}^{\infty}a_i$ dieser Reihe ist der Grenzwert der Folge der Partialsummen
+\[ 
+        \sum_{i=m}^{n}a_i
+.\] 
+Wenn dieser Grenzwert existiert, so konvergiert die Reihe. Andernfalls divergiert die Reihe. Ein notwendiges Kriterium ist:
+\[ 
+        \text{Wenn }\sum_{i=0}^{\infty}a_i\text{ konvergiert, so ist }\left(a_i\right)\text{ Nullfolge}
+.\] 
+Eine Umkehrung dieser Aussage ist falsch.\\\\
+Seien $\sum_{n=0}^{\infty}a_n$ und $\sum_{n=0}^{\infty}b_n$ konvergente Reihen. Dann gilt
+\[ 
+        \sum_{n=0}^{\infty}\left(a_n+b_n\right)=\sum_{n=0}^{\infty}a_n+\sum_{n=0}^{\infty}b_n
+\] 
+und
+\[ 
+        \sum_{n=0}^{\infty}\lambda a_n=\lambda \sum_{n=0}^{\infty}a_n
+.\] 
+Die Menge der konvergenten Zahlenfolgen ist in dem $\mathbb{C}$-Vektorraum mit einer linearen Abbildung $\left(a_n\right)\mapsto\sum_{n=0}^{\infty}a_n$ 
+\[ 
+        \left\{\left(a_n\right)\,|\, \sum_{n=0}^{\infty}a_n<\infty\right\}
+.\] 
+
+\subsubsection{Konvergenzkriterien}
+\textbf{Quotientenkriterium}\\ 
+Sei $\sum_{n=0}^{\infty}a_n$ eine Reihe. Sei $\theta $ eine reelle Zahl mit $0\leq \theta <1$ und $n_0 \in \mathbb{N}$, sodass für $n\geq n_0$ 
+\[ 
+        \dfrac{\,|\, a_{n+1}\,|\, }{\,|\, a_n\,|\, }\leq \theta 
+.\] 
+Dann konvergiert die Reihe absolut. Dieser Quotient muss ab einem bestimmten $n$ kleiner gleich $\theta $, also $n\leq \theta <1$ sein (es darf dabei auch einen endlichen Teil geben, der nicht kleiner als $\theta $ ist).\\\\
+Eine Reihe $\sum_{n=m}^{\infty}a_n$ konvergiert absolut, wenn
+\[ 
+        \sum_{n=m}^{\infty}\,|\, a_n\,|\, 
+\] 
+konvergiert. Die harmonische Reihe $\sum_{n=1}^{\infty}\dfrac{1}{n}$ divergiert. Die alternierende harmonische Reihe $\sum_{n=1}^{\infty}\dfrac{\left(-1\right)^{n+1}}{n}$ ist konvergent, aber nicht absolut konvergent.
+\\\hfill\\\textbf{Majorantenkriterium}\\ 
+Eine Reihe $\sum_{n=0}^{\infty}a_n$ von reellen Zahlen $a_n\geq 0$ heißt Majorante einer Reihe $\sum_{n=0}^{\infty}b_n$, wenn für alle $n  \in \mathbb{N}$ gilt: $\,|\, b_n\,|\, \leq a_n$. Wenn die Majorante $\sum_{n=0}^{\infty}a_n$ (absolut) konvergent, so konvergiert $\sum_{n=0}^{\infty}b_n$ ebenfalls absolut.
+\\\hfill\\\textbf{Wurzelkriterium}\\ 
+Sei $\left(a_n\right)$ eine Folge positiver reeller Zahlen. Es gebe ein $0<q<1$ und ein $n_0  \in \mathbb{N}$, sodass für alle $n\leq n_0$ gilt $\sqrt[n]{a_n}\leq q$. Dann ist die Reihe $\sum_{n\geq 0}^{}a_n$ absolut konvergent.
+\\\hfill\\\textbf{Leibniz-Kriterium}\\ 
+Sei $\left(a_n\right)$ eine monotone fallende Nullfolge. Dann ist die alternierende Reihe
+\[ 
+        \sum_{n=0}^{\infty}\left(-1\right)^{n}a_n
+\] 
+konvergent.
+
+\subsubsection{Umordnungs-, Produktsatz}
+\textbf{absolut konvergente Reihen}\\ 
+Für eine absolute konvergente Reihe $\sum_{n=0}^{\infty}a_n$ und eine Permutation $\pi :\mathbb{N}\rightarrow \mathbb{N}$ ist die umgeordnete Reihe $\sum_{n=0}^{\infty}a_{\pi \left(n\right)}$ ebenfalls absolut konvergent. Beide Grenzwerte der Reihe stimmen überein
+\[ 
+        \sum_{n=0}^{\infty}a_n=\sum_{n=0}^{\infty}a_{\pi \left(n\right)}
+.\] 
+\textbf{konvergente Reihen}\\ 
+Für eine konvergente aber nicht absolut konvergente Reihe $\sum_{n=0}^{\infty}a_n$ reeller Zahlen existiert zu jedem beliebigen $S \in \mathbb{R}\cup \{\infty,-\infty\}$ eine Permutation $\pi \rightarrow \mathbb{N}\rightarrow \mathbb{N}$, sodass die umgeordnete Reihe $\sum_{n=0}^{\infty}a_{\pi \left(n\right)}$ gegen $S$ konvergiert bzw (bestimmt) divergiert. Um zum Beispiel einen bestimmten Grenzwert zu erreichen, wird die alternierende harmonische Reihe bis zu diesem Grenzwert aufsummiert und dann \glqq alterniert sie um diesen Wert herum\grqq.
+\\\hfill\\\textbf{Produktsatz}\\ 
+Seien $\sum_{n=0}^{\infty}a_n$ und $\sum_{n=0}^{\infty}b_n$ absolut konvergierende Reihen. Definiere die Reihe $\sum_{n=0}^{\infty}c_n$ durch
+\[ 
+        c_n=\sum_{k=0}^{n}a_k\cdot b_{n-k}=a_0\cdot b_n+a_1\cdot b_{n-1}+\hdots+a_n\cdot b_0
+.\] 
+Dann ist $\sum_{n=0}^{\infty}c_n$ absolut konvergent und
+\[ 
+        \left(\sum_{n=0}^{\infty}a_n\right)\cdot \left(\sum_{n=0}^{\infty}b_n\right)=\left(\sum_{n=0}^{\infty}c_n\right)
+.\] 
+
+\subsubsection{Exponentialreihe}
+Die Reihe
+\[ 
+        \text{exp}\left(x\right)=\sum_{n=0}^{\infty}\dfrac{x^{n}}{n!}
+\] 
+wird definiert als die Exponentialfunktion. Für jedes $x \in \mathbb{C}$ ist die Reihe konvergent. Der Wert
+\[ 
+        e:=\text{exp}\left(1\right)=\sum_{n=0}^{\infty}\dfrac{1}{n!}
+\] 
+heißt Eulersche Zahl. Für alle ganzen Zahlen $n  \in \mathbb{Z}$ gilt
+\[ 
+        \text{exp}\left(n\right)=e^{n}
+.\] 
+Für alle $x,y \in \mathbb{C}$ gilt
+\[ 
+        \text{exp}\left(x+y\right)=\text{exp}\left(x\right)\cdot \text{exp}\left(y\right)
+.\] 
+Eine Reihe der Form 
+\[ 
+        f\left(x\right)=\sum_{n=0}^{\infty}a_nx^{n}
+\] 
+heißt Potenzreihe. Sie ist die Verallgemeinerung der Polynome.
+
+\section{Funktionen als Reihe}
+\subsection{Stetigkeit von Funktionen}
+Sei $f:M\rightarrow \mathbb{C}$ eine Funktion mit $M\subseteq \mathbb{C}$. Die Funktion $f$ heißt stetig an der Stelle $x \in M$, wenn für jede Folge $\left(x_n\right)$ von Elementen von M, die gegen $x$ konvergiert, gilt $\lim_{n\rightarrow \infty}f\left(x_n\right)=f\left(x\right)$. Also wenn sie an allen Stellen $x \in M$ stetig ist.
+
+\subsubsection{Klassen der Stetigkeit}
+\begin{enumerate}[label=(\alph*)]
+        \item Die konstante Funktion $\text{const}_c:\mathbb{C}\rightarrow \mathbb{C}\,\text{const}_c\left(z\right)=c$ ist stetig.
+        \item Die identische Funktion $\text{id}:\mathbb{C}\rightarrow \mathbb{C}\,\text{id}\left(z\right)=z$ ist stetig.
+        \item Wenn die Funktionen $f,g:M\rightarrow \mathbb{C}$ an der Stelle $x \in M$ stetig sind, so sind auch die Summe $f+g:M\rightarrow \mathbb{C}$, $\left(f+g\right)\left(z\right)=f\left(z\right)+g\left(z\right)$ und das Produkt $f\cdot g:M\rightarrow \mathbb{C}\,\left(f\cdot g\right)\left(z\right)=f\left(z\right)\cdot g\left(z\right)$ an der Stelle $x \in M$ stetig.
+        \item Wenn die Funktionen $f,g:M\rightarrow \mathbb{C}$ an der Stelle $x \in M$ stetig sind und $g\left(x\right)\neq 0$ so ist auch der Quotient $\tfrac{f}{g}:M'\rightarrow \mathbb{C}\,\left(\tfrac{f}{g}\right)\left(z\right)=\tfrac{f\left(z\right)}{g\left(z\right)}$ an der Stelle $x$ stetig. Hierbei sie $M':=\{x \in M\,|\, g\left(x\right)\neq 0\}$.
+        \item Sei die Funktion $f:M\rightarrow \mathbb{C}$ an der Stelle $x \in M_0\subseteq M$ stetig. Dann ist auch die Einschränkung $f|_{M_0}:M_0\rightarrow \mathbb{C}\,\left(f|_{M_0}\right)\left(z\right)=f\left(z\right)$ an der Stelle $x$ stetig.
+        \item Wenn $f:M\rightarrow \mathbb{C}$ stetig und $M_0\subseteq M$ ist, so ist $f|_{M_0}$ stetig.
+\end{enumerate}
+Folgende zwei Funktionen sind stetig.
+\begin{center}
+        Jedes Polynom
+        \[ 
+                p\left(z\right)=c_nz^{n}+c _{n-1}z^{n-1}+\hdots+c_1z+c_0
+        \] 
+        mit Koeffizienten $c_n,c _{n-1},c _{n-2}+\hdots+c_0 \in \mathbb{C}$ definiert eine Stetige Funktion $p:\mathbb{C}\rightarrow \mathbb{C}$.
+\end{center}
+\begin{center}
+        Je zwei Polynome $p\left(z\right)$ und $q\left(z\right)$ definieren eine rationale Funktion
+        \[ 
+                \dfrac{p}{q}:\{z \in \mathbb{C}\,|\, q\left(z\right)\neq 0\}\rightarrow C
+        .\] 
+        Diese ist stetig auf ihrem gesamten Definitionsbereich.
+\end{center}
+
+\subsubsection{Gleichmäßig stetig}
+Eine Funktion $f:M\rightarrow \mathbb{C}$ heißt gleichmäßig stetig, wenn für jedes $\varepsilon >0$ ein $\delta >0$ existiert, sodass für alle $x,y \in M$ gilt
+\[ 
+        \text{wenn}\,|\, x-y\,|\, <\delta ,\text{dann}\,|\, f\left(y\right)-f\left(x\right)\,|\, <\varepsilon 
+.\] 
+Der Unterschied zwischen stetig
+\[ 
+        \forall \varepsilon >0\forall x \exists \delta >0\left(\hdots\right)
+\] 
+und gleichmäßig stetig
+\[ 
+        \forall \varepsilon >0\exists \delta >0\forall x\left(\hdots\right)
+.\] 
+Gleichmäßig stetig gilt dann, wenn eine Funktion $f:[a,b]\rightarrow \mathbb{R}$ auf einer kompakten Menge $[a,b]$ stetig ist.\\\\
+Für Potenzreihen auf geeigneten Kreisscheiben gilt:\\
+Angenommen $\sum_{n=0}^{\infty}a_nz^n_0$ konvergiert für ein $z_0 \in \mathbb{C}\backslash \{0\}$. Dann konvergiert die Potenzreihe $\sum_{n=0}^{\infty}a_nz^n$ absolut für alle $z$ mit $\,|\, z\,|\, <\,|\, z_0\,|\, $. Weiterhin ist die Funktion $f:\{z\,|\, \,|\, z\,|\, <\,|\, z_0\,|\, \}\rightarrow \mathbb{C}$ mit der Definition
+\[ 
+        f\left(z\right)=\sum_{n=0}^{\infty}a_nz^n
+\] 
+stetig. Falls diese Reihe divergiert, dann divergiert sie auch für alle $z$ mit $\,|\, z\,|\, >\,|\, z_0\,|\, $.
+
+\subsubsection{Konvergenzradius}
+Der Konvergenzradius beschreibt gewissermaßen die Grenze zwischen Konvergenz und Divergenz. Dabei spricht man dann von dem Konvergenzradius. Wenn eine Zahl in dem Konvergenzradius liegt, dann liegen auch alle Zahlen deren Betrag kleiner gleich dem der Zahl ist. Gleiches gilt für größer dem Kreisradius.
+\begin{enumerate}[label=(\alph*)]
+        \item $K=\{0\}:\sum_{n=0}^{\infty}a_nz^n$ konvergiert nur für $z=0$. Dann ist der Konvergenzradius der Reihe gleich 0.
+        \item $K=[0,R)=\{x\,|\, 0\leq x<R\}$. Dann ist der Konvergenzradius der Reihe gleich $R$.
+        \item $K=[0,R]=\{x\,|\, 0\leq x\leq R\}$. Dann ist der Konvergenzradius der Reihe gleich $R$.
+        \item $K=[0,\infty)=\mathbb{R}_0^+=\{x \in \mathbb{R}\,|\, x\geq 0\}$. Dann ist der Konvergenzradius der Reihe gleich $\infty$.
+\end{enumerate}
+Für eine Potenzreihe $\sum_{n=0}^{\infty}a_nz^n$ nennt man das Supremum aller Radien $r\geq 0$, für welche die Reihe konvergiert, den Konvergenzradius $R$ der Potenzreihe. Es gilt also:
+\[ 
+        R=\text{sup}\left\{\,|\, z\,|\, \,|\, \sum_{n=0}^{\infty}a_nz^n \text{ ist konvergenz}\right\}
+.\] 
+\subsubsection{Cauchy-Hadamard}
+Für eine Potenzreihe $\sum_{n=0}^{\infty}a_nz^n$ lässt sich der Konvergenzradius $R$ wie folgt berechnen
+\[ 
+        R=\dfrac{1}{\lim_{n\rightarrow \infty}\text{sup}\sqrt[n]{\,|\, a_n\,|\, }}
+.\] 
+Hierbei bezeichnen wir mit lim\,sup den limes superior, den größten Häufungspunkt einer Folge (dieser kann natürlich auch $\infty$ sein). Falls die Folge gegen $0$ konvergiert, dann ist der Ausdruck unbestimmt und somit unendlich groß.
+\\\hfill\\\textbf{Zwischenwertsatz}\\ 
+Seien $a,b$ reelle Zahlem und sei
+\[ 
+        f:[a,b]=\{x \in \mathbb{R}\,|\, a\leq x\leq b\}\rightarrow \mathbb{R}
+\] 
+stetig mit $f\left(a\right)\leq 0$ und $f\left(b\right)\geq 0$. Dann hat $f$ auf $[a,b]$ mind. eine Nullstelle.
+
+\subsubsection{Injektiv, Surjektiv, Bijektiv}
+Seien $X,Y$ beliebige Mengen. Eine Funktion $f:X\rightarrow Y$ heißt
+\begin{enumerate}[label=(\alph*)]
+        \item injektiv, falls gilt $x\neq y\Leftrightarrow f\left(x\right)\neq f\left(y\right)$. 
+        \item surjektiv, falls es für alle $y \in Y$ ein $x \in X$ gibt mit $f\left(x\right)=y$.
+        \item bijektiv, falls sie surjektiv und injektiv ist.
+\end{enumerate}
+Seien $[a,b]\subseteq \mathbb{R}$ und $[c,d]\subseteq \mathbb{R}$ abgeschlossene Intervalle mit $a<b$ und $c<d$. Sei die Funktion $f:[a,b]\rightarrow [c,d]$ stetig und streng monoton wachsend, d.h.
+\[ 
+        a\leq u<<v\leq b\Rightarrow f\left(u\right)<f\left(v\right)
+\] 
+mit $f\left(a\right)=c$ und $f\left(b\right)=d$. Dann gilt
+\begin{enumerate}[label=(\alph*)]
+        \item $f$ ist bijektiv
+        \item $f$ besitzt eine eindeutig bestimmte Umkehrfunktion $f^{-1}:[c,d]\rightarrow [a,b]$, sodass für alle $x \in [a,b]:f^{-1}\left(f\left(x\right)\right)=x$, und sodass alle $y \in [c,d]:f\left(f^{-1}\left(x\right)\right)=y$
+        \item $f^{-1}$ ist bijektiv und streng monoton wachsend
+        \item $f^{-1}$ ist stetig
+\end{enumerate}
+Eine graphische Darstellung der Umkehrfunktion ist die Spiegelung an der Winkelhalbierenden zwischen der positiven x- und y-Achse.
+
+\subsubsection{Trigonometrische Funktionen}
+Die trigonometrischen Funktionen werden durch die Exponentialfunktion in der komplexen Ebene dargestellt. Da $\,|\, e^{i\alpha }\,|\, =1$ ist, bildet diese Funktion auf den Einheitskreis ab.
+\[ 
+        \text{exp}:i\mathbb{R}\rightarrow \{z \in \mathbb{C}\,|\, \,|\, z\,|\, =1\}
+.\] 
+Damit können die Cosinus- und Sinusfunktionen definiert werden.
+\[ 
+        \cos :\mathbb{R}\rightarrow \mathbb{R},\cos \left(\alpha \right)=\text{Re}\left(e^{i\alpha }\right)=\sum_{n=0}^{\infty}\left(-1\right)^{n}\dfrac{\alpha ^{2n}}{\left(2n\right)!}=\dfrac{e^{ia}+e^{-ia}}{2}
+.\] 
+\[ 
+        \sin :\mathbb{R}\rightarrow \mathbb{R},\sin \left(\alpha \right)=\text{Im}\left(e^{i\alpha }\right)=\sum_{n=0}^{\infty}\left(-1\right)^{n}\dfrac{\alpha ^{2n+1}}{\left(2n+1\right)!}=\dfrac{e^{ia}-e^{-ia}}{2i}
+.\] 
+
+\subsection{Differenzierbarkeit von Funktionen}
+\subsubsection{Mengen}
+Sei $\mathbb{K} \in \left\{\mathbb{R},\mathbb{C}\right\}$. Eine Menge $M\subseteq \mathbb{K}$ heißt offen in $\mathbb{K}$, falls es für alle $x_0 \in M$ ein $\varepsilon >0$ gibt, sodass die Menge $B_{\varepsilon }\left(x_0\right):=\left\{x \in \mathbb{K}\,|\, \,|\, x-x_0\,|\, <\varepsilon \right\}\subseteq M$, das heißt: $M$ ist offen, wenn jedes seiner Elemente eine $\varepsilon $--Umgebung besitzt, die vollständig in $M$ enthalten ist.\\\\ 
+Die Menge $M\subseteq \mathbb{K}$ ist abgeschlossen, falls $\mathbb{K}\backslash M$ offen in $\mathbb{K}$ ist. Folgende Abschlusseigenschaften gelten
+\begin{enumerate}[label=(\roman*)]
+        \item Der Schnitt zweier offener Mengen ist offen.
+        \item Die Vereinigung beliebig vieler offener Mengen ist offen.
+\end{enumerate}
+In Analogie gilt dies für abgeschlossene Mengen.\\\\
+Sei $A\subseteq \mathbb{K}$ abgeschlossen. Dann hat jede konvergente Folge die in $A$ liegt ihren Grenzwert in $A$.\\\\
+Eine Menge $A\subseteq \mathbb{K}$ heißt kompakt, falls jede Folge in $A$ einen Häufungspunkt in $A$ besitzt. Sie ist genau dann kompakt, wenn sie abgeschlossen und beschränkt ist. Sei $f:A\rightarrow \mathbb{K}$ stetig, dann ist $f[A]$ kompakt.
+
+\subsubsection{Differenzierbarkeit}
+Sei $U\subseteq \mathbb{K}$ offen und sei $f:U\rightarrow \mathbb{K}$. $f$ heißt im Punkt $x_0 \in U$ differenzierbar, falls der Grenzwert 
+\[ 
+        f'\left(x_0\right):=\lim_{x\rightarrow x_0}\dfrac{f\left(x\right)-f\left(x_0\right)}{x-x_0}
+\] 
+existiert. Man nennt dann den Wert $f'\left(x_0\right)$ die Ableitung von $f$ an der Stelle $x_0$. Die Funktion $f$ heißt differenzierbar, falls sie an jeder Stelle $x_0 \in U$ differenzierbar ist. Das Intervall muss aus dem Grund offen sein, das $x_0$ bei einem abgeschlossenen Intervall auch auf dem Rand liegen kann. Falls dies der Fall ist, kann man sich nicht mehr von beiden Seiten an den Punkt annähern.\\\\
+Folgende arithmetische Verträglichkeiten gelten:
+\begin{enumerate}[label=(\alph*)]
+        \item Die konstanten Funktionen $\text{konst}_c:\mathbb{K}\rightarrow \mathbb{K},x\mapsto c$ sind differenzierbar mit Ableitung der Nullfunktion.
+        \item Die identische Funktion $id:\mathbb{K}\rightarrow \mathbb{K},x\mapsto x$ sind differenzierbar mit Ableitung der Funktion $\text{konst}_1$.
+        \item (Polynome) Polynome $\sum_{i=0}^{n}a_ix^i$ sind auf ganz $\mathbb{K}$ differenzierbar und ihre Ableitung sind jeweils wieder Polynome, nämlich $\sum_{i=1}^{n}ia_ix^{i-1}$.
+        \item (Summenregel) Sei $u\subseteq \mathbb{K}$ offen. Seien $f,g:U\rightarrow \mathbb{K}$ differenzierbar in $x \in U$. Dann ist $f+g$ differenzierbar in $x$ mit Ableitung $f'\left(x\right)+g'\left(x\right)$.
+        \item (Produktregel) Für $U,f,g,x$ wie oben ist die Funktion $f\cdot g$ differenzierbar in $x$ mit Ableitung $\left(f\cdot g\right)'\left(x\right)=f'\left(x\right)g\left(x\right)+f\left(x\right)g'\left(x\right)$.
+        \item (Quotientenregel) Für $U,f,g,x$ wie oben und für $g\left(x\right)\neq 0$ ist $\tfrac{f}{g}$ in $x$ differenzierbar mit Ableitung $\left(\tfrac{f}{g}\right)'\left(x\right)=\tfrac{f'\left(x\right)g\left(x\right)-f\left(x\right)g'\left(x\right)}{g\left(x\right)^2}$.
+        \item (Kettenregel) Seien $U\subseteq \mathbb{K}$ offen, sei $g:U\rightarrow \mathbb{K}$ in $x_0 \in U$ differenzierbar und sei $f:g[U]\rightarrow \mathbb{K}$ in $g\left(x_0\right)$ differenzierbar. Dann ist $f\circ g:U\rightarrow \mathbb{K}$ in $x_0$ differenzierbar und die Ableitung ist $f'\left(g\left(x_0\right)\right)\cdot g'\left(x_0\right)$.
+\end{enumerate}
+\hfill\\\textbf{stetig Differenzierbar}\\ 
+Sei $U\subseteq \mathbb{K}$ und $f:U\rightarrow \mathbb{K}$ differenzierbar. Man sagt $f$ ist stetig differenzierbar, falls $f'$ stetig ist. Ferner definiert man die n--fache Ableitung rekursiv, durch $f^{\left(n\right)\left(x\right)=\left(f^{\left(n-1\right)}\right)'\left(x\right)}$. Dann nennt man $f$ eine n--fach stetig differenzierbare Funktion, falls $f^{\left(n-1\right)}$ differenzierbar ist und $f^{\left(n\right)}$ stetig ist. Wenn eine Funktion differenzierbar ist, dann ist sie auch stetig.
+\\\hfill\\\textbf{Maximumsatz}\\ 
+Seien $a<b$ reelle Zahlen. Sei $f:[a,b]\rightarrow \mathbb{R}$ stetig und auf $\left(a,b\right)$ differenzierbar. Ferner habe $f$ in $x \in \left(a,b\right)$ ein lokales Maximum. Dann gilt $f'\left(x\right)=0$.
+\\\hfill\\\textbf{Satz von Rolle}\\ 
+Seien $a<b$ reelle Zahlen. Sei $f:[a,b]\rightarrow \mathbb{R}$ stetig mit $f\left(a\right)=f\left(b\right)=0$ und auf $\left(a,b\right)$ differenzierbar. Dann gibt es ein $\zeta  \in \left(a,b\right)$, sodass $f'\left(\zeta \right)=0$ gilt.
+
+\subsubsection{Regel von l'H\^{o}pital}
+Sind $f$ und $g$ zwei differenzierbare Funktionen im Intervall $\left(a,b\right)$, sodass entweder $\lim_{x\rightarrow x_0}f\left(x\right)=\lim_{x\rightarrow x_0}g\left(x\right)=0$ oder $\lim_{x\rightarrow x_0}f\left(x\right)=\pm \infty$, $\lim_{x\rightarrow x_0}g\left(x\right)=\pm \infty$, dann gilt
+\[ 
+        \lim_{x\rightarrow x_0}\dfrac{f\left(x\right)}{g\left(x\right)}=\lim_{x\rightarrow x_0}\dfrac{f'\left(x\right)}{g'\left(x\right)}
+.\] 
+
+\subsection{Hyperbelfunktionen}
+Die Hyperbelfunktionen sind wie folgt definiert
+\begin{align*} %\intertext
+        \sinh\left(x\right)&=\dfrac{\exp\left(x\right)-\exp\left(-x\right)}{2}\\
+        \cosh\left(x\right)&=\dfrac{\exp\left(x\right)+\exp\left(-x\right)}{2}\\
+        \tanh\left(x\right)&=\dfrac{\sinh\left(x\right)}{\cosh\left(x\right)}
+\end{align*}
+
+\subsection{Taylorpolynome und -reihe}
+Seien $a<b$ zwei reelle Zahlen und sei $f:\left(a,b\right)\rightarrow \mathbb{R}$ in $x_0 \in \left(a,b\right)$ mind. $n$--mal differenzierbar. Dann definiert man das Taylorpolynom $n$--ter Ordnung von $f$ in $x_0$ durch
+\[ 
+        T_{f,n,x_0}\left(x\right):=\sum_{k=0}^{n}\dfrac{f^{\left(k\right)}\left(x_0\right)}{k!}\left(x-x_0\right)^{k}
+.\] 
+Sei $f:\left(a,b\right)\rightarrow \mathbb{R}$ eine $n$--mal differenzierbare Funktion. Dann gibt es für alle $x \in \left(a,b\right)\backslash\{x_0\}$ ein $y \in \begin{cases} %\intertext
+        \left(x_0,x\right)\quad \text{falls $x_0<x$}\\
+        \left(x,x_0\right)\quad \text{falls $x<x_0$}
+\end{cases}$, sodass gilt
+\[ 
+        f\left(x\right)=T_{f,n-1,x_0}\left(x\right)+\dfrac{f^{\left(n\right)}\left(y\right)}{n!}\left(x-x_0\right)^{n}
+.\] 
+Wenn die Potenzreihe $f\left(z\right)=\sum_{n=0}^{\infty}a_nz^n$ absolut für $\,|\, z\,|\, <R$ konvergiert, dann ist $\sum_{n=0}^{\infty}a_nz^n$ die Taylorreihe von $f$ um den Punkt $x_0=0$, das heißt, es gilt
+\[ 
+        a_n=\dfrac{f^{\left(n\right)}\left(0\right)}{n!}
+.\] 
+
+\subsubsection{Funktionenfolgen}
+Sei $\left(f_n\right)$ eine Folge von Funktionen $f_n:A\rightarrow \mathbb{C}$. Eine Funktion $f:A\rightarrow \mathbb{C}$ ist der punktweise Limes der $\left(f_n\right)$, falls für beliebige $x \in A$ gilt
+\[ 
+        \lim_{n\rightarrow \infty}f_n\left(x\right)=f\left(x\right)
+.\] 
+Eine Folge $\left(f_n\right)$ von Funktionen $f_n:A\rightarrow \mathbb{C}$ konvergiert gleichmäßig gegen eine Funktion $f:A\rightarrow \mathbb{C}$, wenn es für alle $\varepsilon >0$ ein $N \in \mathbb{N}$ gibt, sodass für alle $m>N$ und $x \in A$ gilt
+\[ 
+        \,|\, f\left(x\right)-f_m\left(x\right)\,|\, <\varepsilon 
+.\] 
+Das bedeutet, dass die $\varepsilon ,N$--Abschätzung \glqq gleichmäßig\grqq{} für alle $x \in A$ gilt. Wenn eine Folge von Funktionen gleichmäßig konvergiert, dann ist $f$ stetig.
+\\\hfill\\\textbf{Norm}\\ 
+Für eine Menge $A$ und eine Funktion $f:A\rightarrow \mathbb{C}$ definiere die (Supremums--)Norm
+\[ 
+        ||f||_A:=\text{sup}\{\,|\, f\left(x\right)\,|\, \,|\, x \in A\} \in \mathbb{R}_{\geq 0}\cup \{\infty\}
+.\] 
+Die Funktion $f$ heißt beschränkt auf $A$, wenn $||f||_a<\infty$. 
+
+\section{Integration reeller Funktionen}
+\subsection{Riemannintegration}
+Die Idee des Riemann-Integrals ist es, die Funktion in viele kleine Rechtecke zu unterteilen, welche anschließend summiert werden. Sei $f:[a,b]\rightarrow \mathbb{R}$ also eine Treppenfunktion bezüglich der Zerlegung $a=t_0<t_1<\hdots <t_k=b$ und sei $c_i=f\left(t_i\right)$ für $i=0,\hdots ,k-1$. Dann definiert man das Integral für Treppenfunktionen als
+\[ 
+        \int_{a}^{b}f\left(x\right)\td x:=\sum_{i=0}^{k-1}c_i\left(t_{i+1}-t_i\right)
+.\] 
+Das Integral $\int_{}^{}:T[a,b]\rightarrow \mathbb{R}$ ist linear und monoton. Für beschränkte Funktionen $f:[a,b]\rightarrow \mathbb{R}$ definiert man das Oberintegral
+\[ 
+        \int_{a}^{*b}f\left(x\right)\td x:=\text{inf}\left\{\int_{a}^{b}\varphi \left(x\right)\td x\,|\, \varphi  \in T[a,b],\varphi \geq f\right\}
+.\] 
+und das Unterintegral
+\[ 
+        \int_{*a}^{b}f\left(x\right)\td x:=\text{sup}\left\{\int_{a}^{b}\varphi \left(x\right)\td x\,|\, \varphi  \in T[a,b],\varphi \leq f\right\}
+.\] 
+Eine Funktion heißt Riemann-integrierbar, also im UVR $R[a,b]$, wenn gilt
+\[ 
+        \int_{a}^{b}f\left(x\right)\td x:=\int_{a}^{*b}f\left(x\right)\td x=\int_{*a}^{b}f\left(x\right)\td x
+.\] 
+Des Weiteren sind stetige reelle Funktionen und monotone reelle Funktionen auf $[a,b]$ Riemann-integrierbar.
+\\\hfill\\\textbf{Orientierung}\\ 
+Sei $a<b$ und $f:[a,b]\rightarrow \mathbb{R}$ Riemann-integrierbar. Man definiert
+\[ 
+         \int_{a}^{b}f\left(t\right)\td t:=-\int_{b}^{a}f\left(t\right)\td t
+.\] 
+
+\subsubsection{Hauptsätze der Integralrechnung}
+\textbf{1}\\ 
+Sei $f:[a,b]\rightarrow \mathbb{R}$ eine Riemann-integrierbare Funktion und in $x^* \in [a,b]$ stetig. Sei $x_0 \in [a,b]$ und sei $F:[a,b]\rightarrow \mathbb{R}$, die durch
+\[ 
+        F\left(x\right):=\int_{x_0}^{x}f\left(t\right)\td t
+\] 
+definierte Funktion. Dann ist $F$ in $x^*$ differenzierbar und $F'\left(x^*\right)=f\left(x^*\right)$. Falls $f$ auf ganz $[a,b]$ stetig ist, so ist $F$ auf $[a,b]$ differenzierbar.
+\\\hfill\\\textbf{2}\\ 
+Sei $f$ auf $[a,b]$ stetig und $F$ eine Stammfunktion von $f$. Dann gilt
+\[ 
+        \int_{a}^{b}f\left(t\right)\td t=F\left(b\right)-F\left(a\right)
+.\] 
+\hfill\\\textbf{Substitution}\\ 
+Sei $g$ auf $[a,b]$ differenzierbar und $f$ auf $[a,b]$ stetig. Dann gilt
+\[ 
+        \int_{g\left(a\right)}^{g\left(b\right)}f\left(t\right)\td t=\int_{a}^{b}f\left(g\left(t\right)\right)\cdot g'\left(t\right)\td t
+.\] 
+\hfill\\\textbf{Partielle Integration}\\ 
+Seien $f,g$ differenzierbare Funktionen und sei $\int_{}^{}f'\left(x\right)g\left(x\right)\td x$ eine Stammfunktion von $f'g$. Dann ist
+\[ 
+        \int_{}^{}f\left(x\right)g'\left(x\right)\td x=f\left(x\right)g\left(x\right)-\int_{}^{}f'\left(x\right)g\left(x\right)\td x
+\] 
+eine Stammfunktion von $fg'$.
+\\\hfill\\\textbf{Partialbruchzerlegung}\\ 
+Seien $p,q$ differenzierbare Funktionen als Bruch $\tfrac{p\left(x\right)}{q\left(x\right)}$, wobei man mit Polynomdivision stets die Zerlegung $a\left(x\right)+\tfrac{r\left(x\right)}{q\left(x\right)}$ bekommt. Dabei ist $\text{grad}\left(r\right)<\text{grad}\left(q\right)$. Dieses Polynom lässt sich dann -- mit $a_1$ bis $a_n$ als Nullstellen -- durch eine Linearkombination darstellen
+\[ 
+        \dfrac{r\left(x\right)}{q\left(x\right)}=\dfrac{A_1}{x-a_1}+\hdots +\dfrac{A_n}{x-a_n}
+.\] 
+$A_1$ bis $A_n$ lassen sich druch Umstellen des oberen Terms herausfinden
+\[ 
+        r\left(x\right)=A_1\dfrac{q\left(x\right)}{x-a_1}+\hdots +A_n\dfrac{q\left(x\right)}{x-a_n}
+\] 
+wobei $q\left(x\right)$ idealerweise in Linearfaktoren zerlegt ist.\\
+Sollte $q\left(x\right)$ $n$ identische Nullstellen $a$ haben, gilt
+\[ 
+        r\left(x\right)=A_1\dfrac{q\left(x\right)}{\left(x-a\right)^1}+\hdots+A_{n-1}\dfrac{q\left(x\right)}{\left(x-a\right)^{n-1}}+A_n\dfrac{q\left(x\right)}{\left(x-a\right)^n}
+.\]
+Tip: wenn $q\left(x\right)$ nur zwei Nullstellen hat können $A_1$ und $A_2$ durch einsetzen der jeweiligen Nullstelle in den Term herausgefunden werden.\\
+Sonst ist im ersteren, bzw.\ muss im letzeren Fall ein Koeffizientenvergleich durchgeführt werden. Schließlich ist folgendes Integral zu berechnen
+\begin{align*}
+        \int_{}^{}\dfrac{p\left(x\right)}{q\left(x\right)}\td x&=\int_{}^{}\left(a\left(x\right)+\dfrac{r\left(x\right)}{q\left(x\right)}\right)\td x
+.\end{align*}
+\section{Differenzialgleichungen}
+Eine implizit gewöhnliche Differenzialgleichung $n$--ter Ordnung ist ein Ausdruck der Form
+\[ 
+        F\left(z,y,y',y'',\hdots ,y^{\left(n\right)}\right)=0
+.\] 
+Eine Funktion $f:M\rightarrow \mathbb{C}$ ist eine Lösung der DGL, wenn $f$ $n$--fach differenzierbar ist und für alle $z \in M$ gilt
+\[ 
+        F\left(z,f\left(z\right),f'\left(z\right),f''\left(z\right),\hdots ,f^{\left(n\right)}\left(z\right)\right)=0
+.\] 
+Ein Ausdruck der Form
+\[ 
+        y^{\left(n\right)}=F\left(z,y,y',y'',\hdots ,y^{\left(n-1\right)}\right)
+\] 
+ist eine explizit gewöhnliche DGL $n$--ter Ordnung.
+
+\subsection{Inhomogene lineare DGL 1. Ordnung}
+Eine inhomogene lineare DGL 1. Ordnung ist eine Gleichung der Gestalt
+\[ 
+        y'=a\left(x\right)y+b\left(x\right)\tag{I}\label{I}
+.\] 
+Dabei sind $a,b$ auf einem Intervall $I$ definierte stetige Funktion. Die Gleichung
+\[ 
+        y'=a\left(x\right)\cdot y
+\] 
+heißt die zu \eqref{I} gehörige homogene lineare DGL 1. Ordnung.\\\\
+Sei $A$ eine Stammfunktion zu $a$ und $B$ eine Stammfunktion zu $b \cdot e^{-A}$. Dann ist
+\[ 
+        y=\left(B+c\right)e^{A}=\left(\int_{}^{}b\left(x\right)\cdot e^{-\int_{}^{}a\left(x\right)\td x}\td x+c\right)e^{\int_{}^{}a\left(x\right)\td x},\qquad c \in \mathbb{C}
+\] 
+eine Lösung für \eqref{I}.
+
+\subsection{Homogene lineare DGL n--ter Ordnung}
+Eine lineare DGL $n$--ter Ordnung ist eine Gleichung
+\[ 
+        y^{\left(n\right)}+a_{n-1}y^{\left(n-1\right)}+\hdots +a_1y'+a_0y=b \tag{L}\label{L} %\eqref{L}
+.\] 
+Dabei sind $a_{n-1},\hdots ,a_0,b:I\rightarrow \mathbb{R}$ auf einem Intervall $I\subseteq \mathbb{R}$ gegebene stetig Funktion.\\
+Die Gleichung
+\[ 
+        y^{\left(n\right)}+a_{n-1}y^{\left(n-1\right)}+\hdots +a_1y'+a_0y=0\tag{H}\label{H} %\eqref{H}
+\] 
+heißt die zu \eqref{L} gehörende homogene lineare DGL. Die Lösungsmenge $\mathfrak{L}$ zu \eqref{H} ist dann ein $n$--dimensionaler $\mathbb{R}$--Vektorraum. Die Basis von $\mathfrak{L}$ heißt dann Fundamentalsystem für \eqref{H}.
+
+\subsection{Homogene lineare DGL n--ter Ordnung mit konstanten Koeffizienten}
+Man betrachte die DGL \eqref{H} wobei $a_0,\hdots ,a_{n-1} \in \mathbb{R}$ Konstanten sind. Der Ansatz zur Lösung ist 
+\[ 
+        y\left(x\right)=e^{\lambda x}
+.\] 
+Einsetzen in die Gleichung ergibt
+\[ 
+        \left(\lambda ^{n}+a_{n-1}\lambda ^{n-1}+\hdots +a_1\lambda +a_0\right)e^{\lambda x}=0
+.\] 
+Es ist $e^{\lambda x}\neq 0\,\forall x\mathbb{R}$, das heißt $e^{\lambda x}$ ist genau dann eine Lösung, wenn $\lambda $ eine Nullstelle von $p\left(x\right)$ ist, wobei
+\[ 
+        p\left(x\right)=\lambda ^n+a_{n-1}\lambda ^{n-1}+\hdots +a_1\lambda +a_0
+\] 
+das charakteristische Polynom von \eqref{H} ist. Hat dieses Polynom genau $n$ paarweise verschiedene, möglicherweise komplexwertige Nullstellen $\lambda _1,\hdots ,\lambda _n  \in \mathbb{C}$, dann bilden die Funktionen $e^{\lambda _1x},\hdots ,e^{\lambda _nx}$ ein Fundamentalsystem. 
+
+%}}}
+
+%{{{ Lineare Algebra
+\section*{Lineare Algebra}\addcontentsline{toc}{section}{Lineare Algebra}
+\section{Lineare Gleichungssysteme}
+Eine Gleichung ist eine Formel
+\[ 
+        t\left(x_1,\hdots,x_n\right)=b
+,\] 
+wobei $t$ ein arithmetischer Term mit Unbekannten $x_1,\hdots,x_n$ ist. Gesucht ist jeweils die Lösungsmenge $\{\left(x_1,\hdots,x_n\right)\,|\, t\left(x_1,\hdots,x_n\right)=b\}$. Die Bestimmung verläuft so, dass die Gleichung $t\left(\bar{x}\right)=b$ zu einer übersichtlichen oder expliziten Formel $\varphi \left(\bar{x}\right)$ umgeformt wird, sodass
+\[ 
+        \{\left(x_1,\hdots,x_n\right)\,|\, t\left(x_1,\hdots,x_n\right)=b\}=\{\left(x_1,\hdots,x_n\right)\,|\, \varphi \left(x_1,\hdots,x_n\right)\}
+.\] 
+Bsp.
+\begin{align*}
+        2x+y&=42\\
+        y&=42-2x\\
+        \mathbb{L}&=\{\left(x,y\right) \in \mathbb{R}^2\,|\, y=42-2x\}\\
+        \mathbb{L}&=\{\left(x,42-2x\right) \in \mathbb{R}^2\}
+\end{align*}
+Lineare Gleichungen einer Unbekannten
+\begin{align*}
+        a\cdot x&=b\qquad a\neq 0\\
+        \mathbb{L}&=\{x\,|\, x=a^{-1}\cdot b\}=\{a^{-1}\cdot b\}
+\end{align*}
+\begin{align*}
+        a\cdot x&=b\qquad a=0,b\neq 0\\
+        \mathbb{L}&=\{x\,|\, a\cdot x=b\}=\{\}
+\end{align*}
+\begin{align*}
+        a\cdot x&=b\qquad a=0,b=0\\
+        \mathbb{L}&=\{x \in \mathbb{K}\,|\, a\cdot x=b\}=\mathbb{K}
+\end{align*}
+Die Allgemeine Lösungsmenge für diese Gleichung ist
+\begin{align*}
+        \mathbb{L}&=\{x \in \mathbb{K}\,|\, \left(a\neq 0\land x=a^{-1}\cdot b\right)\lor \underbrace{\left(a=0\land b\neq 0\land x\neq x\right)}_{\text{Kontradiktion}}\lor \left(a=0\land b=0\land 0=0\right)\}\\
+        \mathbb{L}&=\{x \in \mathbb{K}\,|\, \left(a\neq 0\land x=a^{-1}\cdot b\right)\lor \left(a=0\land b=0\land 0=0\right)\}
+\end{align*}
+Sei $\mathbb{K}$ ein Körper. Ein LGS für die Unbekannten $x_1,\hdots,x_n$ ist ein System von linearen Gleichungen der Gestalt
+\[ 
+        \left(\begin{matrix}
+                        a_{11}x_1&+\hdots&+a_{1m}x_m&=b_1\\
+                        \vdots&&\vdots\\
+                        a_{1n}x_1&+\hdots&+a_{nm}x_m&=b_n
+        \end{matrix}\right)
+.\] 
+Dabei sind $a_{ij}$ (Koeffizienten) und $b_i$ Körperelemente. Allgemein kann ein solches LGS auch als $Ax=b$ bezeichnet werden. Das System heißt homogen, falls $b_1=b_2=\hdots=b_n=0$. In diesem Fall auch allgemein $Ax=0$. Ansonsten heißen sie inhomogen. Die Lösungsmenge ist
+\begin{gather*}
+        \mathbb{L}\left(A,b)\right)=\{\left(x_1,\hdots,x_m\right)\,|\, x_1,\hdots,x_m \in \mathbb{K}\\\text{ und }a_{11}x_1+\hdots+a_{1m}x_m=b_1,\hdots,a_{n1}x_1+\hdots+a_{nm}x_m=b_n\}
+\end{gather*}
+Das LGS heißt ...
+\begin{enumerate}[label=...]
+        \item lösbar, wenn $\mathbb{L}\neq \{\}$.
+        \item eindeutig lösbar, wenn $\mathbb{L}$ genau ein Element enthält.
+\end{enumerate}
+\textbf{LGS spezieller Gestalt}\\
+Ein LGS $Ax=b$ über einen Körper $\mathbb{K}$ in Diagonalgestalt
+\[ 
+        \left(\begin{matrix}
+                        a_{11}x_1&&&&=b_1\\
+                                 &a_{22}x_2&&&=b_2\\
+                                 &&\ddots&&\vdots\\
+                                 &&&a_{nn}x_n&=b_n
+        \end{matrix}\right)
+.\] 
+Ein LGS $Ax=b$ über einen Körper $\mathbb{K}$ in Zeilenstufenform (ZSF)
+\[ 
+        \left(\begin{matrix}
+                        a_{1j\left(1\right)}x_{j\left(1\right)}+&&\hdots&&+\hdots&+a_{1m}x_m&=b_1\\
+                                                               &a_{2j\left(2\right)}x_{j\left(2\right)}+&\hdots&&+\hdots&+a_{2m}x_m&=b_2\\
+                                                               &&\ddots&&&&\vdots\\
+                                                               &&&a_{ij\left(i\right)}x_{j\left(i\right)}&+\hdots&+a_{im}x_m&=b_i
+        \end{matrix}\right)
+.\] 
+Mit der Lösungsmenge
+\[ 
+        \mathbb{L}\left(A,b\right)=\left\{\left(\begin{matrix}
+                x_1\\\vdots\\x_m
+\end{matrix}\right) \in \mathbb{K}^m\,|\, \forall k=1,\hdots,i\text{ gilt }x_{j\left(k\right)}=\dfrac{1}{a_{kj\left(k\right)}}\cdot \left(b_k-\sum_{l=j\left(k\right)+1}^{m}a_{kl}x_l\right)\right\}
+.\] 
+
+\subsection{Der Gauß-Algorithmus}
+Sei $\mathbb{K}$ ein Körper und seien $a_1,\hdots ,a_m,b,a_1',\hdots ,a_m',b' \in \mathbb{K}$. Weiterhin sei $\lambda  \in \mathbb{K},\lambda \neq 0$ und $\mu  \in \mathbb{K}$. Dann gilt
+\begin{enumerate}[label=(\alph*)]
+        \item für $x_1,\hdots ,x_m \in \mathbb{K}$ ist die Gleichung 
+                \[ 
+                        a_1x_1+\hdots +a_mx_m=b
+                \] 
+                äquivalent zu der Gleichung
+                \[ 
+                        \lambda a_1x_1+\hdots +\lambda a_mx_m=\lambda b
+                .\] 
+        \item für $x_1,\hdots ,x_m \in \mathbb{K}$ ist 
+                \[ 
+                        a_1x_1+\hdots +a_mx_m=b\text{ und }a_1'x_1+\hdots +a_m'x_m=b'
+                \] 
+                äquivalent zu
+                \[ 
+                        a_1x_1+\hdots +a_mx_m=b\text{ und }\left(a_1'+\mu a_1\right)x_1+\hdots +\left(a_m'+\mu a_m\right)x_m=b'+\mu b
+                .\] 
+\end{enumerate}
+
+\section{Vektorräume}
+\textbf{Der Raum $\mathbb{K}^{n}$}\\
+Sei $\mathbb{K}=\left(\mathbb{K},+,\cdot ,0,1\right)$ ein Körper und $n  \in \mathbb{N}$. Definiere die Struktur $\mathbb{K}^{n}:=\left(\mathbb{K}^{n},+,\cdot ,0\right)$ durch:
+\begin{enumerate}[label=(\alph*)]
+        \item $\mathbb{K}^{n}=\{\left(x_1,\hdots ,x_n\right)\,|\, x_1 \in \mathbb{K},\hdots ,x_ n  \in \mathbb{K}\}$. Die Elemente von $\mathbb{K}^{n}$ heißen Vektoren.
+        \item Für $\left(x_1,\hdots ,x_n\right),\left(y_1,\hdots ,y_n\right) \in \mathbb{K}^{n}$ definiere die Vektoraddition $+$ durch
+                \[ 
+                        \left(x_1,\hdots ,x_n\right)+\left(y_1,\hdots ,y_n\right):=\left(x_1+y_1,\hdots ,x_n+y_n\right)
+                .\] 
+        \item Für $\left(x_1,\hdots ,x_n\right) \in \mathbb{K}^{n}$ und $\lambda  \in \mathbb{K}$ definiere die Skalarmultiplikation $\cdot $ durch
+                \[ 
+                        \lambda \cdot \left(x_1,\hdots ,x_n\right):=\left(\lambda \cdot x_1,\hdots ,\lambda \cdot x_n\right)
+                .\] 
+        \item $0=\left(0,\hdots ,0\right) \in \mathbb{K}^{n}$ ist der Nullvektor.
+        \item Für $x=\left(x_1,\hdots ,x_n\right)$ definiere das additive Inverse durch
+                \[ 
+                        -x=\left(-x,\hdots ,-x_n\right)
+                .\] 
+        \item Für $\left(x_1,\hdots ,x_n\right)$ und $\left(y_1,\hdots ,y_n\right)$ definiere die Vektorsubtraktion $-$ durch
+                \[ 
+                        \left(x_1,\hdots ,x_n\right)-\left(y_1,\hdots ,y_n\right):=\left(x_1-y_1,\hdots ,x_n-y_n\right)
+                .\] 
+\end{enumerate}
+Es sei $\mathbb{K}$ ein Körper und sei $V=\left(V,+,\cdot \right)$ eine Struktur mit einer Abbildung $+$ 
+\[ 
+        +:V\times V\rightarrow V\qquad \left(x,y\right)\mapsto x+y
+\] 
+und einer Abbildung $\cdot $ 
+\[ 
+        \cdot :\mathbb{K}\times V\rightarrow V\qquad \left(\lambda ,y\right)\mapsto\lambda \cdot x
+.\] 
+Dann ist $V=\left(V,+,\cdot \right)$ ein $\mathbb{K}$-Vektorraum oder Vektorraum über $\mathbb{K}$, wenn die folgenden Axiome gelten:
+\begin{enumerate}[label=(\alph*)]
+        \item Assoziativgesetz
+        \item Kommutativgesetz
+        \item additive Neutralität der Null 
+        \item Existenz des Inversen
+        \item Assoziativgesetz
+        \item multiplikative Neutralität der 1
+        \item 1. Distributivgesetz
+        \item 2. Distributivgesetz
+\end{enumerate}
+Für alle Vektorräume $V=\left(V,+,\cdot \right)$ gibt es genau ein Element, das der Nullvektor ist.\\\\Die Schreibeweise für Vektorräume ist wie folgt
+\[ 
+        \mathbb{K}\text{-Vektorraum der $\mathbb{A}$-Elemente}
+.\]Der Vektorraum der Tupel $\left(x,\hdots ,x_n\right) \in \mathbb{A}$ mit Skalierung $\lambda _1,\hdots ,\lambda _n  \in \mathbb{K}$. 
+
+\subsection{Untervektorräume}
+Sei $V=\left(V,+,\cdot ,0\right)$ ein $\mathbb{K}$-Vektorraum und sei $U\subseteq V$ eine Teilmenge von $V$. Dann ist $U$ ein Unter(vektor)raum (UVR) von $V$, wenn $U\neq \{\}$ und für alle $x,y \in U$ und alle $\lambda  \in \mathbb{K}$ gilt: $x+y \in U$ und $\lambda \cdot x \in U$ (Abgeschlossenheit bzgl. $+$ und $\cdot $). $U$ ist dann immernoch ein $\mathbb{K}$-Vektorraum. $U_1$ und $U_2$, mit $U_1\cap U_2$ auch ein Untervektorraum von $V$.
+\\\hfill\\\textbf{Funktionen}\\ 
+Sei Abb$\left(\mathbb{R},\mathbb{R}\right)$ die Menge aller Funktionen von $\mathbb{R}$ nach $\mathbb{R}$, das heißt
+\[ 
+        \text{Abb}\left(\mathbb{R},\mathbb{R}\right)=\{f\,|\, f:\mathbb{R}\rightarrow \mathbb{R}\}
+.\] 
+Diese Abbildung kann als Vektorraum aufgefasst werden, also gilt
+\begin{gather*}
+        \left(f+g\right)\left(x\right)=f\left(x\right)+g\left(x\right)\\
+        \left(\lambda \cdot f\right)\left(x\right)=\lambda \cdot f\left(x\right)
+\end{gather*}
+
+\subsection{Linearkombinationen und Basen}
+\hfill\\\textbf{Linearkombination}\\ 
+Sei $V$ ein $\mathbb{K}$-Vektorraum und $v \in V$ ist eine Linearkombination von $v_1,\hdots ,v_n$, wenn es ein $\lambda _1,\hdots \lambda _n  \in \mathbb{K}$ gibt, sodass
+\[ 
+        v=\lambda _1v_1+\hdots +\lambda _nv_n
+.\] 
+Die Körperelemente $\lambda _1,\hdots ,\lambda _n$ heißen Koeffizienten dieser Linearkombination. Die Menge $\mathbb{L}\left(v_1,\hdots ,v_n\right):=\left\{\sum_{i=1}^{n}\lambda _iv_i\,|\, \lambda _1,\hdots \lambda _n  \in \mathbb{K}\right\}\subseteq V$ aller Linearkombinationen von $v_1,\hdots ,v_n$ heißt Lineare Hülle von $v_1,\hdots ,v_n$. Im Fall von $n=0$ setzen wir $\mathbb{L}\left(\{\}\right):=\{0\}$. Die Lineare Hülle eines Vektors ist die Gerade, bzw Ebene, die durch Linearkombination dieses Vektors aufgespannt wird. Damit ist die Lineare Hülle ein UVR.
+\\\hfill\\\textbf{Endlich erzeugter VR}\\ 
+Sei $V$ ein $\mathbb{K}$-Vektorraum. Dann heißt $V$ endlich erzeugt, wenn es eine endliche Folge $\left(v_1,\hdots ,v_n\right)$ von Vektoren in $V$ gibt, sodass $\mathbb{L}\left(v_1,\hdots ,v_n\right)=V$ gilt. Das heißt, dass die Lineare Hülle den Vektorraum erzeugt.
+\\\hfill\\\textbf{Linear unabhängig}\\ 
+Sei $V$ ein $\mathbb{K}$-Vektorraum und $\left(v_1,\hdots ,v_n\right) \in V$. Das $n$-Tupel $\left(v_1,\hdots ,v_n\right)$ heißt linear unabhängig, wenn für alle Darstellungen
+\[ 
+        \lambda _1v_1+\hdots +\lambda _nv_n=0
+\] 
+gilt $\lambda _1=0,\hdots ,\lambda _n=0$.\\Ist das $n$-Tupel $\left(v_1,\hdots ,v_n\right)$ nicht linear unabhängig, so sagen wir, dass es linear abhängig ist. Man sagt, dass für $n=0$ das 0-Tupel$=\{\}$ immer linear abhängig ist.
+
+\subsection{Existenzsätze für Basen}
+Sei $V$ ein $\mathbb{K}$-Vektorraum und $v_1,\hdots ,v_n$ Vektoren, dann ist $v_1,\hdots ,v_n$ eine Basis von $V$, falls $v_1,\hdots ,v_n$ linear unabhängig sind und $\mathbb{L}\left(v_1,\hdots ,v_n\right)=V$. Die Basis ist also ein linear unabhängiger erzeugender Vektor, der Teilmenge des VR ist.
+\\\hfill\\\textbf{Basisergänzungssatz}\\ 
+Sei $V$ ein beliebiger Vektorraum. Sei die Folge $\left(v_1,\hdots ,v_r\right)$ linear unabhängig in $V$, $w_1,\hdots ,w_s \in V$ und
+\[ 
+        \mathbb{L}\left(v_1,\hdots ,v_r,w_1,\hdots ,w_s\right)=V
+.\] 
+Dann gibt es Indizes $i_1,\hdots ,i_k\leq s$, sodass $\left(v_1,\hdots ,v_r,w_{i_1},\hdots ,w_{i_k}\right)$ eine Basis von $V$ ist.
+\\\hfill\\\textbf{Basisaustauschsatz}\\ 
+Sei $V$ ein $\mathbb{K}$-Vektorraum und seien $\left(v_1,\hdots ,v_m\right)$ und $\left(w_1,\hdots ,w_{n=m}\right)$ zwei Basen von $V$. Dann existiert für alle $i\leq m$ ein $j\leq n$, sodass $\left(v_1,\hdots ,v_{i-1},w_j,v_{i+1},\hdots ,v_m\right)$ eine Basis von $V$ ist. 
+\\\hfill\\\textbf{Dimension}\\ 
+Sei $V$ ein endlich erzeugter $\mathbb{K}$-Vektorraum. Dann ist die Dimension von $V$ die Anzahl $n$ der Vektoren in einer Basis $\left(v_1,\hdots ,v_n\right)$ von $V$. In diesem Fall heißt $V$ auch $n$-dimensional. Die Dimension von $V$ wird mit $\text{dim}\left(V\right)$ oder $\text{dim}V$ bezeichnet. Ein endlich erzeugter $\mathbb{K}$-Vektorraum wird auch als endlich-dimensionaler $\mathbb{K}$-Vektorraum bezeichnet. Wenn $V$ nicht endlich erzeugt ist, so ist $V$ unendlich-dimensional, also $\text{dim}\left(V\right)=\infty$.
+\[ 
+        \text{dim}_\mathbb{K}V\rightarrow \text{Die Dimension des $\mathbb{K}$-Vektorraum}
+.\] 
+\[ 
+        \text{dim}_\mathbb{R}\mathbb{C}=2:\text{Basis }\left(1,i\right)\qquad \mathbb{C}\text{ als }\mathbb{R}\text{-Vektorraum}
+.\] 
+Sei $V$ ein endlich-dimensionaler $\mathbb{K}$-Vektorraum und $U\subseteq V$ ein UVR. Dann ist $U$ ebenfalls endlich-dimensional und es gilt
+\[ 
+        \text{dim}\left(U\right)\leq \text{dim}\left(V\right)\qquad U\neq V\text{ genau dann, wenn }\text{dim}\left(U\right)<\text{dim}\left(V\right)
+.\] 
+Sei $V$ ein $n$-dimensionaler $\mathbb{K}$-Vektorraum und $\mathbb{K}$ habe $k$ Elemente. Dann hat $V$ genau $k^{n}$-viele Elemente.\\Der $\mathbb{Q}$-VR $\mathbb{R}$ hat unendlich viele Dimensionen, da jede irrationale Zahl aus $\mathbb{R}$ mit $\mathbb{Q}$ linear unabhängig voneinander ist. Es gibt also unendlich viele Basen.
+
+\section{Lineare Abbildungen}
+In diesem Kapitel werden Abbildungen zwischen Vektorräumen betrachtet.\\\\
+Seien $V$ und $W$ zwei $\mathbb{K}$-VR und $f:V\rightarrow W$. Dann ist die Abbildung $f$ linear oder ein Homomorphismus von $V$ und $W$, wenn
+\[ 
+        \forall x,y \in V\,|\, f\left(x\right)+f\left(y\right)=f\left(x+y\right)
+\] 
+und
+\[ 
+        \forall x,y \in V\land \lambda  \in \mathbb{K}\,|\, f\left(\lambda \cdot x\right)=\lambda \cdot f\left(x\right)
+.\] 
+Seien $V,W,X$ drei $\mathbb{K}$-VR und $f:V\rightarrow W$ und $g:W\rightarrow X$ zwei lineare Abbildungen. Dann sind die beiden Abbildungen $g\circ f:V\rightarrow X$ und $\text{id}_V:V\rightarrow V$ linear.
+ 
+\subsection{Bild, Kern}
+Seien $V$ und $W$ zwei $\mathbb{K}$-VR und $f:V\rightarrow W$ linear.
+\begin{enumerate}[label=\arabic*]
+        \item Das Urbild $f^{-1}[\{0\}]$ ist die Menge 
+                \[ 
+                        \{v \in V\,|\, f\left(v\right)=0\}
+                \] 
+                und wird als Kern der Abbildung $f$, als $f^{-1}\left(0\right)$ oder auch als Kern($f$) bezeichnet. (Der Kern ist ein UVR von $V$.)
+        \item Das Bild von $f$ ist die Menge
+                \[ 
+                        \{w \in W\,|\, \exists v \in V:f\left(v\right)=w\}
+                \] 
+                und wird mit $f[V]$ oder auch Bild($f$) bezeichnet. (Das Bild ist UVR von $W$.) 
+\end{enumerate}
+Die Dimension des Bildes einer linearen Abbildung bezeichnet man als Rang dieser Abbildung
+\[ 
+        \text{Rg}\left(f\right):=\text{dim}\left(\text{Bild}\left(f\right)\right)
+.\] 
+Die Dimension des Kerns wird als Defekt bezeichnet
+\[ 
+        \text{Df}\left(f\right):=\text{dim}\left(\text{Kern}\left(f\right)\right)
+.\] 
+
+\subsection{Homomorphismen}
+Seien $V,W$ zwei $\mathbb{K}$-Vektorräume. Definiere die Struktur $\text{Hom}\left(V,W\right):=\left(\text{Hom}\left(V,W\right),+,\cdot ,0\right)$ aller Homomorphismen (linearer Abbildungen) von $V$ nach $W$
+\[ 
+        \text{Hom}\left(V,W\right):=\{f\,|\, f:V\rightarrow W\text{ linear}\}
+.\] 
+Definiere die Addition $+$ durch
+\begin{gather*}
+        +:\text{Hom}\left(V,W\right)\times \text{Hom}\left(V,W\right)\rightarrow \text{Hom}\left(V,W\right)\\
+        \left(f+g\right)\left(x\right):=f\left(x\right)+g\left(x\right)
+.\end{gather*}
+Definiere die skalare Multiplikation $\cdot $ durch
+\begin{gather*}
+        \cdot :\mathbb{K}\times \text{Hom}\left(V,W\right)\rightarrow \text{Hom}\left(V,W\right)\\
+        \left(\lambda \cdot f\right)\left(x\right):=\lambda \cdot f\left(x\right)
+.\end{gather*}
+Definiere die Nullabbildung $0 \in \text{Hom}\left(V,W\right)$ durch
+\[ 
+        0\left(x\right):=0
+.\] 
+Sei $f:V\rightarrow W$ ein Homomorphismus. Dann wird definiert
+\begin{enumerate}[label=\arabic*]
+        \item $f$ ist ein Momomorphismus, wenn $f$ injektiv ist.
+        \item $f$ ist ein Epimorphismus, wenn $f$ surjektiv ist.
+        \item $f$ ist ein Isomorphismus, wenn $f$ bijektiv ist.
+        \item $f$ ist ein Endomorphismus, wenn $V=W$ ist.
+        \item $f$ ist ein Automorphismus, wenn $f$ bijektiv und $V=W$ ist.
+\end{enumerate}
+Sei $f:V\rightarrow W$ ein Isomorphismus von $\mathbb{K}$-VR. Dann ist $f^{-1}:W\rightarrow V$ ebenfalls ein Isomorphismus.
+\\\hfill\\\textbf{Endliche Beschreibung von Homomorphismen}\\ 
+Seien $V$ und $W$ $\mathbb{K}$-VR und sei $\left(v_1,\hdots ,v_n\right)$ eine Basis von $V$. Seien $w_1,\hdots w_n  \in W$. Dann existiert genau eine lineare Abbildung $f:V\rightarrow W$, so dass für $i=1,\hdots n$ gilt $f\left(v_i\right)=w_i$.
+
+\subsection{Klassifikation endlich-dimensionaler VR}
+Sei $n  \in  \mathbb{N}$ ein $n$-dimensionaler $\mathbb{K}$-VR. Dann gibt es einen Isomorphismus
+\[ 
+        f:V\rightarrow \mathbb{K}^{n}
+.\] 
+\hfill\\\textbf{Dimensionssatz}\\ 
+Seien $V,W$ zwei $\mathbb{K}$-VR, wobei $V$ endlich dimensional ist mit $\text{dim}\left(V\right)=n  \in \mathbb{N}$, und $f:V\rightarrow W$ linear. Dann gilt
+\[ 
+        \text{dim}\left(\text{Kern}\left(f\right)\right)+\text{dim}\left(\text{Bild}\left(f\right)\right)=\text{dim}\left(V\right)
+,\] 
+das heißt, es gilt $\text{Df}\left(f\right)+\text{Rg}\left(f\right)=n$.\\\\
+Für eine lineare Abbildung $f:V\rightarrow W$ gilt: $f$ ist genau dann injektiv, wenn $\text{Kern}\left(f\right)=\{0\}$.
+
+\section{Matrizen}   
+Sie $\mathbb{K}$ ein Körper und sei $f:\mathbb{K}^{m}\rightarrow \mathbb{K}^{n}$ eine lineare Abbildung mit $n,m \in \mathbb{N}$. Sei weiterhin $\left(e_1,\hdots ,e_m\right)$ die kanonische Basis des $\mathbb{K}^{m}$ und für $i=1,\hdots ,m$ sei
+\[ 
+        f\left(e_i\right)=\left(\begin{matrix}
+                a_{1i}\\a_{2i}\\\vdots\\a_{n i}
+        \end{matrix}\right)
+\] 
+dabei schreibt man die $n$-Tupel in $\mathbb{K}^{n}$ aus rechnerischen Gründen als Spaltenvektoren. Dann ist für Argumente $v=\left(\begin{matrix}
+        x_1\\\vdots\\x_m
+\end{matrix}\right) \in \mathbb{K}^{m}$ der Funktionswert
+\[ 
+        f\left(v\right)=\left(\begin{matrix}
+                        a_{11}x_1&+a_{12}x_2&+\hdots &+a_{1m}x_m\\
+                        a_{21}x_1&+a_{22}x_2&+\hdots &+a_{2m}x_m\\
+                                 &&\vdots&\\
+                        a_{n1}x_1&+a_{n2}x_2&+\hdots &+a_{nm}x_m
+        \end{matrix}\right) \in \mathbb{K}^{n}
+\] 
+gegeben.
+\\\hfill\\\textbf{Schreibweise}\\ 
+Sei $\mathbb{K}$ ein Körper und $n,m \in \mathbb{N}$. Eine $\left(n\times m\right)$-Matrix über $\mathbb{K}$ ist eine Folge $M=\left(a_{ij}\,|\, i=1,\hdots ,n;j=1,\hdots ,m\right)$ von Elementen $a_{ij} \in \mathbb{K}$. Man schreibt die Matrix als zweidimensionales Schema wie folgt
+\[ 
+        M=\left(\begin{matrix}
+                        a_{11}&a_{12}&\hdots &a_{1m}\\
+                        a_{21}&a_{22}&\hdots &a_{2m}\\
+                        \vdots&\vdots&\ddots &\vdots\\
+                        a_{n1}&a_{n2}&\hdots &a_{nm}
+        \end{matrix}\right)
+.\] 
+Es sei $\text{Mat}\left(n\times m,\mathbb{K}\right)$ die Menge aller $\left(n\times m\right)$-Matrizen über $\mathbb{K}$.\\Die Elemente von $\text{Mat}\left(n\times m,\mathbb{K}\right)$ werden abkürzend bezeichnet als
+\[ 
+        \left(a_{ij}\right)_{i=1,\hdots ,n;j=1,\hdots ,m}
+\] 
+oder einfach als $\left(a_{ij}\right)_{ij}$ oder $\left(a_{ij}\right)$. Die Klammer steht also für die Folge und nicht etwa für einen einzelnen Eintrag. Hierbei nennt man $i$ und $j$ die Laufindizes.\\Für $i=1,\hdots ,n$ ist der Zeilenvektor $\left(a_{ij},\hdots ,a_{im}\right)$ die $i$-te Zeile von $M$.\\Für $j=1,\hdots ,m$ ist der Spaltenvektor $\left(\begin{matrix}
+        a_{ij}\\\vdots\\a_{nj}
+\end{matrix}\right)$ die $j$-te Spalte von $M$.\\Ist die Matrix $M=\left(\begin{matrix}
+a_{11}&\hdots &a_{1m}\\
+\vdots&\ddots &\vdots\\
+a_{n1}&\hdots &a_{nm}
+\end{matrix}\right)$ durch $f\left(e_i\right)=\left(\begin{matrix}
+        a_{1i}\\\vdots\\a_{n i}
+\end{matrix}\right)$ definiert, so nennt man $M$ die darstellende Matrix von $f$. Man schreibt kurz
+\[ 
+        M=\text{DM}\left(f\right)
+.\] 
+\\\hfill\\\textbf{Lineare Abbildungen}\\ 
+Für jede $\left(n\times m\right)$-Matrix $M$ über $\mathbb{K}$ gibt es eine eindeutig bestimmte lineare Abbildung $f:\mathbb{K}^{m}\rightarrow \mathbb{K}^{n}$, sodass $M$ die darstellende Matrix von $f$ ist. Damit ist die Abbildung
+\begin{align*}
+        \text{Hom}\left(\mathbb{K}^{m},\mathbb{K}^{n}\right)&\rightarrow \text{Mat}\left(n\times m,\mathbb{K}\right)\\
+        f&\rightarrow \text{DM}\left(f\right)
+\end{align*}
+Sei $\mathbb{K}$ ein Körper und sei $\text{Mat}\left(n\times m,\mathbb{K}\right)$ die Menge aller $\left(n\times m\right)$-Matrizen über $\mathbb{K}$.
+\begin{enumerate}[label=(\alph*)]
+        \item Definiere die Matrizenaddition durch
+                \[ 
+                        \left(\begin{matrix}
+                                        a_{11}&\hdots &a_{1m}\\\vdots&\ddots&\vdots\\a_{n1}&\hdots &a_{nm}
+                        \end{matrix}\right)+\left(\begin{matrix}
+                                        b_{11}&\hdots &b_{1m}\\\vdots&\ddots&\vdots\\b_{n1}&\hdots &b_{nm}
+                        \end{matrix}\right)=\left(\begin{matrix}
+                                        a_{11}+b_{11}&\hdots &a_{1m}+b_{1m}\\\vdots&\ddots&\vdots\\a_{n1}+b_{n1}&\hdots &a_{nm}+b_{nm}
+                        \end{matrix}\right)
+                .\] 
+        \item Definiere die skalare Multiplikation durch
+                \[ 
+                        \lambda \cdot \left(\begin{matrix}
+                                        a_{11}&\hdots &a_{1m}\\\vdots&\ddots&\vdots\\a_{n1}&\hdots &a_{nm}
+                        \end{matrix}\right)=\left(\begin{matrix}
+                                        \lambda a_{11}&\hdots &\lambda a_{1m}\\\vdots&\ddots&\vdots\\\lambda a_{n1}&\hdots &\lambda a_{nm}
+                        \end{matrix}\right)
+                .\] 
+        \item Definiere das Matrizenprodukt für zwei Matrizen
+                \begin{gather*}
+                        A=\left(a_{ik}\right) \in \text{Mat}\left(r\times n,\mathbb{K}\right) \text{ und }B=\left(b_{kj}\right) \in \text{Mat}\left(n\times m,\mathbb{K}\right) \text{ als}\\
+                A\cdot B=\left(\sum_{k=1}^{n}a_{ik}b_{kj}\right)_{i=1,\hdots n;j=1,\hdots ,m} \in \text{Mat}\left(r\times m,\mathbb{K}\right)
+                \end{gather*}
+        \item Definiere die Nullmatrix $0 \in \text{Mat}\left(n\times m,\mathbb{K}\right)$ als
+                \[ 
+                        0=\left(\begin{matrix}
+                                        0&\hdots &0\\\vdots&\ddots&\vdots\\0&\hdots &0
+                        \end{matrix}\right)
+                .\] 
+                Damit ist die Nullmatrix das neutrale Element der Matrizenaddition.
+\end{enumerate}
+Die Struktur 
+\[ 
+        \text{Mat}\left(n\times m,\mathbb{K}\right),+,\cdot ,0
+\] 
+ist ein $\mathbb{K}$-Vektorraum. Die Zuordnung ist
+\[ 
+        \left(\begin{matrix}
+                        a_{11}&\hdots &a_{1m}\\\vdots&\ddots&\vdots\\a_{n1}&\hdots &a_{nm}
+        \end{matrix}\right)\mapsto\left(a_{11},\hdots ,a_{1m},a_{21},\hdots ,a_{2m},\hdots ,a_{n1},\hdots ,a_{nm}\right)
+.\] 
+\hfill\\\textbf{Isomorphiesatz}\\ 
+Sei $\mathbb{K}$ ein Körper und $n,m \in \mathbb{N}$. Dann ist die Abbildung
+\begin{align*}
+        \text{Hom}\left(\mathbb{K}^{m},\mathbb{K}^{n}\right)&\rightarrow \text{Mat}\left(n\times m,\mathbb{K}\right)\\
+        f&\rightarrow \text{DM}\left(f\right)
+\end{align*}
+ein Isomorphismus von Vektorräumen.\\\\
+Sei $f:\mathbb{K}^{m}\rightarrow \mathbb{K}^{n}$ eine lineare Abbildung und $A=\text{DM}\left(f\right)$, dann gilt für alle Spaltenvektoren
+\[ 
+        x=\left(\begin{matrix}
+                x_1\\\vdots \\x_m
+        \end{matrix}\right)\,|\, f\left(x\right)=A\cdot \left(\begin{matrix}
+                x_1\\\vdots\\x_m
+        \end{matrix}\right)=A\cdot x
+.\] 
+Seien $\mathbb{K}$ ein Körper und $A,B,C$ Matrizen über $\mathbb{K}$ mit geeigneten Dimensionen, dann gelten
+\begin{enumerate}[label=(\alph*)]
+        \item Assoziativität
+        \item Distributivgesetz \RN1
+        \item Distributivgesetz \RN2
+\end{enumerate}
+\hfill\\\textbf{Einheitsmatrix}\\ 
+Sei $\mathbb{K}$ ein Körper
+\begin{enumerate}[label=(\alph*)]
+        \item Eine Matrix $A$ über $\mathbb{K}$ heißt quadratisch, wenn es eine natürliche Zahl gibt, so dass $A \in \text{Mat}\left(n\times n,\mathbb{K}\right)$.
+        \item Die $n$-dimensionale Einheitsmatrix ist die darstellende Matrix der identischen Abbildung $\text{id}_{\mathbb{K}^{n}}$
+                \[ 
+                        E_n=\left(\begin{matrix}
+                                        1&0&\hdots &0\\
+                                        0&1&\hdots &0\\
+                                        \vdots&\vdots&\ddots&\vdots\\
+                                        0&0&\hdots &1
+                        \end{matrix}\right)
+                .\] 
+\end{enumerate}
+Sei $\mathbb{K}$ ein Körper und $A \in \text{Mat}\left(n\times m,\mathbb{K}\right)$. Dann gilt
+\[ 
+        A\cdot E_n=A\text{ und }E_n\cdot A=A
+.\] 
+Eine Matrix $A$ heißt invertierbar, wenn es eine Matrix $B$ gibt, für die gilt
+\[ 
+        A\cdot B=E_n\qquad B=A^{-1}
+.\] 
+Im spezifischen Fall einer $\left(2\times2\right)$-Matrix ist diese immer invertierbar, wenn gilt
+\[ 
+        ad-bc\neq 0
+.\] 
+Allgemeiner: $A$ ist invertierbar, genau dann wenn die Determinante ungleich null ist.
+
+\subsection{Lineare Abbildungen und Matrizen}
+Eine lineare Abbildung $f:\mathbb{K}^{m}\rightarrow \mathbb{K}^{n}$ besitzt eine darstellende Matrix $\text{DM}\left(f\right) \in \text{Mat}\left(n\times m,\mathbb{K}\right)$ und es gilt
+\[ 
+        f\left(x\right)=\text{DM}\left(f\right)\cdot x
+,\] 
+wobei $x$ als Spaltenvektor $x=\left(\begin{matrix}
+        x_1\\\vdots\\x_{m}
+\end{matrix}\right) \in \mathbb{K}^{m}$ aufgefasst wird. $\text{DM}\left(f\right)$ ist also die Funktionsvorschrift der Abbildung $f$.\\\\
+Umgekehrt definiert jede Matrix $A \in \text{Mat}\left(n\times m,\mathbb{K}\right)$ die Abbildung $\mathbb{K}^{m}\rightarrow \mathbb{K}^{n};x\mapsto A\cdot x$. Diese Abbildung ist linear, denn es gilt
+\[ 
+        A\cdot \left(\lambda \cdot x\right)=\lambda \left(A\cdot x\right)\qquad A\left(x+y\right)=A\left(x\right)+A\left(y\right)
+.\] 
+Ihre darstellende Matrix ist die Matrix $A=\text{DM}\left(A\right)$, daher wird oft einfach geschrieben
+\[ 
+        A:\mathbb{K}^{m}\rightarrow \mathbb{K}^{n}
+.\] 
+Damit lassen sich von Abbildungen bekannte Begriffe auf $A$ übertragen
+\begin{enumerate}[label=--]
+        \item $A\left(x\right):=A\cdot x$ 
+        \item $A[X]:=\{A\cdot x\,|\, x \in X\}$ 
+        \item $A^{-1}[Y]:=\{x \in \mathbb{K}^{m}\,|\, A\cdot x \in Y\}$ 
+        \item $\text{Kern}\left(A\right):=A^{-1}[\{0\}]$ 
+\end{enumerate}
+
+\subsection{Verschiebung der Lösungsmenge}
+Betrachte das Gleichungssystem $A\cdot x=b$ mit $A \in \text{Mat}\left(n\times m,\mathbb{K}\right)$. Dann gilt
+\begin{enumerate}[label=(\alph*)]
+        \item Die Lösungsmenge des homogenen Systems $A\cdot x=0$ ist
+                \[ 
+                        \text{Lös}\left(A,0\right)=A^{-1}[\{0\}]=\text{Kern}\left(A\right)
+                .\] 
+                Die Lösungsmenge ist ein UVR des $\mathbb{K}^{m}$ 
+        \item Das homogene Gleichungssystem $\left(A,0\right)$ besitzt immer eine Lösung, nämlich den Nullvektor.
+        \item Wenn $\left(A,b\right)$ lösbar ist und $z \in \text{Lös}\left(A,b\right)$, dann ist 
+                \[ 
+                        \text{Lös}\left(A,b\right)=z+\text{Lös}\left(A,0\right):=\{z+x\,|\, x \in \text{Lös}\left(A,0\right)\}
+                .\] 
+\end{enumerate}
+
+\subsection{Koordinatentransformation}
+\subsubsection{Transformationsmatrix}
+\[ 
+        T^A_B
+.\] 
+Die Transformationsmatrix $T$ von dem Quellvektor $A$ zu dem Zielvektor $B$. Die Transformationsmatrix ist also die Darstellung der Koeffizienten $\lambda _i$ der Linearkombination von $A$ nach $B$, bzw $a_i=\lambda_i b_i$ \\\\
+Sei $V$ ein $\mathbb{K}$-VR und seien $B=\left(v_1,\hdots ,v_m\right)$ und $C=\left(w_1,\hdots ,w_m\right)$ Basen von $V$. Die Transformationsmatrix des Basiswechsels von $B$ nach $C$ ist die Matrix $T^B_C=\left(t_{ij}\right) \in \text{Mat}\left(m\times m,\mathbb{K}\right)$, so dass für alle Spaltenindizes $j\leq m$ die Spalte $\left(\begin{matrix}
+        t_{1j}\\\vdots \\t_{mj}
+\end{matrix}\right)$ die Darstellung von $v_j$ in der Basis $C=\left(w_1,\hdots ,w_m\right)$ ist:
+\[ 
+        v_j=\sum_{i=1}^{m}t_{ij}w_i
+\,;\] 
+das heißt $\left(\begin{matrix}
+        t_{1j}\\\vdots \\t_{mj}
+\end{matrix}\right)$ sind gerade die Koordinaten der Basisdarstellung des Vektors $v_j$ bezüglich $C$.\\\\
+Sei $V$ ein $\mathbb{K}$-VR mit Basen $B=\left(v_1,\hdots ,v_m\right)$ und $C=\left(w_1,\hdots ,w_m\right)$ und der Transformationsmatrix $T^B_C=\left(t_{ij}\right)$. Sei $z \in V$ und seien $\left(\lambda _1,\hdots ,\lambda _m\right)$ und $\left(\mu _1,\hdots ,\mu _m\right)$ die Darstellung des Vektors $z$ in den Basen $B$ bzw. $C$
+\[ 
+        z=\sum_{i=1}^{m}\lambda _i\mu _i=\sum_{i=1}^{m}\mu _iw_i
+.\] 
+Dann gilt
+\[ 
+        \left(\begin{matrix}
+                \mu _1\\\vdots\\\mu _m
+        \end{matrix}\right)=T^B_C\cdot \left(\begin{matrix}
+                \lambda _1\\\vdots\\\lambda _m
+        \end{matrix}\right)
+.\] 
+Sei $V$ ein $m$-dimensionaler $\mathbb{K}$-VR mit Basen $B,C$ und $D$. Dann gilt
+\begin{enumerate}[label=(\alph*)]
+        \item $T^B_B=E_m$ 
+        \item $T^B_D=T^C_D\cdot T^B_C$ 
+        \item $T^C_B=\left(T^B_C\right)^{-1}$
+\end{enumerate}
+Um die Transformation von zwei nicht kanonischen Basen $C,D$ durchzuführen, kann folgende Gleichung benutzt werden
+\[ 
+        T^C_D=\left(T^D_K\right)^{-1}\cdot T^C_K
+.\] 
+
+\subsubsection{Transformation darstellender Matrizen}
+Sei $f:V\rightarrow W$ eine lineare Abbildung zwischen endlich-dimensionalen $\mathbb{K}$-VR. Seien $B=\left(v_1,\hdots ,v_m\right)$ und $B'=\left(v'_1,\hdots ,v'_m\right)$ Basen von $V$ und $C=\left(w_1,\hdots ,w_n\right)$ und $C'=\left(w'_1,\hdots ,w'_n\right)$ Basen für $W$. Dann gilt
+\[ 
+        \text{DM}_{B',C'}\left(f\right)=T^C_{C'}\cdot \text{DM}_{B',C}\left(f\right)=T^C_{C'}\cdot \text{DM}_{B,C}\left(f\right)\cdot T^{B'}_B
+.\] 
+Die Schreibweise $\text{DM}_{B,C}\left(f\right)=\left(\begin{matrix} %\intertext
+                \,|\, &\,|\, &\,|\, \\
+                \left(f\left(v_1\right)\right)_C&\left(f\left(v_2\right)\right)_C&\left(f\left(v_3\right)\right)_C\\
+                \,|\, &\,|\, &\,|\, 
+\end{matrix}\right)$ bedeutet, dass $f$, $v_i$ aus der Basis $B$ in $C$ darstellt.
+
+\subsection{Eigenwerte und Eigenvektoren}
+Die darstellende Matrix eines Endomorphismus $f$ in Diagonalform
+\[ 
+        \text{DM}_C\left(f\right)=\left(\begin{matrix}
+                        \lambda _1&&0\\
+                                  &\ddots &\\
+                        0&&\lambda _m
+        \end{matrix}\right) \in \text{Mat}\left(m\times m,\mathbb{K}\right)
+.\] 
+Für die Vektoren $v_i$ der Basis $C=\left(v_1,\hdots ,v_m\right)$ gilt
+\[ 
+        f\left(v_i\right)=\lambda _i\cdot v_i\qquad \lambda _i \in \mathbb{K}
+.\] 
+\hfill\\\textbf{Diagonalisieren}\\ 
+Sei $V$ ein $\mathbb{K}$-VR und $f:V\rightarrow V$ ein Endomorphismus. Dann ist $f$ diagonalisierbar, wenn es eine Basis $C$ von $V$ gibt, so dass $\text{DM}_C\left(f\right)$ eine Diagonalmatrix ist.\\\\
+Sei $V$ ein $\mathbb{K}$-VR und $f:V\rightarrow V$ ein Endomorphismus.
+\begin{enumerate}[label=(\alph*)]
+        \item Ein Skalar $\lambda  \in \mathbb{K}$ heißt Eigenwert von $f$, wenn es ein $v \in V\backslash\{0\}$ gibt mit $f\left(v\right)=\lambda \cdot v$.
+        \item Ein Vektor $v \in V$ heißt Eigenvektor von $f$ zum Eigenwert $\lambda  \in \mathbb{K}$, wenn $v\neq 0$ und $f\left(v\right)=\lambda \cdot v$. 
+        \item Die Eigenvektoren und -werte werden mittels folgender Gleichung bestimmt
+                \[ 
+                        \left(A-\lambda \cdot E_n\right)\cdot v=0
+                .\] 
+\end{enumerate} 
+Sei $V$ ein endlich-dimensionaler $\mathbb{K}$-VR und $f:V\rightarrow V$ ein Endomorphismus. Dann ist $f$ genau dann diagonalisierbar, wenn es eine Basis $C$ von $V$ gibt, deren Vektoren Eigenvektoren von $f$ sind.
+
+\subsubsection{Eigenräume zu Eigenwerten}
+Sei $V$ ein $\mathbb{K}$-VR und $f:V\rightarrow V$ ein Endomorphismus. Dann gilt für einen Vektor $v \in V\backslash\{0\}$ und $\lambda  \in \mathbb{K}$:
+\[ 
+        v\text{ ist genau dann Eigenvektor von $f$ zum Eigenwert $\lambda $, wenn $v \in $ Kern $\left(f-\lambda \cdot \text{Id}_V\right)$ }
+.\] 
+Sei $V$ ein $\mathbb{K}$-VR und $f:V\rightarrow V$ ein Endomorphismus mit Eigenwert $\lambda  \in \mathbb{K}$. Dann heißt
+\[ 
+        E\left(\lambda \right):=\text{Kern}\left(f-\lambda \cdot \text{Id}_V\right)
+\] 
+der Eigenraum von $f$ zum Eigenwert $\lambda $. Die geometrische Vielfachheit des Eigenwerts $\lambda $ ist die Dimension von $E\left(\lambda \right)$.\\\indent
+Die geometrische Vielfachheit ist also die Anzahl der Eigenvektoren zu einem Eigenwert. Die algebraische Vielfachheit ist die Anzahl der Nullstellen zu einem Eigenwert. Ist die geom.\ Vielfachheit kleiner als die algb.\ Vielfachheit, dann ist eine Matrix nicht diagonalisierbar.
+
+\subsubsection{Lineare unabhängigkeit der Eigenvektoren}
+Sei $V$ ein $\mathbb{K}$-VR und $f:V\rightarrow V$ ein Endomorphismus. Seien $v_1,\hdots ,v_r$ Eigenvektoren zu paarweise verschiedenen Eigenwerten $\lambda _1,\hdots ,\lambda _r$. Dann ist $\left(v_1,\hdots ,v_r\right)$ linear unabhängig. Seien $\lambda _1,\hdots ,\lambda _r$ paarweise verschiedene Eigenwerte von $f$ mit geometrischen Vielfachheiten $m_1,\hdots ,m_r$. Für $i\leq r$ sei $\left(v_1^i,\hdots ,v_{m_i}^i\right)$ eine Basis des Eigenraums $E\left(\lambda _i\right)$. Dann gilt
+\begin{enumerate}[label=(\alph*)]
+        \item Das System 
+                \[ 
+                        \left(\underbrace{v_1^1,\hdots ,v_{m_1}^1}{\text{Basis }E\left(\lambda _1\right)},\underbrace{v_1^2,\hdots ,v_{m_2}^2}{\text{Basis }E\left(\lambda _2\right)},\hdots ,\underbrace{v_1^r,\hdots ,v_{m_r}^r}{\text{Basis }E\left(\lambda _r\right)}\right)
+                .\] 
+                ist linear unabhängig.
+        \item Für die Summe der geometrischen Vielfachheiten gilt
+                \[ 
+                        m_1+\hdots +m_r\leq m
+                .\] 
+        \item Der Endomorphismus $f$ ist genau dann diagonalisierbar, wenn
+                \[ 
+                        m_1+\hdots +m_r=m
+                .\] 
+\end{enumerate}
+
+\subsubsection{Finden der Eigenwerte}
+Man bestimme alle Eigenwerte von $f$, dann heißt alle $\lambda _i \in \mathbb{K}$, für die gilt
+\[ 
+        \text{Kern}\left(f-\lambda _i\cdot \text{Id}_V\right)\neq \{0\}
+.\] 
+Dann bestimme man eine Basis des Eigenraums $E\left(\lambda _i\right)$ durch Lösen des linearen Gleichungssystems
+\[ 
+        \left(f-\lambda _i\cdot \text{Id}_V\right)\left(x\right)=0
+.\] 
+
+\section{Determinanten von Matrizen}
+
+\subsection{Laplacescher Entwicklungssatz}
+Sei $\mathbb{K}$ ein Körper. Definiere die Determinantenfunktion
+\[ 
+        \text{det}:\text{Mat}\left(m\times m,\mathbb{K}\right)\rightarrow \mathbb{K}
+\] 
+für $m \in \mathbb{N}\backslash\{0\}$ durch Rekursion über $m$:
+\begin{enumerate}[label=(\alph*)]
+        \item Für $A=\left(a\right) \in \text{Mat}\left(1\times 1,\mathbb{K}\right)$ sei $\text{det}\left(A\right)=\text{Det}A:=a$ 
+        \item Angenommen $\text{det}:\text{Mat}\left(m\times m,\mathbb{K}\right)\rightarrow \mathbb{K}$ sei bereits definiert. Dann setze die gesamte Abbildung $\text{det}:\text{Mat}\left(\left(m+1\right)\times\left(m+1\right),\mathbb{K}\right)\rightarrow \mathbb{K}$ an wie folgt:\\Für $A=\left(a_{ij}\right) \in \text{Mat}\left(\left(m+1\right)\times\left(m+1\right),\mathbb{K}\right)$ sei $\text{det}\left(A\right):=\text{det}A$ die folgende alternierende Summe
+                \begin{align*} 
+                        \text{det}\left(A\right)&=a_{11}\text{det}A_{11}-a_{21}\text{det}A_{21}+a_{31}\text{det}A_{31}-\hdots \pm a_{m+1,1}\text{det}A_{m+1,1}\\
+                                                &=\sum_{k=1}^{m+1}\left(-1\right)^{k+1}\cdot a_{k1}\text{det}A_{k1}
+                .\end{align*}
+\end{enumerate}
+Für eine $2\times 2$ Matrix gilt
+\[ 
+        \,\left|\, \begin{matrix}
+                a&b\\c&d
+        \end{matrix}\,\right|\, =ad-bc
+.\] 
+Für eine $3\times 3$ Matrix gilt
+\[ 
+        \,\left|\, \begin{matrix}
+                a&b&c\\d&e&f\\g&h&i
+        \end{matrix}\,\right|\, =aei+cdh+gbf-ceg-ahf-ibd
+.\] 
+Die Vorzeichen ergeben sich aus folgendem Schachbrettmuster
+\[
+        \begin{matrix}
+                +&-&+&-&\hdots \\
+                -&+&-&+&\hdots \\
+                +&-&+&-&\hdots \\
+                -&+&-&+&\hdots \\
+                \vdots &\vdots &\vdots &\vdots &\ddots
+        \end{matrix}
+\quad.\]
+
+\subsection{Gaußscher Algorithmus}
+Sei $A \in \text{Mat}\left(m\times m,\mathbb{K}\right)$. Dann gilt
+\begin{enumerate}[label=(\alph*)]
+        \item Verwandelt man $A$ durch Vertauschen zweier benachbarter Zeilen in die Matrix $A'$, so ist $\text{det}A'=-\text{det}A$. 
+        \item Verwandelt man $A$ durch Multiplikation einer Zeile mit $\lambda  \in \mathbb{K}$ in die Matrix $A'$, so ist $\text{det}A'=\lambda \text{det}A$.
+        \item Sei $k<m$ und seien $A'$ und $A''$ Matrizen, deren $i$-te Zeile für $i \neq k$ mit der $i$-ten Zeile von $A$ übereinstimmen und so dass die $k$-te Zeile von $A$ die Summe der $k$-ten Zeile von $A'$ und $A''$ ist. Dann ist $\text{det}A=\text{det}A'+\text{det}A''$.
+        \item Verwandelt man $A$ durch Addition eines skalaren Vielfachen einer Zeile zu einer darauf folgenden Zeile in die Matrix $A'$, so ist $\text{det}A'=\text{det}A$.
+\end{enumerate}
+Sei $A=\left(\left(a_{ij}\right)\right) \in \text{Mat}\left(m\times m\right),\mathbb{K}$ eine Matrix in Zeilenstufenform. Dann ist $\text{det}A=\prod_{i=1}^{m}a_{ii}$.\\\\
+Für eine Matrix $A \in \text{Mat}\left(m\times m\right),\mathbb{K}$ sind die folgenden Aussagen äquivalent
+\begin{enumerate}[label=(\alph*)]
+        \item Die Det von $A$ ist ungleich null.
+        \item Der Rang der Matrix ist maximal, nämlich gleich $m$.
+        \item Der Kern von $A$ ist trivial, nämlich gleich der Menge $\{0\}$.
+        \item Die Zeilenvektoren von $A$ sind linear unabhängig.
+        \item Die Spaltenvektoren von $A$ sind linear unabhängig.
+        \item Die Inverse von $A$ existiert.
+        \item Das homogene lineare Gleichungssystem $Ax=0$ besitzt eine einduetige Lösung, nämlich den Nullvektor.
+        \item Das inhomogene lineare Gleichungssystem $Ax=b$ besitzt für eine beliebige rechte Seite $b$ eine eindeutige Lösung.
+\end{enumerate}
+\hfill\\\textbf{Geometrische Interpretation}\\ 
+Sei $m \in \mathbb{N}\backslash\{0\}$ und $a_1,\hdots ,a_m \in \mathbb{R}^m$. Für $j\leq m$ sei 
+\[ 
+        a_j=\left(\begin{matrix}
+                a_{1j}\\\vdots \\a_{mj}
+        \end{matrix}\right)
+.\] 
+Dann ist das Volumen des von $a_1,\hdots ,a_m$ aufgespannten Parallelogramms der Absolutbetrag von $\text{det}A$. 
+
+\subsection{Charakteristische Polynome und Diagonalisierbarkeit}
+Sei $\mathbb{K}$ ein Körper und $m \in \mathbb{N}\backslash\{0\}$. Sei $A=\left(a_{ij}\right) \in \text{Mat}\left(m\times m,\mathbb{K}\right)$. Dann definiere das charakteristische Polynom von $A$ als
+\[ 
+        p_A\left(\lambda \right)=\text{det}\left(a-\lambda \cdot E_m\right)
+.\] 
+Sei $f:V\rightarrow V$ ein Endomorphismus eines $m$-dimensionalen $\mathbb{K}$-VR, $m \in \mathbb{N}\backslash\{0\}$. Sei $B$ eine Basis von $V$ und $A=\text{DM}_B\left(f\right)$. Dann gilt für alle $\lambda  \in \mathbb{K}$:
+\begin{center}
+        $\lambda $ ist genau dann ein Eigenwert von $f$, wenn $p_A\left(\lambda \right)=0$.
+\end{center}
+
+\subsection{Algorithmus zur Bestimmung der Diagonalbasis}
+\begin{enumerate}[label=(\arabic*)]
+        \item Wählen einer Basis $B$ von $V$ und Darstellung des Endomorphismus $f$ als $A=\text{DM}_B\left(f\right)$.
+        \item Bestimmen des charakteristischen Polynoms der Matrix $A$ (und somit auch des Endomorphismus $f$) mit $p_A\left(\lambda \right)=\text{det}\left(A-\lambda \cdot E\right)$.
+        \item Abbruchkriterium \RN1: Zerfällt das charakteristische Polynom nicht in Linearfaktoren, so ist die Matrix $A$ nicht diagonalisierbar.
+        \item Berechne für Eigenwerte (also Nullstellen des charakteristischen Polynoms) eine maximale Anzahl von linear unabhängigen Eigenvektoren im dazugehörigen Eigenraum (das heißt bestimme eine Basis des Eigenraums) $E\left(\lambda _1\right)=\text{Kern}\left(A-\lambda _1\cdot E\right)=\text{Lös}\left(A-\lambda _1\cdot E,0\right)$.
+        \item Abbruchkriterium \RN2: Wenn diese gerade berechnete maximale Anzahl für einen $k$-fachen Eigenwert nicht gleich $k$ ist (also die algebraische Vielfachheit kleiner als die geometrische Vielfachheit ist), so ist die Matrix $A$ nicht diagonalisierbar (im anderen Fall haben wir jeweils eine hinreichend große Basis der Eigenräume gefunden). 
+        \item Wenn alle in Schritt 4 berechneten Basen für die verschiedenen Eigenräume zusammen in eine Menge geschrieben werden können, hat man die gewünschte Basis aus Eigenvektoren gefunden, bzgl der die Matrix $A$ Diagonalgestalt hat.
+        \item Schreibe nacheinander für jeden Eigenwert die in Schritt 4 bestimmte Basis spaltenweise in eine Matrix: Das Ergebnis ist die gesuchte Transformationsmatrix, die die Ausgangmatrix $A$ in eine Diagonalgestalt überführt.
+\end{enumerate}
+
+\subsubsection{Limes}
+Sei $f_n:[a,b]\rightarrow \mathbb{K}$ eine Folge von integrierbaren Funktionen, die gleichmäßig gegen eine Funktion $f:[a,b]\rightarrow \mathbb{K}$ konvergieren. Dann ist auch $f$ integrierbar und es gilt stets
+\[ 
+        \lim_{n\rightarrow \infty}\int_{a}^{b}f_n\left(x\right)\td x=\int_{a}^{b}\lim_{n\rightarrow \infty}f_n\left(x\right)\td x=\int_{a}^{b}f\left(x\right)\td x
+.\] 
+
+\section{Euklidische Vektorräume}
+Ein euklidischer Vektorraum ist ein Paar $\left(V;\left\langle \cdot ,\cdot \right\rangle \right)$, das aus einem reellen Vektorraum $V$ und einem Skalarprodukt $\left\langle \cdot ,\cdot \right\rangle $ auf $V$ besteht. Mithilfe des Skalarprodukts können in VR geometrische Begriffe wie Abstand, Winkel oder Orthogonalität definiert werden.\\\\
+Sei $m \in \mathbb{N}\backslash \{0\}$ gegeben. Definiere eine zweistellige Funktion 
+\[
+        \left\langle x,y\right\rangle ^{s t}:=\left\langle \left(\begin{matrix}
+        x_1\\\vdots \\x_m
+\end{matrix}\right),\left(\begin{matrix}
+        y_1\\\vdots \\y_m
+\end{matrix}\right)\right\rangle ^{s t}:=x_1y_1+\hdots +x_my_m
+.\]
+Die Funktion $\left\langle \cdot ,\cdot \right\rangle ^{s t}$ heißt Standard-Skalarprodukt auf dem $\mathbb{R}^{m}$.
+\\\hfill\\\textbf{Länge}\\ 
+Die Länge eines Vektors
+\[ 
+        \text{Länge}\left(a,b\right)=\sqrt[]{\left\langle \left(\begin{matrix}
+                a\\b
+        \end{matrix}\right),\left(\begin{matrix}
+                a\\b
+        \end{matrix}\right)\right\rangle ^{s t}}
+.\] 
+\hfill\\\textbf{Norm}\\ 
+Sei $V=\left(V,\left\langle \cdot ,\cdot \right\rangle \right)$ ein euklidischer Vektorraum. Die Norm auf $V$ ist die Funktion
+\[ 
+        ||\cdot ||:V\rightarrow \mathbb{R};||x||:=+\sqrt[]{\left\langle x,x\right\rangle }
+.\] 
+\hfill\\\textbf{Winkel}\\ 
+Der Winkel zwischen zwei Vektoren
+\[ 
+        \cos \angle\left(\left(\begin{matrix}
+                a\\b
+        \end{matrix}\right),\left(\begin{matrix}
+                c\\d
+        \end{matrix}\right)\right)=\dfrac{\left\langle \left(\begin{matrix}
+                a\\b
+        \end{matrix}\right),\left(\begin{matrix}
+                c\\d
+        \end{matrix}\right)\right\rangle ^{s t}}{\text{Länge}\left(\left(\begin{matrix}
+                a\\b
+        \end{matrix}\right)\right)\cdot \text{Länge}\left(\left(\begin{matrix}
+                c\\d
+        \end{matrix}\right)\right)}
+\] 
+oder
+\[ 
+        \cos \left(\alpha ,\left(x,y\right)\right)=\dfrac{\left\langle x,y\right\rangle }{||x||\cdot ||y||}
+.\] 
+\hfill\\\textbf{Fläche}\\ 
+Die Fläche eines aufgespannten Parallelogramms zwischen zwei Vektoren
+\[ 
+        \left\langle \left(\begin{matrix}
+                a\\b
+        \end{matrix}\right),\left(\begin{matrix}
+                c\\d
+        \end{matrix}\right)\right\rangle ^{s t}=ac+bd=\left|\begin{matrix}
+        a&-d\\b&c
+        \end{matrix}\right|=\pm\text{ Flächeninhalt } \left(\left[\left(\begin{matrix}
+                a\\b
+        \end{matrix}\right),\left(\begin{matrix}
+                -d\\c
+        \end{matrix}\right)\right]\right)
+.\] 
+\hfill\\
+Sei $V$ ein reeller VR und $\left\langle \cdot ,\cdot \right\rangle :V\times V\rightarrow \mathbb{R}$ eine Funktion. Dann ist $\left\langle \cdot ,\cdot \right\rangle $ ein Skalarprodukt, wenn die folgenden Axiome gelten:
+\begin{enumerate}[label=(\alph*)]
+        \item $\left\langle \cdot ,\cdot \right\rangle $ ist linear im ersten Argument. Für alle $x,x',y \in V$ und $\lambda ,\lambda ' \in \mathbb{R}$ ist
+                \[ 
+                        \left\langle \lambda x+\lambda 'x',y\right\rangle =\lambda \left\langle x,y\right\rangle +\lambda '\left\langle x',y\right\rangle 
+                .\] 
+        \item $\left\langle \cdot ,\cdot \right\rangle $ ist linear im zweiten Argument. Für alle $x,y,y' \in V$ und $\lambda ,\lambda ' \in \mathbb{R}$ ist
+                \[ 
+                        \left\langle \lambda x+\lambda 'x,y'\right\rangle =\lambda \left\langle x,y\right\rangle +\lambda '\left\langle x,y'\right\rangle 
+                .\] 
+        \item $\left\langle \cdot ,\cdot \right\rangle $ ist symmetrisch. Für alle $x,y \in V$ ist
+                \[ 
+                        \left\langle x,y\right\rangle =\left\langle y,x\right\rangle 
+                .\] 
+        \item $\left\langle \cdot ,\cdot \right\rangle $ ist positiv definiert. Für alle $x \in V\backslash \{0\}$ ist
+                \[ 
+                        \left\langle x,x\right\rangle >0
+                .\] 
+\end{enumerate}
+Sei $V=\left(V,\left\langle \cdot ,\cdot \right\rangle \right)$ ein euklidischer Vektorraum und $M\subseteq V$ eine Teilmenge von $V$. Ein Vektor $v \in V$ liegt senktrecht zu $M$, geschrieben $v\perp M$, falls für alle $w \in M$ gilt\\
+$v\perp w$. Das orthogonale Komplement von $M$ ist die Menge
+\[ 
+        M^{\perp}:=\{v \in V\,|\, v\perp M\}\qquad \mathfrak{L}\left(m^\perp_1,\hdots ,m^\perp_n,m_1,\hdots ,m_m\right)=V
+.\] 
+Sei $V=\left(V,\left\langle \cdot ,\cdot \right\rangle \right)$ ein euklidischer VR und $M\subseteq V$ ein entlich-dimensionaler Unterraum von $V$. Sei $w \in V$. Dann existieren bestimmte Vektoren $u \in M$ und $v \in M^\perp$, so dass $w=u+v$. Diese Darstellung von $w$ ist die Zerlegung des Vektors $w$ nach $M$ und seinem orthogonalen Komplement.
+
+%}}}
+ 
+%}}}
+
+\newpage
+
+%{{{ Notizen
+\section{Notizen}
+Hier könnten Ihre Notizen stehen.
+
+%}}}
+
+\end{document}

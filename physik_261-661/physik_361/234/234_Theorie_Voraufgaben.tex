@@ -1,0 +1,93 @@
+%:LLPStartPreview
+%:VimtexCompile(SS)
+
+%{{{ Formatierung
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{physics_notetaking}
+
+%%% dark red
+%\definecolor{bg}{RGB}{60,47,47}
+%\definecolor{fg}{RGB}{255,244,230}
+%%% space grey
+%\definecolor{bg}{RGB}{46,52,64}
+%\definecolor{fg}{RGB}{216,222,233}
+%%% purple
+%\definecolor{bg}{RGB}{69,0,128}
+%\definecolor{fg}{RGB}{237,237,222}
+%\pagecolor{bg}
+%\color{fg}
+
+\newcommand{\td}{\,\text{d}}
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+
+\newcommand\inlineeqno{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnoa{(\theequation.\text{a})}
+\newcommand\inlineeqnob{(\theequation.\text{b})}
+\newcommand\inlineeqnoc{(\theequation.\text{c})}
+
+\newcommand\inlineeqnowo{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnowoa{\theequation.\text{a}}
+\newcommand\inlineeqnowob{\theequation.\text{b}}
+\newcommand\inlineeqnowoc{\theequation.\text{c}}
+
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+%\renewcommand*\contentsname{Contents}
+
+\pagestyle{fancy}
+
+\sloppy
+
+\numberwithin{equation}{section}
+
+%}}}
+
+\begin{document}
+
+%{{{ Titelseite
+
+\title{Versuch 234 $|$ Wechselstromwiderstände, Phasenschieber, RC--Glieder und Schwingungen}
+\author{Jonas Wortmann}
+\maketitle
+\pagenumbering{gobble}
+
+%}}}
+
+\newpage
+
+%{{{ Inhaltsverzeichnis
+
+\fancyhead[L]{\thepage}
+\fancyfoot[C]{}
+\pagenumbering{arabic}
+
+\tableofcontents
+
+%}}}
+
+\newpage
+
+%{{{
+
+\fancyhead[R]{\leftmark\\\rightmark}
+
+\newpage
+\section{Einführung}
+In diesem Versuch sollen Kapazitäten und Induktivitäten mit einer Wechselstrombrücke gemessen werden, eine Phasenschieberschaltung aufgebaut und die komplexe Schreibweise und Darstellung von Wechselstromgeräten erlernt werden.
+Oft sind in der Elektronik aus einer Signalspannung, die aus einem Gemisch von Frequenzen besteht, bestimmte Frequenzanteile einer vorgegebenen Spannung $\omega _{\,\text{grenz}\,}$ zu unterdrücken.
+Dies geschieht mit Schaltungstypen, die aus frequenzabhängigen Widerständen bestehen.
+\indent Wirkungsweise und Berechnung solcher Schaltungen werden behandelt.
+Viele bei der erzwungenen Schwingung am Drehpendel werden beobachtet, auf einen elektrischen Schwingkreis übertragen und experimentell bestätigt.
+
+\subsection{Theorie}
+
+\newpage
+\section{Voraufgaben}
+
+
+%}}}
+
+\end{document}

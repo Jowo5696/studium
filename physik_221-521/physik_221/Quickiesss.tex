@@ -1,0 +1,169 @@
+%:LLPStartPreview
+%:VimtexCompile(SS)
+
+%{{{ Formatierung
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{physics_notetaking}
+
+%%% dark red
+%\definecolor{bg}{RGB}{60,47,47}
+%\definecolor{fg}{RGB}{255,244,230}
+%%% space grey
+%\definecolor{bg}{RGB}{46,52,64}
+%\definecolor{fg}{RGB}{216,222,233}
+%%% purple
+%\definecolor{bg}{RGB}{69,0,128}
+%\definecolor{fg}{RGB}{237,237,222}
+%\pagecolor{bg}
+%\color{fg}
+
+\newcommand{\td}{\,\text{d}}
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+
+\newcommand\inlineeqno{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnoa{(\theequation.\text{a})}
+\newcommand\inlineeqnob{(\theequation.\text{b})}
+\newcommand\inlineeqnoc{(\theequation.\text{c})}
+
+\newcommand\inlineeqnowo{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnowoa{\theequation.\text{a}}
+\newcommand\inlineeqnowob{\theequation.\text{b}}
+\newcommand\inlineeqnowoc{\theequation.\text{c}}
+
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+%\renewcommand*\contentsname{Contents}
+
+\pagestyle{fancy}
+
+\sloppy
+
+\numberwithin{equation}{section}
+
+%}}}
+
+\begin{document}
+
+%{{{ Titelseite
+
+\title{Klausurvorbereitung $|$ physik221}
+\author{Stella Hoffmann, Jonas Wortmann}
+\maketitle
+\pagenumbering{gobble}
+
+%}}}
+
+\newpage
+
+%{{{ Inhaltsverzeichnis
+
+\fancyhead[L]{\thepage}
+\fancyfoot[C]{}
+\pagenumbering{arabic}
+
+\tableofcontents
+
+%}}}
+
+\newpage
+
+%{{{
+
+\fancyhead[R]{\leftmark\\\rightmark}
+
+\section{Quickies}
+\subsection{Übungszettel}
+\begin{enumerate}[label=\arabic*.]
+        \item Wie ist die Lagrange--Funktion definiert?
+        \item Wie wird die Wirkung aus der Lagrange--Funktion definiert?
+        \item Wie lauten die Euler--Lagrange--Gleichungen?
+        \item Welche Eigenschaften muss die Lagrange--Funktion erfüllen, damit die Gesamtenergie erhalten ist?
+        \item Welche Zwangsbedingungen gelten in Kartesischen Koordinaten für die folgenden Beispiele?
+                \begin{enumerate}[label=\alph*)]
+                        \item Ein Massenpunkt hängt an einem nicht dehnbaren Faden.
+                        \item Ein Gummiball springt auf dem Boden.
+                \end{enumerate}
+        \item Wie viele Erhaltungsgrößen hat das Kepler--Problem?
+        \item Welche sind dies?
+        \item Wie lautet die Hamilton--Funktion?
+        \item Wie lauten die Bewegungsgleichungen im Hamilton--Formalismus?
+        \item Wie lauten die Kepler'schen Gesetze?
+        \item Wann ist der Drehimpuls erhalten?
+        \item Wie ist der Trägheitstensor eines Systems aus $N$ Massenpunkten definiert?
+        \item Was sind Hauptträgheitsmomente?
+        \item Wie lautet der Satz von Steiner?
+        \item Wie viele Koordinaten werden benötigt, um die Bewegung eines starren Körpers zu beschreiben?
+        \item Nenne 3 Scheinkräfte.
+        \item Wie lautet Newtons Theorem?
+        \item Wie lauten die Euler--Gleichungen?
+\end{enumerate}
+
+\newpage
+\subsection{2022 Klausur I}
+\begin{enumerate}[label=\arabic*.]
+        \item Wie viele und welche Erhaltungsgrößen gibt es im Zentralkraftproblem im Allgemeinen? Woraus folgen diese Erhaltungsgrößen?
+        \item Welche weitere Erhaltungsgröße findet man beim Keplerproblem und welche Funktion mit zentraler Bedeutung für das Keplerproblem kann hieraus leicht berechnet werden?
+        \item Wie ist die Lagrange--Funktion definiert und wie lauten die Euler--Lagrange--Gleichungen?
+        \item Was ist das Hamilton'sche Prinzip? Wie ist die Wirkung definiert?
+        \item Betrachten Sie eine Lagrange--Funktion mit generalisierten Koordinaten $q:\mathcal{L}=\mathcal{L}\left(q,\dot{q},t\right)$. Was sind zyklische Koordinaten und wie stehen diese in Zusammenhang mit den Euler--Lagrange--Gleichungen?
+        \item Was ist eine Legendre--Transformation? Berechnen Sie aus $f\left(x\right)=ax^2$ die zugehörige Legendre--Transformierte $g\left(y\right)$ mit $y=\diffp[]{f}{x}$.
+        \item Wie lautet das Neother--Theorem, wenn die Lagrange--Funktion unter einer kontinuierlichen, stetig differenzierbaren Koordinatentransformation bis auf eine Eichtransformation invariant ist?
+        \item Wie sind Poisson--Klammern definiert? Wie lauten die Hamilton'schen Bewegungsgleichungen, ausgedrückt durch Poisson--Klammern?
+        \item Zeige, für welche $a,b$ die Transformation $Q=q^a\cos \left(bp\right),P=q^a\sin \left(bp\right)$ kanonisch ist.
+\end{enumerate}
+
+\newpage
+\subsection{2022 Klausur II}
+\begin{enumerate}[label=\arabic*.]
+        \item Erläutern Sie kurz die drei Newton'schen Axiome.
+        \item Was sagt das Noether--Theorem im Lagrange--Formalismus aus?
+        \item Wie lautet die totale zeitliche Ableitung $\diff[]{f}{t}$ einer Funktion $f\left(q,p,t\right)$? Drücken Sie $\diff[]{f}{t}$ durch die Hamilton--Funktion aus und zeigen Sie, dass sich das Ergebnis kompakt mit Hilfe der Poisson--Klammern schreiben lässt. Wann ist $f$ eine Erhaltungsgröße wenn sie nicht explizit zeitabhängig ist?
+        \item Berechne aus $f\left(x\right)=ax^2$ die zugehörige Legendre--Transformation $g\left(y\right)$ mit $y=\diffp[]{f}{x}$.
+        \item Wie ist der Trägheitstensor eines starren Körpers bestehend aus $N$ Punktmassen definiert?
+        \item Untersuche ob folgende Kraftfelder konservativ sind ($c_i$ sind Konstanten, $x,y,z$ sind Ortskoordinaten, $t$ ist die Zeit)
+                \begin{enumerate}[label=\roman*.]
+                        \item $\vv{F}_1=c_1\left(x^2z,xy,xz\right)^T$ 
+                        \item $\vv{F}_2=c_2\left(y^3z,3xy^2z,xy^3\right)^T$ 
+                        \item $\vv{F}_3=c_3t^2\left(x^2\,\sqrt[]{z}\tan \left(xyz\right),\,\sqrt[]{y}z^5,x^{3/2}\cos y\right)^T$ 
+                \end{enumerate}
+        \item Wann ist die Anwendung der Störungstheorie sinnvoll?
+        \item Betrachten Sie die Bewegungsgleichung $\ddot{x}\left(t\right)+\omega ^2_0x\left(t\right)=\varepsilon \zeta \,\text{i}\,x^2\left(t\right)+O\left(\varepsilon ^2\right)$ des anharmonischen Oszillators, die für alle Werte $\varepsilon $ eine Lösung besitzen soll. Skizzieren Sie (ohne explizite Rechnung), wie man vorgehen muss, um für diese inhomogene Differenzialgleichung mit beliebig fixierten Anfangsbedingungen perturbativ eine explizite Lösung für $x\left(t\right)$ bis zur ersten Ordnung in $\varepsilon $ zu finden.
+        \item Zeigen Sie, für welche $a,b$ die Transformation $Q=q ^{a/2}\sin \left(bp\right),P= q ^{a/2}\cos \left(bp\right)$ kanonisch ist.
+\end{enumerate}
+
+\newpage
+\subsection{2021 Klausur I}
+\begin{enumerate}[label=\arabic*.]
+        \item Geben Sie die Euler--Lagrange Gleichungen zu einer Lagrangefunktion $\mathcal{L}\left(q,\dot{q},t\right)$ an.
+        \item Zeigen Sie die Energieerhaltung bei der eindimensionalen Bewegung in einem Potential $U\left(x\right)$ ausgehend von der Newton'schen Bewegungsgleichung $m\ddot{x}=-\diff[]{U}{x}$.
+        \item Es sei die Zwangsbedingung $\tfrac{x^2}{a}+\tfrac{y^2}{b}=1$ für eine Bewegung gegeben. Was bedeutet diese Bedingung geometrisch? Berechnen Sie die zugehörige Zwangskraft $Z$.
+        \item Zeigen Sie, dass für eine Lagrange--Funktion $\mathcal{L}\left(q,\dot{q}\right)$, die nicht explizit von der Zeit abhängt, auf der physikalischen Bahnkurve $q\left(t\right),\dot{q}\left(t\right)$ (welche die Bewegungsgleichung erfüllt) gilt $\diff*[]{\left(\mathcal{L}-\diffp[]{\mathcal{L}}{\dot{q}}\dot{q}\right)}{t}=0$.
+        \item Was bedeutet es, wenn eine Variable $q$ zyklisch ist? Was gilt dann für den kanonischen Impuls $p$ bezüglich der Variablen $q$?
+        \item Welche Erhaltungsgrößen hat das Keplerproblem?
+        \item Wie lauten die Hamilton'schen Bewegungsgleichungen allgemein?
+        \item Wie sind die Poissonklammern definiert?
+        \item Wie ist das Skalarprodukt im Minkowski--Raum definiert? Geben Sie den metrischen Tensor im Minkowski--Raum in Matrixform an.
+        \item Wie lautet die relativistische Energie--Impuls--Beziehung?
+        \item Wie hängt die Rotationsenergie mit dem Trägheitstensor zusammen?
+        \item Was besagt der Satz von Steiner? (Formel angeben).
+\end{enumerate}
+
+\newpage
+\subsection{2019 Klausur I}
+\begin{enumerate}[label=\arabic*.]
+        \item Wie lauten die Newton'schen Axiome?
+        \item Zeigen Sie, dass für den Drehimpuls $\vv{L}$ im Zentralpotential $\diff[]{\vv{L}}{t}=0$ gilt.
+        \item Was ist das Hamilton'sche Prinzip? Wie ist die Wirkung definiert?
+        \item Was besagt das Neother--Theorem im Lagrange--Formalismus?
+        \item Wann ist eine Verschiebung der Frequenz bei der Störungstheorie eines anharmonischen Oszillators notwendig? Was passiert wenn man diese nicht berücksichtigt?
+        \item Wie lautet der Satz von Steiner?
+        \item Wie lauten die Hamilton'schen Bewegungsgleichungen?
+        \item Wie lautet die totale zeitliche Ableitung einer Funktion $f\left(q,p,t\right)$ ausgedrückt durch Poisson--Klammern? Wann ist $f$ eine Erhaltungsgröße, wenn sie nicht explizit zeitabhängig ist?
+\end{enumerate}
+
+%}}}
+
+\end{document}

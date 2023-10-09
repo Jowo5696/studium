@@ -1,0 +1,494 @@
+%:LLPStartPreview
+%:VimtexCompile(SS)
+
+%{{{ Formatierung
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{physics_notetaking}
+
+%%% dark red
+%\definecolor{bg}{RGB}{60,47,47}
+%\definecolor{fg}{RGB}{255,244,230}
+%%% space grey
+%\definecolor{bg}{RGB}{46,52,64}
+%\definecolor{fg}{RGB}{216,222,233}
+%%% purple
+%\definecolor{bg}{RGB}{69,0,128}
+%\definecolor{fg}{RGB}{237,237,222}
+%\pagecolor{bg}
+%\color{fg}
+
+\newcommand{\td}{\,\text{d}}
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+
+\newcommand\inlineeqno{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnoa{(\theequation.\text{a})}
+\newcommand\inlineeqnob{(\theequation.\text{b})}
+\newcommand\inlineeqnoc{(\theequation.\text{c})}
+
+\newcommand\inlineeqnowo{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnowoa{\theequation.\text{a}}
+\newcommand\inlineeqnowob{\theequation.\text{b}}
+\newcommand\inlineeqnowoc{\theequation.\text{c}}
+
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+%\renewcommand*\contentsname{Contents}
+
+\pagestyle{fancy}
+
+\sloppy
+
+\numberwithin{equation}{section}
+
+%}}}
+
+\begin{document}
+
+%{{{ Titelseite
+
+\title{Klausurvorbereitung $|$ math241}
+\author{Jonas Wortmann}
+\maketitle
+\vfill
+\textit{In Kursiv sind meine Notizen / Kommentare}
+\pagenumbering{gobble}
+
+%}}}
+
+\newpage
+
+%{{{ Inhaltsverzeichnis
+
+\fancyhead[L]{\thepage}
+\fancyfoot[C]{}
+\pagenumbering{arabic}
+
+\tableofcontents
+
+%}}}
+
+\newpage
+
+%{{{ Klausurvorbereitung
+
+\fancyhead[R]{\leftmark\\\rightmark}
+
+%{{{ Mengenlehre
+\section{Mengenlehre}
+\subsection{Abgeschlossen}
+Eine Teilmenge $M\subseteq X$ heißt \textbf{abgeschlossen}, falls ihr Komplement $X\backslash M$ offen ist.\\
+Sie ist auch abgeschlossen, wenn $M'\subseteq M$ \eqref{eq:häufungspunkt}.
+
+\subsection{Offen}
+Eine Teilmenge $M\subseteq X$ heißt \textbf{offen}, falls alle $x  \in M$ innere Punkte von $M$ sind.\\
+Sie heißt auch offen, falls $M=M^\circ $ \eqref{eq:innerer punkt}.
+
+\subsection{Beschränkt}
+Ein Element $a \in S$ heißt \textbf{Infimum} (größte untere Schranke) von $M$, wenn $\,\forall x  \in S:a\leq x$.\\
+Ein Element $b \in S$ heißt \textbf{Supremum} (kleinste obere Schranke) von $M$, wenn $\,\forall x  \in S:b\geq x$.\\
+Eine Menge $M$ heißt \textbf{beschränkt}, wenn die sowohl von einem Infimum, also auch einem Supremum \textbf{beschränkt} wird.\\\indent
+Sie ist auch beschränkt, wenn die Norm \eqref{eq:norm} eines Vektors nicht beliebig groß werden kann.
+
+\subsection{Kompakt}
+Eine Menge $M$ heißt \textbf{kompakt}, wenn sie \textbf{abgeschlossen} und \textbf{beschränkt} ist.
+
+\subsection{Innerer Punkt}
+Ein Punkt $x \in M$ heißt \textbf{innerer Punkt} von $M$, wenn
+\begin{align} 
+        \exists K_r\left(x\right):K_r\left(x\right) \subseteq M\label{eq:innerer punkt}
+\end{align} 
+mit $K_r\left(x\right)$ einer offenen Kugel \eqref{eq:offene kugel}.\\\indent
+Die Menge der inneren Punkte wird als $M^\circ$ bezeichnet.\\
+Die inneren Punkte des geschlossenen Intervalls $\left[a,b\right]$ sind genau die zum offenen Intervall $\left(a,b\right)$ gehörenden Punkte.\\
+Falls $M$ abzählbar ist, ist $M^\circ =\left\{\right\}$.
+
+\subsection{Häufungspunkt}
+Ein Punkt $x \in M$ heißt \textbf{Häufungspunkt}
+\footnote{\textit{Falls um einen Punkt in $M$ noch ein Kreis gezeichnet werden kann, welcher noch in $M$ liegt.}}
+von $M$, wenn 
+\begin{align} 
+        M\cap K_r^\bullet\left(x\right)\neq \left\{\right\}\qquad \,\forall r>0\label{eq:häufungspunkt}
+,\end{align} 
+mit $K_r^\bullet\left(x\right)$ einer punktierten offenen Kugel \eqref{eq:punktierte offene kugel}.\\\indent
+Die Menge der Häufungspunkte wird als $M'$ bezeichnet.\\
+Die Häufungspunkte des offenen Intervalls $\left(a,b\right)$ sind alle Punkte, die zu dem Intervall gehören, sowie $a$ und $b$, da die Umgebung von $a$ und $b$ auch zum Intervall gehören.\footnote{\textit{Obwohl $a,b \notin \left(a,b\right)$, sind sie trotzdem Häufungspunkte, da nur die Umgebung der Kugel (also die punktierte Kugel) geschnitten mit der Menge nicht die leere Menge ergeben darf.}}
+
+\subsection{Isolierter Punkt}
+Ein Punkt $x \in M$ heißt \textbf{isolierter Punkt}
+\footnote{\textit{Ein isolierter Punkt ist eine einpunktige Menge.}}
+von $M$, wenn
+\begin{align} 
+        x \in M\qquad \land \qquad x \notin M'\label{eq:isolierter punkt}
+.\end{align} 
+
+\subsection{Rand}
+Der \textbf{Rand} einer Menge $M$ 
+
+\subsection{Abschluss}
+Der \textbf{Abschluss} einer Menge $M$ ist
+\begin{align} 
+        \overline{M}:=M\cup \partial M=M\cup M'
+\end{align} 
+
+\subsection{Überdeckung}
+Eine \textbf{Familie} $\left(A_i\right)_{i \in I}$ von Teilmengen von $A$ heißt \textbf{Überdeckung} von $B\subset A$, wenn
+\begin{align} 
+        B\subset \bigcup _{i \in I}A_i\label{eq:überdeckung}
+.\end{align} 
+
+\subsection{Konvexe Mengen}
+Eine Menge $M$ heißt \textbf{konvex}, wenn für alle Elemente die Verbindungsstrecke auch in der Menge liegt. Dies bedeutet auch, dass die Menge an keiner Stelle \textbf{konkav} ist.$\label{eq:konvex}$ 
+
+\subsection{Wegzusammenhägend}
+Eine Menge heißt \textbf{wegzusammenhängend}, falls für jedes Paar $x,y \in M$ gilt
+\begin{align} 
+        w:\left[a,b\right] \in M\rightarrow M\qquad x=w\left(a\right),y=w\left(b\right)\label{eq:wegzusammenhängend}
+.\end{align} 
+In diesem fall ist die \textbf{Spur} in der Menge, also $\,\text{Spur}\,\left(w\right)\subseteq M$.
+\footnote{\textit{Die leere Menge ist nach dieser Definition auch wegzusammenhänged.}}\\
+Jede konvexe \eqref{eq:konvex} Teilmenge eines normierten Raumes ist wegzusammenhängend.\\
+Jedes Intervall ist wegzusammenhängend.
+
+\subsection{Zusammenhängend}
+Ein metrischer Raum $\left(X,d_X\right)$ heißt \textbf{zusammenhängend}, wenn $X$ nicht als eine Vereinigung von zwei nichtleeren, offenen, disjunkten Mengen dargestellt werden kann.
+
+\subsection{Einfach zusammenhängend}
+Eine Menge $M$ heißt \textbf{einfach zusammenhängend}, wenn $\partial M$ zusammenhängend ist.
+
+\subsection{Konkatenation}
+
+\subsection{Gebiet}
+In der Topologie wird eine offene, nichtleere und zusammenhängende Menge \textbf{Gebiet} genannt.
+
+%}}}
+
+%{{{ Folgen und Reihen
+\newpage
+\section{Folgen und Reihen}
+\subsection{Konvergenzkriterien}
+\subsubsection{Leibniz--kriterium}
+Sei $a_n$ eine monoton fallende Nullfolge, dann konvergiert
+\begin{align} 
+        \sum_{n=0}^{\infty}\left(-1\right)^na_n\label{eq:leibniz--kriterium}
+.\end{align} 
+
+\subsubsection{Majorantenkriterium}
+Seien $a_n$ und $b_n$ zwei Folgen. Falls
+\begin{align} 
+        0\leq a_n\leq b_n \,\forall n  \in \mathbb{N}
+,\end{align} 
+dann gilt
+\begin{align} 
+        \sum_{n=0}^{\infty}b_n \,\text{konvergiert}\,\Rightarrow \sum_{n=0}^{\infty}a_n \,\text{konvergiert}\,\label{eq:majorantenkriterium}
+.\end{align} 
+
+\subsubsection{Wurzelkriterium}
+Sei $a_n$ eine Folge, dann
+\begin{align} 
+        \lim_{n\rightarrow \infty}\text{sup}\,\sqrt[n]{|a_n|}<1\Rightarrow \sum_{n=0}^{\infty}a_n \,\text{konvergiert}\,\label{eq:wurzelkriterium}
+.\end{align} 
+
+\subsubsection{Quotientenkriterium}
+Sei $a_n$ eine Folge, dann
+\begin{align} 
+        \lim_{n\rightarrow \infty}\text{sup}\left|\dfrac{a_{n+1}}{a_n}\right|<1\Rightarrow \sum_{n=0}^{\infty}a_n \,\text{konvergiert}\,\label{eq:quotientenkriterium}
+.\end{align} 
+
+\subsubsection{Integralkriterium}
+Sei $f\left(x\right)$ eine monoton fallende Funktion und
+\begin{align} 
+        \lim_{n\rightarrow \infty}f\left(x\right)=0\Rightarrow \sum_{n=1}^{\infty}f\left(n\right)=\int_{0}^{\infty}f\left(x\right)\td x\leq \sum_{n=0}^{\infty}f\left(n\right)
+.\end{align} 
+Daraus folgt
+\begin{align} 
+        \int_{0}^{\infty}f\left(x\right)\td x\,\text{konvergiert}\,\Leftrightarrow \sum_{n=0}^{\infty}f\left(n\right)\,\text{konvergiert}\,\label{eq:integralkriterium}
+.\end{align} 
+
+
+\subsection{Cauchy--Folge}
+%}}}
+
+%{{{ Funktionen
+\newpage
+\section{Funktionen}
+\subsection{Injektiv}
+Eine Funktion $f:X\rightarrow Y$ ist \textbf{injektiv}, wenn
+\begin{align} 
+        \,\forall a,b \in X:f\left(a\right)=f\left(b\right)\Rightarrow a=b
+.\end{align} 
+
+\subsection{Surjektiv}
+Eine Funktion $f:X\rightarrow Y$ ist \textbf{surjektiv}, wenn
+\begin{align} 
+        \,\forall y \in Y\exists x \in X:f\left(x\right)=y
+.\end{align} 
+
+\subsection{Stetigkeit}
+\subsection{Stetige Erweiterung}
+\subsection{Supremum und Infimum}
+\subsection{Weg}
+Sei $X$ ein topologischer Raum und $I=\left[a,b\right]$ ein Intervall. Ist $f:I\rightarrow X$ eine stetige Funktion, dann heißt $f$ \textbf{Weg} in $X$.\\\indent
+Ein Weg ist geschlossen, falls $f\left(a\right)=f\left(b\right)$.\\
+Die \textbf{Länge} eines Weges ist gegeben durch
+\begin{align} 
+        L=\int_{a}^{b}|f'\left(t\right)|\td t
+,\end{align} 
+mit $f'\left(t\right)=\diffp[]{f}{t}$.
+
+\subsection{Normalbereiche}
+\subsection{Satz von Maximum und Minimum}
+Sei eine Funktion $f$ auf der kompakten Menge $M$ stetig, dann nimmt $f$ auf $M$ ein Maximum oder Minimum an, bzw.\
+\begin{align} 
+        \exists x_1,x_2 \in M:f\left(x_1\right)\leq f\left(x\right)\leq f\left(x_2\right)\label{eq:satz von maximum und minimum}
+.\end{align} 
+
+\subsection{Zwischenwertsatz}
+\subsection{Signum--Funktion}
+\subsection{Taylor--Reihe}
+\subsection{Indikator--Funktion / charakteristische Funktion}
+Die \textbf{Indikator--Funktion} oder \textbf{charakteristische Funktion} einer einer Teilmenge $M\subseteq X$, ist
+\begin{align} 
+        \chi _M\left(x\right)&=\begin{cases}
+                1,&\quad \,\text{falls}\,x \in M\\
+                0,&\quad \,\text{falls}\,x \notin M
+        \end{cases}\label{eq:charakteristische funktion}
+.\end{align} 
+
+%}}}
+
+%{{{ Metrische Räume
+\newpage
+\section{Metrische Räume}
+\subsection{Norm}
+Eine Funktion $||\cdot ||:X\rightarrow Y$ ist eine Norm, wenn folgende Eigenschaften erfüllt sind
+\begin{enumerate}[label=$\circ$]
+        \item Dreiecksungleichung: $||a||+||b||\geq ||a+b||$.
+        \item Homogenität: $||\lambda a||=|\lambda |||a||,\lambda  \in X$.
+        \item Positive Definitheit: $||a||\geq 0,||a||=0\Leftrightarrow a=0$.
+\end{enumerate}
+$\label{eq:norm}$ 
+%}}}
+
+%{{{ Mehrdimensionale Analysis
+\newpage
+\section{Mehrdimensionale Anaylsis}
+\subsection{Integralrechnung}
+\subsubsection{Riemann--Integrierbar}
+\subsubsection{Lebesgue--Integrierbar}
+Eine Funktion $f$ heißt \textbf{Lebesgue--integrierbar}, falls gilt
+\begin{align} 
+        \int\limits_{\left\{x|f\left(x\right)\geq 0\right\}}^{}f\left(x\right)\td \lambda \left(x\right)<\infty\qquad \land \qquad \int\limits_{\left\{x|f\left(x\right)\leq 0\right\}}^{}f\left(x\right)\td \lambda \left(x\right)<\infty
+,\end{align} 
+mit $\lambda $ dem Lebesgue--Maß
+\footnote{\textit{Das $\lambda $ beschreibt die Länge der Rechtecke unter der Funktion}}
+\eqref{eq:lebesgue--maß}. Das \textbf{Lebesgue--Integral} ist dann die Differenz der beiden Integrale.\\\indent
+Diese Aussage ist äquivalent zu
+\begin{align} 
+        \int_{}^{}|f\left(x\right)|\td \lambda \left(x\right)<\infty
+\end{align} 
+
+\subsubsection{Satz von Fubini}
+Sei eine Funktion $f:\left[a,b\right]\times \left[c,d\right]\rightarrow \mathbb{R}$ stetig, dann gilt
+\begin{align} 
+        \int_{c}^{d}\int_{a}^{b}f\td x\td y=\int_{a}^{b}\int_{c}^{d}f\td y\td x\label{eq:satz von fubini}
+.\end{align} 
+
+\subsubsection{Satz von Fubini--Tonelli}
+\footnote{\textit{Dieser Satz funktioniert auch bei unendlichen Summen}}
+Sei eine Funktion $f$ reell messbar und $\iint_{}^{}|f\left(x,y\right)|\td x\td y<\infty$, dann gilt
+\begin{align} 
+        \iint_{}^{}f\left(x,y\right)\td x\td y=\iint_{}^{}f\left(x,y\right)\td y\td x\label{eq:satz von fubini--tonelli}
+\end{align} 
+
+\subsubsection{Wegintegrale}
+\textbf{1.\ Art}\\ 
+Das Wegintegral einer stetigen Funktion über einen Weg ist definiert als
+\begin{align} 
+        \int_{\gamma }^{}f\td s&:=\int_{a}^{b}f\left(\gamma \left(t\right)\right)\cdot ||\dot{\gamma }\left(t\right)||\td t
+,\end{align} 
+mit $\gamma \left(t\right):\left[a,b\right]\rightarrow \mathbb{R}^2$ dem Weg, $\dot{\gamma }\left(t\right)=\diffp[]{\gamma \left(t\right)}{t}$ und $||\cdot ||$ der Norm.
+\\\hfill\\\textbf{2.\ Art}\\ 
+Das Wegintegral eines stetigen Vektorfeldes über einen Weg ist definiert als
+\begin{align} 
+        \int_{\gamma }^{}f\td s&:=\int_{a}^{b}f\left(\gamma \left(t\right)\right)\cdot \dot{\gamma }\left(t\right)\td t
+.\end{align} 
+
+\subsubsection{Oberflächenintegral}
+\textbf{1.\ Art}\\ 
+Das skalare Oberflächenintegral einer skalaren Funktion über eine Oberfläche ist definiert als
+\begin{align} 
+        \iint_{\mathcal{F}}^{}f\td \sigma &:=\iint_{\mathcal{F}}^{}f\left(\varphi \left(u,v\right)\right)\cdot \left|\left|\diffp[]{\varphi \left(u,v\right)}{u}\times \diffp[]{\varphi \left(u,v\right)}{v}\right|\right| \td \left(u,v\right),\\
+        \iiint_{\mathcal{V}}^{}f\td V&:=\iiint_{\mathcal{V}}^{}f\left(\Phi \left(u,v,w\right)\right)\cdot |D\Phi \left(u,v,w\right)|\td \left(u,v,w\right)
+,\end{align} 
+mit $\varphi \left(u,v\right),\Phi \left(u,v,w\right)$ den Parametrisierungen \eqref{eq:parametrisierung} von $x,y$ und $z$, $||\cdot || $ der Norm und $D$ der Jacobi--Matrix.\\\indent
+Das Integral über die Oberfläche kann auch mit Hilfe der Jacobi--Matrix geschrieben werden, was auf das Kreuzprodukt zurückführt.
+\\\hfill\\\textbf{2.\ Art}\\ 
+Das vektorielle Oberflächenintegral einer vektorwertigen Funktion über eine Oberfläche ist definiert als
+\begin{align} 
+        \iint_{\mathcal{F}}^{}f\td \sigma &:=\iint_{\mathcal{F}}^{}f\left(\varphi \left(u,v\right)\right)\cdot \left(\diffp[]{\varphi \left(u,v\right)}{u}\times \diffp[]{\varphi \left(u,v\right)}{v}\right)\td \left(u,v\right),\\
+        \iiint_{\mathcal{V}}^{}f\td V&:=\iiint_{\mathcal{V}}^{}f\left(\Phi \left(u,v,w\right)\right)\cdot |D\Phi \left(u,v,w\right)|\td \left(u,v,w\right)
+.\end{align} 
+
+\subsection{Differentialrechnung}
+\subsubsection{Satz von Schwarz}
+Sei $f\left(x_1,x_2,\hdots ,x_n\right)$ $k$--mal total differenzierbar, dann können die partiellen Ableitungen vertauscht werden.
+
+%}}}
+
+%{{{ Maßtheorie
+\newpage
+\section{Maßtheorie}
+\subsection{$\boldsymbol{\sigma }$--Algebra}
+Ein Mengensystem $\mathcal{A}\subseteq \mathcal{P}\left(M\right)$, also eine Menge von Teilmengen, mit $\mathcal{P}$ der Potenzmenge von $M$, heißt \textbf{$\boldsymbol{\sigma }$--Algebra}, wenn folgende Bedingungen erfüllt sind;
+\begin{enumerate}[label=$\circ$]
+        \item $\mathcal{A}$ enthält die Grundmenge, also $M \in \mathcal{A}$.
+        \item $\mathcal{A}$ ist stabil bezüglich der Komplementbildung, also $M \in \mathcal{A}\land M^c  \in \mathcal{A}$.
+        \item $\mathcal{A}$ ist stabil bezüglich abzählbarer Vereinigungen, sind also $A_1,A_2,\hdots ,A_{n  \in \mathbb{N}}$ in $\mathcal{A}$ enthalten, so ist auch $\bigcup _{n  \in \mathbb{N}}A_n  \in \mathcal{A}$.
+\end{enumerate}
+
+\subsection{Jordan--Maß}
+Das \textbf{Jordan--Maß} beschreibt den Inhalt, $|M|$, einer Menge, sodass
+\begin{align} 
+        |M|&:=\int_{Z}^{}\chi _M\td V_M \label{eq:jordan--maß}
+,\end{align} 
+mit $Z$ einer $n$--Zelle \eqref{eq:zelle} und $\chi _M$ der charakteristischen Funkton über $M$ \eqref{eq:charakteristische funktion}.\\\indent
+Der Inhalt des Jordan--Maß ist
+\begin{align} 
+        \mu ^n\left([a,b[\right)&:=\prod_{j=1}^{n}\left(b_j-a_j\right)\label{eq:inhalt jordan--maß}\qquad [a,b[:=\prod_{i=1}^{n}[a_i,b_i[
+,\end{align} 
+mit $[a,b[$ einem halboffenen $n$--dimensionalem Hyperrechteck
+\footnote{\textit{Hyperrechteck heißt einfach ein Rechteck in höheren Dimensionen.}}
+. Es wird $\mu \left(\left\{\right\}\right):=0$ definiert.\\\indent
+Es sei
+\begin{align} 
+        \mathcal{J}^n&:=\left\{\bigcup _{k=1}^mI_k:I_1,\hdots ,I_m,\,\text{paarweise disjunkt}\,\right\}\label{eq:menge paarweiser disjunkter hyperrechtecke}
+\end{align} 
+die Menge aller endlichen Vereinigungen paarweise disjunkter
+\footnote{\textit{Paarweise disjunkt bedeutet, dass alle Hyperrechtecke disjunkt sind.}}
+Hyperrechtecke.\\\indent
+Der \textbf{innere} und \textbf{äußere Inhalt} einer beschränkten Menge $M$ ist dann
+\begin{align} 
+        \underline{i^n}\left(M\right)&:=\,\text{sup}\,\left\{\mu ^n\left(A\right):A \in \mathcal{J}^n,A\subset M\right\}\label{eq:innerer inhalt}\\
+        \overline{i^n}\left(M\right)&:=\,\text{inf}\,\left\{\mu ^n\left(B\right):B \in \mathcal{J}^n,B\supset M\right\}\label{eq:äußerer inhalt}
+.\end{align}
+\footnote{\textit{Bei dem Inneren Inhalt ist $A$ echte Teilmenge von $M$, also ist $A$ \glqq in $M$\grqq{} bzw.\ \glqq kleiner\grqq{} als $M$, weshalb das Supremum verwendet werden muss um das größte Hyperrechteck (das am nächsten zum Rand von $M$) zu finden. Bei dem äußeren Inhalt ist das genau andersherum; $M$ ist echte Teilmenge von $B$, also ist $M$ in $B$, weshalb das kleinste Hyperrecheck (auch am nächsten an $M$) gefunden werden muss.}}
+
+\subsubsection{Quadrierbar / Jordan--messbar}
+Eine Menge $M$ heißt \textbf{quadrierbar} oder \textbf{Jordan--messbar}, wenn die charakteristische Funktion $\chi _M$ \eqref{eq:charakteristische funktion} auf einer kompakten n--Zelle $Z$ \eqref{eq:zelle} Riemann--integrierbar ist, id est $\chi _M \in \mathcal{R}\left(Z,\mathbb{R}\right)$.\\\indent
+Sie heißt auch Jordan--messbar, wenn sie beschränkt ist und $i^n\left(M\right):=\underline{i^n}\left(M\right)=\overline{i^n}\left(M\right)$ \eqref{eq:innerer inhalt} gilt.\\\indent
+Wenn $B$ nicht zusammenhängend ist, ist $B$ auch nicht quadrierbar.
+
+\subsubsection{Lebesgue--messbar}
+Eine Funktion ist \textbf{Lebesgue--messbar}, wenn der innere und der äußere Inhalt \eqref{eq:innerer inhalt} gleich sind. Das \textbf{Lebesgue--Maß} ist dann
+\begin{align} 
+        \lambda _n\left(M\right)=\underline{i^n}\left(M\right)=\overline{i^n}\left(M\right)\label{eq:lebesgue--maß}
+.\end{align} 
+\footnote{\textit{Das $\lambda $ beschreibt die Länge der Rechtecke unter der Funktion}}
+
+
+\subsection{Jordan--Nullmenge}
+Eine Jordan--messbare Menge $M$ ist eine \textbf{Jordan--Nullmenge}, falls $\overline{i^n}\left(M\right)=0$ \eqref{eq:äußerer inhalt}.
+
+%}}}
+
+%{{{ Hilberträume
+\newpage
+\section{Hilberträume}
+Der \textbf{Hilbertraum} ist ein Vektorraum über dem Körper der reellen oder komplexen Zahlen mit einem Skalarprodukt, der vollständig bezüglich der vom Skalarprodukt induzierten Norm ist (in dem also jede Cauchy--Folge konvergiert). Ein Hilbertraum ist ein \textbf{Banachraum}, also ein vollständig normierter Vektorraum, dessen Norm durch ein Skalarprodukt induziert ist.
+
+%}}}
+
+%{{{ Lagrange--Multiplikatoren
+\newpage
+\section{Lagrange--Multiplikatoren}
+\textit{ Verfahren für Maxima und Minima:
+        \begin{enumerate}[label=\arabic*.]
+                \item Sei eine Funktion $f$ auf einer Menge $M$ mit $g_1,g_2,\hdots ,g_i$ Nebenbedingungen. Die Nebenbedingungen müssen dabei alle gleich 0 sein.
+                \item Überprüfe ob $f$ mit dem Satz von Maximum und Minimum ein Maximum oder Minimum animmt. (Überprüfe ob $f$ stetig und $M$ kompakt ist.)
+                \item Bilde den Gradienten von $g_1,g_2,\hdots ,g_i$. 
+                \item Überprüfe ob die Gradienten der Nebenbedingungen linear unabhängig sind. Falls sie linear abhängig sind, kann die Menge $M$ nicht mehr parametrisiert \eqref{eq:parametrisierung} werden.
+                \item Stelle die Funktion $L=f-\sum_{i}^{}\lambda _ig_i$ auf.
+                \item Bilde den Gradienten von $L$ und setzte ihn gleich 0.$\label{item:6}$
+                \item Stelle das Gleichungssystem aus \eqref{item:6} auf.
+                \item Löse das Gleichungssystem nach $x_1,x_2,\hdots ,x_i$ auf und setzte in $g$ ein, um die Werte für $\lambda _1,\lambda _2,\hdots ,\lambda _i$ herauszufinden. Dadurch ergeben sich die Punkte $p_i=\left(x_1,x_2,\hdots ,x_i\right)$, die potentielle Extremstellen darstellen.
+                \item Setzte $p_i$ in die Funktion $f$ ein. Die größten Funktionswerte sind Maxima, die kleinsten Funktionswerte sind Minima.
+        \end{enumerate}
+}\noindent
+\textit{ Falls keine Nebenbedingungen gegeben sind, ist das Verfahren
+        \begin{enumerate}[label=\arabic*.]
+                \item $\nabla f=0$ lösen.
+                \item Die kritischen Punkte in die Hesse--Matrix \eqref{eq:hesse--matrix} einseten
+                        \begin{enumerate}[label=$\circ$]
+                                \item $H$ pos.\ definit: Minima
+                                \item $H$ neg.\ definit: Maxima
+                                \item $H$ indefinit: Sattelpunkt
+                                \item $H$ semidefinit: keine Aussage
+                        \end{enumerate}
+        \end{enumerate}
+}\noindent
+\textit{Sollte die Nebenbedingung eine Ungleichung sein, lässt sie sich in eine echte Ungleichung und Gleichung aufteilen $\left(\leq \rightarrow <,=\right)$. Die echte Ungleichung wird mit dem Verfahren falls es keine Nebenbedingungen gibt berechnet und die kiritschen Punkte mit der Nebenbedingung überprüft. Die Gleichung lässt sich dann mit dem Verfahren nach Lagrange berechnen.}
+%}}}
+
+%{{{ Wichtige Begriffe
+\newpage
+\section{Wichtige Begriffe}
+\subsection{Offene Kugel}
+Eine \textbf{offene Kugel} in $\left(X,d\right)$ mit Radius $r>0$ und Zentrum $x \in X$ ist die Menge
+\begin{align} 
+        K_r\left(x\right):=\left\{x  \in X:d\left(x,z\right)<r\right\}\qquad z \in X\label{eq:offene kugel}
+.\end{align} 
+Jede offene Kugel ist eine offene Menge.
+
+\subsection{Punktierte offene Kugel}
+Eine \textbf{punktierte offene Kugel} ist eine offene Kugel \eqref{eq:offene kugel} ohne das Zentrum
+\begin{align} 
+        K_r^\bullet \left(x\right):=K_r\left(x\right)\backslash \left\{x\right\}\label{eq:punktierte offene kugel}
+.\end{align} 
+
+\subsection{Zelle}
+Eine \textbf{kompakte $\boldsymbol{n}$--Zelle} $Z\subset \mathbb{R}^n$ ist ein Mengenprodukt $Z=I_1\times \hdots \times I_n$ von kompakten Intervallen $I_j=\left[a_j,b_j\right]\subset \mathbb{R}$ mit $a_j\leq b_j$. 
+\begin{align} 
+        Z&=\left\{\left(x_1,\hdots ,x_n\right) \in \mathbb{R}^n:a_j\leq x_j\leq b_j,j=1,\hdots ,n\right\}\label{eq:zelle}
+.\end{align} 
+Analog ist eine \textbf{offene $\boldsymbol{n}$--Zelle} eine Mengenprodukt von offenen Intervallen.
+
+\subsection{Jacobi--Matrix}
+\begin{align} 
+        D\left(f\right)&=\begin{pmatrix}
+                \diffp[]{f_1}{x_1}&\hdots &\diffp[]{f_1}{x_n}\\
+                \vdots &\ddots &\vdots \\
+                \diffp[]{f_n}{x_1}&\hdots &\diffp[]{f_n}{x_n}
+        \end{pmatrix}\label{eq:jacobi--matrix}
+.\end{align} 
+
+\subsection{Hesse--Matrix}
+\begin{align} 
+        H\left(f\right)&=\left(D\left(\nabla f\right)\right)^T\label{eq:hesse--matrix}
+,\end{align} 
+mit $D$ der Jacobi--Matrix \eqref{eq:jacobi--matrix}.
+
+\subsection{Parametrisierung}
+Eine \textbf{Parametrisierung} beschreibt das Austauschen von einer Variable durch andere Variablen, die sie beschreiben. Zum Beispiel lässt sich mit der Bedingung $x+y+z=1$ eine Parametrisierung von $f$ durchführen
+\begin{align} 
+        f\left(x,y,z\right)=\begin{pmatrix}
+                x\\y\\z
+        \end{pmatrix}\rightarrow \varphi \left(x,y\right)=\begin{pmatrix}
+                x\\y\\1-x-y
+        \end{pmatrix}\label{eq:parametrisierung}
+.\end{align} 
+Zylinderkoordinaten sind auch eine Parametrisierung
+\begin{align} 
+        f\left(x,y,z\right)=\begin{pmatrix}
+                x\\y\\z
+        \end{pmatrix}\rightarrow f\left(r,\theta ,z'\right)=\begin{pmatrix}
+                r\cos \theta \\r\sin \theta \\z'
+        \end{pmatrix}
+.\end{align} 
+
+
+%}}}
+
+\end{document}
