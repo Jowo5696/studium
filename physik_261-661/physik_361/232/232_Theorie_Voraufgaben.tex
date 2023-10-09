@@ -1,0 +1,98 @@
+%:LLPStartPreview
+%:VimtexCompile(SS)
+
+%{{{ Formatierung
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{physics_notetaking}
+
+%%% dark red
+%\definecolor{bg}{RGB}{60,47,47}
+%\definecolor{fg}{RGB}{255,244,230}
+%%% space grey
+%\definecolor{bg}{RGB}{46,52,64}
+%\definecolor{fg}{RGB}{216,222,233}
+%%% purple
+%\definecolor{bg}{RGB}{69,0,128}
+%\definecolor{fg}{RGB}{237,237,222}
+%\pagecolor{bg}
+%\color{fg}
+
+\newcommand{\td}{\,\text{d}}
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+
+\newcommand\inlineeqno{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnoa{(\theequation.\text{a})}
+\newcommand\inlineeqnob{(\theequation.\text{b})}
+\newcommand\inlineeqnoc{(\theequation.\text{c})}
+
+\newcommand\inlineeqnowo{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnowoa{\theequation.\text{a}}
+\newcommand\inlineeqnowob{\theequation.\text{b}}
+\newcommand\inlineeqnowoc{\theequation.\text{c}}
+
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+%\renewcommand*\contentsname{Contents}
+
+\pagestyle{fancy}
+
+\sloppy
+
+\numberwithin{equation}{section}
+
+%}}}
+
+\begin{document}
+
+%{{{ Titelseite
+
+\title{}
+\author{}
+\maketitle
+\pagenumbering{gobble}
+
+%}}}
+
+\newpage
+
+%{{{ Inhaltsverzeichnis
+
+\fancyhead[L]{\thepage}
+\fancyfoot[C]{}
+\pagenumbering{arabic}
+
+\tableofcontents
+
+%}}}
+
+\newpage
+
+%{{{
+
+\fancyhead[R]{\leftmark\\\rightmark}
+
+\section{Einführung}
+Hier werden die Themen \glqq Spannungsquelle\grqq{} und \glqq Widerstand\grqq{}, sowie Kompensations-- und Brückenschaltungen behandelt. Es soll sich mit charakteristischen Eigenschaften von Spannungsquellen wie Leerlaufspannung, Innenwiderstand und Klemmenspannung vertraut gemacht werden. Zudem wird die Spannungsteilerschaltung zum Modifizieren einer vorhandenen Spannungsquelle vorgestellt. Des Weiteren wird eine Spannungsquelle mit variabler Klemmenspannung zur Messung der Leerlaufspannung einer Batterie mit Hilfe einer Kompensationsschaltung genutzt. [rest von heft abschreiben]
+
+\newpage
+\section{Theorie}
+
+\newpage
+\section{Voraufgaben}
+\subsection{232.A}
+Eine ideale Stromquelle liefert immer einen konstanten, von der Spannung unabhängigen Strom $I_0$. [Ersatzschaltbild reale Stromquelle]
+
+\subsection{232.B}
+Die Klemmenspannung kommt von der Maschenregel, mit $U_0=U+U_i=U+R_iI$. Daraus folgt
+\begin{align} 
+        I&=\dfrac{U_i}{R_i}=\dfrac{U}{R_a}=\dfrac{U_0}{R_{\,\text{ges}\,}}\\
+        \Leftrightarrow U&=U_0\dfrac{R_a}{R_{\,\text{ges}\,}}=U_0\dfrac{R_a}{R_a+R_i}
+\end{align} 
+
+
+%}}}
+
+\end{document}

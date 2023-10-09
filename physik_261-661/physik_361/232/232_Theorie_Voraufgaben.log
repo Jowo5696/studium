@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.9.3)  9 OCT 2023 16:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.9.3)  9 OCT 2023 18:31
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**234_Theorie_Voraufgaben.tex
-(./234_Theorie_Voraufgaben.tex
+**232_Theorie_Voraufgaben.tex
+(./232_Theorie_Voraufgaben.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/share/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
@@ -563,11 +563,11 @@ Package: verbatim 2022-07-02 v1.5u LaTeX2e package for verbatim enhancements
 Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
 )
 \verbatim@out=\write4
-runsystem(touch w18-test-20231091006.tex)...executed.
+runsystem(touch w18-test-20231091111.tex)...executed.
 
-runsystem(rm -f w18-test-20231091006.tex)...executed.
+runsystem(rm -f w18-test-20231091111.tex)...executed.
 
-runsystem(rm -f "234_Theorie_Voraufgaben.gnuploterrors")...executed.
+runsystem(rm -f "232_Theorie_Voraufgaben.gnuploterrors")...executed.
 
 Package gnuplottex Info: Automatically converting gnuplot files on input line 112.
 \c@fignum=\count335
@@ -829,8 +829,8 @@ File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \arrowsize=\dimen338
-))) (./234_Theorie_Voraufgaben.aux)
-\openout1 = `234_Theorie_Voraufgaben.aux'.
+))) (./232_Theorie_Voraufgaben.aux)
+\openout1 = `232_Theorie_Voraufgaben.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
 LaTeX Font Info:    ... okay on input line 48.
@@ -913,9 +913,9 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
 Package hyperref Info: Link coloring OFF on input line 48.
- (./234_Theorie_Voraufgaben.out) (./234_Theorie_Voraufgaben.out)
+ (./232_Theorie_Voraufgaben.out) (./232_Theorie_Voraufgaben.out)
 \@outlinefile=\write5
-\openout5 = `234_Theorie_Voraufgaben.out'.
+\openout5 = `232_Theorie_Voraufgaben.out'.
 
 
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.18} (current compat level: 1.15).
@@ -950,9 +950,9 @@ LaTeX Font Info:    Trying to load font information for U+esvect on input line 5
 File: uesvect.fd 
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./234_Theorie_Voraufgaben.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./232_Theorie_Voraufgaben.toc)
 \tf@toc=\write6
-\openout6 = `234_Theorie_Voraufgaben.toc'.
+\openout6 = `232_Theorie_Voraufgaben.toc'.
 
 
 
@@ -963,13 +963,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [1]
-Underfull \hbox (badness 2698) in paragraph at lines 86--87
-\OT1/cmr/m/n/12 Die Wheatstone--Br^^?ucke kann verwendet werden, um einen unbekannten Widerstand
+Underfull \hbox (badness 1062) in paragraph at lines 78--79
+\OT1/cmr/m/n/12 Hier werden die Themen []Spannungsquelle\ und []Widerstand\, sowie Kompensations--
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--106
-
+Underfull \hbox (badness 2376) in paragraph at lines 78--79
+\OT1/cmr/m/n/12 gemacht werden. Zudem wird die Spannungsteilerschaltung zum Modifizieren einer
  []
 
 
@@ -982,16 +982,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [2]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 29.84767pt, for example:
-(fancyhdr)                \setlength{\headheight}{29.84767pt}.
+(fancyhdr)                Make it at least 27.05003pt, for example:
+(fancyhdr)                \setlength{\headheight}{27.05003pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-17.84767pt}.
+(fancyhdr)                \addtolength{\topmargin}{-15.05003pt}.
 
 [3]
-Underfull \hbox (badness 1558) in paragraph at lines 155--157
-\OT1/cmr/m/n/12 mit $\OML/cmm/m/it/12 '$ \OT1/cmr/m/n/12 dem Auslenkungswinkel, $\OML/cmm/m/it/12 ^^R$ \OT1/cmr/m/n/12 dem Tr^^?agheitsmoment, $\OML/cmm/m/it/12 r$ \OT1/cmr/m/n/12 D^^?ampfungsfaktor, $\OML/cmm/m/it/12 D$ \OT1/cmr/m/n/12 der
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 27.05003pt, for example:
@@ -999,39 +995,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.05003pt}.
 
-[4]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 27.05003pt, for example:
-(fancyhdr)                \setlength{\headheight}{27.05003pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-15.05003pt}.
-
-[5]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 27.05003pt, for example:
-(fancyhdr)                \setlength{\headheight}{27.05003pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-15.05003pt}.
-
-[6] (./234_Theorie_Voraufgaben.aux)
-Package rerunfilecheck Info: File `234_Theorie_Voraufgaben.out' has not changed.
-(rerunfilecheck)             Checksum: D33D738E82F997AFCCA066625989783D;769.
+[4] (./232_Theorie_Voraufgaben.aux)
+Package rerunfilecheck Info: File `232_Theorie_Voraufgaben.out' has not changed.
+(rerunfilecheck)             Checksum: 3E3D90F7773E92270BCBA5477D47CC73;436.
  ) 
 Here is how much of TeX's memory you used:
- 42239 strings out of 477985
- 974271 string characters out of 5840059
- 1867388 words of memory out of 5000000
- 61721 multiletter control sequences out of 15000+600000
- 524399 words of font info for 86 fonts, out of 8000000 for 9000
+ 42202 strings out of 477985
+ 973772 string characters out of 5840059
+ 1856388 words of memory out of 5000000
+ 61711 multiletter control sequences out of 15000+600000
+ 522902 words of font info for 79 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 99i,16n,131p,743b,921s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on 234_Theorie_Voraufgaben.pdf (7 pages, 139776 bytes).
+ 99i,13n,131p,743b,912s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on 232_Theorie_Voraufgaben.pdf (5 pages, 79109 bytes).
 PDF statistics:
- 176 PDF objects out of 1000 (max. 8388607)
- 143 compressed objects within 2 object streams
- 40 named destinations out of 1000 (max. 500000)
- 85 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 98 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
+ 13 named destinations out of 1000 (max. 500000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

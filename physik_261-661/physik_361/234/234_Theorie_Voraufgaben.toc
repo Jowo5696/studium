@@ -1,4 +1,10 @@
 \babel@toc {nil}{}\relax 
 \contentsline {section}{\numberline {1}Einführung}{2}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Theorie}{2}{subsection.1.1}%
-\contentsline {section}{\numberline {2}Voraufgaben}{3}{section.2}%
+\contentsline {section}{\numberline {2}Voraufgaben}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}234.A}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}234.B}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}234.C}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}234.D}{4}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}234.E}{5}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Fragen}{6}{section.3}%
