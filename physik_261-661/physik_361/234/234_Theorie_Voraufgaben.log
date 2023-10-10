@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.9.3)  9 OCT 2023 16:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.9.3)  10 OCT 2023 16:08
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -563,9 +563,9 @@ Package: verbatim 2022-07-02 v1.5u LaTeX2e package for verbatim enhancements
 Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
 )
 \verbatim@out=\write4
-runsystem(touch w18-test-20231091006.tex)...executed.
+runsystem(touch w18-test-20231010968.tex)...executed.
 
-runsystem(rm -f w18-test-20231091006.tex)...executed.
+runsystem(rm -f w18-test-20231010968.tex)...executed.
 
 runsystem(rm -f "234_Theorie_Voraufgaben.gnuploterrors")...executed.
 
@@ -963,12 +963,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [1]
-Underfull \hbox (badness 2698) in paragraph at lines 86--87
+Underfull \hbox (badness 2698) in paragraph at lines 85--86
 \OT1/cmr/m/n/12 Die Wheatstone--Br^^?ucke kann verwendet werden, um einen unbekannten Widerstand
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--106
+Underfull \hbox (badness 10000) in paragraph at lines 100--105
 
  []
 
@@ -988,7 +988,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-17.84767pt}.
 
 [3]
-Underfull \hbox (badness 1558) in paragraph at lines 155--157
+Underfull \hbox (badness 1558) in paragraph at lines 154--156
 \OT1/cmr/m/n/12 mit $\OML/cmm/m/it/12 '$ \OT1/cmr/m/n/12 dem Auslenkungswinkel, $\OML/cmm/m/it/12 ^^R$ \OT1/cmr/m/n/12 dem Tr^^?agheitsmoment, $\OML/cmm/m/it/12 r$ \OT1/cmr/m/n/12 D^^?ampfungsfaktor, $\OML/cmm/m/it/12 D$ \OT1/cmr/m/n/12 der
  []
 
@@ -1028,7 +1028,7 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  99i,16n,131p,743b,921s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on 234_Theorie_Voraufgaben.pdf (7 pages, 139776 bytes).
+Output written on 234_Theorie_Voraufgaben.pdf (7 pages, 139694 bytes).
 PDF statistics:
  176 PDF objects out of 1000 (max. 8388607)
  143 compressed objects within 2 object streams

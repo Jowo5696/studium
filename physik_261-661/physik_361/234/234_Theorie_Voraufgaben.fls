@@ -921,8 +921,8 @@ INPUT /usr/share/texmf-dist/tex/generic/catchfile/catchfile.sty
 INPUT /usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 INPUT /usr/share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 INPUT /usr/share/texmf-dist/tex/generic/etexcmds/etexcmds.sty
-INPUT ./w18-test-20231091006.tex
-INPUT w18-test-20231091006.tex
+INPUT ./w18-test-20231010968.tex
+INPUT w18-test-20231010968.tex
 INPUT /usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT /usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT /usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
