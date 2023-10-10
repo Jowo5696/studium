@@ -1,0 +1,167 @@
+%:LLPStartPreview
+%:VimtexCompile(SS)
+
+%{{{ Formatierung
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{physics_notetaking}
+
+%%% dark red
+%\definecolor{bg}{RGB}{60,47,47}
+%\definecolor{fg}{RGB}{255,244,230}
+%%% space grey
+%\definecolor{bg}{RGB}{46,52,64}
+%\definecolor{fg}{RGB}{216,222,233}
+%%% purple
+%\definecolor{bg}{RGB}{69,0,128}
+%\definecolor{fg}{RGB}{237,237,222}
+%\pagecolor{bg}
+%\color{fg}
+
+\newcommand{\td}{\,\text{d}}
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+
+\newcommand\inlineeqno{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnoa{(\theequation.\text{a})}
+\newcommand\inlineeqnob{(\theequation.\text{b})}
+\newcommand\inlineeqnoc{(\theequation.\text{c})}
+
+\newcommand\inlineeqnowo{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnowoa{\theequation.\text{a}}
+\newcommand\inlineeqnowob{\theequation.\text{b}}
+\newcommand\inlineeqnowoc{\theequation.\text{c}}
+
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+%\renewcommand*\contentsname{Contents}
+
+\pagestyle{fancy}
+
+\sloppy
+
+\numberwithin{equation}{section}
+
+%}}}
+
+\begin{document}
+
+%{{{ Titelseite
+
+\title{physik321 $|$ Notizen}
+\author{Jonas Wortmann}
+\maketitle
+\pagenumbering{gobble}
+
+%}}}
+
+\newpage
+
+%{{{ Inhaltsverzeichnis
+
+\fancyhead[L]{\thepage}
+\fancyfoot[C]{}
+\pagenumbering{arabic}
+
+\tableofcontents
+
+%}}}
+
+\newpage
+
+%{{{
+
+\fancyhead[R]{\leftmark\\\rightmark}
+
+\section{Überblick Elektrodynamik}
+Das Ziel ist die Untersuchung der Ursache und Wirkung von elektrischen ($\vv{E}$) und magnetischen ($\vv{B}$) Feldern auf elektrische Ladungen ($q$).\\\indent
+Aus der experimentellen Beobachtung ist bekannt, dass auf elektrisch geladene Körper eine elektromagnetische Kraft 
+\begin{align} 
+        \vv{F}=q\left(\vv{E}+\vv{v}\times \vv{B}\right)
+,\end{align} 
+mit $\vv{v}$ der Geschwindigkeit des geladenen Teilchens, wirkt. Diese Kraft führt zu einer Bewegungsänderung
+\begin{align} 
+        \vv{F}=\diff*[]{\dfrac{m\vv{v}}{1-\tfrac{\vv{v}^2}{c^2}}}{t}
+.\end{align} 
+Der Zusammenhang zwischen elektrischen und magnetischen Feldern und (bewegten) Ladungen sind die \textbf{Maxwell--Gleichungen}
+\begin{align} 
+        \,\text{div}\,\vv{E}&=\dfrac{\rho }{\varepsilon _0}&\,\text{rot}\,\vv{E}&=-\diffp[]{\vv{B}}{t}\\
+        \,\text{div}\,\vv{B}&=0&c^2\,\text{rot}\,\vv{B}&=\diffp[]{\vv{E}}{t}+\dfrac{\vv{j}}{\varepsilon _0}
+.\end{align} 
+Zusammen mit Randbedingungen an \textbf{Grenzflächen} bestimmen sie alle Effekte der Elektrodynamik.
+
+\newpage
+\section{Statische Felder}
+Die Maxwell--Gleichungen für statische Felder sind
+\begin{align} 
+        \,\text{div}\,\vv{E}&=\dfrac{\rho }{\varepsilon _0}&\,\text{rot}\,\vv{E}&=0\\
+        \,\text{div}\,\vv{B}&=0&c^2\,\text{rot}\,\vv{B}&=\dfrac{\vv{j}}{\varepsilon _0}
+.\end{align} 
+Man kann sehen, dass die Gleichungen für statische Felder entkoppeln und sie sich in \textbf{Elektrostatik} und \textbf{Magnetostatik} aufteilen.
+
+\subsection{Eletrostatik}
+Die Grundgrößen der klassischen Mechanik sind die Masse, Länge und Zeit.
+Eine wichtige Grundgröße in der Elektrostatik ist die elektrische Ladung. 
+Aus der experimentellen Beobachtung ist bekannt, dass Körper in einen elektrischen Zustand versetzt werden können (z.B.\ können geladene Körper andere geladene Körper anziehen).
+Dieses Phänomen ist mechanisch nicht erklärbar.
+Dieser Zustand ist auch auf andere Körper übertragbar, woraus folgt, dass es sich um eine substanzartige Größe handeln muss.
+\\\indent Diese Größe ist die \textbf{elektrische Ladung} $q$.
+Bei der Übertragung fließt ein elektrischer Strom $I$.
+Die Ladung des Elektrons ist negativ, also $q<0$.
+Zudem ist sie additiv, es existiert also die Gesamtladung $Q=\sum_{i}^{}q_i$.
+In abgeschlossenen Systemen ist die Summe aus positiven und negativen Ladungen konstant.
+Die Ladungen sind \textbf{gequantelt}, es existiert also eine nicht teilbare Elementarladung $e$, also gilt immer, dass $q=n\cdot e,n  \in \mathbb{Z}$
+\begin{align*} 
+        \,\text{Elektron}\,&:n=-1\\
+        \,\text{Proton}\,&:n=+1\\
+        \,\text{Neutron}\,&:n=0\\
+        \,\text{Atomkern}\,&:n=Z
+.\end{align*} 
+In der Elektrodynamik wird dieses Prinzip allerdings verallgemeinert.
+Man führt die Ladungsdichte $\rho \left(\vv{r}\right)$ ein, also $Q=\int_{V}^{}\rho \left(\vv{r}\right)\td ^3r$.
+Für Punktladungen gilt dann $\rho \left(\vv{r}\right)=q\delta \left(\vv{r}-\vv{r}_0\right)$.\\\indent
+Befinden sich zwei Ladungen $q_1$ und $q_2$ im Abstand von einem Meter im Vakuum, dann wirkt eine Kraft von
+\begin{align} 
+        F&=\dfrac{10^{12}}{4\pi \cdot 8,854}\,\unit{N}
+.\end{align} 
+Dann haben $q_1$ und $q_2$ eine Ladung von $|q_1|=|q_2|=\SI{1}{C}$.
+Die Elementarladung ist $e=\SI{1,602e-19}{C}$.\\\indent
+\\\hfill\\\textbf{Stromdichte}\\ 
+Für bewegte Ladungen existiert die Stromdichte $\vv{j}$.
+Sie gibt die Ladung pro Zeiteinheit durch eine Flächeneinheit senkrecht zur Stromrichtung an.
+Betrachte als Beispiel eine homogene Ladungsverteilung von $N$ Teilchen mit Ladung $q$ und Geschwindigkeit $\vv{v}$, dann ist die Ladungsdichte $\vv{j}=\tfrac{N}{V}q\vv{v}$. 
+Die Stromstärke $I$ ist dann $I=\int_{\mathcal{F}}^{}\vv{j}\left(\vv{r}\right)\td \vv{f}=\int_{\mathcal{F}}^{}\vv{j}\left(\vv{r}\right)\vv{n}\left(\vv{r}\right)\td f$.
+Die Einheit ist $\SI{1}{A}$, was einem Ladungstransport von $\SI{1}{C}$ in einer Sekunde entspricht.
+\\\hfill\\\textbf{Ladungserhaltung}\\ 
+Die Ladungserhaltung kann mit Hilfe der \textbf{Kontinuitätsgleichung} beschrieben werden
+\begin{align} 
+        \diffp[]{\rho }{t}=\,\text{div}\,\vv{j}
+.\end{align} 
+
+\subsubsection{Coulomb'sche Gesetz}
+Zwei Ladungen $q_1$ und $q_2$ befinden sich im Abstand $\vv{r}_1$ und $\vv{r}_2$ zum Ursprung.
+Der Abstand zwischen diesen Ladungen ist $\vv{r}_{12}$.
+Dieser Abstand soll viel größer sein also die Ausdehnung von $q_1$ und $q_2$.
+Die Kraft zwischen diesen Ladungen ist
+\begin{align} 
+        \vv{F}_{12}=kq_1q_2\dfrac{\vv{r}_1-\vv{r}_2}{|\vv{r}_1-\vv{r}_2|^3}=-\vv{F}_{21}
+.\end{align} 
+Sie ist also direkt proportional zu $q_1$ und $q_2$, $|\vv{F}_{12}|\propto |\vv{F}|_{21}^{-2}$, sie wirkt entlang von $F_{12}$.
+Diese Kraft gilt nur für \textbf{ruhende} Ladungen.
+
+\newpage
+\section{Delta--Distribution}
+\begin{align} 
+        \delta \left(\vv{r}-\vv{r}_0\right)=0\,\forall \vv{r}\neq \vv{r}_0
+.\end{align} 
+\begin{align} 
+        \int_{V}^{}\delta \left(\vv{r}-\vv{r}_0\right)\td ^3r=\begin{cases}
+                0&,\vv{r}_0 \notin V\\1&,\vv{r}_0 \in V
+        \end{cases}
+\end{align} 
+
+
+%}}}
+
+\end{document}
