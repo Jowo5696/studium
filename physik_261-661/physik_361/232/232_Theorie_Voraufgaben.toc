@@ -4,3 +4,4 @@
 \contentsline {section}{\numberline {3}Voraufgaben}{4}{section.3}%
 \contentsline {subsection}{\numberline {3.1}232.A}{4}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}232.B}{4}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}232.C}{4}{subsection.3.3}%
