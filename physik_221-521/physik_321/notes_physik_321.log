@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.9.3)  10 OCT 2023 11:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.9.3)  10 OCT 2023 16:22
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -563,9 +563,9 @@ Package: verbatim 2022-07-02 v1.5u LaTeX2e package for verbatim enhancements
 Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
 )
 \verbatim@out=\write4
-runsystem(touch w18-test-20231010718.tex)...executed.
+runsystem(touch w18-test-20231010982.tex)...executed.
 
-runsystem(rm -f w18-test-20231010718.tex)...executed.
+runsystem(rm -f w18-test-20231010982.tex)...executed.
 
 runsystem(rm -f "notes_physik_321.gnuploterrors")...executed.
 
@@ -1020,7 +1020,7 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  99i,26n,131p,736b,929s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/esvect/vect10.pfb></usr/share/texmf-dist/fonts/type1/public/esvect/vect8.pfb>
-Output written on notes_physik_321.pdf (6 pages, 143242 bytes).
+Output written on notes_physik_321.pdf (6 pages, 143234 bytes).
 PDF statistics:
  148 PDF objects out of 1000 (max. 8388607)
  110 compressed objects within 2 object streams
