@@ -1,0 +1,150 @@
+%{{{ Formatierung
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{physics_notetaking}
+
+%%% dark red
+%\definecolor{bg}{RGB}{60,47,47}
+%\definecolor{fg}{RGB}{255,244,230}
+%%% space grey
+%\definecolor{bg}{RGB}{46,52,64}
+%\definecolor{fg}{RGB}{216,222,233}
+%%% purple
+%\definecolor{bg}{RGB}{69,0,128}
+%\definecolor{fg}{RGB}{237,237,222}
+%\pagecolor{bg}
+%\color{fg}
+
+\newcommand{\td}{\,\text{d}}
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+
+\newcommand\inlineeqno{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnoa{(\theequation.\text{a})}
+\newcommand\inlineeqnob{(\theequation.\text{b})}
+\newcommand\inlineeqnoc{(\theequation.\text{c})}
+
+\newcommand\inlineeqnowo{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnowoa{\theequation.\text{a}}
+\newcommand\inlineeqnowob{\theequation.\text{b}}
+\newcommand\inlineeqnowoc{\theequation.\text{c}}
+
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+%\renewcommand*\contentsname{Contents}
+
+\pagestyle{fancy}
+
+\sloppy
+
+\numberwithin{equation}{section}
+
+%}}}
+
+\begin{document}
+
+%{{{ Titelseite
+
+\title{Notizen $|$ math341}
+\author{Jonas Wortmann}
+\maketitle
+\pagenumbering{gobble}
+
+%}}}
+
+\newpage
+
+%{{{ Inhaltsverzeichnis
+
+\fancyhead[L]{\thepage}
+\fancyfoot[C]{}
+\pagenumbering{arabic}
+
+\tableofcontents
+
+%}}}
+
+\newpage
+
+%{{{
+
+\fancyhead[R]{\leftmark\\\rightmark}
+
+\section{Komplexe Zahlen}
+Die \textbf{komplexen Zahlen} sind alle Terme der Form $x+y\text{i};x,y \in \mathbb{R}$. $\text{i}$ ist die \textbf{imaginäre Einheit}, mit $\text{i}^2=-1$. Die Menge der komplexen Zahlen ist $\mathbb{C}:=\left\{x+y\text{i}:x,y \in \mathbb{R}\right\}$.\\\indent
+Die komplexen Zahlen können auch als eine Ebene aufgefasst werden, $x+y\text{i}\equiv \begin{pmatrix}
+        x\\y
+\end{pmatrix}$.\\
+Die Gleichheit ist definiert als, $x+y\text{i}=a+b\text{i}\Leftrightarrow x=a\land y=b$.\\
+Folgende Operationen sind definiert 
+\begin{enumerate}[label=--]
+        \item $\left(x+y\text{i}\right)+\left(a+b\text{i}\right):=\left(x+a\right)+\left(y+b\right)\text{i}$ 
+        \item $\left(x+y\text{i}\right)\cdot \left(a+b\text{i}\right):=xa+xb\text{i}+ya\text{i}+yb\text{i}^2=\left(xa-yb\right)+\left(xb+ya\right)\text{i}$ 
+.\end{enumerate}
+Sei $z=x+y\text{i} \in \mathbb{C}$.
+Dann ist die \textbf{komplex konjugierte} Zahl $\overline{z}:=x-y\text{i}$. Praktisch ist dann, $z\cdot \overline{z}=\left(x+y\text{i}\right)\cdot \left(x-y\text{i}\right)=x^2+y^2$.
+Zudem ist die \textbf{Norm} einer komplexen Zahl $| |z| |=\,\sqrt[]{z\cdot \overline{z}}=\,\sqrt[]{x^2+y^2}$.\\\indent
+Der \textbf{Kehrwert} einer komplexen Zahl $z=x+y\text{i}\neq 0+0\text{i}$ ist $\tfrac{1}{z}=\tfrac{\overline{z}}{z\overline{z}}=\tfrac{\overline{z}}{| |z| |^2}=\tfrac{1}{x^2+y^2}\left(x-y\text{i}\right)$.\\
+Folgende Rechenregeln sind gültig
+\begin{enumerate}[label=--]
+        \item Kommutativität: $z_1+z_2=z_2+z_1$ und $z_1\cdot z_2=z_2\cdot z_1$ 
+        \item Assoziativität: $z_1+\left(z_2+z_3\right)=\left(z_1+z_2\right)+z_3$ und $z_1\cdot \left(z_2\cdot z_3\right)=\left(z_1\cdot z_2\right)\cdot z_3$
+        \item Distributivität: $z_1\left(z_2+z_3\right)=z_1\cdot z_2+z_1\cdot z_3$ 
+        \item Kehrwertregel: $\tfrac{1}{z_1\cdot z_2}=\tfrac{1}{z_1}\cdot \tfrac{1}{z_2}$ 
+        \item Konjugation: $\overline{z_1+z_2}=\overline{z_1}+\overline{z_2}$ und $\overline{z_1\cdot z_2}=\overline{z_1}\cdot \overline{z_2}$ 
+\end{enumerate}
+$\left(\mathbb{C},0,1,+,\cdot \right)$ ist ein Körper, der $\mathbb{R}$ enthält.
+
+\subsection{Komplexe Zahlen als Matrizen}
+\begin{align} 
+        \left[\left(x+y\text{i}\right)\left(a+b\text{i}\right)\right]_{\mathbb{R}^{2}}=\begin{pmatrix}
+                xa-yb\\xb+ya
+        \end{pmatrix}=\begin{pmatrix}
+        x&-y\\y&x
+        \end{pmatrix}\begin{pmatrix}
+                a\\b
+        \end{pmatrix}
+.\end{align} 
+Eine komplexe Zahl kann also als Matrix dargestellt werden
+\begin{align} 
+        \left[x+y\text{i}\right]_{\mathbb{R}^{2\times 2}}:=\begin{pmatrix}
+                x&-y\\x&y
+        \end{pmatrix}
+.\end{align} 
+Es gilt dann
+\begin{align} 
+        \left[z_1\cdot z_2\right]_{\mathbb{R}^2}&=\left[z_1\right]_{\mathbb{R}^{2\times 2}}\cdot \left[z_2\right]_{\mathbb{R}^{2}}\\
+        \left[z_1+z_2\right]_{\mathbb{R}^2}&=\left[z_1\right]_{\mathbb{R}^{2\times 2}}+\left[z_2\right]_{\mathbb{R}^{2}}\\
+        \left[\dfrac{1}{z}\right]_{\mathbb{R}^{2\times 2}}&=\left[z\right]_{\mathbb{R}^{2\times 2}}^{-1}
+.\end{align} 
+Also $\mathbb{C}\subseteq \mathbb{R}^{2\times 2}$, $\mathbb{C}\equiv \left\{\begin{pmatrix}
+                x&-y\\y&x
+\end{pmatrix} \in \mathbb{R}^{2\times 2}:x,y \in \mathbb{R}\right\}=\,\text{span}\,\left(\begin{pmatrix}
+                1&0\\0&1
+\end{pmatrix},\begin{pmatrix}
+                0&-1\\1&0
+\end{pmatrix}\right)=\left\{x \begin{pmatrix}
+                1&0\\0&1
+\end{pmatrix}+y \begin{pmatrix}
+                0&-1\\1&0
+\end{pmatrix}:x,y \in \mathbb{R}\right\}$.\\\indent
+Jede Matrix $\begin{pmatrix}
+        x&-y\\y&x
+\end{pmatrix}$ ist das Produkt einer Drehung $\begin{pmatrix}
+        \cos \theta &-\sin \theta \\\sin \theta &\cos \theta  
+\end{pmatrix}$ und einer Streckung $\begin{pmatrix}
+        r&0\\0&r
+\end{pmatrix}$.\\
+Für jede komplexe Zahl $z=x+y\text{i} \in \mathbb{C}\backslash \left\{0\right\}$, gibt es eindeutige $r>0,\theta  \in [0,2\pi):z=r\left(\cos \theta +\sin \theta \text{i}\right)$.\\\indent
+Hier ist $r=\,\sqrt[]{x^2+y^2}=| |z| |$ und $\theta =\arg\left(z\right)=\begin{cases}
+        \arctan \tfrac{y}{x}&;x>0,y\geq 0\\
+        \tfrac{\pi }{2}&;x=0<y\\
+        \pi +\arctan \tfrac{y}{x}&;x<0\\
+        \tfrac{3\pi }{2}&;x=0>y\\
+        2\pi +\arctan \tfrac{y}{x}&;y<0<x
+\end{cases}$ 
+
+%}}}
+
+\end{document}
