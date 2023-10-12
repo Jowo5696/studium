@@ -149,6 +149,77 @@ Die Kraft zwischen diesen Ladungen ist
 .\end{align} 
 Sie ist also direkt proportional zu $q_1$ und $q_2$, $|\vv{F}_{12}|\propto |\vv{r}_1-\vv{r}_2|^{-2}$, sie wirkt entlang von $F_{12}$.
 Diese Kraft gilt nur für \textbf{ruhende} Ladungen.
+\\\hfill\\\textbf{Experimentelle Tatsachen}\\ 
+Die Proportionalitätskonstante ist $k=\tfrac{1}{4\pi \varepsilon _0}$.\\\indent
+Das Superpositionsprinzip erlaubt es die Kraft auf mehrere Ladungen zu berechnen
+\begin{align} 
+        \vv{F}_1=kq_1\sum_{j=2}^{n}q_j\dfrac{\vv{r}_1-\vv{r}_j}{|\vv{r}_1-\vv{r}_j|^3}
+.\end{align} 
+
+\subsubsection{Das elektrische Feld}
+Das elektrische Feld, bzw.\ die Feldlinien, erlauben eine Abstraktion der Kraftwirkung. Für Punktladungen ist das Feld
+\begin{align} 
+        \vv{E}=\dfrac{1}{4\pi \varepsilon _0}\sum_{j=1}^{n}q_j\dfrac{\vv{r}_1-\vv{r}_j}{|\vv{r}_1-\vv{r}_j|^3}
+.\end{align} 
+Für kontinuierliche Ladungsverteilungen gilt
+\begin{align} 
+        \vv{E}\left(\vv{r}\right)=\dfrac{1}{4\pi \varepsilon _0}\int_{}^{}\td ^3r'\rho \left(r'\right)\dfrac{\vv{r}-\vv{r}'}{|\vv{r}-\vv{r}'|^3}
+.\end{align} 
+Der Integrand kann umgeschrieben werden als 
+\begin{align} 
+        \dfrac{\vv{r}-\vv{r}'}{|\vv{r}-\vv{r}'|^3}=-\vv{\nabla }\dfrac{1}{|\vv{r}-\vv{r}'|}
+,\end{align} 
+also ist $\vv{E}$ ein Gradientenfeld des skalaren Potentials
+\begin{align} 
+        \varphi \left(\vv{r}\right)=\dfrac{1}{4\pi \varepsilon _0}\int_{}^{}\dfrac{\rho \left(\vv{r}'\right)}{|\vv{r}-\vv{r}'|}\td ^3r\qquad \vv{E}\left(\vv{r}\right)=-\vv{\nabla }\varphi \left(\vv{r}\right)
+.\end{align} 
+Die Äquipotentialflächen sind konstant, also $\varphi \left(\vv{r}\right)=\,\text{const.}\,$. Die Coulomb--Kraft ist konservativ $\,\text{rot}\,q\vv{E}=0$. Da die Kraft $\vv{F}=-\vv{\nabla }V$ ist das Potential $V\left(\vv{r}\right)=q\varphi \left(\vv{r}\right)$.\\\indent
+Das Linienintegral über $\vv{E}$ ist wegabhängig
+\begin{align} 
+        \varphi \left(\vv{r}\right)-\varphi \left(\vv{r}_0\right)&=-\int_{\vv{r}_0}^{\vv{r}}\vv{E}\left(\vv{r}'\right)\td \vv{r}'=U\left(\vv{r},\vv{r}_0\right)
+.\end{align} 
+Für $n$ Punktladungen gilt 
+\begin{align} 
+        \varphi \left(\vv{r}\right)=\dfrac{1}{4\pi \varepsilon _0}\int_{}^{}\td ^3r'\dfrac{\sum_{j=1}^{n}q_j\delta \left(\vv{r}'-\vv{r}_j\right)}{|\vv{r}-\vv{r}'|}\qquad \rho \left(\vv{r}\right)=\sum_{j=1}^{n}q_j\delta \left(\vv{r}-\vv{r}_j\right)
+.\end{align} 
+
+\subsubsection{Beispiel: Homogen geladene Kugel}
+Der Ursprung wird in das Zentrum der geladenen Kugel mit Radius $R$ gelegt. Eine Probeladung befindet sich im Abstand $\vv{r}$ zum Zentrum. Die Ladungsdichte der Kugel ist
+\begin{align} 
+        \rho \left(\vv{r}'\right)=\begin{cases}
+                \rho _0&\,\text{für}\,|\vv{r}'|=r'\leq R\\
+                0&\,\text{sonst}\,
+        \end{cases}
+.\end{align} 
+Das Potential ist dann
+\begin{align} 
+        \varphi \left(\vv{r}\right)&=\dfrac{\rho _0}{4\pi \varepsilon _0}\int_{\mathcal{K}\left(R\right)}^{}\dfrac{1}{|\vv{r}-\vv{r}'|}\td ^3r'\\
+                                   &=\dfrac{\rho _0}{4\pi \varepsilon _0}\int_{0}^{R}r'^2\td r'\int_{0}^{2\pi }\td \varphi '\int_{0}^{\pi }\sin \theta '\td \theta '\dfrac{1}{\,\sqrt[]{r^2+r'^2-2rr'\cos \theta '}}\nonumber \\
+                                   &=\dfrac{\rho _0}{4\pi \varepsilon _0}2\pi \int_{0}^{R}r'^2\td r'\left.\dfrac{1}{rr'}\,\sqrt[]{r^2+r'^2-2rr'\cos \theta '}\right|_0^\pi \nonumber \\
+                                   &=\dfrac{\rho _0}{4\pi \varepsilon _0}\dfrac{2\pi }{r}\int_{0}^{R}r'\td r'\left[|r+r'|-|r-r'|\right]\nonumber \\
+                                   &=\dfrac{\rho _0}{4\pi \varepsilon _0}\dfrac{2\pi }{r}\int_{0}^{R}\td r'\begin{cases}
+                                           2rr'&,r\leq r'\\
+                                           2r'^2&,r>r'
+                                   \end{cases}
+.\end{align} 
+Für $\vv{r}$ außerhalb von $\mathcal{K}\left(R\right)$, also $r>R$ 
+\begin{align} 
+        \varphi \left(\vv{r}\right)=\dfrac{\rho _0}{4\pi \varepsilon _0}\dfrac{2\pi }{r}\int_{0}^{R}2r'^2\td r'=\dfrac{\rho _0}{4\pi \varepsilon _0}\dfrac{4\pi R^3}{3}\dfrac{1}{r}=\dfrac{Q}{4\pi \varepsilon _0}\dfrac{1}{r}
+.\end{align} 
+Für $\vv{r}$ innerhalb von $\mathcal{K}\left(R\right)$, also $r<R$ 
+\begin{align} 
+        \varphi \left(\vv{r}\right)&=\dfrac{\rho _0}{4\pi \varepsilon _0}\dfrac{2\pi }{r}\left[\int_{0}^{r}2r'^2\td r'+\int_{r}^{R}2rr'\td r'\right]=\dfrac{\rho _0}{4\pi \varepsilon _0}\dfrac{2\pi }{r}\left[\dfrac{2r^3}{3}+r\left(R^2-r^2\right)\right]\\
+                                   &=\dfrac{Q}{4\pi \varepsilon _0}\left(3R^2-r^2\right)\dfrac{1}{2R^3}
+.\end{align} 
+Das elektrische Feld außerhalb ($r>R$) bzw.\ innerhalb ($r<R$) ist
+\begin{align} 
+        \vv{E}\left(\vv{r}\right)&=-\dfrac{Q}{4\pi \varepsilon _0}\vv{\nabla }\dfrac{1}{r}=\dfrac{Q}{4\pi \varepsilon _0}\dfrac{\vv{r}}{r^3}& \vv{E}\left(\vv{r}\right)&=-\dfrac{Q}{4\pi \varepsilon _0}\dfrac{1}{2R^3}\vv{\nabla }\left(3R^2-r^2\right)\\
+                                 &&&=\dfrac{Q}{4\pi \varepsilon _0}\dfrac{r}{R^3}\dfrac{\vv{r}}{|\vv{r}|}\nonumber \\
+                                 &&&=\dfrac{Q\left(r\right)}{4\pi \varepsilon _0}\dfrac{r^3}{R^3}\dfrac{\vv{r}}{r^3}
+.\end{align} 
+
+\subsubsection{Maxwell--Gleichungen der Elektrostatik}
+
 
 \newpage
 \section{Delta--Distribution}
@@ -160,6 +231,34 @@ Diese Kraft gilt nur für \textbf{ruhende} Ladungen.
                 0&,\vv{r}_0 \notin V\\1&,\vv{r}_0 \in V
         \end{cases}
 \end{align} 
+
+\newpage
+\section{Flächenintegrale}
+Sei die Fläche $\mathcal{F}:=\left\{\vv{r}\left(u,v\right)|\left(u,v\right) \in D\right\}$. Der Normalenvektor zur Fläche ist $\td \vv{f}=\td \vv{a}\times \td \vv{b}$, mit
+\begin{align} 
+        \td \vv{a}&=\vv{r}\left(u,v+\td v\right)-\vv{r}\left(u,v\right)\approx \partial_v \vv{r}\left(u,v\right)\td v\\
+        \td \vv{b}&=\vv{r}\left(u+\td u,v\right)-\vv{r}\left(u,v\right)\approx \partial_u \vv{r}\left(u,v\right)\td u\\
+        \td \vv{f}&=\partial_v \vv{r}\left(u,v\right)\times \partial_u\vv{r}\left(u,v\right)\td u\td v
+.\end{align} 
+Die Vektoren $\partial_v \vv{r}$ und $\partial_u \vv{r}$ spannen die Tangentialebene in $\vv{r}\left(u,v\right)$ auf.
+
+\subsection{Beispiel: Kugeloberfläche}
+Sei eine Kugel mit dem Radius $R$, dann sind die Kugelkoordinaten
+\begin{align} 
+        \begin{pmatrix}
+                x\\y\\z
+        \end{pmatrix}\mapsto \begin{pmatrix}
+                R\cos \varphi \sin \theta \\R\sin \theta \sin \varphi \\R\cos \theta 
+        \end{pmatrix}
+.\end{align} 
+\begin{align} 
+        \diffp[]{\vv{r}}{\theta }&=R\vv{e}_\theta &\diffp[]{\vv{r}}{\varphi }&=R\sin \theta \vv{e}_\varphi 
+.\end{align} 
+Das Flächenelement ist dann
+\begin{align} 
+        \td \vv{f}=\diffp[]{\vv{r}}{\theta }\times \diffp[]{\vv{r}}{\varphi }=R^2\sin \theta \vv{e}_r
+\end{align} 
+
 
 
 %}}}

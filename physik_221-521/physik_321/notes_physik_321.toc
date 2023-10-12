@@ -3,4 +3,9 @@
 \contentsline {section}{\numberline {2}Statische Felder}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Eletrostatik}{3}{subsection.2.1}%
 \contentsline {subsubsection}{\numberline {2.1.1}Coulomb'sche Gesetz}{4}{subsubsection.2.1.1}%
-\contentsline {section}{\numberline {3}Delta--Distribution}{5}{section.3}%
+\contentsline {subsubsection}{\numberline {2.1.2}Das elektrische Feld}{4}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Beispiel: Homogen geladene Kugel}{5}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}Maxwell--Gleichungen der Elektrostatik}{6}{subsubsection.2.1.4}%
+\contentsline {section}{\numberline {3}Delta--Distribution}{7}{section.3}%
+\contentsline {section}{\numberline {4}Flächenintegrale}{8}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Beispiel: Kugeloberfläche}{8}{subsection.4.1}%
