@@ -4,3 +4,8 @@
 \contentsline {subsection}{\numberline {1.2}Polarkoordinaten}{3}{subsection.1.2}%
 \contentsline {subsubsection}{\numberline {1.2.1}Potenzen}{3}{subsubsection.1.2.1}%
 \contentsline {subsubsection}{\numberline {1.2.2}Beispiel}{4}{subsubsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.3}Wurzeln}{4}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Beispiel}{4}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Wurzelfunktion}{5}{subsubsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.4}Quadratische Gleichungen}{5}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Fundamentalsatz der Algebra}{5}{subsection.1.5}%

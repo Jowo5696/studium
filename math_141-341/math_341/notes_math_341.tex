@@ -189,6 +189,67 @@ Die Potenz ist dann
                                      &=-2^{50}
 .\end{align} 
 
+\subsection{Wurzeln}
+Löse die Gleichung $z^k=\alpha  \in \mathbb{C},k \in \mathbb{N}$, mit $z=re^{\text{i}\theta }$ und $\alpha =se^{\text{i}\beta }$. Der erste Teil der Lösung ist
+\begin{align} 
+        r^k=s=||\alpha || \Leftrightarrow r=\,\sqrt[k]{||\alpha || }\geq 0
+.\end{align} 
+Es muss also gelten
+\begin{align} 
+        e^{\text{i}k\theta }=e^{\text{i}\beta }\Leftrightarrow k\theta -\beta  \in 2\pi \mathbb{Z}
+.\end{align} 
+Diese Gleichung hat $k$ Lösungen
+\begin{align} 
+        \theta _1=\dfrac{\beta }{k},\theta _2=\dfrac{\beta }{k}+\dfrac{1}{k}2\pi ,\theta _3=\dfrac{\beta }{k}+\dfrac{2}{k}2\pi ,\hdots ,\theta _k=\dfrac{\beta }{k}+\dfrac{k-1}{k}2\pi 
+.\end{align} 
+
+\subsubsection{Beispiel}
+Löse die Gleichung $z^4=r^4e^{\text{i}4\theta }=1$. $1=1e^{\text{i}0}$, also ist $s=1$ und $\beta =0$.
+\begin{align} 
+        r&=\,\sqrt[4]{1}=1&\theta _1&=\dfrac{0}{4}=0\nonumber \\
+         &&\theta _2&=\dfrac{0}{4}+\dfrac{1}{4}2\pi =\dfrac{\pi }{2}\nonumber \\
+         &&\theta _3&=\dfrac{0}{4}+\dfrac{2}{4}2\pi =\pi \nonumber \\
+         &&\theta _4&=\dfrac{0}{4}+\dfrac{3}{4}2\pi =\dfrac{3\pi }{2}\nonumber 
+.\end{align} 
+Also $z=e^{\text{i}0},e^{\text{i}\tfrac{\pi }{2}},e^{\text{i}\pi },e^{\text{i}\tfrac{3\pi }{2}}$.
+
+\subsubsection{Wurzelfunktion}
+Die $k$--te Wurzelfunktion ist definiert als
+\begin{align} 
+        \,\sqrt[k]{z}=\,\sqrt[k]{re^{\text{i}\theta }}=\,\sqrt[k]{r}e^{\text{i}\tfrac{\theta }{k}}
+,\end{align} 
+für $\theta  \in [0,2\pi )$. Dann ist $\,\sqrt[k]{z}$ eine Lösung der Gleichung $\alpha ^k=z$.\\\indent
+Die Wurzelfunktion $\,\sqrt[]{\cdot }:\mathbb{C}\rightarrow \mathbb{C}$ ist nicht stetig, da
+\begin{align} 
+        \,\sqrt[]{1}=\,\sqrt[]{1e^{\text{i}0}}=\,\sqrt[]{1}e^{\text{i}\tfrac{0}{2}}&=1\\
+        \lim_{\varepsilon \rightarrow 0}\,\sqrt[]{e^{\text{i}\left(2\pi -\varepsilon \right)}}=\lim_{\varepsilon \rightarrow 0}e^{\text{i}\pi -\tfrac{\varepsilon }{2}}=e^{\text{i}\pi }&=-1
+.\end{align} 
+
+\subsection{Quadratische Gleichungen}
+Löse die Gleichung $z^2+pz+q=0;p,q \in \mathbb{C}$. Mit quadratischer Ergänzung
+\begin{align} 
+        z^2+pz+q&=z^2+pz+\dfrac{1}{4}p^2+q-\dfrac{1}{4}p^2\\
+                &=\left(z+\dfrac{p}{2}\right)^2+\left(q-\dfrac{1}{4}p^2\right)
+.\end{align} 
+Daraus folgt
+\begin{align} 
+        \left(z+\dfrac{p_2}{2}\right)^2&=\dfrac{1}{4}p^2-q\\
+        z&=-\dfrac{p}{2}\pm \,\sqrt[]{\dfrac{1}{4}p^2-q}\\
+        z&=-\dfrac{p}{2}\pm \,\sqrt[]{\left(\dfrac{p}{2}\right)^2-q}
+.\end{align} 
+Diese Gleichung ist die komplexe Wurzel, sie hat also immer mindestens zwei Lösung.
+
+\subsection{Fundamentalsatz der Algebra}
+Der \textbf{fundamentalsatz der Algebra} besagt, dass jedes $k$--Polynom 
+\begin{align} 
+        P\left(z\right)=\sum_{j=0}^{k}\alpha _jz^j,\alpha _k\neq 0
+\end{align} 
+insgesamt $k$ Nullstellen hat, also
+\begin{align} 
+        \exists z_1,\hdots ,z_k \in \mathbb{C}\Rightarrow P\left(z\right)=\alpha _k\prod_{j=1}^{k}\left(z-z_j\right)
+.\end{align} 
+
+
 %}}}
 
 \end{document}
