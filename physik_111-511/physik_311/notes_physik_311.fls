@@ -921,8 +921,8 @@ INPUT /usr/share/texmf-dist/tex/generic/catchfile/catchfile.sty
 INPUT /usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 INPUT /usr/share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 INPUT /usr/share/texmf-dist/tex/generic/etexcmds/etexcmds.sty
-INPUT ./w18-test-2023109710.tex
-INPUT w18-test-2023109710.tex
+INPUT ./w18-test-20231013716.tex
+INPUT w18-test-20231013716.tex
 INPUT /usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT /usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT /usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
@@ -1478,12 +1478,15 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/esvect/vect6.tfm
 OUTPUT notes_physik_311.toc
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsl12.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT notes_physik_311.aux
 INPUT ./notes_physik_311.out
 INPUT ./notes_physik_311.out
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb

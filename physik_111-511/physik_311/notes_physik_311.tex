@@ -74,7 +74,6 @@
 
 \fancyhead[R]{\leftmark\\\rightmark}
 
-%{{{ Einführung
 \section{Einführung}
 Licht ist eine elektromagnetische Welle. Die Wellenlänge ist im Bereich von $\SI{400}{nm}$ bis $\SI{800}{nm}$, das entspricht einer Frequenz von $\SI{750}{THz}$ bis $\SI{375}{THz}$. Ein Lichtpuls kann nie kürzer als ein Zyklus sein.
 
@@ -86,7 +85,7 @@ Licht ist eine elektromagnetische Welle. Die Wellenlänge ist im Bereich von $\S
 
 \newpage
 \section{Die elektromagnetische Theorie des Lichts}
-Für diesen Fall betrachtet man nur die Lichtausbreitung in großer Entfernung von allen Quellen. Also ist $\rho =0$ und $\vv{j}=0$. Die Maxwell--Gleichungen sind dann
+Für diesen Fall betrachtet man nur die Lichtausbreitung in großer Entfernung von allen Quellen. Also ist $\rho =0$ und $\vv{j}=0$. Die \textsc{Maxwell}--Gleichungen sind dann
 \begin{align}
         \,\text{div}\,\vv{D}&=0\\
         \,\text{div}\,\vv{B}&=0\\
@@ -130,11 +129,69 @@ Jetzt wählt man die Randbedingungen, dass $E_z=0$. Also ist $\vv{E}=\begin{pmat
         \vv{E}\left(z,t\right)&=\vv{E}_0\cos \left(kz-\omega t\right)\\
                               &=\vv{E}_0\cos \left(k\left(z-ct\right)\right)
 ,\end{align} 
-wobei $\tfrac{\omega }{k}=c$, mit $k=\tfrac{2\pi }{\lambda }$ der \textbf{Wellenzahl} ($\lambda $ der Wellenlänge) und $E_0$ der Amplitude. 
+wobei $\tfrac{\omega }{k}=c$, mit $k=\tfrac{2\pi }{\lambda }$ der \textbf{Wellenzahl} ($\lambda $ der Wellenlänge) und $\vv{E}_0$ der Amplitude.\\\indent
+Die Transversalität (also die Ausbreitung nach oben und unten, $\vv{E}\perp \vv{e}_z$, allg.\ $\vv{E}_z\perp \vv{k}$) folgt aus $\,\text{div}\,\vv{E}=0$ im ladungsfreien Raum. In Medien mit Raumladungen oder an Oberflächen ist auch eine longitudinale Polarisation möglich. Bisher gab es nur lineare Polarisationen; es ist aber auch eine Überlagerung von $E_x$ und $E_y$ möglich. Diese sind zirkulare und elliptische Polarisation.\\\indent
+Die Allgemeine Wellengleichung ist
+\begin{align} 
+        \triangle \vv{E}=\left(\dfrac{n}{c}\right)^2\diffp[2]{\vv{E}}{t}
+,\end{align} 
+mit $v_{ph}=\tfrac{c}{n}$. Man erlaubt nun die Ausbreitung in eine beliebige Richtung sowie eine allgemeine Phase $\varphi $. Die Lösung ist dann
+\begin{align} 
+        \vv{E}\left(\vv{r},t\right)=\vv{E}_0\cos \left(\vv{k}\vv{r}-\omega t+\varphi \right)
+.\end{align} 
+Diese Gleichung erfüllt die Wellengleichung, wenn
+\begin{align} 
+        \vv{k}^2=\dfrac{n^2\omega ^2}{c^2}
+.\end{align} 
+Man bezeichnet sie auch als \textbf{Dispersionsrelation}.\\\indent
+Aus den \textsc{Maxwell}--Gleichungen ist bekannt, dass
+\begin{align} 
+        \vv{B}=\dfrac{1}{\omega }\left(\vv{k}\times \vv{E}\right)
+.\end{align} 
+Das zeigt, dass $\vv{B}\perp \vv{E}\land \vv{k}$ und $|\vv{B}|=\tfrac{n}{c}|\vv{E}|$.\\\indent
+Die Ursache der Wechselwirkung zwischen Licht und Materie ist überwiegend der elektrische Anteil der Welle (im sichtbaren Bereich).\\\indent
+$\vv{E}$ und $\vv{B}$ sind nur im Fernfeld in Phase.
 
+\subsection{Energie und Impuls von Licht}
+Zuerst wird die Energiedichte des elektromagnetischen Feldes im Vakuum eingeführt
+\begin{align} 
+        W_{\,\text{el}\,}&=\dfrac{1}{2}\varepsilon _0E^2+\dfrac{1}{2}\dfrac{1}{\mu _0}B^2\qquad |\vv{B}|=\dfrac{1}{c}|\vv{E}|\qquad c=\dfrac{1}{\,\sqrt[]{\varepsilon _0\mu _0}}
+.\end{align} 
+Diese Gleichung wird zeitlich gemittelt, mit $E\left(t\right)=E_0\cos \left(\vv{k}\vv{r}-\omega t\right)$ und $\left\langle \cos ^2\right\rangle =\tfrac{1}{2}$
+\begin{align} 
+        \left\langle W_{\,\text{el}\,}\right\rangle =\dfrac{1}{2}\varepsilon _0E_0^2
+.\end{align} 
+Die mittlere Energiedichte, die pro Zeit durch ein Flächenelement transportiert wird ist
+\begin{align} 
+        I=c \left\langle W_{\,\text{el}\,}\right\rangle \qquad \left[I\right]=\dfrac{\SI{}{W}}{\SI{}{m^2}}
+.\end{align} 
+Die Richtung des Energietransports wird durch den \textsc{Poynting}--Vektor angegeben
+\begin{align} 
+        \vv{S}=\dfrac{1}{\mu _0}\vv{E}\times \vv{B}\qquad |\vv{S}|=\dfrac{1}{\mu _0}|\vv{E}||\vv{B}|=\varepsilon _0cE_0^2
+.\end{align} 
+Man erkennt, dass
+\begin{align} 
+        \left\langle |\vv{S}|\right\rangle =I
+\end{align} 
 
+\subsubsection{Strahlungsdruck}
+Strahlungsdruck ist der Druck, der durch emittierte, absorbierte und reflektierte elektromagnetische Strahlung auf eine Fläche ausgeübt wird. Der Impuls von Teilchen mit der Geschwindigkeit $c$ ist
+\begin{align} 
+        p=\dfrac{E}{c}=\dfrac{A\cdot t\cdot c\cdot  \left\langle W_{\,\text{el}\,}\right\rangle }{c}
+.\end{align} 
+Der Druck ist $\rho =\tfrac{|\vv{F}|}{A}$ mit $|\vv{F}|=\diff[]{p}{t}$,
+\begin{align} 
+        \rho =\dfrac{I}{c}
+.\end{align} 
 
-%}}}
+\subsection{Elektromagnetische Wellen an Grenzflächen}
+Ein Lichtstrahl $\vv{k}_i$ trifft aus einem Medium $n_1$ in ein Medium $n_2>n_1$ und wird mit $\alpha $ zu $\vv{k}_r$ reflektiert. Das Licht wird auch um den Winkel $\beta $ gebrochen und verläuft mit $\vv{k}_t$ durch das Medium. Die $\vv{E}$ felder sind dann
+\begin{align} 
+        \vv{E}_i&=\vv{E}_{0i}e^{\text{i}\left(\omega _it-\vv{k}_i\vv{r}\right)}\\
+        \vv{E}_r&=\vv{E}_{0r}e^{\text{i}\left(\omega _rt-\vv{k}_r\vv{r}\right)}\\
+        \vv{E}_t&=\vv{E}_{0r}e^{\text{i}\left(\omega _tt-\vv{k}_t\vv{r}\right)}
+.\end{align} 
+
 
 %}}}
 

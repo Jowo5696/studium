@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.9.3)  9 OCT 2023 11:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.9.3)  13 OCT 2023 11:56
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -563,9 +563,9 @@ Package: verbatim 2022-07-02 v1.5u LaTeX2e package for verbatim enhancements
 Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
 )
 \verbatim@out=\write4
-runsystem(touch w18-test-2023109710.tex)...executed.
+runsystem(touch w18-test-20231013716.tex)...executed.
 
-runsystem(rm -f w18-test-2023109710.tex)...executed.
+runsystem(rm -f w18-test-20231013716.tex)...executed.
 
 runsystem(rm -f "notes_physik_311.gnuploterrors")...executed.
 
@@ -971,7 +971,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-17.84767pt}.
 
 [2]
-Underfull \hbox (badness 8151) in paragraph at lines 109--111
+Underfull \hbox (badness 8151) in paragraph at lines 108--110
 \OT1/cmr/m/n/12 Dies ist die \OT1/cmr/bx/n/12 Wellengleichung \OT1/cmr/m/n/12 f^^?ur das elektrische Feld. Man erwartet eine
  []
 
@@ -990,23 +990,43 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.05003pt}.
 
-[4] (./notes_physik_311.aux)
+[4]
+Underfull \hbox (badness 5578) in paragraph at lines 178--179
+\OT1/cmr/m/n/12 Strahlungsdruck ist der Druck, der durch emittierte, absorbierte und reflektierte
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 27.05003pt, for example:
+(fancyhdr)                \setlength{\headheight}{27.05003pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-15.05003pt}.
+
+[5]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 27.05003pt, for example:
+(fancyhdr)                \setlength{\headheight}{27.05003pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-15.05003pt}.
+
+[6] (./notes_physik_311.aux)
 Package rerunfilecheck Info: File `notes_physik_311.out' has not changed.
-(rerunfilecheck)             Checksum: 9A20B6469923EEA18A94F5B29C8905F5;861.
+(rerunfilecheck)             Checksum: 3C824893761E4A36EB7999BB4D3BD3D4;1486.
  ) 
 Here is how much of TeX's memory you used:
- 42224 strings out of 477985
- 973941 string characters out of 5840059
+ 42252 strings out of 477985
+ 974332 string characters out of 5840059
  1884388 words of memory out of 5000000
- 61720 multiletter control sequences out of 15000+600000
- 524399 words of font info for 86 fonts, out of 8000000 for 9000
+ 61728 multiletter control sequences out of 15000+600000
+ 524700 words of font info for 87 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,28n,131p,736b,921s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/esvect/vect10.pfb></usr/share/texmf-dist/fonts/type1/public/esvect/vect8.pfb>
-Output written on notes_physik_311.pdf (5 pages, 128121 bytes).
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/esvect/vect10.pfb></usr/share/texmf-dist/fonts/type1/public/esvect/vect8.pfb>
+Output written on notes_physik_311.pdf (7 pages, 162583 bytes).
 PDF statistics:
- 135 PDF objects out of 1000 (max. 8388607)
- 102 compressed objects within 2 object streams
- 26 named destinations out of 1000 (max. 500000)
- 45 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 189 PDF objects out of 1000 (max. 8388607)
+ 150 compressed objects within 2 object streams
+ 45 named destinations out of 1000 (max. 500000)
+ 69 words of extra memory for PDF output out of 10000 (max. 10000000)
 
