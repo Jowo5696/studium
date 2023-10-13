@@ -1,3 +1,6 @@
 \babel@toc {nil}{}\relax 
 \contentsline {section}{\numberline {1}Komplexe Zahlen}{2}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Komplexe Zahlen als Matrizen}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Polarkoordinaten}{3}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Potenzen}{3}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Beispiel}{4}{subsubsection.1.2.2}%

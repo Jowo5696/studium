@@ -145,6 +145,50 @@ Hier ist $r=\,\sqrt[]{x^2+y^2}=| |z| |$ und $\theta =\arg\left(z\right)=\begin{c
         2\pi +\arctan \tfrac{y}{x}&;y<0<x
 \end{cases}$ 
 
+\subsection{Polarkoordinaten}
+Die komplexen Zahlen können in \textbf{Polarkoordinaten} dargestellt werden
+\begin{align} 
+        \mathbb{C}\ni z=re^{\text{i}\theta }\qquad e^{\text{i}\theta }=\cos \theta +\sin \theta \text{i}
+,\end{align} 
+mit $r>0$ und $\theta  \in [0,2\pi )$. Die Eindeutigkeit von $r$ lässt sich zeigen durch
+\begin{align} 
+        ||z||=\,\sqrt[]{x^2+y^2}=||re^{\text{i}\theta }||=||r||\underbrace{||e^{\text{i}\theta }||}_{=1}=r
+.\end{align} 
+Die Eindeutigkeit von $\theta $ lässt sich zeigen durch
+\begin{align} 
+        e^{\text{i}\theta _1}=e^{\text{i}\theta _2}\Leftrightarrow \theta _2-\theta _1 \in 2\pi \mathbb{Z}
+.\end{align} 
+Die Multiplikation ist definiert durch
+\begin{align} 
+        z_1\cdot z_2=r_1r_2e^{\text{i}\left(\theta _1+\theta _2\right)}
+;\end{align} 
+und der Kehrwert
+\begin{align} 
+        \dfrac{1}{e^{\text{i}\theta }}=e^{\text{i}\left(-\theta \right)}
+.\end{align} 
+
+\subsubsection{Potenzen}
+Wird eine komplexe Zahl potenziert, gilt
+\begin{align} 
+        k \in \mathbb{Z}:z^k=r^ke^{\left(\text{i}\theta \right)^k}=r^ke^{\text{i}\left(k\theta \right)}
+.\end{align} 
+
+\subsubsection{Beispiel}
+\begin{align} 
+        \left(1+\text{i}\right)^{100}
+.\end{align} 
+In Polarkoordinaten ist $1+\text{i}$, 
+\begin{align} 
+        r=\,\sqrt[]{1^2+1^2}=\,\sqrt[]{2}\qquad \theta =\arg\left(1+\text{i}\right)=\arctan\left(\dfrac{1}{1}\right)=\dfrac{\pi }{4}\qquad 1+\text{i}=\,\sqrt[]{2}e^{\text{i}\tfrac{\pi }{4}}
+.\end{align} 
+Die Potenz ist dann
+\begin{align} 
+        \left(1+\text{i}\right)^{100}&=\,\sqrt[]{2}^{100}e^{\text{i}\left(100\tfrac{\pi }{4}\right)}\nonumber \\
+                                     &=2^{50}e^{\text{i}25\pi }\nonumber \\
+                                     &=2^{50}e^{\text{i}\pi }\nonumber \\ 
+                                     &=-2^{50}
+.\end{align} 
+
 %}}}
 
 \end{document}
