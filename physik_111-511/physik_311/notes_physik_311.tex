@@ -184,13 +184,100 @@ Der Druck ist $\rho =\tfrac{|\vv{F}|}{A}$ mit $|\vv{F}|=\diff[]{p}{t}$,
         \rho =\dfrac{I}{c}
 .\end{align} 
 
+%\newpage
 \subsection{Elektromagnetische Wellen an Grenzflächen}
-Ein Lichtstrahl $\vv{k}_i$ trifft aus einem Medium $n_1$ in ein Medium $n_2>n_1$ und wird mit $\alpha $ zu $\vv{k}_r$ reflektiert. Das Licht wird auch um den Winkel $\beta $ gebrochen und verläuft mit $\vv{k}_t$ durch das Medium. Die $\vv{E}$ felder sind dann
+%\begin{wrapfigure}{L}{0.25\textwidth}
+%        \centering
+%        \includegraphics[width=0.25\textwidth]{Brechung.png}
+%        \caption{asdf}
+%\end{wrapfigure}
+Lichtstrahl $\vv{k}_i$ trifft aus einem Medium $n_1$ in ein Medium $n_2>n_1$ und wird mit $\alpha $ zu $\vv{k}_r$ reflektiert. Das Licht wird auch um den Winkel $\beta $ gebrochen und verläuft mit $\vv{k}_t$ durch das Medium. Die $\vv{E}$--Felder sind dann
 \begin{align} 
         \vv{E}_i&=\vv{E}_{0i}e^{\text{i}\left(\omega _it-\vv{k}_i\vv{r}\right)}\\
         \vv{E}_r&=\vv{E}_{0r}e^{\text{i}\left(\omega _rt-\vv{k}_r\vv{r}\right)}\\
         \vv{E}_t&=\vv{E}_{0r}e^{\text{i}\left(\omega _tt-\vv{k}_t\vv{r}\right)}
 .\end{align} 
+Das \textsc{Fermat}'sche Prinizp besagt, dass eine Welle immer den Weg der minimalsten optische Laufzeit wählt. Es ist also möglich, dass sie in einem Medium mehr Zeit verbringt, bevor sie in das andere Medium wechselt.
+
+\subsubsection{Stetigkeit}
+Die Tangentialkomponente von $\vv{E}$ und $\vv{H}=\tfrac{1}{\mu \mu _0}\vv{B}$ sind an Grenzflächen stetig. Die Normalkomponente von $\vv{D}=\varepsilon \varepsilon _0\vv{E}$ und $\vv{B}$ sind an Grenzflächen stetig.\\\indent
+Zunächst werden die $\vv{E}$--Felder betrachtet, wenn $\vv{r}=0$ ist.
+\begin{align} 
+        \vv{n}\times \left(\vv{E}_{0i}e^{\text{i}\omega _it}+\vv{E}_{0r}e^{\text{i}\omega _rt}\right)\stackrel{!}{=}\vv{n}\times \vv{E}_{0t}e^{\text{i}\omega _tt}
+.\end{align} 
+Diese Gleichung muss für beliebige Zeiten $t$ gelten. Es existiert nur eine nichttriviale Lösung wenn $\omega _r=\omega _i=\omega _t\equiv \omega $.
+\\\hfill\\\textbf{Einschub}\\ 
+An allgemeinen Grenzflächen bleibt die Frequenz gleich, also $\omega _{\,\text{vac}\,}=\omega _{\,\text{medium}\,}$,
+\begin{align} 
+        E=E_0\cos \left(kz-\omega t\right)=E_0\cos \left[k\left(z-\dfrac{\omega }{k}t\right)\right]
+,\end{align} 
+mit $\tfrac{\omega }{k}=\tfrac{c}{n}=v_{\,\text{ph}\,}$, also 
+\begin{align} 
+k_{\,\text{vac}\,}=\tfrac{k_{\,\text{medium}\,}}{n}\Leftrightarrow \dfrac{2\pi }{\lambda _{\,\text{vac}\,}}=\dfrac{2\pi }{\lambda _{\,\text{medium}\,}}\dfrac{1}{n}\Leftrightarrow \lambda _{\,\text{Medium}\,}=\dfrac{1}{n}\lambda _{\,\text{vac}\,}
+.\end{align} 
+Daraus folgt, dass $\omega =k\tfrac{c}{n}$.\\\indent
+Jetzt ist $\vv{r}$ ein beliebiger Punkt auf der Grenzfläche, also
+\begin{align} 
+        \left.e^{\text{i}\omega t}\vv{n}\times \left(\vv{E}_{0,i}e^{-\text{i}\vv{k}_i\vv{r}}+\vv{E}_{r,0}e^{-\text{i}\vv{k}_r\vv{r}}-\vv{E}_{t,0}e^{-\text{i}\vv{k}_t\vv{r}}\right)\right|_{y=0}=0
+.\end{align} 
+Es muss für beliebiges $\vv{r}$ auf der Grenzfläche gelten
+\begin{align} 
+        \vv{kk´}_i\vv{r}=\vv{k}_r\vv{r}=\vv{k}_t\vv{r}\,\forall \vv{r}=\begin{pmatrix}
+                x\\0\\z
+        \end{pmatrix}
+.\end{align} 
+Für das einfallende Lichtfeld setzt man
+\begin{align} 
+        \vv{k}_i=\begin{pmatrix}
+                k_{i,x}\\k_{i,r}\\0
+        \end{pmatrix}
+.\end{align} 
+Daraus folgt
+\begin{align} 
+        \begin{pmatrix}
+                k_{i,x}\\k_{i,r}\\0
+        \end{pmatrix}\cdot \begin{pmatrix}
+                x\\0\\z
+        \end{pmatrix}=\begin{pmatrix}
+                k_{r,x}\\k_{r,y}\\k_{r,z}
+        \end{pmatrix}\begin{pmatrix}
+                x\\0\\z
+        \end{pmatrix}=\begin{pmatrix}
+                k_{z,x}\\k_{t,y}\\k_{t,z}
+        \end{pmatrix}\begin{pmatrix}
+                x\\0\\z
+        \end{pmatrix}
+.\end{align} 
+Das heißt, auch die reflektierten und transmutierten Strahlen bleiben in der Zeichenebene. Das gilt auch für
+\begin{align} 
+        k_{r,x}&=k_{i,x}&k_r\sin \alpha '&=k_i\sin \alpha \\
+        k_{t,x}&=k_{i,x}&k_t\sin \beta &=k_i\sin \alpha 
+.\end{align} 
+Da $\omega $ immer gleich ist, ist $\tfrac{k}{n}$ konstant. Mit $k_i=k_r$ folgt $\alpha '=\alpha $. Aus den Gleichungen folgt auch, dass 
+\begin{align} 
+        k_t&=\dfrac{n_2}{n_1}k_i&n_1\sin \alpha &=n_2\sin \beta 
+.\end{align} 
+Diese Gleichung ist das \textsc{Snellius}'sche Brechungsgesetz. Für $n_2>n_1$ wird der Strahl zum Lot hin gebrochen.
+
+\subsubsection{Die Amplitude von reflektiertem und gebrochenen Strahl}
+Hier wird nur der Spezialfall des senkrecht Einfallenden Strahls betrachtet. Es gilt
+\begin{align} 
+        \vv{E}_{0,i}+\vv{E}_{0,r}&=\vv{E}_{0,t}\\
+        n_1\left(\vv{E}_{0,i}-\vv{E}_{0,r}\right)&=n_1\vv{E}_{0,t}\\
+        \vv{B}_{0,i}+\vv{B}_{0,r}&=\vv{B}_{0,t}
+.\end{align} 
+Der Zusammenhang zwischen den Feldern ist
+\begin{align} 
+        \vv{B}&=\dfrac{1}{\omega }\left(\vv{k}\times \vv{E}\right)&\vv{k}_r&=-\vv{k}_i
+.\end{align} 
+Aus diesen Gleichungen folgt
+\begin{align} 
+        E_{0,r}&=\dfrac{n_1-n_2}{n_1+n_2}\vv{E}_{0,i}&r&=\dfrac{n_1-n_2}{n_1+n_2}
+,\end{align} 
+mit $r$ dem Reflexionskoeffizienten. Für $n_2>n_1$, id est eine Relexion am optisch dichteren Medium, ist $r<0$, daraus folgt ein Phasensprung von $\pi $. Das $\vv{E}$--Feld dreht sich also um. Die reflektierte Intensität ist
+\begin{align} 
+        R&=\dfrac{I_r}{I_i}=|r|^2=\left(\dfrac{n_1-n_2}{n_1+n_2}\right)^2
+\end{align} 
 
 
 %}}}
