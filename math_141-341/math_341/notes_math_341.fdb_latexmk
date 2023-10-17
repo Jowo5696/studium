@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1697183098 "notes_math_341.tex" "notes_math_341.pdf" "notes_math_341" 1697183099 0
-  "/home/jonas/texmf/tex/latex/physics_notetaking/physics_notetaking.sty" 1696841980 936 878fe80e355b632daf268b9dc15e7eea ""
+["pdflatex"] 1697467026 "notes_math_341.tex" "notes_math_341.pdf" "notes_math_341" 1697467027 0
+  "/home/jonas/texmf/tex/latex/physics_notetaking/physics_notetaking.sty" 1697448192 957 6e831c959bf13e3f6703e9ebe8ac39d9 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1689853683 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1689853683 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -257,15 +257,16 @@
   "/usr/share/texmf-dist/tex/latex/tools/xspace.sty" 1689853683 4545 4c279ac9292a1be8afa9ab2f1d3299c2 ""
   "/usr/share/texmf-dist/tex/latex/translations/translations.sty" 1689853683 44247 2188b95d0ee74e31eca4d316263c58a7 ""
   "/usr/share/texmf-dist/tex/latex/url/url.sty" 1689853683 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
+  "/usr/share/texmf-dist/tex/latex/wrapfig/wrapfig.sty" 1689853683 26220 3701aebf80ccdef248c0c20dd062fea9 ""
   "/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty" 1689853683 56148 51a9a8571c07b9921892ae11063ae853 ""
   "/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty" 1689853683 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693766392 4480252 045e2e847a54793644911375b39d1f66 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693766381 6768062 2d5b3d1cbd6ca2e171c277cb332d2576 ""
-  "notes_math_341.aux" 1697183099 1885 df893292154ceff44ea5a30544e637d8 "pdflatex"
-  "notes_math_341.out" 1697183099 1393 23924eb318a6a15239b00f4464f3a393 "pdflatex"
-  "notes_math_341.tex" 1697183097 10533 1780e89cc0a480922e94aeae6f0a7cbf ""
-  "notes_math_341.toc" 1697183099 871 9f6c8b9f981708ed4df72136bd3f9781 "pdflatex"
+  "notes_math_341.aux" 1697467027 1885 df893292154ceff44ea5a30544e637d8 "pdflatex"
+  "notes_math_341.out" 1697467027 1393 23924eb318a6a15239b00f4464f3a393 "pdflatex"
+  "notes_math_341.tex" 1697184230 10533 1780e89cc0a480922e94aeae6f0a7cbf ""
+  "notes_math_341.toc" 1697467027 871 9f6c8b9f981708ed4df72136bd3f9781 "pdflatex"
   (generated)
   "notes_math_341.aux"
   "notes_math_341.log"

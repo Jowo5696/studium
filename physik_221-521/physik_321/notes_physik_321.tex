@@ -4,6 +4,7 @@
 %{{{ Formatierung
 
 \documentclass[a4paper,12pt]{article}
+%twocolumn
 
 \usepackage{physics_notetaking}
 
@@ -218,7 +219,82 @@ Das elektrische Feld außerhalb ($r>R$) bzw.\ innerhalb ($r<R$) ist
                                  &&&=\dfrac{Q\left(r\right)}{4\pi \varepsilon _0}\dfrac{r^3}{R^3}\dfrac{\vv{r}}{r^3}
 .\end{align} 
 
-\subsubsection{Maxwell--Gleichungen der Elektrostatik}
+\subsection{Mittlere Quelldichte und Satz von \textsc{Gauss}}
+Sei ein Volumen mit den Kanten $\Delta x,\Delta y$ und $\Delta z$. Der Mittelpunkt ist $\vv{r}_0\left(\vv{x}_0,\vv{y}_0,\vv{z}_0\right)$. Die Flächennormalen sind $\Delta \vv{f}_1,\hdots ,\Delta \vv{f}_6$ ($\vv{f}_1$ zeigt entlang der $\Delta x$--Achse)
+\begin{align} 
+        \Delta \vv{f}_1&=\Delta y\Delta x\vv{e}_x=-\Delta \vv{f}_2\\
+        \Delta \vv{f}_3&=\Delta x\Delta z\vv{e}_y=-\Delta \vv{f}_4\\
+        \Delta \vv{f}_5&=\Delta x\Delta y\vv{e}_z=-\Delta \vv{f}_6
+.\end{align} 
+Das elektrische Feld, welches den Quader durchsetzt ist
+\begin{align} 
+        \oint_{}^{}\vv{E}\left(\vv{r}\right)\td \vv{f}&=\iint_{}^{}\td y\td z\left[E_x\left(x_0+\dfrac{\Delta x}{2},y,z\right)-E_x\left(x_0-\dfrac{\Delta x}{2},y,z\right)\right]\\
+                                                      &+\iint_{}^{}\td x\td z\left[E_y\left(x,y_0+\dfrac{\Delta y}{2},z\right)-E_y\left(x,y_0-\dfrac{\Delta y}{2},z\right)\right]\\
+                                                      &+\iint_{}^{}\td x\td y\left[E_z\left(x,y,z_0+\dfrac{\Delta z}{2}\right)-E_z\left(x,y,z_0-\dfrac{\Delta z}{2}\right)\right]
+.\end{align} 
+Mit Hilfe einer Taylorentwicklung (da $\Delta x,\Delta y$ und $\Delta z$ klein sind),
+\begin{align} 
+        &=\int_{}^{}\td y\td z\left(\diffp[]{E_x}{x}\left(x_0,y,z\right)\Delta x+\mathcal{O}\left(\Delta x^3\right)\right)\\
+        &+\int_{}^{}\td x\td z\left(\diffp[]{E_y}{y}\left(x,y_0,z\right)\Delta y+\mathcal{O}\left(\Delta y^3\right)\right)\\
+        &+\int_{}^{}\td x\td y\left(\diffp[]{E_z}{z}\left(x,y,z_0\right)\Delta z+\mathcal{O}\left(\Delta z^3\right)\right)
+.\end{align} 
+Der Mittelwertsatz der Integralrechnung besagt
+\begin{align} 
+        \dfrac{1}{\Delta V}\oint_{S\left(V\right)}^{}\vv{E}\td \vv{f}&=\partial x E_x\left(x_0,y_1,z_1\right)+\mathcal{O}\left(\Delta x^2\right)\\
+                                                                     &+\partial y E_y\left(x_2,y_0,z_2\right)+\mathcal{O}\left(\Delta y^2\right)\\
+                                                                     &+\partial z E_z\left(x_3,y_3,z_0\right)+\mathcal{O}\left(\Delta z^2\right)
+.\end{align} 
+Der Limes von $\Delta V\rightarrow 0$ gibt dann
+\begin{align} 
+        \lim_{\Delta V\rightarrow 0}\dfrac{1}{\Delta V}\oint_{S\left(V\right)}^{}\vv{E}\td \vv{f}=\,\text{div}\,\vv{E}\left(\vv{r}_0\right)
+.\end{align} 
+Beliebige Volumina können mit Quadern ausgeschöpft werden. Flächenintegrale über gemeinsame Grenzflächen heben sich auf. Am Ende bleibt nur die äußere Grenzfläche übrig. Damit ist der Satz von \textsc{Gauss}
+\begin{align} 
+        \oint_{S\left(V\right)}^{}\vv{E}\left(\vv{r}\right)\td \vv{f}=\int_{V}^{}\,\text{div}\,\vv{E}\left(\vv{r}\right)\td V
+.\end{align} 
+Wendet man diesen Satz auf die Elektrostatik an, folgt
+\begin{align} 
+        \oint_{S\left(V\right)}^{}\vv{E}\left(\vv{r}\right)\td \vv{f}&=\dfrac{1}{4\pi \varepsilon _0}\int_{}^{}\rho \left(\vv{r}'\right)\td ^3r'\int_{S\left(V\right)}^{}\td \vv{f}\dfrac{\vv{r}-\vv{r}'}{|\vv{r}-\vv{r}'|^3}\\
+                                                                     &=\dfrac{1}{4\pi \varepsilon _0}\int_{}^{}\rho \left(\vv{r}'\right)\td ^3r'\int_{S\left(V\right)}^{}\td \vv{f}\left(-\,\text{grad}\,\dfrac{1}{|\vv{r}-\vv{r}'|}\right)\\
+                                                                     &=-\dfrac{1}{4\pi \varepsilon _0}\int_{}^{}\rho \left(\vv{r}'\right)\td ^3r'\int_{V}^{}\td ^3r\,\text{div}\,\,\text{grad}\,\dfrac{1}{|\vv{r}-\vv{r}'|}
+.\end{align}
+Es gilt $\Delta \tfrac{1}{|\vv{r}-\vv{r}'|}=-4\pi \delta \left(\vv{r}-\vv{r}'\right)$. Damit kann geschrieben werden
+\begin{align} 
+        &=\dfrac{1}{\varepsilon _0}\int_{}^{}\rho \left(\vv{r}'\right)\td ^3r'\int_{V}^{}\delta \left(\vv{r}-\vv{r}'\right)\td V\\
+        &=\dfrac{1}{\varepsilon _0}\int_{}^{}\rho \left(\vv{r}\right)\td ^3r=\dfrac{1}{\varepsilon _0}Q\left(V\right)\\
+        &=\int_{V}^{}\,\text{div}\,\vv{E}\left(\vv{r}\right)\td ^3r
+.\end{align} 
+Aus diesem Ausdruck lässt sich für beliebige Volumina $V$ sagen
+\begin{align} 
+        \int_{V}^{}\left(\,\text{div}\,\vv{E}\left(\vv{r}\right)-\dfrac{\rho \left(\vv{r}\right)}{\varepsilon _0}\right)\td ^3r&=0
+.\end{align}
+Daraus folgen die \textsc{Maxwell}'schen Gleichungen
+\begin{align} 
+        \,\text{div}\,\vv{E}\left(\vv{r}\right)&=\dfrac{\rho \left(\vv{r}\right)}{\varepsilon _0}\\
+        \oint_{S\left(V\right)}^{}\vv{E}\left(\vv{r}\right)\td \vv{f}&=\dfrac{Q\left(V\right)}{\varepsilon _0}
+.\end{align} 
+Da $\vv{E}=-\,\text{grad}\,\varphi $ ein Gradientenfeld ist, gilt
+\begin{align} 
+        \,\text{rot}\,\,\text{grad}\,\varphi =0\Rightarrow \,\text{rot}\,\vv{E}=0
+.\end{align} 
+
+\subsubsection{Integraldarstellung}
+Für die Integraldarstellung der \textsc{Maxwell}'schen Gleichungen wird die Zirkulation eines Vektorfeldes $\vv{a}\left(\vv{r}\right)$ entlang einer geschlossenen Kurve $C$ verwendet
+\begin{align} 
+        Z&=\oint_{C}^{}\vv{a}\left(\vv{r}\right)\td \vv{r}
+.\end{align} 
+Sei ein geschlossener Weg in der $xy$--Ebene mit Mittelpunkt $\vv{r}_0$. Die Fläche ist $F=\Delta x\Delta y$ und die Normale $\vv{n}=\vv{e}_z$ 
+\begin{align} 
+        Z&=\int_{x_0-\tfrac{\Delta x}{2}}^{x_0+\tfrac{\Delta x}{2}}\left[a_x\left(x,y_0-\dfrac{\Delta y}{2},z_0\right)-a_x\left(x,y_0+\dfrac{\Delta y}{2},z_0\right)\right]\td x\\
+         &+\int_{y_0-\tfrac{\Delta y}{2}}^{y_0+\tfrac{\Delta y}{2}}\left[a_y\left(x_0-\dfrac{\Delta x}{2},y,z_0\right)-a_y\left(y+\dfrac{\Delta y}{2},y,z_0\right)\right]\td y\\
+         &=\int_{x_0-\tfrac{\Delta x}{2}}^{x_0+\tfrac{\Delta x}{2}}\left[-\partial _ya_x\left(x,y_0,z_0\right)\Delta y+\mathcal{O}\left(\Delta y^3\right)\right]\td \\
+         &=\int_{y_0-\tfrac{\Delta y}{2}}^{y_0+\tfrac{\Delta y}{2}}\left[-\partial _xa_y\left(x_0,y,z_0\right)\Delta x+\mathcal{O}\left(\Delta x^3\right)\right]\td 
+.\end{align} 
+Betrachtet man dann die Fläche
+\begin{align} 
+        \lim_{\Delta x,\Delta y\rightarrow 0}\dfrac{Z}{F}&=\left(\partial _xa_y\left(\vv{r}_0\right)-\partial _ya_x\left(\vv{r}_0\right)\right)\\
+                                                         &=\left(\,\text{rot}\,\vv{a}\left(\vv{r}_0\right)\right)_z
+\end{align} 
 
 
 \newpage
@@ -248,7 +324,13 @@ Sei die Fläche $\mathcal{F}:=\left\{\vv{r}\left(u,v\right)|\left(u,v\right) \in
         \td \vv{b}&=\vv{r}\left(u+\td u,v\right)-\vv{r}\left(u,v\right)\approx \partial_u \vv{r}\left(u,v\right)\td u\\
         \td \vv{f}&=\partial_v \vv{r}\left(u,v\right)\times \partial_u\vv{r}\left(u,v\right)\td u\td v
 .\end{align} 
-Die Vektoren $\partial_v \vv{r}$ und $\partial_u \vv{r}$ spannen die Tangentialebene in $\vv{r}\left(u,v\right)$ auf.
+Die Vektoren $\partial_v \vv{r}$ und $\partial_u \vv{r}$ spannen die Tangentialebene in $\vv{r}\left(u,v\right)$ auf.\\\indent
+Der Fluss eines Vektorfeldes $\vv{a}\left(\vv{r}\right)$ durch eine Fläche $S$, bzw.\ eine geschlossene Fläche $S\left(V\right)$ mit $\td \vv{f}$ als Flächennormale ist gegeben durch
+\begin{align} 
+        \varphi _S\left(\vv{a}\right)&=\int_{S}^{}\vv{a}\left(\vv{r}\right)\td \vv{f}=\int_{S}^{}\vv{a}\left(\vv{r}\right)\cdot \vv{n}\left(\vv{r}\right)\td f\\
+        \varphi _{S\left(v\right)}\left(\vv{a}\right)&=\oint_{S\left(V\right)}^{}\vv{a}\left(\vv{r}\right)\td \vv{f}=\oint_{S\left(V\right)}^{}\vv{a}\left(\vv{r}\right)\cdot \vv{n}\left(\vv{r}\right)\td f
+.\end{align} 
+
 
 \subsection{Beispiel: Kugeloberfläche}
 Sei eine Kugel mit dem Radius $R$, dann sind die Kugelkoordinaten
@@ -266,8 +348,6 @@ Das Flächenelement ist dann
 \begin{align} 
         \td \vv{f}=\diffp[]{\vv{r}}{\theta }\times \diffp[]{\vv{r}}{\varphi }=R^2\sin \theta \vv{e}_r
 \end{align} 
-
-
 
 %}}}
 
