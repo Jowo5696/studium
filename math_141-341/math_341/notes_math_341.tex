@@ -249,6 +249,50 @@ insgesamt $k$ Nullstellen hat, also
         \exists z_1,\hdots ,z_k \in \mathbb{C}\Rightarrow P\left(z\right)=\alpha _k\prod_{j=1}^{k}\left(z-z_j\right)
 .\end{align} 
 
+\newpage
+\section{Komplexe Funktionen}
+Eine Folge $\left(z_k\right)_{k \in \mathbb{N}}\subseteq \mathbb{C}$ konvergiert gegen einen Grenzwert, wenn
+\begin{align} 
+        \,\forall \varepsilon >0\exists N \in \mathbb{N}\,\forall n\geq N:|z_k-z|\leq \varepsilon 
+.\end{align} 
+Sei $f:U\rightarrow \mathbb{C},U\subseteq \mathbb{C}$. Für ein $z \in U$
+\begin{align} 
+        \lim_{h\rightarrow z}f\left(h\right)=\alpha  \in \mathbb{C}\,\text{existiert}\,
+,\end{align} 
+falls $\,\forall $ Folgen $\left(h_k\right)_{k \in \mathbb{N}} \subseteq U$ mit $h_k\neq z,\lim_{k\rightarrow \infty}h=z$, gilt, dass $\lim_{k\rightarrow \infty}f\left(h_k\right)=\alpha $.
+
+\subsection{Stetigkeit}
+Sei $f:U\rightarrow \mathbb{C},U\subseteq \mathbb{C}$. $f$ heißt stetig in $z \in \mathbb{C}$, falls
+\begin{align} 
+        \lim_{h\rightarrow z}f\left(h\right)=f\left(z\right)
+.\end{align} 
+
+\subsection{Differenzierbarkeit}
+Sei $U\subseteq \mathbb{C}$ offen und $f:U\rightarrow \mathbb{C}$. $f$ heißt \textbf{komplex differenzierbar} in $z \in U$, falls
+\begin{align} 
+        \lim_{h\rightarrow 0}\dfrac{f\left(z+h\right)-f\left(z\right)}{h}=:f'\left(z\right)\,\text{existiert}\,
+.\end{align} 
+Sei $f\left(z\right)=\alpha _jz^j$ ein Polynom von Grad $k \in \mathbb{N}$, mit $\alpha _0,\hdots ,\alpha _k \in \mathbb{C},\alpha _k\neq 0$. Dann ist
+\begin{align} 
+        f'\left(z\right)=j\alpha _jz^{j-1}
+.\end{align} 
+$F:\mathbb{R}^n\rightarrow \mathbb{R}^m$ ist total differenzierbar in $\vv{x} \in \mathbb{R}^n$ mit $DF \in \,\text{Lin}\,\left(\mathbb{R}^n,\mathbb{R}^m\right)=\mathbb{R}^{m\times n}$, falls
+\begin{align} 
+        \lim_{\vv{h}\rightarrow \vv{0} \in \mathbb{R}^n}\dfrac{f\left(\vv{x}+\vv{h}\right)-f\left(\vv{x}\right)-DF_{\left(x\right)}\vv{h}}{||\vv{h}|| }=\vv{0} \in \mathbb{R}^m \,\text{existiert}\,
+.\end{align} 
+Sei $U\subseteq \mathbb{C}$ offen und $f:U\rightarrow \mathbb{C}$. Dann gilt, dass $f'\left(z\right)$ in $z=x+\text{i}y$ existiert, genau dann wenn
+\begin{align} 
+        DF \begin{pmatrix}
+                x\\y
+        \end{pmatrix}\,\text{existiert und}\,DF \begin{pmatrix}
+                x\\y
+        \end{pmatrix}=\left[f'\left(z\right)\right]_{\mathbb{R}^{2\times 2}}
+.\end{align} 
+Falls $f'\left(z\right)=a+\text{i}b$, dann ist $DF \begin{pmatrix}
+        x\\y
+\end{pmatrix}=\begin{pmatrix}
+a&-b\\b&a
+\end{pmatrix}$.
 
 %}}}
 

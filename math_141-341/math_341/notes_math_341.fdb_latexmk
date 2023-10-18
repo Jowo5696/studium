@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1697467026 "notes_math_341.tex" "notes_math_341.pdf" "notes_math_341" 1697467027 0
-  "/home/jonas/texmf/tex/latex/physics_notetaking/physics_notetaking.sty" 1697448192 957 6e831c959bf13e3f6703e9ebe8ac39d9 ""
+["pdflatex"] 1697620821 "notes_math_341.tex" "notes_math_341.pdf" "notes_math_341" 1697620822 0
+  "/home/jonas/texmf/tex/latex/physics_notetaking/physics_notetaking.sty" 1697492753 957 6e831c959bf13e3f6703e9ebe8ac39d9 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1689853683 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1689853683 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -42,6 +42,8 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1689853683 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1689853683 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1689853683 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
+  "/usr/share/texmf-dist/fonts/type1/public/esvect/vect10.pfb" 1689853683 18279 772052a8794705f886186d0ebf2af187 ""
+  "/usr/share/texmf-dist/fonts/type1/public/esvect/vect8.pfb" 1689853683 18418 2a1839073a25c33d340e30afb3b289e8 ""
   "/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1689853683 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1689853683 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/usr/share/texmf-dist/tex/generic/babel/babel.sty" 1689853683 151363 1f5971af3ef874d432e8fb43e0edb71d ""
@@ -263,10 +265,10 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693766392 4480252 045e2e847a54793644911375b39d1f66 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693766381 6768062 2d5b3d1cbd6ca2e171c277cb332d2576 ""
-  "notes_math_341.aux" 1697467027 1885 df893292154ceff44ea5a30544e637d8 "pdflatex"
-  "notes_math_341.out" 1697467027 1393 23924eb318a6a15239b00f4464f3a393 "pdflatex"
-  "notes_math_341.tex" 1697184230 10533 1780e89cc0a480922e94aeae6f0a7cbf ""
-  "notes_math_341.toc" 1697467027 871 9f6c8b9f981708ed4df72136bd3f9781 "pdflatex"
+  "notes_math_341.aux" 1697620822 2244 0782ad9ff5b80307f8a9731550261a71 "pdflatex"
+  "notes_math_341.out" 1697620822 1796 c82a86b277f956bf897114c42c4906df "pdflatex"
+  "notes_math_341.tex" 1697620820 12876 cd964fa001de8a46593e416a2a603d90 ""
+  "notes_math_341.toc" 1697620822 1107 1a7b2f78e1a88ff166070ab79e059486 "pdflatex"
   (generated)
   "notes_math_341.aux"
   "notes_math_341.log"

@@ -99,12 +99,12 @@ In Materialien gilt dann
 .\end{align} 
 Hier ist $\varepsilon $ die Dielektrizitätskonstante und $\mu $ die relative Permeabilität (in der Optik ist sie üblicherweise 1). \\\indent
 \begin{align} 
-        \,\text{rot}\,\left(\,\text{rot}\,\vv{E}\right)&=\underbrace{\,\text{div}\,\left(\,\text{div}\,\vv{E}\right)}_{=0}-\left(\vv{\nabla }\cdot \vv{\nabla }\right)\vv{E}&&|\left(\vv{\nabla }\cdot \vv{\nabla }\right)=\,\text{div}\,\,\text{grad}\,=\triangle\\
+        \,\text{rot}\,\left(\,\text{rot}\,\vv{E}\right)&=\underbrace{\,\text{div}\,\left(\,\text{div}\,\vv{E}\right)}_{=0}-\,\text{div}\,\,\text{grad}\,\vv{E}\\
                                                        &=\,\text{rot}\,\left(-\diffp[]{\vv{B}}{t}\right)
 .\end{align} 
 Mit $\,\text{rot}\,\vv{B}=\varepsilon\mu \varepsilon _0 \mu _0\diffp[]{\vv{E}}{t}$ folgt
 \begin{align} 
-        \triangle \vv{E}&=\varepsilon \mu \varepsilon _0\mu _0\diffp[2]{\vv{E}}{t}
+        \,\text{div}\,\,\text{grad}\,\vv{E}&=\varepsilon \mu \varepsilon _0\mu _0\diffp[2]{\vv{E}}{t}
 .\end{align} 
 Dies ist die \textbf{Wellengleichung} für das elektrische Feld. Man erwartet eine Ausbreitungsgeschwindigkeit mit
 \begin{align} 
@@ -112,7 +112,7 @@ Dies ist die \textbf{Wellengleichung} für das elektrische Feld. Man erwartet ei
 ,\end{align} 
 wobei $c=\,\sqrt[]{\varepsilon _0\mu _0}^{-1}$ die Vakuumslichtgeschwindigkeit und $n=\,\sqrt[]{\varepsilon \mu }$ der Brechungsindex ist. Dann lässt sich die Wellengleichung wie folgt schreiben
 \begin{align} 
-        \triangle \vv{E}&=\dfrac{1}{v_{\,\text{ph}\,}^2}\diffp[2]{\vv{E}}{t}\stackrel{\,\text{Vakuum}\,}{=}\dfrac{1}{c^2}\diffp[2]{\vv{E}}{t}
+        \,\text{div}\,\,\text{grad}\,\vv{E}&=\dfrac{1}{v_{\,\text{ph}\,}^2}\diffp[2]{\vv{E}}{t}\stackrel{\,\text{Vakuum}\,}{=}\dfrac{1}{c^2}\diffp[2]{\vv{E}}{t}
 .\end{align} 
 Eine analoge Rechnung kann auch für das $\vv{B}$--Feld verwendet werden.\\\indent
 
@@ -133,7 +133,7 @@ wobei $\tfrac{\omega }{k}=c$, mit $k=\tfrac{2\pi }{\lambda }$ der \textbf{Wellen
 Die Transversalität (also die Ausbreitung nach oben und unten, $\vv{E}\perp \vv{e}_z$, allg.\ $\vv{E}_z\perp \vv{k}$) folgt aus $\,\text{div}\,\vv{E}=0$ im ladungsfreien Raum. In Medien mit Raumladungen oder an Oberflächen ist auch eine longitudinale Polarisation möglich. Bisher gab es nur lineare Polarisationen; es ist aber auch eine Überlagerung von $E_x$ und $E_y$ möglich. Diese sind zirkulare und elliptische Polarisation.\\\indent
 Die Allgemeine Wellengleichung ist
 \begin{align} 
-        \triangle \vv{E}=\left(\dfrac{n}{c}\right)^2\diffp[2]{\vv{E}}{t}
+        \,\text{div}\,\,\text{grad}\,\vv{E}=\left(\dfrac{n}{c}\right)^2\diffp[2]{\vv{E}}{t}
 ,\end{align} 
 mit $v_{ph}=\tfrac{c}{n}$. Man erlaubt nun die Ausbreitung in eine beliebige Richtung sowie eine allgemeine Phase $\varphi $. Die Lösung ist dann
 \begin{align} 
@@ -191,13 +191,13 @@ Der Druck ist $\rho =\tfrac{|\vv{F}|}{A}$ mit $|\vv{F}|=\diff[]{p}{t}$,
 %        \includegraphics[width=0.25\textwidth]{Brechung.png}
 %        \caption{asdf}
 %\end{wrapfigure}
-Lichtstrahl $\vv{k}_i$ trifft aus einem Medium $n_1$ in ein Medium $n_2>n_1$ und wird mit $\alpha $ zu $\vv{k}_r$ reflektiert. Das Licht wird auch um den Winkel $\beta $ gebrochen und verläuft mit $\vv{k}_t$ durch das Medium. Die $\vv{E}$--Felder sind dann
+Lichtstrahl $\vv{k}_i$ trifft aus einem Medium $n_1$ in ein Medium $n_2>n_1$ und wird mit $\alpha $ zu $\vv{k}_r$ reflektiert. Das Licht wird auch um den Winkel $\beta $ (relativ zum Lot) gebrochen und verläuft mit $\vv{k}_t$ durch das Medium. Die $\vv{E}$--Felder sind dann
 \begin{align} 
         \vv{E}_i&=\vv{E}_{0i}e^{\text{i}\left(\omega _it-\vv{k}_i\vv{r}\right)}\\
         \vv{E}_r&=\vv{E}_{0r}e^{\text{i}\left(\omega _rt-\vv{k}_r\vv{r}\right)}\\
         \vv{E}_t&=\vv{E}_{0r}e^{\text{i}\left(\omega _tt-\vv{k}_t\vv{r}\right)}
 .\end{align} 
-Das \textsc{Fermat}'sche Prinizp besagt, dass eine Welle immer den Weg der minimalsten optische Laufzeit wählt. Es ist also möglich, dass sie in einem Medium mehr Zeit verbringt, bevor sie in das andere Medium wechselt.
+Das \textsc{Fermat}'sche Prinizp besagt, dass eine Welle immer den Weg der minimalsten optischen Laufzeit wählt. Es ist also möglich, dass sie in einem Medium mehr Zeit verbringt, bevor sie in das andere Medium wechselt.
 
 \subsubsection{Stetigkeit}
 Die Tangentialkomponente von $\vv{E}$ und $\vv{H}=\tfrac{1}{\mu \mu _0}\vv{B}$ sind an Grenzflächen stetig. Die Normalkomponente von $\vv{D}=\varepsilon \varepsilon _0\vv{E}$ und $\vv{B}$ sind an Grenzflächen stetig.\\\indent
@@ -222,7 +222,7 @@ Jetzt ist $\vv{r}$ ein beliebiger Punkt auf der Grenzfläche, also
 .\end{align} 
 Es muss für beliebiges $\vv{r}$ auf der Grenzfläche gelten
 \begin{align} 
-        \vv{kk´}_i\vv{r}=\vv{k}_r\vv{r}=\vv{k}_t\vv{r}\,\forall \vv{r}=\begin{pmatrix}
+        \vv{k}_i\vv{r}=\vv{k}_r\vv{r}=\vv{k}_t\vv{r}\qquad \,\forall \vv{r}=\begin{pmatrix}
                 x\\0\\z
         \end{pmatrix}
 .\end{align} 

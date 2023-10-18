@@ -90,24 +90,20 @@ d_Spannung_Kondensator = np.array([173, 126, 95, 74, 59, 49, 25, 17, 12, 9,  7, 
 d_Spannung_Widerstand_inf = 187
 d_Spannung_Kondensator_inf = 0
 
-#d_x = np.zeros((15,3))
-#d_y = np.zeros((15,3))
-
 for i in range(0,15):
     d_x = np.array([0,d_Spannung_Widerstand[i]*np.cos(np.arctan(d_Spannung_Kondensator[i]/d_Spannung_Widerstand[i])),187*1e-3])
     d_y = np.array([0,d_Spannung_Widerstand[i]*np.sin(np.arctan(d_Spannung_Kondensator[i]/d_Spannung_Widerstand[i])),0])
-    plt.plot(d_x,d_y)
-    #print(np.cos(np.arctan(d_Spannung_Widerstand[i]/d_Spannung_Kondensator[i])))
-    #print(np.sin(np.arctan(d_Spannung_Widerstand[i]/d_Spannung_Kondensator[i])))
+    d_delt_Spannung = np.array([0,1e-3,0])
+#    plt.errorbar(d_x,d_y,d_delt_Spannung)
 
 angle = np.linspace(0,2*np.pi,150)
 radius = 0.187/2
 x = 0.187/2+radius*np.cos(angle)
 y = radius*np.sin(angle)
-plt.plot(x,y)
+#plt.plot(x,y)
 
-plt.axis([0,0.187,0,0.187])
-#plt.savefig('234_e.png')
+#plt.axis([0,0.187,0,0.187])
+#plt.savefig('234_d.png')
 #plt.show()
 
 # e
@@ -117,6 +113,8 @@ e_Frequenz = np.array([200, 300, 400, 600, 800, 1200, 1700, 2400, 3500, 5000])
 e_Ua_Tiefpass = np.array([3.363, 3.223, 3.054, 2.686, 2.340, 1.793, 1.347, 0.972, 0.652, 0.426])
 e_Ua_Hochpass = np.array([0.161, 0.886, 1.119, 1.474, 1.710, 1.964, 2.087, 2.125, 2.080, 1.942])
 e_Ua_Sperrfilter = np.array([3.325, 3.072, 2.629, 1.000, 0.942, 2.574, 3.031, 3.166, 3.117, 2.911])
+
+delt_e_Ua = np.zeros(len(e_Ua_Tiefpass))+1e-3
 
 e_R = 100
 e_C = 1.5*1e-6
@@ -132,21 +130,29 @@ Omega_Hoch_Tief = e_Frequenz/nu_g_Hoch_Tief
 Omega_Sperrfilter = e_Frequenz/nu_g_Sperrfilter
 
 A_Tiefpass = e_Ua_Tiefpass/e_Ue
-A_Hochpass = e_Ua_Hochpass/e_Ue
-A_Sperrfilter = e_Ua_Sperrfilter/e_Ue
+delt_A_Tiefpass = delt_e_Ua/e_Ue
 
-#plt.plot(Omega_Hoch_Tief,A_Tiefpass)
-#plt.plot(Omega_Hoch_Tief,A_Hochpass)
-#plt.plot(Omega_Sperrfilter,A_Sperrfilter)
+A_Hochpass = e_Ua_Hochpass/e_Ue
+delt_A_Hochpass = delt_e_Ua/e_Ue
+
+A_Sperrfilter = e_Ua_Sperrfilter/e_Ue
+delt_A_Sperrfilter = delt_e_Ua/e_Ue
+
+#plt.errorbar(Omega_Hoch_Tief,A_Tiefpass,delt_A_Tiefpass,ls="",marker="d")
+#plt.errorbar(Omega_Hoch_Tief,A_Hochpass,delt_A_Hochpass,ls="",marker="d")
+#plt.errorbar(Omega_Sperrfilter,A_Sperrfilter,delt_A_Sperrfilter,ls="",marker="d")
+#plt.savefig('234_e.png')
+#plt.show()
 
 # i
 i_Widerstand = 5.9
 i_C=1.5e-6 
 i_Frequenz = np.array([200, 400, 600, 650, 660, 670, 680, 690, 700, 710, 720, 730, 740, 750, 800, 1000, 1200, 1400, 1600, 1800, 2000])
 i_U = np.array([0.206, 0.283, 0.718, 1.311, 1.553, 1.871, 2.255, 2.585, 2.616, 2.304, 1.895, 1.547, 1.281, 1.081, 0.580, 0.177, 0.093, 0.059, 0.040, 0.028, 0.020])
+delt_i_U = np.zeros(len(i_U))+1e-3
 
-#plt.plot(i_Frequenz,i_U)
-#plt.savefig('234_i.png')
+plt.errorbar(i_Frequenz,i_U,delt_i_U,ls="",marker="d")
+plt.savefig('234_i.png')
 #plt.show()
 
 # Rechnung
