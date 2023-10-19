@@ -138,6 +138,8 @@ delt_A_Hochpass = delt_e_Ua/e_Ue
 A_Sperrfilter = e_Ua_Sperrfilter/e_Ue
 delt_A_Sperrfilter = delt_e_Ua/e_Ue
 
+#plt.xlabel('Omega=nu/nu_g')
+#plt.ylabel('A=U_A/U_E')
 #plt.errorbar(Omega_Hoch_Tief,A_Tiefpass,delt_A_Tiefpass,ls="",marker=".")
 #plt.errorbar(Omega_Hoch_Tief,A_Hochpass,delt_A_Hochpass,ls="",marker=".")
 #plt.errorbar(Omega_Sperrfilter,A_Sperrfilter,delt_A_Sperrfilter,ls="",marker=".")
@@ -151,9 +153,11 @@ i_Frequenz = np.array([200, 400, 600, 650, 660, 670, 680, 690, 700, 710, 720, 73
 i_U = np.array([0.206, 0.283, 0.718, 1.311, 1.553, 1.871, 2.255, 2.585, 2.616, 2.304, 1.895, 1.547, 1.281, 1.081, 0.580, 0.177, 0.093, 0.059, 0.040, 0.028, 0.020])
 delt_i_U = np.zeros(len(i_U))+1e-3
 
-#plt.errorbar(i_Frequenz,i_U,delt_i_U,ls="",marker=".")
-#plt.savefig('234_i.png')
-#plt.show()
+fig, ax = plt.subplots()
+ax.set_xlabel=('Frequenz')
+ax.set_ylabel=('U')
+ax.errorbar(i_Frequenz,i_U,yerr=delt_i_U,ls="",marker=".")
+plt.savefig('234_a.png')
 
 # Rechnung
 #   Messwerte: aufgabeGröße = Rechnung #Einheit
