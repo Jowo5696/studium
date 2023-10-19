@@ -102,7 +102,7 @@ x = 0.187/2+radius*np.cos(angle)
 y = radius*np.sin(angle)
 #plt.plot(x,y)
 
-#plt.axis([0,0.187,0,0.187])
+#plt.axis([0,0.187,0,0.187/np.sqrt(2)])
 #plt.savefig('234_d.png')
 #plt.show()
 
@@ -152,8 +152,8 @@ i_U = np.array([0.206, 0.283, 0.718, 1.311, 1.553, 1.871, 2.255, 2.585, 2.616, 2
 delt_i_U = np.zeros(len(i_U))+1e-3
 
 plt.errorbar(i_Frequenz,i_U,delt_i_U,ls="",marker="d")
-plt.savefig('234_i.png')
-#plt.show()
+#plt.savefig('234_i.png')
+plt.show()
 
 # Rechnung
 #   Messwerte: aufgabeGröße = Rechnung #Einheit
