@@ -174,6 +174,11 @@ also ist $\vv{E}$ ein Gradientenfeld des skalaren Potentials
 \begin{align} 
         \varphi \left(\vv{r}\right)=\dfrac{1}{4\pi \varepsilon _0}\int_{}^{}\dfrac{\rho \left(\vv{r}'\right)}{|\vv{r}-\vv{r}'|}\td ^3r\qquad \vv{E}\left(\vv{r}\right)=-\vv{\nabla }\varphi \left(\vv{r}\right)
 .\end{align} 
+Die \textsc{Poisson}--Gleichung ist
+\begin{align} 
+        \,\text{div}\,\vv{E}=-\,\text{div}\,\,\text{grad}\,\varphi =\dfrac{\rho }{\varepsilon _0}
+.\end{align} 
+Die Lösung dieser Gleichung ist das Grundproblem der Elektrostatik.\\\indent
 Die Äquipotentialflächen sind konstant, also $\varphi \left(\vv{r}\right)=\,\text{const.}\,$. Die Coulomb--Kraft ist konservativ $\,\text{rot}\,q\vv{E}=0$. Da die Kraft $\vv{F}=-\vv{\nabla }V$ ist das Potential $V\left(\vv{r}\right)=q\varphi \left(\vv{r}\right)$.\\\indent
 Das Linienintegral über $\vv{E}$ ist wegabhängig
 \begin{align} 
@@ -219,7 +224,7 @@ Das elektrische Feld außerhalb ($r>R$) bzw.\ innerhalb ($r<R$) ist
                                  &&&=\dfrac{Q\left(r\right)}{4\pi \varepsilon _0}\dfrac{r^3}{R^3}\dfrac{\vv{r}}{r^3}
 .\end{align} 
 
-\subsection{Mittlere Quelldichte und Satz von \textsc{Gauss}}
+\subsection{Mittlere Quelldichte -- Satz von \textsc{Gauss}}
 Sei ein Volumen mit den Kanten $\Delta x,\Delta y$ und $\Delta z$. Der Mittelpunkt ist $\vv{r}_0\left(\vv{x}_0,\vv{y}_0,\vv{z}_0\right)$. Die Flächennormalen sind $\Delta \vv{f}_1,\hdots ,\Delta \vv{f}_6$ ($\vv{f}_1$ zeigt entlang der $\Delta x$--Achse)
 \begin{align} 
         \Delta \vv{f}_1&=\Delta y\Delta x\vv{e}_x=-\Delta \vv{f}_2\\
@@ -270,20 +275,49 @@ Aus diesem Ausdruck lässt sich für beliebige Volumina $V$ sagen
 .\end{align}
 Daraus folgen die \textsc{Maxwell}'schen Gleichungen
 \begin{align} 
-        \,\text{div}\,\vv{E}\left(\vv{r}\right)&=\dfrac{\rho \left(\vv{r}\right)}{\varepsilon _0}\\
-        \oint_{S\left(V\right)}^{}\vv{E}\left(\vv{r}\right)\td \vv{f}&=\dfrac{Q\left(V\right)}{\varepsilon _0}
+        \,\text{div}\,\vv{E}\left(\vv{r}\right)&=\dfrac{\rho \left(\vv{r}\right)}{\varepsilon _0}&\oint_{S\left(V\right)}^{}\vv{E}\left(\vv{r}\right)\td \vv{f}&=\dfrac{Q\left(V\right)}{\varepsilon _0}
 .\end{align} 
 Da $\vv{E}=-\,\text{grad}\,\varphi $ ein Gradientenfeld ist, gilt
 \begin{align} 
         \,\text{rot}\,\,\text{grad}\,\varphi =0\Rightarrow \,\text{rot}\,\vv{E}=0
 .\end{align} 
 
-\subsubsection{Integraldarstellung}
+\subsubsection{Beispiel: Bestimmung von $E$ mit \textsc{Gauss}'schem Satz}
+Sei eine homogen geladene Kugel mit Radius $R$ und einem elektrischem Feld von
+\begin{align} 
+        \vv{E}\left(\vv{r}\right)&=E_r\left(r,\varphi ,\theta \right)\vv{e}_r+E_\varphi \left(r,\varphi ,\theta \right)\vv{e}_\varphi E_\theta \left(r,\varphi ,\theta \right)\vv{e}_\theta 
+.\end{align} 
+Der Satz von \textsc{Gauss} ist
+\begin{align} 
+        \oint_{V}^{}\vv{E}\left(\vv{r}\right)\td \vv{f}&=\dfrac{q\left(V\right)}{\varepsilon _0}
+\end{align} 
+Die Kugel ist rotationssymmetrisch um die $x-,y-$ und $z$--Achse, also unabhängig von $\theta $ und $\varphi $. Das Feld ist also nur noch von Radius $r$ abhängig.\\\indent
+Wird an der $x-y$--Ebene gespiegelt, wird $\theta $ zu $\pi -\theta $, also $E_z=E_r\left(r\right)\cos \theta -E_\theta \left(r\right)\sin \theta $. Zudem gilt $\cos \left(\pi -\theta \right)=-\cos \left(\theta \right)$ und $\sin \left(\pi -\theta \right)=\sin \left(\theta \right)$. Aus diesre Spiegelung folgt, dass $E_z\rightarrow -E_z$ und $E_\theta =0$. Aus den Spiegelungen an der $x-z$-- und $y-z$--Ebene kann man analog sagen, dass $E_\varphi =0$.\\\indent
+Für das gesamte Feld folgt dann
+\begin{align} 
+        \vv{E}\left(\vv{r}\right)=E_r\left(r\right)\vv{e}_r
+.\end{align} 
+Jetzt kann der Satz von \textsc{Gauss} angewendet werden
+\begin{align} 
+        \int_{S\left(V_r\right)}^{}\vv{E}\left(\vv{r}\right)\td \vv{f}=E_r4\pi r^2=\dfrac{q\left(V_r\right)}{\varepsilon _0}=\begin{cases}
+                \dfrac{Q}{\varepsilon _0}&,r>R\\
+                \dfrac{Q}{\varepsilon _0}\dfrac{r^3}{R^3}&,r<R
+        \end{cases}
+.\end{align} 
+Das Feld ist also
+\begin{align} 
+        \vv{E}\left(\vv{r}\right)&=\dfrac{Q}{4\pi \varepsilon _0}\left\{\begin{matrix}
+                        \dfrac{1}{r^2}&,r>R\\
+                        \dfrac{r}{R^3}&,r<R
+        \end{matrix}\right\}\vv{e}_r
+.\end{align} 
+
+\subsection{Integraldarstellung -- Satz von \textsc{Stokes}}
 Für die Integraldarstellung der \textsc{Maxwell}'schen Gleichungen wird die Zirkulation eines Vektorfeldes $\vv{a}\left(\vv{r}\right)$ entlang einer geschlossenen Kurve $C$ verwendet
 \begin{align} 
         Z&=\oint_{C}^{}\vv{a}\left(\vv{r}\right)\td \vv{r}
 .\end{align} 
-Sei ein geschlossener Weg in der $xy$--Ebene mit Mittelpunkt $\vv{r}_0$. Die Fläche ist $F=\Delta x\Delta y$ und die Normale $\vv{n}=\vv{e}_z$ 
+Sei ein geschlossener Weg in der $xy$--Ebene mit Mittelpunkt $\vv{r}_0$. Die Fläche ist $\Delta F=\Delta x\Delta y$ und die Normale $\vv{n}=\vv{e}_z$ 
 \begin{align} 
         Z&=\int_{x_0-\tfrac{\Delta x}{2}}^{x_0+\tfrac{\Delta x}{2}}\left[a_x\left(x,y_0-\dfrac{\Delta y}{2},z_0\right)-a_x\left(x,y_0+\dfrac{\Delta y}{2},z_0\right)\right]\td x\\
          &+\int_{y_0-\tfrac{\Delta y}{2}}^{y_0+\tfrac{\Delta y}{2}}\left[a_y\left(x_0-\dfrac{\Delta x}{2},y,z_0\right)-a_y\left(y+\dfrac{\Delta y}{2},y,z_0\right)\right]\td y\\
@@ -292,11 +326,71 @@ Sei ein geschlossener Weg in der $xy$--Ebene mit Mittelpunkt $\vv{r}_0$. Die Fl�
 .\end{align} 
 Betrachtet man dann die Fläche
 \begin{align} 
-        \lim_{\Delta x,\Delta y\rightarrow 0}\dfrac{Z}{F}&=\left(\partial _xa_y\left(\vv{r}_0\right)-\partial _ya_x\left(\vv{r}_0\right)\right)\\
+        \lim_{\Delta x,\Delta y\rightarrow 0}\dfrac{Z}{\Delta F}&=\left(\partial _xa_y\left(\vv{r}_0\right)-\partial _ya_x\left(\vv{r}_0\right)\right)\\
                                                          &=\left(\,\text{rot}\,\vv{a}\left(\vv{r}_0\right)\right)_z
-\end{align} 
+.\end{align} 
+Daraus folgt der \textbf{Satz von} \textsc{Stokes}
+\begin{align} 
+        \oint_{\partial F}^{}\vv{a}\left(\vv{r}\right)\td \vv{r}=\int_{F}^{}\,\text{rot}\,\left(\vv{a}\left(\vv{r}\right)\right)\td \vv{f}
+.\end{align} 
+Mit diesem Satz sind die \textsc{Maxwell}'schen Gleichungen dann
+\begin{align} 
+        \,\text{rot}\,\vv{E}&=0&\oint_{C}^{}\vv{E}\left(\vv{r}\right)\td \vv{r}=0
+.\end{align} 
 
+\subsection{Punktladungen}
+Die Ladungsdichte einer Punktladung kann mit Hilfe der Delta--Distribution dargestellt werden (kartesische oder Kugelkoordinaten)
+\begin{align} 
+        \rho \left(\vv{r}\right)=q\delta \left(\vv{r}-\vv{r}_0\right)\qquad \rho \left(\vv{r}\right)=q\dfrac{1}{r_0^2\sin \left(\theta _0\right)}\delta \left(r-r_0\right)\delta \left(\varphi -\varphi _0\right)\delta \left(\theta -\theta _0\right)
+.\end{align} 
+Das Potential lässt sich schreiben als
+\begin{align} 
+        \varphi \left(\vv{r}\right)&=\int_{\mathbb{R}^3}^{}\dfrac{1}{4\pi \varepsilon _0}\dfrac{q}{|\vv{r}-\vv{r}'|}\delta \left(\vv{r}_0-\vv{r}'\right)\td ^3r'\\
+                                   &=\dfrac{q}{4\pi \varepsilon _0}\dfrac{1}{|\vv{r}-\vv{r}_0|}
+.\end{align} 
 
+\subsubsection{Beispiel: Kugeloberfläche}
+Sei eine Kugeloberfläche mit Ladungsdichte $\rho \left(\vv{r}\right)=\sigma$. Die Gesamtladung in Kugelkoordinaten im Abstand $R$ vom Zentrum ist
+\begin{align} 
+        Q=\int_{\mathbb{R}^3}^{}\delta \left(r-R\right)\sigma r^2\sin \theta \td \theta \td \varphi \td r=2\pi 2\sigma R^2=4\pi R^2\sigma 
+.\end{align} 
+Die Ladung einer Punktladung in Kugelkoordinaten ist
+\begin{align} 
+        \int_{\mathbb{R}^3}^{}q\dfrac{1}{r_0^2\sin \theta _0}\delta \left(r-r_0\right)\delta \left(\varphi -\varphi _0\right)\delta \left(\theta -\theta _0\right)r^2\sin \theta \td \theta \td \varphi \td r&=q\dfrac{1}{r_0^2\sin \theta _0}r_0^2\sin \theta _0\\
+                                                                                    &=q
+.\end{align} 
+
+\subsection{Feldverhalten an Grenzflächen}
+\subsubsection{\textsc{Gauss}'sche Fläche}
+Man betrachtet ein \textsc{Gauss}'sches Kästchen mit der Höhe von $\Delta x$ auf einer Grenzfläche mit Normale $\vv{n}$ eines elektrischen Feldes. Die Normalen $\td \vv{f}$ des Kästchens sind orthogonal zu der Grenzfläche. Es existiert ein Feld außerhalb der Fläche $\vv{E}_a$ und innerhalb der Fläche $\vv{E}_i$. Auf der Grenzfläche befindet sich die Flächenladungsdichte $\sigma $. Hier wird der Satz von \textsc{Gauss} verwendet
+\begin{align} 
+        \int_{\Delta V}^{}\,\text{div}\,\vv{E}\left(\vv{r}\right)\td ^3r&=\int_{S\left(\Delta V\right)}^{}\vv{E}\td \vv{f}\rightarrow \lim_{\Delta x\rightarrow 0}\Delta F\vv{n}\left(\vv{E}_a-\vv{E}_i\right)
+.\end{align} 
+Wird $\Delta x$ gegen 0, dann bleibt nur noch die Fläche $\Delta F\vv{n}\left(\vv{E}_a-\vv{E}_i\right)$ übrig.
+\begin{align} 
+        \int_{\Delta V}^{}\,\text{div}\,\vv{E}\left(\vv{r}\right)\td ^3r=\dfrac{1}{\varepsilon _0}\int_{\Delta V}^{}\rho \left(\vv{r}\right)\td ^3r=\dfrac{\sigma }{\varepsilon _0}\Delta F
+.\end{align} 
+Insgesamt ist also
+\begin{align} 
+        E_a^n-E_i^n=\dfrac{\sigma }{\varepsilon _0}
+.\end{align} 
+Die Normalkomponente an der Grenzfläche ist unstetig, macht also einen Sprung, wenn $\sigma \neq 0$.
+
+\subsubsection{\textsc{Stokes}'sche Fläche}
+Man betrachtet jetzt eine \textsc{Stokes}'sche Fläche auf der selben Grenzfläche. Die Höhe der Fläche ist $\Delta x$. Die Breite der Fläche ist $\Delta l_i$ und $\Delta l_a$. Die Normale $\Delta \vv{F}=\vv{t}\Delta F$ der Fläche liegt in der Grenzfläche. Es gilt $\Delta \vv{l}_a=\Delta l\left(\vv{t}\times \vv{n}\right)=-\Delta \vv{l}_i$. Der \textsc{Stokes}'sche Satz besagt
+\begin{align} 
+        0=\int_{\Delta F}^{}\,\text{rot}\,\vv{E}\left(\vv{r}\right)\td \vv{f}=\int_{\partial \Delta F}^{}\vv{E}\left(\vv{r}\right)\td \vv{r}\rightarrow \lim_{\Delta x\rightarrow 0}\Delta l\left(\vv{t}\times \vv{n}\right)\left(\vv{E}_a-\vv{E}_i\right)=0
+.\end{align} 
+Daraus folgt, dass die Tangentialkomponenten des $\vv{E}$--Feldes stetig durch die Grenzflächen gehen. Eine Oberflächenladungsdichte spielt für das $\vv{E}$--Feld keine Rolle.
+
+\subsection{Elektrostatische Feldenergie}
+Die Krafteinwirkung auf eine Punktladung ist $\vv{F}\left(\vv{r}\right)=q\vv{E}\left(\vv{r}\right)$. Verschiebt man diese Punktladung von $A$ nach $B$ muss eine Arbeit verrichtet werden
+\begin{align} 
+        W_{AB}&=-\int_{B}^{A}\vv{F}\left(\vv{r}\right)\td \vv{r}=q\left(\varphi \left(A\right)-\varphi \left(B\right)\right)
+.\end{align} 
+$W_{AB}>0$, wenn Arbeit am System verrichtet wird. Die Energie einer Ladungsverteilung wird als die Arbeit bezeichnet, um die Ladungen aus dem Unendlichen zusammenzuziehen.
+
+%{{{ Notizen
 \newpage
 \section{Delta--Distribution}
 \begin{align} 
@@ -348,6 +442,7 @@ Das Flächenelement ist dann
 \begin{align} 
         \td \vv{f}=\diffp[]{\vv{r}}{\theta }\times \diffp[]{\vv{r}}{\varphi }=R^2\sin \theta \vv{e}_r
 \end{align} 
+%}}}
 
 %}}}
 

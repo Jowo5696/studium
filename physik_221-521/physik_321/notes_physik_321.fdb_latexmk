@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1697536816 "notes_physik_321.tex" "notes_physik_321.pdf" "notes_physik_321" 1697536817 0
+["pdflatex"] 1697709579 "notes_physik_321.tex" "notes_physik_321.pdf" "notes_physik_321" 1697709580 0
   "/home/jonas/texmf/tex/latex/physics_notetaking/physics_notetaking.sty" 1697492753 957 6e831c959bf13e3f6703e9ebe8ac39d9 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1689853683 1004 54797486969f23fa377b128694d548df ""
@@ -33,6 +33,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb" 1689853683 32001 6aeea3afe875097b1eb0da29acd61e28 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1689853683 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1689853683 36741 fa121aac0049305630cf160b86157ee4 ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1689853683 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1689853683 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1689853683 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1689853683 32362 179c33bbf43f19adbb3825bb4e36e57a ""
@@ -266,10 +267,10 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693766392 4480252 045e2e847a54793644911375b39d1f66 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693766381 6768062 2d5b3d1cbd6ca2e171c277cb332d2576 ""
-  "notes_physik_321.aux" 1697536817 2065 77417d55935396862692b0109502e150 "pdflatex"
-  "notes_physik_321.out" 1697536817 1867 84fcbddc8d6ae8cd50be743155d7c0bc "pdflatex"
-  "notes_physik_321.tex" 1697536815 19924 fc608d364641654c38a9fccf43065052 ""
-  "notes_physik_321.toc" 1697536817 1008 910ca3464ef3c7daba264fcac54ab715 "pdflatex"
+  "notes_physik_321.aux" 1697709579 3096 f9188b3faf8ae6409bc79842c7e68798 "pdflatex"
+  "notes_physik_321.out" 1697709579 3334 19d669a668b8f2517d3190a9377db67a "pdflatex"
+  "notes_physik_321.tex" 1697709578 26813 bcc8b71d79fad63e8a6ec6bae2fb6017 ""
+  "notes_physik_321.toc" 1697709579 1748 9a81809ad4d432f13aadc45449986b8a "pdflatex"
   (generated)
   "notes_physik_321.aux"
   "notes_physik_321.log"
