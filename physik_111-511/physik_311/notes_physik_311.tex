@@ -282,6 +282,63 @@ All das was nicht reflektiert, wird transmutiert
 \begin{align} 
         |r|^2+|t|^2&=R+T=1&t&=\dfrac{E_{0,t}}{E_{0,r}}
 .\end{align} 
+\hfill\\\textbf{Allgemeiner Fall}\\ 
+Für das $\vv{E}_i$--Feld aus der Ebene der Brechung heraus und das $\vv{B}$--Feld orthogonal zu dem einfallenden Strahl in der Ebene gilt
+\begin{align} 
+        r_\perp &=\dfrac{-\sin \left(\alpha -\beta \right)}{\sin \left(\alpha +\beta \right)}&t_\perp&=\dfrac{2\sin \beta \cos \alpha }{\sin \left(\alpha +\beta \right)}
+.\end{align} 
+Für das $\vv{E}_i$--Feld orthogonal zu den einfallenden Strahlen in der Ebene gilt
+\begin{align} 
+        r_{| |}&=\dfrac{\tan \left(\alpha -\beta \right)}{\tan \left(\alpha +\beta \right)}&t_{| |}&=\dfrac{2\sin \beta \cos \alpha }{\sin \left(\alpha +\beta \right)\cos \left(\alpha -\beta \right)}
+.\end{align} 
+
+\subsubsection{\textsc{Brewster}--Winkel}
+Der \textsc{Brewster}--Winkel ist der Winkel, bei dem polarisiertes Licht vollständig transmittiert und gar nicht reflektiert wird. Dieses Phänomen tritt auf, wenn reflektierter und gebrochener Strahl senkrecht aufeinander stehen ($r_{| |}=0$), also $\alpha +\beta =\ang{90}$. Der Winkel ist mit dem \textsc{Snellius}'schen Brechungsgesetz
+\begin{align} 
+        \tan \alpha _B&=\dfrac{n_2}{n_1}
+.\end{align} 
+Der Reflexionskoeffizient für einen streifenden Einfall geht gegen 1.
+
+\subsubsection{Totalreflexion}
+Licht wird von einem optisch dichteren in ein optisch dünneres Medium geschickt. Für $n_1\sin \alpha =n_2\sin \beta $ gibt es nur für den Fall $\sin \beta \leq 1$ und $\sin \alpha \leq \tfrac{n_2}{n_1}$ eine Lösung. Dies ist auch der Grenzwinkel für die totale Reflexion. Für $\alpha _g<\alpha $ wird alles Licht reflektiert.\\\indent
+In Glasfaserkabeln wird sich die Totalreflexion zu nutze gemacht. Das Kabel ist ein Hohlzylinder, dessen Rand einen niedrigeren Brechungsindex $n_1<n_2$ hat, als der hohle Teil $n_2$ des Zylinders. Dadurch kann Licht über große Strecken versendet werden.\\\indent
+Bei Totalreflelexion gibt es eine \textbf{evaneszent} abfallende Welle
+\begin{align} 
+        E\propto e^{-\tfrac{x}{\lambda }}
+.\end{align} 
+$k$ wird hier komplex.\\\indent
+Für heiße Luftschichten ist der Brechungsindex proportional zu
+\begin{align} 
+        n\propto \dfrac{N}{V}=\dfrac{\rho }{k_BT}
+.\end{align} 
+
+\newpage
+\section{Die elektromagnetische Welle in Materie}
+\subsection{Absorption und Dispersion}
+Als einfaches Modell wird angenommen, dass Materie aus vielen harmonischen Oszillatoren der Resonanzfrequenz $\omega _0$ besteht. Die Materie wird von einem elektrischen Feld durchsetzt
+\begin{align} 
+        E\left(t\right)&=E_0e^{-\text{i}\omega t}
+.\end{align} 
+Die Kraft, die auf das Elektron wirkt ist
+\begin{align} 
+        F\left(t\right)&=eE\left(t\right)=eE_0e^{-\text{i}\omega t}
+.\end{align} 
+Die Bewegungsgleichung ist
+\begin{align} 
+        \ddot{x}+\Gamma \dot{x}+\omega _0^2x=\dfrac{eE_0}{m}e^{-\text{i}\omega t}
+.\end{align} 
+Die Lösung dieser Gleichung funktioniert mit dem Ansatz $x\left(t\right)=x_0e^{-\text{i}\omega t}$. Die Amplitude ist
+\begin{align} 
+        x_0=\dfrac{eE_0}{m}\dfrac{1}{\omega _0^2-\omega ^2-\text{i}\Gamma \omega }
+.\end{align} 
+Ist die \textbf{Verstimmung} $\delta =\omega -\omega _0\ll \omega $, dann gilt
+\begin{align} 
+        \dfrac{1}{2\omega }\dfrac{1}{-\delta -\text{i}\tfrac{\Gamma }{2}}=\dfrac{1}{2\omega }\dfrac{-\delta +\text{i}\tfrac{\Gamma }{2}}{\delta ^2+\left(\tfrac{\Gamma }{2}\right)^2}
+.\end{align} 
+Die Materie ist ein \textbf{Polarisator} mit $P=Nex$ mit $N$ der Zahl der Oszillatoren pro Volumen. Die Suszebilität ist definiert als $\chi:=\tfrac{P}{\varepsilon _0E}$. Sie ist also komplex
+\begin{align} 
+        \chi=\dfrac{Ne^2}{\varepsilon _0m2\omega }\dfrac{-\delta +\text{i}\tfrac{\Gamma }{2}}{\delta ^2+\left(\tfrac{\Gamma }{2}\right)^2}
+\end{align} 
 
 
 %}}}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.9.3)  18 OCT 2023 18:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.9.3)  20 OCT 2023 11:59
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -563,9 +563,9 @@ Package: verbatim 2022-07-02 v1.5u LaTeX2e package for verbatim enhancements
 Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
 )
 \verbatim@out=\write4
-runsystem(touch w18-test-202310181086.tex)...executed.
+runsystem(touch w18-test-20231020719.tex)...executed.
 
-runsystem(rm -f w18-test-202310181086.tex)...executed.
+runsystem(rm -f w18-test-20231020719.tex)...executed.
 
 runsystem(rm -f "notes_physik_311.gnuploterrors")...executed.
 
@@ -1033,29 +1033,52 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [7]
 
+LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
+(Font)              using `OT1/cmr/bx/n' instead on input line 295.
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 27.05003pt, for example:
 (fancyhdr)                \setlength{\headheight}{27.05003pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.05003pt}.
 
-[8] (./notes_physik_311.aux)
+[8]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 27.05003pt, for example:
+(fancyhdr)                \setlength{\headheight}{27.05003pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-15.05003pt}.
+
+[9]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 27.05003pt, for example:
+(fancyhdr)                \setlength{\headheight}{27.05003pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-15.05003pt}.
+
+[10] (./notes_physik_311.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
 Package rerunfilecheck Info: File `notes_physik_311.out' has not changed.
-(rerunfilecheck)             Checksum: 0A5C41CA6CD2E9AF3A25A781AABBDA6F;1958.
+(rerunfilecheck)             Checksum: 13560845484AD29BC42FA51BD62340D8;2682.
  ) 
 Here is how much of TeX's memory you used:
- 42347 strings out of 477985
- 975854 string characters out of 5840059
+ 42370 strings out of 477985
+ 976160 string characters out of 5840059
  1890388 words of memory out of 5000000
- 61798 multiletter control sequences out of 15000+600000
+ 61804 multiletter control sequences out of 15000+600000
  524700 words of font info for 87 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,28n,131p,736b,921s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/esvect/vect10.pfb></usr/share/texmf-dist/fonts/type1/public/esvect/vect8.pfb>
-Output written on notes_physik_311.pdf (9 pages, 183613 bytes).
+Output written on notes_physik_311.pdf (11 pages, 196562 bytes).
 PDF statistics:
- 232 PDF objects out of 1000 (max. 8388607)
- 189 compressed objects within 2 object streams
- 66 named destinations out of 1000 (max. 500000)
- 85 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 276 PDF objects out of 1000 (max. 8388607)
+ 230 compressed objects within 3 object streams
+ 83 named destinations out of 1000 (max. 500000)
+ 117 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1697645175 "notes_physik_311.tex" "notes_physik_311.pdf" "notes_physik_311" 1697645176 0
+["pdflatex"] 1697795984 "notes_physik_311.tex" "notes_physik_311.pdf" "notes_physik_311" 1697795985 0
   "/home/jonas/texmf/tex/latex/physics_notetaking/physics_notetaking.sty" 1697492753 957 6e831c959bf13e3f6703e9ebe8ac39d9 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1689853683 1004 54797486969f23fa377b128694d548df ""
@@ -265,10 +265,10 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693766392 4480252 045e2e847a54793644911375b39d1f66 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693766381 6768062 2d5b3d1cbd6ca2e171c277cb332d2576 ""
-  "notes_physik_311.aux" 1697645176 1880 2188f14b668a776834db6173bdb696f6 "pdflatex"
-  "notes_physik_311.out" 1697645176 1958 0a5c41ca6cd2e9af3a25a781aabbda6f "pdflatex"
-  "notes_physik_311.tex" 1697645174 13363 6160d057ed94b6e49b5168e674fcc325 ""
-  "notes_physik_311.toc" 1697645176 907 67219e7da6b022f1fd369600d3818fd2 "pdflatex"
+  "notes_physik_311.aux" 1697795985 2426 e8a617bae977210623419d8d9d88de00 "pdflatex"
+  "notes_physik_311.out" 1697795985 2682 13560845484ad29bc42fa51bd62340d8 "pdflatex"
+  "notes_physik_311.tex" 1697795983 17056 ad269814f3933d20943e74ea651d89c0 ""
+  "notes_physik_311.toc" 1697795985 1287 2595887c874b6f147ae968be619847ce "pdflatex"
   (generated)
   "notes_physik_311.aux"
   "notes_physik_311.log"
