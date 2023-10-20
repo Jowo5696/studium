@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1697620821 "notes_math_341.tex" "notes_math_341.pdf" "notes_math_341" 1697620822 0
+["pdflatex"] 1697787427 "notes_math_341.tex" "notes_math_341.pdf" "notes_math_341" 1697787428 0
   "/home/jonas/texmf/tex/latex/physics_notetaking/physics_notetaking.sty" 1697492753 957 6e831c959bf13e3f6703e9ebe8ac39d9 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1689853683 1004 54797486969f23fa377b128694d548df ""
@@ -9,6 +9,7 @@
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1689853683 908 2921f8a10601f252058503cc6570e581 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1689853683 940 228d6584342e91276bf566bcf9716b83 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1689853683 1324 c910af8c371558dc20f2d7822f66fe64 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm" 1689853683 1300 63a6111ee6274895728663cf4b4e7e81 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmex10.tfm" 1689853683 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1689853683 1524 4414a8315f39513458b80dfc63bff03a ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1689853683 1512 f21f83efb36853c0b70002322c1ab3ad ""
@@ -29,6 +30,7 @@
   "/usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm" 1689853683 684 3a51bd4fd9600428d5264cf25f04bb9a ""
   "/usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs7.tfm" 1689853683 692 1b6510779f0f05e9cbf03e0f6c8361e6 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1689853683 32080 340ef9bf63678554ee606688e7b5339d ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb" 1689853683 32001 6aeea3afe875097b1eb0da29acd61e28 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1689853683 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1689853683 36741 fa121aac0049305630cf160b86157ee4 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1689853683 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
@@ -265,10 +267,10 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693766392 4480252 045e2e847a54793644911375b39d1f66 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693766381 6768062 2d5b3d1cbd6ca2e171c277cb332d2576 ""
-  "notes_math_341.aux" 1697620822 2244 0782ad9ff5b80307f8a9731550261a71 "pdflatex"
-  "notes_math_341.out" 1697620822 1796 c82a86b277f956bf897114c42c4906df "pdflatex"
-  "notes_math_341.tex" 1697620820 12876 cd964fa001de8a46593e416a2a603d90 ""
-  "notes_math_341.toc" 1697620822 1107 1a7b2f78e1a88ff166070ab79e059486 "pdflatex"
+  "notes_math_341.aux" 1697787428 2602 3dd506e21e20e979848e4c3f8c122c65 "pdflatex"
+  "notes_math_341.out" 1697787428 2151 98eb8e02973fec7da35de61556aff076 "pdflatex"
+  "notes_math_341.tex" 1697787427 14788 fdec4d74d13b5fb30878c7cf011a9d4a ""
+  "notes_math_341.toc" 1697787428 1342 94e7e4a566a971aef30124c236787216 "pdflatex"
   (generated)
   "notes_math_341.aux"
   "notes_math_341.log"

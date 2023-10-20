@@ -109,7 +109,7 @@ $\left(\mathbb{C},0,1,+,\cdot \right)$ ist ein Körper, der $\mathbb{R}$ enthäl
 Eine komplexe Zahl kann also als Matrix dargestellt werden
 \begin{align} 
         \left[x+y\text{i}\right]_{\mathbb{R}^{2\times 2}}:=\begin{pmatrix}
-                x&-y\\x&y
+                x&-y\\y&x
         \end{pmatrix}
 .\end{align} 
 Es gilt dann
@@ -276,23 +276,57 @@ Sei $f\left(z\right)=\alpha _jz^j$ ein Polynom von Grad $k \in \mathbb{N}$, mit 
 \begin{align} 
         f'\left(z\right)=j\alpha _jz^{j-1}
 .\end{align} 
-$F:\mathbb{R}^n\rightarrow \mathbb{R}^m$ ist total differenzierbar in $\vv{x} \in \mathbb{R}^n$ mit $DF \in \,\text{Lin}\,\left(\mathbb{R}^n,\mathbb{R}^m\right)=\mathbb{R}^{m\times n}$, falls
+$f:\mathbb{R}^n\rightarrow \mathbb{R}^m$ ist total differenzierbar in $\vv{x} \in \mathbb{R}^n$ mit $Df \in \,\text{Lin}\,\left(\mathbb{R}^n,\mathbb{R}^m\right)=\mathbb{R}^{m\times n}$, falls
 \begin{align} 
-        \lim_{\vv{h}\rightarrow \vv{0} \in \mathbb{R}^n}\dfrac{f\left(\vv{x}+\vv{h}\right)-f\left(\vv{x}\right)-DF_{\left(x\right)}\vv{h}}{||\vv{h}|| }=\vv{0} \in \mathbb{R}^m \,\text{existiert}\,
+        \lim_{\vv{h}\rightarrow \vv{0} \in \mathbb{R}^n}\dfrac{f\left(\vv{x}+\vv{h}\right)-f\left(\vv{x}\right)-Df_{\left(x\right)}\vv{h}}{||\vv{h}|| }=\vv{0} \in \mathbb{R}^m \,\text{existiert}\,
 .\end{align} 
 Sei $U\subseteq \mathbb{C}$ offen und $f:U\rightarrow \mathbb{C}$. Dann gilt, dass $f'\left(z\right)$ in $z=x+\text{i}y$ existiert, genau dann wenn
 \begin{align} 
-        DF \begin{pmatrix}
+        Df \begin{pmatrix}
                 x\\y
-        \end{pmatrix}\,\text{existiert und}\,DF \begin{pmatrix}
+        \end{pmatrix}\,\text{existiert und}\,Df \begin{pmatrix}
                 x\\y
         \end{pmatrix}=\left[f'\left(z\right)\right]_{\mathbb{R}^{2\times 2}}
 .\end{align} 
-Falls $f'\left(z\right)=a+\text{i}b$, dann ist $DF \begin{pmatrix}
+Falls $f'\left(z\right)=a+\text{i}b$, dann ist $Df \begin{pmatrix}
         x\\y
 \end{pmatrix}=\begin{pmatrix}
 a&-b\\b&a
-\end{pmatrix}$.
+\end{pmatrix}$. $F$ ist genau dann differenzierbar, wenn $\partial _1F_1=\partial _2F_2$ und $\partial _1F_2=\partial _2F_1$.
+
+\subsubsection{Holomorph}
+Sei $U\subseteq \mathbb{C}$ offen. $f:U\rightarrow \mathbb{C}$ heißt \textbf{holomorph} auf $U$ wenn $f'\left(z\right) \in \mathbb{C}\,\forall z \in U$ existiert.
+
+\subsection{Differentiationsregeln}
+Sei $f:U\rightarrow \mathbb{C}$ in $z$ komplex differenzierbar, dann ist $f$ in $z$ stetig.\\\indent
+Sei $U\subseteq \mathbb{C}$ offen, $f:U\rightarrow \mathbb{C}$ holomorph.
+\begin{enumerate}[label=\roman*)]
+        \item $\left(\alpha f\right)'\left(z\right)=\alpha f'\left(z\right),\alpha  \in \mathbb{C}$ 
+        \item $\left(f_1+f_2\right)'\left(z\right)=f_1'\left(z\right)+f_2'\left(z\right)$ 
+        \item $\left(f_1f_2\right)'\left(z\right)=f_1'\left(z\right)f_2\left(z\right)+f_1\left(z\right)f_2'\left(z\right)$ 
+        \item $\left(\tfrac{f_1}{f_2}\right)'\left(z\right)=\tfrac{f_1'\left(z\right)f_2\left(z\right)-f_1\left(z\right)f_2'\left(z\right)}{f_2^2\left(z\right)},f_2\left(z\right)\neq 0$ 
+\end{enumerate}
+Sei $f:U\rightarrow V\subseteq \mathbb{C}$ offen, $g:V\rightarrow \mathbb{C}$ 
+\begin{enumerate}[label=]
+        \item[v)] $\left(g\circ f\right)'\left(z\right)=g'\left(f\left(z\right)\right)f'\left(z\right)$ 
+\end{enumerate}
+
+\newpage
+\section{Reihen}
+Sei $\left(z_k\right)_{k \in \mathbb{N}}\subseteq \mathbb{C}$ eine Folge. Die Reihe 
+\begin{align} 
+        \sum_{k=0}^{\infty}z_k
+\end{align} 
+\textbf{konvergiert}, falls die Partialsummen
+\begin{align} 
+        S_n:=\sum_{k=0}^{n}z_k
+\end{align} 
+in $\mathbb{C}$ gegen ein $z \in \mathbb{C}$ konvergieren. Die Reihe konvergiert absolut, falls
+\begin{align} 
+        \sum_{k=0}^{n}|z_k|
+\end{align} 
+konvergiert. Die Reihe \textbf{divergiert}, wenn sie nicht konvergiert.\\\indent
+Jede \textsc{Cauchy}--Folge konvergiert in $\mathbb{C}$. $\mathbb{C}$ ist also \textbf{metrisch vollständig}.
 
 %}}}
 
