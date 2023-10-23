@@ -285,14 +285,14 @@ Da $\vv{E}=-\,\text{grad}\,\varphi $ ein Gradientenfeld ist, gilt
 \subsubsection{Beispiel: Bestimmung von $E$ mit \textsc{Gauss}'schem Satz}
 Sei eine homogen geladene Kugel mit Radius $R$ und einem elektrischem Feld von
 \begin{align} 
-        \vv{E}\left(\vv{r}\right)&=E_r\left(r,\varphi ,\theta \right)\vv{e}_r+E_\varphi \left(r,\varphi ,\theta \right)\vv{e}_\varphi E_\theta \left(r,\varphi ,\theta \right)\vv{e}_\theta 
+        \vv{E}\left(\vv{r}\right)&=E_r\left(r,\varphi ,\theta \right)\vv{e}_r+E_\varphi \left(r,\varphi ,\theta \right)\vv{e}_\varphi +E_\theta \left(r,\varphi ,\theta \right)\vv{e}_\theta 
 .\end{align} 
 Die \textsc{Maxwell}--Gleichung besagt,
 \begin{align} 
         \oint_{S\left(V\right)}^{}\vv{E}\left(\vv{r}\right)\td \vv{f}&=\dfrac{q\left(V\right)}{\varepsilon _0}
 \end{align} 
-Die Kugel ist rotationssymmetrisch um die $x-,y-$ und $z$--Achse, also unabhängig von $\theta $ und $\varphi $. Das Feld ist also nur noch von Radius $r$ abhängig.\\\indent
-Wird an der $x-y$--Ebene gespiegelt, wird $\theta $ zu $\pi -\theta $, also $E_z=E_r\left(r\right)\cos \theta -E_\theta \left(r\right)\sin \theta $. Zudem gilt $\cos \left(\pi -\theta \right)=-\cos \left(\theta \right)$ und $\sin \left(\pi -\theta \right)=\sin \left(\theta \right)$. Aus diesre Spiegelung folgt, dass $E_z\rightarrow -E_z$ und $E_\theta =0$. Aus den Spiegelungen an der $x-z$-- und $y-z$--Ebene kann man analog sagen, dass $E_\varphi =0$.\\\indent
+Die Kugel ist rotationssymmetrisch um die $x$--,$y$-- und $z$--Achse, also unabhängig von $\theta $ und $\varphi $. Das Feld ist also nur noch von Radius $r$ abhängig.\\\indent
+Wird an der $x$--$y$--Ebene gespiegelt, wird $\theta $ zu $\pi -\theta $, also $E_z=E_r\left(r\right)\cos \theta -E_\theta \left(r\right)\sin \theta $. Zudem gilt $\cos \left(\pi -\theta \right)=-\cos \left(\theta \right)$ und $\sin \left(\pi -\theta \right)=\sin \left(\theta \right)$. Aus dieser Spiegelung folgt, dass $E_z\rightarrow -E_z$ und $E_\theta =0$. Aus den Spiegelungen an der $x$--$z$-- und $y$--$z$--Ebene kann man analog sagen, dass $E_\varphi =0$.\\\indent
 Für das gesamte Feld folgt dann
 \begin{align} 
         \vv{E}\left(\vv{r}\right)=E_r\left(r\right)\vv{e}_r
