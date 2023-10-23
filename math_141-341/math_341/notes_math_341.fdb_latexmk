@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1697787427 "notes_math_341.tex" "notes_math_341.pdf" "notes_math_341" 1697787428 0
+["pdflatex"] 1698091865 "notes_math_341.tex" "notes_math_341.pdf" "notes_math_341" 1698091866 0
   "/home/jonas/texmf/tex/latex/physics_notetaking/physics_notetaking.sty" 1697492753 957 6e831c959bf13e3f6703e9ebe8ac39d9 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1689853683 1004 54797486969f23fa377b128694d548df ""
@@ -267,10 +267,10 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693766392 4480252 045e2e847a54793644911375b39d1f66 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693766381 6768062 2d5b3d1cbd6ca2e171c277cb332d2576 ""
-  "notes_math_341.aux" 1697787428 2602 3dd506e21e20e979848e4c3f8c122c65 "pdflatex"
-  "notes_math_341.out" 1697787428 2151 98eb8e02973fec7da35de61556aff076 "pdflatex"
-  "notes_math_341.tex" 1697787427 14788 fdec4d74d13b5fb30878c7cf011a9d4a ""
-  "notes_math_341.toc" 1697787428 1342 94e7e4a566a971aef30124c236787216 "pdflatex"
+  "notes_math_341.aux" 1698091866 2602 100fa4e86b07b308fcab89fbdea905b3 "pdflatex"
+  "notes_math_341.out" 1698091866 2151 98eb8e02973fec7da35de61556aff076 "pdflatex"
+  "notes_math_341.tex" 1698091864 14850 378b76bb898f489f40e9a7921d1d9cf9 ""
+  "notes_math_341.toc" 1698091866 1342 14f368cdb5680bac0cc89aece68fa46d "pdflatex"
   (generated)
   "notes_math_341.aux"
   "notes_math_341.log"

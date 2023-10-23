@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.9.3)  20 OCT 2023 09:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.9.3)  23 OCT 2023 22:11
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -563,9 +563,9 @@ Package: verbatim 2022-07-02 v1.5u LaTeX2e package for verbatim enhancements
 Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
 )
 \verbatim@out=\write4
-runsystem(touch w18-test-20231020577.tex)...executed.
+runsystem(touch w18-test-202310231331.tex)...executed.
 
-runsystem(rm -f w18-test-20231020577.tex)...executed.
+runsystem(rm -f w18-test-202310231331.tex)...executed.
 
 runsystem(rm -f "notes_math_341.gnuploterrors")...executed.
 
@@ -1033,14 +1033,14 @@ Package rerunfilecheck Info: File `notes_math_341.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  42361 strings out of 477985
- 975959 string characters out of 5840059
+ 975962 string characters out of 5840059
  1880388 words of memory out of 5000000
  61804 multiletter control sequences out of 15000+600000
  524700 words of font info for 87 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 99i,23n,131p,734b,1024s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,23n,131p,734b,923s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/esvect/vect10.pfb></usr/share/texmf-dist/fonts/type1/public/esvect/vect8.pfb>
-Output written on notes_math_341.pdf (9 pages, 194740 bytes).
+Output written on notes_math_341.pdf (9 pages, 194852 bytes).
 PDF statistics:
  282 PDF objects out of 1000 (max. 8388607)
  234 compressed objects within 3 object streams
