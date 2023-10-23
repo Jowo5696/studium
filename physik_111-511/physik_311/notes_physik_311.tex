@@ -339,7 +339,58 @@ Die Materie ist ein \textbf{Polarisator} mit $P=Nex$ mit $N$ der Zahl der Oszill
 \begin{align} 
         \chi=\dfrac{Ne^2}{\varepsilon _0m2\omega }\dfrac{-\delta +\text{i}\tfrac{\Gamma }{2}}{\delta ^2+\left(\tfrac{\Gamma }{2}\right)^2}
 \end{align} 
+\hfill\\\textbf{Veränderung des einfallenden Feldes}\\ 
+Der komplexe Brechungsindex ist $\hat{n}=\mathcal{R}\left(\hat{n}\right)+\text{i}\mathcal{I}\left(\hat{n}\right)$.
+\begin{align} 
+        \dfrac{c}{\hat{n}}&=\dfrac{1}{\,\sqrt[]{\varepsilon _0\mu _0\varepsilon \mu }}
+\end{align} 
+Mit $\mu \approx 1$ ist $\hat{n}=\,\sqrt[]{\varepsilon }$. Die Polarisation ist also
+\begin{align} 
+        P&=\chi \varepsilon _0E\\
+         &=\left(\varepsilon -1\right)\varepsilon _0E\\
+         &=\left(\hat{n}-1\right)\varepsilon _0E
+.\end{align} 
+Die Suszeptibilität hat dann den Wert
+\begin{align} 
+        \chi=\left(\hat{n}^2-1\right)=\left(\hat{n}-1\right)\left(\hat{n}+1\right)\approx 2\left(\hat{n}-1\right)
+.\end{align} 
+Die Porportionalität des $\vv{E}$--Feldes ist
+\begin{align} 
+        E\propto e^{\text{i}\left(\omega t-kz\right)}&=e^{-\text{i}\omega \left(t-\hat{n}\tfrac{z}{c}\right)}\\
+                                                     &=\underbrace{e^{-\mathcal{I}\left(\hat{n}\right)\omega \tfrac{z}{c}}}_{e^{-\tfrac{\alpha }{2}z}}e^{-\text{i}\omega \left(t-n \tfrac{z}{c}\right)}
+\end{align} 
+$\alpha $ ist der \textbf{Absorptionskoeffizient}. Die Proportionalitäten sind $I\propto |E|^2\propto e^{-\alpha z}$; $I=I_0e^{-\alpha z}$. $\alpha $ kann auch über den \textbf{Absorptionsquerschnitt} $\sigma $ berechnet werden, mit $\alpha =N\sigma $.\par
+Für den Anteil von $\chi$ in Phase ist der Brechungsindex $n=1+\tfrac{1}{2}\mathcal{R}\left(\chi\right)$. Für den Anteil von $\chi$ $\ang{90}$ außer Phase ist $\alpha =\tfrac{\omega }{c}\mathcal{I}\left(\chi\right)$. Daraus folgt
+\begin{align} 
+        \,\text{Absorption}\,&:\alpha \left(\omega \right)=\dfrac{Ne^2}{2m\varepsilon _0c}\dfrac{\tfrac{\Gamma }{2}}{\delta ^2+\left(\tfrac{\Gamma }{2}\right)^2}\\
+        \,\text{Dispersion}\,&:n=1+\dfrac{Ne^2}{4m\varepsilon _0\omega }\dfrac{-\delta }{\delta ^2+\left(\tfrac{\Gamma }{2}\right)^2}
+.\end{align} 
+Die Absorptionsresonanzen in der UV Wellenlänge bestimmen den Brechungsindex im sichtbaren Bereich. Hier ist bei der normalen Dispersion $\diff[]{n}{\omega }>0$ entsprechend $\diff[]{n}{\lambda }<0$.\par
+Die Dispersion ist spektral breiter als die Absorption. Weit weg von der Resonanz ist sie proportional $\tfrac{1}{\omega -\omega _0}$ anstatt $\tfrac{1}{\left(\omega -\omega _0\right)^2}$ (wie bei der Absorption).
 
+\subsubsection{Monochromatische Wellen}
+Das Feld von monochromatischen Wellen ist
+\begin{align} 
+        E=E_0\cos \left[k\left(x-v_{ph}t\right)\right]
+,\end{align} 
+mit $v_{ph}=\tfrac{c}{n}$. Für die Ausbreitung von Wellenpaketen ist die Phasen und Gruppengeschwigkeit relevant.\par
+Das Feld entlang der $z$--Achse ist 
+\begin{align} 
+        E\left(z,t\right)&=\dfrac{1}{2\pi }\int_{-\infty}^{\infty}E\left(\omega \right)e^{\text{i}\left(k\left(\omega \right)z-\omega t\right)}\td \omega 
+,\end{align} 
+mit $k\left(\omega \right)=\tfrac{\omega }{c}n\left(\omega \right)$ und $n\left(\omega \right)=n\left(\omega _{\,\text{max}\,}\right)+\diff[]{n}{\omega }\left(\omega -\omega _{\,\text{max}\,}\right)$.\par
+Die Einhüllende des Pulses (id est das Maximum von $|E\left(z,t\right)|^2$) breitet sich mit $v_g=\diff[]{\omega }{k}$, $k=\tfrac{\omega }{c}n$, aus. Führt man diese Rechnung aus, gilt
+\begin{align} 
+        v_g=\dfrac{c}{n+\omega \diff[]{n}{\omega }}
+.\end{align} 
+Die Phasengeschwindigkeit ist $v_{ph}$, oberhalb der Resonanz $>c$. Die Gruppengeschwindigkeit ist $v_g=\diff[]{\omega }{k}<c$ (außer in Bereichen starker Absorption).
+
+\subsection{Elektromagnetische Wellen in leitenden Medien}
+Das Modell für diesen Fall ist ein freies Elektronengas. Das Feld des Lichts ist $E=E_0e^{\text{i}\omega t}$. Im bisherigen Modell geht $\omega _0$ gegen 0, da es keine Rückstellkraft gibt. Für hohe Frequenzen ist $\omega \gg \left(\,\text{Stoßzeit}\,\right)^{-1}$. Die Dämpfung $\Gamma $ wird auch 0. Die Bewegungsgleichung reduziert sich dann zu
+\begin{align} 
+        \ddot{x}&=\dfrac{eE\left(t\right)}{m}&\chi&=\dfrac{P}{\varepsilon _0E}=\dfrac{Nex}{\varepsilon _0E}=\dfrac{Ne^2}{\varepsilon _0m}\dfrac{1}{-\omega ^2}
+,\end{align} 
+mit $\varepsilon \left(\omega \right)=1+\chi=1-\tfrac{\omega _p^2}{\omega ^2}$ und $\omega _p^2=\tfrac{Ne^2}{\varepsilon _0m}$ als die Frequenz mit der das Plasma schwingt. Der Brechungsindex ist $n=\,\sqrt[]{\varepsilon }$. Unter der Plasmafrequenz absorbiert das leitende Material (z.B.\ Metall), über der Plasmafrequenz wird Metall durchsichtig.
 
 %}}}
 
