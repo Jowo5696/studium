@@ -14,6 +14,10 @@
 \contentsline {subsubsection}{\numberline {2.5.1}\textsc {Gauss}'sche Fläche}{10}{subsubsection.2.5.1}%
 \contentsline {subsubsection}{\numberline {2.5.2}\textsc {Stokes}'sche Fläche}{11}{subsubsection.2.5.2}%
 \contentsline {subsection}{\numberline {2.6}Elektrostatische Feldenergie}{11}{subsection.2.6}%
-\contentsline {section}{\numberline {3}Delta--Distribution}{12}{section.3}%
-\contentsline {section}{\numberline {4}Flächenintegrale}{13}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Beispiel: Kugeloberfläche}{13}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {2.6.1}Energie von $N$ Punktladungen}{11}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}Beispiel: 2 Punktladungen}{12}{subsubsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.7}Multipolentwicklung}{13}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Randwertproblem in der $E$--Statik}{13}{subsection.2.8}%
+\contentsline {section}{\numberline {3}Delta--Distribution}{14}{section.3}%
+\contentsline {section}{\numberline {4}Flächenintegrale}{15}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Beispiel: Kugeloberfläche}{15}{subsection.4.1}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.9.3)  22 OCT 2023 14:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.9.3)  24 OCT 2023 11:58
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -563,9 +563,9 @@ Package: verbatim 2022-07-02 v1.5u LaTeX2e package for verbatim enhancements
 Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
 )
 \verbatim@out=\write4
-runsystem(touch w18-test-20231022869.tex)...executed.
+runsystem(touch w18-test-20231024718.tex)...executed.
 
-runsystem(rm -f w18-test-20231022869.tex)...executed.
+runsystem(rm -f w18-test-20231024718.tex)...executed.
 
 runsystem(rm -f "notes_physik_321.gnuploterrors")...executed.
 
@@ -841,24 +841,24 @@ File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (./notes_physik_321.aux)
 \openout1 = `notes_physik_321.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -921,7 +921,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-Package hyperref Info: Link coloring OFF on input line 49.
+Package hyperref Info: Link coloring OFF on input line 46.
  (./notes_physik_321.out) (./notes_physik_321.out)
 \@outlinefile=\write5
 \openout5 = `notes_physik_321.out'.
@@ -942,19 +942,19 @@ Package siunitx Warning: Detected the "physics" package:
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 56.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 53.
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 56.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 53.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 56.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 53.
  (/usr/share/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+esvect on input line 56.
+LaTeX Font Info:    Trying to load font information for U+esvect on input line 53.
  (/usr/share/texmf-dist/tex/latex/esvect/uesvect.fd
 File: uesvect.fd 
 ) [1
@@ -972,7 +972,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [1]
-Underfull \hbox (badness 2980) in paragraph at lines 92--94
+Underfull \hbox (badness 2980) in paragraph at lines 89--91
 \OT1/cmr/m/n/12 Zusammen mit Randbedingungen an \OT1/cmr/bx/n/12 Grenzfl^^?achen \OT1/cmr/m/n/12 bestimmen sie alle Effekte der
  []
 
@@ -984,12 +984,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-17.84767pt}.
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 128--139
+Underfull \hbox (badness 10000) in paragraph at lines 125--136
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--139
+Underfull \hbox (badness 10000) in paragraph at lines 125--136
 
  []
 
@@ -1001,7 +1001,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-15.05003pt}.
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 150--156
+Underfull \hbox (badness 10000) in paragraph at lines 147--153
 
  []
 
@@ -1023,7 +1023,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [5]
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 227.
+(Font)              using `OT1/cmr/bx/n' instead on input line 224.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1033,7 +1033,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-15.05003pt}.
 
 [6]
-Underfull \hbox (badness 1259) in paragraph at lines 255--257
+Underfull \hbox (badness 1259) in paragraph at lines 252--254
 \OT1/cmr/m/n/12 Beliebige Volumina k^^?onnen mit Quadern ausgesch^^?opft werden. Fl^^?achenintegrale ^^?uber
  []
 
@@ -1047,11 +1047,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [7]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 285.
+(hyperref)                removing `math shift' on input line 282.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 285.
+(hyperref)                removing `math shift' on input line 282.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1078,6 +1078,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [10]
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 390.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 390.
+
+
+Underfull \hbox (badness 5446) in paragraph at lines 391--392
+\OT1/cmr/m/n/12 Punktladungen $\OML/cmm/m/it/12 q[]$ \OT1/cmr/m/n/12 befinden sich an den Punkten $[][]$. Da mit jeder weiteren
+ []
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 27.05003pt, for example:
 (fancyhdr)                \setlength{\headheight}{27.05003pt}.
@@ -1085,6 +1098,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-15.05003pt}.
 
 [11]
+Underfull \hbox (badness 1072) in paragraph at lines 434--435
+\OT1/cmr/m/n/12 Die Annahme ist eine r^^?aumlich begrenzte (Radius $\OML/cmm/m/it/12 R$\OT1/cmr/m/n/12 ) Ladungsverteilung $\OML/cmm/m/it/12 ^^Z$ \OT1/cmr/m/n/12 und keine
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 27.05003pt, for example:
@@ -1093,6 +1110,34 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-15.05003pt}.
 
 [12]
+Overfull \hbox (23.43893pt too wide) detected at line 441
+[]
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 452.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 452.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 27.05003pt, for example:
+(fancyhdr)                \setlength{\headheight}{27.05003pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-15.05003pt}.
+
+[13]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 27.05003pt, for example:
+(fancyhdr)                \setlength{\headheight}{27.05003pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-15.05003pt}.
+
+[14]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 29.84767pt, for example:
@@ -1100,26 +1145,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-17.84767pt}.
 
-[13] (./notes_physik_321.aux)
+[15] (./notes_physik_321.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `notes_physik_321.out' has not changed.
-(rerunfilecheck)             Checksum: 19D669A668B8F2517D3190A9377DB67A;3334.
+(rerunfilecheck)             Checksum: 76D5B5AE5BE585BD997572F8535CC09F;4123.
  ) 
 Here is how much of TeX's memory you used:
- 42406 strings out of 477985
- 976620 string characters out of 5840059
- 1897388 words of memory out of 5000000
- 61806 multiletter control sequences out of 15000+600000
+ 42436 strings out of 477985
+ 977029 string characters out of 5840059
+ 1900388 words of memory out of 5000000
+ 61811 multiletter control sequences out of 15000+600000
  524700 words of font info for 87 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,30n,131p,736b,929s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/esvect/vect10.pfb></usr/share/texmf-dist/fonts/type1/public/esvect/vect8.pfb>
-Output written on notes_physik_321.pdf (14 pages, 219886 bytes).
+Output written on notes_physik_321.pdf (16 pages, 239189 bytes).
 PDF statistics:
- 358 PDF objects out of 1000 (max. 8388607)
- 304 compressed objects within 4 object streams
- 117 named destinations out of 1000 (max. 500000)
- 157 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 409 PDF objects out of 1000 (max. 8388607)
+ 353 compressed objects within 4 object streams
+ 142 named destinations out of 1000 (max. 500000)
+ 189 words of extra memory for PDF output out of 10000 (max. 10000000)
 

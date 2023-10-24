@@ -1,6 +1,3 @@
-%:LLPStartPreview
-%:VimtexCompile(SS)
-
 %{{{ Formatierung
 
 \documentclass[a4paper,12pt]{article}
@@ -389,6 +386,75 @@ Die Krafteinwirkung auf eine Punktladung ist $\vv{F}\left(\vv{r}\right)=q\vv{E}\
         W_{AB}&=-\int_{B}^{A}\vv{F}\left(\vv{r}\right)\td \vv{r}=q\left(\varphi \left(A\right)-\varphi \left(B\right)\right)
 .\end{align} 
 $W_{AB}>0$, wenn Arbeit am System verrichtet wird. Die Energie einer Ladungsverteilung wird als die Arbeit bezeichnet, um die Ladungen aus dem Unendlichen zusammenzuziehen.
+
+\subsubsection{Energie von $N$ Punktladungen}
+Punktladungen $q_j$ befinden sich an den Punkten $\vv{r}_j$. Da mit jeder weiteren \glqq zusammengezogenen\grqq{} Ladung das Feld verändert wird, wird nur die $i-1$te Ladung betrachtet. Die Arbeit für diese Ladung ist die Summe aus allen Ladung bis zur $i-1$ten Ladung
+\begin{align} 
+        \varphi \left(\vv{r}_i\right)=\dfrac{1}{4\pi \varepsilon _0}\sum_{j=1}^{i-1}\dfrac{q_j}{|\vv{r}_i-\vv{r}_j|}\qquad W_i=q_i\varphi \left(\vv{r}_i\right)
+.\end{align} 
+Die Summation über alle Ladungen $i=1,\hdots ,N$ ist
+\begin{align} 
+        W&=\dfrac{1}{4\pi \varepsilon _0}\sum_{i=2}^{N}\sum_{j=1}^{i-1}\dfrac{q_iq_j}{|\vv{r}_i-\vv{r}_j|}\\
+         &=\dfrac{1}{2}\dfrac{1}{4\pi \varepsilon _0}\sum_{i,j=1;i \neq j}^{N}\dfrac{q_iq_j}{|\vv{r}_i-\vv{r}_j|}
+.\end{align} 
+Dieser Ausdruck kann für eine kontinuierliche Ladungsverteilung $\rho $ verallgemeinert werden
+\begin{align} 
+        W_c&=\dfrac{1}{2}\dfrac{1}{4\pi \varepsilon _0}\int_{}^{}\td ^3r\int_{}^{}\td ^3r'\dfrac{\rho \left(\vv{r}\right)\rho \left(\vv{r}'\right)}{|\vv{r}-\vv{r}'|}\\
+           &=\dfrac{1}{2}\int_{}^{}\td ^3r\rho \left(\vv{r}\right)\varphi \left(\vv{r}\right)\qquad \left|-\Delta \varphi =\dfrac{\rho }{\varepsilon _0}\right.\\
+           &=-\dfrac{\varepsilon _0}{2}\int_{}^{}\td ^3r\left(\Delta \varphi \left(\vv{r}\right)\right)\varphi \left(\vv{r}\right)\\
+           &=-\dfrac{\varepsilon _0}{2}\int_{}^{}\td ^3r\vv{\nabla }\cdot \left(\vv{\nabla }\varphi \left(\vv{r}\right)\varphi \left(\vv{r}\right)\right)+\dfrac{\varepsilon _0}{2}\int_{}^{}\td ^3r\overbrace{\left(-\vv{\nabla }\varphi \left(\vv{r}\right)\right)}^{\vv{E}}\left(-\vv{\nabla }\varphi \left(\vv{r}\right)\right)\\
+           &=-\dfrac{\varepsilon _0}{2}\oint_{}^{}\td \vv{f}\left(\vv{\nabla }\varphi \left(\vv{r}\right)\right)\varphi \left(\vv{r}\right)+\dfrac{\varepsilon _0}{2}\int_{}^{}\td ^3r|\vv{E}\left(\vv{r}\right)|^2
+.\end{align} 
+Für Ladungen im Unendlichen wird das erste Integral gleich null, da $\varphi \left(\vv{r}\right)\propto\tfrac{1}{r}$ und $\varphi \vv{\nabla }\varphi \propto \tfrac{1}{r^3}$. Das Flächenintegral im Unendlichen ist damit
+\begin{align} 
+        \lim_{r\rightarrow \infty}\oint_{\mathcal{K}_r}^{}\td \vv{f}\left(\vv{\nabla }\varphi \left(\vv{r}\right)\right)\varphi \left(\vv{r}\right)\propto \lim_{r\rightarrow \infty}\int_{}^{}\td \Omega \dfrac{1}{r^3}r^2=0
+.\end{align} 
+Für die Energiedichte bleibt dann
+\begin{align} 
+        w_c&=\dfrac{\varepsilon _0}{2}|\vv{E}\left(\vv{r}\right)|^2\geq 0\,\text{positiv--semidefinit}\,
+.\end{align} 
+Das Problem bei der kontinuierlichen Ladungsdichte ist, dass sie die Selbstenergie der Ladung enthält.
+
+\subsubsection{Beispiel: 2 Punktladungen}
+Das elektrische Feld für zwei Punktladungen ist
+\begin{align} 
+        \vv{E}\left(\vv{r}\right)&=\dfrac{1}{4\pi \varepsilon _0}\left(\dfrac{q_1\left(\vv{r}-\vv{r}_1\right)}{|\vv{r}-\vv{r}_1|^3}+\dfrac{q_2\left(\vv{r}-\vv{r}_2\right)}{|\vv{r}-\vv{r}_2|^3}\right)
+.\end{align} 
+Die Energiedichte berechnet sich dann zu
+\begin{align} 
+        w_{2\,\text{pt.}\,}&=\dfrac{1}{32\pi ^2\varepsilon _0}\left(\dfrac{q_1^2}{|\vv{r}-\vv{r}_1|^4}+\dfrac{q_2^2}{|\vv{r}-\vv{r}_2|^4}\right)+\dfrac{1}{16\pi ^2\varepsilon _0}\left(\dfrac{q_1q_2\left(\vv{r}-\vv{r}_1\right)\left(\vv{r}-\vv{r}_2\right)}{|\vv{r}-\vv{r}_1|^3|\vv{r}-\vv{r}_2|^3}\right)
+.\end{align} 
+Sie jetzt eine unendlich große unendlich verdünnte Ladungswolke. Diese Ladungswolke kann man als homogen geladene Kugel mit Radius $R$ und Gesamtladung $q$ darstellen. Für die Arbeit, um alle Ladungen auf den Punkt in der Mitte zusammenzuziehen, gilt
+\begin{align} 
+        W_{\,\text{Kugel}\,}&=\dfrac{q^2}{4\pi \varepsilon _0}\dfrac{3}{5}\dfrac{1}{R}
+.\end{align} 
+Um eine Punktladung darzustellen wird $R\rightarrow 0$. Dabei wird aber die Arbeit unendlich. Physikalisch ist dies aber kein Problem, da die Selbstenergie selbst keinen Effekt hat. Nur die Energiedifferenz bzw.\ der wechselwirkungsanteil ist von Relevanz.
+
+\subsection{Multipolentwicklung}
+Die Annahme ist eine räumlich begrenzte (Radius $R$) Ladungsverteilung $\rho $ und keine Randbedingungen im Endlichen. Von Interesse ist hier der Effekt im Unendlichen, also die \textbf{Fernzone}. Das allgemeine Potential ist $\varphi \left(\vv{r}\right)=\tfrac{1}{4\pi \varepsilon _0}\int_{}^{}\td ^3r'\tfrac{\rho \left(\vv{r}'\right)}{|\vv{r}-\vv{r}'|}$. Man sucht das Potential für $r\gg R$. Dafür wird eine \textsc{Taylor}--Entwicklung um $\tfrac{r'}{r}\ll 1$ angesetzt.
+\begin{align} 
+        \dfrac{1}{|\vv{r}-\vv{r}'|}&=e^{-\vv{r}'\cdot \vv{\nabla }}\dfrac{1}{r}=\dfrac{1}{r}+\dfrac{\vv{r}'\vv{r}}{r^3}+\dfrac{3\left(\vv{r}\vv{r}'\right)^2-r^2r'^2}{r^5}+\hdots 
+.\end{align} 
+Damit ist das Potential dann
+\begin{align} 
+        \varphi \left(\vv{r}\right)&=\dfrac{1}{4\pi \varepsilon _0}\dfrac{1}{r}\int_{}^{}\td ^3r'\rho \left(\vv{r}'\right)+\dfrac{1}{4\pi \varepsilon _0}\dfrac{\vv{r}}{r^3}\int_{}^{}\td ^3r'\vv{r}'\rho \left(\vv{r}'\right)+\dfrac{1}{4\pi \varepsilon _0}\int_{}^{}\td ^3r'\dfrac{3\left(\vv{r}\vv{r}'\right)^2-r^2r'^2}{r^5}\rho \left(\vv{r}'\right)+\hdots 
+.\end{align}
+Wenn die Terme ab inklusive $\tfrac{1}{r^3}$ wegfallen (da sie so klein sind), vereinfacht sich das Potential zu $\varphi \left(\vv{r}\right)=\tfrac{Q}{4\pi \varepsilon _0}\tfrac{1}{r}$. Die Momente der Ladungsverteilungen sind dann
+\begin{align} 
+        \,\text{Monopol}\,&:\vv{p}_M=\int_{}^{}\td ^3r'\rho \left(\vv{r}'\right)\propto \dfrac{1}{r}\\
+        \,\text{Dipol}\,&:\vv{p}_D=\int_{}^{}\td ^3r'\vv{r}'\rho \left(\vv{r}'\right)\propto \dfrac{1}{r^2}\\
+        \,\text{Quadrupol}\,&:\vv{p}_Q=\int_{}^{}\td ^3r'\left(3r_i'r_j'-\delta _{ij}r'^2\right)\rho \left(\vv{r}'\right)\propto \dfrac{1}{r^3}
+.\end{align} 
+Wenn $Q\neq 0$, dann ist der Monopolterm dominant in der Fernzone. Wenn $Q=0$, dann ist der Dipolmoment dominant. Für zwei entgegengerichtete gleichgroße Ladungen ist das Dipolmoment $\vv{p}=q\vv{d}$. Der Dipol in einem Punkt ist $\vv{p}\left(\vv{r}\right)=\lim_{d\rightarrow 0,q\rightarrow \infty}q\vv{d}$, sodass $\vv{p}$ endlich wird.
+Das Potential des Dipols lässt sich dann mit dem Dipolmoment schreiben: $\varphi _D\left(\vv{r}\right)=\tfrac{1}{4\pi \varepsilon _0}\tfrac{\vv{p}_D\vv{r}}{r^3}$.\\\indent
+Wenn $Q=0$ und $\vv{p}=0$, dann dominiert der Quadropolmoment. Das Potential ist $\varphi _Q\left(\vv{r}\right)=\tfrac{1}{4\pi \varepsilon _0}\sum_{i,j}^{}Q_{ij}\tfrac{r_ir_j}{r^5}$. Ein Quadrupol kann durch zwei antiparallele Dipole realisiert werden.
+
+\subsection{Randwertproblem in der $E$--Statik}
+Falls es keine Randbedingungen gibt, ist die Lösung der \textsc{Poisson}--Gleichung das \textsc{Poisson}--Integral
+\begin{align} 
+        \dfrac{1}{4\pi \varepsilon _0}\int_{}^{}\td ^3r'\dfrac{\rho \left(\vv{r}-\vv{r}'\right)}{|\vv{r}-\vv{r'}|}=\varphi \left(\vv{r}\right)
+.\end{align} 
+Oft ist aber $\rho \left(\vv{r}\right)$ in einem Raumgebiet $V$ und $\varphi $, oder $\diffp[]{\varphi }{n}=\left(\vv{n}\cdot \vv{\nabla }\right)\varphi =-E^{\left(n\right)}$ auf $S\left(V\right)$ gegeben.
 
 %{{{ Notizen
 \newpage
