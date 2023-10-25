@@ -1,30 +1,44 @@
-%:LLPStartPreview
-%:VimtexCompile(SS)
-
 %{{{ Formatierung
 
 \documentclass[a4paper,12pt]{article}
 
 \usepackage{physics_notetaking}
 
+%%% dark red
+%\definecolor{bg}{RGB}{60,47,47}
+%\definecolor{fg}{RGB}{255,244,230}
+%%% space grey
+%\definecolor{bg}{RGB}{46,52,64}
+%\definecolor{fg}{RGB}{216,222,233}
+%%% purple
 %\definecolor{bg}{RGB}{69,0,128}
 %\definecolor{fg}{RGB}{237,237,222}
 %\pagecolor{bg}
 %\color{fg}
 
+\newcommand{\td}{\,\text{d}}
 \newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
 \newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+
+\newcommand\inlineeqno{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnoa{(\theequation.\text{a})}
+\newcommand\inlineeqnob{(\theequation.\text{b})}
+\newcommand\inlineeqnoc{(\theequation.\text{c})}
+
+\newcommand\inlineeqnowo{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnowoa{\theequation.\text{a}}
+\newcommand\inlineeqnowob{\theequation.\text{b}}
+\newcommand\inlineeqnowoc{\theequation.\text{c}}
+
 \renewcommand{\refname}{Source}
 \renewcommand{\sfdefault}{phv}
-\renewcommand*\contentsname{Inhaltsverzeichnis}
-\newcommand{\td}{\,\text{d}}
+%\renewcommand*\contentsname{Contents}
 
-%\bibliographystyle{alphadin}
 \pagestyle{fancy}
-\sloppy
-%\pagenumbering{gobble}
 
-\lhead{Jonas Wortmann}\chead{Notizen}\rhead{Physik}
+\sloppy
+
+\numberwithin{equation}{section}
 
 %}}}
 
@@ -32,14 +46,10 @@
 
 %{{{ Titelseite
 
-\thispagestyle{empty}
-\hfill
-\Huge
-\begin{center}
-        Notizen - B.Sc. Physik $|$ physik111
-\end{center}
-\normalsize
-\hfill
+\title{physik111 $|$ Notizen}
+\author{Jonas Wortmann}
+\maketitle
+\pagenumbering{gobble}
 
 %}}}
 
@@ -47,16 +57,21 @@
 
 %{{{ Inhaltsverzeichnis
 
-\rhead{Inhaltsverzeichnis}
+\fancyhead[L]{\thepage}
+\fancyfoot[C]{}
+\pagenumbering{arabic}
+
 \tableofcontents
 
 %}}}
 
 \newpage
 
+%{{{
+
 %{{{ physik111
 
-\rhead{physik111}
+\fancyhead[R]{\leftmark\\\rightmark}
 
 \section{Physikalische Größen}
 \subsection{Impuls}
@@ -1580,6 +1595,8 @@ Zusammenhang zwischen Einheiten
         \text{Deformierung }\sigma ,\tau ,p[\dfrac{N}{m^2}]\\
         \text{Kompressionsmodul }\kappa[Pa^{-1}=\dfrac{m^2}{N}]
 \end{align*}
+
+%}}}
 
 %}}}
 

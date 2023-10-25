@@ -1,63 +1,78 @@
-%:LLPStartPreview
-%:VimtexCompile(SS)
-
 %{{{ Formatierung
 
 \documentclass[a4paper,12pt]{article}
 
 \usepackage{physics_notetaking}
 
+%%% dark red
+%\definecolor{bg}{RGB}{60,47,47}
+%\definecolor{fg}{RGB}{255,244,230}
+%%% space grey
+%\definecolor{bg}{RGB}{46,52,64}
+%\definecolor{fg}{RGB}{216,222,233}
+%%% purple
 %\definecolor{bg}{RGB}{69,0,128}
 %\definecolor{fg}{RGB}{237,237,222}
 %\pagecolor{bg}
 %\color{fg}
 
+\newcommand{\td}{\,\text{d}}
 \newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
 \newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+
+\newcommand\inlineeqno{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnoa{(\theequation.\text{a})}
+\newcommand\inlineeqnob{(\theequation.\text{b})}
+\newcommand\inlineeqnoc{(\theequation.\text{c})}
+
+\newcommand\inlineeqnowo{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnowoa{\theequation.\text{a}}
+\newcommand\inlineeqnowob{\theequation.\text{b}}
+\newcommand\inlineeqnowoc{\theequation.\text{c}}
+
 \renewcommand{\refname}{Source}
 \renewcommand{\sfdefault}{phv}
-\renewcommand*\contentsname{Inhaltsverzeichnis}
-\newcommand{\td}{\,\text{d}}
+%\renewcommand*\contentsname{Contents}
 
-%\bibliographystyle{alphadin}
 \pagestyle{fancy}
-\sloppy
-%\pagenumbering{gobble}
 
-\lhead{Jonas Wortmann}\chead{Notizen}\rhead{Physik}
+\sloppy
+
+\numberwithin{equation}{section}
 
 %}}}
 
 \begin{document}
 
 %{{{ Titelseite
-\thispagestyle{empty}
-\hfill
-\Huge
-\begin{center}
-        Notizen - B.Sc. Physik $|$ math141
-\end{center}
-\normalsize
-\hfill
+
+\title{math141 $|$ Notizen}
+\author{Jonas Wortmann}
+\maketitle
+\pagenumbering{gobble}
 
 %}}}
 
 \newpage
 
 %{{{ Inhaltsverzeichnis
-\rhead{Inhaltsverzeichnis}
+
+\fancyhead[L]{\thepage}
+\fancyfoot[C]{}
+\pagenumbering{arabic}
+
 \tableofcontents
 
 %}}}
 
 \newpage
 
-%{{{ math141
+%{{{
+
+\fancyhead[R]{\leftmark\\\rightmark}
 
 %{{{ Analysis
 \section*{Analysis}\addcontentsline{toc}{section}{Analysis}
-
-
 \section{Mathematik als Sprache}
 \begin{align*}
         +&:\text{Funktionssymbol o. Operatoren}\\
@@ -1549,20 +1564,12 @@ Sei $V$ ein reeller VR und $\left\langle \cdot ,\cdot \right\rangle :V\times V\r
 Sei $V=\left(V,\left\langle \cdot ,\cdot \right\rangle \right)$ ein euklidischer Vektorraum und $M\subseteq V$ eine Teilmenge von $V$. Ein Vektor $v \in V$ liegt senktrecht zu $M$, geschrieben $v\perp M$, falls für alle $w \in M$ gilt\\
 $v\perp w$. Das orthogonale Komplement von $M$ ist die Menge
 \[ 
-        M^{\perp}:=\{v \in V\,|\, v\perp M\}\qquad \mathfrak{L}\left(m^\perp_1,\hdots ,m^\perp_n,m_1,\hdots ,m_m\right)=V
+        M^\perp:=\{v \in V\,|\, v\perp M\}\qquad \mathfrak{L}\left(m^\perp_1,\hdots ,m^\perp_n,m_1,\hdots ,m_m\right)=V
 .\] 
 Sei $V=\left(V,\left\langle \cdot ,\cdot \right\rangle \right)$ ein euklidischer VR und $M\subseteq V$ ein entlich-dimensionaler Unterraum von $V$. Sei $w \in V$. Dann existieren bestimmte Vektoren $u \in M$ und $v \in M^\perp$, so dass $w=u+v$. Diese Darstellung von $w$ ist die Zerlegung des Vektors $w$ nach $M$ und seinem orthogonalen Komplement.
 
 %}}}
  
-%}}}
-
-\newpage
-
-%{{{ Notizen
-\section{Notizen}
-Hier könnten Ihre Notizen stehen.
-
 %}}}
 
 \end{document}
