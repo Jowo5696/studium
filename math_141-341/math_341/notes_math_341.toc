@@ -15,3 +15,4 @@
 \contentsline {subsubsection}{\numberline {2.2.1}Holomorph}{7}{subsubsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.3}Differentiationsregeln}{7}{subsection.2.3}%
 \contentsline {section}{\numberline {3}Reihen}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Potenzreihen}{8}{subsection.3.1}%
