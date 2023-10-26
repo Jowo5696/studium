@@ -74,10 +74,10 @@ class Auswertung:
             fit_plus = steigung*self.x[i]+b+mnvmvn[i][3]
             fit_minus = steigung*self.x[i]+b-mnvmvn[i][3]
 
-            plt.errorbar(self.x[i],self.y[i],self.yerr[i],self.xerr[i],fmt=self.color[i],ls="",marker=".",label=self.label[i]+' Messwerte')
-            plt.plot(self.x[i],fit,self.color[i],label=self.label[i]+' Geradenfit')
-            plt.plot(self.x[i],fit_plus,'b--',label='error +/-')
-            plt.plot(self.x[i],fit_minus,'b--')
+            plt.errorbar(self.x[i],self.y[i],self.yerr[i],self.xerr[i],fmt=self.color[i],ls="",marker=".",label=self.label[i]+' Messwerte',capsize=3,linewidth=0.5)
+            plt.plot(self.x[i],fit,self.color[i],label=self.label[i]+' Geradenfit',linewidth=0.8)
+            plt.plot(self.x[i],fit_plus,'b--',label='error +/-',linewidth=0.5)
+            plt.plot(self.x[i],fit_minus,'b--',linewidth=0.5)
 
             plt.xlabel(self.xlabel[0],font)
             plt.ylabel(self.ylabel[0],font)

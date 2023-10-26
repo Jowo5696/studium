@@ -19,9 +19,12 @@ a_I = np.array([4,5,6,7,8,9,10])*(500/50) # mA
 a_delt_I = np.zeros(len(a_I))+0.2*(500/50) # mA
 
 a_data = np.transpose([a_U0,a_U,a_delt_U,a_I,a_delt_I])
-a_head = ['Ausgangsspannung U0 [V]','Spannung U [V]','delta U [V]','Stromstärke I [mA]','delta I [mA]']
+a_head = ['Ausgangsspannung U0 [V]','U [V]','∆U [V]','I [mA]','∆I [mA]']
 
+#print('Tabelle 232.a: U-I-Abhängigkeit')
 #print(tabulate(a_data,headers=a_head,tablefmt='fancy_grid'))
+
+# 232.b
 
 # 232.c
 c_I = a_I # mA
@@ -47,7 +50,8 @@ d_U0 = 4 # V
 d_Ri = 50 # Ohm
 
 d_data = np.transpose([d_R,d_U,d_delt_U,d_I,d_delt_I])
-d_head = ['Widerstand R [Ω]','Spannung U [V]','delta U [V]','Stromstärke I [mA]','delt I [mA]']
+d_head = ['R [Ω]','U [V]','∆U [V]','I [mA]','∆I [mA]']
+#print('Tabelle 232.d: Messung verschiedener Lastwiderstände')
 #print(tabulate(d_data,headers=d_head,tablefmt='fancy_grid'))
 
 # 232.f
@@ -66,11 +70,27 @@ f_l = np.zeros(len(f_Ry2))+1000
 f_xl = f_Ry/f_l
 
 f_data = np.transpose([f_Ry,f_delt_R,f_Uinf,f_U20,f_U50,f_delt_U])
-f_head = ['Widerstand R_y [Ω]','delta R_y [Ω]','Spannung R=∞Ω [V]','Spannung R=20Ω [V]','Spannung R=50Ω [V]','delta U [V]']
+f_head = ['R_y [Ω]','∆R_y [Ω]','U bei R=∞Ω [V]','U bei R=20Ω [V]','U bei R=50Ω [V]','∆U [V]']
+#print('Tabelle 232.f: R-I-Abhängigkeit')
 #print(tabulate(f_data,headers=f_head,tablefmt='fancy_grid'))
 
 #plt.plot(f_xl,f_Ry2)
-#plt.show()
+
+# 232.g
+g_I20 = np.array([3.1,5.4,8.5,14.3,31.5])*(500/50) # mA
+g_I50 = np.array([2.2,4.0,6.1,9.1,14.9])*(500/50) # Skt
+g_delt_I = (np.zeros(len(g_I20))+0.2)*(500/50) # Skt
+
+g_Pinf = np.zeros(len(f_Uinf))
+g_P20 = np.round(f_U20*g_I20,1)
+g_delt_P20 = np.round(np.sqrt((f_delt_U*g_I20)**2+(f_U20*g_delt_I)**2),1)
+g_P50 = np.round(f_U50*g_I50,1)
+g_delt_P50 = np.round(np.sqrt((f_delt_U*g_I50)**2+(f_U50*g_delt_I)**2),1)
+
+g_data = np.transpose([g_I20,g_I50,g_delt_I,g_Pinf,g_P20,g_delt_P20,g_P50,g_delt_P50])
+g_head = ['I 20Ω [mA]','I 50Ω [mA]','∆I [mA]','P(∞Ω)','P(20Ω)','∆P(20Ω)','P(50Ω)','∆P(50Ω)']
+print('Tabelle 232.g: Leistung')
+print(tabulate(g_data,headers=g_head,tablefmt='fancy_grid'))
 
 # 232.m
 m_Widerstand_1 = np.array([1.1,0.9,0.7,0.65,0.57,0.49,0.43,0.38,0.35,0.30,0.27,0.24,0.21,0.18,0.16,0.14,0.13,0.12,0.095,0.085])
@@ -120,15 +140,28 @@ m_head2 = ['R4 [Ω]','∆R4 [Ω]','T4 [C]','∆T4 [C]','R5 [Ω]','∆R5 [Ω]','T
 #   yerr =
 
 zusammen = ['a','a','a','end'] #<--- Welche Plots zusammengehören. Gleiche Buchstaben werden in einem Plot ausgegeben (Beispiel: ['a','a','b'], die ersten beiden x, y und yerr Werte werden in einem Plot ausgegeben, die dritten x, y, yerr Werte werden in einem Plot ausgegeben).
-x = [f_Uinf,f_U20,f_U50] #<--- x Werte
-xlabel = ['U [V]','U [V]','U [V]']
-xerr = [f_delt_U,f_delt_U,f_delt_U] #<--- x Fehler (ein Fehler pro x Wert)
-y = [f_Ry,f_Ry,f_Ry] #<--- y Werte
-ylabel = ['R [Skalenteile]','R [Skalenteile]','R [Skalenteile]'] 
-yerr = [f_delt_R,f_delt_R,f_delt_R] #<--- y Fehler (ein Fehler pro x Wert)
-title = ['232.f U-R-Relation']
+#x = [f_Uinf,f_U20,f_U50] #<--- x Werte
+x = [f_xl,f_xl,f_xl] #<--- x Werte
+xlabel = ['x/l [Skt]','x/l [Skt]','x/l [Skt]']
+xerr = [np.zeros(len(f_xl)),np.zeros(len(f_xl)),np.zeros(len(f_xl))]
+y = [f_Uinf,f_U20,f_U50] #<--- x Werte
+#y = [f_Ry,f_Ry,f_Ry] #<--- y Werte
+ylabel = ['U [V]','U [V]','U [V]'] 
+yerr = [f_delt_U,f_delt_U,f_delt_U] #<--- y Fehler (ein Fehler pro x Wert)
+title = ['232.f lineare Relation zwischen U und x/l']
 label = ['232.f R=inf','232.f R=20','232.f R=50']
 color = ['blue','red','green'] #<--- Farbe der Punkte/Geraden
+
+#zusammen = ['a','end'] #<--- Welche Plots zusammengehören. Gleiche Buchstaben werden in einem Plot ausgegeben (Beispiel: ['a','a','b'], die ersten beiden x, y und yerr Werte werden in einem Plot ausgegeben, die dritten x, y, yerr Werte werden in einem Plot ausgegeben).
+#x = [a_I] #<--- x Werte
+#xlabel = ['I [mA]']
+#xerr = [a_delt_I] #<--- x Fehler (ein Fehler pro x Wert)
+#y = [a_U] #<--- y Werte
+#ylabel = ['U [V]'] 
+#yerr = [a_delt_U] #<--- y Fehler (ein Fehler pro x Wert)
+#title = ['232.a U-I-Abhängigkeit']
+#label = ['232.a']
+#color = ['blue'] #<--- Farbe der Punkte/Geraden
 
 Auswertung = gf.Auswertung(x,xlabel,y,ylabel,yerr,xerr,title,label,color,zusammen)
 #Auswertung.auswertung()
