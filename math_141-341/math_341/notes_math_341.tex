@@ -342,6 +342,23 @@ mit $o^{-1}:=+\infty$ und $\infty^{-1}:=0$. Dann
         \item $\sum_{k=0}^{\infty}\alpha _k|z|^k$ konvergiert absolut für $|z|<R$.
         \item $\sum_{k=0}^{\infty}\alpha _kz^k$ divergiert für $|z|>R$.
 \end{enumerate}
+Sei $f\left(z\right)$ eine Potenzreihe $f\left(z\right):=\sum_{k=0}^{\infty}\alpha _kz^k$ mit Konvergenzradius $R \in \left[0,\infty\right]$. Man definiert $g\left(Z\right):=\sum_{k=1}^{\infty}k\alpha _kz^{k-1}$, dann hat $g$ den Konvergenzradius $R$ und $f'\left(z\right)=g\left(z\right)$, falls $|z|<R$.\\\indent
+$f$ ist auf $\left\{z \in \mathbb{C}:|z|<R\right\}$ unendlich oft differenzierbar und
+\begin{align} 
+        f^{\left(n\right)}:=\sum_{k=n}^{\infty}\dfrac{k!}{\left(k-n\right)!}\alpha _kz^{k-n}
+\end{align} 
+mit Konvergenzradius $R$. Die Stammfunktion ist dann
+\begin{align} 
+        F\left(z\right):=\sum_{k=0}^{\infty}\dfrac{\alpha _k}{k+1}z^{k+1}+c\qquad c  \in \mathbb{C}
+.\end{align} 
+
+\subsubsection{Produkt von Potenzreihen}
+Seien zwei Potenzreihen $f\left(z\right):=\sum_{k=0}^{\infty}\alpha _kz^k$ und $g\left(z\right):=\sum_{j=0}^{\infty}\beta _jz^j$. Das Produkt ist
+\begin{align} 
+        f\left(z\right)g\left(z\right)&=\left(\alpha _0+\alpha _1z+\hdots \right)\left(\beta _0+\beta _1z+\hdots \right)\\
+                                      &=\alpha _0\beta _0+\left(\alpha _0\beta _1+\alpha _1\beta _0\right)z+\left(\alpha _0\beta _2+\alpha _1\beta _1+\alpha _2\beta _0\right)z^2+\hdots 
+.\end{align} 
+Die Konvergenzradien der Porenzreihen seien $R$ und $R' \in \left[0,\infty\right]$. Man definiert $h\left(z\right):=\sum_{n=0}^{\infty}\left(\sum_{k=0}^{\infty}\alpha _k\beta _{n-k}\right)z^n$. Dann hat $h$ einen Konvergenzradius von mindesten $R''\geq \,\text{min}\,\left(R,R'\right)$ und $f\left(z\right)g\left(z\right)=h\left(z\right)$ für $|z|<\,\text{min}\,\left(R,R'\right)$.
 
 %}}}
 
