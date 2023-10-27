@@ -17,3 +17,4 @@
 \contentsline {section}{\numberline {3}Reihen}{8}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Potenzreihen}{8}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Produkt von Potenzreihen}{9}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Verschiebung}{9}{subsubsection.3.1.2}%
