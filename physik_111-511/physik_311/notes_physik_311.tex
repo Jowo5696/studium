@@ -332,7 +332,7 @@ Ist die \textbf{Verstimmung} $\delta =\omega -\omega _0\ll \omega $, dann gilt
 \begin{align} 
         \dfrac{1}{2\omega }\dfrac{1}{-\delta -\text{i}\tfrac{\Gamma }{2}}=\dfrac{1}{2\omega }\dfrac{-\delta +\text{i}\tfrac{\Gamma }{2}}{\delta ^2+\left(\tfrac{\Gamma }{2}\right)^2}
 .\end{align} 
-Die Materie ist ein \textbf{Polarisator} mit $P=Nex$ mit $N$ der Zahl der Oszillatoren pro Volumen. Die Suszebilität ist definiert als $\chi:=\tfrac{P}{\varepsilon _0E}$. Sie ist also komplex
+Die Materie ist ein \textbf{Polarisator} mit $P=Nex$ mit $N$ der Zahl der Oszillatoren pro Volumen. Die Suszeptibilität ist definiert als $\chi:=\tfrac{P}{\varepsilon _0E}$. Sie ist also komplex
 \begin{align} 
         \chi=\dfrac{Ne^2}{\varepsilon _0m2\omega }\dfrac{-\delta +\text{i}\tfrac{\Gamma }{2}}{\delta ^2+\left(\tfrac{\Gamma }{2}\right)^2}
 \end{align} 
@@ -387,7 +387,47 @@ Das Modell für diesen Fall ist ein freies Elektronengas. Das Feld des Lichts is
 \begin{align} 
         \ddot{x}&=\dfrac{eE\left(t\right)}{m}&\chi&=\dfrac{P}{\varepsilon _0E}=\dfrac{Nex}{\varepsilon _0E}=\dfrac{Ne^2}{\varepsilon _0m}\dfrac{1}{-\omega ^2}
 ,\end{align} 
-mit $\varepsilon \left(\omega \right)=1+\chi=1-\tfrac{\omega _p^2}{\omega ^2}$ und $\omega _p^2=\tfrac{Ne^2}{\varepsilon _0m}$ als die Frequenz mit der das Plasma schwingt. Der Brechungsindex ist $n=\,\sqrt[]{\varepsilon }$. Unter der Plasmafrequenz absorbiert das leitende Material (z.B.\ Metall), über der Plasmafrequenz wird Metall durchsichtig.
+mit $\varepsilon \left(\omega \right)=1+\chi=1-\tfrac{\omega _p^2}{\omega ^2}$ und $\omega _p^2=\tfrac{Ne^2}{\varepsilon _0m}$ als die Frequenz mit der das Plasma schwingt. Der Brechungsindex ist $n=\,\sqrt[]{\varepsilon }$. Unter der Plasmafrequenz absorbiert das leitende Material (z.B.\ Metall), über der Plasmafrequenz wird Metall durchsichtig.\par
+Für das Feld im Medium und $\omega \ll \omega _p$ ist die Porportionalität 
+\begin{align} 
+        E\propto e^{- \mathcal{I}\left(\hat{n}\right)\omega z/c}=e^{-\mathcal{I}\left(\hat{n}\right)2\pi 2/\lambda }\qquad I\propto |E|^2\propto e^{-\mathcal{I}\left(\hat{n}\right)4\pi z\lambda }
+.\end{align} 
+
+\subsubsection{Reflexion an absorbierenden Medien}
+Für den senkrechten Einfall ist 
+\begin{align} 
+        \hat{n}=\mathcal{R}\left(\hat{n}\right)+\text{i}\mathcal{I}\left(\hat{n}\right)
+.\end{align} 
+Der Reflexionsindex ist dann
+\begin{align} 
+        r=\dfrac{\hat{n}-1}{\hat{n}+1}\qquad R=|r|^2=\dfrac{\left(n-1\right)^2+\mathcal{I}^2\left(\hat{n}\right)}{\left(n+1\right)^2+\mathcal{I}^2\left(\hat{n}\right)}
+.\end{align} 
+Bei starker Absorption, also $\mathcal{I}\left(\hat{n}\right)\gg 1$ (ideal leitendes Metall für $\omega \ll \omega _p$), kommt es zu hoher Reflexion. Für Metalle besonders im Infrarotbereich. Im sichtbaren Sprektrum ist die Reflexion kleiner. Das Modell des Elektronengases ist schlechter für $\omega \approx \omega _p$.
+
+\subsubsection{Farbe von Gegenständen}
+Metalle besitzen eine hohe Leitfähigkeit. Dies führt zu einer breitbandigen hohen Reflexion und dem charakteristischen metallischen Glanz. Für Gold oder Kupfer (oder weitere) variiert die Relfexion in abhängigkeit von der Wellenläng ($R=R\left(\lambda \right)$). Dies führt zu einer Färbung.\par
+Wenn bei Isolatoren keine Absorptionslinien im sichtbaren Spektralbereich vorhanden sind ist das Medium glasklar.\par
+Inhomogene Oberflächen (z.B.\ Puder, raue Oberflächen) erscheinen weiß. Wasser ist fast glasklar, wohingegen Wasserdampf weiß erscheint.\par
+Isolatoren mit schwacher Absorption haben die Farbe des transmutierten bzw.\ reflektierten Lichts. Isolatoren mit hoher Absorption haben einen metallischen Glanz.\\\indent
+Gelbes Glas erschient geld, da blaues Licht absorbiert und nur rotes und grünes Licht reflektiert bzw.\ transmutiert wird. Die Mischung aus rot und grün ist gelb. Weitere Farben sind
+\begin{align} 
+        \,\text{magenta}\,&=\,\text{rot}\,+\,\text{blau}\,\\
+        \,\text{cyan}\,&=\,\text{blau}\,+\,\text{grün}\,\\
+        \,\text{gelb}\,&=\,\text{rot}\,+\,\text{grün}\,
+.\end{align} 
+Farbe kann auch durch Interferenz erzeugt werden.
+
+\subsection{Streuung elektromagnetischer Wellen}
+Weisses Licht wird an Molekülen in alle Richtungen gestreut. Wenn der Durchmesser der Moleküle $d$ viel kleiner als die Wellenlänge $\lambda $ ist, kommt es zur \textsc{Rayleigh}--Streuung. Die Streuung ist isotrop mit einem Wirkungsquerschnitt von
+\begin{align} 
+        \sigma =\dfrac{8\pi }{3}\left(\dfrac{e^2}{4\pi \varepsilon _0m_ec^2}\right)^2\dfrac{\omega ^4}{\left(\omega _0^2-\omega ^2\right)^2}
+.\end{align} 
+Für $\omega \ll \omega _0$ ist $\sigma \propto \omega ^4$, das heißt, blaues Licht wird stärker als rotes Licht gestreut. (Der Himmel ist blau, weil blaues Licht von den Molekülen der Atmosphäre gestreut wird. Abends erscheint der Himmel rot, da das Licht eine größere Strecke durch die Atmosphäre zurücklegt und mehr rotes transmutiertes Licht ankommt.)\par
+Für $\omega \approx \omega _0$ kommt es zu einer Resonanzstreuung. Für $\omega \gg \omega _0$, sowie die Streuung an freien Elektronen (und keine Rückstellkräfte, also $\omega _0\rightarrow 0$), kommt es zur \textsc{Thomson}--Streuung, mit einem Wirkungsquerschnitt von
+\begin{align} 
+        \sigma =\dfrac{8\pi }{3}\left(\dfrac{e^2}{4\pi \varepsilon _0m_ec^2}\right)^2
+.\end{align} 
+Sie ist unabhängig von der Lichtwellenlänge.
 
 %}}}
 
