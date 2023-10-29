@@ -13,7 +13,8 @@ class Gerade:
         x_bar = ((x/yerr**2)).sum()/(1/yerr**2).sum()
         print('x_bar',x_bar)
 
-        x_bar_sq = x_bar**2 print('x_bar_sq',x_bar_sq)
+        x_bar_sq = x_bar**2
+        print('x_bar_sq',x_bar_sq)
 
         x_sq_bar = ((x**2)/(yerr**2)).sum()/(1/yerr**2).sum()
         print('x_sq_bar',x_sq_bar)
@@ -46,36 +47,43 @@ class Gerade:
 
 class Auswertung:
 
-    def __init__(self,x,xlabel,y,ylabel,yerr,xerr,title,color,zusammen):
+    def __init__(self,x,xlabel,y,ylabel,yerr,xerr,title,label,color,zusammen):
         self.Gerade = Gerade()
         self.x = x
+        self.xerr = xerr
         self.xlabel = xlabel
         self.y = y
-        self.ylabel = ylabel
         self.yerr = yerr
-        self.xerr = xerr
+        self.ylabel = ylabel
         self.title = title
+        self.label = label
         self.color = color
         self.zusammen = zusammen
 
     def auswertung(self):
+        font = {"fontname":"Computer Modern", "family":"serif"}
         mnvmvn = np.ndarray(shape=(len(self.x),4),dtype=float)
 
         for i in range(len(self.x)):
             mnvmvn[i] = self.Gerade.mnvmvn(self.x[i],self.y[i],self.yerr[i])
             steigung = mnvmvn[i][0]
+            steigung_plus = mnvmvn[i][0]-mnvmvn[i][2]
+            steigung_minus = mnvmvn[i][0]-mnvmvn[i][2]
             b = mnvmvn[i][1]
             fit = steigung*self.x[i]+b
+            fit_plus = steigung*self.x[i]+b+mnvmvn[i][3]
+            fit_minus = steigung*self.x[i]+b-mnvmvn[i][3]
 
-            plt.errorbar(self.x[i],self.y[i],self.yerr[i],self.xerr[i],fmt=self.color,ls="",marker=".",label='datenpunkte')
-            plt.plot(self.x[i],fit,self.color,label='geradenfit')
-            plt.plot(self.x[i],fit_plus,color='red',label='error +/y')
-            plt.plot(self.x[i],fit_minus,color='red')
+            plt.errorbar(self.x[i],self.y[i],self.yerr[i],self.xerr[i],fmt=self.color[i],ls="",marker=".",label=self.label[i]+' Messwerte',capsize=3,linewidth=0.5)
+            plt.plot(self.x[i],fit,self.color[i],label=self.label[i]+' Geradenfit',linewidth=0.8)
+            plt.plot(self.x[i],fit_plus,'b--',label='error +/-',linewidth=0.5)
+            plt.plot(self.x[i],fit_minus,'b--',linewidth=0.5)
 
-            plt.xlabel(self.xlabel[i])
-            plt.ylabel(self.ylabel[i])
-            plt.title(self.title[i])
+            plt.xlabel(self.xlabel,font)
+            plt.ylabel(self.ylabel,font)
+            plt.title(self.title,font)
             plt.legend(loc='best')
+            plt.grid()
 
             if len(self.zusammen) == 1:
                 plt.show()

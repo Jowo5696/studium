@@ -2,35 +2,20 @@ import numpy as np
 import matplotlib.pyplot as plt
 import geradenfit as gf
 
-# Konstanten
 
 
+# Plot
 
-# Messewrte
-#   Messwerte: aufgabeMessung = np.array([]) #Einheit
-#   Fehler: d_aufgabeMessung = np.zeros(len(Messwerte))+Fehler / np.array([]) #Einheit
-
-
-
-# Rechnung
-#   Messwerte: aufgabeGröße = Rechnung #Einheit
-#   Fehler: d_aufgabeGröße = Rechnung #Einheit
-
-
-
-# Achsen
-#   x =
-#   y =
-#   yerr =
-
-zusammen = ['end'] #<--- Welche Plots zusammengehören. Gleiche Buchstaben werden in einem Plot ausgegeben (Beispiel: ['a','a','b'], die ersten beiden x, y und yerr Werte werden in einem Plot ausgegeben, die dritten x, y, yerr Werte werden in einem Plot ausgegeben).
-x = [] #<--- x Werte
+zusammen = ['end'] # Welche Plots zusammengehören. Gleiche Buchstaben werden in einem Plot ausgegeben (Beispiel: ['a','a','b'], die ersten beiden x, y Werte werden in einem Plot ausgegeben, die dritten x, y, Werte werden in einem Plot ausgegeben).
+x = []
+xerr = []
 xlabel = []
-y = [] #<--- y Werte
+y = []
+yerr = []
 ylabel = []
-yerr = [] #<--- y Fehler (ein Fehler pro x Wert)
-xerr = [] #<--- x Fehler (ein Fehler pro x Wert)
-color = 'blue' #<--- Farbe der Punkte/Geraden
+title = 
+label = [] # label von plt.errorbar und plt.plot
+color = '' # farbe der punkte (geraden sind immer blau)
 
-Auswertung = gf.Auswertung(x,y,yerr,zusammen,color)
+Auswertung = gf.Auswertung(x,xerr,xlabel,y,yerr,ylabel,title,label,color,zusammen)
 Auswertung.auswertung()

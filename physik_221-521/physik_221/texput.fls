@@ -1,4 +1,0 @@
-PWD /home/jonas/studium/physik_221-521/physik_221
-INPUT /usr/share/texmf-dist/web2c/texmf.cnf
-INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-OUTPUT texput.log
