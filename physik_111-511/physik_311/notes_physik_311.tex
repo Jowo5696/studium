@@ -429,6 +429,65 @@ Für $\omega \approx \omega _0$ kommt es zu einer Resonanzstreuung. Für $\omega
 .\end{align} 
 Sie ist unabhängig von der Lichtwellenlänge.
 
+\newpage
+\section{Geometrische Optik}
+Die Konzepte in diesem Kapitel sind allgemein gültig, wenn alle Dimensionen viel größer als die Wellenlänge sind.\\\indent
+Die ebene Welle bleibt weiterhin $E=E_0\cos \left(kz-\omega t\right)$. Die Beugungseffekte am Rand von Lichtbündeln werden vernachlässigt.\\\indent
+Die Grundaxiome der geometrischen Optik sind:
+\begin{enumerate}[label=\roman*)]
+        \item In einem optisch homogenen Medium laufen die Lichtstrahlen geradlinig.
+        \item An Grenzflächen zwischen zwei Medien wird Licht gemäß des \textsc{Snellius}'schen Brechungsgesetzes reflektiert.
+        \item Strahlen, die sich durchdringen, beeinflussen sich im Rahmen der linearen Optik nicht.
+\end{enumerate}
+Die allgemeine Formulierung der ersten zwei Punkte ist das \textsc{Fermat}'sche Prinzip der minimalen optischen Laufzeit zwischen zwei Punkten $P_1$ und $P_2$. Die Variation des Weges über die räumlich inhomogene Brechzahl muss also verschwinden,
+\begin{align} 
+        \delta \int\limits_{S\left(P_1\rightarrow P_2\right)}^{}n\left(\vv{r}\right)\td s=0
+.\end{align} 
+Die Interpretation davon ist, dass alle Wege außer des extremalen Wegs gemittelt werden und nur der extremale übrig bleibt.
+
+\subsection{Optische Abbildung}
+Die Motivation der optischen Abbildung ist das Sammeln von z.B.\ einer Lampe ausgesendeten Lichtstrahlen.
+\\\hfill\\\textbf{Reelle Abbildung}\\ 
+Ein Objekt (z.B.\ eine Lampe) kann mit Hilfe eines abbildenden Instruments (z.B.\ einer Linse) auf einem Schrim als ein reelles Bild abgebildet werden.
+\\\hfill\\\textbf{Elliptische Spiegel}\\ 
+Bei elliptischen Spiegeln werden alle Lichstrahlen, die von einem Brennpunkt ausgesendet werden, in den anderen Brennpunkt abgebildet.
+
+\subsection{Sphärische Hohlspiegel / Kugelspiegel}
+Sei ein Gegenstand auf der optischen Achse eines Hohlspiegels. Ein Lichtstrahl wird im Winkel $\gamma $ ausgesendet und um den Winkel $2\cdot \theta $ reflektiert. Der Mittelpunkt liegt auf der optischen Achse und wird um den Winkel $\theta $ refelktiert und kommt im Winkel $\alpha $ an. Der Bildpunkt befindet sich auf der optischen Achse und das Licht kommt im Winkel $\beta $ an.\\\indent
+Der Abstand des Bildpunktes, des Mittelpunktes bzw.\ des Gegenstands zum Schnittpunkt von optischer Achse und Hohlspiegel ist $b,R$ bzw.\ $g$.\par
+Ziel ist es, die Position des Bildpunktes als Funktion der Gegenstandsweite zu bestimmen. Mit dem Reflexionsgesetz gilt $\theta =\alpha -\gamma =\beta -\alpha \Leftrightarrow \beta +\gamma =2\alpha $. Hier kann die \textbf{paraxiale Näherung} verwendet werden. Diese Näherung besagt, dass alle Winkel sehr viel kleiner als 1 sind (achsnahe Strahlen). Zudem ist der Abstand $d$ zwischen dem Lot auf die optische Achse des Reflexionspunktes und dem Spiegel viel kleiner als alle anderen Längen. $h$ ist die Länge des Lots.\par
+Die Näherungen sind dann 
+\begin{align} 
+        \tan \gamma &\approx \gamma \approx \dfrac{h}{g}\\
+        \tan \alpha &\approx \alpha \approx \dfrac{h}{R}\\
+        \tan \beta &\approx \beta \approx \dfrac{h}{b}
+.\end{align} 
+Aus $\beta +\gamma =2\alpha $ folgt dann
+\begin{align} 
+        \dfrac{1}{g}+\dfrac{1}{b}=\dfrac{2}{R}
+.\end{align} 
+Die Brennweite des Hohlspiegels ist definiert als
+\begin{align} 
+        f:=\dfrac{R}{2}
+.\end{align} 
+Für konvexe Spiegel ist $R<0$, also auch $f<0$.\par
+Damit lässt sich das \textbf{Abbildungsgesetz} schreiben als
+\begin{align} 
+        \dfrac{1}{g}+\dfrac{1}{b}=\dfrac{1}{f}
+.\end{align} 
+Für $g\rightarrow \infty$ ist $b=f$.\par
+Achsferne Strahlen, die in einem Winkel von z.B.\ $\ang{45}$ (zum Mittelpunkt) ankommen, werden wieder um $\ang{45}$ reflektiert. Die achsfernen Strahlen treffen sich mit den achsnahen Strahlen in einem Punkt. Die Abbildung ist nicht mehr scharf. Dieser Bildfehler lässt sich durch Verwendung eines Parabolspiegels vermeiden. Er lässt sich allerdings nur für die Fokussierung von parallelen Strahlen verwenden.
+
+\subsection{Linsen}
+Zunächst wird eine Abbildung durch eine brechende Kugelfläche betrachtet. Ein Lichtstrahl wird um den Winkel $\gamma $ zur optischen Achse ausgesendet und kommt in Einfallswinkel $\theta _1$ zur Normalen an. Der Lichtstrahl wird zum Lot hin um $\theta _2$ gebrochen. Der Abstand von Gegenstand zur Linse ist $g$; der Abstand von Bild zur Linse ist $b$. Der Abstand des Mittelpunktes $M$ zur Linse (die Weiterfühung der Normalen) auf der optischen Achse ist $R$. Der Einfallswinkel zum Bild ist $\beta $; der Einfallswinkel zum Mittelpunkt ist $\alpha $. Die Höhe des Reflexionspunktes über der optischen Achse ist $h$.\par
+Das Brechungsgesetz ist dann $n_1\sin \theta _1=n_2\sin \theta _2$. In paraxialer Näherung gilt $n_1\theta _1=n_2\theta _2$. Zudem gilt $\theta _1=\gamma +\alpha $ sowie $\theta _2=\alpha -\beta $. Mit den Winkeln wie beim Hohlspiegel definiert ist das Gesetz
+\begin{align} 
+        n_1\left(\gamma +\alpha \right)&=n_2\left(\alpha -\beta \right)\\
+        n_1\left(\dfrac{h}{g}+\dfrac{h}{R}\right)&=n_2\left(\dfrac{h}{R}-\dfrac{h}{b}\right)\\
+        \dfrac{n_1}{g}+\dfrac{n_2}{b}&=\dfrac{n_2-n_1}{R}
+.\end{align} 
+
+
 %}}}
 
 \end{document}
