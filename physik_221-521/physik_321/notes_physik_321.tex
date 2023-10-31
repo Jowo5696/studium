@@ -433,7 +433,7 @@ Um eine Punktladung darzustellen wird $R\rightarrow 0$. Dabei wird aber die Arbe
 \subsection{Multipolentwicklung}
 Die Annahme ist eine räumlich begrenzte (Radius $R$) Ladungsverteilung $\rho $ und keine Randbedingungen im Endlichen. Von Interesse ist hier der Effekt im Unendlichen, also die \textbf{Fernzone}. Das allgemeine Potential ist $\varphi \left(\vv{r}\right)=\tfrac{1}{4\pi \varepsilon _0}\int_{}^{}\td ^3r'\tfrac{\rho \left(\vv{r}'\right)}{|\vv{r}-\vv{r}'|}$. Man sucht das Potential für $r\gg R$. Dafür wird eine \textsc{Taylor}--Entwicklung um $\tfrac{r'}{r}\ll 1$ angesetzt.
 \begin{align} 
-        \dfrac{1}{|\vv{r}-\vv{r}'|}&=e^{-\vv{r}'\cdot \vv{\nabla }}\dfrac{1}{r}=\dfrac{1}{r}+\dfrac{\vv{r}'\vv{r}}{r^3}+\dfrac{3\left(\vv{r}\vv{r}'\right)^2-r^2r'^2}{r^5}+\hdots 
+        \dfrac{1}{|\vv{r}-\vv{r}'|}&=\text{e}^{-\vv{r}'\cdot \vv{\nabla }}\dfrac{1}{r}=\dfrac{1}{r}+\dfrac{\vv{r}'\vv{r}}{r^3}+\dfrac{3\left(\vv{r}\vv{r}'\right)^2-r^2r'^2}{r^5}+\hdots 
 .\end{align} 
 Damit ist das Potential dann
 \begin{align} 
@@ -455,6 +455,111 @@ Falls es keine Randbedingungen gibt, ist die Lösung der \textsc{Poisson}--Gleic
         \dfrac{1}{4\pi \varepsilon _0}\int_{}^{}\td ^3r'\dfrac{\rho \left(\vv{r}-\vv{r}'\right)}{|\vv{r}-\vv{r'}|}=\varphi \left(\vv{r}\right)
 .\end{align} 
 Oft ist aber $\rho \left(\vv{r}\right)$ in einem Raumgebiet $V$ und $\varphi $, oder $\diffp[]{\varphi }{n}=\left(\vv{n}\cdot \vv{\nabla }\right)\varphi =-E^{\left(n\right)}$ auf $S\left(V\right)$ gegeben.
+
+\newpage
+\newpage
+\section{\textsc{Green}'sche Funktion}
+\textit{Vorlesung 6 (26.10.) fehlt}
+\newpage
+
+\newpage
+\section{Kugelflächenfunktion}
+Der \textsc{Laplace}--Operator $\triangle$ kann als eine Funktion verstanden werden, die
+\begin{align} 
+        \triangle :f\mapsto \triangle f\left(\vv{r}\right)=\sum_{i=1}^{3}\partial _{r_i}^2 f\left(\vv{r}\right)
+.\end{align} 
+Es ist also möglich, dass $\triangle$ Eigenwerte besitzt, für die $\triangle f\left(\vv{r}\right)=\lambda f\left(\vv{r}\right)$.\par
+Man sucht nun nach Eigenfunktionen auf einer Kugeloberlfäche. Es gilt bereits
+\begin{align} 
+        \triangle f&=\dfrac{1}{r^2}\partial_r \left(r^2\partial_r f\right)+\dfrac{1}{r^2}\triangle _{\theta ,\varphi }f
+,\end{align} 
+mit dem Winkelanteil 
+\begin{align} 
+        \triangle _{\theta ,\varphi }f&=\dfrac{1}{\sin \theta }\partial _\theta \left(\sin \theta \partial_\theta  f\right)+\dfrac{1}{\sin ^2\theta }\partial_\theta ^2 f
+.\end{align} 
+Die Eigenfunktionen von $\triangle _{\theta ,\varphi }$ sind die \textbf{Kugelflächenfunktionen}
+\begin{align} 
+        y_{lm}\left(\theta ,\varphi \right)&:=\,\sqrt[]{\dfrac{2l+1}{4\pi }\dfrac{\left(l-m\right)!}{\left(l+m\right)!}}P_l^m \left(\cos \varphi \right)\text{e}^{\text{i}m\varphi }
+,\end{align} 
+mit $l=0,1,2,\hdots $ und $m=-l,-l+1,-l+2,\hdots ,l-2,l-1,l$. Beispiele sind
+\begin{align} 
+        y_{00}\left(\theta ,\varphi \right)&=\dfrac{1}{\,\sqrt[]{4\pi }}&y_{11}\left(\theta ,\varphi \right)&=-\,\sqrt[]{\dfrac{3}{8\pi }}\sin \theta \text{e}^{\text{i}\varphi }&y_{10}\left(\theta ,\varphi \right)&=\,\sqrt[]{\dfrac{3}{4\pi }}\cos \theta 
+.\end{align}
+Die Funktion $P_l^m$ sind die zugeordneten \textsc{Legendre}--Polynome. Sie sind Lösungen der verallgemeinerten \textsc{Legendre}--Gleichung
+\begin{align} 
+        \diff*[]{\left(\left(1-z^2\right)\diff[]{P_l^m}{z}\right)}{z}+\left(l\left(l+1\right)-\dfrac{m^2}{1-z^2}\right)P_l^m\left(z\right)&=0&z&=\cos \theta 
+.\end{align} 
+Wendet man den \textsc{Laplace}--Operator auf die Kugelflächenfunktion an erhält man die Eigenfunktionen auf der Kugeloberfläche (ohne Radialteil)
+\begin{align} 
+        \triangle_{\theta ,\varphi }y_{l m}\left(\theta ,\varphi \right)=-l\left(l+1\right)y_{l m}\left(\theta ,\varphi \right)
+.\end{align} 
+Diese Funktion ist orthogonal. Es gilt
+\begin{align} 
+        \int_{0}^{2\pi }\td \varphi \int_{0}^{\pi }\sin \theta \td \theta y_{l'm'}^*\left(\theta ,\varphi \right)y_{l m}\left(\theta ,\varphi \right)&=\delta _{ll'}\delta _{mm'}
+.\end{align} 
+Zudem ist sie vollständig, also
+\begin{align} 
+        \sum_{l=0}^{\infty}\sum_{m=-l}^{l}y_{l m}^*\left(\theta ',\varphi '\right)y_{l m}\left(\theta ,\varphi \right)&=\underbrace{\delta \left(\cos \theta '-\cos \theta \right)}_{\delta \left(z'-z\right)}\delta \left(\varphi -\varphi '\right)
+.\end{align} 
+
+\subsection{Entwicklung von Funktionen}
+Eine Funktion kann entwickelt werden, indem
+\begin{align} 
+        f\left(r,\theta ,\varphi \right)&=\sum_{l=0}^{\infty}\sum_{m=-l}^{l}R_{l m}\left(r\right)y_{l m}\left(\theta ,\varphi \right)
+,\end{align} 
+mit $R_{l m}\left(r\right)$ dem Radialanteil,
+\begin{align} 
+        R_{l m}\left(r\right)&=\int_{0}^{2\pi }\td \varphi \int_{0}^{\pi }\sin \theta \td \theta f\left(r,\theta ,\varphi \right)y_{l m}^*\left(\theta ,\varphi \right)
+.\end{align} 
+
+\subsection{Lösung der \textsc{Laplace}--Gleichung}
+Der Ansatz für die Lösung der Gleichung $\triangle \varphi =0$ ist
+\begin{align} 
+        \varphi \left(\vv{r}\right)&=\varphi \left(r,\theta ,\varphi \right)=\sum_{l,m}^{}R_{l m}\left(r\right)y_{l m}\left(\theta ,\varphi \right)
+.\end{align} 
+Damit folgt
+\begin{align} 
+        0=\triangle \varphi &=\sum_{l,m}^{}\left[\dfrac{1}{r^2}\diff*[]{r^2\diff[]{R_{l m}}{r}}{r}+\dfrac{R_{l m}}{r^2}\triangle _{\theta ,\varphi }\right]y_{l m}\left(\theta ,\varphi \right)\\
+                            &=\sum_{l,m}^{}\left[\dfrac{1}{r^2}\diff*[]{\left(r^2\diff[]{R_{l m}\left(r\right)}{r}-\dfrac{R_{l m}\left(r\right)l\left(l+1\right)}{r^2}\right)}{r}\right]y_{l m}
+.\end{align} 
+Der Term 
+\begin{align} 
+        \dfrac{1}{r^2}\diff*[]{\left(r^2\diff[]{R}{r}\right)}{r}-\dfrac{l\left(l+1\right)}{r^2}R=0
+\end{align} 
+ist der \textbf{Radialanteil}. Mit dem Ansatz $R\left(r\right)=\tfrac{1}{r}u\left(r\right)$ 
+\begin{align} 
+        \left(\dfrac{\td ^2}{\td r^2}-\dfrac{l\left(l+1\right)}{r^2}\right)u\left(r\right)&=0\\
+        Ar^{l+1}+Br^{-l}&=u\left(r\right)\\
+        Ar^l+Br^{-\left(l+1\right)}&=R\left(r\right)
+.\end{align} 
+Die allgemeine Lösung der \textsc{Laplace}--Gleichung ist dann
+\begin{align} 
+        \varphi \left(\vv{r}\right)&=\sum_{l,m}^{}\left(A_{l m}r^l+B_{l m}r^{-\left(l+1\right)}\right)y_{l m}\left(\theta ,\varphi \right)
+,\end{align} 
+mit $A_{l m}$ und $B_{l m}$ aus den Randbedingungen.
+
+\subsection{Beispiel: Ladung einer Hohlkugel}
+Sie eine Kugel mit Radius $R$ und Ladungsverteilung $\sigma \left(\theta ,\varphi \right)$ auf der Hülle. Im Inneren und im Äußeren ist die Ladung $\rho _i$ und $\rho _a$ gleich null. Das Potential lässt sich dann mit der allgemeinen Lösung für die Kugelflächenfunktion lösen
+\begin{align} 
+        \phi _i\left(\vv{r}\right)&=\sum_{l,m}^{}\left(A^i_{l m}r^l+B^i_{l m}r^{-\left(l+1\right)}\right)y_{l m}\left(\theta ,\varphi \right)\\
+        \phi _a\left(\vv{r}\right)&=\sum_{l,m}^{}\left(A^a_{l m}r^l+B^a_{l m}r^{-\left(l+1\right)}\right)y_{l m}\left(\theta ,\varphi \right)
+.\end{align} 
+Die Randbedingungen sind,
+\begin{enumerate}[label=\roman*)]
+        \item $\phi _a\left(\vv{r}\right)=0$ für $r\rightarrow \infty$. $\Rightarrow A_{l m}^a=0\,\forall l,m$.
+        \item Bei $r=0$ soll $\phi _i$ eine reguläre Funktion sein (sie soll nicht divergieren).$\Rightarrow B_{l m}^i=0\,\forall l,m$.
+\end{enumerate}
+Damit ist die Lösung vorerst
+\begin{align} 
+        \phi \left(\vv{r}\right)&=\begin{cases}
+                \sum_{l m}^{}A_{l m}^ir^ly_{l m}\left(\theta ,\varphi \right)&,r\leq R\\
+                \sum_{l,m}^{}B_{l m}^ar^{-\left(l+1\right)}y_{l m}\left(\theta ,\varphi \right)&,r>R
+        \end{cases}
+.\end{align} 
+\begin{enumerate}[label=\roman*)]
+        \item[iii)] $\phi _i\left(R,\theta ,\varphi \right)=\phi _a\left(R,\theta ,\varphi \right)\,\forall \theta ,\varphi $. Es muss dann $\,\forall l,m$ gelten, dass $A^i_{l m}R^l=B_{l m}^aR^{-\left(l+1\right)}$. Damit ist $B_{l m}^a=A^i_{l m}R^{2l+1}$.
+        \item[iv)] $\sigma \left(\rightarrow ,\varphi \right)$ existerit auf $S\left(K_R\right)$. Damit ist das $\vv{E}$--Feld nicht stetig, also $\partial_r \phi _i-\partial_r \varphi _a=\tfrac{\sigma }{\varepsilon _0}$. Entwickelt man $\sigma \left(\theta ,\varphi \right)$ in $y_{l m}$ folgt, $\sigma \left(\theta ,\varphi \right)=\sum_{l,m}^{}\sigma _{l m}y_{l m}\left(\theta ,\varphi \right)$. Daraus folgt $A_{l m}^i=\dfrac{\sigma _{l m}}{2\left(l+1\right)\varepsilon _0}\dfrac{1}{R^{l-1}}$.
+\end{enumerate}
 
 %{{{ Notizen
 \newpage
