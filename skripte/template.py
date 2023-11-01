@@ -1,5 +1,7 @@
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
+from tabulate import tabulate
 import geradenfit as gf
 
 
@@ -13,9 +15,9 @@ xlabel = []
 y = []
 yerr = []
 ylabel = []
-title = 
+title = ''
 label = [] # label von plt.errorbar und plt.plot
-color = '' # farbe der punkte (geraden sind immer blau)
+color = [] # farbe der punkte (geraden sind immer blau)
 
 Auswertung = gf.Auswertung(x,xerr,xlabel,y,yerr,ylabel,title,label,color,zusammen)
 Auswertung.auswertung()

@@ -63,7 +63,7 @@ class Auswertung:
     def auswertung(self):
         font = {"fontname":"Computer Modern", "family":"serif"}
         mnvmvn = np.ndarray(shape=(len(self.x),4),dtype=float)
-
+        
         for i in range(len(self.x)):
             mnvmvn[i] = self.Gerade.mnvmvn(self.x[i],self.y[i],self.yerr[i])
             steigung = mnvmvn[i][0]
@@ -75,12 +75,12 @@ class Auswertung:
             fit_minus = steigung*self.x[i]+b-mnvmvn[i][3]
 
             plt.errorbar(self.x[i],self.y[i],self.yerr[i],self.xerr[i],fmt=self.color[i],ls="",marker=".",label=self.label[i]+' Messwerte',capsize=3,linewidth=0.5)
-            plt.plot(self.x[i],fit,self.color[i],label=self.label[i]+' Geradenfit',linewidth=0.8)
-            plt.plot(self.x[i],fit_plus,'b--',label='error +/-',linewidth=0.5)
-            plt.plot(self.x[i],fit_minus,'b--',linewidth=0.5)
+#            plt.plot(self.x[i],fit,self.color[i],label=self.label[i]+' Geradenfit',linewidth=0.8)
+#            plt.plot(self.x[i],fit_plus,'b--',label='error +/-',linewidth=0.5)
+#            plt.plot(self.x[i],fit_minus,'b--',linewidth=0.5)
 
-            plt.xlabel(self.xlabel,font)
-            plt.ylabel(self.ylabel,font)
+            plt.xlabel(self.xlabel[i],font)
+            plt.ylabel(self.ylabel[i],font)
             plt.title(self.title,font)
             plt.legend(loc='best')
             plt.grid()
@@ -93,4 +93,4 @@ class Auswertung:
                 continue
 
         plt.show()
-        #plt.savefig('')
+        #plt.savefig('238_g_plot.png')
