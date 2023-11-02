@@ -40,17 +40,17 @@ a_head2 = ['Pw [W]','ΔPw [W]','Ps [W]','ΔPs [W]','Ps*cos [W]','ΔP*cos [W]']
 #print(tabulate(a_data2,headers=a_head2,tablefmt='fancy_grid'))
 
 zusammen = ['a','a','a','end'] # Welche Plots zusammengehören. Gleiche Buchstaben werden in einem Plot ausgegeben (Beispiel: ['a','a','b'], die ersten beiden x, y Werte werden in einem Plot ausgegeben, die dritten x, y, Werte werden in einem Plot ausgegeben).
-x = [a_R,a_R,a_R]
-xerr = [a_delt_R,a_delt_R,a_delt_R]
-xlabel = 'Widerstand [Ω]'
-y = [a_Pw,a_Ps,a_Pscos]
-yerr = [a_delt_Pw,a_delt_Ps,a_delt_Pscos]
-ylabel = 'Leistung [W]'
+x = [a_R,a_R,a_R,a_R]
+xerr = [a_delt_R,a_delt_R,a_delt_R,np.zeros(len(a_R))+0.01]
+xlabel = ['Widerstand [Ω]','Widerstand [Ω]','Widerstand [Ω]','Widerstand [Ω]']
+y = [a_Pw,a_Ps,a_Pscos,np.zeros(len(a_R))+27]
+yerr = [a_delt_Pw,a_delt_Ps,a_delt_Pscos,np.zeros(len(a_R))+0.01]
+ylabel = ['Leistung [W]','Leistung [W]','Leistung [W]','Leistung [W]']
 title = '238.b: RC-Kreis'
-label = ['Wirkleistung','Scheinleistung','Scheinleistung cos'] # label von plt.errorbar und plt.plot
-color = ['red','green','blue'] # farbe der punkte (geraden sind immer blau)
+label = ['Wirkleistung','Scheinleistung','Scheinleistung cos','Maximale Wirkleistung'] # label von plt.errorbar und plt.plot
+color = ['red','green','blue','pink'] # farbe der punkte (geraden sind immer blau)
 
-Auswertung = gf.Auswertung(x,xerr,xlabel,y,yerr,ylabel,title,label,color,zusammen)
+#Auswertung = gf.Auswertung(x,xerr,xlabel,y,yerr,ylabel,title,label,color,zusammen)
 #Auswertung.auswertung()
 
 #}}}
@@ -188,8 +188,8 @@ title = '238.g: Spannungsübertragung'
 label = ['Spannungsverhältnis'] # label von plt.errorbar und plt.plot
 color = 'red' # farbe der punkte (geraden sind immer blau)
 
-Auswertung = gf.Auswertung(x,xerr,xlabel,y,yerr,ylabel,title,label,color,zusammen)
-Auswertung.auswertung()
+#Auswertung = gf.Auswertung(x,xerr,xlabel,y,yerr,ylabel,title,label,color,zusammen)
+#Auswertung.auswertung()
 
 # Plot
 
