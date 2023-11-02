@@ -561,6 +561,116 @@ Damit ist die Lösung vorerst
         \item[iv)] $\sigma \left(\rightarrow ,\varphi \right)$ existerit auf $S\left(K_R\right)$. Damit ist das $\vv{E}$--Feld nicht stetig, also $\partial_r \phi _i-\partial_r \varphi _a=\tfrac{\sigma }{\varepsilon _0}$. Entwickelt man $\sigma \left(\theta ,\varphi \right)$ in $y_{l m}$ folgt, $\sigma \left(\theta ,\varphi \right)=\sum_{l,m}^{}\sigma _{l m}y_{l m}\left(\theta ,\varphi \right)$. Daraus folgt $A_{l m}^i=\dfrac{\sigma _{l m}}{2\left(l+1\right)\varepsilon _0}\dfrac{1}{R^{l-1}}$.
 \end{enumerate}
 
+\newpage
+\section{Dielektrika}
+\subsection{Makroskopische Feldgrößen}
+Im Wesentlichen werden für makroskopische Feldgrößen mikroskopische Felder $f\left(\vv{r}\right)$ geglättet, also $\left\langle f\left(\vv{r}\right)\right\rangle =\dfrac{1}{v\left(\vv{r}\right)}\int_{v\left(\vv{r}\right)}^{}f\left(\vv{r}'\right)\td ^3r'$. $\left\langle f\left(\vv{r}\right)\right\rangle $ ist ein kontinuierliches Feld. Man macht die Annahme, dass $\left\langle \,\text{grad}\,f\left(\vv{r}\right)\right\rangle =\,\text{grad}\,\left\langle f\left(\vv{r}\right)\right\rangle $. Analog betrachtet man das $\vv{E}$--Feld als $\vv{E}\left(\vv{r}\right)=\left\langle \vv{E}_{\,\text{mikroskop.}\,}\left(\vv{r}\right)\right\rangle $. Damit sind die \textsc{Maxwell}--Gleichungen
+\begin{align} 
+        \,\text{div}\,\vv{E}&=\dfrac{\left\langle \rho _m\right\rangle }{\varepsilon _0}&\,\text{rot}\,\vv{E}&=0
+.\end{align} 
+Weiterhin ist $\left\langle \vv{E}_m\right\rangle =-\left\langle \,\text{grad}\,\varphi _m\right\rangle =-\,\text{grad}\,\left\langle \varphi _m\right\rangle $.\par
+Sei ein $j$--tes Teilchen an Punkt $\vv{R}_j$, insgesamt neutral geladen mit \textbf{Überschussladungen} am Rand. 
+Man betrachtet sein Potential am Punkt $\vv{r}$.
+Die Gesamtladung ist $q_j=\sum_{n}^{\left(j\right)}q ^{(j)}_n $, mit der Ladungsdichte $\rho _j\left(\vv{r}\right)=\sum_{n}^{(j)}q ^{(j)}_n\delta \left(\vv{r}-\vv{r}_n\right)$.
+$j$ ist hierbei das Teilchen mit $n$ Ladungsträgern.\par
+Wenn ein $\vv{E}$--Feld anliegt, werden Ladungen aus ihrer Gleichgewichtslage ausgelenkt, wodurch Multipole induziert werden.
+Das Dipolmoment ist also $\vv{p}_j=\int_{}^{}\td ^3r\rho _j\left(\vv{r}\right)\left(\vv{r}-\vv{R}_j\right)$.
+Man nimmt an, dass $|\vv{r}-\vv{R}_j|\gg$ als die Abstände im Raum des Teilchens $j$ sind.
+Für die Multipolentwicklung befindet man sich also in der Fernzone.
+Das Potential des $j$--ten Teilchens mit Dipolmoment ist dann
+\begin{align} 
+        \varphi _j\left(\vv{r}\right)&=\dfrac{1}{4\pi \varepsilon _0}\left[\dfrac{q_j}{|\vv{r}-\vv{R}_j|}+\dfrac{\vv{p}_j\left(\vv{r}-\vv{R}_j\right)}{|\vv{r}-\vv{R}_j|^3}\right]
+.\end{align} 
+Für $N$ Teilchen kann eine \textbf{effektive Ladungsdichte} bzw.\ \textbf{effektive Dipoldichte} verwendet werden,
+\begin{align} 
+        \rho _e\left(\vv{r}\right)&=\sum_{j=1}^{N}q_j\delta \left(\vv{r}-\vv{R}_j\right)&\vv{\Pi }_e\left(\vv{r}\right)&=\sum_{j=1}^{N}\vv{p}_j\delta \left(\vv{r}-\vv{R}_j\right)
+.\end{align} 
+Damit lässt sich das \textbf{effektive Potential} schreiben,
+\begin{align} 
+        \varphi _e\left(\vv{r}\right)&=\dfrac{1}{4\pi \varepsilon _0}\int_{}^{}\td ^3r'\left[\dfrac{\rho _e\left(\vv{r}'\right)}{|\vv{r}-\vv{r}'|}+\vv{\Pi }_e\left(\vv{r}'\right)\dfrac{\vv{r}-\vv{r}'}{|\vv{r}-\vv{r}'|^3}\right]
+.\end{align} 
+Die Mittelung für makroskopische Ladungsdichte ist $\rho \left(\vv{r}\right)=\left\langle \rho _e\left(\vv{r}\right)\right\rangle $.
+Sie stellt die \textbf{Überschussladungen} dar, da alle anderen Ladung im Mittel neutral sind.\par
+Aus der Dipoldichte lässt sich die \textbf{makroskopische Polarisation} herleiten
+\begin{align} 
+        \vv{P}\left(\vv{r}\right)&=\left\langle \vv{\Pi }_e\left(\vv{r}\right)\right\rangle =\dfrac{1}{v\left(\vv{r}\right)}\sum\limits_{j \in v\left(\vv{r}\right)}^{}\vv{p}_j
+.\end{align} 
+Damit lässt sich das gemittelte Potential schreiben als
+\begin{align} 
+        \varphi \left(\vv{r}\right)=\left\langle \varphi _m\left(\vv{r}\right)\right\rangle &=\dfrac{1}{4\pi \varepsilon _0}\int_{}^{}\td ^3r'\left[\dfrac{\rho \left(\vv{r}\right)}{|\vv{r}-\vv{r}'|}+\vv{P}\left(\vv{r}'\right)\cdot \,\text{grad}\,_{\vv{r}}\dfrac{1}{|\vv{r}-\vv{r}'|}\right]
+,\end{align} 
+bzw.\ das elektrische Feld
+\begin{align} 
+        \,\text{div}\,\vv{E}&=\dfrac{1}{\varepsilon _0}\left(\rho \left(\vv{r}\right)-\,\text{div}\,\vv{P}\left(\vv{r}\right)\right)=\dfrac{1}{\varepsilon _0}\left(\rho +\rho _P\right)
+,\end{align} 
+mit $\rho _P=\,\text{div}\,\vv{P}\left(\vv{r}\right)$, der Polarisationsladungsdichte.\par
+Man definiert die \textbf{dielektrische Verschiebung} und erhält die \textsc{Maxwell}--Gleichungen in einem Medium
+\begin{align} 
+        \vv{D}&=\varepsilon _0\vv{E}+\vv{P}&\,\text{div}\,\vv{D}&=\rho &\,\text{rot}\,\vv{E}&=0
+.\end{align} 
+Daraus folgt, dass die Quellen von $\vv{D}$ Überschussladungen sind.
+Das elektrische Feld hängt von der Materie ab.\par
+Das Polarisationfeld induziert eine Oberflächenladung $\sigma _P=\vv{P}\vv{n}$.\par
+Es gibt verschiedene Arten von Dielektrika, z.B.\ eigentliche Dielektrika, Paraelektrika oder Ferroelektrika.
+\\\hfill\\\textbf{Typen von Polarisation}\\ 
+Man unterscheidet zwei Typen von Polarisation, $\vv{P}=\vv{P}\left(\vv{E}\right)$ und $\vv{P}\left(0\right)=0$.
+\begin{align} 
+        \vv{P}\left(\vv{E}\right)_i&=\sum_{k}^{}\gamma _{ik}E_k-\sum_{k,l}^{}\beta _{ikl}E_kE_l+\hdots 
+.\end{align} 
+Man vereinfacht diesen Ausdruck zu $P_i=\gamma E_i$.
+Es handelt sich um ein isotropes Meidum, mit $\vv{P}=\chi_e \varepsilon _0\vv{E}$.
+Die dielektrische Verschiebung ist dann
+\begin{align} 
+        \vv{D}=\varepsilon _0\vv{E}+\vv{P}=\varepsilon _0\left(\chi_e+1\right)\vv{E}&=\varepsilon _r\varepsilon _0\vv{E}
+.\end{align} 
+
+\subsection{Randwertprobleme}
+Von Interesse sind die Bedingungen an Grenzflächen verschiedener Dielektrika, mit $\varepsilon ^1_r$ und $\varepsilon ^2_r$.
+Mit Hilfe des \textsc{Gauss}--schen Satzes folgt dann für die Normalkomponente
+\begin{align} 
+        \vv{n}\cdot \left(\vv{D}_2-\vv{D}_1\right)=\sigma 
+,\end{align} 
+bzw.\ für die Tangentialkomponente
+\begin{align} 
+        \left(\vv{E}_2-\vv{E}_1\right)\times \vv{n}=0
+.\end{align} 
+Daraus folgt, dass
+\begin{align} 
+        D_1^n&=D_2^n&E_1^n&=\dfrac{\varepsilon _r^2}{\varepsilon _r^1}E_2^n&E_1^t&=E_2^t&D_1^t&=\dfrac{\varepsilon _r^1}{\varepsilon _r^2}D_2^t
+.\end{align} 
+
+\subsection{Beispiel: Grenzfläche}
+Seien zwei Dielektrika mit $\varepsilon _1$ und $\varepsilon _2$. Auf der $z$--Achse sei eine Punktladung $q$ in Medium $\varepsilon _1$ im Abstand $d$ zu Medium $\varepsilon _2$. Auf der Grenzfläche ist $\sigma =0$.
+Es gilt
+\begin{align} 
+        \varepsilon _1\,\text{div}\,\vv{E}&=\rho \left(z>0\right)=q\delta \left(\vv{r}-d\vv{e}_z\right)
+.\end{align} 
+Für das andere Medium gilt
+\begin{align} 
+        \varepsilon _2\,\text{div}\,\vv{E}&=0\qquad z<0
+,\end{align} 
+mit $\varepsilon _i\,\text{div}\,\vv{E}=\,\text{div}\,\vv{D}$.
+$\,\forall z$ gilt $\,\text{rot}\,\vv{E}=0$.\par
+Die Randbedingungen sind
+\begin{align} 
+        \lim_{z\rightarrow 0}D_z^1\left(-z\right)&=\lim_{z\rightarrow 0}D_z^1\left(z\right)
+.\end{align} 
+Diese Bedingung ist gleichbedeutend mit
+\begin{align} 
+        \lim_{z\rightarrow 0}\varepsilon _2E_z^2\left(-z\right)&=\lim_{z\rightarrow 0}\varepsilon _1E_z^1\left(z\right)
+.\end{align} 
+Zudem ist
+\begin{align} 
+        \lim_{z\rightarrow 0}E_{x,y}^2\left(-z\right)&=\lim_{z\rightarrow 0}E_{x,y}^1\left(z\right)
+.\end{align} 
+Der Ansatz ist, dass die Ladung $q$ eine Spiegelladung bzw.\ Bildladung $q'$ bei $-d$ hat. Weiter hat die Ladung $q'$ eine Bildladung $q''$ im Medium 1, welche die Randbedingungen an der Grenzfläche simulieren.\par
+Die Potentiale sind
+\begin{align} 
+        z>0&:\varphi ^1\left(\vv{r}\right)=\dfrac{1}{4\pi \varepsilon _0\varepsilon _r^1}\left[\dfrac{q}{|\vv{r}-d\vv{e}_z|}+\dfrac{q'}{|\vv{r}+d\vv{e}_z|}\right]\\
+        z<0&:\varphi ^2\left(\vv{r}\right)=\dfrac{1}{4\pi \varepsilon _0\varepsilon _r^2}\left[\dfrac{q''}{|\vv{r}-d\vv{e}_z|}\right]
+.\end{align} 
+
+
 %{{{ Notizen
 \newpage
 \section{Delta--Distribution}
