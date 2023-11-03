@@ -367,6 +367,39 @@ Sei die Potenzreihe $f\left(z\right):=\sum_{}^{}\alpha _kz^k$. Die um $z_0$ vers
 ,\end{align} 
 dann ist der Konvergenzradius mindestens $R'\geq R-|z_0|$ und $g\left(h\right)=f\left(z_0+h\right)$, falls $|z_0|+|h|<R$.
 
+\subsubsection{Vertauschnug}
+Falls $\sum_{k=0}^{\infty}\sum_{n=0}^{\infty}|c _{kn}|<\infty$, dann dürfen die Summen vertauscht werden
+\begin{align} 
+        \sum_{k=0}^{\infty}\sum_{n=0}^{\infty}c _{kn}=\sum_{n=0}^{\infty}\sum_{k=0}^{\infty}c _{kn}
+.\end{align} 
+
+\subsection{Exponentialfunktion}
+Die Exponentialfunktion hat eine Reihendarstellung
+\begin{align} 
+        \text{exp}\left(z\right)&:=\sum_{k=0}^{\infty}\dfrac{1}{k!}z^k
+.\end{align} 
+Die Ableitung der Exponentialfunktion ist wieder die Exponentialfunktion
+\begin{align} 
+        \text{exp}'\left(z\right)&=\sum_{k=0}^{\infty}k\dfrac{1}{k!}z^{k-1}\\
+                                     &=\sum_{k=1}^{\infty}\dfrac{1}{\left(k-1\right)!}z^{k-1}\\
+                                     &=\sum_{k=0}^{\infty}\dfrac{1}{k!}z^k\\
+                                     &=\text{exp}\left(z\right)
+.\end{align} 
+Eine weitere wichtige Eigenschaft ist 
+\begin{align} 
+        \text{exp}\left(z_1+z_2\right)=\text{exp}\left(z_1\right)\text{exp}\left(z_2\right)
+.\end{align} 
+Sei $y \in \mathbb{R}$, dann ist
+\begin{align} 
+        |\text{exp}\left(y\text{i}\right)|=1
+.\end{align} 
+Wird $y$ verändert, dreht sich also die Exponentialfunktion um den Einheitskreis. Wird der Realteil ($x$) verändert, ändert sich der Betrag der Funktion.\par
+Die Exponentialfunktion lässt sich auch durch andere Funktionen darstellen
+\begin{align} 
+        \text{exp}\left(z\right)&=\cosh \left(z\right)+\sinh \left(z\right)\\
+        \text{exp}\left(\text{i}z\right)&=\cos \left(z\right)+\text{i}\sin \left(z\right)
+.\end{align} 
+
 %}}}
 
 \end{document}
