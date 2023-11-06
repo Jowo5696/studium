@@ -514,6 +514,103 @@ Man definiert die transversale Vergrößerung
 .\end{align} 
 Für $g>f$ ist $V_T<0$, das Bild steht also auf dem Kopf. $|V_T|$ wächst, wenn $g$ sich dem Brennpunkt nähert.
 
+\subsubsection{Dicke Linsen}
+Wenn die Dicke der Linse gegenüber $g,f,R_1$ und $R_2$ nicht mehr vernachlässigbar ist.\par
+Um das übliche Verfahren zur Bildkonstruktion zu verwenden, wird das Licht nicht mehr an den Oberflächen der Linse gebrochen, sondern an zwei Hauptebenen im Abstand $h_1$ und $h_2$ von der Mitte der Linse.
+Zwischen den Hauptebenen verlaufen die Strahlen parallel.
+Es gilt
+\begin{align} 
+        h_{1,2}&=\dfrac{\left(n-1\right)fd}{nR_{1,2}}&\dfrac{1}{f}&=\left(n-1\right)\left[\dfrac{1}{R_1}-\dfrac{1}{R_2}+\dfrac{\left(n-1\right)d}{nR_1R_2}\right]
+.\end{align} 
+
+\newpage
+\section{Matrizenoptik}
+Das Ziel in der Matrizenoptik ist die Berechnung von optischen Systemen mit mehreren Linsen.
+Für achsnahe Strahlen ist auch hier eine Linearisierung möglich. 
+Mit paraxialer Optik sind für die Ausbreitung entlang einer Achse alle Winkel viel kleiner als 1.\par
+Die Beschreibung der Strahlen erfolgt durch den Strahlvektor
+\begin{align} 
+        \vv{r}\left(z\right)&=\begin{pmatrix}
+                r\left(z\right)\\\alpha \left(z\right)
+        \end{pmatrix}
+,\end{align} 
+mit $r\left(z\right)$ dem Abstand und $\alpha \left(z\right)$ dem Winkel zur optischen Achse $z$.\par
+Trifft ein Strahl $\vv{r}_1\left(z\right)$ in ein Medium und verlässt dieses wieder mit $\vv{r}_2\left(z\right)$, gilt 
+\begin{align} 
+        \vv{r}_2&=\hat{M}\vv{r}_1&\hat{M}&=\begin{pmatrix}
+                A&B\\C&D
+        \end{pmatrix}
+.\end{align} 
+Für ein paraxiales optisches System gilt
+\begin{align} 
+        \hat{M}_{\,\text{ges}\,}&=\hat{M}_i\cdot \hdots \cdot \hat{M}_2\cdot \hat{M}_1
+.\end{align} 
+
+\subsection{Beispiel: Ungestörte Fortpflanzung}
+Für eine unegestörte Fortpflanzung (ohne Brechung) gilt $r_2=r_1+\alpha l$ und $\alpha _1=\alpha _2$, also
+\begin{align} 
+        \begin{pmatrix}
+                r_2\\\alpha _2
+        \end{pmatrix}&=\begin{pmatrix}
+                r_1+\alpha _1l\\\alpha _1
+        \end{pmatrix}\\
+        &=\begin{pmatrix}
+                1&l\\0&1
+        \end{pmatrix}\begin{pmatrix}
+                r_1\\\alpha _1
+        \end{pmatrix}
+.\end{align} 
+Es bestägigt also die Relation 
+\begin{align} 
+        \vv{r}_2&=\hat{M}\vv{r}_1&\hat{M}&=\begin{pmatrix}
+                1&l\\0&1
+        \end{pmatrix}
+.\end{align} 
+
+\subsection{Beispiel: Dünne Linse}
+Für eine dünne Linse mit Brennweite $f$ gilt $r_1=r_2$ und $\alpha _2=\alpha _1\tfrac{r_1}{f}$, also
+\begin{align} 
+        \hat{M}&=\begin{pmatrix}
+                1&0\\-\tfrac{1}{f}&0
+        \end{pmatrix}
+.\end{align} 
+
+\subsection{Beispiel: Sphärischer Spiegel}
+Für eine sphärischen Spiegel mit Krümmungsradius $R$ und Brennweite $f=\tfrac{R}{2}$ gilt
+\begin{align} 
+        \hat{M}&=\begin{pmatrix}
+                1&0\\-\tfrac{2}{R}&1
+        \end{pmatrix}
+.\end{align} 
+
+\subsection{Beispiel: Zwei Linsen hintereinander}
+Mit der Matrixmethode kann unmittelbar die Wirkung von zwei Linsen hintereinander bestimmt werden.\par
+Der Abstand der Linsen mit Brennweiten $f_1$ und $f_2$ sei $d$. Es ist
+\begin{align} 
+        \hat{M}_{\,\text{ges}\,}&=\hat{M}_2\cdot \hat{M}_d\cdot \hat{M}_1\\
+                                &=\begin{pmatrix}
+                                        1&0\\-\tfrac{1}{f_2}&1
+                                \end{pmatrix}\cdot \begin{pmatrix}
+                                        1&d\\0&1
+                                \end{pmatrix}\cdot \begin{pmatrix}
+                                        1&0\\-\tfrac{1}{f_1}&1
+                                \end{pmatrix}\\
+                                &=\begin{pmatrix}
+                                        1-\tfrac{d}{f_1}&d\\
+                                        -\left(\tfrac{1}{f_1}+\tfrac{1}{f_2}-\tfrac{d}{f_1f_2}\right)&1-\tfrac{d}{f_2}
+                                \end{pmatrix}
+.\end{align} 
+Das System zeigt gewisse Analogien mit einer einzigen Linse der Brennweite $\tfrac{1}{f}=\tfrac{1}{f_1}+\tfrac{1}{f_2}-\tfrac{d}{f_1f_2}$.\par
+Es gibt folgende interessante Grenzfälle
+\begin{enumerate}[label=\roman*)]
+        \item Abstand $d\rightarrow 0$: Das System verhält sich nun wie eine einzige Linse mit Brennweite $\tfrac{1}{f}=\tfrac{1}{f_1}+\tfrac{1}{f_2}$ oder $D=D_1+D_2$ und $\begin{pmatrix}
+                        1&0\\-\tfrac{1}{f}&1
+        \end{pmatrix}$.
+        \item Abstand $d=f_1+f_2$: Die Matrix hat dann die Form $\begin{pmatrix}
+                        1-\tfrac{f_1+f_2}{f_1}&f_1+f_2\\0&1-\tfrac{f_1+f_2}{f_2}
+        \end{pmatrix}$. Sind die Strahlen anfänglich parallel, dann bleibt die Steigung vor und nach dem Linsensystem identisch; die Strahlen werden aufgeweitet oder zusammengezogen.
+\end{enumerate}
+
 %}}}
 
 \end{document}
