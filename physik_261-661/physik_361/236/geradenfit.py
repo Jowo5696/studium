@@ -93,4 +93,4 @@ class Auswertung:
                 continue
 
         plt.show()
-        #plt.savefig('')
+        #plt.savefig('236_h_graph.png')
