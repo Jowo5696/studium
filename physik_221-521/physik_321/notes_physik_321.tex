@@ -670,6 +670,122 @@ Die Potentiale sind
         z<0&:\varphi ^2\left(\vv{r}\right)=\dfrac{1}{4\pi \varepsilon _0\varepsilon _r^2}\left[\dfrac{q''}{|\vv{r}-d\vv{e}_z|}\right]
 .\end{align} 
 
+\newpage
+\section{Magnetostatik}
+In der Elektrostatik sind die Quellen der Felder nur ruhende Ladungen. 
+In der Magnetostatik sind die Quellen der Felder allerdings stationäre Ströme. 
+Der große Unterschied zur Elektrostatik ist, dass keine freien magnetischen Ladungsträger bzw.\ magnetische Monopole existieren.
+Die Grundeinheit in der Magnetostatik ist das Dipolmoment $\vv{m}$.
+Der Nachweis des Feldes erfolgt über das Drehmoment $M$ eines Magnetfeldes auf einen Dipol
+\begin{align} 
+        \vv{M}=\vv{m}\times \vv{B}
+,\end{align} 
+mit $\vv{B}$ der \textbf{magnetischen Induktion}.\par
+Es gibt verschiedene Arten von elektrischen Strom.
+\begin{enumerate}[label=\roman*)]
+        \item Die Bewegung geladener Körper.
+        \item Eine Potentialdifferenz zwischen Leiterenden. 
+\end{enumerate}
+Bei der Potentialdifferenz existiert eine Kraftwirkung auf die Ladungsträger. Sie bewegen sich mit der Geschwindigkeit $\vv{v}$. Die zeitlich konstante und homogene Teilchendichte ist $n=\tfrac{N}{V}$. Die Ladung ist $q$. Die Querschnittsfläche des Leiters ist $F$. Durch den Leiterquerschnitt fließt in einem Zeitraum von $\td t$ die Ladung
+\begin{align} 
+        \td Q&=Fv\td t n q&I&=\lim_{\Delta t\rightarrow 0}\dfrac{\Delta Q}{\Delta t}=F v n q&[I]&=\unit{A}=\unit{C.s ^{-1}}
+.\end{align} 
+$I$ ist die \textbf{Stromstärke}. $\vv{j}\left(t,\vv{r}\right)$ ist die \textbf{Stromdichte}; sie ist die senkrecht zum Querschnitt transportierte Ladung
+\begin{align} 
+        \vv{j}&=\dfrac{I}{F}=nq\vv{v}&I&=\int_{\mathcal{F}}^{}\vv{j}\cdot \td \vv{f}=\int_{\mathcal{F}}^{}\vv{j}\cdot \vv{n}\td f
+.\end{align} 
+Sei ein Volumen $\mathcal{V}$ in dem sich Ladungen $Q$ bewegen. Der Fluss durch den Rand $\partial \mathcal{V}$ muss also gleich der Abnahme der Ladung im Volumen sein
+\begin{align} 
+        \int_{\partial \mathcal{V}}^{}\vv{j}\cdot \td \vv{f}&=-\diff[]{Q\left(t\right)}{t}\\
+                                                            &=-\diff*[]{\int_{\mathcal{V}}^{}\rho \left(t,\vv{r}\right)\td ^3r}{t}\\
+                                                            &=-\int_{\mathcal{V}}^{}\diffp[]{\rho \left(t,\vv{r}\right)}{t}\td ^3r\\
+                                                            &=\int_{\mathcal{V}}^{}\,\text{div}\,\vv{j}\td ^3r
+.\end{align} 
+Daraus folgt, dass
+\begin{align} 
+        \diffp[]{\rho \left(t,\vv{r}\right)}{t}+\,\text{div}\,\vv{j}\left(t,\vv{r}\right)=0
+.\end{align} 
+Betrachtet man den stationären Fall, also zeitunabhängig, ist $\diffp[]{\rho \left(t,\vv{r}\right)}{t}=0$. Deshalb ist
+\begin{align} 
+        \,\text{div}\,\vv{j}&=0
+.\end{align} 
+Die Stromdichte ist also auch quellenfrei. Das bedeutet, dass Ladungen nicht spontan verschwinden oder auftauchen.
+
+\subsection{Beispiel: Draht mit verschiedenen Querschnittsflächen; \textsc{Kirchhoff}'sche Knotenregel}
+Sei ein Draht mit Querschnittsflächen $F_1$ und $F_2$ auf dem Rand $\partial \mathcal{V}$. Es gilt 
+\begin{align} 
+        0=\int_{\mathcal{V}}^{}\,\text{div}\,\vv{j}\td ^3r&=\int_{\partial \mathcal{V}}^{}\vv{j}\left(\vv{r}\right)\cdot \td \vv{f}\\
+                                                          &=I_1-I_2
+.\end{align} 
+Das bedeutet, dass der Strom im ganzen Leiter gleich ist, also $I_1=I_2$.\par
+Seien vier Leiter mit Strömen $I_1,I_2,I_3$ und $I_4$, wobei $I_1$ und $I_2$ das Volumen $\mathcal{V}$ verlassen und $I_3$ und $I_4$ in das Volumen eintreten. Es gilt
+\begin{align} 
+        0=\int_{\mathcal{V}}^{}\,\text{div}\,\vv{j}\left(\vv{r}\right)\td ^3r&=\oint_{\partial V}^{}\vv{j}\left(\vv{r}\right)\cdot \td \vv{f}\\
+                                                                             &=-I_1-I_2+I_3+I_4
+.\end{align} 
+Die \textsc{Kirchhoff}'sche Knotenregel besagt also, dass Summe von Zufluss und Abfluss immer null ist.
+
+\subsection{Elektrische Leitfähigkeit und Leistung}
+Die Stromdichte ist proportional zu dem elektrischen Feld mit der Proportionalitätskonstante der \textbf{elektrischen Leitfähigkeit} 
+\begin{align} 
+        \vv{j}\left(\vv{r}\right)&=\sigma \left(\vv{r}\right)\vv{E}\left(\vv{r}\right)
+.\end{align} 
+Das Inverse der elektrischen Leitfähgikeit ist der \textbf{spezifischer Widerstand}.\par
+Man betrachte einen \textbf{Stromfaden}; ein linienförmiger Strom enlang eines Weges $\mathcal{C}$. 
+Tangentail an der Kurve ist $\td \vv{r}$. 
+Dieser setzt sich zusammen aus dem Tangentialvektor $\vv{t}$ und dem Wegelement $\td s$. 
+Die Stromdichte in einem Volumen ist dann
+\begin{align} 
+        \vv{j}\td ^3r&=j\cdot \vv{t}\td s\cdot \td f=I\td r
+.\end{align} 
+Die \textbf{elektrische Leistung} ist
+\begin{align} 
+        \td W&=\vv{F}\left(\vv{r}\right)\td \vv{r}=q\vv{E}\left(\vv{r}\right)\td \vv{r}&P&=\diff[]{W}{t}=q\vv{E}\left(\vv{r}\right)\vv{v}&[P]&=\unit{V.A}=\unit{W}
+.\end{align} 
+Die \textbf{Leistungsdichte} ist
+\begin{align} 
+        \td P&=\left(\rho \left(\vv{r}\right)\td ^3r\right)\vv{E}\left(\vv{r}\right)\vv{v}\left(\vv{r}\right)=\vv{j}\vv{E}\td ^3r
+.\end{align} 
+Damit kann die Gesamtleistung auch geschrieben werden als
+\begin{align} 
+        P&=\int_{}^{}\vv{E}\left(\vv{r}\right)\vv{j}\left(\vv{r}\right)\td ^3r=I\int_{}^{}\vv{E}\left(\vv{r}\right)\td \vv{r}&=IU
+.\end{align} 
+
+\subsection{Grundgleichungen}
+Die Grundgleichungen der Magnetostatik kommen aus dem \textsc{Amp\`ere}'schen Gesetz. Es beschreibt die Wechselwirkung von zwei Stromfäden.\par
+Der Vektor $\vv{r}_1$ zeigt vom Ursprung zum Linienelement $\td \vv{r}_1$ der ersten Leiterschleife (analog $\vv{r}_2$). Der Verbindungsvektor zwischen den Linienelementen ist $\vv{r}_1-\vv{r}_2$.
+Die Kraft auf die Leiterschleifen ist
+\begin{align} 
+        \vv{F}_{12}&=\dfrac{\mu _0I_1I_2}{4\pi }\oint_{\mathcal{C}_1}^{}\oint_{\mathcal{C}_2}^{}\dfrac{\td \vv{r}_1\times \left(\td \vv{r}_2\times \left(\vv{r}_1-\vv{r}_2\right)\right)}{|\vv{r}_1-\vv{r}_2|}
+.\end{align} 
+$\mu _0$ ist die \textbf{magnetische Feldkonstante} $4\pi \cdot 10^{-7}\unit{V.s.A^{-1}.m^{-1}}$.
+Es gilt zudem $\varepsilon _0\mu _0c^2=1$, mit $c$ der Lichtgeschwindigkeit im Vakuum.\par
+Mit $\td \vv{r}_1\times (8\td \vv{r}_2\times \left(\vv{r}_1-\vv{r}_2\right)=\td \vv{r}_2\left(\td \vv{r}_1\cdot \left(\vv{r}_1-\vv{r}_2\right)\right)-\left(\vv{r}_1-\vv{r}_2\right)\left(\td \vv{r}_1\cdot \td \vv{r}_2\right)$ folgt
+\begin{align} 
+        \oint_{\mathcal{C}_1}^{}\td \vv{r}_1\dfrac{\vv{}_1-\vv{r}_2}{|\vv{r}_1-\vv{r}_2^3}&=-\oint_{\mathcal{C}_1}^{}\td \vv{r}_1\cdot \,\text{grad}\,\dfrac{1}{|\vv{r}_1-\vv{r}_2|}\\
+                                                                                          &=\int_{\partial \mathcal{C}_1}^{}\,\text{rot}\,\,\text{grad}\,\dfrac{1}{|\vv{r}_1-\vv{r}_2|}\td \vv{f}\\
+                                                                                          &=0
+.\end{align} 
+Die Kraft lässt sich also schreiben als
+\begin{align} 
+        \vv{F}_{12}&=-\dfrac{\mu _0I_1I_2}{4\pi }\oint_{\mathcal{C}_1}^{}\oint_{\mathcal{C}_2}^{}\td \vv{r}_1\cdot \td \vv{r}_2\dfrac{\vv{r}_1-\vv{r}_2}{|\vv{r}_1-\vv{r}_2|^3}=-\vv{F}_{21}
+.\end{align} 
+Da beide Leiter unendlich lang sind, würde auch eine unendlich große Kraft auf jedes Leiterstück wirken.
+Man betrachtet also nur die Kraft eines Stücks des Leiters
+\begin{align} 
+        \td \vv{F}_{12}&=-\dfrac{\mu _0I_1I_2}{4\pi }\td z_1\int_{-\infty}^{\infty}\td z_2\dfrac{\vv{r}_1-\vv{r}_2}{|\vv{r}_1-\vv{r}_2|^3}
+.\end{align} 
+In Zylinderkoordinaten ist $\vv{r}_1=r_1\vv{e}_r+z_1\vv{e}_z$ (analog $\vv{r}_2$), also
+\begin{align} 
+        \td \vv{F}_{12}&=-\dfrac{\mu _0I_1I_2}{4\pi }\td z_1\int_{-\infty}^{\infty}\td z_2\dfrac{-a\vv{e}_x-\left(z_2-z_1\right)\vv{e}_z}{\left[a^2+\left(z_2-z_1\right)^2\right]^{3/2}}\\
+                       &=\dfrac{\mu _0I_1I_2}{4\pi }\td z_1a\vv{e}_x\int_{-\infty}^{\infty}\td z_2\dfrac{1}{\left[a^2+\left(z_2-z_1\right)^2\right]^{3/2}}\\
+                       &=\dfrac{\mu _0I_1I_2}{2\pi a}\td z_1
+.\end{align} 
+Die Kraft pro Längeneinheit ist dann
+\begin{align} 
+        \vv{f}_{12}&=\dfrac{\mu _0I_1I_2}{2\pi a}\vv{e}_x
+.\end{align} 
+
 
 %{{{ Notizen
 \newpage
