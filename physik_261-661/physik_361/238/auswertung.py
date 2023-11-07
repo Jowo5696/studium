@@ -177,19 +177,19 @@ yy = g_R2/g_R22RV*f_sigma_mittel*(1+(f_sigma_mittel*e_omegaL/g_R22RV)**2)**(-0.5
 a = 1-(f_sigma_mittel/2)
 yy = a*g_R2/g_R22RV*(1+(f_sigma_mittel*e_omegaL/g_R22RV)**2)**(-1/2)
 
-zusammen = ['end'] # Welche Plots zusammengehören. Gleiche Buchstaben werden in einem Plot ausgegeben (Beispiel: ['a','a','b'], die ersten beiden x, y Werte werden in einem Plot ausgegeben, die dritten x, y, Werte werden in einem Plot ausgegeben).
-x = [c_I2]
-xerr = [c_delt_I]
-xlabel = ['Stromstärke [A]']
-y = [yy]
-yerr = [np.sqrt((c_delt_U/c_U1)**2+(c_U2/c_U1**2*c_delt_U)**2)]
-ylabel = ['Verhältnis der Spannungen']
+zusammen = ['a','a','end'] # Welche Plots zusammengehören. Gleiche Buchstaben werden in einem Plot ausgegeben (Beispiel: ['a','a','b'], die ersten beiden x, y Werte werden in einem Plot ausgegeben, die dritten x, y, Werte werden in einem Plot ausgegeben).
+x = [c_I2,c_I2]
+xerr = [c_delt_I,c_delt_I]
+xlabel = ['Stromstärke [A]','Stromstärke [A]']
+y = [yy,c_U2/c_U1]
+yerr = [np.sqrt((c_delt_U/c_U1)**2+(c_U2/c_U1**2*c_delt_U)**2),np.sqrt((c_U2*c_delt_U/c_U1**2)**2+(c_delt_U/c_U1)**2)]
+ylabel = ['Verhältnis der Spannungen','Verhältnis der Spannungen']
 title = '238.g: Spannungsübertragung'
-label = ['Spannungsverhältnis'] # label von plt.errorbar und plt.plot
-color = 'red' # farbe der punkte (geraden sind immer blau)
+label = ['berechnete','gemessene'] # label von plt.errorbar und plt.plot
+color = ['red','blue'] # farbe der punkte (geraden sind immer blau)
 
-#Auswertung = gf.Auswertung(x,xerr,xlabel,y,yerr,ylabel,title,label,color,zusammen)
-#Auswertung.auswertung()
+Auswertung = gf.Auswertung(x,xerr,xlabel,y,yerr,ylabel,title,label,color,zusammen)
+Auswertung.auswertung()
 
 # Plot
 

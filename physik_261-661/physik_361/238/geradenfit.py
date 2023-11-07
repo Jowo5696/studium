@@ -92,5 +92,5 @@ class Auswertung:
             elif self.zusammen[i] == self.zusammen[i+1]:
                 continue
 
-        #plt.show()
-        plt.savefig('238_b_plot.png')
+        plt.show()
+        #plt.savefig('238_b_plot.png')
