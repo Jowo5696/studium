@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from tabulate import tabulate
 import geradenfit as gf
 
-execute = 'h'
+execute = 'g'
 
 #{{{ c
 def c():
@@ -47,11 +47,12 @@ def g():
     vph = np.array([35,33,29,16,13]) # Skt
     delt_vph = np.zeros(len(vph))+1 # Skr
     I = np.zeros(len(vph))+1.91e-3 # A
-    delt_I = np.zeros(len(vph))+0.01e-3 # A 
+    delt_I = np.zeros(len(vph))+0.01*10**(-3) # A 
+    delt_I_string = ['0.01*10^(-3)','0.01*10^(-3)','0.01*10^(-3)','0.01*10^(-3)','0.01*10^(-3)']
     cI = vph/I # Skt/A
     delt_cI = np.sqrt((delt_vph/I)**2+(vph/I**2*delt_I)**2) # Skt/A
 
-    data = np.round(np.transpose([I,delt_I,vph,delt_vph,cI,delt_cI]),2)
+    data = np.transpose([I,delt_I_string,vph,delt_vph,np.round(cI,1),np.round(delt_cI,1)])
     headers = ['I [A]','ΔI [A]',r'φ [Skt.]',r'Δφ [Skt]',r'cI [Skt./A]','ΔcI [Skt./A]']
     print('Tabelle 236.g: Stromempfindlichkeit verschiedener Trägheitsmomente')
     print(tabulate(data,headers=headers,tablefmt='fancy_grid'))
