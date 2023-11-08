@@ -71,10 +71,10 @@ c_Pw1 = np.fromiter(c_data['P_1'],dtype=float)
 c_Pw2 = np.fromiter(c_data['P_2'],dtype=float)
 c_delt_Pw = np.zeros(len(c_Pw1))+0.01
 
-c_datatable = np.round(np.transpose([c_U1,c_U2,c_delt_U,c_I1,c_I2,c_delt_I,c_Pw1,c_Pw1,c_delt_Pw]),2)
+c_datatable = np.round(np.transpose([c_U1,c_U2,c_delt_U,c_I1,c_I2,c_delt_I,c_Pw1,c_Pw2,c_delt_Pw]),2)
 c_headers = ['U1 [V]','U2 [V]','ΔU [V]','I1 [A]','I2 [A]','ΔI [A]','Pw1 [W]','Pw2 [W]','ΔPw [W]']
-#print('Tabelle 238.c: Wirkleistung')
-#print(tabulate(c_datatable,headers=c_headers,tablefmt='fancy_grid'))
+print('Tabelle 238.c: Wirkleistung')
+print(tabulate(c_datatable,headers=c_headers,tablefmt='fancy_grid'))
 
 d_PS2 = c_U2*c_I2
 d_delt_PS2 = np.sqrt((c_delt_U*c_I2)**2+(c_U2*c_delt_I)**2)

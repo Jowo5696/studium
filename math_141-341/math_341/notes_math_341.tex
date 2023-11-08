@@ -399,6 +399,42 @@ Die Exponentialfunktion lässt sich auch durch andere Funktionen darstellen
         \text{exp}\left(z\right)&=\cosh \left(z\right)+\sinh \left(z\right)\\
         \text{exp}\left(\text{i}z\right)&=\cos \left(z\right)+\text{i}\sin \left(z\right)
 .\end{align} 
+Diese Relation lässt sich durch die Reihendarstellung von $\sin $ und $\cos $ zeigen.\par
+Die Exponentialfunktion wird niemals 0 und ist surjektiv auf $\mathbb{C}\backslash \left\{0\right\}$, aber nicht injektiv.
+
+\subsection{Logarithmus}
+Auf dem Streifen $\mathbb{R}+[0,2\pi )\text{i}\subseteq \mathbb{C}$ ist $\text{exp}:\mathbb{R}+[0,2\pi )\text{i}\rightarrow \mathbb{C}\backslash \left\{0\right\}$ bijektiv. Die Umkehrfunktion nennt man den \textbf{Hauptzweig des komplexen Logarithmus}.
+\begin{align} 
+        \text{Ln}&:\mathbb{C}\backslash \left\{0\right\}\rightarrow \mathbb{R}+[0,2\pi )\text{i}\\
+        \text{Ln}\left(z'\right)&:=\ln\left(|z'|\right)+\arg\left(z'\right)\text{i}
+.\end{align} 
+$\text{Ln}:\mathbb{C}\backslash \left\{0\right\}\rightarrow \mathbb{R}+[0,2\pi )\text{i}$ ist holomorph auf $\mathbb{C}\backslash [0,\infty)$ mit $\text{Ln}'=\tfrac{1}{z}$.
+
+\subsection{Umkehrfunktionen}
+Es sind
+\begin{align} 
+        \,\text{Polarkoordinaten}\,&:F\left(r,\theta \right)=r\text{e}^{\theta \text{i}}\\
+        \,\text{inv.\ Polarkoordinaten}\,&:F^{-1}\left(z\right)=\left(|z|,\arg\left(z\right)\right)\\
+        \,\text{Exponentialfunktion}\,&:\text{exp}\left(x+y\text{i}\right)=\text{e}^{x}\text{e}^{y\text{i}}\\
+        \,\text{Hauptzweig des Logarithmus}\,&:\text{Ln}\left(z\right)=\ln\left(|z|\right)+\arg\left(z\right)\text{i}
+.\end{align} 
+
+\newpage
+\section{Kurvenintegrale}
+Eine \textbf{Kurve} ist eine Abbildung
+\begin{align} 
+        \gamma :\left[a,b\right]\rightarrow \mathbb{C}
+,\end{align} 
+mit $a\leq b \in \mathbb{R}$ und $\gamma $ stetig. Dann ist 
+\begin{align} 
+        \dot{\gamma }\left(t\right)=\left(\mathcal{R}\gamma \right)'\left(t\right)+\left(\mathcal{I}\gamma \right)'\text{i} \in \mathbb{C}
+.\end{align} 
+die Geschwindigkeit.\par
+Man definiert dann das \textbf{Kurvenintegral} von $f$ entlang $\gamma $ als
+\begin{align} 
+        \int_{\gamma }^{}f\left(z\right)\td z&:=\int_{a}^{b}f\left(\gamma \left(t\right)\right)\dot{\gamma }\left(t\right)\td t
+\end{align} 
+
 
 %}}}
 
