@@ -760,7 +760,7 @@ Die Kraft auf die Leiterschleifen ist
 .\end{align} 
 $\mu _0$ ist die \textbf{magnetische Feldkonstante} $4\pi \cdot 10^{-7}\unit{V.s.A^{-1}.m^{-1}}$.
 Es gilt zudem $\varepsilon _0\mu _0c^2=1$, mit $c$ der Lichtgeschwindigkeit im Vakuum.\par
-Mit $\td \vv{r}_1\times (8\td \vv{r}_2\times \left(\vv{r}_1-\vv{r}_2\right)=\td \vv{r}_2\left(\td \vv{r}_1\cdot \left(\vv{r}_1-\vv{r}_2\right)\right)-\left(\vv{r}_1-\vv{r}_2\right)\left(\td \vv{r}_1\cdot \td \vv{r}_2\right)$ folgt
+Mit $\td \vv{r}_1\times \left(\td \vv{r}_2\times \left(\vv{r}_1-\vv{r}_2\right)\right)=\td \vv{r}_2\left(\td \vv{r}_1\cdot \left(\vv{r}_1-\vv{r}_2\right)\right)-\left(\vv{r}_1-\vv{r}_2\right)\left(\td \vv{r}_1\cdot \td \vv{r}_2\right)$ folgt
 \begin{align} 
         \oint_{\mathcal{C}_1}^{}\td \vv{r}_1\dfrac{\vv{}_1-\vv{r}_2}{|\vv{r}_1-\vv{r}_2^3}&=-\oint_{\mathcal{C}_1}^{}\td \vv{r}_1\cdot \,\text{grad}\,\dfrac{1}{|\vv{r}_1-\vv{r}_2|}\\
                                                                                           &=\int_{\partial \mathcal{C}_1}^{}\,\text{rot}\,\,\text{grad}\,\dfrac{1}{|\vv{r}_1-\vv{r}_2|}\td \vv{f}\\
@@ -786,6 +786,101 @@ Die Kraft pro Längeneinheit ist dann
         \vv{f}_{12}&=\dfrac{\mu _0I_1I_2}{2\pi a}\vv{e}_x
 .\end{align} 
 
+\subsection{\textsc{Biot--Savart}--Gesetz}
+Das \textsc{Biot--Savart}--Gesetz gilt für einen idealisierten dünnen Leiter. Es besagt, dass das Feld eines Leiters
+\begin{align} 
+        \vv{B}_2\left(\vv{r}\right)&=\dfrac{\mu _0I_2}{4\pi }\oint_{\mathcal{C}_2}^{}\td \vv{r}_2\times \dfrac{\vv{r}-\vv{r}_2}{|\vv{r}-\vv{r}_2|^3}
+\end{align} 
+ist. Das Gesetz geht aus der Kraftwirkung zwischen zwei Leitern hervor.\par
+Die Verallgemeinerung für Stromdichten ist
+\begin{align} 
+        \vv{B}\left(\vv{r}\right)&=\dfrac{\mu _0}{4\pi }\int_{}^{}\td ^3r'\vv{j}\left(\vv{r}'\right)\times \dfrac{\vv{r}-\vv{r}'}{|\vv{r}-\vv{r}|^3}
+.\end{align} 
+Die Kraft auf eine Stromverteilung ist
+\begin{align} 
+        \vv{F}&=\int_{}^{}\vv{j}\left(\vv{r}\right)\times \vv{B}\left(\vv{r}\right)\td ^3r
+.\end{align} 
+Sei eine Punktladung mit $\rho \left(\vv{r}\right)=q\delta \left(\vv{r}-\vv{r}_0\right)$ und einer Geschwindigkeit $\vv{v}\left(\vv{r}_0\right)$ in $\vv{r}_0$.
+Die Stromdichte ist dann $\vv{j}\left(\vv{r}\right)=q\delta \left(\vv{r}-\vv{r}_0\right)\vv{v}\left(\vv{r}_0\right)$.
+Die Kraft ist also
+\begin{align} 
+        \vv{F}&=\int_{}^{}\td ^3rq\delta \left(\vv{r}-\vv{r}_0\right)\vv{v}\left(\vv{r}_0\right)\times \vv{B}\left(\vv{r}\right)\\
+              &=q\vv{v}\left(\vv{r}_0\right)\times \vv{B}\left(\vv{r}_0\right)
+.\end{align} 
+Dies ist der magnetische Anteil der \textsc{Lorentz}--Kraft.
+Damit kann das Drehmoment geschrieben werden als
+\begin{align} 
+        \vv{M}&=\int_{}^{}\td ^3r\vv{r}\times \left(\vv{j}\left(\vv{r}\right)\times \vv{B}\left(\vv{r}\right)\right)
+.\end{align} 
+
+\subsubsection{Beispiel: Feld eines geraden Leiters}
+Sei ein sehr dünner gerader Leiter mit Stromstärke $I$ entlang der $z$--Achse, also $\vv{r}'=z'\vv{e}_z$. Das Feld ist nach \textsc{Biot--Savart}
+\begin{align} 
+        \vv{B}\left(\vv{r}\right)&=\dfrac{\mu _0I}{4\pi }\oint_{\mathcal{C}}^{}\td \vv{r}'\times \dfrac{\vv{r}-\vv{r}'}{|\vv{r}-\vv{r}'|^3}
+.\end{align} 
+Hier ist $\td \vv{r}'=\td z'\vv{e}_z$ und $\vv{r}=r\vv{e}_r+z\vv{e}_z$. Daraus folgt
+\begin{align} 
+        \vv{B}\left(\vv{r}\right)&=\dfrac{\mu _0I}{4\pi }\int_{-\infty}^{\infty}\td z'\vv{e}_z \dfrac{\vv{e}_z\times \left(r\vv{e}_r+\left(z-z'\right)\vv{e}_z\right)}{\left[r^2+\left(z-z'\right)^2\right]^{3/2}}\\
+                                 &=\dfrac{\mu _0I}{4\pi }r\vv{e}_\varphi \int_{-\infty}^{\infty}\td z'\dfrac{1}{\left[r^2+\left(z-z'\right)^2\right]^{3/2}}\\
+                                 &=\dfrac{\mu _0I}{4\pi }\dfrac{1}{r}\vv{e}_\varphi \underbrace{\int_{-\infty}^{\infty}\td \left(\dfrac{z'}{r}\right)\dfrac{1}{\left[1+\left(\tfrac{z-z'}{r}\right)^2\right]^{3/2}}}_{=2}\\
+                                 &=\dfrac{\mu _0I}{2\pi }\dfrac{1}{r}\vv{e}_\varphi 
+.\end{align} 
+
+\subsection{\textsc{Maxwell}--Gleichungen der Magnetostatik}
+Es gilt
+\begin{align} 
+        \,\text{rot}_{\vv{r}}\dfrac{j\left(\vv{r}'\right)}{|\vv{r}-\vv{r}'|}&=\dfrac{1}{|\vv{r}-\vv{r}'|}\,\text{rot}_{\vv{r}}j\left(\vv{r}'\right)-j\left(\vv{r}'\right)\times \text{grad}\dfrac{1}{|\vv{r}-\vv{r}'|}\\
+                                                                            &=j\left(\vv{r}'\right)\times \dfrac{\left(\vv{r}-\vv{r}'\right)}{|\vv{r}-\vv{r}'|^3}
+.\end{align} 
+Damit ist das magnetische Feld
+\begin{align} 
+        \vv{B}\left(\vv{r}\right)&=\text{rot}\dfrac{\mu _0}{4\pi }\int_{}^{}\td ^3r'\dfrac{\vv{j}\left(\vv{r}'\right)}{|\vv{r}-\vv{r}'|}&\text{div}\vv{B}\left(\vv{r}\right)&=0&\oint_{\partial \mathcal{V}}^{}\vv{B}\left(\vv{r}\right)\td \vv{f}&=0
+.\end{align} 
+Die Rotation des magnetischen Feldes ist
+\begin{align} 
+        \text{rot}\vv{B}\left(\vv{r}\right)&=-\dfrac{\mu _0}{4\pi }\int_{}^{}\td ^3r'\vv{j}\left(\vv{r}'\right)\Delta _{\vv{r}}\dfrac{1}{|\vv{r}-\vv{r}'|}+\dfrac{\mu _0}{4\pi }\text{grad}\left[\int_{}^{}\td ^3r'\vv{j}\left(\vv{r}'\right)\cdot \text{grad}\dfrac{1}{|\vv{r}-\vv{r}'|}\right]
+.\end{align} 
+Es gilt $\vv{j}\text{grad}_{\vv{r}}\dfrac{1}{|\vv{r}-\vv{r}'|}=-\vv{j}\text{grad}_{\vv{r}'}\dfrac{1}{|\vv{r}-\vv{r}'|}$. Das Integral $\int_{}^{}\vv{j}\left(\vv{r}'\right)\cdot \text{grad}_{\vv{r}}\dfrac{1}{|\vv{r}-\vv{r}'|}\td $ wird gleich null, da durch partielle Integration der erste Term im unendlichen wegfällt und der Term $\text{grad}\vv{j}\left(\vv{r}'\right)$ wird auch null da nur stationäre Ströme betrachtet werden.\par
+Daraus folgen die \textsc{Maxwell}--Gleichungen
+\begin{align} 
+        \text{rot}\vv{B}\left(\vv{r}\right)&=\mu _0\vv{j}\left(\vv{r}\right)&\oint_{\partial \mathcal{F}}^{}\vv{B}\left(\vv{r}\right)\td \vv{r}&=\mu _0\int_{\mathcal{F}}^{}\vv{j}\left(\vv{r}\right)\td \vv{f}=\mu _0I
+.\end{align} 
+Das Vektorpotential des magnetischen Feldes ist
+\begin{align} 
+        \vv{A}\left(\vv{r}\right)&=\dfrac{\mu _0}{4\pi }\int_{}^{}\td ^3r'\dfrac{\vv{j}\left(\vv{r}'\right)}{|\vv{r}-\vv{r}'|}&\vv{B}\left(\vv{r}\right)&=\text{rot}\vv{A}\left(\vv{r}\right)
+.\end{align} 
+$\vv{A}$ ist nicht eindeutig in Bezug auf $\vv{B}$ insofern, als dass das Potential nicht aus dem magnetischen Feld hergeleitet werden kann.
+$\vv{B}$ ist dann invariant unter \textbf{Eichtransformation}.
+Man kann also die Transformation $\vv{A}\rightarrow \vv{A}'=\vv{A}+\text{grad}\chi$ durchgeführt werden, da $\text{rot}\vv{A}'=\text{rot}\vv{A}$; die Rotation eines Gradienten ist immer gleich null.
+
+\subsection{\textsc{Coulomb}--Eichung}
+Die \textsc{Coulomb}--Eichung besagt, dass das Potential derart modifiziert werden kann, sodass 
+\begin{align} 
+        \text{div}\vv{A}\left(\vv{r}\right)&=0
+.\end{align} 
+Damit ist die Rotation des magnetischen Feldes
+\begin{align} 
+        \text{rot}\vv{B}&=\text{rot}\left(\text{rot}\vv{A}\right)\\
+                        &=\text{grad}\left(\underbrace{\text{div}\vv{A}}_{=0}\right)-\text{div}\left(\text{grad}\vv{A}\right)\\
+                        &=-\Delta \vv{A}\\
+                        &=\mu _0\vv{j}
+.\end{align} 
+Daraus folgen dann drei \textsc{Poisson}--Gleichungen
+\begin{align} 
+        \Delta A_i&=-\mu _0\vv{j}_i
+.\end{align}
+
+\subsection{Magnetisches Moment}
+Sei ein Raumgebiet $\mathcal{V}$ mit Stromdichte $\vv{j}\left(\vv{r}\right)$ am Ort $\vv{r}'$ . 
+Man betrachte einen Vektor $\vv{r}$ dessen Betrag viel größer ist als die Ausdehnung der Stromdichte.\par
+Aus der Multipolentwicklung folgt für den Abstandsvektor
+\begin{align} 
+        \dfrac{1}{|\vv{r}-\vv{r}'|}&=\dfrac{1}{r}+\dfrac{\vv{r}\vv{r}'}{r^3}+\hdots 
+.\end{align} 
+Damit ist das Potential
+\begin{align} 
+        \vv{A}(8\vv{r}&=\dfrac{\mu _0}{4\pi }\dfrac{1}{r}\int_{}^{}\td ^3r'\vv{j}\left(\vv{r}'\right)+\dfrac{\mu _o}{4\pi }\int_{}^{}\td ^3r'\vv{j}\left(\vv{r}'\right)\dfrac{\vv{r}\vv{r}'}{r^3}+\hdots 
+.\end{align} 
 
 %{{{ Notizen
 \newpage
