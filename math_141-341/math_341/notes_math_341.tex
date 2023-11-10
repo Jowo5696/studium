@@ -433,8 +433,32 @@ die Geschwindigkeit.\par
 Man definiert dann das \textbf{Kurvenintegral} von $f$ entlang $\gamma $ als
 \begin{align} 
         \int_{\gamma }^{}f\left(z\right)\td z&:=\int_{a}^{b}f\left(\gamma \left(t\right)\right)\dot{\gamma }\left(t\right)\td t
-\end{align} 
+.\end{align} 
+Beachte, in dem Integrand ist ein komplexes Produkt.
 
+\subsection{Steigende Reparametrisierung}
+Eine \textbf{steigende Reparametrisierung} ist eine Parametrisierung bei der eine Kurve mit einer Funktion $\varphi $ verkettet wird, dessen Geschwindigkeit größer als die der Kurve ist. 
+Dabei muss weiterhin 0 auf 0 und 1 auf 1 abgebildet werden.
+Dann gilt
+\begin{align} 
+        \int_{\gamma \circ \varphi }^{}f\left(z\right)\td z=\int_{\gamma }^{}f\left(z\right)\td z
+.\end{align} 
+
+\subsection{Einfache Kurve}
+Eine Kurve $\gamma $ heißt \textbf{einfach}, falls $\gamma $ auf $[a,b)$ und $(a,b]$ injektiv ist.
+
+\subsection{Geschlossene Kurve}
+Eine Kurve $\gamma $ heißt \textbf{geschlossen}, falls $\gamma \left(a\right)=\gamma \left(b\right)$.
+
+\subsection{Spur einer Kurve, \textsc{Jordan}'scher Kurvensatz}
+Die \textbf{Spur} einer Kurve ist ihr Bild. Der \textsc{Jordan}'sche Kurvensatz: Sei $\gamma :\left[a,b\right]\rightarrow \mathbb{C},a<b$ eine einfach geschlossene Kurve. Dann ist $\mathbb{C}\backslash \text{Spur}\gamma =\text{Int}\gamma \overset{\circ }{\cup }\text{Ext}\gamma $; $\text{Int}\gamma ,\text{Ext}\gamma \subseteq \mathbb{C}$ sind offene, nicht leere, wegzusammenhängende Mengen mit Rand $\text{Spur}\gamma $ und $\text{Int}$ ist beschränkt.
+
+\subsection{\textsc{Cauchy}'scher Integralsatz}
+Sei $U\subseteq \mathbb{C}$ offen und $f:U\rightarrow \mathbb{C}$ holomorph. Sei $\gamma :\left[a,b\right]\rightarrow U$ eine einfache geschlossene Kurve mit $\text{Int}\gamma \subseteq U$. 
+Dann ist
+\begin{align} 
+        \int_{\gamma }^{}f\left(z\right)\td z=0
+.\end{align} 
 
 %}}}
 
