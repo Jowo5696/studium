@@ -611,6 +611,69 @@ Es gibt folgende interessante Grenzfälle
         \end{pmatrix}$. Sind die Strahlen anfänglich parallel, dann bleibt die Steigung vor und nach dem Linsensystem identisch; die Strahlen werden aufgeweitet oder zusammengezogen.
 \end{enumerate}
 
+\newpage
+\section{Linsenfehler}
+Bisher war immer die Annahme, dass Linsen ideale optische Abbildungen erstellt haben. Linsen haben allerdings Fehler.
+
+\subsection{Chromatische Abberation}
+Weiterhin ist die Brennweite
+\begin{align} 
+        D=\dfrac{1}{f}&=\left(n-1\right)\left(\dfrac{1}{R_1}-\dfrac{1}{R_2}\right)
+.\end{align} 
+Allerdings hängt der Brechungsindex $n=n\left(\lambda \right)$ von der Wellenlänge $\lambda $ ab.
+Wenn also weißes Licht an einer Linse gebrochen wird, ist bei normaler Dispersion $f_{\text{blau}}<f_{\text{rot}}$. 
+Die Bildweite von blauem Licht ist kleiner als die Bildweite von rotem Licht.
+Die transversale Vergrößerung ist also abhängig von der Wellenlänge.
+Aus unterschiedlichen Glassorten zusammengesetzten Linsen kann die chromatische Abberation reduziert werden.
+
+\subsubsection{Beispiel: Zweilinsiger Achromat}
+Bei einem zweilinsigen (oder auch mehrlinsigen) Achromat werden zwei Linsen hintereinander gestellt, um der chromatischen Abberation entgegenzuwirken.
+Die Gesamte Brechkraft ist dann
+\begin{align} 
+        D&=D_1+D_2&D_i\left(\lambda \right)&=\left(n_i\left(\lambda \right)-1\right)\rho _i
+,\end{align} 
+mit $\rho _i:=\left(\tfrac{1}{R_{i,1}}-\tfrac{1}{R_{i,2}}\right)$.\par
+Mit so einem Zweilinser kann erreicht werden, dass die Brennweite für zwei Wellenlängen gleich ist.
+Üblich sind $\lambda _1=\SI{656}{nm}$ und $\lambda _2=\SI{486}{nm}$.
+Es soll also gelten
+\begin{align} 
+        D\left(\lambda _1\right)&=D\left(\lambda _2\right)\\
+        \left(n_1\left(\lambda _1\right)-1\right)\rho _1+\left(n_2\left(\lambda _1\right)-1\right)\rho _2&\stackrel{!}{=}\left(n_1\left(\lambda _2\right)-1\right)\rho _1+\left(n_2\left(\lambda _2\right)-1\right)\rho _2
+.\end{align} 
+Damit liegt $\rho _1/\rho _2$ fest.\par
+Die Angabe der Brennweite erfolgt üblicherweise bei der Wellenlänge von $\lambda _\alpha =\SI{587}{nm}$.
+Die Angabe der Dispersion erfolgt über die \textsc{Abbe}--Zahl $\nu =\tfrac{n\left(\SI{587}{nm}\right)-1}{n\left(\SI{486}{nm}\right)-n\left(\SI{656}{nm}\right)}$. 
+Gläser hoher bzw.\ kleiner Dispersion sind Flint--Gläser bzw.\ Kron--Gläaser.
+Es gilt dann
+\begin{align} 
+        \nu _1f_1+\nu _2 f_2=0
+.\end{align} 
+
+\subsubsection{Monochromatische Abberation}
+Bei der monochromatischen Abberation treten durch Verwendung der Näherung $\sin \varphi \approx \varphi -\tfrac{\varphi ^3}{3!}$ Bildfehler dritter Ordnung auf.
+
+\subsubsection{Sphärische Abberation}
+Kügelförmig geschliffene Linsen zeigen für Randstrahlen andere Brennweiten als für achsnahe Strahlen. 
+Dies gilt sowohl für dicke, als auch für dünne Linsen.
+
+\subsection{Weitere Bildfehler}
+\begin{enumerate}[label=\roman*)]
+        \item Koma: Strahlen, die schräg durch eine Linse fallen, haben asymmetrische Fehler.
+Die Strahlen die durch die Mitte der Linse gehen treffen sich also an einem anderen Ort, als die Strahlen, die durch den Rand der Linse gehen.
+        \item Astigmatismus: Die Brennebene in der $x$--Richtung ist anders, als die Brennebene in $y$--Richtung.
+Dies tritt zum Beispiel auf, wenn eine Linse schräg durchlaufen wird.\par
+Zylinderlinsen weisen einen extrem starken Astigmatismus auf.
+        \item Verzeichnung: Bei der Verzeichnung werden parallele Linien gekrümmt.
+        \item Bildfeldwölbung: Bei der Bildwölbung ist nur die Bildmitte oder der Bildrand scharf.
+\end{enumerate}
+Abbildungsfehler speilen meist bei großen Aperturen eine Rolle.
+Man verwendet eine Blende um die Strahlen außen möglichst zu verringern.\par
+Man definiert die \textbf{Blendenzahl} $F$ eines Objektives als
+\begin{align} 
+        F:=\dfrac{f}{D}
+.\end{align} 
+Eine große Blendenzahl bedeutet, dass der Durchmesser der Blende kleiner wird.
+
 %}}}
 
 \end{document}
