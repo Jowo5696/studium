@@ -879,8 +879,103 @@ Aus der Multipolentwicklung folgt für den Abstandsvektor
 .\end{align} 
 Damit ist das Potential
 \begin{align} 
-        \vv{A}(8\vv{r}&=\dfrac{\mu _0}{4\pi }\dfrac{1}{r}\int_{}^{}\td ^3r'\vv{j}\left(\vv{r}'\right)+\dfrac{\mu _o}{4\pi }\int_{}^{}\td ^3r'\vv{j}\left(\vv{r}'\right)\dfrac{\vv{r}\vv{r}'}{r^3}+\hdots 
+        \vv{A}\left(\vv{r}\right)&=\dfrac{\mu _0}{4\pi }\dfrac{1}{r}\int_{}^{}\td ^3r'\vv{j}\left(\vv{r}'\right)+\dfrac{\mu _o}{4\pi }\int_{}^{}\td ^3r'\vv{j}\left(\vv{r}'\right)\dfrac{\vv{r}\vv{r}'}{r^3}+\hdots 
 .\end{align} 
+Das es im Magnetismus keine Monopole gibt, muss der $\tfrac{1}{r}$--Term des Potentials gleich null werden, sodass nur noch der Dipolterm stehen bleibt. 
+Dazu kann folgende Identität verwendet werden
+\begin{align} 
+        \int_{}^{}\td ^3r\left[f\left(\vv{r}\right)\vv{j}\left(\vv{r}\right)\text{grad}g\left(\vv{r}\right)+g\left(\vv{r}\right)\vv{j}\left(\vv{r}\right)\text{grad}f\left(\vv{r}\right)\right]=0
+.\end{align} 
+Die Divergenz über die Stromdichte fällt hier weg. Zudem ist $f\left(\vv{r}\right)=1$ und $g\left(\vv{r}\right)=r_k$.\footnote{Die Rechnung ist in dem Skript zur Vorlesung.}. Sei nun $f\left(\vv{r}\right)=r_i$ und $g\left(\vv{r}\right)=r_k$, dann lässt sich das Potential schreiben als
+\begin{align} 
+        \vv{A}\left(\vv{r}\right)&=-\dfrac{\mu _0}{4\pi }\dfrac{\vv{r}}{r^3}\times \underbrace{\dfrac{1}{2}\int_{}^{}\td ^3r'\left(\vv{r}'\times \vv{j}\left(\vv{r}'\right)\right)}_{\vv{m}}=\dfrac{\mu _0}{4\pi }\dfrac{\vv{m}\times \vv{r}}{r^3}
+,\end{align} 
+mit $\vv{m}$ dem magnetischen Dipolmoment. Analog zum elektrischen Dipolmoment $\varphi _D=\tfrac{1}{4\pi \varepsilon _0}\tfrac{\vv{p}\vv{r}}{r^3}$. Damit ist das magnetische Feld
+\begin{align} 
+        \vv{B}&=\text{rot}\vv{A}=\dfrac{\mu _0}{4\pi }\dfrac{1}{r^5}\left(3\vv{r}\left(\vv{m}\cdot \vv{r}\right)-r^2\vv{m}\right)
+.\end{align} 
+
+\subsection{Kraftwirkung einer Stromverteilung}
+Wirke nun eine Kraft und ein Drehmoment einer externen Stromverteilung $\tilde{\vv{j}}$ auf eine Stromverteilung $\vv{j}$
+\begin{align} 
+        \vv{F}&=\int_{}^{}\td ^3r\left(\vv{j}\left(\vv{r}\right)\times \vv{B}\left(\vv{r}\right)\right)\\
+        \vv{M}&=\int_{}^{}\td ^3r\left(\vv{r}\times \left(\vv{j}\left(\vv{r}\right)\times \vv{B}\left(\vv{r}\right)\right)\right)
+.\end{align} 
+Ändert sich das Magnetfeld nur schwach über $V$, dann kann das Feld auch geschrieben werden als
+\begin{align} 
+        \vv{B}\left(\vv{r}\right)&=\vv{B}\left(0\right)+\left(\vv{r}\cdot \vv{\nabla }\right)\vv{B}\left(0\right)+\hdots 
+.\end{align} 
+Da $\vv{j}\left(\vv{r}\right)\times \vv{B}\left(\vv{r}\right)=0$ ist die Kraft
+\begin{align} 
+        \vv{F}&=\int_{}^{}\td ^3r\left(\vv{j}\left(\vv{r}\right)\times \left(\vv{r}\cdot \vv{\nabla }\right)\vv{B}\left(0\right)\right)\\
+              &=\left(\vv{m}\times \vv{\nabla }\right)\times \vv{B}\left(0\right)\\
+              &=\vv{m}\left(\text{div}\vv{B}\left(0\right)\right)+\text{grad}\left(\vv{m}\cdot \vv{B}\left(0\right)\right)
+.\end{align} 
+Da $\text{div}\vv{B}(0)=0$ ist, gilt für die Kraft
+\begin{align} 
+        \vv{F}_D&=\left.\text{grad}\left(\vv{m}\cdot \vv{B}\left(\vv{r}\right)\right)\right|_{\vv{r}=0}=\left.-\text{grad}\left(-\vv{m}\cdot \vv{B}\left(\vv{r}\right)\right)\right|_{\vv{r}=0}\\
+                        V\left(\vv{r}\right)&=-\vv{m}\cdot \vv{B}\left(\vv{r}\right)
+.\end{align} 
+$V$ ist minimal für $\vv{m}| |\vv{B}\left(\vv{r}\right)$. Das Drehmoment in der Dipolnäherung ist dann
+\begin{align} 
+        \vv{M}&=\vv{m}\times \vv{B}\left(0\right)
+.\end{align} 
+
+\subsubsection{Beispiel: Dipolmoment ebene Stromschleife}
+Sie eine Stromschleife in der $x,y$--Ebene. Das Dipomoment ist
+\begin{align} 
+        \vv{m}&=\dfrac{1}{2}\int_{}^{}\td ^3r\vv{r}\times \vv{j}\left(\vv{r}\right)\\
+              &=\dfrac{1}{2}\oint_{\mathcal{C}}^{}\td \vv{r}\vv{r}\times \vv{I}\\
+              &=IA\vv{n}
+,\end{align} 
+mit $A$ der Fläche der Stromschleife.
+Dieses Integral lässt sich nur so lösen, da die Stromschleife immer den selben Einheitsvektor hat, weil sie in einer Ebene liegt.
+
+\subsubsection{Beispiel: Drehmoment $N$ Punktladungen}
+Seien Punktladungen $q$ mit Geschwindigkeiten $\vv{v}_i$ an Punkten $\vv{r}_i$.
+Die Stromdichte ist dann
+\begin{align} 
+        \vv{j}\left(\vv{r}\right)&=q\sum_{i=1}^{N}\vv{v}_i\delta \left(\vv{r}-\vv{r}_i\right)\\
+        \vv{m}&=\dfrac{1}{2}\int_{}^{}\td ^3r\vv{r}\times \vv{j}\left(\vv{r}\right)\\
+              &=\dfrac{1}{2}\sum_{i=1}^{N}q\vv{r}_i\times \vv{v}_i
+.\end{align} 
+Multipliziert man mit $\tfrac{M}{M}$, mit $M$ der Masse der Teilchen, gilt
+\begin{align} 
+        \vv{m}&=\dfrac{1}{2M}\sum_{i=1}^{N}\vv{l}_i
+,\end{align} 
+mit $\vv{l}_i$ dem Drehimpuls.
+
+\subsection{Gleichungen in Materie}
+Da sich in Materie zu viele Teilchen befinden, um sie alle einzeln zu betrachten, werden gemittelte Größen verwendet.
+Das mikroskopische magnetische Feld wird dann über ein kleines Volumen gemittelt und als neues Feld betrachtet
+\begin{align} 
+        \vv{B}\left(\vv{r}\right)&=\left\langle \vv{B}_m\left(\vv{r}\right)\right\rangle 
+.\end{align} 
+Die Linearität der Divergenz ist genau wie in der Elektrostatik erhalten
+\begin{align} 
+        \text{div}\vv{B}&=\left\langle \text{div}\vv{B}\right\rangle =0
+.\end{align} 
+Damit ist $\vv{B}$ ein Rotationsfeld, also gilt weiterhin
+\begin{align} 
+        \vv{B}&=\text{rot}\vv{A}
+.\end{align} 
+
+\subsubsection{\textsc{Maxwell}--Gleichungen}
+Es gelten weiterhin die inhomogenen \textsc{Maxwell}--Gleichungen
+\begin{align} 
+        \text{rot}\vv{B}_m&=\mu _0\vv{j}_m\\
+        \text{rot}\vv{B}&=\mu _0\left\langle \vv{j}_m\right\rangle 
+.\end{align} 
+Es kommen nun verschiedene Beiträge zu $\left\langle \vv{j}_m\right\rangle $.
+\begin{enumerate}[label=\roman*)]
+        \item Freie, ungebundene Ladungsträger $\vv{j}_f=\left\langle \rho _f\vv{v}\right\rangle $. 
+        \item Strom aus Verschiebung gebundener Ladungsträger $\vv{j}_g=\left\langle \vv{j}_p\right\rangle +\left\langle \vv{j}_{\text{mag}}\right\rangle $. 
+                \begin{enumerate}[label=\arabic*)]
+                        \item $\vv{j}_p$ ist der Strom aus der Polarisationsladung. Die Polarisationsladungsdichte ist $\rho _p\left(\vv{r}\right)=-\text{div}\vv{P}\left(\vv{r}\right)$. Zu dieser Ladungsdichte existiert eine Kontinuitätsgleichung $\diffp[]{\rho _p}{t}+\text{div}\vv{j}_p=0=\text{div}\left(-\diffp[]{\vv{P}}{t}\right)+\text{div}\vv{j}_p$. Da der Strom stationär ist, ist $\vv{j}_p=\diffp[]{\vv{P}}{t}=0$. Der Strom der Polarisationsladung fällt also weg.
+                        \item Ohne externes Feld ist die Richtung der Dipole der Elektronen eines Atoms statistisch verteilt. Wirkt allerdings ein Feld, richten sich die Dipole aus und es kommt zu einem Drehmoment. Druch dieses gemeinsame Ausrichten der Dipole kommt es zu einem magnetischen Zusatzfeld $\vv{B}_{\text{mag}}$ mit einer Stromdichte von $\vv{j}_{\text{mag}}$. Dies wird auch Magnetisierung genannt.\par
+                                Da der Strom stationär ist, gilt $\text{div}\vv{j}_{\text{mag}}=0$, und das Dipolmoment $\vv{m}_i=\tfrac{1}{2}\int_{}^{}\td ^3r\left(\vv{r}-\vv{r}_i\right)\times \vv{j}_{\text{mag}}^{(i)}\left(\vv{r}\right)$. Damit ist $\left\langle \vv{j}_{\text{mag}}\left(\vv{r}\right)\right\rangle =\text{rot}\vv{M}$, mit $\vv{M}$ der Magnetisierung. Die Magnetisierung ist auch das mittlere magnetische Moment, also die Mittelung über alle Dipolmomente.
+                \end{enumerate}
+\end{enumerate}
 
 %{{{ Notizen
 \newpage
