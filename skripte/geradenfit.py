@@ -76,8 +76,8 @@ class Auswertung:
 
             plt.errorbar(self.x[i],self.y[i],self.yerr[i],self.xerr[i],fmt=self.color[i],ls="",marker=".",label=self.label+' Messwerte',capsize=3,linewidth=0.5)
             plt.plot(self.x[i],fit,self.color[i],label=self.label+' Geradenfit',linewidth=0.8)
-            plt.plot(self.x[i],fit_plus,'b--',label='error +/-',linewidth=0.5)
-            plt.plot(self.x[i],fit_minus,'b--',linewidth=0.5)
+            plt.plot(self.x[i],fit_plus,self.color[i]+'--',label='error +/-',linewidth=0.5)
+            plt.plot(self.x[i],fit_minus,self.color[i]+'--',linewidth=0.5)
 
             plt.xlabel(self.xlabel,font)
             plt.ylabel(self.ylabel,font)

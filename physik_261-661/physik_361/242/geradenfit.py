@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 class Gerade:
 
     def __init__(self):
@@ -62,6 +63,8 @@ class Auswertung:
 
     def auswertung(self):
         font = {"fontname":"Computer Modern", "family":"serif"}
+        plt.rcParams.update({"text.usetex":True,"font.family":"serif"})
+
         mnvmvn = np.ndarray(shape=(len(self.x),4),dtype=float)
 
         for i in range(len(self.x)):
@@ -74,10 +77,10 @@ class Auswertung:
             fit_plus = steigung*self.x[i]+b+mnvmvn[i][3]
             fit_minus = steigung*self.x[i]+b-mnvmvn[i][3]
 
-            plt.errorbar(self.x[i],self.y[i],self.yerr[i],self.xerr[i],fmt=self.color[i],ls="",marker=".",label=self.label+' Messwerte',capsize=3,linewidth=0.5)
+#            plt.errorbar(self.x[i],self.y[i],self.yerr[i],self.xerr[i],fmt=self.color[i],ls="",marker=".",label=self.label+' Messwerte',capsize=3,linewidth=0.5)
             plt.plot(self.x[i],fit,self.color[i],label=self.label+' Geradenfit',linewidth=0.8)
-            plt.plot(self.x[i],fit_plus,'b--',label='error +/-',linewidth=0.5)
-            plt.plot(self.x[i],fit_minus,'b--',linewidth=0.5)
+            plt.plot(self.x[i],fit_plus,self.color[i]+'--',label='error +/-',linewidth=0.5)
+            plt.plot(self.x[i],fit_minus,self.color[i]+'--',linewidth=0.5)
 
             plt.xlabel(self.xlabel,font)
             plt.ylabel(self.ylabel,font)
@@ -92,5 +95,22 @@ class Auswertung:
             elif self.zusammen[i] == self.zusammen[i+1]:
                 continue
 
-        plt.show()
-        #plt.savefig('')
+
+        xs = np.split(np.squeeze(self.x),2)
+        ys = np.split(np.squeeze(self.y),2)
+        yerrs = np.split(np.squeeze(self.yerr),2)
+        xerrs = np.split(np.squeeze(self.xerr),2)
+        colors = ['r','b']
+        print('xs: ',xs)
+
+
+        plt.errorbar(xs[0],ys[0],yerrs[0],xerrs[0],fmt=colors[0],ls="",marker=".",label=self.label+' I Messwerte',capsize=3,linewidth=0.5)
+        plt.errorbar(xs[1],ys[1],yerrs[1],xerrs[1],fmt=colors[1],ls="",marker=".",label=self.label+' I180 Messwerte',capsize=3,linewidth=0.5)
+        plt.xlabel(self.xlabel,font)
+        plt.ylabel(self.ylabel,font)
+        plt.title(self.title,font)
+        plt.legend(loc='best')
+        plt.grid()
+
+        #plt.show()
+        #plt.savefig('242_b_graph.png')
