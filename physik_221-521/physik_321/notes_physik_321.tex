@@ -976,6 +976,135 @@ Es kommen nun verschiedene Beiträge zu $\left\langle \vv{j}_m\right\rangle $.
                                 Da der Strom stationär ist, gilt $\text{div}\vv{j}_{\text{mag}}=0$, und das Dipolmoment $\vv{m}_i=\tfrac{1}{2}\int_{}^{}\td ^3r\left(\vv{r}-\vv{r}_i\right)\times \vv{j}_{\text{mag}}^{(i)}\left(\vv{r}\right)$. Damit ist $\left\langle \vv{j}_{\text{mag}}\left(\vv{r}\right)\right\rangle =\text{rot}\vv{M}$, mit $\vv{M}$ der Magnetisierung. Die Magnetisierung ist auch das mittlere magnetische Moment, also die Mittelung über alle Dipolmomente.
                 \end{enumerate}
 \end{enumerate}
+Mit diesen Zusammenhängen kann man die makroskopischen inhomogenen \textsc{Maxwell}--Gleichungen darstellen als
+\begin{align} 
+        \text{rot}\vv{B}&=\mu _0\left(\vv{j}_f+\text{rot}\vv{M}\right)
+.\end{align} 
+Man führt nun das Hilfsfeld $\vv{H}=\tfrac{1}{\mu _0}\vv{B}-\vv{M}$ ein. $\vv{H}$ ist hier das eigentliche magnetische Feld. Damit ist dann
+\begin{align} 
+        \text{rot}\vv{H}=\vv{j}_f
+.\end{align} 
+
+\subsubsection{Materialgleichungen}
+Da in der \textsc{Maxwell}--Gleichung die Magnetisierung auftritt, muss diese in Abhängigkeit des magnetischen Feldes geschrieben werden. Hier werden nur lineare und isotrope Materialien betrachtet. Die Magnetisierung ist dann
+\begin{align} 
+        \vv{M}&=\chi_m \vv{H}
+,\end{align} 
+mit $\chi_m$ der \textbf{Suszeptibilität}. Schreibt man für das magnetische Induktionsfeld
+\begin{align} 
+        \vv{B}&=\mu _0\left(\vv{H}+\vv{M}\right)=\mu _0\left(1+\chi_m\right)\vv{H}:=\mu _0\mu _r\vv{H}
+,\end{align} 
+mit $\mu _r=1+\chi_m$ der \textbf{relativen Permeabilität}. Es gibt verschiedene Arten von Magnetisierung
+\begin{enumerate}[label=\roman*)]
+        \item \textbf{Diamagnetismus}: Es existieren keine permanente Dipole. Das Feld entsteht nur über Induktion. Zudem ist $\chi_m<0$, mit $|\chi_m|\approx 10^{-5}$. Ein Beispiel sind Supraleiter, mit $\chi_m=-1$.
+        \item \textbf{Paramagnetismus}: Es existieren beireits permanente Dipole. Durch ein Magnetfeld werden diese Dipole ausgerichtet. Zudem hängt $\chi_m=\chi_m\left(T\right)$ von der Temperatur ab. Für hohe Temperaturen ist $\chi_m\propto \tfrac{1}{T}$.
+        \item \textbf{Kollektiver} Magnetismus: Es existieren permanente Dipole. Die Suszeptibilität ist abhängig von der Temperatur und dem magnetischen Feld, $\chi_m=\chi_m\left(T,H\right)$. Unter einer kritischen Temperatur kommt es zu einer spontanen Selbstausrichtung. Beispiele sind Ferromagnetismus und Antiferromagnetismus (gleiche Ausrichtung bzw.\ entgegengesetze Ausrichtung).
+\end{enumerate}
+
+\subsubsection{Verhalten an Grenzflächen}
+\textbf{Normalkomponente}\\ 
+Man betrachtet die Normalkomponente des magnetischen Feldes für die Grenzfläche zweier Materialien $\mu _r^1$ und $\mu _0^2$. Der Normalenvektor zeigt in Richtung von $\mu _0^2$ und der Magnetfeldlinien. Das Volumen des Kästchens setzt sich zusammen aus der Fläche mal die Höhe $\Delta V=\Delta F\Delta x$. Nach den \textsc{Maxwell}--Gleichungen und dem Satz von \textsc{Gauss}
+\begin{align} 
+        0=\int_{\Delta V}^{}\text{div}\vv{B}\td ^3r&=\oint_{\partial \Delta V}^{}\vv{B}\td \vv{f}\\
+                                                   &\stackrel{\Delta x\rightarrow 0}{=}\Delta F\cdot \vv{n}\cdot \left(\vv{B}_2-\vv{B}_1\right)
+.\end{align} 
+Es gilt also 
+\begin{align} 
+        B_1^{\left(n\right)}&=B_2^{\left(n\right)}
+.\end{align} 
+Für das magnetische Feld gilt dies allerdings nicht, da $\vv{B}=\mu _0\mu _r\vv{H}$. Also
+\begin{align} 
+        H_2^{\left(n\right)}&=\dfrac{\mu _r^1}{\mu _r^2}H_1^{\left(n\right)}
+.\end{align} 
+\hfill\\\textbf{Tangentialkomponente}\\ 
+Die Tangentialkomponente lässt sich mit einem Flächenstück $\Delta F=\Delta l\Delta x$ ($\Delta x$ liegt in beiden Materialien) an der selben Stelle wie das Kästchen zeigen. 
+Der Tangentialvektor zur Grenzfläche ist $\vv{t}$.
+Das Linienelement in Medium 2 ist $\Delta \vv{l}_2=\left(\vv{t}\times \vv{n}\right)\Delta l=-\Delta \vv{l}_1$.\par
+Nach dem Satz von \textsc{Stokes}
+\begin{align} 
+        \int_{\Delta F}^{}\text{rot}\vv{H}\td \vv{f}&=\int_{\Delta F}^{}\vv{j}_f\td \vv{f}\\
+                                                    &\stackrel{\Delta x\rightarrow 0}{=}\left(\vv{j}_F\cdot \vv{t}\right)\Delta l\\
+                                                    &=\oint_{\partial \Delta F}^{}\vv{H}\td \vv{r}\\
+                                                    &\stackrel{\Delta x\rightarrow 0}{=}\Delta l\left(\vv{t}\times \vv{n}\right)\left(\vv{H}_2-\vv{H}_1\right)
+,\end{align} 
+mit $\vv{j}_F$ dem Flächenstrom nur in der Oberfläche. Daraus folgt
+\begin{align} 
+        \vv{j}_F\cdot \vv{t}&=\left(\vv{t}\times \vv{n}\right)\left(\vv{H}_2-\vv{H}_1\right)
+.\end{align} 
+
+\subsubsection{Randwertprobleme}
+Sei $\mu _r=\text{const.}$ im ganzen Raumbereich eines isotropen linearen Mediums.
+Damit gilt für die magnetische Induktion $\vv{B}=\mu _0\mu _r\vv{H}$ und $\text{rot}\vv{B}=\mu _0\mu _r\vv{j}$.
+Verwendet man die \textsc{Coulomb}--Eichung für das Potential, ist die \textsc{Poisson}--Gleichung
+\begin{align} 
+        \Delta \vv{A}&=-\mu _0\mu _r\vv{j}
+.\end{align} 
+Sei das Potential $V=\cup _{i=1}^nV_i$ und $\mu _r^{\left(i\right)}$ in $V_i$. 
+Man muss für jedes Potential $V_i$ die \textsc{Poisson}--Gleichung lösen und die Lösungen mit den Randbedingungen zusammensetzen.\par
+Sei $j\equiv 0$ in $V$ mit Randbedingungen auf $\partial V$. 
+Dann kann man schreiben, dass
+\begin{align} 
+        \text{rot}\vv{H}&=\vv{j}\equiv0\Rightarrow \vv{H}=-\text{div}\varphi _m
+,\end{align} 
+mit $\varphi _m$ dem magnetischen Potential.
+Die andere \textsc{Maxwell}--Gleichung lässt sich schreiben zu
+\begin{align} 
+        \text{div}\vv{B}&=0\Rightarrow \text{div}\left(\mu _0\mu _r\right)\vv{H}=0\Rightarrow \Delta \varphi _m=0
+.\end{align} 
+$\varphi _m$ erfüllt dann die \textsc{Laplace}--Gleichung (allerdings noch nicht die Randbedingungen).\par
+Sei nun die Magnetisierung $M\left(\vv{r}\right)\neq 0,\vv{j}\equiv0 $ in $V$. Damit sind die \textsc{Maxwell}--Gleichungen
+\begin{align} 
+        \text{rot}\vv{H}&=0\Rightarrow \vv{H}=-\text{div}\varphi _m\\
+        \text{div}\vv{B}&=0=\mu _0\text{div}\left(\vv{H}+\vv{M}\right)
+.\end{align} 
+Daraus folgt
+\begin{align} 
+        \Delta \varphi _m&=\text{div}\vv{M}=-\rho _m
+,\end{align} 
+mit $\rho _m$ der effektiven magnetischen Ladungsdichte. 
+Hier ist nicht gemeint, dass magnetische Monopole existieren; $\rho _m$ ist nur eine Bezeichnung.\par
+Man nimmt nun an, dass es im endlichen keine weiteren Randbedingungen gibt.
+Über das \textsc{Poisson}--Integral folgt dann
+\begin{align} 
+        \varphi _m\left(\vv{r}\right)&=-\dfrac{1}{4\pi }\int_{}^{}\td ^3r'\dfrac{\text{div}\vv{M}\left(\vv{r}'\right)}{|\vv{r}-\vv{r}'|}=-\dfrac{1}{4\pi }\text{div}_{\vv{r}}\int_{}^{}\td ^3r'\dfrac{\vv{M}\left(\vv{r}'\right)}{|\vv{r}-\vv{r}'|}
+.\end{align} 
+Weiter wird angenommen, dass $\vv{M}\neq 0$ in einem räumlich begrentzten Gebiet. Entwickelt man für die Fernzone ist $\tfrac{1}{|\vv{r}-\vv{r}'|}=\tfrac{1}{r}+\tfrac{\vv{r}\vv{r}'}{r^3}+\hdots $, also
+\begin{align} 
+        \varphi _m\left(\vv{r}\right)&\approx -\dfrac{1}{4\pi }\left(\text{div}_{\vv{r}}\dfrac{1}{\vv{r}}\right)\underbrace{\int_{}^{}\td ^3r'M\left(\vv{r}'\right)}_{=\vv{m}}
+;\end{align} 
+damit
+\begin{align} 
+        \varphi _m\left(\vv{r}\right)&\approx \dfrac{1}{4\pi }\dfrac{\vv{m}\vv{r}}{r^3}
+,\end{align} 
+das Dipolpotential. 
+Das Dipolfeld ist dann
+\begin{align} 
+        \vv{H}_D&=\dfrac{1}{4\pi }\dfrac{3\left(\vv{m}\vv{r}\right)\vv{r}-\vv{m}r^2}{r^5}
+.\end{align} 
+Mit Randbedingungen ist das Potential
+\begin{align} 
+        \varphi _m\left(\vv{r}\right)&\approx \dfrac{1}{4\pi }\int_{V}^{}\td ^3r'\dfrac{\text{div}\vv{M}\left(\vv{r}'\right)}{|\vv{r}-\vv{r}'|}+\dfrac{1}{4\pi }\int_{\partial V}^{}\td \vv{f}\dfrac{\vv{M}\left(\vv{r}'\right)}{|\vv{r}-\vv{r}'|}
+.\end{align} 
+Der Term $\sigma _M=\vv{n}'\vv{M}\left(\vv{r}'\right)$ ist die effektive magnetische Flächenladung.
+
+\subsubsection{Beispiel: Kugel}
+Sei eine Kugel mit Radius $a$ und einer Magnetisierung $\vv{M}=M_0\vv{e}_z$ in $z$--Richtung. 
+Es gelten
+\begin{align} 
+        \text{div}\vv{M}&=0&\vv{n}&=\vv{e}_r&\sigma _M&=\vv{M}\vv{e}_r=M_0\vv{e}_z\vv{e}_r=M_0\cos \theta 
+.\end{align} 
+Seien Randbedingungen von \textsc{Neumann}--Typ, also
+\begin{align} 
+        \varphi _m\left(\vv{r}\right)&=\dfrac{1}{4\pi }\int_{\partial V}^{}\td f\dfrac{M_0\cos \theta '}{|\vv{r}-\vv{r}'|}\\
+                                     &=\dfrac{a^2}{4\pi }\int_{0}^{2\pi }\td \varphi '\int_{-1}^{1}\td \left(\cos \theta '\right)\dfrac{M_0\cos \theta '}{\left[r^2+a^2-2ra\cos \theta '\right]^{1/2}}\\
+                                     &=\dfrac{a^2}{2}M_0\int_{-1}^{1}\td x\dfrac{x}{\left[r^2+a^2-2r ax\right]^{1/2}}
+.\end{align} 
+Diese Integral kann mit partieller Integration mit $u=x$ und $v'=\tfrac{1}{\,\sqrt[]{}}$ gelöst werden.
+Die Lösungen sind
+\begin{enumerate}[label=\roman*)]
+        \item $r>a$: $\varphi _m\left(\vv{r}\right)=\tfrac{M_0a^3}{3}\tfrac{1}{r^2}=\tfrac{a^3}{3}\tfrac{\vv{M}\vv{r}}{r^3}$, mit $\vv{m}=\vv{M}\tfrac{4\pi a^3}{3}$.
+        \item $r<a$: $\varphi _m\left(\vv{r}\right)=\tfrac{1}{3}\vv{M}\vv{r}\Rightarrow \vv{H}_{\text{innen}}=-\tfrac{1}{3}\vv{M}$ 
+\end{enumerate}
 
 %{{{ Notizen
 \newpage

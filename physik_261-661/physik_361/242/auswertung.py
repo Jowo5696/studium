@@ -98,9 +98,9 @@ def millikan():
     v = np.ndarray(shape=(len(data),3,5),dtype=float)
     for i in range(len(data)):
         for j in range(len(data[i][0])):
-            v[i][0][j] = dg/data[i][0][j]
-            v[i][1][j] = dg/data[i][1][j]
-            v[i][2][j] = dg/data[i][2][j]
+            v[i][0][j] = dg/data[i][0][j] # v0
+            v[i][1][j] = dg/data[i][1][j] # vu
+            v[i][2][j] = dg/data[i][2][j] # vd
 
     # 2 7 8 9 10
 
@@ -118,6 +118,10 @@ def millikan():
         print(i,'r',r)
         Ne = 3*np.pi*eta*r*(v[i][2][:]+v[i][1][:])/E
         print(i,'Ne',Ne)
+
+    plt.plot([2,7,8,9,10],Ne,ls='',color='r',marker='d')
+    plt.grid()
+    plt.show()
 
 # }}}
 
