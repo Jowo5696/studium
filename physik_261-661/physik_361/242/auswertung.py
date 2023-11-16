@@ -62,7 +62,7 @@ def fadenstrahlrohr():
 
 # }}}
 
-fadenstrahlrohr()
+#fadenstrahlrohr()
 
 # {{{ 242 Millikan
 
@@ -187,8 +187,8 @@ def millikan():
     label = 'Elementarladung' # label von plt.errorbar und plt.plot
     color = ['r'] # farbe der punkte (geraden sind immer blau)
 
-#    Auswertung = gf.Auswertung(x,xerr,xlabel,y,yerr,ylabel,title,label,color,zusammen)
-#    Auswertung.auswertung()
+    Auswertung = gf.Auswertung(x,xerr,xlabel,y,yerr,ylabel,title,label,color,zusammen)
+    Auswertung.auswertung()
 
     e0 = (1.087e-12)**(3/2)
     de0 = (3/2)*(1.087e-12)**(3/2-1)*(1.507e-13)
@@ -203,7 +203,7 @@ def millikan():
 
 # }}}
 
-#millikan()
+millikan()
 
 # Plot
 

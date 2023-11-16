@@ -114,5 +114,5 @@ class Auswertung:
         plt.grid()
         '''
 
-        plt.savefig('242_b_graph.png')
+        plt.savefig('242_i_graph.png')
         plt.show()
