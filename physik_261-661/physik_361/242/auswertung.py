@@ -43,8 +43,8 @@ def fadenstrahlrohr():
     label = '242.a' # label von plt.errorbar und plt.plot
     color = ['r'] # farbe der punkte (geraden sind immer blau)
 
-#    Auswertung = gf.Auswertung(x,xerr,xlabel,y,yerr,ylabel,title,label,color,zusammen)
-#    Auswertung.auswertung()
+    Auswertung = gf.Auswertung(x,xerr,xlabel,y,yerr,ylabel,title,label,color,zusammen)
+    Auswertung.auswertung()
 
     Gerade = gf.Gerade()
     m,n,vm,vn = Gerade.mnvmvn(x[0],y[0],yerr[0])
@@ -62,7 +62,7 @@ def fadenstrahlrohr():
 
 # }}}
 
-#fadenstrahlrohr()
+fadenstrahlrohr()
 
 # {{{ 242 Millikan
 
@@ -203,7 +203,7 @@ def millikan():
 
 # }}}
 
-millikan()
+#millikan()
 
 # Plot
 
