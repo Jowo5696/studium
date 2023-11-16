@@ -96,28 +96,43 @@ def millikan():
         #print('delta',i,dabweichung[i])
 
     v = np.ndarray(shape=(len(data),3,5),dtype=float)
+    dv = np.ndarray(shape=(len(data),3,5),dtype=float)
     for i in range(len(data)):
         for j in range(len(data[i][0])):
             v[i][0][j] = dg/data[i][0][j] # v0
+            dv[i][0][j] = ddg/data[i][0][j] # v0
             v[i][1][j] = dg/data[i][1][j] # vu
+            dv[i][1][j] = ddg/data[i][1][j] # vu
             v[i][2][j] = dg/data[i][2][j] # vd
+            dv[i][2][j] = ddg/data[i][2][j] # vd
 
     # 2 7 8 9 10
 
     eta = 18.19e-6
     g = 9.81
     rho_öl = 886.0
-    rho_luft = 1.225
+    rho_luft = 1.2041
 
     d_K = 7.67e-3
     U = 500
     E = U/d_K
 
+    tabledata = np.round(np.transpose([v[0][2][:],v[0][1][:],v[6][2][:],v[6][1][:],v[7][2][:],v[7][1][:],v[8][2][:],v[8][1][:],v[9][2][:],v[9][1][:]]),6)
+    tableheaders = ['T1 vu','T1 vd','T6 vu','T6 vd','T7 vu','T7 vd','T8 vu','T8 vd','T9 vu','T9 vd']
+    #print('Tabelle 242.g: Geschwindigkeiten')
+    #print(tabulate(tabledata,tableheaders,tablefmt='fancy_grid'))
+
+    for i in [1,6,7,8,9]:
+        print(i,'up',v[i][1][:],'±',dv[i][1][:])
+        print(i,'down',v[i][2][:],'±',dv[i][2][:])
+
     for i in [1,6,7,8,9]:
         r = np.sqrt((9*eta*np.abs((v[i][2][:]-v[i][1][:])))/(4*g*(rho_öl-rho_luft)))
-        print(i,'r',r)
+        dr = np.sqrt((0.5*r**(-1)*(9*eta/(4*g*(rho_öl-rho_luft)))*dv[i][1][:])**2+(0.5*r**(-1)*(9*eta/(4*g*(rho_öl-rho_luft)))*dv[i][2][:])**2)
+        print(i,'r',np.mean(r),'±',np.mean(dr))
         Ne = 3*np.pi*eta*r*(v[i][2][:]+v[i][1][:])/E
-        print(i,'Ne',Ne)
+        dNe = np.sqrt((3*np.pi*eta*(v[i][1][:]+v[i][2][:])/E*dr)**2+(3*np.pi*eta*r*1/E*dv[i][2][:])**2+(3*np.pi*eta*1/E*dv[i][1][:])**2)
+        print(i,'Ne',np.mean(Ne),'±',np.mean(dNe))
 
     plt.plot([2,7,8,9,10],Ne,ls='',color='r',marker='d')
     plt.grid()
