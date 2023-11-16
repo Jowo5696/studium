@@ -36,8 +36,8 @@ a_data1 = np.transpose([np.round(a_U1,2),np.round(a_UR,2),np.round(a_delt_UR,2),
 a_head1 = ['U_B1 [V]','U_R [V]','ΔU [V]','I [A]','ΔI [A]','R [Ω]','ΔR [Ω]']
 a_data2 = np.round(np.transpose([a_Pw,a_delt_Pw,a_Ps,a_delt_Ps,a_Pscos,a_delt_Pscos]),2)
 a_head2 = ['Pw [W]','ΔPw [W]','Ps [W]','ΔPs [W]','Ps*cos [W]','ΔP*cos [W]']
-#print('Tabelle 238.b: Leistung')
-#print(tabulate(a_data2,headers=a_head2,tablefmt='fancy_grid'))
+print('Tabelle 238.b: Leistung')
+print(tabulate(a_data2,headers=a_head2,tablefmt='fancy_grid'))
 
 zusammen = ['a','a','a','end'] # Welche Plots zusammengehören. Gleiche Buchstaben werden in einem Plot ausgegeben (Beispiel: ['a','a','b'], die ersten beiden x, y Werte werden in einem Plot ausgegeben, die dritten x, y, Werte werden in einem Plot ausgegeben).
 x = [a_R,a_R,a_R,a_R]

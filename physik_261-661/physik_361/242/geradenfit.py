@@ -77,7 +77,7 @@ class Auswertung:
             fit_plus = steigung*self.x[i]+b+mnvmvn[i][3]
             fit_minus = steigung*self.x[i]+b-mnvmvn[i][3]
 
-#            plt.errorbar(self.x[i],self.y[i],self.yerr[i],self.xerr[i],fmt=self.color[i],ls="",marker=".",label=self.label+' Messwerte',capsize=3,linewidth=0.5)
+            plt.errorbar(self.x[i],self.y[i],self.yerr[i],self.xerr[i],fmt=self.color[i],ls="",marker=".",label=self.label+' Messwerte',capsize=3,linewidth=0.5)
             plt.plot(self.x[i],fit,self.color[i],label=self.label+' Geradenfit',linewidth=0.8)
             plt.plot(self.x[i],fit_plus,self.color[i]+'--',label='error +/-',linewidth=0.5)
             plt.plot(self.x[i],fit_minus,self.color[i]+'--',linewidth=0.5)
@@ -96,6 +96,7 @@ class Auswertung:
                 continue
 
 
+        '''
         xs = np.split(np.squeeze(self.x),2)
         ys = np.split(np.squeeze(self.y),2)
         yerrs = np.split(np.squeeze(self.yerr),2)
@@ -111,6 +112,7 @@ class Auswertung:
         plt.title(self.title,font)
         plt.legend(loc='best')
         plt.grid()
+        '''
 
-        #plt.show()
         #plt.savefig('242_b_graph.png')
+        plt.show()
