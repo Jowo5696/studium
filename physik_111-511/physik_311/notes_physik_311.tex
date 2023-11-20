@@ -685,7 +685,64 @@ Man definiert die \textbf{Blendenzahl} $F$ eines Objektives als
 .\end{align} 
 Eine große Blendenzahl bedeutet, dass der Durchmesser der Blende kleiner wird.
 
+\newpage
+\section{Interferenz von Wellen}
+Allgemein ist die Wellengleichung
+\begin{align} 
+        \Delta \vv{E}=\dfrac{1}{c^2}\diffp[2]{\vv{E}}{t}
+,\end{align} 
+mit $\vv{E}_1$ und $\vv{E}_2$ als Lösungen folgt mit der Linearität der Wellengleichung
+\begin{align} 
+        \vv{E}&=\alpha _1\vv{E}_1+\alpha _2\vv{E}_2
+.\end{align} 
+Aus dem Superpositionsprinzip für verschiedene sich überlagernde Wellen geht hervor
+\begin{align} 
+        \vv{E}\left(\vv{r},t\right)&=\sum_{m}^{}\vv{A}_m\left(\vv{r},t\right)e^{\text{i}\varphi _m}
+,\end{align} 
+mit $A_m$ der Amplitude und $\varphi _m$ der Phase. Die Intensität ist proportional zu $|\vv{E}|^2$ 
+\\\hfill\\\textbf{Spezialfall: zwei sich überlagernde Wellen}\\
+Es sei $I\propto |\vv{E}|^2=|\vv{E}_1+\vv{E}_2|^2$. 
+Existiert nur ein Feld, ist $I=I_0\propto |\vv{E}_1|^2$. 
+Für $\vv{E}_2=\vv{E}_1$ (konstruktive Interferenz) ist $\vv{E}=2\vv{E}_1$ und $I\propto 4|\vv{E}_1|^2$ also $I=4I_0$.
+Ist allerdings $\vv{E}_2=-\vv{E}_1$ (destruktive Interferenz), dann ist $\vv{E}=0=I$.
 
+\subsection{\textsc{Young}'sches Doppelspaltexperiment}
+Beim \textsc{Young}'schen Doppelspaltexperiment werden ebene Lichtwellen durch einen Doppelspalt geschickt.
+Dabei entsteht ein Interferenzmuster hinter dem Doppelspalt.
+Man kann erkennen, dass die Wellen konstruktiv und destruktiv interferieren, wobei sich Maxima und Minima bilden.
+Maxima werden mit $m$ bezeichnet; das erste Maximum ist von der Ordnung $m=0$.
+Für einen Spaltabstand von $d$ ist der Gangunterschied zwischen zwei Wellen die in einem Winkel von $\varphi $ austreten gleich $d\sin \varphi $.
+Für die konstruktive Interferenz gilt $d\sin \varphi =m\lambda $; für die destruktive Interferenz gilt $d\sin \varphi =\left(m+\tfrac{1}{2}\right)\lambda $.
+
+\subsection{Berechnung der Intensitätsverteilung}
+Sei der Abstand des beobachteten Punktes auf dem Schrim zur Mittellinie $x_p$.
+Die Vektoren zwischen Spalt und Schrim sind $r_{1,p}$ und $r_{2,p}$.
+Die Spaltbreite $b$ ist sehr klein, jeder Spalt emittiert also eine Kugelwelle.
+Das Feld ist $E=E_{1,0}\cos \left(kr_{1,p}-\omega t\right)+E_{2,0}\cos \left(kr_{2,p}-\omega t\right)$, mit $\tfrac{\omega }{k}=c$ und $r_{i,p}=\,\sqrt[]{\left(x_p\pm \tfrac{d}{2}\right)^2+D^2}$.
+Die Proportionalität der Intensität ist $I\propto \left\langle |E|^2\right\rangle $.\par
+Man betrachtet nun den \textsc{Fraunhofer}'schen Grenzfall, wobei der Schrim unendlich weit vom Doppelspalt entfernt ist.
+Der Gangunterschied wird definiert als $g:=d\sin \varphi =r_{2,p}-r_{1,p}$, mit $\tan \varphi =\tfrac{x_p}{D}$.
+Damit ist das Feld bzw.\ die Intensität 
+\begin{align} 
+        I\propto \left\langle |E_{1,0}\cos \left(k\left(r-\dfrac{d}{2}\sin \varphi \right)-\omega t\right)+E_{2,0}\cos \left(k\left(r+\dfrac{d}{2}\right)-\omega t\right)|^2\right\rangle 
+.\end{align} 
+Für $E_{1,0}=E_{2,0}=E_0$ ist 
+\begin{align} 
+        &\left\langle \left|\dfrac{E_{1,0}}{2}\left(\text{e}^{\text{i}\left(k\left(r-\tfrac{g}{2}\right)-\omega t\right)}+\text{e}^{\text{i}\left(k\left(r+\tfrac{g}{2}\right)-\omega t\right)}+\left(\text{e}^{\text{i}\left(k\left(r-\tfrac{g}{2}\right)-\omega t\right)}+\text{e}^{\text{i}\left(k\left(r+\tfrac{g}{2}\right)-\omega t\right)}\right)^*\right)\right|^2\right\rangle \\
+        &=\left\langle \dfrac{E_0^2}{4}\left(2\cos \dfrac{kg}{2}\right)^2\left|\text{e}^{\text{i}\left(kr-\omega t\right)}+\text{e}^{-\text{i}\left(kr-\omega t\right)}\right|^2\right\rangle 
+,\end{align} 
+mit $()^*$ dem komplex konjugiertem. Daraus folgt für die Intensität
+\begin{align} 
+        I&=4\cos ^2\dfrac{kg}{2}\underbrace{\left\langle \left|E_0\cos \left(kr-\omega t\right)\right|^2\right\rangle }_{\propto I_0}\\
+         &=I_04\cos ^2\dfrac{kg}{2}\\
+         &=I_0\cos ^2k\dfrac{d}{2}\sin \varphi
+.\end{align} 
+Man erwartet Interferenzmaxima für $k\tfrac{d}{2}\sin \varphi =m\pi \Leftrightarrow d\sin \varphi =m\lambda $, mit $k=\tfrac{2\pi }{\lambda }$.
+
+\subsection{Kohärenz von Lichtquellen}
+Im folgenden wird die zeitliche Kohärenz (oder auch longitudinale Kohärenz) betrachtet.\par
+Es wird angenommen, dass Licht eine Frequenzverteilung hat. 
+Damit ist die Intensität abhängig von der Frequenz, also existiert auch ein $\nu _m=\tfrac{\omega _m}{2\pi }$, bei dem die Intensität maximal wird.
 
 %}}}
 
