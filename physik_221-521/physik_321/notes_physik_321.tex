@@ -1106,6 +1106,130 @@ Die Lösungen sind
         \item $r<a$: $\varphi _m\left(\vv{r}\right)=\tfrac{1}{3}\vv{M}\vv{r}\Rightarrow \vv{H}_{\text{innen}}=-\tfrac{1}{3}\vv{M}$ 
 \end{enumerate}
 
+\newpage
+\section{Elektrodynamik}
+Ziel dieses Kapitels ist die Verallgemeinerung der \textsc{Maxwell}--Gleichungen. Bisher galt immer
+\begin{align} 
+        \text{div}\vv{D}&=\rho &\text{rot}\vv{E}&=0\\
+        \text{div}\vv{B}&=0&\text{rot}\vv{H}&=\vv{j}
+.\end{align} 
+Man definiert die \textbf{elektromotorische Kraft} (eine Arbeit)
+\begin{align} 
+        EMK&=\oint_{\mathcal{C}}^{}\vv{E}\td \vv{r}
+,\end{align} 
+und den \textbf{magnetischen Fluss} 
+\begin{align} 
+        \Phi &=\int_{F\left(\mathcal{C}\right)}^{}\vv{B}\td \vv{f}
+.\end{align} 
+Das \textsc{Faraday}'sche Induktionsgesetz besagt
+\begin{align} 
+        \diff[]{I}{t}&\propto EMK\\
+        \oint_{\mathcal{C}}^{}\vv{E}\td \vv{r}&=-k\diff*[]{\int_{F\left(\mathcal{C}\right)}^{}\vv{B}\td \vv{f}}{t}
+.\end{align} 
+Dieses Gesetz gilt für jede Fläche $F\left(\mathcal{C}\right)$ mit Randkurve $\mathcal{C}$.\par
+Um den Vorfaktor $k$ herauszufinden vergleicht man die selbe Leiterschleife in zwei Bezugssystemen.
+\\\hfill\\\textbf{Mitbewegtes Bezugsystem}\\ 
+Bewege sich die Leiterschleife nun mit $\vv{v}=\text{const.}$. Die Beiträge zur totalen zeitlichen Änderung von $\vv{B}$ sind
+\begin{enumerate}[label=\roman*)]
+        \item die explizite Zeitabhängigkeit $\vv{B}=\vv{B}\left(t,\vv{r}\right)$ und
+        \item die Positionsänderung der Leiterschleife
+\end{enumerate}
+Ein kleiner Zeitschritt von $t\rightarrow t+\delta t$ ändert das Magnetfeld um $\delta \vv{B}$. Damit ist die totale Zeitableitung
+\begin{align} 
+        \diff*[]{\vv{B}}{t}&=\diffp[]{\vv{B}}{t}+\left(v\cdot \vv{\nabla }\right)\vv{B}
+.\end{align} 
+Mit der Intentität
+\begin{align} 
+        \vv{\nabla }\times \left(\vv{B}\times \vv{v}\right)&=\left(\vv{v}\cdot \vv{\nabla }\right)\vv{B}-\underbrace{\left(\vv{B}\cdot \vv{\nabla }\right)\vv{v}}_{=0}+\vv{B}\underbrace{\left(\vv{\nabla }\cdot \vv{v}\right)}_{=0}-\vv{v}\underbrace{\left(\vv{\nabla }\cdot \vv{B}\right)}_{=0}
+,\end{align} 
+folgt
+\begin{align} 
+        \diff*[]{\vv{B}}{t}&=\diffp[]{\vv{B}}{t}+\vv{\nabla }\times \left(\vv{B}\times \vv{v}\right)
+.\end{align} 
+Dieser Ausdruck ist hilfreich, da mit dem Satz von \textsc{Stokes} gilt
+\begin{align} 
+        \int_{F\left(\mathcal{C}\right)}^{}\vv{\nabla }\times \left(\vv{B}\times \vv{v}\right)\td \vv{f}&=\oint_{\mathcal{C}}^{}\left(\vv{B}\times \vv{v}\right)\td \vv{r}=\oint_{\mathcal{C}}^{}\vv{B}\cdot \left(\vv{v}\times \td \vv{r}\right)
+.\end{align} 
+Die totale Zeitableitung des magnetischen Flusses ist dann
+\begin{align} 
+        \diff*[]{\int_{F\left(\mathcal{C}\right)}^{}\vv{B}\td \vv{f}}{t}&=\int_{F\left(\mathcal{c}\right)}^{}\diffp[]{\vv{B}}{t}\td \vv{f}+\oint_{\mathcal{C}}^{}\vv{B}\cdot \left(\vv{v}\times \td \vv{r}\right)
+.\end{align} 
+Das \textsc{Faraday}'sche Induktionsgesetz ist also
+\begin{align} 
+        \oint_{\mathcal{C}}^{}\left(\vv{E}-k\left(\vv{v}\times \vv{B}\right)\right)\td \vv{r}&=-k\int_{F\left(\mathcal{C}\right)}^{}\diffp[]{\vv{B}}{t}\td \vv{f}
+.\end{align} 
+\hfill\\\textbf{Schleife ruht im Laborsystem}\\ 
+Das elektrische Feld ändert sich zu $\vv{E}=\vv{E}'+k\vv{v}\times \vv{B}$. 
+Die Voraussetzung ist, dass das \textsc{Faraday}'sche Induktionsgesetz in allen relativ zueinander mit $\vv{v}=\text{const.}$ bewegten Bezugsystemen gilt. 
+Es gilt also
+\begin{align} 
+        \oint_{\mathcal{C}}^{}\vv{E}'\td \vv{r}&=-k\int_{F\left(\mathcal{C}\right)}^{}\diffp[]{\vv{B}}{t}\td \vv{f}
+.\end{align} 
+Da der Leiter in Ruhe ist wirkt auf eine Punktladung $q$ die Kraft $\vv{F}=q\vv{E}$. 
+Im Laborsystem ist dann die Ladungsdichte $\vv{j}=q\vv{v}\delta \left(\vv{r}-\vv{r}_0\right)$.\par
+Da das System \textsc{Galilei}--Invariant ist, gilt $\vv{F}=\vv{F}'$ und $\vv{E}=\vv{E}'+\vv{v}\times \vv{B}$. 
+Daraus folgt, dass $k$ in SI--Einheiten gleich 1 ist.
+Das Induktionsgesetz ist somit
+\begin{align} 
+        \oint_{\mathcal{C}}^{}\vv{E}\td \vv{r}=\int_{F\left(\mathcal{C}\right)}^{}\text{rot}\vv{E}\td \vv{f}=-\diff*[]{\int_{F\left(\mathcal{C}\right)}^{}\vv{B}\td \vv{f}}{t}
+.\end{align} 
+Damit ist die \textsc{Maxwell}--Gleichung für $\vv{E}$ und $\vv{B}$ im selben Bezugssystem
+\begin{align} 
+        \text{rot}\vv{E}=-\diffp[]{\vv{B}}{t}
+.\end{align} 
+\hfill\\\textbf{\textsc{Maxwell}'sche Ergänzung}\\ 
+Eine der \textsc{Maxwell}--Gleichungen ist
+\begin{align} 
+        \text{rot}\vv{H}&=\vv{j}
+,\end{align} 
+mit $\left\langle \vv{j}_p\right\rangle =\diffp[]{\vv{P}}{t}$. 
+Da gilt, dass $\text{div}\vv{j}=\text{div}\left(\text{rot}\vv{H}\right)=0$, aber $\text{div}\vv{j}=-\diffp[]{\rho }{t}$ aus der Kontinuitätsgleichung, muss $\text{rot}\vv{H}=\vv{j}+\vv{j}_0$.
+Das bedeutet, dass
+\begin{align} 
+        \text{div}\vv{j}_0=\text{div}\left(\text{rot}\vv{H}\right)-\text{div}\vv{j}=\diffp[]{\rho }{t}=\diffp*[]{\text{div}\vv{D}}{t}
+.\end{align} 
+Die \textsc{Maxwell}'sche Ergänzung ist also eine Ergänzung zum \textsc{Amp\`ere}'schen Gesetz mit
+\begin{align} 
+        \text{rot}\vv{H}&=\vv{j}+\diffp[]{\vv{D}}{t}
+.\end{align} 
+Der Term $\diffp[]{\vv{D}}{t}$ ist der \textbf{Verschiebungsstrom}.\par
+Insgesamt sind dann die homogenen \textsc{Maxwell}--Gleichungen
+\begin{align} 
+        \text{div}\vv{B}&=0&\text{rot}\vv{E}+\diffp[]{\vv{B}}{t}&=0
+;\end{align} 
+und die inhomogenen Gleichungen
+\begin{align} 
+        \text{div}\vv{D}&=\rho &\text{rot}\vv{H}-\diffp[]{\vv{D}}{t}&=\vv{j}
+;\end{align} 
+und die Materiegleichungen
+\begin{align} 
+        \vv{D}&=\varepsilon _0\vv{E}+\vv{P}\approx \varepsilon _0\varepsilon _r\vv{E}\\
+        \vv{B}&=\mu _0\left(\vv{H}+\vv{M}\right)\approx \mu _0\mu _r\vv{H}
+.\end{align} 
+Betrachtet man nun die Potentiale gilt
+\begin{align} 
+        \vv{B}&=\text{rot}\vv{A}\Rightarrow \text{rot}\vv{E}+\diffp[]{\vv{B}}{t}=\text{rot}\left(\vv{E}+\diffp[]{\vv{A}}{t}\right)=0
+.\end{align} 
+Das bedeutet, dass
+\begin{align} 
+        \vv{E}+\diffp[]{\vv{A}}{t}=-\text{grad}\varphi 
+.\end{align} 
+
+\subsection{Eichtransformation}
+Weiterhin ist $\vv{B}$ invariant unter Eichtransformation, also $\vv{A}\rightarrow \vv{A}'=\vv{A}+\text{div}\chi$.
+Allerdings ändert sich dann das $\vv{E}$--Feld, wenn $\varphi $ unverändert bleibt.
+Das bedeutet, dass das $\vv{E}$--Feld vor und nach der Eichtransformation identisch ist
+\begin{align} 
+        \text{grad}\varphi +\diffp[]{\vv{A}}{t}\stackrel{!}{=}\text{grad}\varphi '+\diffp[]{\vv{A}'}{t}=\text{grad}\varphi '+\diffp[]{\vv{A}}{t}+\text{div}\diffp[]{\chi }{t}
+.\end{align} 
+Daraus folgt, dass die Eichtransformationen 
+\begin{align} 
+        \varphi &\rightarrow \varphi '=\varphi -\diffp[]{\chi}{t}\\
+        \vv{A}&\rightarrow \vv{A}'=\vv{A}+\text{div}\chi
+\end{align} 
+sein müssen.
+Damit sind $\vv{E}$ und $\vv{B}$ invariant unter Eichtransformation.
+
 %{{{ Notizen
 \newpage
 \section{Delta--Distribution}
