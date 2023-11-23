@@ -762,7 +762,7 @@ $\mu _0$ ist die \textbf{magnetische Feldkonstante} $4\pi \cdot 10^{-7}\unit{V.s
 Es gilt zudem $\varepsilon _0\mu _0c^2=1$, mit $c$ der Lichtgeschwindigkeit im Vakuum.\par
 Mit $\td \vv{r}_1\times \left(\td \vv{r}_2\times \left(\vv{r}_1-\vv{r}_2\right)\right)=\td \vv{r}_2\left(\td \vv{r}_1\cdot \left(\vv{r}_1-\vv{r}_2\right)\right)-\left(\vv{r}_1-\vv{r}_2\right)\left(\td \vv{r}_1\cdot \td \vv{r}_2\right)$ folgt
 \begin{align} 
-        \oint_{\mathcal{C}_1}^{}\td \vv{r}_1\dfrac{\vv{}_1-\vv{r}_2}{|\vv{r}_1-\vv{r}_2^3}&=-\oint_{\mathcal{C}_1}^{}\td \vv{r}_1\cdot \,\text{grad}\,\dfrac{1}{|\vv{r}_1-\vv{r}_2|}\\
+        \oint_{\mathcal{C}_1}^{}\td \vv{r}_1\dfrac{\vv{r}_1-\vv{r}_2}{|\vv{r}_1-\vv{r}_2|^3}&=-\oint_{\mathcal{C}_1}^{}\td \vv{r}_1\cdot \,\text{grad}\,\dfrac{1}{|\vv{r}_1-\vv{r}_2|}\\
                                                                                           &=\int_{\partial \mathcal{C}_1}^{}\,\text{rot}\,\,\text{grad}\,\dfrac{1}{|\vv{r}_1-\vv{r}_2|}\td \vv{f}\\
                                                                                           &=0
 .\end{align} 
@@ -1044,7 +1044,7 @@ Man muss für jedes Potential $V_i$ die \textsc{Poisson}--Gleichung lösen und d
 Sei $j\equiv 0$ in $V$ mit Randbedingungen auf $\partial V$. 
 Dann kann man schreiben, dass
 \begin{align} 
-        \text{rot}\vv{H}&=\vv{j}\equiv0\Rightarrow \vv{H}=-\text{div}\varphi _m
+        \text{rot}\vv{H}&=\vv{j}\equiv0\Rightarrow \vv{H}=-\text{grad}\varphi _m
 ,\end{align} 
 mit $\varphi _m$ dem magnetischen Potential.
 Die andere \textsc{Maxwell}--Gleichung lässt sich schreiben zu
@@ -1229,6 +1229,10 @@ Daraus folgt, dass die Eichtransformationen
 \end{align} 
 sein müssen.
 Damit sind $\vv{E}$ und $\vv{B}$ invariant unter Eichtransformation.
+
+\newpage
+\textit{Vorlesung 23.11. fehlt.}
+\newpage
 
 %{{{ Notizen
 \newpage
