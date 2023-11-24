@@ -460,6 +460,43 @@ Dann ist
         \int_{\gamma }^{}f\left(z\right)\td z=0
 .\end{align} 
 
+\newpage
+\textit{Vorlesung 22.11. fehlt.}
+\newpage 
+
+\newpage
+\section{Residuensatz}
+Sei $U\subseteq \mathbb{C}$ offen (mit isolierten Löchern). Sei $f:U\rightarrow \mathbb{C}$ holomorph und $\gamma :[a,b]\rightarrow U$ einfach, geschlossen und positiv orientiert. Sei $\text{Int}\gamma \backslash U=\left\{z_1,\hdots ,z_N\right\}\subseteq \mathbb{C}\backslash U$.
+Dann ist
+\begin{align} 
+        \dfrac{1}{2\pi \text{i}}\int_{\gamma }^{}f\left(z\right)\td z&=\sum_{j=1}^{N}\text{Res}\left(f,z_j\right)&\text{Res}\left(f,z_j\right)&:=\lim_{\varepsilon \rightarrow 0}\dfrac{1}{2\pi \text{i}}\int_{\partial B\left(z_j,\varepsilon \right)\circlearrowleft}^{}f\left(z\right)\td z
+.\end{align} 
+
+\subsection{Methoden zur Residuenberechnung}
+Falls $f\left(z\right)=\tfrac{g\left(z\right)}{\left(z-z_0\right)^k},k \in \mathbb{N}$ und $g\left(z\right):B\left(z_0,r\right)\rightarrow \mathbb{C}$ holomorph, dann ist
+\begin{align} 
+        \text{Res}\left(f,z_0\right)&=\dfrac{1}{2\pi \text{i}}\int_{\partial B\left(z_0,r\right)\circlearrowleft}^{}\dfrac{g\left(z\right)}{\left(z-z_0\right)^k}\td z\\
+                                    &=\dfrac{1}{\left(k-1\right)!}g^{\left(k-1\right)}\left(z_0\right)
+.\end{align} 
+Falls $f\left(z\right)=\tfrac{g\left(u\right)}{h\left(z\right)}$ und $h\left(z_0\right)=0,h'\left(z_0\right)\neq 0$, dann ist
+\begin{align} 
+        \text{Res}\left(f,z_0\right)&=\dfrac{g\left(z_0\right)}{h'\left(z_0\right)}
+.\end{align} 
+Falls $f\left(z\right)=\sum_{k=-\infty}^{\infty}\alpha _k\left(z-z_0\right)^k$, dann ist
+\begin{align} 
+        \text{Res}\left(f,z_0\right)&=\alpha _{-1}
+.\end{align} 
+
+\newpage
+\section{\textsc{Laurent}--Reihen}
+Sei $f:B\left(z_0,R\right)\backslash \left\{z_0\right\}\rightarrow \mathbb{C}$ holomorph. 
+Dann ist
+\begin{align} 
+        f\left(z_0+h\right)&=\sum_{k=-\infty}^{\infty}\alpha _kh^k&\alpha _k&=\dfrac{1}{2\pi \text{i}}\int_{\partial B\left(z_0,\rho \right)}^{}\dfrac{f\left(z\right)}{z ^{k+1}}\td z\qquad 0<\rho <R
+.\end{align} 
+Die Reihe konvergiert absolut, wenn $0<|h|<R$.
+Die Koeffizienten sind eindeutig, und $\text{Res}\left(f,z_0\right)=\alpha _{-1}$.
+
 %}}}
 
 \end{document}
