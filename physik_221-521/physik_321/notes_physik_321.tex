@@ -1233,6 +1233,93 @@ Damit sind $\vv{E}$ und $\vv{B}$ invariant unter Eichtransformation.
 \newpage
 \textit{Vorlesung 23.11. fehlt.}
 \newpage
+\section{\textsc{Maxwell}'scher Spannungstensor}
+\textit{Herleitung \textsc{Maxwell}'scher Spannungstensor fehlt (28.11.)}
+\subsection{Beispiel: Plattenkondensator}
+Sei ein Plattenkondensator mit Ladung $Q$ und $-Q$ bzw.\ $\sigma =\tfrac{\Delta Q}{\Delta A}$ und $-\sigma =-\tfrac{\Delta Q}{\Delta A}$. 
+Diese Ladungen bauen ein elektrisches Feld mit $\vv{E}=-\dfrac{\sigma }{\varepsilon }\vv{e}_z$ auf.
+Die Kraft pro Fläche ist dann
+\begin{align} 
+        \dfrac{F}{\Delta A}&=\dfrac{\Delta Q\left(-\tfrac{\sigma }{2\varepsilon }\right)}{\Delta A}\\
+                           &=-\sigma \dfrac{\sigma }{2\varepsilon }\\
+                           &=-\dfrac{\varepsilon }{2}\left(-\dfrac{\sigma }{\varepsilon }\vv{e}_z\right)^2\\
+                           &=-\dfrac{\varepsilon }{2}\vv{E}^2
+.\end{align} 
+Das magnetische Induktionsfeld ist $\vv{B}=0$ und $\vv{E}=-E\vv{e}_z$.
+Damit ist der Spannungstensor
+\begin{align} 
+        T_{z z}=\varepsilon E_z^2-\dfrac{1}{2}\delta _{zz}\varepsilon E^2=\dfrac{\varepsilon }{2}E^2
+.\end{align} 
+Sei nun ein Volumen $S\left(V\right)$ um die positiv geladene Kondensatorplatte mit Normalenvektor $\vv{n}=-\vv{e}_z$.
+Dann ist die Kraft pro Fläche
+\begin{align} 
+        T_{iknk}=T_{zz}n_z=\dfrac{\varepsilon }{2}E^2\left(-1\right)=-\dfrac{\varepsilon }{2}E^2
+.\end{align} 
+
+\newpage
+\section{Homogene Wellengleichung}
+Man betrachte die Felder $\vv{E}$ und $\vv{B}$ in einem ungeladenen Isolator mit $\rho _f=0$, $\vv{j}_f=0$ und $\sigma =0$.
+Das Medium sei linear und homogen, also $\vv{B}=\mu _0\mu _r\vv{H}$ und $\vv{D}=\varepsilon _0\varepsilon _r\vv{E}$.
+Die \textsc{Maxwell}--Gleichungen in diesem Fall sind
+\begin{align} 
+        \text{div}\vv{E}&=0&\text{div}\vv{B}&=0\\
+        \text{rot}\vv{E}&=-\diffp[]{\vv{B}}{t}&\text{rot}\vv{B}&=\varepsilon _0\varepsilon _r\mu _0\mu _r\diffp[]{\vv{E}}{t}
+.\end{align} 
+Um die Gleichungen zu entkoppeln wendet man die Rotation auf die Rotation von $\vv{E}$ an
+\begin{align} 
+        \text{rot}\left(\text{rot}\vv{E}\right)&=\text{grad}\underbrace{\left(\text{div}\vv{E}\right)}_{=0}-\Delta \vv{E}&\text{rot}\left(\text{rot}\vv{B}\right)&=\text{grad}\underbrace{\left(\text{div}\vv{B}\right)}_{=0}-\Delta \vv{B}\\
+                                               &=-\diffp*[]{\left(\text{rot}\vv{B}\right)}{t}&&=\text{rot}\left(\varepsilon _0\varepsilon _r\mu _0\mu _r\diffp[]{\vv{E}}{t}\right)\\
+                                               &=-\diffp*[]{\left(\varepsilon _0\varepsilon _r\mu _0\mu _r\diffp[]{\vv{E}}{t}\right)}{t}&&=\varepsilon _0\varepsilon _r\mu _0\mu _r\diffp*[]{\left(-\diffp[]{\vv{B}}{t}\right)}{t}
+.\end{align} 
+Damit erhält man zwei entkoppelte Gleichungen
+\begin{align} 
+        \left(\Delta -\varepsilon _0\varepsilon _r\mu _0\mu _r\diffp[2]{}{t}\right)\vv{E}&=0&\left(\Delta -\varepsilon _0\varepsilon _r\mu _0\mu _r\diffp[2]{}{t}\right)\vv{B}&=0
+.\end{align} 
+Es sei 
+\begin{align} 
+        u:=\dfrac{1}{\,\sqrt[]{\varepsilon _0\varepsilon _r\mu _0\mu _r}}=\dfrac{c}{\,\sqrt[]{\varepsilon _r\mu _r}}=:\dfrac{c}{n}
+,\end{align} 
+mit $u$ der \textbf{Ausbreitungsgeschwindigkeit} und $n$ dem \textbf{Brechungsindex}.
+Damit kann die Wellengleichung vereinfacht werden zu
+\begin{align} 
+        \underbrace{\left(\Delta -\dfrac{1}{u^2}\diffp[2]{}{t}\right)}_{\Box}\vv{E}&=0&\underbrace{\left(\Delta -\dfrac{1}{u^2}\diffp[2]{}{t}\right)}_{\Box}\vv{B}&=0
+.\end{align} 
+Damit 
+\begin{align} 
+        \Box \vv{E}&=\sum_{k=1}^{3}\left(\Box E_k\left(t,\vv{r}\right)\right)\vv{e}_k=0&\Box \vv{B}&=\sum_{k=1}^{3}\left(\Box B_k\left(t,\vv{r}\right)\right)\vv{e}_k=0
+.\end{align} 
+Man kann dann die homogene Wellengleichung schreiben als
+\begin{align} 
+        \left(\Delta -\dfrac{1}{u^2}\diffp[2]{}{t}\right)\Psi \left(t,\vv{r}\right)&=0&\Psi \left(t,\vv{r}\right)&=f_-\left(\vv{k}\vv{r}-\omega t\right)+f_+\left(\vv{k}\vv{r}-\omega t\right)
+,\end{align} 
+mit der Phase $\varphi _\pm=\vv{k}\vv{r}\pm \omega t$.\par
+Wendet man $\Box$ auf $\Psi $ an gibt das
+\begin{align} 
+        0=\Box \Psi \left(t,\vv{r}\right)&=\left(\vv{k}^2-\dfrac{\omega ^2}{u^2}\right)\Psi ''\left(t,\vv{r}\right)\\
+                                       &=\left(\vv{k}^2-\dfrac{\omega ^2}{u^2}\right)\left[f_-''\left(\vv{k}\vv{r}-\omega t\right)+f_+''\left(\vv{k}\vv{r}-\omega t\right)\right]
+.\end{align} 
+$\Psi \left(t,\vv{r}\right)$ ist also eine Lösung, wenn 
+\begin{align} 
+        \vv{k}^2=\dfrac{\omega ^2}{u^2}\Leftrightarrow \omega =u|\vv{k}|
+.\end{align} 
+
+\subsection{Geometrische Interpretation}
+Für die geometrische Interpretation der Wellengleichung betrachtet man die Flächen auf denen $f_-=\text{const.}$.
+Diese Flächen sind genau die Flächen mit gleicher Phase, also $\varphi _-\left(t,\vv{r}\right)=\vv{k}\vv{r}-\omega t=\text{const.}$.
+Man betrachtet nun eine Momentaufnahme bei $t=t_0$. 
+Für Flächen gleicher Phase muss gelten, dass $\vv{k}\vv{r}=\text{const.}$.
+$\vv{k}\vv{r}=\text{const.}$ beschreibt eine Fläche im $\mathbb{R}^3$ die orthogonal zu $\vv{k}$ ist. 
+Diese Ebenen bezeichnet man als \textbf{Wellenfront} mit $\varphi _-\left(t_0,\vv{r}\right)=\varphi ^{(0)}_-=\text{const.}$.\par
+Die Überlegung ist nun, wie sich diese Wellenfront bewegt. 
+Man definiert $r_{| |}=\tfrac{\vv{k}\vv{r}}{|\vv{k}|},k=|\vv{k}|$.
+Es gilt also
+\begin{align} 
+        &&\vv{k}\vv{r}-\omega t&=kr_{| |}-\omega t\equiv \varphi _-^{(0)}=\text{const.}\\
+        &\Leftrightarrow &r_{| |}&=\dfrac{\varphi _-^{(0)}+\omega t}{k}\\
+        &\Leftrightarrow &\diff[]{r_{| |}}{t}&=\dfrac{\omega }{k}=u
+.\end{align} 
+$r_{| |}$ ändert sich mit der Phasengeschwindigkeit $u$; die Wellenfront bewegt also mit $u$ in Richtung von $\vv{k}$.\par
+Analog für $f_+$ bewegt sich die Wellenfront in Richtung von $-\vv{k}$.
 
 %{{{ Notizen
 \newpage
