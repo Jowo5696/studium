@@ -1319,7 +1319,50 @@ Es gilt also
         &\Leftrightarrow &\diff[]{r_{| |}}{t}&=\dfrac{\omega }{k}=u
 .\end{align} 
 $r_{| |}$ ändert sich mit der Phasengeschwindigkeit $u$; die Wellenfront bewegt also mit $u$ in Richtung von $\vv{k}$.\par
-Analog für $f_+$ bewegt sich die Wellenfront in Richtung von $-\vv{k}$.
+Analog für $f_+$ bewegt sich die Wellenfront in Richtung von $-\vv{k}$.\par
+$f_\pm$ sollen nun periodische Funktionen sein, also
+\begin{align} 
+        f_-\left(t,\vv{r}\right)&=A\text{e}^{\text{i}\left(\vv{k}\vv{r}-\omega t\right)}\\
+        f_+\left(t,\vv{r}\right)&=B\text{e}^{\text{i}\left(\vv{k}\vv{r}+\omega t\right)}
+,\end{align} 
+mit $A,B \in \mathbb{C}$.
+Physikalische Felder sind immer der Realteil.
+Flächen gleicher Phase wiederholen sich periodisch im Raum.
+Dies sind ebene Wellen.
+Für eine feste Zeit $t$ gibt es periodische Widerholungen von Flächen gleicher Phase, mit $\Delta \vv{r}\vv{k}=2\pi n,n  \in \mathbb{Z}$.
+Der Abstand benachbarter Wellenfronten ist $\tfrac{2\pi }{k}=\lambda $.
+Bei festem Ort $\vv{r}$ ist die Periode $\tau =\tfrac{2\pi }{\omega }$, mit der Frequenz $\nu =\tfrac{1}{\tau }$.
+
+\subsection{Anwendung auf Felder}
+Betrachtet man elektrische und magnetische Felder, folgt daraus, dass
+\begin{align} 
+        \vv{E}\left(t,\vv{r}\right)&=\vv{E}_0\text{e}^{\text{i}\left(\vv{k}\vv{r}-\omega t\right)}&\vv{B}\left(t,\vv{r}\right)&=\vv{B}_0\text{e}^{\text{i}\left(\vv{k}'\vv{r}-\omega 't\right)}
+.\end{align} 
+Mit
+\begin{align} 
+        \text{div}\vv{E}\left(t,\vv{r}\right)&=0\Rightarrow \text{i}\vv{k}\vv{E}_0\text{e}^{\text{i}\left(\vv{k}\vv{r}-\omega t\right)}=0\,\forall \vv{r},t\\
+        \text{div}\vv{b}\left(t,\vv{r}\right)&=0\Rightarrow \text{i}\vv{k}\vv{B}_0\text{e}^{\text{i}\left(\vv{k}'\vv{r}-\omega 't\right)}=0\,\forall \vv{r},t
+,\end{align} 
+folgt, dass $\vv{k}\perp \vv{E}$ und $\vv{k}'\perp \vv{B}$.\par
+Für die Rotation gilt
+\begin{align} 
+        \text{rot}\vv{E}=-\diffp[]{\vv{B}}{t}\Rightarrow \text{i}\vv{k}\times \vv{E}\left(t,\vv{r}\right)=\text{i}\omega '\vv{B}\left(t,\vv{r}\right)
+.\end{align} 
+Daraus folgt, dass
+\begin{align} 
+        \text{i}\vv{k}\times \vv{E}_0\text{e}^{\text{i}\left(\vv{k}\vv{r}-\omega t\right)}\stackrel{!}{=}\text{i}\omega '\vv{B}_0\text{e}^{\text{i}\left(\vv{k}'\vv{r}-\omega 't\right)}\,\forall t,\vv{r}
+.\end{align} 
+Das bedeutet 
+\begin{align} 
+        \omega &=\omega '&\vv{k}&=\vv{k}'&\vv{k}\times \vv{E}_0&=\omega \vv{B}_0
+,\end{align} 
+$\vv{k},\vv{E}$ und $\vv{B}$ bilden also ein orthogonales Rechtssystem.\par
+Für $\vv{k}=k\vv{e}_z$ sind die Felder
+\begin{align} 
+        \vv{E}\left(t,\vv{r}\right)&=\left(E_{0,x}\vv{e}_x+E_{0,y}\vv{e}_y\right)\text{e}^{\text{i}\left(kz-\omega t\right)}\\
+        \vv{B}\left(t,\vv{r}\right)&=\dfrac{1}{u}\left(-E_{0,y}\vv{e}_x+E_{0,x}\vv{e}_y\right)\text{e}^{\text{i}\left(kz-\omega t\right)}
+.\end{align} 
+
 
 %{{{ Notizen
 \newpage
