@@ -7,7 +7,7 @@ set grid
 set key box top left
 f(x) = m*x+n
 fit f(x) 'test.dat' via m,n
-plot 'test.dat' with yerrorbars title 'test data' pt 13 pointsize 2,\
+plot 'test.dat' title with yerrorbars 'test data' pt 13 pointsize 2,\
         x**2 title '$x^2$',\
         f(x) title 'linear regression'
 

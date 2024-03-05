@@ -1,0 +1,65 @@
+%{{{ Formatierung
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{physics_notetaking}
+
+%%% dark red
+%\definecolor{bg}{RGB}{60,47,47}
+%\definecolor{fg}{RGB}{255,244,230}
+%%% space grey
+%\definecolor{bg}{RGB}{46,52,64}
+%\definecolor{fg}{RGB}{216,222,233}
+%%% purple
+%\definecolor{bg}{RGB}{69,0,128}
+%\definecolor{fg}{RGB}{237,237,222}
+%\pagecolor{bg}
+%\color{fg}
+
+\newcommand{\td}{\,\text{d}}
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+
+\newcommand\inlineeqno{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnoa{(\theequation.\text{a})}
+\newcommand\inlineeqnob{(\theequation.\text{b})}
+\newcommand\inlineeqnoc{(\theequation.\text{c})}
+
+\newcommand\inlineeqnowo{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnowoa{\theequation.\text{a}}
+\newcommand\inlineeqnowob{\theequation.\text{b}}
+\newcommand\inlineeqnowoc{\theequation.\text{c}}
+
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+%\renewcommand*\contentsname{Contents}
+
+\pagestyle{fancy}
+
+\sloppy
+
+\numberwithin{equation}{section}
+
+%}}}
+
+\begin{document}
+
+%{{{
+
+\begin{tabular}{lll}
+        $\tfrac{1}{\lambda ^2}$ $\left[\tfrac{1}{\text{m}^2}\cdot 10^{12}\right]$ & Brechungsindex & $\Delta $Brechungsindex \\
+        \hline
+        241.23 & 1.61082 & 0.00018 \\
+        298.23 & 1.62128 & 0.00018 \\
+        300.41 & 1.62161 & 0.00018 \\
+        335.34 & 1.62485 & 0.00017 \\
+        386.62 & 1.62923 & 0.00017 \\
+        434.05 & 1.63379 & 0.00017 \\
+        456.94 & 1.63613 & 0.00017 \\
+        526.46 & 1.64362 & 0.00017 \\
+        610.69 & 1.65286 & 0.00017 
+\end{tabular}
+
+%}}}
+
+\end{document}
