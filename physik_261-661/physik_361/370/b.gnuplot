@@ -4,6 +4,7 @@ set title '370.b: Drehvermögen von Quarz'
 set xlabel '$\lambda^{-2}$ [1/nm²]'
 set ylabel '$\phi - \phi_0$ [°]'
 set grid
+set xtics rotate by -30 offset .5
 set key box top left width -11
 m = 3.8e-11
 f(x) = m*x+n

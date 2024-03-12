@@ -4,7 +4,7 @@ set title "370.a: Malus'sches Gesetz"
 set xlabel '$\phi-\phi_0$ [°]'
 set ylabel '$I$ [V]'
 set grid
-set key box top left
+set key box below width -5
 set samples 1000
 A = 8
 B = 0.01 

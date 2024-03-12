@@ -39,8 +39,8 @@ def b():
     for i in range(7):
         print(lam[i],phi_mittel[i],Dphi)
 
-    print('asdf',(-201.437+3.795e-11/(589.3e-9)**2)/4)
-    print('asdf2',((( 7.376 )/4)**2 + (( 0.191e-11/(589.3e-9)**2 )/4)**2)**0.5)
+#    print('asdf',(-201.437+3.795e-11/(589.3e-9)**2)/4)
+#    print('asdf2',((( 7.376 )/4)**2 + (( 0.191e-11/(589.3e-9)**2 )/4)**2)**0.5)
 
 
 
@@ -60,4 +60,4 @@ def c():
     for i in range(5):
         print(c[i],phi_mittel[i],Dphi)
 
-c()
+b()
