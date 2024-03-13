@@ -7,6 +7,8 @@ set grid
 set key box top left
 f(x) = m*x+n
 fit f(x) 'c2.dat' u 1:2 via m,n
+chi2 = (FIT_STDFIT*FIT_STDFIT)
+set label sprintf("x² = %.3f", chi2) at 3.05,5.2
 plot 'c2.dat' u 1:2:3:4 with xyerrorbars title 'gemessene Daten' pt 13 pointsize 1,\
         f(x) title 'straight fit'
 
