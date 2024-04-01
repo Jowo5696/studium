@@ -1,0 +1,50 @@
+\section{Schwingungen}
+\subsection{Freie Schwingung ohne Dämpfung}
+Drehmomentgleichung
+\begin{align} 
+        \Theta \ddot{\varphi }&=-D\varphi =-M
+,\end{align} 
+mit $\Theta $ dem Trägheitsmoment, $D$ der Richtkonstante und $M$ dem rücktreibenden Drehmoment.\\\\
+Normalform
+\begin{align} 
+        \ddot{\varphi }+\omega _0^2\varphi =0\qquad \omega _0^2=\dfrac{D}{\Theta }
+.\end{align} 
+Der Lösungsansatz funktioniert mit $\varphi \left(t\right)=C\text{e}^{\lambda t}$.
+
+\subsection{Freie Schwingung mit Dämpfung}
+Bewegungsgleichung
+\begin{align} 
+        \Theta \ddot{\varphi }+r\dot{\varphi }+D\varphi &=0
+,\end{align} 
+mit dem Dämpfungsdrehmoment $r\dot{\varphi }$.\\\\
+Normalform
+\begin{align} 
+        \ddot{\varphi }+2\beta \dot{\varphi }+\omega _0^2\varphi =0\qquad 2\beta =\dfrac{r}{\Theta }\qquad \omega _0^2=\dfrac{D}{\Theta }
+.\end{align} 
+Der Lösungsansatz $\varphi \left(t\right)=C\text{e}^{\lambda t}$ führt zu
+\begin{align} 
+        \lambda _{1,2}&=-\beta \pm\,\sqrt[]{\beta ^2-\omega _0^2}
+.\end{align} 
+Man unterschiedet drei Fälle
+\begin{enumerate}[label=--]
+        \item Kriechfall $\beta ^2>\omega _0^2$: Nach einmaliger Auslenkung schwingt das System nicht, sondern bewegt sich aperiodisch zur Ruhelage zurück.
+        \item Grenzfall $\beta ^2=\omega _0^2$: Dieser Fall ist für die Messung interessant, da das System hier genau einmal schwingt und sich dann relativ schnell der Ruhelage annähert.
+        \item Schwingfall $\beta a^2<\omega _0^2$: Durch den komplexen Exponenten schwingt die Amplitude periodisch.
+\end{enumerate}
+Das Dämpfungsverhältnis ist definiert durch
+\begin{align} 
+        K:=\dfrac{\varphi _n}{\varphi _{n+1}}=\text{e}^{\beta T}\qquad T=\dfrac{2\pi }{\hat{\omega }}\qquad \hat{\omega }=\,\sqrt[]{\omega _0^2-\beta ^2}
+.\end{align} 
+Die Güte ist
+\begin{align} 
+        Q:=\dfrac{\omega _0}{2\beta }=\dfrac{\pi }{\beta T}
+.\end{align} 
+
+\subsection{Erzwungene Schwingung mit Dämpfung}
+Bewegungsgleichung
+\begin{align} 
+        \Theta \ddot{\varphi }+r\dot{\varphi }+D\varphi &=M_0\cos \left(\omega t\right)
+,\end{align} 
+mit $M_0$ dem Erregerdrehmoment und $\omega $ der Erregerfrequenz. 
+Der Lösungsansatz funktioniert durch Zerlegung in homogene und partielle Lösungen.\\\\
+Das Verhalten eines harmonischen Schwingsystems ist durch eine Eigenfrequenz und Güte vollständig beschrieben.
