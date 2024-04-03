@@ -1,0 +1,261 @@
+% todo 232 Messungen? Was soll da so gemessen werden? Was ist wichtig?
+% todo 234 Warum Phasenabgleich?
+% todo Zeigerdiagramme
+
+%{{{ 232
+\newpage
+\section{232: Gleichströme, Spannungsquellen und Widerstände}
+In diesem Versuch werden die Eigenschaften von Spannungsquelle und Widerstand experimentell untersucht.\\\\
+\textbf{Theorie} 
+\begin{enumerate}[label=--]
+        \item Ideale Spannungsquelle \hspace{25pt} 
+                Eine ideale Spannungsquelle liefert eine vom entnommenen Strom unabhängige Spannung.
+                Das Ersatzschaltbild ist eine ideale Spannungsquelle mit einem in Reihe geschalteten Innenwiderstand.
+        \item Ideale Stromquelle \hspace{25pt} 
+                Eine ideale Stromquelle liefert eine von der Spannung unabhängigen Strom.
+                Der Innenwiderstand geht hier gegen Unendlich.
+                Das Ersatzschaltbild ist eine ideale Stromquelle mit einem parallel geschalteten Innenwiderstand.
+        \item Leerlaufspannung \hspace{25pt} 
+                Die Leerlaufspannung ist die Spannung, die direkt von den Klemmen einer Spannungsquelle abgelesen wird.
+                Hier fließt kein Strom.
+        \item \textsc{Wheatstone}'sche Brückenschaltung \hspace{25pt} 
+                Mit Hilfe der \textsc{Wheatstone}'schen Brückenschaltung kann ein unbekannter Widerstand oder relative Widerstandsänderung berechnet werden. 
+                Dafür werden zwei Potentiometer-- oder Spannungsteilerschaltungen in der Mitte verbunden. 
+                Ist zwischenen diesen Schaltungen keine Potentialdifferenz, gilt
+                \begin{align} 
+                        \dfrac{R_x}{R_y}=\dfrac{R_1}{R_2}
+                .\end{align} 
+        \item Spezifische Leitfähigkeit \hspace{25pt} 
+                Es gilt in metallischen Leitern, in denen ausschließlich Elektronen zur Stromleitung beitragen
+                \begin{align} 
+                        \sigma =en^-\mu ^-
+                .\end{align} 
+                Da $\mu ^-\propto \tfrac{1}{T}$, ist $\tfrac{1}{\sigma }=\rho \propto T$, mit $\rho $ dem spezifischen Widerstand.
+        \item Halbleiter \hspace{25pt} 
+                In Halbleitern ist zwischen Valenz-- und Leitungsband eine Zone in der keine Zustände erlaubt sind. 
+                Die Energie die benötigt wird, um vom Valenz-- in das Leitungsband zu kommen ist mindestens so groß wie diese Gap--Energie.
+                Bei Temperaturen nahe null Kelvin befinden sich keine Elektronen im Leitungsband und der Halbleiter ist ein perfekter Isolator.
+\end{enumerate}
+\textbf{Messungen} 
+\begin{enumerate}[label=--]
+        \item 
+\end{enumerate}
+%}}}
+
+%{{{ 234
+\newpage
+\section{234: Wechselstromwiderstände, Phasenschieber, RC--Glieder und Schwingungen}
+In diesem Versuch werden Kapazitäten und Induktivitäten gemessen, sowie die komplexe Schreibweise und Darstellung von Wechselströmen verwendet werden.\\\\
+\textbf{Theorie} 
+\begin{enumerate}[label=--]
+        \item Tiefpass \hspace{25pt} 
+                Ein Tiefpass lässt nur tiefe Frequenzen passieren und sperrt Hohe.
+        \item Hochpass \hspace{25pt} 
+                Ein Hochpasst lässt nur hohe Frequenzen passieren und sperrt Tiefe.
+        \item Sperrfilter \hspace{25pt} 
+                Ein Sperrfilter sperrt genau einen Frequenzbereich und lässt die restlichen Frequenzen passieren.
+        \item \textsc{Wheatstone}'sche Brücke \hspace{25pt} 
+                Die \textsc{Wheatstone}'sche Brücke wird hier zum Berechnen von Kapazitäten bzw.\ Induktivitäten verwendet. Die Gleichungen sind analog zu 232, mit
+                \begin{align} 
+                        Z_C=-\dfrac{\text{j}}{\omega C}\qquad Z_S=R_S+\text{j}\omega L
+                .\end{align} 
+                Damit diese Schaltung allerdings für die Spule funktioniert, muss noch ein Phasenabgleich mit Hilfe eines weiteren Potentiometers eingebaut werden.
+        \item Phasenschieber \hspace{25pt}
+                Ein Phasenschieber erlaubt es, die Phase einer Ausgangsspannung gegenüber der Eingangsspannung zu verschieben, dabei aber die Ausgangsspannung konstant zu lassen.
+        \item Elektrischer Schwingkreis \hspace{25pt} 
+                Ein elektrischer Schwingkreis besteht aus einer Wechselstromquelle mit einem Widerstand, einer Spule und einem Kondensator in Reihe geschalten.
+                Die \textsc{Kirchhoff}'sche Regel besagt dann, dass
+                \begin{align} 
+                        U_L\left(t\right)+U_R\left(t\right)+U_C\left(t\right)&=U_E\cos \left(\omega t\right)\\
+                        L\dot{I}\left(t\right)+RI\left(t\right)+\dfrac{1}{C}\int_{}^{}I\left(t\right)\td t&=U_E\cos \left(\omega t\right)\qquad \,|\, I\left(t\right)=\dot{q}\left(t\right)\\
+                        L\ddot{q}\left(t\right)+R\dot{q}\left(t\right)+\dfrac{1}{C}q\left(t\right)&=U_E\cos \left(\omega t\right)
+                .\end{align} 
+                Die Eigenfrequenz ist $\omega _0^2=\tfrac{1}{LC}$.
+        \item Trenntrafo \hspace{25pt}
+                Ein Trenntrafo trennt zwei Stromkreise galvanisch voneinander. 
+                Diese Stromkreise sind untereinander potentialfrei, da sie von elektrisch nicht leitenden Kopplungsgliedern getrennt werden.
+\end{enumerate}
+%}}}
+
+%{{{ 236
+\newpage
+\section{236: Galvanometer zur Strom-- und Ladungsmessung}
+In diesem Versuch soll der Aufbau, die Funktionsweise, die Verwendung und die Genauigkeit eines Drehspulgalvanometers zur Messung von Strömen und elektrischen Ladungen bestimmt werden.\\\\
+\textbf{Theorie} 
+\begin{enumerate}[label=--]
+        \item DGL des Drehwinkels $\varphi \left(t\right)$ \hspace{25pt} 
+                Die Torsion der Aufhängung erzeugt das Drehmoment
+                \begin{align} 
+                        M_D\left(t\right)=-D\varphi \left(t\right)
+                .\end{align} 
+                Durch die Luftreibung im Spalt wirkt ein dämpfendes Drehmoment
+                \begin{align} 
+                        M_R\left(t\right)=-\rho \dot{\varphi }\left(t\right)
+                .\end{align} 
+                Fließt ein Strom durch die Spule kommt ein elektrodynamisches Drehmoment hinzu
+                \begin{align} 
+                        M_e\left(t\right)=nabBI\left(t\right)-I_{\text{ind}}=GI\left(t\right)-\dfrac{G^2}{R_{\text{Spule}}+R_{\text{äußerer Schließungskreis} }}\dot{\varphi }\left(t\right)
+                .\end{align} 
+                Durch die Drehung der Spule im Magnetfeld wird eine Spannung induziert, die wiederum einen Strom in der Spule erzeugt (siehe $M_e$) 
+                \begin{align} 
+                        U_{\text{ind}}\left(t\right)=-\dot{\Phi }=-G\dot{\varphi }\left(t\right)
+                .\end{align} 
+                Das Gesamtdrehmoment ist also dann
+                \begin{align} 
+                        M=\Theta \ddot{\varphi }=-D\varphi \left(t\right)-\rho \dot{\varphi }\left(t\right)+GI-\dfrac{G^2}{R_\text{Spule}+R_\text{außen}}\dot{\varphi }\left(t\right)
+                .\end{align} 
+                Also ist die DGL für $\varphi \left(t\right)$ 
+                \begin{align} 
+                        \Theta \ddot{\varphi }\left(t\right)+\left[\rho +\dfrac{G^2}{R_\text{Spule}+R_\text{außen}}\right]\dot{\varphi }\left(t\right)+D\varphi \left(t\right)=GI\left(t\right)
+                .\end{align} 
+        \item Stromempfindlichkeit \hspace{25pt}
+                Die Stromempfindlichkeit folgt aus der DGL des Drehwinkels, wenn nach dem Einschwingen alle zeitlichen Ableitungen wegfallen. 
+                Es gilt dann
+                \begin{align} 
+                        M=D\varphi =GI\quad \Leftrightarrow \quad \varphi =\dfrac{G}{D}I=c_II\quad \Leftrightarrow \quad c_I=\dfrac{\varphi }{I}=\dfrac{G}{D}
+                .\end{align} 
+        \item Grenzwiderstand \hspace{25pt}
+                Der Grenzwiderstand ist insofern wichtig, als das dieser gleich dem Widerstand des äußeren Schließungskreises ist und damit bestimmt werden kann, ab welchem Wert die Schwingung des Galvanometers eine Schwingung im Grenzfall ist.
+                \begin{align} 
+                        R_\text{außen}=\dfrac{G^2}{2\,\sqrt[]{\Theta D}-\rho }-R_\text{Spule}=:R_\text{Grenz.}
+                .\end{align} 
+                Diese Gleichung folgt aus dem Grenzfall $\beta =\omega _0$. 
+\end{enumerate}
+\textbf{Messungen} 
+\begin{enumerate}[label=--]
+        \item Große Widerstände \hspace{25pt}
+                Große Widerstände können mit einem ballistischen Galvanometer gemessen werden.
+                Dafür wird ein Kondensator aufgeladen und über einen Zeitraum $t$ über einen großen Widerstand entladen.
+                Trägt man $\ln\left(\varphi \left(t\right)\right)$ gegen $t$ auf ist die Steigung der Geraden $m=RC$.
+\end{enumerate}
+%}}}
+
+%{{{ 238
+\newpage
+\section{238: Transformator}
+In diesem Versuch werden die Wirkungsweise und die Übertragungseigenschaften eines Transformators untersucht.\\\\
+\textbf{Theorie} 
+\begin{enumerate}[label=--]
+        \item Wirkungsweise Transformator \hspace{25pt}
+                Ein Transformator kann die Leistung von einem Stromkreis auf den anderen übertragen, ohne dass sie galvanisch miteinander verbunden sein müssen.
+                Zwei Spulen liegen so dicht beieinander, dass ihre Magnetfelder (durch einen Eisenkern verstärkt) die Windungsflächen der anderen Spule durchsetzen.
+                Fließt durch die Primärspule ein zeitlich veränderlicher Strom, so entsteht ein zeitlich veränderliches Magnetfeld, welches einen zeitlich veränderlichen Strom in der Sekundärspule induziert.
+                \begin{align} 
+                        \dfrac{U_2}{U_1}=\dfrac{n_2}{n_1}
+                .\end{align} 
+        \item Vierpol--Impedanz--Gleichung \hspace{25pt} 
+                $U_j=Z_{jk}I_k$
+        \item Streukoeffizient \hspace{25pt} 
+                $\sigma :=1-\tfrac{M^2}{L_1L_2}$, mit $M$ der Gegeninduktion.
+                Er ist umso kleiner, je vollständiger der magnetische Fluss beide Spulen durchsetzt.
+        \item Leistungsübertrag \hspace{25pt}
+                Es wird nicht die gesamte Leistung übertragen, da es Eisen-- (also Hysterese-- und Wirbelstrom--) und Kupferverluste gibt.
+                \begin{align} 
+                        P _{W,1}=P _{W,2}+P _{\text{Cu}}+P _{\text{Fe}}
+                .\end{align} 
+\end{enumerate}
+%}}}
+
+%{{{ 240
+\newpage
+\section{240: Hysterese der Magnetisierung von Eisen}
+In diesem Versuch wird das Verhalten ferromagnetischer Stoffe in Magnetfeldern untersucht.\\\\
+\textbf{Theorie} 
+\begin{enumerate}[label=--]
+        \item Hysterese \hspace{25pt}
+                Eine Hyseresekurve ergibt sich, indem man ein ferromagnetisches Material, hier Eisen, magnetisiert und wieder entmagnetisiert (auch in die andere Richtung für negative $I$) und die magnetische Induktion gegen die Magnetische Feldstärke aufträgt.
+        \item Neukurve \hspace{25pt}
+                Die Neukurve hat im Ursprung die Steigung der Anfangspermeabilität.
+                Sie verbindet die Hysteresekurve mit dem Ursprung.
+                Die maximale Permeabilität eines Materials ist gegeben durch die Steigung einer Tangente vom Nullpunkt an die Neukurve.
+        \item Remanenzflussdichte \hspace{25pt}
+                Die Remanenzflussdichte ist die Magnetisierung die das Material beibehält, wenn das externe Magnetfeld abgeschaltet ist.
+        \item Koerzitivfeldstärke \hspace{25pt}
+                Die Koerzitivfeldstärke ist die Feldstärke, die notwendig ist, um ein Material, welches vorher bis zur Sättigung magnetisiert worden ist, vollständig zu entmagnetisieren.
+        \item Sättigung \hspace{25pt}
+                Ein Material ist gesättigt, wenn alle Dipole durch das externe Feld ausgerichtet worden sind.
+        \item \textsc{Hall}--Spannung \hspace{25pt}
+                Wird ein streifenförmiger Leiter senkrecht von einem Magnetfeld durchsetzt, dann wirkt auf einen Strom in dem Leiter die \textsc{Lorentz}--Kraft.
+                Die Elektronen sammeln sich dann auf einer Seite und es entsteht ein der \textsc{Lorentz}--Kraft entgegengesetztes elektrisches Feld, also eine Potentialdifferenz
+                \begin{align} 
+                        U_H=Eb=v_dBb\qquad I=nqv_dA
+                ,\end{align} 
+                mit $b$ der Leiterbreite und $A=b \cdot d$ seiner Querschnittsfläche.
+                Setzt man diese Formeln gleich, folgt
+                \begin{align} 
+                        U_H=\dfrac{IB}{nqd}=A_H\dfrac{I}{d}B=S_HB
+                .\end{align} 
+                
+\end{enumerate}
+%}}} 
+
+%{{{ 242
+\newpage
+\section{242: Elektrische und magnetische Krafteinwirkung auf geladene Teilchen}
+In diesem Versuch wird die Auswirkung von elektrischen und magnetischen Feldern auf bewegte Ladungsträger untersucht.\\\\
+\textbf{Theorie} 
+\begin{enumerate}[label=--]
+        \item Fadenstrahlrohr \hspace{25pt}
+                Mit einem Fadenstrahlrohr kann die spezifische Ladung von Ladungsträgern bestimmt werden.
+                Dafür werden z.B.\ Elektronen in einem Glaskoblen mit einem externen Magnetfeld auf eine Kreisbahn gezwungen.
+                Dafür gilt die Kraftgleichung
+                \begin{align} 
+                        \vv{F}_\text{\textsc{Lorentz}}&=\vv{F}_\text{Zentripetal}\\
+                        e\left(\vv{v}\times \vv{B}\right)&=m\dfrac{v^2}{r}
+                ,\end{align} 
+                sowie die Energieerhaltung
+                \begin{align} 
+                        \dfrac{1}{2}mv^2&=eU
+                .\end{align} 
+                Stellt man beide Gleichungen nach der Geschwindigkeit $v$ um, erhält man
+                \begin{align} 
+                        \dfrac{e}{m}=\dfrac{2U}{r^2B^2}
+                .\end{align} 
+        \item \textsc{Helmholtz}--Spulenpaar \hspace{25pt}
+                Das externe Magnetfeld wird durch ein \textsc{Helmholtz}--Spulenpaar erzeugt
+                \begin{align} 
+                        B=\left(\dfrac{4}{5}\right)^{\tfrac{3}{2}}\mu _0\dfrac{nI}{R}
+                .\end{align} 
+        \item Elementarladung \hspace{25pt}
+                Die Elementarladung kann mit dem \textsc{Milikan}'schen Öltröpfchenexperiment bestimmt werden.
+                Die Ladung folgt aus dem Kraftgleichgewicht
+                \begin{align} 
+                        \vv{F}_\text{Gravitation}+\vv{F}_\text{Auftrieb}+\vv{F}_\text{Reibung}&=\vv{F}_\text{Feld}
+                .\end{align} 
+                Für sinkende bzw.\ steigende Tröpfchen gilt dann
+                \begin{align} 
+                        \dfrac{4\pi }{3}r^3\left(\rho _\text{Öl}-\rho _\text{Luft}\right)-6\pi \eta_\text{eff}v_\downarrow&=-NeE\\
+                        \dfrac{4\pi }{3}r^3\left(\rho _\text{Öl}-\rho _\text{Luft}\right)+6\pi \eta_\text{eff}v_\uparrow&=+NeE
+                .\end{align} 
+                Verwendet man in beiden Gleichungen dieselbe Feldstärke folgt für den Radius eines Tröpfchens
+                \begin{align} 
+                        r=\,\sqrt[]{\dfrac{9 \eta_\text{eff}\left(v_\downarrow-v_\uparrow\right)}{4g\left(\rho _\text{Öl}-\rho _\text{Luft}\right)}}
+                .\end{align} 
+                Die Gesamtladung ist dann
+                \begin{align} 
+                        Ne=3\pi \eta_\text{eff}r\dfrac{v_\downarrow+v_\uparrow}{E}
+                .\end{align} 
+        \item \textsc{Cunningham}--Korrektur \hspace{25pt}
+                Die \textsc{Cunningham}--Korrektur ist eine Korrektur der \textsc{Stokes}'schen Reibungsgesetzes, wenn sich die kugelförmigen Teilchen in der gleichen Größenordnung wie die mittlere freie Weglänge der Gasmoleküle befinden.
+\end{enumerate}
+\textbf{Messungen} 
+\begin{enumerate}[label=--]
+        \item Fadenstrahlrohr \hspace{25pt}
+                Da das Magnetfeld der Erde einen nicht zu vernachlässigen Beitrag zur Elektronenbewegung gibt, muss die gesamte Apperatur einmal um $\SI{180}{\degree}$ rotiert und über beide Messungen gemittelt werden.
+        \item \textsc{Milikan}'sches Öltröpfchen \hspace{25pt}
+                Die Geschwindigkeit des Öltröpfchens kann gemessen werden, indem das elektrische Feld so eingestellt wird, dass das Tröpfchen einmal langsam nach oben bzw.\ nach unten steigt und dabei die Striche an einer Skala gezählt werden, die es auf seinem Weg zurücklegt.
+                Damit die Messgenauigkeit für die Ladung erhalten bleibt, muss das Tröpfchen die Gleichung
+                \begin{align} 
+                        v_0=\dfrac{1}{2}\left(v_\downarrow - v_\uparrow\right)
+                \end{align} 
+                über alle Messungen im Rahmen der Messgenauigkeit erfüllen.
+                $v_0$ ist hier die gemittelte Geschwindigkeit des Tröpfchens.
+                Falls diese Gleichung nicht gilt, hat sich die Anzahl der Ladungen auf dem Tröpfchen geändert und es muss ein anderes verwendet werden.
+        \item \textsc{Cunningham}--Korrektur \hspace{25pt}
+                Die \textsc{Cunningham}--Korrektur für diesen Versuch ist
+                \begin{align} 
+                        e_{S,i}^{\tfrac{2}{3}}=e_0^{\tfrac{2}{3}}\cdot \left(1+\dfrac{A}{r_i}\right)
+                .\end{align} 
+                Trägt man $e_{S,i}^{\tfrac{2}{3}}$ gegen $\tfrac{1}{r_i}$ auf, ergibt sich aus dem Achsenabschnitt der Geraden die Elementarladung.
+\end{enumerate}
+%}}}
