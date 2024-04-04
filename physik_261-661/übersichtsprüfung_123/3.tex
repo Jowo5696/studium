@@ -1,0 +1,286 @@
+% todo Strahlengang zeichnen
+
+%{{{ 362
+\newpage
+\section{362: Linsen und Linsensysteme}
+In diesem Versuch soll der praktische Umgang mit Linsen (dick und dünn) und Linsensystemen anhand eines Diaprojektors geübt werden.\\\\
+\textbf{Theorie} 
+\begin{enumerate}[label=--]
+        \item Bildkonstruktion \hspace{25pt}
+                Ein Bild kann mit Hilfe von einem Parallel--, Mittelpunkts-- und Brennpunktsstrahl konstruiert werden.
+                Linsensysteme können vereinfacht durch zwei Hauptebenen dargestellt werden, die das gesamte System ersetzen.
+                Bilder eines Linsensystems können weiterhin mit diesen drei Strahlen konstruiert werden.
+        \item Abbildungsgleichungen \hspace{25pt}
+                \begin{align} 
+                        \dfrac{1}{b}+\dfrac{1}{g}=\dfrac{1}{f}\qquad \left(b-f\right)\left(g-f\right)=f^2
+                .\end{align} 
+        \item \textsc{Abbe}--Verfahren \hspace{25pt}
+                Sei ein fester Bezugspunkt $X$ um die Strecke $x$ vom Gegenstand und $x'$ vom Bild entfernt.
+                Die Entfernung des Gegenstands zur Hauptebene ist $g$, die von $X$ ist $h$.
+                Die Entgernung des Bildes zur Hauptebene ist $b$, die von $X$ ist $h'$.
+                Es gilt also
+                \begin{align} 
+                        x=g+h\qquad x'=b+h'
+                .\end{align} 
+                Aus den Abbildungsgleichungen folgt dann
+                \begin{align} 
+                        g=f\left(1+\dfrac{1}{\gamma }\right)\qquad b=f\left(1+\gamma \right)
+                .\end{align} 
+                Stellt man $x$ und $x'$ als Funktion von $1+\tfrac{1}{\gamma }$ und $1+\gamma $ dar, so erhält man aus Steigung und Achsenabschnitt $f,h$ und $h'$. 
+        \item Linsengleichung \hspace{25pt}
+                Die Linsengleichung beschreibt den Zusammenhang von Krümmungsradien, Brechungsindex und Brennweite dünner sphärisch geschliffener Linsen
+                \begin{align} 
+                        \dfrac{1}{f}=\left(n-1\right)\left(\dfrac{1}{r_1}-\dfrac{1}{r_2}\right)
+                .\end{align} 
+                Diese Formel gilt nur, falls es keine Dispersion gibt und für die achsnahen Strahlen die Kleinwinkelnäherung gilt.
+        \item Linsensystem Brennweite \hspace{25pt}
+                Aus der Matrizenoptik folgt
+                \begin{align} 
+                        \dfrac{1}{f_\text{gesamt}}=\dfrac{1}{f_1}+\dfrac{1}{f_2}-\dfrac{d}{f_1f_2}
+                ,\end{align} 
+                mit $d$ dem Abstand der beiden Linsen.
+        \item Abbildungsfehler \hspace{25pt}
+                In der realen Optik treten folgende Abbildungsfehler auf
+                \begin{enumerate}[label=\roman*)]
+                        \item Sphärische Abberation: Wenn Linsen nicht perfekt paraboloidisch geschliffen sind, treten Fehler an den Rändern auf, da die äußeren Strahlen nicht mehr ganz in den Brennpunkt gebrochen werden.
+                        \item Astigmatismus: Wenn Linsen über die Meridional-- und Sagittalebene nicht denselben Brechungsindex haben, werden Strahlen in Abhängigkeit von ihrer Rotation zur optischen Achse (also alle schief einfallenden Strahlen) in einen anderen Brennpunkt gebrochen.
+                        \item Koma: Die Koma ist ein Zusammenspiel aus der sphärischen Abberation und dem Astigmatismus. 
+                                Sie tritt für zueinander parallel aber schief zur optischen Achse einfallende Strahlen auf.
+                        \item Bildfeldwölbung: Wenn die Position des Schnittpunkts der Strahlen längs der optischen Achse von der Gegenstandshöhe abhängt, ist das Bild zum Rand hin gewölbt.
+                        \item Verzeichnung: Bei der Verzeichnung hängt der Abbildungsmaßstab von der Höhe des Gegenstands ab.
+                                Nimmt der Abbildungsmaßstab mit zunehmender Höhe ab, heißt die Verzeichnung tönnenförmig; nimmt der Abbildungsmaßstab zu, heißt sie kissenförmig.
+                        \item Chromatische Abberation: Chromatische Abberation tritt z.B.\ bei weißem Licht auf, da eine Linse mit diesem Abbildungsfehler, Licht verschiedener Wellenlänge unterschiedlich stark bricht.
+                                Dieser Effekt heißt Dispersion.
+                \end{enumerate}
+\end{enumerate}
+\textbf{Messungen} 
+\begin{enumerate}[label=--]
+        \item Brennweite einer dünnen Linse \hspace{25pt}
+                Die Brennweite einer dünnen Linse kann mit Hilfe der Deckenbeleuchtung gemessen werden.
+                Mann hält die Linse nahe dem Boden unter eine Lampe und misst die Strecke von der Linse zum Boden, sobald die Lichtquelle am schärfsten abgebildet wird.
+                Hier wird angenommen dass die Strahlen der Deckenbeleuchtung soweit entfernt sind, dass sie bei der Linse parallel ankommen.
+\end{enumerate}
+%}}}
+
+%{{{ 364
+\newpage
+\section{364: Fernrohr und Mikroskop}
+In diesem Versuch sollen die optischen Instrumente Fernrohr und Mikroskop auf Wirkungsweise, Eigenschaften, Gemeinsamkeiten und Unterschiede untersucht.\\\\
+\textbf{Theorie} 
+\begin{enumerate}[label=--]
+        \item Vergrößerung \hspace{25pt}
+                Die Vergrößerung eines optischen Instrumentes ist gegeben durch
+                \begin{align} 
+                        V=\dfrac{\tan \left(\text{Sehwinkel mit Instrument}\right)}{\tan \left(\text{max.\ Sehwinkel ohne Instrument}\right)}
+                .\end{align} 
+                Da die Vergrößerung auf Winkelmessung beruht, kann sie nicht nur von reellen, sondern auch virtuellen Bildern bestimmt werden.
+        \item Abbildungsmaßstab \hspace{25pt}
+                \begin{align} 
+                        \gamma =\dfrac{B}{G}
+                .\end{align} 
+                Der Abbildungsmaßstab beruht auf Längenmessung und kann nur bei einem reellen zugänglichen Bild gemessen werden.
+        \item \textsc{Gauß}'sche Abbildungsgleichung \hspace{25pt}
+                \begin{align} 
+                        \dfrac{G}{g}=\dfrac{B}{b}=\tan \alpha 
+                .\end{align} 
+        \item Lupe \hspace{25pt}
+                Eine Lupe besteht aus einer Sammellinse.
+                Die Vergrößerung variiert entsprechend
+                \begin{align} 
+                        V=\left.\dfrac{s_0}{f}\right|_\text{fern}\rightarrow \left.\dfrac{s_0}{f}+1\right|_\text{nah}
+                .\end{align} 
+        \item Mikroskop \hspace{25pt}
+                Für ein Mikroskop gilt $f<g<2f$.
+                Die Vergrößerung ist
+                \begin{align} 
+                        V_\text{Mikroskop}=V_\text{Objektiv}\cdot V_\text{Okular}=-\dfrac{s_0}{f_\text{Mikroskop}}=\dfrac{s_0T}{f_\text{Objektiv}f_\text{Okular}}
+                .\end{align} 
+        \item Astronomisches Fernrohr \hspace{25pt}
+                Da die Gegenstände des astronomischen Fernrohrs im Unendlichen liegen, entsteht das Zwischenbild in der Brennebene des Objektivs.
+                Die Vergrößerung liegt bei
+                \begin{align} 
+                        V=\dfrac{f_\text{Objektiv}}{f_\text{Okular}}
+                .\end{align} 
+                Die Vergrößerung zielt hier nicht auf das Auflösen einzelner Sterne, sondern auf das Vergrößern der Winkelabstände zwischen den Sternen.
+                Das Linsensystem ist afokal, also verlassen einfallende parallele Strahlen das Linsensystem wieder parallel.
+        \item Terrestrisches Fernrohr \hspace{25pt}
+                Durch die Vergrößerung des Abstands von Objektiv und Okular eines astronomischen Fernrohrs, lassen sich auch Gegenstände, die nicht im Unendlichen liegen betrachten.
+                Durch einfügen einer weiteren Sammellinse, lässt sich das Bild umdrehen.
+        \item Kleinster auflösbarer Sehwinkel \hspace{25pt}
+                \begin{align} 
+                        \alpha =1,22\dfrac{\lambda }{D}
+                ,\end{align} 
+                mit $D$ dem Blendendurchmesser.
+\end{enumerate}
+\textbf{Messungen} 
+\begin{enumerate}[label=--]
+        \item Vergrößerung \hspace{25pt}
+                Die Vergrößerung eines optischen Instruments kann bestimmt werden, indem mit einem Auge durch das Intrument und mit dem anderen Auge am Instrument vorbeigeschaut wird.
+                Mit beiden Augen wird dann eine Skala betrachtet und im Kopf übereinander gelegt. 
+                Das Verhältnis der Skalenteile ist dann die Vergrößerung des Instruments.
+\end{enumerate}
+%}}}
+
+%{{{ 366
+\newpage
+\section{366: Prismen--Spektralapparat}
+In diesem Versuch wird die Funktionsweise eines optischen Spektrometers behandelt.\\\\
+\textbf{Theorie} 
+\begin{enumerate}[label=--]
+        \item Brechungsindex Prisma \hspace{25pt}
+                Durchsetzt ein paralleler Strahlenbündel ein Prisma, gilt
+                \begin{align} 
+                        n=\dfrac{\sin \left(\tfrac{\delta +\gamma }{2}\right)}{\sin \left(\tfrac{\gamma }{2}\right)}
+                ,\end{align} 
+                mit $\delta $ dem Ablenkwinkel und $\gamma $ dem Prismenwinkel.
+        \item Auflösungsvermögen Prisma \hspace{25pt}
+                Das Auflösungsvermögen eines Prismas ist
+                \begin{align} 
+                A=\dfrac{\lambda }{\Delta \lambda }=\left|\diff[]{n}{\lambda }\right|b
+                ,\end{align} 
+                mit $b$ der Basisbreite, ab der das Prisma ausgeleuchtet wird, und $\diff[]{n}{\lambda }$ der Dispersion.
+        \item \textsc{Cauchy}--Formel \hspace{25pt}
+                \begin{align} 
+                        n\left(\lambda \right)=\dfrac{k_i}{\lambda ^{2i}}
+                .\end{align} 
+        \item Kollimator \hspace{25pt}
+                Mit einem Kollimator kann paralleles Licht erzeugt werden.
+                Er besteht aus einer Linse und einem Spalt in der Brennebene der Linse.
+                Beides wird in ein Rohr eingebaut, welches Streulicht abhält.
+\end{enumerate}
+\textbf{Messungen} 
+\begin{enumerate}[label=--]
+        \item Prismenwinkel \hspace{25pt}
+                Der Prismenwinkel bzw.\ der Winkel der brechenden Kante kann berechnet werden, indem diese Kante auf den Kollimator gerichtet wird, und die reflexion in Grad links und rechts gemessen wird. 
+                Der Winkel ist dann
+                \begin{align} 
+                        \gamma =\dfrac{1}{2}\left(\alpha _2-\alpha _1\right)
+                .\end{align} 
+        \item Unbekannte Gasentladungslampe \hspace{25pt}
+                Das Element einer Gasentladungslampe kann bestimmt werden, indem mit einem Fernrohr der Ablenkwinkel der einzelnen Emissionslinien, die durch Dispersion im Prisma aufgeteilt werden, abgelesen wird.
+                Die Kalibrationskurve (Wellenlänge gegen Ablenkwinkel) und Spektraltabellen liefern das gesuchte Element.
+\end{enumerate}
+%}}}
+
+%{{{ 368
+\newpage
+\section{368: Beugung und Interferenz}
+In diesem Versuch wird die Gesetzmäßigkeit der Beugung an einer Öffnung bzw.\ die Interferenz an einem Gitter untersucht werden.\\\\
+\textbf{Theorie} 
+\begin{enumerate}[label=--]
+        \item Intensität \hspace{25pt}
+                Die Intensität einer Lichtwelle berechnet sich aus
+                \begin{align} 
+                        I=\left\langle \vv{E}_\text{tot}\vv{E}_\text{tot}^*\right\rangle _t
+                .\end{align} 
+        \item Elektromagnetische Welle \hspace{25pt}
+                \begin{align} 
+                        \vv{E}\left(\vv{x},t\right)=\vv{E}_0\text{e}^{\text{i}\left(\vv{k}\vv{x}-\omega t+\varphi \right)}
+                .\end{align} 
+        \item Räumliche Kohärenz \hspace{25pt}
+                Zwei Wellen sind räumich kohärent, wenn die Phasendifferenz zwischen zwei Wellen so gering ist, dass sie keinen Einfluss auf das Experiment hat bzw.\ viel kleiner als die apparativ gewollte Phasendifferenz ist.
+                \begin{align} 
+                        \dfrac{2dD}{L}\ll \dfrac{\lambda }{4}
+                ,\end{align} 
+                mit $d$ der Breite der Lichtquelle, $D$ der Breite des Spaltes und $L$ der Abstand zwischen Spalt und Lichtquelle.\par
+                Zwei Lichtquellen sind dann noch auflösbar, wenn das 0.\ Maximum der einen Lichtquelle in das 1.\ Minimum der zweiten Lichtquelle fällt.
+        \item Zeitliche Kohärenz \hspace{25pt}
+                Zwei Wellen sind zeitlich kohärent, wenn der Wellenzug im Vergleich zum Wegunterschied der Strahlen so lang ist, dass sie trotz unterschiedlicher Laufzeiten noch gleichzeitig ankommen. Die Länge der Wellenzüge berechnet sich aus der Lebensdauer $\tau $ der Atome im angeregten Zustand
+                \begin{align} 
+                        \Lambda =\tau c
+                .\end{align} 
+                Lebensdauer und natürliche Linienbreite sind über die Unschärferelation verknüpft
+                \begin{align} 
+                        \tau =\dfrac{1}{2\pi \Delta \nu }
+                .\end{align} 
+        \item Autokollimation \hspace{25pt}
+                Autokollimation beschreibt im wesentlichen das Verfahren ein \textsc{Kepler}'sches Fernrohr auf unendlich einzustellen.
+                Dafür wird ein Dorn über eine Linse an einem Spiegel gespiegelt, um parallel einfallende Strahlen zu simulieren und das Fernrohr so scharf zu stellen.
+        \item Gitterkonstante \hspace{25pt}
+                Die Gitterkonstante kann mit Hilfe des Ablenkwinkels und Nummer der Emissionslinien berechnet werden
+                \begin{align} 
+                        \sin \left(\dfrac{\phi }{2}\right)=\dfrac{m\lambda }{2g}
+                .\end{align} 
+        \item Auflösungsvermögen \hspace{25pt}
+                \begin{align} 
+                        A=\dfrac{\lambda }{\Delta \lambda }=mN
+                ,\end{align} 
+                mit $m$ der Ordnung der Linie und $N$ der Anzahl ausgeleuchteter Gitterstäbe.
+\end{enumerate}
+%}}}
+
+%{{{ 370
+\newpage
+\section{370: Polarisation von Licht}
+In diesem Versuch soll die Wechselwirkung von polarisiertem Licht mit Materie untersucht werden.\\\\
+\textbf{Theorie} 
+\begin{enumerate}[label=--]
+        \item Polarisationsgrad \hspace{25pt}
+                \begin{align} 
+                        PG=\dfrac{I_{||}-I_\perp}{I_{||}+I_\perp}
+                .\end{align} 
+                Die Orientierung ist immer zur Polarisationsebene.
+                Ist PG gleich null, so ist der Strahl gar nicht polarisiert.
+                Ist PG gleich 1, ist der Strahl vollständig polarisiert.
+        \item Rotationsdispersion \hspace{25pt} Rotationsdispersion beschreibt das Phänomen, das recht-- bzw.\ linkspolarisiertes Licht unterschiedliche Ausbreitungsgeschwindigkeiten besitzen.
+        \item Gitterpolarisation \hspace{25pt} Trifft eine elektromagnetische Welle auf ein Gitter aus elektrisch leitfähigen Stäben, so erzeugt die Komponente des elektrischen Feldes parallel zu den Gitterstäben Dipolschwingungen, welche die besagte Feldkomponente durch Interferenz in Vorwärtsrichtung auslöschen. In Rückwärtsrichtung wird die Komponente reflektiert. Die orthogonale Feldkomponente wird transmittiert.
+        \item \textsc{Malus}'sches Gesetz \hspace{25pt} Für eine bereits polarisierte Welle gilt nach Rotation durch einen Linearpolarisator
+                \begin{align} 
+                        I=I_0\cos ^2\left(\varphi \right)
+                .\end{align} 
+                Eine unpolarisierte Welle hat nach einem Linearpolarisator die Intensität $I=\tfrac{1}{2}I_0$.
+        \item Drehvermögen \hspace{25pt} Das Drehvermögen einer Lösung ist gegeben durch
+                \begin{align} 
+                        \varphi =\varphi _\lambda l
+                ,\end{align} 
+                mit $\varphi _\lambda $ dem spezifischen Drehvermögen und $l$ der Länge der Lösung.
+\end{enumerate}
+\textbf{Messungen} 
+\begin{enumerate}[label=--]
+        \item Halbschattenpolarimeter \hspace{25pt} Ein Halbschattenpolarimeter ist ein Polarisator, der nur die Hälfte des Lichtstrahl polarisiert. 
+                Der Halbschattenpolarimeter wird zwischen Polarisator und Analysator gestellt, um eine Hälfte des Strahls zu verdunkeln. 
+                Der Analysator wird solange rotiert, bis beide Hälften die gleiche Helligkeit haben.
+                Dadurch ist es für das Auge einfacher Helligkeitsunterschiede von einem der beiden Strahlen zu registrieren.
+        \item Drehvermögen \hspace{25pt}
+                Das Drehvermögen einer Lösung kann bestimmt werden, indem die Lösung zwischen einen Polarisator und Analysator gestellt wird und der Analysator lange rotiert wird, bis kein Licht mehr durchkommt. 
+                Die Winkeldifferenz zwischen Polarisator und Analysator minus $\SI{90}{\degree}$ ist der Winkel, um den die Lösung das Licht rotiert hat.
+\end{enumerate}
+%}}}
+
+%{{{ 372
+\newpage
+\section{372: Wärmestrahlung}
+In diesem Versuch soll die Abhängigkeit der Strahlung von der Temperatur und Oberflächenbeschaffenheit eines Schwarzen Körpers untersucht werden.\\\\
+\textbf{Theorie} 
+\begin{enumerate}[label=--]
+        \item Schwarzer Körper \hspace{25pt}
+                Ein Schwarzer Körper ist ein Körper, dessen Strahlung nur auf seiner Temperatur beruht.
+        \item \textsc{Wien}'sches Verschiebungsgesetz \hspace{25pt}
+                \begin{align} 
+                        \lambda _\text{max}T=\SI{2,9e-3}{mK}
+                .\end{align} 
+        \item \textsc{Stefan--Boltzmann}--Gesetz
+                \begin{align} 
+                        P=\varepsilon A\sigma T^4
+                ,\end{align} 
+                mit $\varepsilon $ dem Emissionsgrad.
+        \item Widerstand von Metallen \hspace{25pt}
+                Der Widerstand von Metallen ist nicht linear abhängig von der Temperatur
+                \begin{align} 
+                        R=R_0\left(1+\alpha \left(T-T_0\right)+\beta \left(T-T_0\right)^2+\hdots \right)
+                ,\end{align} 
+                mit $R_0$ dem Widerstand bei Raumtemperatur $T_0$. $\alpha $ und $\beta $ sind Materialeigenschaften.
+\end{enumerate}
+\textbf{Messungen} 
+\begin{enumerate}[label=--]
+        \item \textsc{Leslie}--Würfel \hspace{25pt}
+                Mit einem \textsc{Leslie}--Würfel kann die Schwarzkörperstrahlung eines Materials bestimmt werden.
+                Die Seiten des Würfels bestehen aus unterschiedlichen Materialien, welche von Innen mit heißem Wasser erwärmt werden können. 
+                Mit einer Thermosäule kann dann die Spannung von einem Thermoelement abgelesen werden, aus der dann die abgestrahlte Leistung berechnet werden kann.
+        \item Thermosäule \hspace{25pt}
+                Die Thermosäule hat eine bestimmte Ansprechzeit, die benötigt wird, damit die richtige Thermospannung angezeigt werden kann.
+                Die Zeit kann berechnet werden, indem die Öffnung der Säule mit einem Stück schwarzer Pappe abgeschrimt wird und die Spannung über einen längeren Zeitraum gemessen wird.
+                Nach einer Zeit gehen die Werte asymptotisch zur richtigen Spannung.
+                Diese Zeit muss bei jeder Messung abgewartet werden.
+\end{enumerate}
+%}}}
