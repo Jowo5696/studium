@@ -1,0 +1,155 @@
+\newpage
+\section{Mechanik}
+\subsection{Schiefer Wurf}
+Die Bewegungsgleichung des schiefen Wurfs ist gegeben durch
+\begin{align} 
+        \vv{x}\left(t\right)&=\begin{pmatrix}
+                x\left(t\right)\\y\left(t\right)
+        \end{pmatrix}\\
+                            &=\begin{pmatrix}
+                                    v_0\cos \left(\varphi \right)t\\
+                                    -\tfrac{1}{2}gt^2+v_0\sin \left(\varphi \right)t+y_0
+                            \end{pmatrix}
+.\end{align} 
+Die $y$--Richtung berechnet sich aus der Integration der Geschwindigkeit
+\begin{align} 
+        y\left(t\right)&=\int_{0}^{t}\td tv_y\left(t\right)=\int_{0}^{t}\td t\left(v_0-gt\right)
+.\end{align} 
+
+\subsection{\textsc{Newton}'sche Kraftgesetze}
+1. Ein kräftefreier Körper bleibt im Zustand der Ruhe, wenn er vorher in Ruhe war bzw.\ in gleichförmiger Bewegung, wenn er vorher in gleichförmiger Bewegung war. (Ein Intertialsystem ist ein Bezugssystem, in dem diese Gesetzmäßigkeit gilt)\par\noindent
+2. Die Kraft ist gegeben durch $\vv{F}=m\vv{a}$.\par\noindent
+3. Übt ein Körper 1 eine Kraft auf einen Körper 2 aus, so übt der Körper 2 eine gleichgroße entgegengerichtete Kraft auf Körper 1 aus.
+
+\subsection{\textsc{Kepler}'schen Gesetze}
+1. Alle Planeten kreisen auf elliptischen Bahnen um ihr Zentralgestirn. 
+Das Baryzentrum des Systems liegt in einem der Brennpunkte.\\
+2. Der Fadenstrahl der Planeten überstreicht in gleichen Zeiten gleiche Flächen.
+Es gilt
+\begin{align} 
+        \vv{L}&=\vv{r}\times \vv{p}=m\left(\vv{r}\times \vv{v}\right)=\text{const.}
+.\end{align} 
+Betrachtet man die Änderung der Fläche über die Zeit, gilt
+\begin{align} 
+        \td A&=\dfrac{1}{2}\left(\vv{r}\times \td\vv{r}\right)\\
+        \diff[]{A}{t}&=\dfrac{1}{2}\left(\vv{r}\times \vv{v}\right)
+.\end{align} 
+Daraus folgt, dass
+\begin{align} 
+        \diff[]{A}{t}=\dfrac{1}{2}\dfrac{\vv{L}}{m}=\text{const.}
+.\end{align}
+3. Die Quadrate der Umlaufzeiten der Planeten sind proportional zu den Kuben der großen Halbachse.
+
+\subsection{\textsc{Galilei}--Transformation}
+Die \textsc{Galilei}--Transformation transformiert ein Bezugssystem $\Sigma$ in ein anderes Bezugssystem $\Sigma'$, welches sich mit einer konstanten Geschwindigkeit relativ zu $\Sigma$ bewegt.
+\begin{align} 
+        \vv{r}'&=\vv{r}-\vv{v}t\\
+        t'&=t
+.\end{align} 
+Längen und Beschleunigung sind \textsc{Galilei}--invariant; die Geschwindigkeit selbst nicht.\par
+Die Transformation in das Schwerpunktsystem sieht wie folgt aus
+\begin{align} 
+        R&=\dfrac{m_ir_i}{M}\\
+        r^*_i&=r_i-R\\
+        v^*_i&=v_i-v
+.\end{align} 
+$v$ bezeichnet hier die Geschwindigkeit des Schwerpunktes gegenüber dem Intertialsystem.
+
+\subsection{Beschleunigte und rotierende Bezugssysteme; Scheinkräfte}
+Scheinkräfte treten in beschleunigten und rotierenden Bezugssystemen auf, da der Bezugspunkt des Systems auch beschleunigt wird.
+Die \textsc{Galilei}--Trafo ist hier nicht mehr anzuwenden, da die Geschwindigkeit nicht konstant ist.
+\begin{align} 
+        \vv{r}'&=\vv{r}-\vv{v}t\\
+        \ddot{\vv{r}}'&=\ddot{\vv{r}}-\dot{\vv{v}}
+.\end{align} 
+Aus dieser Beschleunigung ergibt sich die Scheinkraft im beschleunigten Bezugssystem.
+Wichtig sind folgende Kräfte
+\begin{align} 
+        \vv{F}_\text{Coriolis}&=2m\left(\vv{v}\times \vv{\omega }\right)\\
+        \vv{F}_\text{Zentrifugal}&=m\vv{\omega }\times \left(\vv{r}\times \vv{\omega }\right)
+.\end{align} 
+
+\subsection{Raketengleichung}
+Die Rakete ist ein System mit veränderlicher Masse.
+Die wirkende Kraft ist also abhängig von der Änderung der Masse.
+Zum Zeitpunkt $t$ fliegt die Rakete mit einem Impuls von $\vv{p}=m\vv{v}$. 
+Verliert die Rakete durch den Antrieb Masse, so ändert sich der Impuls zu
+\begin{align} 
+        \vv{p}_{+\td t}&=\left(m+\td m\right)\left(\vv{v}+\vv{\td v}\right)+\left(-\td m\right)\left(\vv{v}-\vv{v}_\text{Gas}\right)\\
+              &=m\vv{v}+m\vv{\td v}+\td m\vv{v}+\td m\vv{\td v}-\td m \vv{v}+\td m \vv{v}_\text{Gas}\\
+              &=m\vv{v}+m\vv{\td v}+\td m \vv{v}_\text{Gas}+\underbrace{\td m\vv{\td v}}_{\approx 0}
+.\end{align} 
+Da der Gesamtimpuls erhalten ist, gilt $\vv{p}_{+\td t}=\vv{p}=m\vv{v}$, also
+\begin{align} 
+        m\vv{v}&=m\vv{v}+m\vv{\td v}+\td m \vv{v}_\text{Gas}\\
+        \int_{v_0}^{v\left(t\right)}\vv{\td v}&=v_\text{Gas}\int_{m_0}^{m\left(t\right)}\td m\dfrac{1}{m}\\
+        v\left(t\right)-v_0&=v_\text{Gas}\ln\left(\dfrac{m\left(t\right)}{m_0}\right)
+.\end{align} 
+
+\subsection{\textsc{Foucault}--Pendel}
+Das \textsc{Foucault}--Pendel ist ein Pendel, dessen Schwingebene durch die Corioliskraft gedreht wird.
+Dadurch kann die Rotationsbewegung der Erde nachgewiesen werden.
+Die Corioliskraft ist eine Trägheitskraft, die in einem rotierendem Bezugssystem auftritt.
+Sie tritt auf, wenn sich ein Körper nicht parallel zur Rotationsachse bewegt.
+\begin{align} 
+        \vv{F}_C=2m\vv{v}\times \vv{\omega }
+.\end{align} 
+Da die Kraft senkrecht zur Geschwindigkeit ist, bewirkt sie nur eine Ablenkung zur Seite und keine Vergrößerung oder Verkleinerung der Geschwindigkeit.\par
+Der Zusammenhang mit dem \textsc{Foucault}--Pendel besteht darin, dass das Pendel bei der Pendelbewegung zur Seite abgelenkt wird und so seine Pendeleben dreht. 
+An den Polen (also liegt der Aufhängepunkt des Pendels in der Rotationsachse) rotiert das Pendel genau entgegengesetzt zur Erde.
+Eine vollständige Rotation der Pendelebene ist nach einer vollständigen Rotation der Erde.\par
+Am Äquator rotiert die Pendelebene gar nicht.
+
+\subsection{Konservative Kräfte}
+Eine Kraft ist konservativ, wenn gilt
+\begin{enumerate}[label=--]
+        \item Das Kraftfeld ist nicht zeitabhängig.
+        \item Das Kraftfeld ist wirbelfrei. $\vv{\text{rot}}\vv{F}\left(\vv{r}\right)=\vv{0}$.
+        \item Die Arbeit über alle geschlossenen Kurven ist null. Die Arbeit über eine nicht geschlossene Kurve ist nur von ihrem Anfangs-- und Endpunkt abhängig. $\,\forall \mathcal{C}:\oint_{C}^{}\td \vv{r}\vv{F}\left(\vv{r}\right)=0$.
+        \item Das Kraftfeld ist das Gradientenfeld eines Potentials. $\vv{F}\left(\vv{r}\right)=-\vv{\text{grad}}V\left(r\right)$.
+\end{enumerate}
+
+\subsection{Stöße}
+Bei einem elastischen Stroß gilt die Impuls-- und Energieerhaltung
+\begin{align} 
+        \vv{p}_1+\vv{p}_2&=\vv{p}_1'+\vv{p}_2'\\
+        E_1+E_2&=E_1'+E_2'
+.\end{align} 
+Bei einem inelastischen Stoß gilt die Impulserhaltung, allerdings nicht die Energieerhaltung, da Energie in Verformung oder Wärme verloren geht
+\begin{align} 
+        \vv{p}_1+\vv{p}_2&=\vv{p}_1'+\vv{p}_2'\\
+        E_1+E_2&=E_1'+E_2'-Q
+.\end{align} 
+$Q$ beschreibt hier die Menge an Energie die verloren geht.\par
+Der Gesamtimpuls im Schwerpunktsystem ist null, da die einzelnen Impulse entgegengerichtet sind,
+\begin{align} 
+        \vv{p}_1+\vv{p}_2&=0=\vv{p}_1'+\vv{p}_2'
+.\end{align} 
+
+\subsection{Experimentelle Bestimmung der Gravitationskonstante}
+Die experimentelle Bestimmung der Gravitationskonstante erfolgt über die Gravitationswaage. 
+Die Gravitationswaage ist aus einem Torsionsdraht aufgebaut, an dem eine Hantel hängt.
+Die Hantel wird von zwei Massen aufgrund der Gravitationskraft ausgelenkt.
+Mit der Rückstellkraft des Torsionsdrahtes stellt sich dann ein Gleichgewicht ein
+\begin{align} 
+        F_r&=2F_\gamma \\
+        k\varphi &=2\gamma \dfrac{m_1m_2}{r_{12}^2}\\
+        \gamma &=\dfrac{k\varphi r_{12}^2}{2m_1m_2}
+.\end{align} 
+Hier ist die Gravitationskraft gleich $2F_\gamma $, da zwei Kugeln verwendet werden, um das Pendel auszulenken.
+
+\subsection{Fluchtgeschwindigkeit}
+
+\subsection{Trägheitstensor}
+Das Trägheitsmoment gibt die Trägheit eines Körpers bei der Rotation an.
+Die Einträge in den Trägheitstensor sind definiert als
+\begin{align} 
+        I_{ij}&=\rho \int_{V}^{}\td V\left[|\vv{r}|^2\delta _{ij}-r_ir_j\right]
+.\end{align} 
+Der Satz von \textsc{Steiner} besagt, dass das zusätzliche Trägheitsmoment, welches durch die Verschiebung der Rotationsachse hinzukommt, addiert werden kann, falls die neue Rotationsachse parallel zur vorherigen Rotationsachse ist.
+Mit der Distanz $a$, um die verschoben wurde, gilt dann
+\begin{align} 
+        I=I'+ma^2
+.\end{align} 
+
+\subsection{Kreisel}
