@@ -4,14 +4,14 @@ set title 'title'
 set xlabel '$x$ [\#]'
 set ylabel '$y$ [\#]'
 set grid
-set key box top left
+set key box top left width -4
 f(x) = m*x+n
 fit f(x) 'test.dat' via m,n
 chi2 = (FIT_STDFIT*FIT_STDFIT)
-set label sprintf("x² = %.5f", chi2) at 0,0
+set label sprintf("x² = %.5f", chi2) at 2,10
 plot 'test.dat' with yerrorbars title 'test data' pt 13 pointsize 1,\
         x**2 title '$x^2$',\
-        f(x) title 'linear regression'
+        f(x) title 'straight fit'
 
 # pt 0 pixel
 # pt 1 plus
