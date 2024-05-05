@@ -19,3 +19,4 @@ plot 'test.dat' with yerrorbars title 'test data' pt 13 pointsize 1,\
 # lw linewidth
 # ps pointsize
 # yerrorbars uses last column
+# lc rgb #d95f02 (orange) #1b9e77 (green) #7570b3 (blue)
