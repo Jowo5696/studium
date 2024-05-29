@@ -1,14 +1,134 @@
+\externaldocument{main}
 \newpage
 \section{Thermodynamik}
 \subsection{Temperaturskala (Kelvin)}
-\subsection{Druck--Temperatur Diagramm (Aggregatszustände)}
-\subsection{\textsc{Van--der--Waals}--Gase}
-\subsection{Wärmeausdehnung von Festkörpern}
-\subsection{Thermodynamische Prozesse / Zustandsänderungen}
-\subsection{Wärme}
-\subsection{\textsc{Maxwell}--\textsc{Boltzmann}--Verteilung}
-\subsection{1.\ Hauptsatz der Wärmelehre}
-\subsection{2.\ Hauptsatz der Wärmelehre}
-\subsection{Kreisprozesse}
-\subsection{Entropie, Enthalpie}
+Die Fixpunkte der Kelvinskala liegen bei
+\begin{enumerate}[label=--]
+        \item $\SI{0}{K}$: Absoluter Nullpunkt; das System ist enthält keine kinetische Energie mehr.
+        \item $\SI{273,16}{K}\,\text{und}\,\SI{613}{Pa}$: Tripelpunkt von Wasser (\ref{fig:phasendiagramme}), der Zustand bei dem alle Phasen von Wasser miteinander im Gleichgewicht stehen.
+\end{enumerate}
+Der Tripelpunkt ist in dem Phasendiagramm dargestellt, welches eine gängige Methode ist, die Phase eines Stoffes oder Systems mit Hilfe des Drucks und der Temperatur darzustellen.
 
+\subsection{Wärmeausdehnung von Festkörpern}
+Stoffe dehnen sich bei Wärmezufuhr aus, da das \textsc{Lennard}--\textsc{Jones}--Potential eine asymmetrische Form hat. 
+Wird Energie in Form von Wärme zu einem Stoff hinzugefügt, erhöht sich die kinetische Energie der Moleküle und so auch die Schwingungsampiltude.
+Da das \textsc{Lennard}--\textsc{Jones}--Potential asymmetrisch ist, erhöht sich der mittlere Abstand zwischen den Molekülen.\\\indent
+Bei genügend Wärme findet ein Phasenübergang statt.
+Da die Form des \textsc{Lennard}--\textsc{Jones}--Potential eine Material-- bzw.\ Stoffeigenschaft ist, haben unterschiedliche Materialien unterschiedlich starke Ausdehnung.\\\indent
+Die Länge des Materials nach der Ausdehnung ist gegeben als 
+\begin{align} 
+        l&=l_0+l_0\alpha _V\Delta T=l_0\left(1+\alpha _l\Delta T\right)&\dfrac{\alpha _l^a}{\alpha _l^b}&=\text{const.}
+.\end{align} 
+Analog gilt für das Volumen (auch das Gesetz von \textsc{Gay--Lussac})
+\begin{align} 
+        V&=V_0+V_0\alpha _V\Delta T=V_0\left(1+\alpha _V\Delta T\right)&\dfrac{\alpha _V^a}{\alpha _V^b}&=\text{const.}
+.\end{align} 
+Für ideale Gase gilt sogar
+\begin{align} 
+        \dfrac{\alpha _V^a}{\alpha _V^b}=1
+.\end{align} 
+
+\subsection{Ideale Gase / \textsc{Van--der--Waals}--Gase}
+Ein ideales Gas besteht aus ausdehnungslosen Massenpunkten, belegen also in ihrem Raum kein Volumen.
+Zudem sind die Teilchen frei und üben keine Wechselwirkung aufeinander aus.
+Ideale Gasteilchen rotieren bzw.\ vibrieren nicht; die Energie ist ausschließlich durch ihre kinetische Energie gegeben.
+Ein reales Gas ist näherungsweise ein ideales Gas, wenn es sich weit von seinen Phasenübergängen befindet.\\\\
+Das Gesetz von \textsc{Gay--Lussac} besagt
+\begin{align} 
+        V\left(p_0,\Delta T\right)=V\left(p_0,\Delta T\right)\left(1+\alpha \Delta T\right)
+.\end{align} 
+Das Gesetz von \textsc{Boyle--Mariotte} besagt
+\begin{align} 
+        pV\left(p,\Delta T\right)&=p_0V\left(p_0,\Delta T\right)
+.\end{align} 
+Es folgt also das \textsc{Boyle--Mariotte--Gay--Lussac} Gesetz
+\begin{align} 
+        pV&=p_0V\left(p_0,\Delta T\right)=p_0V_0\left(1+\alpha \Delta T\right)
+.\end{align} 
+Für ideale Gase ist $\alpha =\left(\SI{273,15}{\celsius}\right)^{-1}$ bei einer Temperatur von $T=\SI{0}{\celsius}$.\\\indent
+Es foglt das ideale Gasgesetz für ein System aus $n$ mol Teilchen
+\begin{align} 
+        pV&=nRT&R&=\dfrac{p_NV_M}{T_{>0}}
+,\end{align} 
+mit $V_M$ dem Molvolumen und $p_N$ dem Normaldruck.\\\indent
+Für ein reales Gas gilt allerdings näherungsweise
+\begin{align} 
+        \left(p+\dfrac{an^2}{V^2}\right)\left(V-b\right)&=nRT
+,\end{align} 
+mit $a$ dem Binnendruck, hervorgerufen durch den Druck der einzelnen Moleküle, und $b$ dem Kovolumen, dem Eigenvolumen der Moleküle.
+
+\subsection{Wärme}
+Wärme ist der Teil der Energie, der von einem thermodynamischen System aufgenommen oder abgegeben wird.
+Es gibt verschiedene Arten des Wärmeaustausch.
+\begin{enumerate}[label=--]
+        \item Wärmestrahlung: Wärme wird in der Form von elektromagnetischen Wellen aufgrund von Molekülschwingungen abgestrahlt.
+        \item Konduktion: Wärme wird an der Grenze zwischen zwei Oberflächen in Richtung der kälteren Oberfläche abgegeben.
+        \item Konvektion: Wärme wird von einem kälteren strömenden Material aufgenommen, indem dieses durch seinen Bewegung immer wieder mit seiner kalten Oberfläche Wärme abtransportieren kann.
+\end{enumerate}
+
+\subsection{\textsc{Maxwell}--\textsc{Boltzmann}--Verteilung}
+Die \textsc{Maxwell--Boltzmann}--Verteilung beschreibt die statistische Geschwindigkeitsverteilung eines idealen Gases. 
+Wichtig dabei ist, dass die Verteilung eine lang auslaufende Kurve besitzt.
+Es können also Gasmoleküle existieren, die noch kinetische Energie haben, obwohl der peak der Kurve bei einer Geschwindigkeit von null liegt.\\\indent
+Die kinetische Energie von idealen Gasen ist über ihre Freiheitsgrade gegeben
+\begin{align} 
+        E_\text{kin}&=\dfrac{f}{2}kT
+.\end{align} 
+
+\subsection{1.\ Hauptsatz der Wärmelehre}
+Der erste Hauptsatz der Thermodynamik besagt, dass die Energie in einem abgeschlossenen System konstant bleibt.
+\begin{align} 
+        \td U=\td Q-p\td V
+.\end{align} 
+Es existiert kein Perpetuum Mobile erster Art, welches mehr Energie produziert, als mechanisch oder über Wärmezuführ hineingegeben.
+
+\subsection{2.\ Hauptsatz der Wärmelehre}
+Der zweite Hauptsatz der Thermodynamik besagt, dass Wärme stets von einem wärmeren Objekt zu einem kälteren Objekt und nie von sich selbst auch umgekehrt, fließt.\\\indent
+Es existiert kein Perpetuum Mobile zweiter Art, welches Wärmeenergie aus einer kälteren Umgebung gewinnen kann.
+
+\subsection{Kreisprozesse / Zustandsänderung}
+Kreisprozesse bezeichnen eine Abfolge von Zustandsänderungen eines Arbeitsmediums (Gas, Dampf, Fluid) im Zustandsraum (Druck, Temperatur, Volumen).
+Das Medium durchläuft ausschließlich Zustände, die im thermodynamischen Gleichgewicht liegen.
+
+\begin{enumerate}[label=--]
+        \item isobar: Konstanter Druck.
+        \item isochor: Konstantes Volumen.
+        \item isotherm: Konstante Temperatur.
+        \item adiabatisch: Kein Wärmeaustausch mit der Umgebung. Ein adiabatisch reversibler Prozess ist immer isentrop, die Umkehrung allerdings nicht.
+        \item Isentrop: Konstante Entropie.
+        \item Isenthalp: Konstante Enthalpie.
+\end{enumerate}
+Der Wirkungsgrad eines System ist definiert als
+\begin{align} 
+        \eta:=\dfrac{E_\text{nutz}}{E_\text{zugef}}
+.\end{align} 
+Er bezeichnet die Effizienz eines Systems.
+
+\subsubsection{\textsc{Carnot}--Prozess}
+Der \textsc{Carnot}--Prozess ist ein Kreisprozess, der einen reversiblen Prozess zur Umwandlung von Wärme in Arbeit darstellt (\ref{fig:carnotprozess_im_pv_diagramm}). 
+Das $T$--$S$--Diagramm ist ein Rechteck, da der adiabatische Prozess isentrop verläuft.\\\indent
+Der Wirkungsgrad des \textsc{Carnot}--Prozess ist definiert durch die höchste ($T_h$) und niedrigste ($T_n$) im Prozess auftretende Temperatur
+\begin{align} 
+        \eta:=\dfrac{T_h-T_n}{T_h}
+.\end{align} 
+
+\subsection{Entropie, Enthalpie}
+Die Entropie beschreibt das Maß an Chaos in einem System.
+Sie steigt durch verschiedene thermodynamische Prozesse (Wärmeleitung, Diffusion, Erzeugung von Reibnungswärme, chemische Reaktionen, $\hdots$) immer mit der Zeit.
+Der Gleichgewichtszustand eines Systems ist dann erreicht, wenn die Entropie am größten ist; dann bleibt die Entropie konstant.
+Die Entropie kann nie vernichtet werden.
+Ein Prozess bei dem Entropie entsteht, kann nicht rückgängig gemacht werden, ohne, dass die entstandene Entropie an die Umgebung abgegeben wird.\\\indent
+Die Entropie kann definiert werden über
+\begin{align} 
+        S&:=k_B\ln \Omega &\delta S&:=\dfrac{\delta Q}{T}
+,\end{align} 
+mit $\Omega $ dem Phasenraumvolumen ($\td \Omega =\td^{3N}q\td^{3N}p$) wobei ($\vv{p},\vv{q}$) den Mikrozustand eines Teilchens im $6N$--dimensionalen Raum angibt und $\delta Q$ der dem System bei einer Temperatur $T$ zugeführten Wärme.
+Wird an dem System nur mechanische Arbeit durch Volumenänderung verrichtet, ändert sich die Entropie nicht.\\\indent 
+Die Enthalpie ist eine systemspezifische Rechengröße, dargestellt als Summe aus innerer Energie und der Volumenarbeit
+\begin{align} 
+        H:=U+pV
+.\end{align} 
+Die \glqq Bruttoenergie\grqq{}, die einem System zugeführt werden muss, ist gegeben als die Änderung der Energie $\td U$ und die durch die isobare Volumenarbeit $p\td V$ verbrauchte Energie
+\begin{align} 
+        \td H=\td U+p\td V
+.\end{align} 

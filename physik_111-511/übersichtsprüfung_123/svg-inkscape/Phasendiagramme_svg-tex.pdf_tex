@@ -1,0 +1,87 @@
+%% Creator: Inkscape 1.3.2 (091e20ef0f, 2023-11-25, custom), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'Phasendiagramme_svg-tex.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{527.42486572bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,1.55917371)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{Phasendiagramme_svg-tex.pdf}}%
+    \put(0.13778038,0.70008317){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Stoff mit Anomalie (z.B. Wasser)\end{tabular}}}}%
+    \put(0.13778038,1.52124468){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Stoff ohne Anomalie\end{tabular}}}}%
+    \put(0.10853882,0.58015664){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Druck\end{tabular}}}}}%
+    \put(0.83427726,0.8273591){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Temperatur\end{tabular}}}}%
+    \put(0.66679727,0.83557482){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}kritische\end{tabular}}}}%
+    \put(0.62679438,0.79707056){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Temperatur\end{tabular}}}}%
+    \put(0.68857447,0.0144092){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}374 °C\end{tabular}}}}%
+    \put(0.47920702,0.0144092){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}100 °C\end{tabular}}}}%
+    \put(0.27101384,0.01441167){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0,01 °C\end{tabular}}}}%
+    \put(0.02434513,0.51531814){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}221 bar\end{tabular}}}}%
+    \put(0.05957296,0.26515128){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1 bar\end{tabular}}}}%
+    \put(-0.00170622,1.33647924){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}kritischer\end{tabular}}}}%
+    \put(0.04269809,1.29798319){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Druck\end{tabular}}}}%
+    \put(0.83427726,0.00619923){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Temperatur\end{tabular}}}}%
+    \put(0.40465788,0.99569721){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Tripelpunkt\end{tabular}}}}%
+    \put(0.40465788,0.17453734){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Tripelpunkt\end{tabular}}}}%
+    \put(0.81113282,1.32416181){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Kritischer\end{tabular}}}}%
+    \put(0.81113282,1.28566576){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Punkt\end{tabular}}}}%
+    \put(0.81113282,0.50300071){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Kritischer\end{tabular}}}}%
+    \put(0.81113282,0.46450097){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Punkt\end{tabular}}}}%
+    \put(0.10853882,1.40132226){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Druck\end{tabular}}}}}%
+    \put(-0.00021581,0.17697291){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0,006 bar\end{tabular}}}}%
+    \put(0.54836114,0.91358516){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}gasförmig\end{tabular}}}}%
+    \put(0.60702902,0.18765457){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Wasser-\end{tabular}}}}%
+    \put(0.60702902,0.12990803){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}dampf\end{tabular}}}}%
+    \put(0.53604372,1.30774269){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}flüssig\end{tabular}}}}%
+    \put(0.42518691,0.42088538){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Wasser\end{tabular}}}}%
+    \put(0.21168492,1.24204977){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}fest\end{tabular}}}}%
+    \put(0.20365396,0.23288374){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Eis\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

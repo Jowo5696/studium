@@ -1,0 +1,79 @@
+%% Creator: Inkscape 1.3.2 (091e20ef0f, 2023-11-25, custom), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'Carnotprozess_im_Zeitdiagramm_svg-tex.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{683.00006104bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,1.03477589)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{Carnotprozess_im_Zeitdiagramm_svg-tex.pdf}}%
+    \put(0.51916247,0.00052708){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}Zeit\end{tabular}}}}%
+    \put(0.11286675,0.26407025){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}Volumen\end{tabular}}}}}%
+    \put(0.23365737,0.50565149){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}isotherme\\Kompression\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{Carnotprozess_im_Zeitdiagramm_svg-tex.pdf}}%
+    \put(0.42033378,0.50565149){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}isentrope\\Kompression\end{tabular}}}}}%
+    \put(0.61799116,0.50565149){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}isotherme\\Expansion\end{tabular}}}}}%
+    \put(0.80466757,0.50565149){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}isentrope\\Expansion\end{tabular}}}}}%
+    \put(0.036,0.75821369){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}Kolbenstellung\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{Carnotprozess_im_Zeitdiagramm_svg-tex.pdf}}%
+    \put(0.13482868,0.87900431){\color[rgb]{1,0.90196078,0.50196078}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}\textit{Q}₁₂\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{Carnotprozess_im_Zeitdiagramm_svg-tex.pdf}}%
+    \put(0.51916247,0.88998528){\color[rgb]{1,0.90196078,0.50196078}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}\textit{Q}₃₄\end{tabular}}}}%
+    \put(0.13482868,1.0107759){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}kaltes\\Reservoir\end{tabular}}}}%
+    \put(0.51916247,1.0107759){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}heißes\\Reservoir\end{tabular}}}}%
+    \put(0.3215051,0.91194721){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}isoliert\end{tabular}}}}%
+    \put(0.70583888,0.91194721){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}isoliert\end{tabular}}}}%
+    \put(0.13482868,0.53859439){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}1\end{tabular}}}}%
+    \put(0.32699558,0.53859439){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}2\end{tabular}}}}%
+    \put(0.51916247,0.53859439){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}3\end{tabular}}}}%
+    \put(0.71132937,0.53859439){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}4\end{tabular}}}}%
+    \put(0.90349626,0.53859439){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}1\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

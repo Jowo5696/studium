@@ -1,0 +1,73 @@
+%% Creator: Inkscape 1.3.2 (091e20ef0f, 2023-11-25, custom), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'Carnot-Prozess_p-V-Diagramm_svg-tex.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{1035.36645508bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.72861236)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{Carnot-Prozess_p-V-Diagramm_svg-tex.pdf}}%
+    \put(0.51211549,0.00040797){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}Volumen\end{tabular}}}}%
+    \put(0.02533132,0.40219808){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}Druck\end{tabular}}}}}%
+    \put(0.8675452,0.13176243){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}1\end{tabular}}}}%
+    \put(0.26486004,0.23993669){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}2\end{tabular}}}}%
+    \put(0.16441251,0.70354066){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}3\end{tabular}}}}%
+    \put(0.48507193,0.25539015){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}4\end{tabular}}}}%
+    \put(0.38848777,0.0776753){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}\textit{W}₁₂\end{tabular}}}}%
+    \put(0.72846401,0.22448322){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}\textit{W}₄₁\end{tabular}}}}%
+    \put(0.40394123,0.41765154){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}\textit{W}₃₄\end{tabular}}}}%
+    \put(0.11805212,0.33265748){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}\textit{W}₂₃\end{tabular}}}}%
+    \put(0.3498541,0.24766342){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}Δ\textit{W}\end{tabular}}}}%
+    \put(0.16320335,0.54449851){\color[rgb]{0,0,0}\rotatebox{-80}{\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}Isentrop\end{tabular}}}}}%
+    \put(0.55828274,0.12596735){\color[rgb]{0,0,0}\rotatebox{-10}{\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}Isotherm\end{tabular}}}}}%
+    \put(0.27636453,0.41495079){\color[rgb]{0,0,0}\rotatebox{-54.999999}{\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}Isotherm\end{tabular}}}}}%
+    \put(0.58028646,0.19614708){\color[rgb]{0,0,0}\rotatebox{-25}{\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}Isentrop\end{tabular}}}}}%
+  \end{picture}%
+\endgroup%

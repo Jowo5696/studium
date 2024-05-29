@@ -82,8 +82,8 @@ Verliert die Rakete durch den Antrieb Masse, so ändert sich der Impuls zu
 Da der Gesamtimpuls erhalten ist, gilt $\vv{p}_{+\td t}=\vv{p}=m\vv{v}$, also
 \begin{align} 
         m\vv{v}&=m\vv{v}+m\vv{\td v}+\td m \vv{v}_\text{Gas}\\
-        \int_{v_0}^{v\left(t\right)}\vv{\td v}&=v_\text{Gas}\int_{m_0}^{m\left(t\right)}\td m\dfrac{1}{m}\\
-        v\left(t\right)-v_0&=v_\text{Gas}\ln\left(\dfrac{m\left(t\right)}{m_0}\right)
+        \int_{v_0}^{v\left(t\right)}\vv{\td v}&=-\vv{v}_\text{Gas}\int_{m_0}^{m\left(t\right)}\td m\dfrac{1}{m}\\
+        \vv{v}\left(t\right)-\vv{v}_0&=-\vv{v}_\text{Gas}\ln\left(\dfrac{m\left(t\right)}{m_0}\right)
 .\end{align} 
 
 \subsection{\textsc{Foucault}--Pendel}
@@ -139,6 +139,17 @@ Mit der Rückstellkraft des Torsionsdrahtes stellt sich dann ein Gleichgewicht e
 Hier ist die Gravitationskraft gleich $2F_\gamma $, da zwei Kugeln verwendet werden, um das Pendel auszulenken.
 
 \subsection{Fluchtgeschwindigkeit}
+Die Fluchtgeschwindigkeit eines Gravitationspotentials ist erreicht, wenn die kinetische Energie gleich der potentiellen Energie des Potentials ist
+\begin{align} 
+        \dfrac{1}{2}mv^2&=\dfrac{GMm}{r}\\
+        v&=\,\sqrt[]{\dfrac{2GM}{r}}
+.\end{align} 
+Existieren mehrere Gravitationspotentiale ist die potentielle Energie die Superposition dieser Potentiale (mit korrespondierendem Abstand $r$).\\\indent
+Damit ein Körper auf einer elliptischen Bahn um einen anderen Körper kreist, muss die Zentripetalkraft gleich der Gravitationskraft sein
+\begin{align} 
+        m\dfrac{v^2}{r}&=\dfrac{GM}{r^2}\\
+        v&=\,\sqrt[]{\dfrac{GM}{r}}
+.\end{align} 
 
 \subsection{Trägheitstensor}
 Das Trägheitsmoment gibt die Trägheit eines Körpers bei der Rotation an.
@@ -153,3 +164,13 @@ Mit der Distanz $a$, um die verschoben wurde, gilt dann
 .\end{align} 
 
 \subsection{Kreisel}
+Die Hauptträgheitsachsen sind die Achsen eines Körpers auf denen dieser Körper den korrespondierenden Eigenwert als Trägheitsmoment hat.\\\indent
+Ist $I_1<I_2=I_3$, ist der Körper ein Prolat. 
+Ist $I_1=I_2<I_3$, ist der Körper ein Oblat.
+Ist $I_1=I_2=I_3$, ist der Körper sphärisch.\\\indent
+Ein Kreisel ist symmetrisch, wenn dieser zwei gleiche Hauptträgheitsmomente hat.
+Ist dieser Körper auch rotationssymmetrisch und diese Achse, so heißt sie Figurenachse.\\\indent
+Präzession beschreibt die Rotation des Drehimpulsvektors eines rotierenden Körpers um eine feste Raumachse.
+Diese Rotation tritt auf, wenn ein Drehmoment orthogonal zum Drehimpuls wirkt.
+Da die Kraft orthogonal wirkt, wird nur die Richtung des Drehimpulses und nicht seine Länge verändert.\\\indent
+Nutation beschreibt die Schwingung des Drehimpulsvektors um die Figurenachse, hervorgerufen durch ein Drehmoment weiteres orthogonales Drehmoment.

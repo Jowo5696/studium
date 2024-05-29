@@ -1,13 +1,63 @@
 \newpage
 \section{Optik}
-\subsection{Spektroskopie}
-\subsection{Elektromagnetische Wellen}
-\subsection{Interferenz}
+\subsection{Polarisation}
+Die Polarisation einer Welle beschreibt die Richtung der Schwingung.
+Für elektromagnetische Wellen bilden $\vv{E}$--, $\vv{B}$--Feld und Wellenvektor $\vv{k}$ ein orthogonales System, also $\vv{E}\perp\vv{B}\perp\vv{k}$.
+\begin{enumerate}[label=--]
+        \item Linearpolarisierung: Eine Welle, bei der die Richtung der Schwingung konstant ist.
+        \item zirkulare Polarisierung: Eine Welle, bei der der Betrag der Schwingung konstant ist, die Richtung sich aber zirkular ändert.
+        \item elliptische Polarisierung: Eine Wellen, bei der sich der Betrag und und Richtung der Schwingung elliptisch ändert.
+\end{enumerate}
+
 \subsection{Interferometer}
 \subsection{Linsen}
 \subsection{Resonator}
 \subsection{Phasen-- und Gruppengeschwindigkeit}
-\subsection{Dispersion}
-\subsection{\textsc{Snellius}'sche Brechnungsgesetz}
-\subsection{Doppelspalt}
+Die Phasen-- und Gruppengeschwindigkeit einer Welle ist gegeben durch
+\begin{align} 
+        v_\text{Ph}&=\dfrac{\omega }{k}&v_\text{Gr}=\diffp[]{\omega }{k}
+.\end{align} 
 
+\subsection{Dispersion}
+Dispersion beschreibt die wellenlängenabhängige Änderung des Brechungsindex, also
+\begin{align} 
+        A=\diff[]{n}{\lambda }
+.\end{align} 
+Dispersion kann z.B.\ für Spektroskopie verwendet werden:
+Ein paralleler Lichtstrahl trifft in einem Winkel auf eine Seite eines Prismas.
+In diesem Prisma tritt Dispersion auf, also wird Licht mit einer geringen Wellenlänge nicht so stark abgelenkt, wie Licht mit einer größeren Wellenlänge.
+Dadurch lassen sich z.B.\ einzelne Emissionslinien aufteilen und beobachten.
+
+\subsection{\textsc{Snellius}'sche Brechnungsgesetz}
+Das \textsc{Snellius}'sche Brechungsgesetz gibt an, unter welchem Winkel Licht an der Grenzschicht zwischen zwei Medien gebrochen wird
+\begin{align} 
+        n_1\sin \alpha =n_2\sin \beta 
+,\end{align} 
+mit $\alpha $ dem Eintritts-- und $\beta $ dem Austrittwinkel.\\\indent
+Die Herleitung dieses Gesetzes folgt aus dem \textsc{Fermat}'schen Prinzip, welches besagt, dass Licht immer den kürzesten Weg durch ein Medium wählt. 
+Allgemeiner das Prinzip der stationären Wirkung.\\\indent
+Quantenmechanisch betrachtet ist das Licht gleichzeitig auf allen Wegen zu finden, allerdings löschen sich die Wege, die nicht dem kürzesten entsprechen, aus.
+
+\subsection{Kohärenz}
+Kohärenz beschreibt die Fähigkeit einer Welle mit einer anderen Welle destruktiv oder konstruktiv zu Überlagern.\\\indent
+Eine Welle ist zeitlich Kohärent, wenn sie über ein Zeitinterval auf vorhersagbare Weise schwingt.
+Eine höhere Kohärenzzeit entspricht einer längeren Zeit, in der das Licht interferieren kann.
+Zeitliche Kohärenz ist dann relevant, wenn Licht zu einer zeitlich verschobenen Kopie ihrer selbst kohärent sein soll.
+Der Wellenzug muss dann so lange auf vorhersagbare Weise schwingen, dass das kohärente Licht noch die andere Quelle erreichen kann.\\\indent
+Eine Welle ist räumlich Kohärent, wenn sie mit einer räumlich verschobenen Quelle noch interferieren kann.
+Wie weit diese andere Quelle weg sein darf, beschreibt die Größe des räumlichen Kohärenzgebietes.
+
+\subsection{Doppelspalt}
+Ein Doppelspalt kann verwendet werden, um die Wellenlänge eines Lichtbündels zu berechnen.
+Es gilt die Gleichung für konstruktive Interferenz
+\begin{align} 
+        d\sin \alpha &=m\lambda=g
+,\end{align} 
+mit $d$ dem Spaltabstand / Gitterkonstante, $\alpha $ dem Winkel des Interferenzmaximums, $m \in \mathbb{N}$ der Zahl des Maximums und $g$ dem Gangunterschied.
+Für destruktive Interferenz werden die korrespondierenden Größen für $m \in \mathbb{N}+\tfrac{1}{2}$ verwendet. 
+Bei der Beugung ist die Verteilung der Extremstellen genau andersherum, also ist für $m \in \mathbb{N}$ ein Minimum und für $m \in \mathbb{N}+\tfrac{1}{2}$ ein Maximum.\\\indent
+Die Herleitung dieser Formel folgt aus der Geometrie des Doppelspaltes und aus der Bedingung, dass für konstruktive bzw.\ desktruktive Interferenz die Wellenberge und --täler überlagern, bzw.\ sich auslöschen müssen.
+
+\subsection{Totalreflexion}
+
+\subsection{\textsc{Brewster}--Winkel}
