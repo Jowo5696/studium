@@ -24,6 +24,7 @@ set label sprintf("x² = %.5f", chi2) at 2,10
 plot 'test.dat' with yerrorbars title 'test data' pt 13 pointsize 1,\
         x**2 title '$x^2$',\
         f(x) title 'straight fit'
+# NaN with points / lines title '' ls 1 # fake legend
 
 # pt 0 pixel
 # pt 1 plus
