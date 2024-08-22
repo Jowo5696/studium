@@ -1,0 +1,138 @@
+%{{{ Formatierung
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{physics_notetaking}
+
+%%% dark red
+%\definecolor{bg}{RGB}{60,47,47}
+%\definecolor{fg}{RGB}{255,244,230}
+%%% space grey
+%\definecolor{bg}{RGB}{46,52,64}
+%\definecolor{fg}{RGB}{216,222,233}
+%%% purple
+%\definecolor{bg}{RGB}{69,0,128}
+%\definecolor{fg}{RGB}{237,237,222}
+%\pagecolor{bg}
+%\color{fg}
+
+\newcommand{\td}{\,\text{d}}
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+
+\newcommand\inlineeqno{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnoa{(\theequation.\text{a})}
+\newcommand\inlineeqnob{(\theequation.\text{b})}
+\newcommand\inlineeqnoc{(\theequation.\text{c})}
+
+\newcommand\inlineeqnowo{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnowoa{\theequation.\text{a}}
+\newcommand\inlineeqnowob{\theequation.\text{b}}
+\newcommand\inlineeqnowoc{\theequation.\text{c}}
+
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+%\renewcommand*\contentsname{Contents}
+
+\pagestyle{fancy}
+
+\sloppy
+
+\numberwithin{equation}{section}
+
+%}}}
+
+\begin{document}
+
+%{{{ Titelseite
+
+\title{physik411 $|$ Zusammenfassung}
+\author{Jonas Wortmann}
+\maketitle
+\pagenumbering{gobble}
+
+%}}}
+
+\newpage
+
+%{{{ Inhaltsverzeichnis
+
+\fancyhead[L]{\thepage}
+\fancyfoot[C]{}
+\pagenumbering{arabic}
+
+\tableofcontents
+
+%}}}
+
+\newpage
+
+%{{{
+
+\fancyhead[R]{\leftmark\\\rightmark}
+
+\newpage
+\section{Quantenmechanik}
+\subsection{Quantenzahlen}
+\begin{enumerate}[label=--]
+        \item $n  \in \mathbb{N}$ Hauptquantenzahl (Energie: $E_n=-\tfrac{13.6}{n^2}\,\text{eV}$)
+        \item $l  \in \left[0,n-1\right]$ Drehimpulsquantenzahl () (Summe: $L$)
+        \item $m_l  \in \left[-l,l\right]$ magnetische Quantenzahl (Energie: Magnetfeld)
+        \item $s = \tfrac{1}{2}$ Spin Elektron (Energie) (Summe: $S$)
+        \item $m_s = \pm \tfrac{1}{2}$ magnetische Spinquantenzahl ()
+        \item $j = l \pm s$ Gesamtdrehimpulsquantenzahl (Energie: Feinstruktur)
+        \item $J  \in \left[|L-S|,L+S\right]$ Summe der Gesamtdrehimpulsquantenzahlen ()
+        \item $m_j  \in \left[-j,j\right]$ magnetische Quantenzahl (Energie)
+        \item $I = 1\lor \tfrac{1}{2}$ Kernspin für ganzzahlige oder halbzahlige Nukleonen ()
+        \item $F  \in \left[|J-I|,J+I\right]$ Gesamtdrehimpulsquantenzahl des Atoms (Energie: Hyperfeinstruktur)
+\end{enumerate}
+\subsection{Gyromagnetische Konstante}
+\subsection{Entartung}
+Ein Energieeigenwert ist entartet, wenn mehrere Zustände existieren, die den selben Energieeigenwert besitzen.
+
+\subsection{Normaler Zeeman--Effekt}
+Der Normale \textsc{Zeeman}--Effekt beschreibt die Aufspaltung der $n$ Energieniveaus durch ein externes Magnetfeld für ein System mit Gesamtspin gleich null.
+
+\subsection{Spin--Orbit--Kopplung / Feinstruktur}
+Durch die Spin--Orbit--Kopplung entsteht ein magnetisches Moment, welches die $n$ Energieniveaus weiter in $m_l$ Energieniveaus aufteilt.
+
+\subsection{Hyperfeinstruktur}
+Durch die WW der Elektronen mit dem elektrischen Dipol-- und magnetischen Quadrupolmoment des Kerns werden die $m_l$ Energieniveaus weiter in $F$ Energieniveaus aufgeteilt.
+
+\subsection{Hybridisierung}
+
+\newpage
+\section{Experimente}
+\subsection{Stern--Gerlach}
+\subsection{Zeeman}
+
+\newpage
+\section{Festkörperphysik}
+\subsection{Miller--Indizes}
+\subsection{Bloch--Funktion}
+\subsection{Elementarzellen}
+
+\newpage
+\section{Formelsammlung}
+\begin{align} 
+        \lambda =\dfrac{h}{p}
+\end{align} 
+
+\subsection{Operatoren}
+\begin{align} 
+        \hat{p}&=-\text{i}\hbar \partial\\
+        \hat{L}=\hat{x}\times \hat{p}&=-\text{i}\hbar x\times \partial\\
+        \hat{L}_z&=-\text{i}\hbar \partial_\varphi \left(\text{Kugelkoordinaten}\right)\\
+        \left[\hat{L}_i,\hat{L}_j\right]&=\sum_{k}^{}\text{i}\hbar \varepsilon _{ijk}\hat{L}_k\\
+        \hat{H}&=\dfrac{\hat{p}}{2m}+\hat{V}\left(\hat{x}\right)\\
+        \Delta \hat{A}\Delta \hat{B}&=\dfrac{1}{2}\left\langle \left[\hat{A},\hat{B}\right]\right\rangle \\
+        \hat{L}_z\left|\psi \right\rangle &= m\hbar \left.\psi \right\rangle 
+\end{align} 
+
+
+
+
+
+%}}}
+
+\end{document}
