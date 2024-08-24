@@ -11,6 +11,7 @@ vorkurs
 vorlesungen/
 __pycache__
 übungen/
+ep/
 
 *.aux
 *.fdb_latexmk
