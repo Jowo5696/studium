@@ -21,7 +21,7 @@ f(x) = m*x+n
 fit f(x) 'test.dat' via m,n
 chi2 = (FIT_STDFIT*FIT_STDFIT)
 set label sprintf("x² = %.5f", chi2) at 2,10
-plot 'test.dat' with yerrorbars title 'test data' ls 1,\
+plot 'test.dat' u 1:2:(1):3 with xyerrorbars title 'test data' ls 1,\
         x**2 title '$x^2$',\
         f(x) title 'straight fit'
 # NaN with points / lines title '' ls 1 # fake legend
