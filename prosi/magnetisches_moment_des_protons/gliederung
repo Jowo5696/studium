@@ -1,0 +1,66 @@
+rutherford observed: alpha teilchen stoßen mit luft -> floureszenz auf einer zinksulfid platte
+- das kann nicht sein da alpha teilchen gar nicht so lange fliegen könnten
+-- diese distanz konnte allerdings von H atomen zurückgelegt werden
+- discovery: dieser effekt war größer wenn nur N als Gas da war
+1919: assumption: alpha teilchen haben proton aus N gelöst
+Blacketts cloudchamber -> alpha teilchen wird von N absorbiert (N + alpha -> O + p)
+- wäre das nicht der fall gäbe es 3 charged particle tracks -> gab aber nur 2
+- auch: erste reported nuclear reaction
+
+1917 experiment 
+- atome mit alpha teilchen beschossen
+- alpha telichen lösen helium kern
+- these: helium kern muss bestandteil von allen atomen sein
+- dieser helium kern wird von rutherford proton genannt
+
+#### reihenfolge von rutherford experimenten ergeben noch keinen sinn...
+
+kurzer einschub des magnetischen moments / dipol moment
+- was ist das? 
+- mag moment ist maß für die stärke des mag dipols und gibt die richtung an (m = I·A)
+-- wenn externes mag feld dann erzeugt mit dipol ein drehmoment (tau = m x B)
+--- angewandte beispiele: kompassnadel
+- wofür berechnet man?
+- aussagen über die kernstruktur und ergänzen / kontrollieren bestimmungen aus der hyperfeinstruktur [über die magnetische ablenkung von wasserstoffmoleküen und das magnetische moment des protons; zeitschrift für physik 85, 4-16]; teilchen die eine substruktur haben haben nicht die erwarteten momente 
+- weitreichend: materie antimaterie asymmetrie -> messung der magnetischen momente von proton und antiproton als hinweis auf diese asymmetrie [https://www.mpg.de/8232171/proton_magnetisches_moment (nur bericht); doi:10.1038/nature13388 (paper)]
+
+theoretische modell zum magnetischen moment des protons
+- dirac theorie für das elektron ergibt mag. moment -> annahme dass es auch für das proton so sein muss [zeitschrift für physik 85, 4-16]
+-- das proton ist ein positives elementares fermion (man wusste nichts über den aufbau von protonen)
+- µ = 2*e/(2mc)*1/2*ħ : da die massen mp/me aprx 1800 so muss µ ca µp/µe aprx 1/1800
+
+experiment (sowohl zur messung des mag moment vom proton als auch allgemeine bestimmungen von momenten in der größenordnung von 1 kernmagneton (zb Rotation von molekülen / diamagnetische momente)) [zeitschrift für physik 85, 4-16]
+-
+- ergebnis: proton hat mag moment zwischen 2 & 3 kernmagnetons (sollte eigentlich 1 kernmagneton)
+
+aufbau des protons
+- model: quarks (hadronen bestehen aus entweder 2 oder 3 quarks) [Gell-Mann phys. lett. 8, 214; Zweig CERN preprint TH401]
+- SLAC experiment: elektronen scattern an nukleonen mit großen winkeln -> nukleonen (bzw protonen und neutronen) bestehen aus point-like teilchen [history of the standard model] (analog zu goldfolien experiment)
+-- interpretation von feynman & bjorken: proton besteht aus partonen
+--- diese partonen mussten gell-manns & zweigs quarks sein [Bjorken phys. rev. 197, 1547; Feynman phys. rev. lett. 23, 1415]
+
+neue erkenntnis
+- da das proton kein elementarteilchen ist lässt sich sein magnetisches moment theoretisch richtig bestimmen
+-- µp aus summe µ quarks
+- genaue messung: doi:10.1038/nature13388
+
+ausblick
+- MRT (magnetic resonance tomography)
+- materie / antimaterie
+
+
+entdeckung des protons
+- rutherford experiment
+"das proton ist ein elementarteilchen"
+berechnung des magnetischen moments (mit experiment) FALSCH
+- was ist das magnetische moment?
+- wieso sollte man das magnetische moment berechnen?
+theoretische berechnung mit der dirac gleichung für elementare fermionen passt nicht zum experimentell bestimmten wert FALSCH
+- wie kann das sein? nicht erklärbar
+FF zur entdeckung der quarks (mit experiment)
+- was sind quarks? (standardmodell)
+aufbau des protons
+- proton besteht aus 3 quarks -> das proton ist also kein elementareteilchen
+neue berechnung des magnetischen moments (mit experiment) RICHTIG
+- wofür ist das mag moment wichtig
+aussicht: einordnung in moderne forschung / entwicklung (MRT) (Protonentherapie)

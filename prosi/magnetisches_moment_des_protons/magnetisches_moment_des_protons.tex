@@ -1,0 +1,151 @@
+\documentclass[t,9pt]{beamer}
+
+\usetheme{CambridgeUS}
+\usecolortheme{seahorse}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{section in toc}[circle] % TODO needs change
+
+\usefonttheme{serif}
+\usepackage{newtxmath}
+\usepackage[onehalfspacing]{setspace}
+
+\usepackage[ngerman]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{siunitx}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{bookmark}
+\usepackage{csquotes}
+
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+
+\newcommand{\td}{\text{d}}
+
+\title{Das magnetische Moment des Protons}
+\subtitle{Proseminar Präsentationstechnik c \\\tiny Prof.\ Dr.\ Harmut Schmieden}
+\author{Jonas Wortmann}
+\institute{Universität Bonn}
+\date{\today}
+\logo{\LaTeX{}}
+
+\begin{document}
+        \begin{frame}
+                \titlepage
+        \end{frame}
+
+        \begin{frame}{Inhaltsverzeichnis}
+                \tableofcontents[pausesections]
+        \end{frame}
+
+        \section{Entdeckung des Protons}
+        \begin{frame}{Entdeckung des Protons}
+                \pause
+                WIEN CHARGE MASS RATIO; GOLDSTEIN H+; RUTHERFORD UNTER ANDEREM BEKANNT FÜR BENENNUNG
+                1913 \textsc{Mardsen}: Wasserstoff wird mit $\alpha $--Teilchen beschossen: \glqq Aufblitzen\grqq{} auf einem Zinksulfidschrim in großer Distanz.\cite{Rutherford_proton_discovery}
+                \pause
+                \\ $\rightarrow $ Schlussfolgerung: \glqq Aufblitzen\grqq{} von H--Atomen verursacht.
+                \pause
+                \\ \textsc{Rutherford}: Stickstoff wird mit $\alpha $--Teilchen beschossen.
+                \pause
+                \\ $\rightarrow $ Selbe Erkenntnis: \glqq Aufblitzen\grqq{} von H--Atomen verursacht.
+                \pause
+                \begin{center}
+                        \tcbox{Stickstoff muss H--Atome als Bestandteile besitzen.}BILD
+                \end{center}
+                \pause
+                1920 \textsc{Rutherford}: Jedes Atom muss aus H--Atomen bestehen. Zur Unterscheidung: Protonen.
+        \end{frame}
+
+        \section{Magnetisches (Dipol--)Moment}
+        \begin{frame}{Magnetisches (Dipol--)Moment}
+                \pause
+                Magnetisches Moment gibt Stärke und Richtung eines magnetischen Dipols an
+                \begin{center}
+                        \tcboxmath{\boldsymbol{m}=\dfrac{1}{2}\int_{}^{}\td ^3r\left[\boldsymbol{r}\times \boldsymbol{j}\left(\boldsymbol{r}\right)\right]\qquad \vv{m}=I\cdot\boldsymbol{A}}
+                \end{center}
+                \pause
+                Klassische / Quantenmechanische Betrachtung mit Drehimpuls
+                \begin{center}
+                        \tcboxmath{\boldsymbol{\mu}_l=\dfrac{q}{2m_q}\boldsymbol{l} \qquad \boldsymbol{\hat{\mu}}_q=\dfrac{q}{2m_q}\hat{\boldsymbol{l}} \qquad {\boldsymbol{\hat{\mu}}}_s=g_s\dfrac{q}{2m_q}{\boldsymbol{\hat{s}}}}
+                \end{center}
+                \pause
+                \textsc{Bohr}'sche Magneton (Elektronen $\ell=1$) \& Kernmagneton (\textsc{Dirac}--Teilchen)
+                \begin{center}
+                        \tcboxmath{\mu _B=\dfrac{e\hbar }{2m_e}\qquad \mu _N=\dfrac{e\hbar }{2m_p}}
+                \end{center}
+        \end{frame}
+
+        \begin{frame}{Magnetisches (Dipol--)Moment}
+                BILD WOFÜR IST DAS MOMENT GUT
+        \end{frame}
+
+        \section{Das Proton als Elementarteilchen}
+        \begin{frame}{Das Proton als Elementarteilchen}
+                \textsc{Dirac}--Theorie: 
+                \begin{center}
+                        \tcboxmath{\left(\text{i}\gamma ^\mu \partial_\mu -m\right)\phi \left(\boldsymbol{x} ,t\right)=0}
+                \end{center}
+                Lösungen dieser Gleichung geben erlaubte Zustände für elementare Fermionen an.
+                \pause
+                \\ BILD ANNAHME PROTON IST ELEMENTARES FERMION
+                \pause
+                \begin{center}
+                        \tcboxmath{\mu _p=1\mu _N=1\dfrac{e\hbar }{2m_p}\approx \SI{5.505e-27}{J/T}}
+                \end{center}
+                Wert CODATA\cite{CODATA_nuclear_magneton}
+        \end{frame}
+
+        \section{Experiment Otto Robert \textsc{Frisch} \& Otto \textsc{Stern}} 
+        \begin{frame}{Experiment Otto Robert \textsc{Frisch} \& Otto \textsc{Stern}} 
+                BILD EXPERIMENT\\BILD BERECHNETES MAGNETON
+        \end{frame}
+
+        \section{Die Substruktur des Protons}
+        \begin{frame}{Die Substruktur des Protons}
+                Einteilung der Teilchen: Hadron (BILD MIT 3 HALBKUGELN BOSON HADRON FERMION)        
+                \pause
+                \\ $\rightarrow $ Baryon: Fermion aus 3 Quarks
+                \\ $\rightarrow $ Meson: Boson aus 2 Quarks
+                BILD PAPER GELL MANN ZWEIG
+        \end{frame}
+
+        \section{SLAC Experiment}
+        \begin{frame}{SLAC Experiment}
+                \pause
+                Elektronen streuen an Nukleonen mit großen Winkeln BILD HISTORY STANDARD MODEL / SLAC
+                \pause
+                \\ $\rightarrow $ Analogie zu \textsc{Rutherford}: Nukleonen haben eine punktförmige Substruktur. 
+                \pause
+                \\ Interpretation \textsc{Feynman} \& \textsc{Bjorken}: Proton muss aus Partonen bestehen. Diese Partonen sind als \textsc{Gell-Mann}s \& \textsc{Zweig}s Quarks zu identifizieren. BILD PAPER
+        \end{frame} 
+
+        \section{Das Proton als Baryon}
+        \begin{frame}{Das Proton als Baryon}
+                \pause
+                Das Proton ist \textit{kein} elementares Fermion, sondern ein Baryon (u,u,d).
+                \pause
+                \begin{center}
+                        \tcboxmath{\mu _p=\dfrac{3}{4}\mu _u-\dfrac{1}{3}\mu _d \approx 2.792\,\mu _N\approx \SI{1.410e-27}{J/T}}
+                \end{center}
+                Wert CODATA\cite{CODATA_proton_magneton}
+                \pause
+                \\ Differenz: 
+                \begin{center}
+                        \tcboxmath{|\,\mu _\text{PF}-\mu _\text{PB}\,|\approx \SI{4.095e-27}{J/T}}
+                \end{center}
+        \end{frame}
+
+        \begin{frame}{Ausblick}
+                \section{Ausblick}
+                
+        \end{frame}
+
+        \begin{frame}{Bibliography}
+                \tiny
+                \bibliographystyle{plain}
+                \bibliography{refs}
+        \end{frame}
+                
+\end{document}
