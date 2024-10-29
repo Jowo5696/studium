@@ -20,8 +20,11 @@
 \usepackage[framemethod=TikZ]{mdframed}
 \usepackage{tcolorbox}
 \tcbuselibrary{theorems}
+\tcbuselibrary{skins}
 
 \newcommand{\td}{\text{d}}
+
+\newcommand{\highlight}[3]{ \begin{textblock*}{#1}(#2,#3) \begin{tcolorbox} [enhanced,opacityfill=.1,colback=blue] \end{tcolorbox} \end{textblock*} } % \highlight{100pt}{10pt}{25pt}
 
 \title[\thesection]{Das magnetische Moment des Protons}
 \subtitle{Proseminar Präsentationstechnik c \\\tiny Prof.\ Dr.\ Harmut Schmieden}
@@ -31,6 +34,13 @@
 \logo{\LaTeX{}}
 
 \begin{document}
+
+        \AddToHook{shipout/foreground}{
+          \begin{tikzpicture}[remember picture,overlay]
+            \node[red,rotate=30,scale=5,opacity=0.1] at (current page.center) {Draft};
+          \end{tikzpicture}
+        }
+
         \begin{frame}
                 \titlepage
         \end{frame}
@@ -40,39 +50,70 @@
         \end{frame}
 
         \section{Entdeckung des Protons}
+
+        \begin{frame}{Inhaltsverzeichnis}
+                \tableofcontents[currentsection]
+        \end{frame}
+
         \begin{frame}{Entdeckung des Protons}
                 \pause
                 % TODO WIEN CHARGE MASS RATIO; GOLDSTEIN H+; RUTHERFORD UNTER ANDEREM BEKANNT FÜR BENENNUNG
-                1913 \textsc{Mardsen}: Wasserstoff wird mit $\alpha $--Teilchen beschossen
-                \\\vspace{.1cm} $\rightarrow $ Aufblitzen auf einem Zinksulfidschrim in \textbf{großer Distanz}.
-                \\ $\rightarrow $ von \textbf{H--Atomen} verursacht.\cite{Rutherford_proton_discovery}
+                1913 \textsc{Mardsen}: Wasserstoff wird mit $\alpha $--Teilchen beschossen.
+                \\\vspace{.1cm} $\rightarrow $ Aufblitzen auf einem Zinksulfidschirm in \textbf{großer Distanz} (zu kurz für $\alpha $).
+                \\ $\rightarrow $ Aufblitzen von \textbf{H--Atomen} verursacht.
                 \pause
                 \\\vspace{.5cm} \textsc{Rutherford}: Stickstoff wird mit $\alpha $--Teilchen beschossen.
                 \\\vspace{.1cm} $\rightarrow $ Aufblitzen von \textbf{H--Atomen} verursacht.
                 \pause
                 \begin{center}
-                        \tcbox{Stickstoff muss H--Atome als Bestandteile besitzen.} % TODO BILD
+                        \tcbox{Stickstoff muss H--Atome als Bestandteile besitzen.}
                 \end{center}
                 \pause
-                \vspace{.5cm}1920 \textsc{Rutherford}: \textbf{Jedes} Atom muss aus \textbf{H--Atomen} (Protonen) bestehen.
+                \vspace{.5cm}1920 \textsc{Rutherford}: \textbf{Jedes} Atom muss aus \textbf{H--Atomen} (Protonen) bestehen.\cite{Rutherford_proton_discovery}
+        \end{frame}
+
+
+        \begin{frame}{Endteckung des Protons}
+                \highlight{100pt}{255pt}{60pt}
+                \highlight{190pt}{8pt}{75pt}
+                \highlight{120pt}{45pt}{87pt}
+                \includegraphics[width=\textwidth]{prosi_nitrogen_made_of_H.png}
+                \hfill\cite{Rutherford1919}
+        \end{frame}
+
+        \begin{frame}{Endteckung des Protons}
+                \highlight{205pt}{155pt}{85pt}
+                \includegraphics[width=\textwidth]{prosi_alpha_breaks_H_from_nitrogen.png}
+                \cite{Rutherford1919}
+        \end{frame}
+
+        \begin{frame}{Endteckung des Protons}
+                \highlight{250pt}{60pt}{72pt}
+                \includegraphics[width=\textwidth]{prosi_nitrogen_disintegrates.png}
+                \cite{Rutherford1919}
         \end{frame}
 
         \section{Magnetisches (Dipol--)Moment}
+
+        \begin{frame}{Inhaltsverzeichnis}
+                \tableofcontents[currentsection]
+        \end{frame}
+
         \begin{frame}{Magnetisches (Dipol--)Moment}
                 \pause
-                Magnetisches Moment gibt \textbf{Stärke} und \textbf{Richtung} eines magnetischen Dipols an
+                Magnetisches Moment gibt \textbf{Stärke} und \textbf{Richtung} eines magnetischen Dipols an.
                 \begin{center}
-                        \tcboxmath{\boldsymbol{m}=\dfrac{1}{2}\int_{}^{}\td ^3r\left[\boldsymbol{r}\times \boldsymbol{j}\left(\boldsymbol{r}\right)\right]\qquad \vv{m}=I\cdot\boldsymbol{A}}
+                        \tcboxmath[colframe=white]{\boldsymbol{m}=\dfrac{1}{2}\int_{}^{}\td ^3r\left[\boldsymbol{r}\times \boldsymbol{j}\left(\boldsymbol{r}\right)\right]\qquad \vv{m}=I\cdot\boldsymbol{A}}
                 \end{center}
                 \pause
-                Klassische / Quantenmechanische Betrachtung mit \textbf{Drehimpuls}
+                Klassische / Quantenmechanische Betrachtung mit \textbf{Drehimpuls}:
                 \begin{center}
-                        \tcboxmath{\boldsymbol{\mu}_l=\dfrac{q}{2m_q}\boldsymbol{l} \qquad \boldsymbol{\hat{\mu}}_q=\dfrac{q}{2m_q}\hat{\boldsymbol{l}} \qquad {\boldsymbol{\hat{\mu}}}_s=g_s\dfrac{q}{2m_q}{\boldsymbol{\hat{s}}}}
+                        \tcboxmath[colframe=white]{\boldsymbol{\mu}_l=\dfrac{q}{2m_q}\boldsymbol{l} \qquad \boldsymbol{\hat{\mu}}_q=\dfrac{q}{2m_q}\hat{\boldsymbol{l}} \qquad {\boldsymbol{\hat{\mu}}}_s=g_s\dfrac{q}{2m_q}{\boldsymbol{\hat{s}}}}
                 \end{center}
                 \pause
                 \textsc{Bohr}'sche Magneton (Elektronen $\ell=1$) \& Kernmagneton (\textsc{Dirac}--Teilchen)
                 \begin{center}
-                        \tcboxmath{\mu _B=\dfrac{e\hbar }{2m_e}\qquad \mu _N=\dfrac{e\hbar }{2m_p}}
+                        \tcboxmath[colframe=white]{\mu _B=\dfrac{e\hbar }{2m_e}\qquad \mu _N=\dfrac{e\hbar }{2m_p}}
                 \end{center}
         \end{frame}
 
@@ -82,63 +123,94 @@
         \end{frame}
 
         \section{Das Proton als Elementarteilchen}
+
+        \begin{frame}{Inhaltsverzeichnis}
+                \tableofcontents[currentsection]
+        \end{frame}
+
         \begin{frame}{Das Proton als Elementarteilchen}
                 \textsc{Dirac}--Theorie: 
                 \begin{center}
-                        \tcboxmath{\left(\text{i}\gamma ^\mu \partial_\mu -m\right)\phi \left(\boldsymbol{x} ,t\right)=0}
+                        \tcboxmath[colframe=white]{\left(\text{i}\gamma ^\mu \partial_\mu -m\right)\phi \left(\boldsymbol{x} ,t\right)=0}
                 \end{center}
-                Lösungen: erlaubte Zustände elementarer Fermionen.
+                Lösungen sind erlaubte Zustände elementarer Fermionen.
                 \pause %TODO BILD ANNAHME PROTON IST ELEMENTARES FERMION
-                \\\vspace{.5cm} Proton als \textsc{Dirac}--Teilchen.
+                \\\vspace{.5cm} Proton als \textsc{Dirac}--Teilchen:
                 \begin{center}
-                        \tcboxmath{\mu _p=1\mu _N=1\dfrac{e\hbar }{2m_p}\approx \SI{5.505e-27}{J/T}}
+                        \tcboxmath[colframe=white]{\mu _p=1\mu _N=1\dfrac{e\hbar }{2m_p}\approx \SI{5.505e-27}{J/T}}
                 \end{center}
-                \tiny\hfill CODATA\cite{CODATA_nuclear_magneton}\normalsize
+                \tiny\vspace{-.2cm}\hspace{8.1cm}CODATA\cite{CODATA_nuclear_magneton}\normalsize
         \end{frame}
 
         \section{Experiment Otto Robert \textsc{Frisch} \& Otto \textsc{Stern}} 
+
+        \begin{frame}{Inhaltsverzeichnis}
+                \tableofcontents[currentsection]
+        \end{frame}
+
         \begin{frame}{Experiment Otto Robert \textsc{Frisch} \& Otto \textsc{Stern}} 
                 BILD EXPERIMENT\\BILD BERECHNETES MAGNETON
                 % TODO BILD EXPERIMENT\\BILD BERECHNETES MAGNETON
         \end{frame}
 
         \section{Die Substruktur des Protons}
+
+        \begin{frame}{Inhaltsverzeichnis}
+                \tableofcontents[currentsection]
+        \end{frame}
+
         \begin{frame}{Die Substruktur des Protons}
-                Einteilung der Teilchen: Hadron %TODO (BILD MIT 3 HALBKUGELN BOSON HADRON FERMION)        
+                Einteilung der Teilchen in Hadronen: %TODO (BILD MIT 3 HALBKUGELN BOSON HADRON FERMION)        
                 \\\vspace{.1cm} $\rightarrow $ Baryon: Fermion aus 3 Quarks
                 \\ $\rightarrow $ Meson: Boson aus 2 Quarks
                 %TODO BILD PAPER GELL MANN ZWEIG
         \end{frame}
 
         \section{SLAC Experiment}
+
+        \begin{frame}{Inhaltsverzeichnis}
+                \tableofcontents[currentsection]
+        \end{frame}
+
         \begin{frame}{SLAC Experiment}
                 \pause
-                Elektronen streuen an Nukleonen mit \textbf{großen Winkeln} % TODO BILD HISTORY STANDARD MODEL / SLAC
-                \\\vspace{.1cm} $\rightarrow $ Analogie \textsc{Rutherford}: Nukleonen haben punktförmige \textbf{Substruktur}. 
+                Elektronen streuen an Nukleonen mit \textbf{großen Winkeln}. % TODO BILD HISTORY STANDARD MODEL / SLAC
+                \\\vspace{.1cm} $\rightarrow $ Analogie \textsc{Rutherford}: Nukleonen haben eine punktförmige \textbf{Substruktur}.
                 \pause
                 \\\vspace{.5cm} Interpretation \textsc{Feynman} \& \textsc{Bjorken}: Proton besteht aus \textbf{Partonen}.
                 \\\vspace{.1cm} $\rightarrow $ Partonen sind als \textsc{Gell-Mann}s \& \textsc{Zweig}s \textbf{Quarks} zu identifizieren. %TODO BILD PAPER
         \end{frame} 
 
         \section{Das Proton als Baryon}
+
+        \begin{frame}{Inhaltsverzeichnis}
+                \tableofcontents[currentsection]
+        \end{frame}
+
         \begin{frame}{Das Proton als Baryon}
                 \pause
-                Proton \textit{kein} elementares Fermion, sondern ein \textbf{Baryon} (u,u,d).
+                Das Proton ist \textit{kein} elementares Fermion, sondern ein \textbf{Baryon} (u,u,d).
                 \pause
                 \begin{center}
-                        \tcboxmath{\mu _p=\dfrac{3}{4}\mu _u-\dfrac{1}{3}\mu _d \approx 2.792\,\mu _N\approx \SI{1.410e-27}{J/T}}
+                        \tcboxmath[colframe=white]{\mu _p=\dfrac{3}{4}\mu _u-\dfrac{1}{3}\mu _d \approx 2.792\,\mu _N\approx \SI{1.410e-27}{J/T}}
                 \end{center}
-                \tiny\hfill CODATA\cite{CODATA_proton_magneton}\normalsize
+                \tiny\vspace{-.2cm}\hspace{8.8cm}CODATA\cite{CODATA_proton_magneton}\normalsize
                 \pause
                 \\ Differenz: 
                 \begin{center}
-                        \tcboxmath{|\,\mu _\text{PF}-\mu _\text{PB}\,|\approx \SI{4.095e-27}{J/T}}
+                        \tcboxmath[colframe=white]{|\,\mu _\text{PF}-\mu _\text{PB}\,|\approx \SI{4.095e-27}{J/T}}
                 \end{center}
         \end{frame}
 
+        \section{Ausblick}
+
+        \begin{frame}{Inhaltsverzeichnis}
+                \tableofcontents[currentsection]
+        \end{frame}
+
         \begin{frame}{Ausblick}
-                \section{Ausblick}
-                
+                \pause
+                Magnetresonanztomographie        
         \end{frame}
 
         \begin{frame}{Bibliography}
