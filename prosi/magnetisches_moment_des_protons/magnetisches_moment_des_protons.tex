@@ -4,7 +4,7 @@
 \usecolortheme{seahorse}
 
 \setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{section in toc}[circle] % TODO needs change
+\setbeamertemplate{section in toc}[ball unnumbered]
 
 \usefonttheme{serif}
 \usepackage{newtxmath}
@@ -56,41 +56,48 @@
         \end{frame}
 
         \begin{frame}{Entdeckung des Protons}
-                \pause
                 % TODO WIEN CHARGE MASS RATIO; GOLDSTEIN H+; RUTHERFORD UNTER ANDEREM BEKANNT FÜR BENENNUNG
                 1913 \textsc{Mardsen}: Wasserstoff wird mit $\alpha $--Teilchen beschossen.
-                \\\vspace{.1cm} $\rightarrow $ Aufblitzen auf einem Zinksulfidschirm in \textbf{großer Distanz} (zu kurz für $\alpha $).
-                \\ $\rightarrow $ Aufblitzen von \textbf{H--Atomen} verursacht.
+                \begin{itemize}
+                        \item Aufblitzen auf einem Zinksulfidschirm in \textbf{großer Distanz} (zu kurz für $\alpha $).
+                        \item Aufblitzen von \textbf{H--Atomen} verursacht.
+                \end{itemize}
                 \pause
-                \\\vspace{.5cm} \textsc{Rutherford}: Stickstoff wird mit $\alpha $--Teilchen beschossen.
-                \\\vspace{.1cm} $\rightarrow $ Aufblitzen von \textbf{H--Atomen} verursacht.
-                \pause
-                \begin{center}
-                        \tcbox{Stickstoff muss H--Atome als Bestandteile besitzen.}
-                \end{center}
+                \vspace{.5cm} \textsc{Rutherford}: Stickstoff wird mit $\alpha $--Teilchen beschossen.
+                \begin{itemize}
+                        \item Aufblitzen von \textbf{H--Atomen} verursacht.
+                                \pause
+                        \item Stickstoff muss \textbf{H--Atome als Bestandteile} besitzen.
+                \end{itemize}
                 \pause
                 \vspace{.5cm}1920 \textsc{Rutherford}: \textbf{Jedes} Atom muss aus \textbf{H--Atomen} (Protonen) bestehen.\cite{Rutherford_proton_discovery}
         \end{frame}
 
 
         \begin{frame}{Endteckung des Protons}
-                \highlight{100pt}{255pt}{60pt}
-                \highlight{190pt}{8pt}{75pt}
-                \highlight{120pt}{45pt}{87pt}
-                \includegraphics[width=\textwidth]{prosi_nitrogen_made_of_H.png}
-                \hfill\cite{Rutherford1919}
+                \begin{figure}
+                        \highlight{100pt}{255pt}{2.3cm}
+                        \highlight{190pt}{8pt}{2.8cm}
+                        \highlight{120pt}{45pt}{3.2cm}
+                        \includegraphics[width=\textwidth]{prosi_nitrogen_made_of_H.png}
+                        \caption{Auszug: Stickstoff besteht aus Wasserstoff.\cite{Rutherford1919}}
+                \end{figure}
         \end{frame}
 
         \begin{frame}{Endteckung des Protons}
-                \highlight{205pt}{155pt}{85pt}
-                \includegraphics[width=\textwidth]{prosi_alpha_breaks_H_from_nitrogen.png}
-                \cite{Rutherford1919}
+                \begin{figure}
+                        \highlight{205pt}{155pt}{3.2cm}
+                        \includegraphics[width=\textwidth]{prosi_alpha_breaks_H_from_nitrogen.png}
+                        \caption{Auszug: $\alpha $--Teilchen hebt Bindung von Stickstoff auf.\cite{Rutherford1919}}
+                \end{figure}
         \end{frame}
 
         \begin{frame}{Endteckung des Protons}
-                \highlight{250pt}{60pt}{72pt}
-                \includegraphics[width=\textwidth]{prosi_nitrogen_disintegrates.png}
-                \cite{Rutherford1919}
+                \begin{figure}
+                        \highlight{250pt}{60pt}{2.8cm}
+                        \includegraphics[width=\textwidth]{prosi_nitrogen_disintegrates.png}
+                        \caption{Auszug: Stickstoff desintegriert.\cite{Rutherford1919}}
+                \end{figure}
         \end{frame}
 
         \section{Magnetisches (Dipol--)Moment}
@@ -100,7 +107,6 @@
         \end{frame}
 
         \begin{frame}{Magnetisches (Dipol--)Moment}
-                \pause
                 Magnetisches Moment gibt \textbf{Stärke} und \textbf{Richtung} eines magnetischen Dipols an.
                 \begin{center}
                         \tcboxmath[colframe=white]{\boldsymbol{m}=\dfrac{1}{2}\int_{}^{}\td ^3r\left[\boldsymbol{r}\times \boldsymbol{j}\left(\boldsymbol{r}\right)\right]\qquad \vv{m}=I\cdot\boldsymbol{A}}
@@ -117,11 +123,6 @@
                 \end{center}
         \end{frame}
 
-        \begin{frame}{Magnetisches (Dipol--)Moment}
-                %TODO BILD WOFÜR IST DAS MOMENT GUT
-                wofür mag moment gut?
-        \end{frame}
-
         \section{Das Proton als Elementarteilchen}
 
         \begin{frame}{Inhaltsverzeichnis}
@@ -134,12 +135,21 @@
                         \tcboxmath[colframe=white]{\left(\text{i}\gamma ^\mu \partial_\mu -m\right)\phi \left(\boldsymbol{x} ,t\right)=0}
                 \end{center}
                 Lösungen sind erlaubte Zustände elementarer Fermionen.
-                \pause %TODO BILD ANNAHME PROTON IST ELEMENTARES FERMION
+                \pause
                 \\\vspace{.5cm} Proton als \textsc{Dirac}--Teilchen:
                 \begin{center}
                         \tcboxmath[colframe=white]{\mu _p=1\mu _N=1\dfrac{e\hbar }{2m_p}\approx \SI{5.505e-27}{J/T}}
                 \end{center}
                 \tiny\vspace{-.2cm}\hspace{8.1cm}CODATA\cite{CODATA_nuclear_magneton}\normalsize
+        \end{frame}
+
+        \begin{frame}{Das Proton als Elementarteilchen}
+                \begin{figure}
+                        \highlight{118pt}{240pt}{4.2cm}
+                        \highlight{205pt}{5pt}{4.7cm}
+                        \includegraphics[width=\textwidth]{prosi_proton_als_dirac_teilchen.png}
+                        \caption{Auszug: Proton als \textsc{Dirac}--Teilchen.\cite{FrischStern1933}}
+                \end{figure}
         \end{frame}
 
         \section{Experiment Otto Robert \textsc{Frisch} \& Otto \textsc{Stern}} 
@@ -148,9 +158,67 @@
                 \tableofcontents[currentsection]
         \end{frame}
 
+        \begin{frame}{Experiment Otto Robert \textsc{Frisch} \& Otto \textsc{Stern}}
+                \begin{figure}
+                        \highlight{6.4cm}{6.1cm}{2.3cm}
+                        \highlight{1.8cm}{.3cm}{2.8cm}
+                        \highlight{7.4cm}{5.2cm}{4.3cm}
+                        \includegraphics[width=\textwidth]{prosi_zweck_der_arbeit.png}        
+                        \caption{Auszug: Ziel des Experiments.\cite{FrischStern1933}}
+                \end{figure}
+        \end{frame}
+
+        \begin{frame}{Experiment Otto Robert \textsc{Frisch} \& Otto \textsc{Stern}}
+                \begin{figure}
+                        \highlight{4.1cm}{1.5cm}{2.9cm}
+                        \highlight{12.3cm}{.2cm}{3.4cm}
+                        \includegraphics[width=\textwidth]{prosi_mag_moment_großes_interesse.png}
+                        \caption{Auszug: Magnetisches Moment von Interesse.\cite{FrischStern1933}}
+                \end{figure}
+        \end{frame}
+
         \begin{frame}{Experiment Otto Robert \textsc{Frisch} \& Otto \textsc{Stern}} 
-                BILD EXPERIMENT\\BILD BERECHNETES MAGNETON
-                % TODO BILD EXPERIMENT\\BILD BERECHNETES MAGNETON
+                \begin{figure}
+                        \highlight{3.8cm}{8.7cm}{1.75cm}
+                        \highlight{2.1cm}{.2cm}{2.1cm}
+                        \includegraphics[width=\textwidth]{prosi_nach_methode_stern_gerlach.png}
+                        \caption{Auszug: Methoden nach \textsc{Gerlach} und \textsc{Stern}.\cite{FrischStern1933}}
+                \end{figure} 
+                \begin{figure}
+                        \includegraphics[width=.8\textwidth]{prosi_versuchsaufbau_mag_moment.png}
+                        \caption{Versuchsaufbau zur Messung des magnetischen Moments. Gesamtlänge des Aufbaus ca.\ $\SI{30}{cm}$.\cite{FrischStern1933}}
+                \end{figure}
+        \end{frame}
+
+        \begin{frame}{Experiment Otto Robert \textsc{Frisch} \& Otto \textsc{Stern}\cite{FrischStern1933}}
+                Anforderungen zur Messung kleiner magnetischer Momente:\\
+                \begin{itemize}
+                        \item Strahl muss \textbf{lang} und \textbf{schmal} sein (kleinster Strahl ca.\ $\SI{0.03}{mm}$).
+                        \item \textbf{Große Inhomogenität} des Feldes (ca.\ $\SI{2.2e+5}{Gs/cm}=\SI{22}{T/cm}$).
+                \end{itemize}
+                \pause
+                \vspace{.5cm} Die Ablenkung des Strahls für 1 Kernmagneton liegt bei $s\approx \SI{0.044}{mm}$.
+                \pause
+                \\\vspace{.5cm}Schwierigkeiten:
+                \begin{itemize}
+                        \item Der Strahl ist \textbf{nicht monochromatisch}, sondern \textsc{Maxwell}--verteilt. Das gesuchte magnetische Moment muss aus der \textbf{Intensitätsverteilung} erschlossen werden.
+                        \item Wegen der großen Länge und geringen Höhe war die \textbf{Intensität klein}.
+                \end{itemize}
+        \end{frame}
+
+        \begin{frame}{Experiment Otto Robert \textsc{Frisch} \& Otto \textsc{Stern}\cite{FrischStern1933}}
+                Ergebnisse:
+                \begin{itemize}
+                        \item Parahelium hat kein magnetisches Moment.
+                                \pause
+                        \item Aufhebung der Entartung der Drehimpulsquantenzahl von Orthohelium.
+                \end{itemize}
+                \pause
+                \begin{figure}
+                        \highlight{4.8cm}{.9cm}{4.5cm}
+                        \includegraphics[width=.9\textwidth]{prosi_mag_moment_proton_nicht_1.png}
+                        \caption{Auszug: Das Ergebnis des magnetischen Moments.\cite{FrischStern1933}}
+                \end{figure}
         \end{frame}
 
         \section{Die Substruktur des Protons}

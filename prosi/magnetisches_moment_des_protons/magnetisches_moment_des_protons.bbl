@@ -16,6 +16,11 @@ CODATA.
 \newblock \url{https://physics.nist.gov/cgi-bin/cuu/Value?mup|search_for=magnetic+moment+proton}, 2022.
 \newblock Letzter Zugriff: 2024-10-27.
 
+\bibitem{FrischStern1933}
+Otto~Stern Otto Robert~Frisch.
+\newblock Über die magnetische ablenkung von wasserstoffmolekülen und das magnetische moment des protons.
+\newblock {\em Zeitschrift für Physik}, 85:4--16, 1933.
+
 \bibitem{Rutherford1919}
 Prof.\ Sir~Ernest Rutherford.
 \newblock Collision of $\alpha$ particles with light atoms. an anomalous effect in nitrogen.
