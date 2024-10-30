@@ -1,29 +1,49 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{}
 
-\bibitem{Rutherford_proton_discovery}
-John Campbell.
+\bibitem[Bloom et~al., 1969]{bloom1969}
+Bloom et~al. (1969).
+\newblock Observed behavior of highly inelastic electron--proton scattering.
+\newblock {\em Phys.\ Rev.\ Lett.}, 23:935--939.
+
+\bibitem[Campbell, 2019]{Rutherford_proton_discovery}
+Campbell, J. (8. May 2019).
 \newblock Rutherford, transmutation and the proton.
-\newblock \url{https://cerncourier.com/a/rutherford-transmutation-and-the-proton/}, 8. May 2019.
+\newblock \url{https://cerncourier.com/a/rutherford-transmutation-and-the-proton/}.
 \newblock Letzter Zugriff: 2024-10-27.
 
-\bibitem{CODATA_nuclear_magneton}
-CODATA.
-\newblock \url{https://physics.nist.gov/cgi-bin/cuu/Value?mun|search_for=nuclear+magneton}, 2022.
+\bibitem[CODATA, 2022a]{CODATA_nuclear_magneton}
+CODATA (2022a).
+\newblock \url{https://physics.nist.gov/cgi-bin/cuu/Value?mun|search_for=nuclear+magneton}.
 \newblock Letzter Zugriff: 2024-10-27.
 
-\bibitem{CODATA_proton_magneton}
-CODATA.
-\newblock \url{https://physics.nist.gov/cgi-bin/cuu/Value?mup|search_for=magnetic+moment+proton}, 2022.
+\bibitem[CODATA, 2022b]{CODATA_proton_magneton}
+CODATA (2022b).
+\newblock \url{https://physics.nist.gov/cgi-bin/cuu/Value?mup|search_for=magnetic+moment+proton}.
 \newblock Letzter Zugriff: 2024-10-27.
 
-\bibitem{FrischStern1933}
-Otto~Stern Otto Robert~Frisch.
+\bibitem[Gell-Mann, 1964]{Gellmann1964}
+Gell-Mann, M. (1964).
+\newblock A schematic model of baryons and mesons.
+\newblock {\em Physics Letters}, 8:214--215.
+
+\bibitem[Otto Robert~Frisch, 1933]{FrischStern1933}
+Otto Robert~Frisch, O.~S. (1933).
 \newblock Über die magnetische ablenkung von wasserstoffmolekülen und das magnetische moment des protons.
-\newblock {\em Zeitschrift für Physik}, 85:4--16, 1933.
+\newblock {\em Zeitschrift für Physik}, 85:4--16.
 
-\bibitem{Rutherford1919}
-Prof.\ Sir~Ernest Rutherford.
+\bibitem[Rutherford, 1919]{Rutherford1919}
+Rutherford, P. S.~E. (1919).
 \newblock Collision of $\alpha$ particles with light atoms. an anomalous effect in nitrogen.
-\newblock {\em The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science}, 37:581--587, 1919.
+\newblock {\em The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science}, 37:581--587.
+
+\bibitem[Weinberg, 2004]{Weinberg2004}
+Weinberg, S. (2004).
+\newblock The making of the standard model.
+\newblock {\em The European Physical Journal C}, 34(1):5–13.
+
+\bibitem[Zweig, 1964]{Zweig1964}
+Zweig, G. (1964).
+\newblock An $su_3$ model for strong interaction symmetry and its breaking.
+\newblock {\em CERN}, CERN-TH-401:1--24.
 
 \end{thebibliography}
