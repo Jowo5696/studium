@@ -27,7 +27,7 @@
 \newcommand{\highlight}[3]{ \begin{textblock*}{#1}(#2,#3) \begin{tcolorbox} [enhanced,opacityfill=.1,colback=blue] \end{tcolorbox} \end{textblock*} } % \highlight{100pt}{10pt}{25pt}
 
 \title[\thesection]{Das magnetische Moment des Protons}
-\subtitle{Proseminar Präsentationstechnik c \\\tiny Prof.\ Dr.\ Harmut Schmieden}
+\subtitle{Proseminar Präsentationstechnik c \\\tiny Prof.\ Dr.\ Hartmut Schmieden}
 \author{Jonas Wortmann}
 \institute{Universität Bonn}
 \date{\today}
@@ -35,12 +35,17 @@
 
 \begin{document}
 
-        \AddToHook{shipout/foreground}{
+        \iffalse\AddToHook{shipout/foreground}{
           \begin{tikzpicture}[remember picture,overlay]
             \node[red,rotate=30,scale=5,opacity=0.1] at (current page.center) {Draft};
           \end{tikzpicture}
-        }
+        }\fi
 
+        % was ist eigentlich der grund für diesen vortrag? warum sollte man über das mag moment des protons berichtem?
+        % mag moment hat historisch aber auch aktuelle große bedeutung.
+        % historisch: erstes indiz dafür dass das proton eine substruktur hat
+        % aktuell: mrt funktioniert mit protonenspin, cpt symmetrie, materie antimaterie symmetrie
+        % daher sehr interesantes thema. "so wollen wir vorgehen all diese punkte zu erarbeiten" -> toc
         \begin{frame}
                 \titlepage
         \end{frame}
@@ -49,31 +54,30 @@
                 \tableofcontents[pausesections]
         \end{frame}
 
-        \section{Entdeckung des Protons}
+        \section{Die Entdeckung des Protons}
 
         \begin{frame}{Inhaltsverzeichnis}
                 \tableofcontents[currentsection]
         \end{frame}
 
-        \begin{frame}{Entdeckung des Protons}
+        \begin{frame}{Die Entdeckung des Protons}
                 % TODO WIEN CHARGE MASS RATIO; GOLDSTEIN H+; RUTHERFORD UNTER ANDEREM BEKANNT FÜR BENENNUNG
-                1913 \textsc{Mardsen}: Wasserstoff wird mit $\alpha $--Teilchen beschossen.
+                1913 \textsc{Rutherford \& \textsc{Mardsen}}: Luft wird mit $\alpha $--Teilchen beschossen.
                 \begin{itemize}
-                        \item Aufblitzen auf einem Zinksulfidschirm in \textbf{großer Distanz} (zu kurz für $\alpha $).
-                        \item Aufblitzen von \textbf{H--Atomen} verursacht.
+                        \item Aufblitzen auf Zinksulfidschirm von \textbf{H--Kernen} verursacht.
+                        \item Stickstoff muss \textbf{H--Kerne als Bestandteile} besitzen.
                 \end{itemize}
-                \pause
-                \vspace{.5cm} \textsc{Rutherford}: Stickstoff wird mit $\alpha $--Teilchen beschossen.
-                \begin{itemize}
-                        \item Aufblitzen von \textbf{H--Atomen} verursacht.
-                                \pause
-                        \item Stickstoff muss \textbf{H--Atome als Bestandteile} besitzen.
-                \end{itemize}
-                \pause
-                \vspace{.5cm}1920 \textsc{Rutherford}: \textbf{Jedes} Atom muss aus \textbf{H--Atomen} (Protonen) bestehen.\cite{Rutherford_proton_discovery}
+                \begin{figure}
+                        \highlight{100pt}{255pt}{4.1cm}
+                        \highlight{190pt}{8pt}{4.6cm}
+                        \highlight{120pt}{45pt}{5.0cm}
+                        \includegraphics[width=\textwidth]{prosi_nitrogen_made_of_H.png}
+                        \caption{Auszug:\cite{Rutherford1919}}
+                \end{figure}
+                \vspace{.5cm}1920 \textsc{Rutherford}: \textbf{Jedes} Atom muss aus \textbf{H--Kernen} bestehen.\cite{Rutherford_proton_discovery}
         \end{frame}
 
-        \begin{frame}{Endteckung des Protons}
+        \iffalse\begin{frame}{Die Entdeckung des Protons}
                 \begin{figure}
                         \highlight{100pt}{255pt}{2.3cm}
                         \highlight{190pt}{8pt}{2.8cm}
@@ -81,9 +85,9 @@
                         \includegraphics[width=\textwidth]{prosi_nitrogen_made_of_H.png}
                         \caption{Auszug:\cite{Rutherford1919}}
                 \end{figure}
-        \end{frame}
+        \end{frame}\fi
 
-        \begin{frame}{Endteckung des Protons}
+        \iffalse\begin{frame}{Die Entdeckung des Protons}
                 \begin{figure}
                         \highlight{205pt}{155pt}{3.2cm}
                         \includegraphics[width=\textwidth]{prosi_alpha_breaks_H_from_nitrogen.png}
@@ -91,24 +95,25 @@
                 \end{figure}
         \end{frame}
 
-        \begin{frame}{Endteckung des Protons}
+        \begin{frame}{Die Entdeckung des Protons}
                 \begin{figure}
                         \highlight{250pt}{60pt}{2.8cm}
                         \includegraphics[width=\textwidth]{prosi_nitrogen_disintegrates.png}
                         \caption{Auszug:\cite{Rutherford1919}}
                 \end{figure}
-        \end{frame}
+        \end{frame}\fi
 
-        \section{Magnetisches (Dipol--)Moment}
+        \section{Was sind das magnetische Moment und das Magneton?}
 
         \begin{frame}{Inhaltsverzeichnis}
                 \tableofcontents[currentsection]
         \end{frame}
 
-        \begin{frame}{Magnetisches (Dipol--)Moment}
+        % magneton ist magnetisches moment wegen ladung auf kreisbahn (daher drehimpuls)
+        \begin{frame}{Magnetische Moment und Magneton}
                 Magnetisches Moment gibt \textbf{Stärke} und \textbf{Richtung} eines magnetischen Dipols an.
                 \begin{center}
-                        \tcboxmath[colframe=white]{\boldsymbol{m}=\dfrac{1}{2}\int_{}^{}\td ^3r\left[\boldsymbol{r}\times \boldsymbol{j}\left(\boldsymbol{r}\right)\right]\qquad \vv{m}=I\cdot\boldsymbol{A}}
+                        \tcboxmath[colframe=white]{\boldsymbol{m}=\dfrac{1}{2}\int_{}^{}\td ^3r\left[\boldsymbol{r}\times \boldsymbol{j}\left(\boldsymbol{r}\right)\right]\qquad \boldsymbol{m}=I\cdot\boldsymbol{A}}
                 \end{center}
                 \pause
                 Klassische / Quantenmechanische Betrachtung mit \textbf{Drehimpuls}:
@@ -122,13 +127,7 @@
                 \end{center}
         \end{frame}
 
-        \section{Das Proton als Elementarteilchen}
-
-        \begin{frame}{Inhaltsverzeichnis}
-                \tableofcontents[currentsection]
-        \end{frame}
-
-        \begin{frame}{Das Proton als Elementarteilchen}
+        \iffalse\begin{frame}{Theoretischer Einschub}
                 \textsc{Dirac}--Theorie: 
                 \begin{center}
                         \tcboxmath[colframe=white]{\left(\text{i}\gamma ^\mu \partial_\mu -m\right)\phi \left(\boldsymbol{x} ,t\right)=0}
@@ -137,27 +136,34 @@
                 \pause
                 \\\vspace{.5cm} Proton als \textsc{Dirac}--Teilchen:
                 \begin{center}
+                        hier weg
                         \tcboxmath[colframe=white]{\mu _p=1\mu _N=1\dfrac{e\hbar }{2m_p}\approx \SI{5.505e-27}{J/T}}
                 \end{center}
                 \tiny\vspace{-.2cm}\hspace{7.4cm}\cite{CODATA_nuclear_magneton}\normalsize
-        \end{frame}
+        \end{frame}\fi
 
-        \begin{frame}{Das Proton als Elementarteilchen}
-                \begin{figure}
-                        \highlight{118pt}{240pt}{4.2cm}
-                        \highlight{205pt}{5pt}{4.7cm}
-                        \includegraphics[width=\textwidth]{prosi_proton_als_dirac_teilchen.png}
-                        \caption{Auszug:\cite{FrischStern1933}}
-                \end{figure}
-        \end{frame}
-
-        \section{Experiment Otto Robert \textsc{Frisch} \& Otto \textsc{Stern}} 
+        \section{Das Experiment von Otto Robert \textsc{Frisch} \& Otto \textsc{Stern}} 
 
         \begin{frame}{Inhaltsverzeichnis}
                 \tableofcontents[currentsection]
         \end{frame}
 
+        % keine weitere behandlung der dirac theorie / gleichung: ist nicht notwendig und übersteigt die länge des vortrags. nur der vollständigkeithalber drin
+        % rotation wird später noch wichtig in der maxwell verteilung des molekülstrahls
+
         \begin{frame}{Experiment Otto Robert \textsc{Frisch} \& Otto \textsc{Stern}}
+                Motivation
+                \begin{itemize}
+                        \item Untersuchung des \textbf{Wasserstoffs} mit dem Ziel einer Bestimmung des \textbf{Protonenmoments}. % hatte man bis jtz noch nicht experimentell untersucht
+                        \item Allgemeine Apparatur zur Messung magnetischer Momente $\propto \mu _N$.
+                        \item Kürzliche Entdeckung von Ortho-- und Para--$\text{H}_2$.
+                \end{itemize}
+                \hfill\tiny\cite{FrischStern1933}\normalsize
+        \end{frame}
+
+        \iffalse\begin{frame}{Experiment Otto Robert \textsc{Frisch} \& Otto \textsc{Stern}}
+                HIER MOTIVATION ALS STICHUPNKTE (DIESE UND NÄCHSTE FOLIE WEG)
+                \\ ORTHO UND PARAMGNETISCH SEHEN (PFEILE)
                 \begin{figure}
                         \highlight{6.4cm}{6.1cm}{2.3cm}
                         \highlight{1.8cm}{.3cm}{2.8cm}
@@ -165,17 +171,33 @@
                         \includegraphics[width=\textwidth]{prosi_zweck_der_arbeit.png}        
                         \caption{Auszug:\cite{FrischStern1933}}
                 \end{figure}
-        \end{frame}
+        \end{frame}\fi
 
-        \begin{frame}{Experiment Otto Robert \textsc{Frisch} \& Otto \textsc{Stern}}
+        \iffalse\begin{frame}{Experiment Otto Robert \textsc{Frisch} \& Otto \textsc{Stern}}
+                HIER AUCH WEG
                 \begin{figure}
-                        \highlight{4.1cm}{1.5cm}{2.9cm}
-                        \highlight{12.3cm}{.2cm}{3.4cm}
-                        \includegraphics[width=\textwidth]{prosi_mag_moment_großes_interesse.png}
+                        \highlight{3.75cm}{8.1cm}{1.75cm}
+                        \highlight{5cm}{.2cm}{2.2cm}
+                        \highlight{4.1cm}{1.5cm}{3.2cm}
+                        \highlight{12.3cm}{.2cm}{3.7cm}
+                        \includegraphics[width=\textwidth]{prosi_mag_moment_besonderes_interesse.png}
+                        \caption{Auszug:\cite{FrischStern1933}}
+                \end{figure}
+        \end{frame}\fi
+
+        \begin{frame}{Das Experiment von Otto Robert \textsc{Frisch} \& Otto \textsc{Stern}}
+                \begin{figure}
+                        \highlight{3.3cm}{5cm}{3.5cm}
+                        \highlight{118pt}{240pt}{4.2cm}
+                        \highlight{205pt}{.2cm}{4.7cm}
+                        \highlight{3.4cm}{.2cm}{5.2cm}
+                        \highlight{3.1cm}{5.4cm}{6.7cm}
+                        \includegraphics[width=\textwidth]{prosi_proton_als_dirac_teilchen.png}
                         \caption{Auszug:\cite{FrischStern1933}}
                 \end{figure}
         \end{frame}
 
+        % erste möglichkeit magnetische momente von ortho und parawasserstoff (seit entdeckung) zu messen.
         \begin{frame}{Experiment Otto Robert \textsc{Frisch} \& Otto \textsc{Stern}} 
                 \begin{figure}
                         \highlight{3.8cm}{8.7cm}{1.75cm}
@@ -187,6 +209,7 @@
                         \includegraphics[width=.8\textwidth]{prosi_versuchsaufbau_mag_moment.png}
                         \caption{Versuchsaufbau zur Messung des magnetischen Moments. Gesamtlänge des Aufbaus ca.\ $\SI{30}{cm}$.\cite{FrischStern1933}}
                 \end{figure}
+                % HIER WIRD H2 MOLEKÜL VERWENDET (ÜBRIGENS ORTHO UND PARA ABER GLEICH MEHR)
         \end{frame}
 
         \begin{frame}{Experiment Otto Robert \textsc{Frisch} \& Otto \textsc{Stern}}
@@ -203,17 +226,71 @@
                         \item Der Strahl ist \textbf{nicht monochromatisch}, sondern \textsc{Maxwell}--verteilt. Das gesuchte magnetische Moment muss aus der \textbf{Intensitätsverteilung} erschlossen werden.
                         \item Wegen der großen Länge und geringen Höhe war die \textbf{Intensität klein}.
                 \end{itemize}
-                \cite{FrischStern1933}
+                \hfill\tiny\cite{FrischStern1933}\normalsize
+        \end{frame}
+
+        \iffalse\begin{frame}{Experiment Otto Robert \textsc{Frisch} \& Otto \textsc{Stern}}
+                \begin{figure}
+                        \highlight{5.4cm}{3.1cm}{2.25cm}
+                        \highlight{3.8cm}{7.8cm}{3.25cm}
+                        \highlight{1.8cm}{7.8cm}{3.75cm}
+                        \includegraphics[width=\textwidth]{prosi_kleines_manometer.png}
+                        \caption{Auszug:\cite{FrischStern1933}}
+                \end{figure}
+        \end{frame}\fi
+
+        \begin{frame}{Experiment Otto Robert \textsc{Frisch} \& Otto \textsc{Stern}}
+                Auswertung (Bestimmung des Protonenmoments):        
+                \begin{itemize}
+                        \item Gesamtmoment besteht aus \textbf{Rotationsmoment} und \textbf{Kernmoment}.
+                \end{itemize}
+                \begin{figure}
+                        \centering
+                        \includegraphics[width=.4\textwidth]{prosi_aufspaltungsbild_orthowasserstoff.png}
+                        \caption{Auszug:\cite{FrischStern1933}}
+                \end{figure}
+                \begin{itemize}
+                        % da paraH2 unmagnetisch ist rührt ein magnetisches moment bei höheren temperaturen aus dem rotationsmoment hevor
+                        \item Rotationsmoment wird aus reinem Para--$\text{H}_2$ bestimmt, da dieses unmagnetisch ist. 
+                \end{itemize}
         \end{frame}
 
         \begin{frame}{Experiment Otto Robert \textsc{Frisch} \& Otto \textsc{Stern}}
-                Ergebnisse:
+                \begin{figure}
+                        \centering
+                        % für paraH2 wird die kurve nochmal aufgenommen
+                        % y-achse ist intensität (messung indem man mavometer orthogonal entlang des strahls bewegt)
+                        \includegraphics[width=.9\textwidth]{prosi_frisch_stern_auswertung_graph.png}
+                        \caption{Abbildung:\cite{FrischStern1933}}
+                \end{figure}
+        \end{frame}
+
+        \begin{frame}{Experiment Otto Robert \textsc{Frisch} \& Otto \textsc{Stern}}
                 \begin{itemize}
-                        \item Parahelium hat kein magnetisches Moment.
-                        \item Aufhebung der Entartung der Drehimpulsquantenzahl von Orthohelium.
+                        \item Para--$\text{H}_2$ ist \textsc{Boltzmann}--verteilt: $73\%$ mit $n=0$; $27\%$ mit $n=2$.
+                        \item $n=0$ wird \textbf{nicht} abgelenkt; $n=2$ wird abgelenkt.
+                                % diese aufspaltung findet statt, da n = 2, m = -2,-1,0,1,2 zur folge hat
+                        \item Von $27\%$: $1/5$ nicht abgelenkt; $2/5$ Aufspaltung $1\cdot \mu _R$; $2/5$ Aufspaltung $2\cdot \mu _R$.
+                                \pause
+                                % quasi alter geradenfit
+                        \item[]
+                        \item Berechnung: Erwartete Intensität für $\mu _R'$ $\stackrel{?}{=}$ gemessene Intensität für $\mu _R$.
                 \end{itemize}
                 \begin{figure}
-                        \highlight{4.8cm}{.9cm}{4.5cm}
+                        \centering
+                        \includegraphics[width=\textwidth]{prosi_ergebnis_rotationsmoment.png}
+                        \caption{Auszug:\cite{FrischStern1933}}
+                \end{figure}
+        \end{frame}
+
+        \begin{frame}{Experiment Otto Robert \textsc{Frisch} \& Otto \textsc{Stern}}
+                Ergebnis:
+                \begin{itemize}
+                        \item Magnetisches Moment des Protons $2\mu _N\leq \mu _p\leq 3\mu _N$.
+                \end{itemize}
+                \begin{figure}
+                        \highlight{4.8cm}{.9cm}{3.9cm}
+                        \highlight{8.6cm}{3.4cm}{4.4cm}
                         \includegraphics[width=.9\textwidth]{prosi_mag_moment_proton_nicht_1.png}
                         \caption{Auszug:\cite{FrischStern1933}}
                 \end{figure}
@@ -225,9 +302,8 @@
                 \tableofcontents[currentsection]
         \end{frame}
 
+        % quarks / aces model rein mathematisch. noch keine betrachtung der gluonen / WW zwischen den quarks. nur die möglichkeit teilchen so darzustellen. merke pentaquarks (die man letzt erst gefunden hat) etc
         \begin{frame}{Die Substruktur des Protons}
-                %TODO (BILD MIT 3 HALBKUGELN BOSON HADRON FERMION)        
-                %TODO BILD PAPER GELL MANN ZWEIG
                 \highlight{2.4cm}{3.4cm}{2.4cm}
                 \highlight{4cm}{.3cm}{4.1cm}
                 \highlight{3.4cm}{.9cm}{4.6cm}
@@ -237,76 +313,118 @@
                 \end{figure}
         \end{frame}
 
-        \begin{frame}{Die Substruktur des Protons}
+        \iffalse\begin{frame}{Die Substruktur des Protons}
                 \highlight{9.2cm}{.9cm}{2.5cm}
                 \begin{figure}
                         \includegraphics[width=\textwidth]{prosi_zweig_aces.png}
                         \caption{Auszug:\cite{Zweig1964}}
                 \end{figure}
-        \end{frame}
+        \end{frame}\fi
 
-        \section{SLAC Experiment}
-
-        \begin{frame}{Inhaltsverzeichnis}
-                \tableofcontents[currentsection]
-        \end{frame}
-
-        \begin{frame}{SLAC Experiment}
-                Elektronen streuen an Nukleonen mit \textbf{großen Winkeln}. % TODO BILD HISTORY STANDARD MODEL / SLAC
-                \begin{itemize}
-                        \item Analogie \textsc{Rutherford}: Nukleonen haben eine punktförmige \textbf{Substruktur}.
-                                \pause
-                        \item Interpretation \textsc{Feynman} \& \textsc{Bjorken}: Proton besteht aus \textbf{Partonen}.
-                        \item Partonen sind als \textsc{Gell-Mann}s \& \textsc{Zweig}s \textbf{Quarks} zu identifizieren. %TODO BILD PAPER
-                \end{itemize}
-        \end{frame} 
-        
-        \begin{frame}{SLAC Experiment}
+        \begin{frame}{Die Substruktur des Protons}
                 \begin{figure}
-                        \highlight{3.8cm}{8.6cm}{3.7cm}
-                        \highlight{9.8cm}{1.6cm}{4.95cm}
+                        \centering
+                        \includegraphics[width=\textwidth]{prosi_if_quarks_were_physical.png}
+                        \caption{\cite{Gellmann1964}}
+                \end{figure}
+                \begin{figure}
+                        \centering
+                        \includegraphics[width=\textwidth]{prosi_non_existance_of_quarks.png}
+                        \caption{\cite{Gellmann1964}}
+                \end{figure}
+        \end{frame}
+
+        % stanford linear accelerator center. electronen mit protonen kollidieren lassen. genaue betrachtung des experiments übersteigt hier den vortrag und würde dem SLAC vortrag vorgreifen.
+        \begin{frame}{Die Substruktur des Protons}
+                SLAC Experiment (Elektron -- Proton Streuung)
+                \begin{figure}
+                        \highlight{3.8cm}{8.6cm}{4.2cm}
+                        \highlight{9.8cm}{1.6cm}{5.45cm}
                         \includegraphics[width=\textwidth]{prosi_bloom_et_al_obervations_could_be_parton_model.png}
                         \caption{Auszug:\cite{bloom1969}}
                 \end{figure}
         \end{frame}
 
-        \begin{frame}{SLAC Experiment}
-                \begin{figure}
-                        \includegraphics[width=\textwidth]{prosi_making_of_standard_model_identify_partons_quarks.png}
-                        \caption{Auszug:\cite{Weinberg2004}}
-                \end{figure}
-        \end{frame}
 
-        \section{Das Proton als Baryon}
-
-        \begin{frame}{Inhaltsverzeichnis}
-                \tableofcontents[currentsection]
-        \end{frame}
-
-        \begin{frame}{Das Proton als Baryon}
-                \pause
-                Das Proton ist \textit{kein} elementares Fermion, sondern ein \textbf{Baryon} (u,u,d).
-                \pause
+        \begin{frame}{Die Substruktur des Protons}
+                Das Proton ist kein elementares Fermion, sondern ein \textbf{Baryon} (u,u,d).
                 \begin{center}
                         \tcboxmath[colframe=white]{\mu _p=\dfrac{3}{4}\mu _u-\dfrac{1}{3}\mu _d \approx 2.792\,\mu _N\approx \SI{1.410e-27}{J/T}}
                 \end{center}
                 \tiny\vspace{-.2cm}\hspace{8cm}\cite{CODATA_proton_magneton}\normalsize
-                \pause
-                \\ Differenz: 
-                \begin{center}
-                        \tcboxmath[colframe=white]{|\,\mu _\text{PF}-\mu _\text{PB}\,|\approx \SI{4.095e-27}{J/T}}
-                \end{center}
+                \begin{figure}
+                        \highlight{4.8cm}{.9cm}{5.05cm}
+                        \includegraphics[width=.9\textwidth]{prosi_mag_moment_proton_nicht_1.png}
+                        \caption{Auszug:\cite{FrischStern1933}}
+                \end{figure}
         \end{frame}
 
-        \section{Ausblick}
+        \section{Aktuelle Forschung}
 
         \begin{frame}{Inhaltsverzeichnis}
                 \tableofcontents[currentsection]
         \end{frame}
 
-        \begin{frame}{Ausblick}
-                \pause
-                Magnetresonanztomographie        
+        \begin{frame}{Aktuelle Forschung}
+                \textbf{B}aryon \textbf{A}ntibaryon \textbf{S}ymmetry \textbf{E}xperiment (BASE) CERN
+                \begin{itemize}
+                        \item Vergleich des magnetischen Momente von \textbf{Proton} und \textbf{Antiproton}.
+                        \item CPT Symmetrie
+                        \item Materie -- Antimaterie Asymmetrie
+                \end{itemize}
+                \vspace{.5cm}
+                % improvement of x350
+                \begin{center}
+                        \tcboxmath[colframe=white]{\mu _{\overline{p}}=\SI{-2.7928473441+-0.0000000042}{}\,\mu _N}
+                \end{center}
+                \vspace{-.2cm}\hspace{6.5cm}\tiny\cite{Smorra2017}\normalsize
+        \end{frame}
+
+        \iffalse\begin{frame}{BASE CERN}
+                Messung und Aufbau: WIP (maybe zu viel text)
+                \begin{itemize}
+                        \item \textsc{Lamor}--Frequenz (Präzession) und Cyclotron--Frequenz (Oszillation eines geladenen Teilchens im Magnetfeld)
+                                \pause
+                        \item \textbf{Antiprotonen} werden von zwei \textbf{\textsc{Penning}--Fallen}  gefangen (I und II)
+                                \pause
+                        \item[]
+                        \item I \textbf{analysis} trap: \textsc{Larmor}--Freuqenz
+                        \item II \textbf{precision} trap: Cyclotron--Frequenz
+                                \pause
+                                % überlegung: misst frequenz von teilchen: wenn frequenz ändert dann hat auch mag feld geändert -> adjustement
+                        \item III: Überwacht Änderung des magnetischen Feldes.
+                                % lagerung über mehrere monate bis mehrere jahre hinweg
+                        \item IV: Behältnis für Antiprotonen.
+                \end{itemize}
+                \hfill
+                \cite{BASE2017}
+        \end{frame}\fi
+
+        % wofür mrt? bilder von gewebe ohne zellen zu zerstören (nicht wie bei röntgen)
+        \begin{frame}{Aktuelle Forschung}
+                \textbf{M}agnet\textbf{r}esonanz\textbf{t}omographie
+                \begin{itemize}
+                        \item Protonen im Körper richten ihren Spin entlang des Magnetfeldes ($\SI{0.1}{T}-\SI{7}{T}$) aus.
+                        \item Impulse von magnetischen Wechselfeldern lenken Protonen aus (\textsc{Lamor}--Präzession).
+                                % relaxation = prozess bei dem protonen ihren spin wieder entlang des magnetfeldes ausrichten
+                        \item Relaxation der Protonen nach dem Impuls.
+                                % spulen messen elektromag wellen der lamor präzession & relaxation: durch algorithmus werden die in bilder umgewandelt
+                        \item Verschiedene Organe / Gewebe leuchten selbst im Radiowellenbereich.
+                \end{itemize}
+                \hfill\cite{Mustafa2023}
+        \end{frame}
+
+        \section{Zusammenfassung}
+
+        \begin{frame}{Zusammenfassung}
+                \begin{itemize}
+                        \item 1919 \textsc{Rutherford}: Atome sind aus H--Kernen (Protonen) aufgebaut.
+                        \item 1933 \textsc{Frisch} und \textsc{Stern}: Magnetisches Moment des Protons $\mu _p\neq 1\cdot \mu _N$ sondern $2\cdot \mu _N\leq \mu _p\leq 3\cdot \mu _n$. (Proton kein Elementarteilchen)
+                        \item 1964 \textsc{Gell--Mann} und \textsc{Zweig}: Mathematisches Quark--Modell.
+                        \item 1969 SLAC: Proton besteht aus \glqq pointlike constituents\grqq{} (Quarks).
+                        \item 2017 BASE CERN: Magnetisches Moment des Protons gemessen mit einer Genauigkeit von $\approx 10^{-12}$.
+                        \item Aktuelle Forschung: CTP--Symmetrie, Materie--Antimaterie Asymmetrie, MRT
+                \end{itemize}         
         \end{frame}
 
         \begin{frame}[allowframebreaks]{Bibliography}
@@ -314,5 +432,21 @@
                 \bibliographystyle{apalike}
                 \bibliography{refs}
         \end{frame}
+
+        \iffalse\begin{frame}{SLAC Experiment}
+                Elektronen streuen an Nukleonen mit \textbf{großen Winkeln}. % TODO BILD HISTORY STANDARD MODEL / SLAC
+                \begin{itemize}
+                        \item Analogie \textsc{Rutherford}: Nukleonen haben eine punktförmige \textbf{Substruktur}.
+                                \pause
+                        \item Interpretation \textsc{Feynman} \& \textsc{Bjorken}: Proton besteht aus \textbf{Partonen}.
+                        \item Partonen sind als \textsc{Gell-Mann}s \& \textsc{Zweig}s \textbf{Quarks} zu identifizieren. %TODO BILD PAPER
+                \end{itemize}
+        \end{frame}
+
+        \begin{frame}{SLAC Experiment}
+                \begin{figure}
+                        \includegraphics[width=\textwidth]{prosi_making_of_standard_model_identify_partons_quarks.png}
+                        \caption{Auszug:\cite{Weinberg2004}} \end{figure}
+        \end{frame}\fi % HIER AM THEMA VORBEI
                 
 \end{document}

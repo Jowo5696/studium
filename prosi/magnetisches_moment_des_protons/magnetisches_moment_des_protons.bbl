@@ -11,13 +11,9 @@ Campbell, J. (8. May 2019).
 \newblock \url{https://cerncourier.com/a/rutherford-transmutation-and-the-proton/}.
 \newblock Letzter Zugriff: 2024-10-27.
 
-\bibitem[CODATA, 2022a]{CODATA_nuclear_magneton}
-CODATA (2022a).
-\newblock \url{https://physics.nist.gov/cgi-bin/cuu/Value?mun|search_for=nuclear+magneton}.
-\newblock Letzter Zugriff: 2024-10-27.
-
-\bibitem[CODATA, 2022b]{CODATA_proton_magneton}
-CODATA (2022b).
+\bibitem[CODATA, 2022]{CODATA_proton_magneton}
+CODATA (2022).
+\newblock Proton magnetic moment.
 \newblock \url{https://physics.nist.gov/cgi-bin/cuu/Value?mup|search_for=magnetic+moment+proton}.
 \newblock Letzter Zugriff: 2024-10-27.
 
@@ -25,6 +21,12 @@ CODATA (2022b).
 Gell-Mann, M. (1964).
 \newblock A schematic model of baryons and mesons.
 \newblock {\em Physics Letters}, 8:214--215.
+
+\bibitem[Mafraji, 2023]{Mustafa2023}
+Mafraji, M.~A. (2023).
+\newblock Magnetresonanztomographie (mrt).
+\newblock \url{https://www.msdmanuals.com/de/profi/spezielle-fachgebiete/grundz%C3%BCge-der-radiologischen-bildgebung/magnetresonanztomographie-mrt?ruleredirectid=740}.
+\newblock Letzter Zugriff: 2024-11-02.
 
 \bibitem[Otto Robert~Frisch, 1933]{FrischStern1933}
 Otto Robert~Frisch, O.~S. (1933).
@@ -36,14 +38,9 @@ Rutherford, P. S.~E. (1919).
 \newblock Collision of $\alpha$ particles with light atoms. an anomalous effect in nitrogen.
 \newblock {\em The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science}, 37:581--587.
 
-\bibitem[Weinberg, 2004]{Weinberg2004}
-Weinberg, S. (2004).
-\newblock The making of the standard model.
-\newblock {\em The European Physical Journal C}, 34(1):5–13.
-
-\bibitem[Zweig, 1964]{Zweig1964}
-Zweig, G. (1964).
-\newblock An $su_3$ model for strong interaction symmetry and its breaking.
-\newblock {\em CERN}, CERN-TH-401:1--24.
+\bibitem[Smorra et~al., 2017]{Smorra2017}
+Smorra, C. et~al. (2017).
+\newblock A parts--per--billion measurement of the antiproton magnetic moment.
+\newblock {\em Nature}, 550:371--374.
 
 \end{thebibliography}
