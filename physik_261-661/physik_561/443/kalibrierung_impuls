@@ -1,0 +1,8 @@
+F = 21.18322 +- 0.00001 MHz (Q, I (Magnetfeld) Synthesizer)
+F = 21.18308 +- 0.00001 MHz (besser, justage an pi puls)
+
+pi puls: A_len = 4.84e-6 s 
+        Höhe = Delta Y = .085625+-0.007 V
+
+pi/2 puls: A_len = 2.42e-6 s
+        Höhe = Delta Y = 1.483 V

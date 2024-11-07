@@ -1,0 +1,34 @@
+# polarisationszurückgewinnung
+# offset 30mV aber Y1 bei offset Y2 bei wert -> Delta gemessen also kein offset in den werten
+# tau [ms] | Amplitude [mV] Delta: 10mv
+7 1240
+10 1080
+13 920
+16 750
+20 560
+25 330
+30 130
+40 210
+45 340
+50 460
+60 660
+70 810
+80 940
+90 1040
+100 1120
+110 1200
+120 1270
+130 1320
+140 1370
+150 1390
+160 1430
+170 1460
+180 1500
+190 1500
+200 1500
+250 1500
+300 1500
+350 1500
+400 1500
+450 1500
+500 1500
