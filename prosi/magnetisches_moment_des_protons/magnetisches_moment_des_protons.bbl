@@ -1,6 +1,16 @@
 \begin{thebibliography}{}
 
-\bibitem[Bloom et~al., 1969]{bloom1969}
+\bibitem[Wik, a]{WikiProton}
+Proton.
+\newblock \url{https://en.wikipedia.org/wiki/Proton}.
+\newblock Letzter Zugriff: 2024-11-10.
+
+\bibitem[Wik, b]{WikiPion}
+Proton.
+\newblock \url{https://en.wikipedia.org/wiki/Pion}.
+\newblock Letzter Zugriff: 2024-11-10.
+
+\bibitem[Bloom et~al., 1969]{Bloom1969}
 Bloom et~al. (1969).
 \newblock Observed behavior of highly inelastic electron--proton scattering.
 \newblock {\em Phys.\ Rev.\ Lett.}, 23:935--939.
@@ -37,6 +47,12 @@ Otto Robert~Frisch, O.~S. (1933).
 Rutherford, P. S.~E. (1919).
 \newblock Collision of $\alpha$ particles with light atoms. an anomalous effect in nitrogen.
 \newblock {\em The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science}, 37:581--587.
+
+\bibitem[Schmidt, 2014]{Schmidt2014}
+Schmidt, S. (2014).
+\newblock Elektron--proton streuung.
+\newblock {\em Seminar Präzessionsexperimente der Teilchenphysik; Univeristät Heidelberg}.
+\newblock Letzter Zugriff 2024-11-11.
 
 \bibitem[Smorra et~al., 2017]{Smorra2017}
 Smorra, C. et~al. (2017).
