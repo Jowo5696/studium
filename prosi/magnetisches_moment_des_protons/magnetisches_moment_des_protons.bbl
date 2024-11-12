@@ -1,13 +1,18 @@
 \begin{thebibliography}{}
 
-\bibitem[Wik, a]{WikiProton}
-Proton.
-\newblock \url{https://en.wikipedia.org/wiki/Proton}.
-\newblock Letzter Zugriff: 2024-11-10.
+\bibitem[Wik, a]{WikiMRI}
+Magnetic resonance imaging.
+\newblock \url{https://en.wikipedia.org/wiki/magnetic_resonance_imaging}.
+\newblock Letzter Zugriff: 2024-11-11.
 
 \bibitem[Wik, b]{WikiPion}
-Proton.
+Pion.
 \newblock \url{https://en.wikipedia.org/wiki/Pion}.
+\newblock Letzter Zugriff: 2024-11-10.
+
+\bibitem[Wik, c]{WikiProton}
+Proton.
+\newblock \url{https://en.wikipedia.org/wiki/Proton}.
 \newblock Letzter Zugriff: 2024-11-10.
 
 \bibitem[Bloom et~al., 1969]{Bloom1969}
