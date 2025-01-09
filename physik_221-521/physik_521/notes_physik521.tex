@@ -1,0 +1,103 @@
+%{{{ Formatierung
+
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{physics_notetaking}
+
+%%% dark red
+%\definecolor{bg}{RGB}{60,47,47}
+%\definecolor{fg}{RGB}{255,244,230}
+%%% space grey
+%\definecolor{bg}{RGB}{46,52,64}
+%\definecolor{fg}{RGB}{216,222,233}
+%%% purple
+%\definecolor{bg}{RGB}{69,0,128}
+%\definecolor{fg}{RGB}{237,237,222}
+%\pagecolor{bg}
+%\color{fg}
+
+\newcommand{\td}{\,\text{d}}
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+\newcommand{\id}{1\kern-.258em1}
+
+\newcommand\inlineeqno{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnoa{(\theequation.\text{a})}
+\newcommand\inlineeqnob{(\theequation.\text{b})}
+\newcommand\inlineeqnoc{(\theequation.\text{c})}
+
+\newcommand\inlineeqnowo{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnowoa{\theequation.\text{a}}
+\newcommand\inlineeqnowob{\theequation.\text{b}}
+\newcommand\inlineeqnowoc{\theequation.\text{c}}
+
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+%\renewcommand*\contentsname{Contents}
+
+\iffalse\newenvironment{Figure}
+        {\par\medskip\noindent\minipage{\linewidth}}
+        {\endminipage\par\medskip}\fi % for multicols figures
+
+\pagestyle{fancy}
+
+\sloppy
+
+\numberwithin{equation}{section}
+
+%}}}
+
+\begin{document}
+
+%{{{ Titelseite
+
+\iffalse\begin{titlepage}
+        \title{}
+        \author[1]{\thanks}
+        \affil{}
+\end{titlepage}\fi
+
+\title{physik521 $|$ Notizen}
+\author{Jonas Wortmann}
+
+\maketitle
+\pagenumbering{gobble}
+
+%}}}
+
+\clearpage
+
+%{{{ Inhaltsverzeichnis
+
+\fancyhead[R]{\leftmark}
+%\fancyhead[R]{\leftmark\\\rightmark}
+\fancyhead[L]{\thepage}
+\fancyfoot[C]{}
+
+\tableofcontents
+
+%}}}
+
+\clearpage
+
+%{{{
+
+\pagenumbering{arabic}
+
+%\begin{multicols}{2}
+%\sloppy
+
+asdf
+
+
+%\end{multicols}
+
+%\clearpage
+%\listoffigures
+%\listoftables
+%\bibliographystyle{plain}
+%\bibliography{refs}
+
+%}}}
+
+\end{document}
