@@ -1,0 +1,54 @@
+\RequirePackage{amsthm} %https://tex.stackexchange.com/questions/687324/unknown-theoremstyle-warning-with-springer-nature-template
+\documentclass[sn-mathphys-num,iicol]{sn-jnl}
+
+%\usepackage{sn-jnl.sty}
+\usepackage{graphicx}%
+\usepackage{multirow}%
+\usepackage{amsmath,amssymb,amsfonts}%
+\usepackage{amsthm}%
+\usepackage{physics}
+\usepackage{siunitx}
+\usepackage{mathrsfs}%
+\usepackage[title]{appendix}%
+\usepackage{xcolor}%
+\usepackage{textcomp}%
+\usepackage{manyfoot}%
+\usepackage{booktabs}%
+\usepackage{algorithm}%
+\usepackage{algorithmicx}%
+\usepackage{algpseudocode}%
+\usepackage{listings}%
+\usepackage{newtxmath}%
+\usepackage[tiny]{titlesec}%
+\usepackage[ngerman]{babel}
+
+\theoremstyle{thmstyleone}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{thmstyletwo}
+\newtheorem{remark}{Remark}
+
+\theoremstyle{thmstylethree}
+\newtheorem{definition}{Definition}
+
+\raggedbottom
+
+\newcommand{\td}{\text{d}}
+
+\titleformat{\subsection}{}{\thesubsection}{1em}{\itshape}
+\titleformat{\subsubsection}{}{\thesubsubsection}{1em}{\itshape}
+
+\begin{document}
+        
+\title[]{title}
+\author*[1]{\fnm{Jonas} \sur{Wortmann}}\email{s02jwort@uni-bonn.de}
+\affil*[1]{Rheinische Friedrich--Wilhelms--Universität, Bonn}
+
+\maketitle
+
+Hello test
+
+%\bibliography{refs}
+
+\end{document}
