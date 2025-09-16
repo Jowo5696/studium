@@ -1,0 +1,65 @@
++--------+
+| theo 4 |
++--------+
+
+THEMEN
+  | Thermodynamik
+    -> Hauptsätze
+    -> Fundamentalrelation
+      - Potentiale . Legendre
+      - Maxwell Relationen
+      - Gibbs-Duhem Relation
+      - response Funktion
+    -> Zustandsvariablen
+      - exakte Differentiale
+      - extensiv / intensiv
+    -> Carnot-Prozess
+      - Wirkungsgrad
+      - Temperaturdefinition
+
+  | Statistik
+    -> Ensemble
+      - Ergodenhypothese
+      - Mikrozustand
+      - Zustände . rein & gemischt
+      - Dichtematrix . reduziert
+      - mikrokanonisch
+      - kanonisch
+      - großkanonisch
+    -> Zustandssumme
+    -> Wahrscheinlichkeitsverteilung
+      - Zustandsdichte
+      - Lagrange Multiplikatoren
+    -> Entropie
+      - Gibbs Paradox
+
+  | Zusammenhang Thermodynamik Statistik
+    -> Temperatur
+    -> Energie
+    -> Boltzmann Konstante
+
+  | zweite Quatisierung
+    -> Wellenfunktion
+    -> Besetzungszahldarstellung / zweite Quantisierung
+      - Zustandssumme
+    -> ideale Systeme
+      - 2 Niveau
+      - ideales Gas
+      - harmonischer Oszillator
+      - ...
+
+  | identische Teilchen
+    -> Abzählung
+    -> Fermi-Dirac
+      - Zustandsdichte
+      - Sommerfeld
+    -> Bose-Einstein
+      - Dimensionsabhängigkeit
+
+  | Quantenstatistik
+    -> Phasenübergänge
+      - kritische Punkte
+    -> Äquipartitionsprinzip / Virialsatz
+    -> Ising Modell
+    -> Mean Field
+    -> Ginzburg Landau

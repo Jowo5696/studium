@@ -1,0 +1,43 @@
++--------+
+| theo 1 |
++--------+
+
+THEMEN
+  | Newton
+    -> Axiome
+    -> Inertialsystem
+      - Scheinkräfte
+    -> konservative Kräfte
+    -> Impuls- / Schwerpunktsatz
+    -> Drehimpuls / -moment
+    -> Kepler / Zentralkraftproblem
+      - 2 & 3 Körper Problem
+      - Lösung im SP
+    -> Galileitransformation
+
+  | Lagrange Formalismus
+    -> d'Almbert
+    -> Lagrange
+      - Wirkung / Hamilton'sches Prinzip . Lagrange 2. Art
+      - Zwangskräfte . Lagrange Multiplikatoren . Lagrange 1. Art
+    -> Noether
+      - Eichinvarianz der Lagrangefunktion
+      - Noether-Ladung
+
+  | Hamilton Formaslimus
+    -> Hamilton
+      - Legendre
+      - kanonische Transformationen
+      - Phasenraum
+      - symplektische Form
+    -> Poisson Klammern
+      - Drehimpulse (?)
+    -> Hamilton-Jacobi
+
+  | Phasenraum
+    -> Liouville (see Pathria)
+
+  | Störungstheorie
+
+  | starre Körper
+    -> Euler Winkel

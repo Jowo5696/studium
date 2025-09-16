@@ -1,0 +1,398 @@
+\documentclass[a4paper,10pt]{article}
+
+%{{{ packages
+\usepackage{blindtext}
+\usepackage{lipsum}
+\usepackage[ngerman]{babel}
+\usepackage[tiny]{titlesec}
+\usepackage{index}
+\usepackage[onehalfspacing]{setspace}
+\usepackage{fullpage}
+\usepackage{pdfpages}
+\usepackage{fancyhdr}
+\usepackage{authblk}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,allcolors=blue}
+
+%\usepackage{tabulary}
+%\usepackage{tabularx}
+\usepackage{booktabs}%toprule,midrule,bottomrule
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage[european,siunitx]{circuitikz}
+\usepackage{graphicx}
+\usepackage{svg} %\includesvg{}
+\usepackage{import} % can import files from other directories
+\usepackage{longtable}
+\usepackage{pgfplots}
+\usepackage{gnuplottex}
+\usepackage{wrapfig}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{tensor} %for indices
+\usepackage{dsfont} % double stroke font
+\usepackage{cancel} % cancel in frac
+\usepackage{bm} % bold math font (if error is produced use \bm{{}})
+\usepackage{mathtools}
+\usepackage[ISO]{diffcoeff}
+\usepackage[locale=DE]{siunitx}
+\usepackage[official]{eurosym}
+%\usepackage{mathrsfs} % calligraphy font
+\usepackage{physics}
+\usepackage[a]{esvect}
+\usepackage{bigints}
+%\usepackage[frak=esstix]{mathalpha} % disable if LaTeX uses too many alphabets
+\usepackage{siunitx}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{listings}
+
+\usepackage{babel}
+\usepackage{hyphsubst}
+\usepackage{caption}
+\usepackage{xr} % crossreferencing between documents \externaldocument{}
+\usepackage{enumitem} % for enumerate environment
+\usepackage{lineno}
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{color}
+
+\allowdisplaybreaks % allows equations to be broken (e.g. by multicols)
+
+\usetikzlibrary{arrows}
+\pgfplotsset{compat=1.15}
+
+\newcommand{\td}{\,\text{d}}
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+\newcommand{\id}{1\kern-.36em1}
+
+\newcommand\inlineeqno{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnoa{(\theequation.\text{a})}
+\newcommand\inlineeqnob{(\theequation.\text{b})}
+\newcommand\inlineeqnoc{(\theequation.\text{c})}
+
+\newcommand\inlineeqnowo{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnowoa{\theequation.\text{a}}
+\newcommand\inlineeqnowob{\theequation.\text{b}}
+\newcommand\inlineeqnowoc{\theequation.\text{c}}
+
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+
+\iffalse\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}\fi % for multicols figures
+
+%\pagestyle{fancy}
+
+\sloppy
+
+\numberwithin{equation}{section}
+
+\titleformat{\subsection}{}{\thesubsection}{1em}{\itshape}
+\titleformat{\subsubsection}{}{\thesubsubsection}{1em}{\itshape}
+
+%}}}
+
+\begin{document}
+
+%{{{ Titelseite
+
+\begin{titlepage}
+  \title{Statistical Mechanics}
+  \author{Jonas Wortmann\thanks{s02jwort@uni-bonn.de}}
+  \affil{Rheinische Friedrich--Wilhelms--Universität Bonn}
+\end{titlepage}
+
+\maketitle
+\pagenumbering{gobble}
+
+\renewcommand\abstractname{Abstract}
+\abstract{\noindent This work is a short summary on the derivation of the methods of statistical mechanics as well as its application to various systems whether they be discrete or continuous.}
+
+%}}}
+
+%\clearpage
+
+%{{{ Inhaltsverzeichnis
+
+\fancyhead[R]{\leftmark}
+%\fancyhead[R]{\leftmark\\\rightmark}
+\fancyhead[L]{\thepage}
+\fancyfoot[C]{}
+
+\renewcommand\contentsname{Contents}
+\tableofcontents
+
+%}}}
+
+%\clearpage
+
+\vspace{1em}
+\hrule
+
+\begin{multicols}{2}
+
+%{{{
+
+\pagenumbering{arabic}
+
+% {{{ Ensemble Theory
+\section{Ensemble Theory}
+Imagine one would like to study the microscopic behaviour of a many particle system.
+It is impossible to solve the equations of motions for every particle analytically, thus one has to rely on probability theory and statistical mechanics.
+For a system one can therefore measure macroscopic quantities e.g.\ pressure, volume or temperature.
+A set of these quantities with certain values makes out the macrostate of the system.
+On the microscopic scale (i.e.\ positions, momenta) however, it is possible to realize this macrostate in many ways.
+A state which realizes a certain macrostate is called a microstate $\left(=:\mathfrak{m}\right)$.
+There is often more than one microstate to correspond to / realize a certain macrostate.
+For a many particle system made up of $N$ particles, a microstate is a single point in a $6N$ dimensional phase space with $3N$ positions and $3N$ momenta.
+The time evolution is a single curve through this phase space, thus a series of different microstates (which each have to realize the same macrostate).
+One can imagine a gas inside a box: The positions of all gas particles will change over time however the volume will always stay the same.
+
+To study the macrostate from a microstate one can take a time average average of all microstates which have been on the trajectory.
+Instead one could also make use of the ergodic theorem and average a multitude of identically prepared system to achieve the same average.
+The set of all identically prepared systems are then called an ensemble.
+These systems are, in general, only imaginary copies of a single system and they are considered in the calculation as possible microstates for a system (i.e.\ they don't have to be considered as a separate system for which there are neccessary calculation to do).
+The use of this theory is not apparent when one considers a precisely known macroscopic system i.e.\ all macrostates are fixed.
+However, if one only fixes a certain amount of macrostates and leaves e.g.\ the energy to be arbitrary, then the restriction on the phase space trajectory is lifted in that dimension and the microstates allow for an arbitrary range of energies.
+Then one can utilise the methods of the theory to calculate the average energy of such a system by summing over all energies (which are realized in a certain microstate) and weighing them with a probability function.
+%}}}
+
+%{{{ Probability Distribution and Partition Sum
+\section{Probability Distribution and Partition Sum}
+
+%{{{ Derivation
+\subsection{Derivation}
+Imagine a certain set of available data or information about a probability distribution:
+To derive the underlying distribution function, the best model is the one, which only assumes the least amount of knowledge about it.
+Thus, to find a suitable probability distribution which models the microstates for a given macrostate one maximizes the entropy (principle of maximal entropy), since the entropy encodes the lack of information on a system (or, in this case, is proportional to the amount of available microstates).
+
+The entropy is given by
+\begin{align} 
+  S = -k_B\sum_{i}^{}p_i \ln p_i\equiv -k_B\text{tr}\left(\rho \ln \rho \right)
+,\end{align} 
+with $p_i$ being the probability that the $i^{\text{th}}$ microstate is realized and $\rho $ being the density matrix.
+The only constraints are that the probability distribution may be normalized and that it is used to calculate the average value of any observable $A^l$ 
+\begin{align} 
+  f_0 &= \sum_{i}^{}p_i-1=0 & f_l &= \sum_{i}^{}p_iA^l_i-\left\langle A^l_i\right\rangle =0
+,\end{align} 
+while the sum of $f_l$ ranges over all $i$ microstates with their corresponding value of $A_i^l$.
+The Lagrangian is
+\begin{align} 
+  \mathcal{L} &= S - k_B\lambda _0f_0 - k_B\sum_{l}^{}\lambda _lf_l\\
+              &\begin{multlined}
+              = -k_B\sum_{i}^{}p_i\ln p_i - k_B\lambda _0\left(\sum_{i}^{}p_i-1\right) \\- k_B\sum_{l}^{}\lambda _l\left(\sum_{i}^{}p_iA_i^l-\left\langle A^l\right\rangle \right)
+              \end{multlined}
+.\end{align} 
+Now taking the variation w.r.t.\ to all $p_i$ equal to zero
+\begin{multline}
+  \delta _{p_i}\mathcal{L} = k_B\left(-\sum_{i}^{}\ln p_i - \sum_{i}^{}1 - \lambda _0\sum_{i}^{}1 \right.\\ -\left.\sum_{l}^{}\lambda _l \sum_{i}^{}A_i^l\right)\delta p_i=0
+.\end{multline}
+Exchanging $\sum_{l}^{}$ and $\sum_{i}^{}$ in the last term and taking $\sum_{i}^{}$ out of the parentheses yields
+\begin{align} 
+  -\ln p_i - 1 - \lambda _0 - \sum_{l}^{}\lambda _lA^l_i &= 0
+,\end{align} 
+because $\delta _{p_i}\mathcal{L}=0\,\forall \delta p_i$ independently.
+\begin{align} 
+  p_i &= \text{e}^{-(1 + \lambda _0) - \sum_{l}^{}\lambda _lA_i^l} = \text{e}^{-(1+\lambda _0)}\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}
+.\end{align} 
+The normalisation multiplier yields
+\begin{align} 
+  \sum_{i}^{}p_i &= \sum_{i}^{}\text{e}^{-(1+\lambda _0)}\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}\\
+                 &= \text{e}^{-(1+\lambda _0)}\sum_{i}^{}\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}\\
+                 &= 1\\
+  \Leftrightarrow \text{e}^{-(1+\lambda _0)} &= \dfrac{1}{\sum_{i}^{}\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}}=:\dfrac{1}{Z}
+.\end{align} 
+Thereby
+\begin{align} 
+  p_i=\dfrac{\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}}{\sum_{i}^{}\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}}=\dfrac{\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}}{Z}
+.\end{align} 
+The other Lagrange multiplier yields
+\begin{align} 
+  \sum_{i}^{}p_iA_i^l &= \sum_{i}^{}\dfrac{\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}}{\sum_{i}^{}\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}}A_i^l\\
+                      &= \dfrac{1}{Z}\sum_{i}^{}\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}A_i^l\\
+                      &= -\dfrac{1}{Z}\diffp*[]{\sum_{i}^{}\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}}{\lambda _l}\\
+                      &= -\diffp[]{\ln Z}{\lambda _l} = \left\langle A^l\right\rangle 
+.\end{align} 
+The relation $-\diffp[]{\ln Z}{\lambda _l} = \left\langle A^l\right\rangle $ is used to determine the Lagrange multiplier.
+It is also useful to know
+\begin{align} 
+  \diffp[2]{\ln Z}{\lambda _l} &= \left\langle A^l\right\rangle ^2-\left\langle {A^l}^2\right\rangle \\
+  \diffp[]{\ln Z}{\lambda _k,\lambda _l} &= \left\langle A^lA^k\right\rangle -\left\langle A^l\right\rangle \left\langle A^k\right\rangle 
+.\end{align}
+Recall the general formula for entropy
+\begin{align} 
+  S &= -k_B\sum_{i}^{}p_i\ln p_i\\
+    &= -k_B\left\langle \ln p_i\right\rangle \\
+    &= k_B\left\langle \ln Z\right\rangle -k_B\left\langle \ln \text{e}^{-\sum_{l}^{}\lambda _lA^l_i}\right\rangle \\
+    &= k_B\ln Z + k_B\left\langle \sum_{l}^{}\lambda _lA_i^l\right\rangle \\
+    &= k_B\ln Z + k_B\sum_{l}^{}\lambda _l\left\langle A_i^l\right\rangle \\
+    &= k_B\ln Z - k_B\sum_{l}^{}\lambda _l\diffp[]{\ln Z}{\lambda _l}
+,\end{align} 
+with $\left\langle A_i^l\right\rangle =\left\langle A^l\right\rangle $ since !TODO!.
+
+Consider the derivative of $S$ w.r.t.\ $\left\langle A^l\right\rangle $ and choose $A=E$ with $\lambda =\beta $ as the energy
+\begin{align} 
+  \diffp[]{S}{\left\langle E\right\rangle } &= k_B\beta =\dfrac{1}{T}\Leftrightarrow \beta =\dfrac{1}{k_BT}
+\end{align} 
+by comparison with the thermodynamic potential of the entropy and its derivatives\footnote{The assumption $U=\left\langle E\right\rangle $ is phenomenological and not rigorous; another way to show this would be by calculating the total differential $\td S$.}.
+If one were to set $A=N$ and $\lambda =\alpha $ as the particle number
+\begin{align} 
+  \diffp[]{S}{\left\langle N\right\rangle }=k_B\alpha =-\dfrac{\mu }{T}\Leftrightarrow \alpha =-\dfrac{\mu }{k_BT}
+.\end{align} 
+
+%}}}
+
+%{{{ Microcanonical Ensemble
+\subsection{Microcanonical Ensemble}
+The ensemble is specified to have a fixed pressure, volume, energy and particle number.
+Because all observables are fixed, only the normalisation constraint $\sum_{i}^{}p_i-1=0$ has to be fulfilled.
+Thus
+\begin{align} 
+  p_i=\dfrac{1}{Z}=\dfrac{1}{\Omega }
+,\end{align} 
+with $\Omega =\sum_{\mathfrak{m}}^{}1$ the amount of available microstates or the dimension of the Hilbert space.
+The entropy is
+\begin{align} 
+  S &= -k_B\sum_{i}^{}p_i\ln p_i=-k_B\left\langle \ln p_i\right\rangle =k_B\ln \Omega 
+,\end{align} 
+which is also a suitable thermodynamic potential.
+%}}}
+
+%{{{ Canonical Ensemble
+\subsection{Canonical Ensemble}
+The ensemble is specified to have a fixed pressure, volume, temperature and particle number resulting in an unknown energy value, whose mean has to be calculated.
+The probability that a certain microstate $\mathfrak{m}$ realizes a macrostate whose energy is $E_\mathfrak{m}$ is given by
+\begin{align} 
+  p_\mathfrak{m} &= \dfrac{\text{e}^{-\beta E_\mathfrak{m} }}{\sum_{\mathfrak{m}}^{}\text{e}^{-\beta E_\mathfrak{m} }}\qquad \left\langle E\right\rangle =\sum_{\mathfrak{m}}^{}p_\mathfrak{m}E_\mathfrak{m}
+,\end{align} 
+which in turn results in the average energy value $\left\langle E\right\rangle $.
+The distribution is normalized by the partition function (the sum can also the form of an integral in the classical continuous sense)
+\begin{align} 
+  Z &= \sum_{\mathfrak{m}}^{}\text{e}^{-\beta E_\mathfrak{m}}
+\end{align} 
+which accounts for all possible values the energy $E$ can take, i.e.\ all possible microstates which have to realize the macrostate $\left(P,V,T\right)$ but are free to take whatever value in $E$.
+
+The entropy is given by
+\begin{align} 
+  S &= -k_B\sum_{i}^{}p_i\ln p_i\\
+    &= -k_B\sum_{i}^{}p_i\left(-\beta E_i-\ln Z\right)\\
+    &= k_B\beta \left\langle E\right\rangle +k_B\ln Z\\
+    &= \dfrac{U}{T}+k_B\ln Z \label{eq:entropy_partition_sum}
+.\end{align} 
+To calculate thermodynamic properties the suitable potential is the free energy 
+\begin{align} 
+  F=U-TS \Leftrightarrow S=\dfrac{U}{T}-\dfrac{F}{T}
+.\end{align} 
+By using (\ref{eq:entropy_partition_sum})
+\begin{align} 
+  F=-k_BT\ln Z
+\end{align} 
+and with
+\begin{align} 
+  \td F &= -S\td T-p\td V+\mu \td N
+,\end{align} 
+thermodynamic properties can be calculated from the microscopic partition sum.
+%}}}
+
+%{{{ Example: Dipoles in a Magnetic Field
+\subsubsection{Example: Dipoles in a Magnetic Field}
+As an example consider a system of $N$ dipoles (non-interacting, localized, freely orientable) in a magnetic field.
+\begin{align} 
+          Z &= \sum_{\mathfrak{m}}^{}\text{e}^{-\beta E_\mathfrak{m}}\\
+            &= \sum_{ \left\{\theta \right\}}^{}\text{e}^{\sum_{i}^{}h\cos \theta _i}\\
+            &= \sum_{ \left\{\theta \right\}}^{}\prod_{i}^{}\text{e}^{h\cos \theta _i}\\
+            &= \sum_{\theta _1}^{}\sum_{\theta _2}^{}\hdots \sum_{\theta _N}^{}\text{e}^{h\cos \theta _1}\text{e}^{h\cos \theta _2}\hdots \text{e}^{h\cos \theta _N}\\
+            &= \sum_{\theta _1}^{}\text{e}^{h\cos \theta _1}\sum_{\theta _2}^{}\text{e}^{h\cos \theta _2}\hdots \sum_{\theta _N}^{}\text{e}^{h\cos \theta _N} \label{eq:factorization}\\
+            &= \prod_{i}^{}\sum_{\theta _i}^{}\text{e}^{h\cos \theta _i}\\
+            &= \left(\sum_{\theta }^{}\text{e}^{h\cos \theta }\right)^N\\
+            &= \left(Z_1\right)^N
+.\end{align} 
+The factorization of $Z$ in (\ref{eq:factorization}) is only possible because the dipoles are non-interacting; there are no $\theta _{ij}$ factors which would make it impossible to split the product that way.
+A microstate $\mathfrak{m}$ of this system is able to realize a certain macrostate $\left(P,V,T\right)$ with arbitrary energy $E_\mathfrak{m}$.
+The energy of the system or that a microstate $\mathfrak{m}$ can take is $E_\mathfrak{m}=\sum_{i}^{N}\varepsilon _i=h\sum_{i}^{}\cos \theta _i$ the sum of all individual dipole energies, which is a proportionality factor times the cosine of the angle relative to the magnetic field (thus the degree of freedom is the angle relative to the applied field).
+Since system consists of $N$ dipoles and it is possible for every dipole to have every possible rotation for every possible rotation for every $N-1$ other dipole, the available microstates are
+\begin{align} 
+  \sum_{\mathfrak{m}}^{}=\sum_{\theta _1}^{}\sum_{\theta _2}^{}\hdots \sum_{\theta _N}^{}
+,\end{align} 
+with $\sum_{\theta _i}^{}$ summing over all possible values for the angle of the $i^{\text{th}}$ dipole.
+This is also written as $\sum_{\mathfrak{m}}^{}=\sum_{ \left\{\theta \right\}}^{}$ (or sometimes as $=\sum_{\theta }^{}$ which might be misleading in some cases).
+To analyse further one can treat this in the classical sense and have the values of $\theta $ be continuous (if they were dicrete one would leave $Z_1$ as it is)
+\begin{align} 
+  Z_1 &= \int_{0}^{2\pi }\td \phi \int_{0}^{\pi }\td \theta \text{e}^{h\cos \theta }=4\pi \dfrac{\sinh h}{h}
+.\end{align}
+The $\phi $ angle lies in the plane perpendicular to the magnetic field and has to be accounted for since the dipole does not need to lie in a plane.
+
+If one were to use the energies $\varepsilon _i$ as a label instead the sum would look like
+\begin{align} 
+  \sum_{\mathfrak{m}}^{}=\sum_{\varepsilon _1}^{}\sum_{\varepsilon _2}^{}\hdots \sum_{\varepsilon _N}^{}
+,\end{align} 
+with $E_\mathfrak{m}=\sum_{i}^{N}\varepsilon _i$ as above.
+%}}}
+
+%{{{ Example: Harmonic Oscillator
+\subsubsection{Example: Harmonic Oscillator}
+This could also be used for a non-interacting set of harmonic oscillators in which the label for the energy would be $n$ the harmonic quantum number
+\begin{align} 
+  \sum_{\mathfrak{m}}^{}=\sum_{n_1}^{}\sum_{n_2}^{}\hdots \sum_{n_N}^{}
+,\end{align} 
+with $E_\mathfrak{m}=\sum_{i}^{N}\hbar \omega \left(n_i+\tfrac{1}{2}\right)$.
+The total partition function is given by
+\begin{align} 
+  Z &= \sum_{\mathfrak{m}}^{}\text{e}^{-\beta E_\mathfrak{m}}\\
+    &= \sum_{ \left\{n\right\}}^{}\text{e}^{-\beta \sum_{i}^{N}\hbar \omega (n_i+\tfrac{1}{2})}
+.\end{align} 
+Since they are all non-interacting the partition function factorizes
+\begin{align} 
+  Z &= Z_1^N\\
+    &= \left(\sum_{n_i}^{}\text{e}^{-\beta \hbar \omega \left(n_i+\tfrac{1}{2}\right)}\right)^N\\
+    &= \text{e}^{-\hbar \omega \tfrac{N}{2}}\left(\sum_{n_i}^{}\text{e}^{-\beta \hbar \omega n_i}\right)^N\\
+    &= \text{e}^{-\hbar \omega \tfrac{N}{2}}\left(\sum_{n_i}^{}\left(\text{e}^{-\beta \hbar \omega }\right)^{n_i}\right)^N
+.\end{align} 
+Now 
+\begin{align} 
+  \text{e}^{-\beta \hbar \omega }=\tfrac{1}{\text{e}^{\beta \hbar \omega }}<1 \Leftrightarrow \ln(1)=0<\beta \hbar \omega 
+\end{align} 
+which is always the case.
+Then the series converges
+\begin{multline} 
+    \text{e}^{-\hbar \omega \tfrac{N}{2}}\left(\sum_{n_i}^{}\left(\text{e}^{-\beta \hbar \omega }\right)^{n_i}\right)^N \\= \text{e}^{-\hbar \omega \tfrac{N}{2}}\left(\dfrac{1}{1-\text{e}^{-\beta \hbar \omega }}\right)^N
+.\end{multline} 
+Also
+\begin{align} 
+  \dfrac{1}{1-\text{e}^{-x}} &= \dfrac{1}{\text{e}^{-x/2}\left(\text{e}^{x/2}-\text{e}^{-x/2}\right)}=\dfrac{\text{e}^{x/2}}{\text{e}^{x/2}-\text{e}^{-x/2}}\\
+                             &= \dfrac{\text{e}^{x/2}}{2\sinh x}
+.\end{align} 
+Thereby
+\begin{align} 
+  Z &= \text{e}^{-\hbar \omega \tfrac{N}{2}}\left(\dfrac{\text{e}^{\hbar \omega /2}}{\sinh \left(\beta \hbar \omega \right)}\right)^N\\
+    &= \sinh \left(\beta \hbar \omega \right)^{-N}=\dfrac{1}{\sinh \left(\beta \hbar \omega \right)^N}
+.\end{align} 
+%}}}
+
+%{{{ Grand Canonical Ensemble
+\subsection{Grand Canonical Ensemble}
+The ensemble is specified to have a fixed pressure, volume and temperature resulting in an unknown energy and particle number.
+It is simply the canonical ensemble but with varying / unspecified particle number.
+The probability that a certain microstate $\mathfrak{m}$ realizes a macrostate whose particle number is $N$ and energy $E_\mathfrak{m}^N$ (the energy depends on the particle number) is then given by
+\begin{align} 
+  p_\mathfrak{m} &= \dfrac{\text{e}^{-\beta E_\mathfrak{m}^N+\alpha N}}{\sum_{\mathfrak{m}}^{}\text{e}^{-\beta E_\mathfrak{m}^N+\alpha N}}
+\end{align} 
+
+%}}}
+
+%}}}
+
+\end{multicols}
+
+%\clearpage
+%\listoffigures
+%\listoftables
+%\bibliographystyle{plain}
+%\bibliography{refs}
+
+%}}}
+
+\end{document}
