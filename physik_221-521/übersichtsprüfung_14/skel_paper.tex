@@ -109,7 +109,8 @@
 \pagenumbering{gobble}
 
 \renewcommand\abstractname{Abstract}
-\abstract{\noindent This work is a short summary on the derivation of the methods of statistical mechanics as well as its application to various systems whether they be discrete or continuous.}
+\abstract{\noindent This work is a short summary on the derivation of the methods of statistical mechanics as well as its application to various systems whether they be discrete or continuous.
+The focus is on ensemble theory.}
 
 %}}}
 
@@ -123,7 +124,9 @@
 \fancyfoot[C]{}
 
 \renewcommand\contentsname{Contents}
+\tiny
 \tableofcontents
+\normalsize
 
 %}}}
 
@@ -171,7 +174,7 @@ Thus, to find a suitable probability distribution which models the microstates f
 
 The entropy is given by
 \begin{align} 
-  S = -k_B\sum_{i}^{}p_i \ln p_i\equiv -k_B\text{tr}\left(\rho \ln \rho \right)
+  \boxed{S = -k_B\sum_{i}^{}p_i \ln p_i\equiv -k_B\text{tr}\left(\rho \ln \rho \right)}
 ,\end{align} 
 with $p_i$ being the probability that the $i^{\text{th}}$ microstate is realized and $\rho $ being the density matrix.
 The only constraints are that the probability distribution may be normalized and that it is used to calculate the average value of any observable $A^l$ 
@@ -207,14 +210,14 @@ The normalisation multiplier yields
 .\end{align} 
 Thereby
 \begin{align} 
-  p_i=\dfrac{\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}}{\sum_{i}^{}\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}}=\dfrac{\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}}{Z}
+  \boxed{p_i=\dfrac{\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}}{\sum_{i}^{}\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}}=:\dfrac{\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}}{Z}}
 .\end{align} 
 The other Lagrange multiplier yields
 \begin{align} 
   \sum_{i}^{}p_iA_i^l &= \sum_{i}^{}\dfrac{\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}}{\sum_{i}^{}\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}}A_i^l\\
                       &= \dfrac{1}{Z}\sum_{i}^{}\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}A_i^l\\
                       &= -\dfrac{1}{Z}\diffp*[]{\sum_{i}^{}\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}}{\lambda _l}\\
-                      &= -\diffp[]{\ln Z}{\lambda _l} = \left\langle A^l\right\rangle 
+                      &= \boxed{-\diffp[]{\ln Z}{\lambda _l} = \left\langle A^l\right\rangle }
 .\end{align} 
 The relation $-\diffp[]{\ln Z}{\lambda _l} = \left\langle A^l\right\rangle $ is used to determine the Lagrange multiplier.
 It is also useful to know
@@ -229,18 +232,18 @@ Recall the general formula for entropy
     &= k_B\left\langle \ln Z\right\rangle -k_B\left\langle \ln \text{e}^{-\sum_{l}^{}\lambda _lA^l_i}\right\rangle \\
     &= k_B\ln Z + k_B\left\langle \sum_{l}^{}\lambda _lA_i^l\right\rangle \\
     &= k_B\ln Z + k_B\sum_{l}^{}\lambda _l\left\langle A_i^l\right\rangle \\
-    &= k_B\ln Z - k_B\sum_{l}^{}\lambda _l\diffp[]{\ln Z}{\lambda _l}
+\Aboxed{S &= k_B\ln Z - k_B\sum_{l}^{}\lambda _l\diffp[]{\ln Z}{\lambda _l}}
 ,\end{align} 
 with $\left\langle A_i^l\right\rangle =\left\langle A^l\right\rangle $ since !TODO!.
 
 Consider the derivative of $S$ w.r.t.\ $\left\langle A^l\right\rangle $ and choose $A=E$ with $\lambda =\beta $ as the energy
 \begin{align} 
-  \diffp[]{S}{\left\langle E\right\rangle } &= k_B\beta =\dfrac{1}{T}\Leftrightarrow \beta =\dfrac{1}{k_BT}
+  \diffp[]{S}{\left\langle E\right\rangle } &= k_B\beta =\dfrac{1}{T}\Leftrightarrow \boxed{\beta =\dfrac{1}{k_BT}}
 \end{align} 
 by comparison with the thermodynamic potential of the entropy and its derivatives\footnote{The assumption $U=\left\langle E\right\rangle $ is phenomenological and not rigorous; another way to show this would be by calculating the total differential $\td S$.}.
-If one were to set $A=N$ and $\lambda =\alpha $ as the particle number
+If one were to set $A=N$ and $\lambda =-\alpha $ as the particle number
 \begin{align} 
-  \diffp[]{S}{\left\langle N\right\rangle }=k_B\alpha =-\dfrac{\mu }{T}\Leftrightarrow \alpha =-\dfrac{\mu }{k_BT}
+  \diffp[]{S}{\left\langle N\right\rangle }=-k_B\alpha =-\dfrac{\mu }{T}\Leftrightarrow \boxed{\alpha =\dfrac{\mu }{k_BT}}
 .\end{align} 
 
 %}}}
@@ -266,7 +269,7 @@ which is also a suitable thermodynamic potential.
 The ensemble is specified to have a fixed pressure, volume, temperature and particle number resulting in an unknown energy value, whose mean has to be calculated.
 The probability that a certain microstate $\mathfrak{m}$ realizes a macrostate whose energy is $E_\mathfrak{m}$ is given by
 \begin{align} 
-  p_\mathfrak{m} &= \dfrac{\text{e}^{-\beta E_\mathfrak{m} }}{\sum_{\mathfrak{m}}^{}\text{e}^{-\beta E_\mathfrak{m} }}\qquad \left\langle E\right\rangle =\sum_{\mathfrak{m}}^{}p_\mathfrak{m}E_\mathfrak{m}
+  p_\mathfrak{m} &= \dfrac{\text{e}^{-\beta E_\mathfrak{m} }}{\sum_{\mathfrak{m}}^{}\text{e}^{-\beta E_\mathfrak{m} }} & \left\langle E\right\rangle &=\sum_{i}^{}p_iE_i
 ,\end{align} 
 which in turn results in the average energy value $\left\langle E\right\rangle $.
 The distribution is normalized by the partition function (the sum can also the form of an integral in the classical continuous sense)
@@ -288,7 +291,7 @@ To calculate thermodynamic properties the suitable potential is the free energy
 .\end{align} 
 By using (\ref{eq:entropy_partition_sum})
 \begin{align} 
-  F=-k_BT\ln Z
+  \boxed{F=-k_BT\ln Z}
 \end{align} 
 and with
 \begin{align} 
@@ -376,13 +379,157 @@ Thereby
 \subsection{Grand Canonical Ensemble}
 The ensemble is specified to have a fixed pressure, volume and temperature resulting in an unknown energy and particle number.
 It is simply the canonical ensemble but with varying / unspecified particle number.
-The probability that a certain microstate $\mathfrak{m}$ realizes a macrostate whose particle number is $N$ and energy $E_\mathfrak{m}^N$ (the energy depends on the particle number) is then given by
+The probability that a certain microstate $\mathfrak{m}$ realizes a macrostate whose particle number is $N$ and energy $E_{\mathfrak{m}(N)}$ (the energy or energy microstates depend on the particle number, which is indicated by $\mathfrak{m}(N)$) is then given by
 \begin{align} 
-  p_\mathfrak{m} &= \dfrac{\text{e}^{-\beta E_\mathfrak{m}^N+\alpha N}}{\sum_{\mathfrak{m}}^{}\text{e}^{-\beta E_\mathfrak{m}^N+\alpha N}}
+  p_\mathfrak{m} &= \dfrac{\text{e}^{-\beta E_{\mathfrak{m}(N)}+\alpha N}}{\sum_{\mathfrak{m}}^{}\text{e}^{-\beta E_{\mathfrak{m}(N)}+\alpha N}}
+,\end{align} 
+with
+\begin{align} 
+  \mathcal{Z} &= \sum_{\mathfrak{m}}^{}\text{e}^{-\beta E_{\mathfrak{m}(N)}+\alpha N}\\
+              &= \sum_{N}^{}\text{e}^{\alpha N}\sum_{\mathfrak{m}(N)}^{}\text{e}^{-\beta E_{\mathfrak{m}(N)}}\\
+              &= \sum_{N}^{}\text{e}^{\alpha N}Z_N
 \end{align} 
+and $Z_N$ the canonical partition sum for a given particle number $N$.
+The sum over all microstates has to be split into two sums $\sum_{\mathfrak{m}}^{}=\sum_{N}^{}\sum_{\mathfrak{m}(N)}^{}$.
+
+The entropie is given by
+\begin{align} 
+  S &= -k_B\sum_{i}^{}p_i\ln p_i\\
+    &= -k_B\sum_{i}^{}p_i\left(-\beta E_i+\alpha N_i-\ln \mathcal{Z}\right)\\
+    &= k_B\beta \left\langle E\right\rangle -k_B\alpha \left\langle N\right\rangle +k_B\ln\mathcal{Z}\\
+    &= \dfrac{U}{T}+\dfrac{\mu }{T}N+k_B\ln\mathcal{Z} \label{eq:entropy_grand_part_sum}
+.\end{align} 
+To calculate thermodynamic properties the suitable potential is the grand canonical potential
+\begin{align} 
+  \Phi = U-TS-\mu N\Leftrightarrow S=\dfrac{U}{T}-\dfrac{\mu }{T}N-\dfrac{\Phi }{T}
+.\end{align} 
+By using (\ref{eq:entropy_grand_part_sum})
+\begin{align} 
+  \boxed{\Phi =-k_BT\ln\mathcal{Z}}
+\end{align} 
+and with
+\begin{align} 
+  \td \Phi =-S\td T-p\td V-N\td \mu 
+\end{align} 
+thermodynamic properties can be calculated from the microscopic partition sum.
 
 %}}}
 
+%}}}
+
+%{{{ Occupation Number
+\section{Occupation Number}
+%{{{ Derivation
+\subsection{Derivation}
+It is not always wise or even correct to take identical and non-localized constituents of a system (e.g.\ particles in a gas) as distinguishable and let the change of their respective positions count as a separate microstate (see for example the Gibbs paradox).
+To calculate the correct value for the probability distribution and the partition sum of indistinguishable particles one has to use the theory of occupation numbers.
+
+Consider a quantum gas made up of such indistinguishable particles on different energy levels.
+These particles will either be Fermions or Bosons.
+The levels / energies are labeled as $\varepsilon _1,\varepsilon _2,\varepsilon _3,\hdots $.
+The information the occupation number $n_1,n_2,n_3,\hdots $ tells is "How many particles $n_i$ are on the energy level $\varepsilon _i$?".
+As a result, when two particles swap their energies (i.e.\ particle $A$ goes from $\varepsilon _A$ to $\varepsilon _B$ and particle $B$ goes from $\varepsilon _B$ to $\varepsilon _A$) it will not be counted as a separate state because the only indicator for a distinguished state is the occupation number, which will not have changed.
+For Fermions $n_i  \in \left[0,1\right]$ and for Bosons $n_i  \in [0,\infty)$ due to the Pauli principle.
+
+The occupation number is useful in the grand canonical ensemble since the particle number is not fixed.
+This makes the calculation easier to do because every particle does not need to be counted individually but only the number of particles per energy level.
+\footnote{Occupation numbers can also be used in a canonical system, but the constraint $N=\text{const}$ will make the sum over the occupation numbers dependend on each other such that there is no overcounting.
+This makes executing the sum difficult (but not impossible).}
+The partition sum in general is
+\begin{align} 
+  \mathcal{Z} &= \sum_{\mathfrak{m}}^{}\text{e}^{-\beta E_{\mathfrak{m}(N)}+\alpha N}
+.\end{align} 
+Now the energy is not the particle energy sum but rather
+\begin{align} 
+  E_\mathfrak{m}(N)=\sum_{i}^{}\varepsilon _i n_i
+\end{align} 
+the sum over all energy levels (denoted by $\varepsilon _i$) and their respective occupation number (denoted by $n_i$) which is the amount of particles on that energy level.
+The total number of particles within the system is therefore
+\begin{align} 
+  N=\sum_{i}^{}n_i
+.\end{align} 
+The sum over all microstates is not the sum over all states of each individual particle (as e.g.\ a sum over all quantum numbers a single particle can have, or all available angles to a single dipole) but rather the sum over all values of the occupation numbers.
+\begin{align} 
+  \mathcal{Z} &= \sum_{ \left\{n\right\}}^{}\text{e}^{\sum_{i}^{}(-\beta \varepsilon _i n_i+\alpha n_i)}\\
+              &= \sum_{ \left\{n\right\}}^{}\text{e}^{\sum_{i}^{}(\alpha -\beta \varepsilon _i)n_i}\\
+              &= \sum_{ \left\{n\right\}}^{}\prod_{i}^{}\text{e}^{(\alpha -\beta \varepsilon _i)n_i}\\
+              &= \sum_{n_1}^{}\sum_{n_2}^{}\hdots \text{e}^{(\alpha -\beta \varepsilon _1)n_1}\text{e}^{(\alpha -\beta \varepsilon _2)n_2}\hdots \\
+              &= \sum_{n_1}^{}\text{e}^{(\alpha -\beta \varepsilon _1)n_1}\sum_{n_2}^{}\text{e}^{(\alpha -\beta \varepsilon _2)n_2}\hdots \\
+              &= \prod_{i}^{}\sum_{n_i}^{}\text{e}^{(\alpha -\beta \varepsilon _i)n_i}\\
+              &= \prod_{i}^{}\mathcal{Z}_i
+,\end{align} 
+with $\mathcal{Z}_i$ the $i^{\text{th}}$ energy level partition sum.
+One can now ask the question "What is the mean occupation number in a system or Fermions/Bosons?".
+%}}}
+
+%{{{ Fermi-Dirac Statistics
+\subsection{Fermi-Dirac Statistics}
+For Fermions $n_i  \in \left[0,1\right]$ thus
+\begin{align} 
+  \mathcal{Z}=\prod_{i}^{}\left(1+\text{e}^{\alpha -\beta \varepsilon _i}\right)
+.\end{align} 
+The average occupation number for a single energy level $i$ is calculated via !TODO! DISCREPANCY BETWEEN AVERAGE VALUE CALCULATION SUMMATION INDICES
+\begin{align} 
+  \left\langle n_i\right\rangle  &= \sum_{ \left\{n\right\}}^{}p_i n_i\\
+                                 &= \sum_{ \left\{n\right\}}^{}\dfrac{1}{\mathcal{Z}}\text{e}^{(\alpha -\beta \varepsilon _i)n_i}n_i\\
+                                 &= \sum_{ \left\{n\right\}}^{}\dfrac{\text{e}^{(\alpha -\beta \varepsilon _i)n_i}n_i}{\sum_{ \left\{n\right\}}^{}\text{e}^{(\alpha -\beta \varepsilon _i)n_i}}
+\end{align} 
+all sums $\sum_{n_j}^{}\hdots \sum_{n_k}^{}$ that are not about $n_i$ will cancel with the partition function
+\begin{align} 
+  \left\langle n_i\right\rangle  &= \dfrac{\sum_{n_i}^{}\text{e}^{(\alpha -\beta \varepsilon _i)n_i}n_i}{\sum_{n_i}^{}\text{e}^{(\alpha -\beta \varepsilon _i)n_i}}\\
+                                 &= \dfrac{0+\text{e}^{\alpha -\beta \varepsilon _i}}{1+\text{e}^{\alpha -\beta \varepsilon _i}}\\
+                                 &= \boxed{\dfrac{1}{\text{e}^{-(\alpha -\beta \varepsilon _i)}+1} =: f(\varepsilon _i)}
+.\end{align} 
+This is the Fermi distribution.
+It holds not only for the single energy level $i$ but more generally for the whole system.
+%}}}
+
+%{{{ Bose-Einstein Statistics
+\subsection{Bose-Einstein Statistics}
+For Bosons $n_i  \in [0,\infty)$ thus
+\begin{align} 
+  \mathcal{Z} &= \prod_{i}^{}\sum_{n_i}^{}\text{e}^{(\alpha -\beta \varepsilon _i)n_i}
+.\end{align} 
+Consider
+\begin{align} 
+  \text{e}^{\alpha -\beta \varepsilon _i}&<1\\
+  \Leftrightarrow \alpha -\beta \varepsilon _i&<0\\
+  \Leftrightarrow \mu &<\varepsilon _i
+\end{align} 
+which is always the case for Bosons.
+The physical interpretation is that a system of Bosons has no restrictions in which state a new Boson can go and thus will in general increase its energy with the additions $(\mu <0)$ or at most nothing will happen $(\mu =0)$\footnote{This is the case for photons.}.
+If this mathematical constraint holds then the sum will converge
+\begin{align} 
+  \mathcal{Z} &= \prod_{i}^{}\dfrac{1}{1-\text{e}^{\alpha -\beta \varepsilon _i}}=\prod_{i}^{}\mathcal{Z}_i
+.\end{align} 
+
+The average occupation number for a single energy level $i$ is calculated via !TODO! SEE ABOVE
+\begin{align} 
+  \left\langle n_i\right\rangle  &= \sum_{ \left\{n\right\}}^{}p_i n_i\\
+                                 &= \sum_{ \left\{n\right\}}^{}\dfrac{1}{\mathcal{Z}}\text{e}^{(\alpha -\beta \varepsilon _i)n_i}n_i\\
+                                 &= \sum_{ \left\{n\right\}}^{}\dfrac{\text{e}^{(\alpha -\beta \varepsilon _i)n_i}n_i}{\sum_{ \left\{n\right\}}^{}\text{e}^{(\alpha -\beta \varepsilon _i)n_i}}
+\end{align} 
+all sums $\sum_{n_j}^{}\hdots \sum_{n_k}^{}$ that are not about $n_i$ will cancel with the partition function
+\begin{align} 
+  \left\langle n_i\right\rangle  &= \dfrac{\sum_{n_i}^{}\text{e}^{(\alpha -\beta \varepsilon _i)n_i}n_i}{\sum_{n_i}^{}\text{e}^{(\alpha -\beta \varepsilon _i)n_i}}\\
+                                 &= \diffp[]{\ln\left(\sum_{n_i}^{}\text{e}^{(\alpha -\beta \varepsilon _i)n_i}\right)}{(\alpha -\beta \varepsilon _i)}\\
+                                 &= \diffp[]{\ln \mathcal{Z}_i}{(\alpha -\beta \varepsilon _i)}\\
+                                 &= -\diffp[]{\ln \left(1-\text{e}^{\alpha -\beta \varepsilon _i}\right)}{(\alpha -\beta \varepsilon _i)}\\
+                                 &= \dfrac{\text{e}^{\alpha -\beta \varepsilon _i}}{1-\text{e}^{\alpha -\beta \varepsilon _i}}\\
+                                 &=\boxed{\dfrac{1}{\text{e}^{-(\alpha -\beta \varepsilon _i)}-1}=:b(\varepsilon _i)}
+.\end{align} 
+This is the Bose distribution.
+It holds not only for the single energy level $i$ but more generally for the whole system.
+
+These distributions are quite similar and only differ by a sign; plus for Fermions and minus for Bosons.
+If one were to use $\beta =\tfrac{1}{k_BT}$ and $\alpha =\tfrac{\mu }{k_BT}$ and take the minus sign into the parentheses
+\begin{align} 
+  \Aboxed{\dfrac{1}{\text{e}^{\tfrac{\varepsilon _i-\mu }{k_BT}}\pm 1}} &= \begin{cases}
+    f(\varepsilon _i)&\text{for}\,+\\ b(\varepsilon _i)&\text{for}\,-
+  \end{cases}
+.\end{align} 
+
+%}}}
 %}}}
 
 \end{multicols}

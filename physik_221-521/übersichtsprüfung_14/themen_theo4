@@ -18,18 +18,20 @@ THEMEN
       - Temperaturdefinition
 
   | Statistik
-    -> Ensemble
+    -> Ensemble 1
       - Ergodenhypothese
       - Mikrozustand
       - Zustände . rein & gemischt
+    -> Wahrscheinlichkeitsverteilung
+      - Zustandssumme
+      - Zustandsdichte
+      - Lagrange Multiplikatoren
       - Dichtematrix . reduziert
+    -> Ensemble 2
       - mikrokanonisch
       - kanonisch
       - großkanonisch
-    -> Zustandssumme
-    -> Wahrscheinlichkeitsverteilung
-      - Zustandsdichte
-      - Lagrange Multiplikatoren
+      - Zustandssumme
     -> Entropie
       - Gibbs Paradox
 
