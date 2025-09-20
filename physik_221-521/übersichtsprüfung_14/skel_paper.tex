@@ -65,7 +65,7 @@
 \newcommand{\td}{\,\text{d}}
 \newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
 \newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
-\newcommand{\id}{1\kern-.36em1}
+\newcommand{\id}{\mathds{1}}
 
 \newcommand\inlineeqno{\stepcounter{equation}\ {(\theequation)}}
 \newcommand\inlineeqnoa{(\theequation.\text{a})}
@@ -106,7 +106,7 @@
 \end{titlepage}
 
 \maketitle
-\pagenumbering{gobble}
+\pagenumbering{arabic}
 
 \renewcommand\abstractname{Abstract}
 \abstract{\noindent This work is a short summary on the derivation of the methods of statistical mechanics as well as its application to various systems whether they be discrete or continuous.
@@ -138,8 +138,6 @@ The focus is on ensemble theory.}
 \begin{multicols}{2}
 
 %{{{
-
-\pagenumbering{arabic}
 
 % {{{ Ensemble Theory
 \section{Ensemble Theory}
@@ -417,11 +415,200 @@ thermodynamic properties can be calculated from the microscopic partition sum.
 
 %}}}
 
+%{{{ Classical Ideal Gas
+\section{Classical Ideal Gas}
+%{{{ Equipartition Theorem
+\subsection{Equipartition Theorem}
+The equipartition theorem states that for a system in thermal equilibrium any quadratic occurrence of a dregree of freedom in the internal energy contributes $\tfrac{1}{2}k_BT$ in terms of thermal energy.
+Thus an ideal gas in three dimensions consisting of monoatomic constituents, which only have translational degrees of freedom, has an internal energy of
+\begin{align} 
+  U &= \sum_{i}^{N}\dfrac{1}{2}m_i|\dot{\vv{r_i}}|^2=\sum_{i}^{N}\dfrac{3}{2}k_BT=\dfrac{3}{2}Nk_BT
+.\end{align} 
+In general if a system of $N$ constituents has $f$ degrees of freedom, which appear quadratically in the internal energy, then the energy can be written as
+\begin{align} 
+  \Aboxed{U &= \dfrac{f}{2}Nk_BT}
+.\end{align} 
+%}}}
+
+%{{{ The Ideal Gas Law
+\subsection{The Ideal Gas Law}
+The classical ideal gas consists of $N$ non-interacting particles confined to a volume $V$ and with fixed energy $E$.
+In the microcanonical ensemble treatment the number of microstates will then be proportional to the product of each particles available space (which will be $V$ since the particles are non-interacting)
+\begin{align} 
+  \Omega \propto V^N
+.\end{align} 
+The entropy is then given by
+\begin{align}
+  S &= k_B\ln \Omega =k_BN\ln V
+.\end{align} 
+One can now calculate thermodynamic properties by using
+\begin{align} 
+  \diffp[]{S}{V} &= \dfrac{P}{T} = \dfrac{k_BN}{V}\\
+  \Leftrightarrow \Aboxed{PV &= Nk_BT}
+.\end{align} 
+This is the ideal gas law.
+
+Consider an adiabatic process in which $\delta Q=0$, thus $\td U=-P\td V$.
+The internal energy is given by the equipartition theorem as
+\begin{align} 
+  U &= \dfrac{f}{2}PV = \dfrac{f}{2}Nk_BT
+.\end{align} 
+This is also sometimes written as
+\begin{align} 
+  P &= \dfrac{2}{f}\dfrac{U}{V}
+,\end{align} 
+the pressure is equal to two over the degrees of freedom of the energy density.
+Now the change of $U$ depends on the change of $P$ and $V$ or $T$
+\begin{align} 
+  \td U &= \dfrac{f}{2}\left(V\td P + P\td V\right) = \dfrac{f}{2}Nk_B\td T
+.\end{align} 
+Due to the first law of thermodynamics this is also equal to
+\begin{align} 
+  \Leftrightarrow -P\td V &= \dfrac{f}{2}(V\td P + P\td V)\\
+  \Leftrightarrow -P\left(\dfrac{f}{2}+1\right)\td V &= \dfrac{f}{2}V\td P\\
+  \Leftrightarrow -\underbrace{\dfrac{\tfrac{f}{2}+1}{\tfrac{f}{2}}}_{=:\gamma }\dfrac{\td V}{V} &= \dfrac{\td P}{P}\\
+  \Leftrightarrow -\gamma \ln\left(\dfrac{V_2}{V_1}\right) &= \ln\left(\dfrac{P_2}{P_1}\right)\\
+  \Leftrightarrow \left(\dfrac{V_1}{V_2}\right)^{\gamma } &= \dfrac{P_2}{P_1}\\
+  \Leftrightarrow P_1V_1^\gamma  &= P_2V_2^\gamma =\text{const}
+.\end{align} 
+also $\tfrac{2}{f}UV^{\gamma -1}=Nk_BTV^{\gamma -1}=\text{const}$, which is equivalent to (since $k_B$ and $N$ are constant) $TV^{\gamma -1}=\text{const}$.
+Thus for any reversible adiabatic process
+\begin{align} 
+  PV^\gamma  &= \text{const} & TV^{\gamma -1} &= \text{const}
+.\end{align} 
+The heat capacity at constant volume is given by
+\begin{align} 
+  c_V &= \diffp[]{U}{T} = \dfrac{f}{2}Nk_B
+.\end{align} 
+The heat capacity at constant pressure is best calculated when the fixed variables of state contains the pressure and the volume is variable
+\begin{align} 
+  c_P &= \diffp[]{(U+PV)}{T} = \left(\dfrac{f}{2}+1\right)Nk_B
+.\end{align} 
+Therefore
+\begin{align} 
+  \Aboxed{c_P&>c_V} & \dfrac{c_P}{c_V}&=\dfrac{\tfrac{f}{2}+1}{\tfrac{f}{2}}=\gamma 
+.\end{align} 
+This hold generally.
+For a constant volume the added heat can only be transferred to the temperature of the system, but for constant pressure the heat can also be used to expand the gas.
+%}}}
+%}}}
+
+%{{{ Density of States
+\section{Density of States}
+Consider an ensemble of a system and its time evolution in phase space as a swarm of points in a certain allowed region (consistent with the macrostate) of phase space.
+Then there exists a function $\rho \left(q,p,t\right)$ that gives the density of the representative points in phase space and $\rho \left(q,p,t\right)\td q ^{3N}\td p ^{3N}$ will give the total amount of points in a specific area.
+This function is called the density of states.
+The ensemble average of a given physical quantity is thus
+\begin{align} 
+  \left\langle f \right\rangle  &= \dfrac{\int_{}^{}\td q ^{3N}\td p ^{3N}f\left(q,p\right)\rho \left(q,p,t\right)}{\int_{}^{}\td q ^{3N}\td p ^{3N}\rho (q,p,t)}
+.\end{align} 
+For $\rho =\rho (q,p)$ i.e.\ $\partial_t \rho =0$ a system is said to be stationary and thus $\partial_t\left\langle f \right\rangle =0$.
+Such a system is in equlibrium.
+
+The density of states in $d$ dimensions and for $N$ constituents (e.g.\ particles) is given by
+\begin{align} 
+  \rho _d &= \int_{}^{}\td \Gamma \delta \left(E-E(q,p)\right)\\
+        &= \int_{}^{}\td q ^{d\cdot N}\td p ^{d\cdot N}\delta (E-E(q,p))
+.\end{align} 
+It is the phase space integral times the delta distribution which peaks at the allowed energies of the system.
+If the energy does not depend on position, then $\int_{}^{}\td q ^{d\cdot N}=V_d^N$ will be just the volume.
+In the quantum mechanical case the momentum integral will be $\int_{}^{}\tfrac{\td p ^{d\cdot N}}{(2\pi \hbar )^d}$.
+
+%{{{ Examples
+\subsection{Examples}
+Consider the classical and relativistic dispersion relations
+\begin{align} 
+  E_c &= \dfrac{p^2}{2m} & E_r &= cp\\
+  \diff[]{E_c}{p} &= \dfrac{p}{m} & \diffp[]{E_r}{p} &= c\\
+  \td E_c \tfrac{m}{p} &= \td p & \td E_r \tfrac{1}{c} &= \td p\\
+  \td E_c \tfrac{m}{\,\sqrt[]{2mE_r}} &= \td p
+.\end{align} 
+The density of states in different dimensions is given by
+\begin{align} 
+  \rho _1 &= \int_{}^{}\td q\tfrac{\td p}{2\pi \hbar } \begin{cases}
+    \delta (E-E_c)\\
+    \delta (E-E_r)
+  \end{cases}\\
+          &= \dfrac{V_1}{2\pi \hbar }\int_{}^{}\td E \begin{cases}
+            \tfrac{m}{\,\sqrt[]{2mE}}\delta (E-E_c)\\
+            \tfrac{1}{c}\delta (E-E_r)
+          \end{cases}\\
+          &= \dfrac{V_1}{2\pi \hbar }\begin{cases}
+            \tfrac{m}{\,\sqrt[]{2mE_r}}\\
+            \tfrac{1}{c}
+          \end{cases}\\
+          &= \begin{cases}
+            \tfrac{V_1}{\pi \hbar }\,\sqrt[]{\tfrac{2m}{E_r}}\\
+            \tfrac{V_1}{2\pi \hbar c}
+          \end{cases}
+.\end{align} 
+\begin{align} 
+  \rho _2 &= \int_{}^{}\td q^2\tfrac{\td p^2}{(2\pi \hbar )^2}\begin{cases}
+    \delta (E-E_c)\\
+    \delta (E-E_r)
+  \end{cases}
+.\end{align} 
+In the higher dimensional case in general one can rewrite
+\begin{align} 
+  \td p^d &= \td V_d = S_d\td p = S_d^\id p^{d-1}\td p 
+\end{align} 
+where $V_d$ is the $d$-dimensional volume and $S_d^\id$ is the $d$-dimensional unit sphere.
+\begin{align} 
+  \td p &= \td V_1 = S_1\td p = S_1^\id p^{1-1}\td p = 2\td p
+\end{align} 
+
+%}}}
+%}}}
+%}}}
+
 %{{{ Occupation Number
 \section{Occupation Number}
+%{{{ The Gibbs Paradox
+\subsection{The Gibbs Paradox}
+Consider two ideal gases confined to volumes $V_1$ and $V_2$ with particle number $N_1$ and $N_2$ in thermal equlibrium $T_1=T_2=T$.
+In the canonical treatment the partition function is given by
+\begin{align} 
+  Z &= \sum_{\mathfrak{m}}^{}\text{e}^{-\beta E_\mathfrak{m}}
+,\end{align} 
+with $E_\mathfrak{m}=\sum_{i}^{N}\tfrac{1}{2m}\left(\tfrac{2\pi \hbar }{L}\right)^2|\vv{n}_i|^2=:\sum_{i}^{N}\Delta |\vv{n}_i|^2$ with $\vv{n}_i=(n_{i_x}, n_{i_y}, n_{i_z})$ the vector of quantum numbers of the $i^\text{th}$ particle
+\begin{align} 
+  Z &= \sum_{ \left\{n\right\}}^{}\text{e}^{-\beta \sum_{i}^{3N}\Delta n_i^2}\\
+    &= \left(\sum_{n_i}^{}\text{e}^{-\beta \Delta n_i^2}\right)^{3N}
+.\end{align} 
+In the thermodynamic limit the energy levels will be close together such that the sum can be replaced with an integral $(n\equiv n_i)$ 
+\begin{align} 
+  Z_1 &= \int_{-\infty}^{\infty}\td n \text{e}^{-\beta \Delta n^2} = \,\sqrt[]{\dfrac{\pi }{\beta \Delta }}
+.\end{align} 
+Also note
+\begin{align} 
+  \,\sqrt[]{\dfrac{\pi }{\beta \Delta }} &= \,\sqrt[]{\dfrac{k_BT2m\pi }{(2\pi \hbar )^2}}L = \,\sqrt[]{\dfrac{k_BTm}{2\pi \hbar ^2}}L =: \dfrac{L}{\lambda _T}\\
+  \lambda _T &:= \,\sqrt[]{\dfrac{2\pi \hbar ^2}{k_BTm}} = \dfrac{h}{\,\sqrt[]{2\pi k_BTm}}
+,\end{align} 
+the thermal wavelength (i.e.\ the wavelength of a particle due to its thermal energy).
+The whole partition sum is thus
+\begin{align} 
+  Z &= \left(\dfrac{L}{\lambda _T}\right)^{3N}=\left(\dfrac{V}{\lambda _T^3}\right)^N
+.\end{align} 
+More generally $3N\rightarrow dN$ for $d$ dimensions.
+The free energy is
+\begin{align} 
+  F &= -k_BT\ln Z\\
+    &= -k_BTN\left(\ln V - 3\ln \lambda _T\right)\\
+    &= -k_BTN\dfrac{3}{2}\ln \left(\pi \dfrac{k_BT}{\Delta }\right)
+.\end{align} 
+The entropy
+\begin{align} 
+  S &= -\diffp[]{F}{T} = k_BN\dfrac{3}{2}\ln\left(\pi \dfrac{k_BT}{\Delta }\right)+\dfrac{3}{2}Nk_B
+.\end{align} 
+The internal energy
+\begin{align} 
+  U &= F+TS = \dfrac{3}{2}Nk_BT & c_V &= \diffp[]{U}{T}=\dfrac{3}{2}Nk_B
+,\end{align} 
+as expected from the equipartition theorem for the monoatomic ideal gas (the calculation of the partition sum was therefore right).
+%}}}
 %{{{ Derivation
 \subsection{Derivation}
-It is not always wise or even correct to take identical and non-localized constituents of a system (e.g.\ particles in a gas) as distinguishable and let the change of their respective positions count as a separate microstate (see for example the Gibbs paradox).
+It is not always wise or even correct to take identical and non-localized constituents of a system (e.g.\ particles in a gas) as distinguishable and let the change of their respective positions count as a separate microstate (see for example the Gibbs paradox !TODO!).
 To calculate the correct value for the probability distribution and the partition sum of indistinguishable particles one has to use the theory of occupation numbers.
 
 Consider a quantum gas made up of such indistinguishable particles on different energy levels.
