@@ -464,9 +464,9 @@ Now the change of $U$ depends on the change of $P$ and $V$ or $T$
 .\end{align} 
 Due to the first law of thermodynamics this is also equal to
 \begin{align} 
-  \Leftrightarrow -P\td V &= \dfrac{f}{2}(V\td P + P\td V)\\
-  \Leftrightarrow -P\left(\dfrac{f}{2}+1\right)\td V &= \dfrac{f}{2}V\td P\\
-  \Leftrightarrow -\underbrace{\dfrac{\tfrac{f}{2}+1}{\tfrac{f}{2}}}_{=:\gamma }\dfrac{\td V}{V} &= \dfrac{\td P}{P}\\
+  \Leftrightarrow \dfrac{f}{2}(V\td P + P\td V) &= -P\td V \\
+  \Leftrightarrow P\left(\dfrac{f}{2}+1\right)\td V &= -\dfrac{f}{2}V\td P\\
+  \Leftrightarrow \underbrace{\dfrac{\tfrac{f}{2}+1}{\tfrac{f}{2}}}_{=:\gamma }\dfrac{\td V}{V} &= -\dfrac{\td P}{P}\\
   \Leftrightarrow -\gamma \ln\left(\dfrac{V_2}{V_1}\right) &= \ln\left(\dfrac{P_2}{P_1}\right)\\
   \Leftrightarrow \left(\dfrac{V_1}{V_2}\right)^{\gamma } &= \dfrac{P_2}{P_1}\\
   \Leftrightarrow P_1V_1^\gamma  &= P_2V_2^\gamma =\text{const}
@@ -565,8 +565,8 @@ where $V_d$ is the $d$-dimensional volume and $S_d^\id$ is the $d$-dimensional u
 \section{Occupation Number}
 %{{{ The Gibbs Paradox
 \subsection{The Gibbs Paradox}
-Consider two ideal gases confined to volumes $V_1$ and $V_2$ with particle number $N_1$ and $N_2$ in thermal equlibrium $T_1=T_2=T$.
-In the canonical treatment the partition function is given by
+Consider an ideal monoatomic gas in the canonical treatment.
+The partition function is given by
 \begin{align} 
   Z &= \sum_{\mathfrak{m}}^{}\text{e}^{-\beta E_\mathfrak{m}}
 ,\end{align} 
@@ -587,24 +587,50 @@ Also note
 the thermal wavelength (i.e.\ the wavelength of a particle due to its thermal energy).
 The whole partition sum is thus
 \begin{align} 
-  Z &= \left(\dfrac{L}{\lambda _T}\right)^{3N}=\left(\dfrac{V}{\lambda _T^3}\right)^N
+  Z &= \left(\dfrac{L}{\lambda _T}\right)^{3N}=\left(\dfrac{V}{\lambda _T^3}\right)^N=\left(\dfrac{\pi }{\beta \Delta }\right)^{\tfrac{3}{2}N}
 .\end{align} 
 More generally $3N\rightarrow dN$ for $d$ dimensions.
 The free energy is
 \begin{align} 
   F &= -k_BT\ln Z\\
-    &= -k_BTN\left(\ln V - 3\ln \lambda _T\right)\\
-    &= -k_BTN\dfrac{3}{2}\ln \left(\pi \dfrac{k_BT}{\Delta }\right)
+    &= -Nk_BT\left(\ln V - 3\ln \lambda _T\right)\\
+    &= -Nk_BT\dfrac{3}{2}\ln \left(\pi \dfrac{k_BT}{\Delta }\right)
 .\end{align} 
 The entropy
 \begin{align} 
-  S &= -\diffp[]{F}{T} = k_BN\dfrac{3}{2}\ln\left(\pi \dfrac{k_BT}{\Delta }\right)+\dfrac{3}{2}Nk_B
-.\end{align} 
+  S &= -\diffp[]{F}{T} = Nk_B\dfrac{3}{2}\ln\left(\pi \dfrac{k_BT}{\Delta }\right)+\dfrac{3}{2}Nk_B
+,\end{align} 
+with $\Delta =\tfrac{1}{2m}\left(\tfrac{2\pi \hbar }{L}\right)^2=\tfrac{2\pi ^2\hbar ^2}{m}\tfrac{1}{L^2}$
+\begin{align} 
+  S &= Nk_B\dfrac{3}{2}\ln \left(L^2\dfrac{k_BTm}{2\pi \hbar ^2}\right)+\dfrac{3}{2}Nk_B\\
+    &= Nk_B\ln V + \dfrac{3}{2}Nk_B\left(\ln\left(\dfrac{k_BTm}{2\pi \hbar ^2}\right) + 1\right)
+\end{align} 
 The internal energy
 \begin{align} 
   U &= F+TS = \dfrac{3}{2}Nk_BT & c_V &= \diffp[]{U}{T}=\dfrac{3}{2}Nk_B
 ,\end{align} 
 as expected from the equipartition theorem for the monoatomic ideal gas (the calculation of the partition sum was therefore right).
+
+Now consider two identical ideal monoatomic gases confined to volumes $V_1$ and $V_2$ with particle number $N_1$ and $N_2$ in thermal equlibrium $T_1=T_2=T$ and of same mass.
+The two containers of the gases will then be brought in contact and a sliding wall between them is lifted such that they mix.
+Their respective entropies are given by
+\begin{align} 
+  S_i &= N_ik_B\ln V_i + \dfrac{3}{2}N_ik_B\left(\ln\left(\dfrac{k_BTm}{2\pi \hbar ^2}\right) + 1\right)
+.\end{align} 
+The entropy after the two gases mixed will then be the sum of the two entropies but now dependent on and $V=V_1+V_2$ because both gases are allowed to the same volume
+\footnote{Note the dependence on $V$ for both entropies and how it is left out in the sum.
+Therefore summing over $i$ will result in the same $V$ for both entropies.
+In the case before mixing the sum is still over $V_i$ since they are confined to their respective region in the box.}
+\begin{align} 
+    S_m &= \sum_{i}^{2}N_ik_B\ln V + \dfrac{3}{2}N_ik_B\left(\ln\left(\dfrac{k_BTm}{2\pi \hbar ^2}\right) + 1\right)
+.\end{align} 
+Since the gases are identical one can slide the wall back in and should arrive at the situation from the start (because one cannot distinguish the particles in the gas).
+There should then be no mixing entropy, however
+\begin{align} 
+  \Delta S &= S_m-\sum_{i}^{2}S_i\\
+           &=
+\end{align} 
+
 %}}}
 %{{{ Derivation
 \subsection{Derivation}
