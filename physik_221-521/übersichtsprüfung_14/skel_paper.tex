@@ -49,7 +49,7 @@
 
 \usepackage{babel}
 \usepackage{hyphsubst}
-\usepackage{caption}
+\usepackage[figurename=Fig.]{caption}
 \usepackage{xr} % crossreferencing between documents \externaldocument{}
 \usepackage{enumitem} % for enumerate environment
 \usepackage{lineno}
@@ -80,10 +80,9 @@
 \renewcommand{\refname}{Source}
 \renewcommand{\sfdefault}{phv}
 
-\iffalse\newenvironment{Figure}
+\newenvironment{Figure}
   {\par\medskip\noindent\minipage{\linewidth}}
-  {\endminipage\par\medskip}\fi % for multicols figures
-
+  {\endminipage\par\medskip}% for multicols figures
 %\pagestyle{fancy}
 
 \sloppy
@@ -110,7 +109,8 @@
 
 \renewcommand\abstractname{Abstract}
 \abstract{\noindent This work is a short summary on the derivation of the methods of statistical mechanics as well as its application to various systems whether they be discrete or continuous.
-The focus is on ensemble theory.}
+The focus is on ensemble theory.
+The derivations and arguments rely heavily on Raj Kumar Pathria \textit{Statistical Mechanics}.}
 
 %}}}
 
@@ -491,12 +491,11 @@ Therefore
 This hold generally.
 For a constant volume the added heat can only be transferred to the temperature of the system, but for constant pressure the heat can also be used to expand the gas.
 %}}}
-%}}}
 
 %{{{ Density of States
 \section{Density of States}
 Consider an ensemble of a system and its time evolution in phase space as a swarm of points in a certain allowed region (consistent with the macrostate) of phase space.
-Then there exists a function $\rho \left(q,p,t\right)$ that gives the density of the representative points in phase space and $\rho \left(q,p,t\right)\td q ^{3N}\td p ^{3N}$ will give the total amount of points in a specific area.
+Then there exists a function $\rho \left(q,p,t\right)$ that gives the density of the representative points in phase space and $\rho \left(q,p,t\right)\td q ^{3N}\td p ^{3N}=\rho (q,p,t)\td \Gamma $ will give the total amount of points in a specific area.
 This function is called the density of states.
 The ensemble average of a given physical quantity is thus
 \begin{align} 
@@ -519,9 +518,9 @@ In the quantum mechanical case the momentum integral will be $\int_{}^{}\tfrac{\
 Consider the classical and relativistic dispersion relations
 \begin{align} 
   E_c &= \dfrac{p^2}{2m} & E_r &= cp\\
-  \diff[]{E_c}{p} &= \dfrac{p}{m} & \diffp[]{E_r}{p} &= c\\
-  \td E_c \tfrac{m}{p} &= \td p & \td E_r \tfrac{1}{c} &= \td p\\
-  \td E_c \tfrac{m}{\,\sqrt[]{2mE_r}} &= \td p
+  \diff[]{E_c}{p} &= \dfrac{p}{m} & \diff[]{E_r}{p} &= c\\
+  \dfrac{m\td E_c}{p} &= \td p & \dfrac{\td E_r}{c} &= \td p\\
+  \dfrac{m\td E_c}{\,\sqrt[]{2mE_c}} &= \td p
 .\end{align} 
 The density of states in different dimensions is given by
 \begin{align} 
@@ -541,23 +540,37 @@ The density of states in different dimensions is given by
             \tfrac{V_1}{\pi \hbar }\,\sqrt[]{\tfrac{2m}{E_r}}\\
             \tfrac{V_1}{2\pi \hbar c}
           \end{cases}
-.\end{align} 
-\begin{align} 
-  \rho _2 &= \int_{}^{}\td q^2\tfrac{\td p^2}{(2\pi \hbar )^2}\begin{cases}
-    \delta (E-E_c)\\
-    \delta (E-E_r)
-  \end{cases}
+          = \begin{cases}
+            \tfrac{L^{1/3}}{\pi \hbar }\,\sqrt[]{\tfrac{2m}{E_r}}\\
+            \tfrac{L^{1/3}}{2\pi \hbar c}
+          \end{cases}
 .\end{align} 
 In the higher dimensional case in general one can rewrite
 \begin{align} 
-  \td p^d &= \td V_d = S_d\td p = S_d^\id p^{d-1}\td p 
+  \td p^d &= \td V_d = \td S_{d-1}\td p = \td S_{d-1}^\id p^{d-1}\td p 
 \end{align} 
-where $V_d$ is the $d$-dimensional volume and $S_d^\id$ is the $d$-dimensional unit sphere.
+where $V_d$ is the volume of the $d$-dimensional ball and $S_d$ is the surface area of the $d$-dimensional ball.
+$\id$ denotes the respective unit balls.
+$p$ is the radius of the balls and ranges from $0$ to $\infty$.
 \begin{align} 
-  \td p &= \td V_1 = S_1\td p = S_1^\id p^{1-1}\td p = 2\td p
+  \td p^2 &= \td V_2 = \td S_1\td p = \td S_1^\id p^{2-1}\td p = \td S_1^\id p\td p\\
+  \td p^3 &= \td V_3 = \td S_2\td p = \td S_2^\id p^{3-1}\td p = \td S_2^\id p^2\td p
+.\end{align} 
+This implies for a higher dimensional density of states
+\begin{align} 
+  \rho _2 &= \int_{}^{}\td q^2\dfrac{\td p^2}{(2\pi \hbar )^2}\delta (E-E_c)\\
+          &= \dfrac{V_2}{(2\pi \hbar )^2}\int_{}^{}\td S_1^\id\int_{}^{}\td p \,p\delta (E-E_c)\\
+          &= \dfrac{V_2}{(2\pi \hbar )^2}2\pi \int_{}^{}\dfrac{m\td E}{\,\sqrt[]{2mE}}\,\sqrt[]{2mE}\delta (E-E_c)\\
+          &= \dfrac{V_2m}{2\pi \hbar ^2} = \dfrac{L^{2/3}m}{2\pi \hbar ^2}
+.\end{align} 
+In three dimensions
+\begin{align} 
+  \rho _3 &= \int_{}^{}\td q^3\dfrac{\td p^3}{(2\pi \hbar )^3}\delta (E-E_c)\\
+          &= \dfrac{V_3}{(2\pi \hbar )^3}\int_{}^{}\td S_2^\id \int_{}^{}\td p\, p^2\delta (E-E_c)\\
+          &= \dfrac{V}{(2\pi \hbar )^3}4\pi \int_{}^{}\dfrac{m\td E}{\,\sqrt[]{2mE}}2mE\delta (E-E_c)\\
+          &= \dfrac{V4\pi m}{(2\pi \hbar )^3}\,\sqrt[]{2mE_c}=\dfrac{Vm}{2\pi ^2\hbar ^3}\,\sqrt[]{2mE_c}
 \end{align} 
 
-%}}}
 %}}}
 %}}}
 
@@ -585,6 +598,21 @@ Also note
   \lambda _T &:= \,\sqrt[]{\dfrac{2\pi \hbar ^2}{k_BTm}} = \dfrac{h}{\,\sqrt[]{2\pi k_BTm}}
 ,\end{align} 
 the thermal wavelength (i.e.\ the wavelength of a particle due to its thermal energy).
+
+\footnotesize
+The thermal wavelength can also be calculated via the wavenumber
+\begin{align} 
+  p = \hbar k = \hbar \dfrac{2\pi }{\lambda } \Leftrightarrow \lambda =\dfrac{2\pi \hbar }{p}
+.\end{align} 
+Then
+\begin{align} 
+  \lambda _T&= 2\pi \hbar \left(\int_{-\infty}^{\infty}\td p\, \text{e}^{-\beta \tfrac{p^2}{2m}}\right)^{-1}\\
+            &= 2\pi \hbar \left(\,\sqrt[]{\dfrac{\pi }{\tfrac{\beta }{2m}}}\right)^{-1} = 2\pi \hbar \,\sqrt[]{\dfrac{\beta }{2\pi m}}\\
+            &= \,\sqrt[]{\dfrac{2\pi \hbar ^2}{k_BTm}}
+\end{align} 
+
+\normalsize
+
 The whole partition sum is thus
 \begin{align} 
   Z &= \left(\dfrac{L}{\lambda _T}\right)^{3N}=\left(\dfrac{V}{\lambda _T^3}\right)^N=\left(\dfrac{\pi }{\beta \Delta }\right)^{\tfrac{3}{2}N}
@@ -621,21 +649,31 @@ The entropy after the two gases mixed will then be the sum of the two entropies 
 \footnote{Note the dependence on $V$ for both entropies and how it is left out in the sum.
 Therefore summing over $i$ will result in the same $V$ for both entropies.
 In the case before mixing the sum is still over $V_i$ since they are confined to their respective region in the box.}
-\begin{align} 
-    S_m &= \sum_{i}^{2}N_ik_B\ln V + \dfrac{3}{2}N_ik_B\left(\ln\left(\dfrac{k_BTm}{2\pi \hbar ^2}\right) + 1\right)
-.\end{align} 
+\begin{multline}
+  S_m  = \sum_{i}^{2}\left(N_ik_B\ln V + \dfrac{3}{2}N_ik_B\right.\\
+  \cdot \left.\left(\ln\left(\dfrac{k_BTm}{2\pi \hbar ^2}\right) + 1\right)\right)
+\end{multline}
 Since the gases are identical one can slide the wall back in and should arrive at the situation from the start (because one cannot distinguish the particles in the gas).
 There should then be no mixing entropy, however
 \begin{align} 
   \Delta S &= S_m-\sum_{i}^{2}S_i\\
-           &=
+           &= N_1k_B\ln\left(\dfrac{V}{V_1}\right)+N_2k_B\ln\left(\dfrac{V}{V_2}\right)>0
+.\end{align} 
+% here follows a derivation for the factor 1/N! which has to be multiplied to the entropie. see pathria
+\iffalse If the gases are identical so is their density $\tfrac{N_1}{V_1}=\tfrac{N_2}{V_2}=\text{const}$.
+One can write (and leaving out the constant of proportionality denoted by star)
+\begin{align} 
+  \Delta S^* &= k_B\left(N_1\ln\left(\dfrac{N_1+N_2}{N_1}\right)+N_2\ln\left(\dfrac{N_1+N_2}{N_2}\right)\right)
 \end{align} 
-
+...
+\fi
+This leads to the conclusion that the enumeration of indistinguishable particles has been done wrong and that the number of microstates needs to be reduced such that the total change of entropy of mixing (two identical gases with indistinguishable particles) is equal to zero.
 %}}}
+
 %{{{ Derivation
 \subsection{Derivation}
-It is not always wise or even correct to take identical and non-localized constituents of a system (e.g.\ particles in a gas) as distinguishable and let the change of their respective positions count as a separate microstate (see for example the Gibbs paradox !TODO!).
-To calculate the correct value for the probability distribution and the partition sum of indistinguishable particles one has to use the theory of occupation numbers.
+It is not always wise or even correct to take identical and non-localized constituents of a system (e.g.\ particles in a gas) as distinguishable and let the change of their respective positions count as a separate microstate (see for example the Gibbs paradox).
+To calculate the correct value for the probability distribution and the partition sum of indistinguishable particles one has to use the theory of occupation numbers because it would be unphysical to count each particle separately.
 
 Consider a quantum gas made up of such indistinguishable particles on different energy levels.
 These particles will either be Fermions or Bosons.
@@ -673,6 +711,23 @@ The sum over all microstates is not the sum over all states of each individual p
 ,\end{align} 
 with $\mathcal{Z}_i$ the $i^{\text{th}}$ energy level partition sum.
 One can now ask the question "What is the mean occupation number in a system or Fermions/Bosons?".
+
+The result is shown in the plot (\ref{fig:fermi bose distribution}) and a derivation of the functions will follow.
+\begin{Figure}
+    \centering
+    \includegraphics[width=\textwidth]{plots/plot.pdf}
+    \captionof{figure}{The Fermi-Dirac and Bose-Einstein distributions for the respective chemical potential $\mu _f$ and $\mu _b$.
+    $f(\varepsilon _i)(1-f(\varepsilon _i))=\text{Var}(n_i)$} \label{fig:fermi bose distribution}
+\end{Figure}
+
+With this information one can also calculate the mean particle number in the system
+\begin{align} 
+  \left\langle N\right\rangle  &= \sum_{i}^{}\left\langle n_i\right\rangle \!(E_i)\\
+                               &= \int_{}^{}\td E\rho (E)\left\langle n_i\right\rangle \!(E)
+,\end{align} 
+where $\left\langle n_i\right\rangle \!(E)$ specifies that a energy dependent distribution is needed.
+The integral form with the density of states is valid for when the energy levels are close enough.
+If the particle number is fixed then $\left\langle N\right\rangle =N$.
 %}}}
 
 %{{{ Fermi-Dirac Statistics
@@ -691,10 +746,35 @@ all sums $\sum_{n_j}^{}\hdots \sum_{n_k}^{}$ that are not about $n_i$ will cance
 \begin{align} 
   \left\langle n_i\right\rangle  &= \dfrac{\sum_{n_i}^{}\text{e}^{(\alpha -\beta \varepsilon _i)n_i}n_i}{\sum_{n_i}^{}\text{e}^{(\alpha -\beta \varepsilon _i)n_i}}\\
                                  &= \dfrac{0+\text{e}^{\alpha -\beta \varepsilon _i}}{1+\text{e}^{\alpha -\beta \varepsilon _i}}\\
-                                 &= \boxed{\dfrac{1}{\text{e}^{-(\alpha -\beta \varepsilon _i)}+1} =: f(\varepsilon _i)}
+                                 &= \dfrac{1}{\text{e}^{-(\alpha -\beta \varepsilon _i)}+1}\\
+                                 &= \boxed{\dfrac{1}{\text{e}^{\tfrac{\varepsilon _i-\mu }{k_BT}}+1} =: f(\varepsilon _i)}
 .\end{align} 
 This is the Fermi distribution.
 It holds not only for the single energy level $i$ but more generally for the whole system.
+
+The variance is given by
+\begin{align} 
+  \text{Var}(n_i) &= \left\langle n_i^2\right\rangle -\left\langle n_i\right\rangle ^2\\
+                  &= \left\langle n_i\right\rangle -\left\langle n_i\right\rangle \left\langle n_i\right\rangle \\
+                  &= f(\varepsilon _i)(1-f(\varepsilon _i))
+,\end{align} 
+since $n_i^2=n_i$ for Fermions.
+
+%{{{ Properties
+\subsection{Properties}
+The distribution has a width of $2k_BT$ and is centered on $\mu $.
+For $f(\varepsilon _i<\mu )\rightarrow 1$ and $f(\varepsilon _i>\mu )\rightarrow 0$.
+At $f(\varepsilon _i=\mu )=0.5$.
+
+An interesting property arises for $T\rightarrow 0$.
+$f(\varepsilon _i)$ will then be infinitely sharp around $\mu $ since the width is proportional to $T$, s.t.\ 
+\begin{align} 
+  \lim_{T\rightarrow 0}f(\varepsilon _i)=\theta (\mu -\varepsilon _i)
+.\end{align}
+As a consequence for the low temperature regime the only states which can be occupied are for energies $\varepsilon _i<\mu $.
+This energy is also called the Fermi-energy $\mu (T=0)=\varepsilon _F$.
+The corresponding momentum is the Fermi-momentum $p_F=\tfrac{\varepsilon _F}{2m}$.
+%}}}
 %}}}
 
 %{{{ Bose-Einstein Statistics
@@ -711,7 +791,7 @@ Consider
 \end{align} 
 which is always the case for Bosons.
 The physical interpretation is that a system of Bosons has no restrictions in which state a new Boson can go and thus will in general increase its energy with the additions $(\mu <0)$ or at most nothing will happen $(\mu =0)$\footnote{This is the case for photons.}.
-If this mathematical constraint holds then the sum will converge
+If this constraint holds then the sum will converge
 \begin{align} 
   \mathcal{Z} &= \prod_{i}^{}\dfrac{1}{1-\text{e}^{\alpha -\beta \varepsilon _i}}=\prod_{i}^{}\mathcal{Z}_i
 .\end{align} 
@@ -729,20 +809,55 @@ all sums $\sum_{n_j}^{}\hdots \sum_{n_k}^{}$ that are not about $n_i$ will cance
                                  &= \diffp[]{\ln \mathcal{Z}_i}{(\alpha -\beta \varepsilon _i)}\\
                                  &= -\diffp[]{\ln \left(1-\text{e}^{\alpha -\beta \varepsilon _i}\right)}{(\alpha -\beta \varepsilon _i)}\\
                                  &= \dfrac{\text{e}^{\alpha -\beta \varepsilon _i}}{1-\text{e}^{\alpha -\beta \varepsilon _i}}\\
-                                 &=\boxed{\dfrac{1}{\text{e}^{-(\alpha -\beta \varepsilon _i)}-1}=:b(\varepsilon _i)}
+                                 &=\dfrac{1}{\text{e}^{-(\alpha -\beta \varepsilon _i)}-1}\\
+                                 &=\boxed{\dfrac{1}{\text{e}^{\tfrac{\varepsilon _i-\mu }{k_BT}}-1}=:b(\varepsilon _i)}
 .\end{align} 
 This is the Bose distribution.
 It holds not only for the single energy level $i$ but more generally for the whole system.
 
 These distributions are quite similar and only differ by a sign; plus for Fermions and minus for Bosons.
-If one were to use $\beta =\tfrac{1}{k_BT}$ and $\alpha =\tfrac{\mu }{k_BT}$ and take the minus sign into the parentheses
+%}}}
+
+%{{{ Phase Transitions
+\section{Phase Transitions}
+In thermodynamical / statistical systems the behaviour of particles has been regarded as non-interacting.
+This leads to thermodynamic functions, which depend on the properties (e.g.\ energy) of the single particles and produces accurate results.
+However, if one allows for the interaction of particles to happen, a collective, long-range behaviour of the system arises.
+This can be seen at certain temperatures, when so called phase transistion occur.
+A phase transition is a transistion for which a certain order parameter has a zero value and now takes a non-zero value (throughout the whole medium, thus long-range).
+Such order parameters can be for example the magnetisation of a medium.
+The need for these parameters arises, as a phase transition breaks the symmetry of the system and introduces a new variable which is needed to describe the system in its current state.
+
+First order phase transitions involve a latent heat.
+This heat is absorbed or released during a phase transition while the system stays at constant temperature.
+I.e.\ this heat is the energy needed (or released) in the phase transition.
+In the process there can be multiple phases present (also called mixed-phase-regime) when some parts of the system have transitioned and other parts not.
+A prominent example is the phase transition of solid water to liquid water.
+
+Second order phase transitions involve the divergence of the susceptibility (i.e.\ linear response functions or the second derivative of a thermodynamic potential).
+This is seen in the transition of a ferromagnetic material to a paramagnetic material at a critical temperature.
+
+A phase transition is of $n$-th order when 
 \begin{align} 
-  \Aboxed{\dfrac{1}{\text{e}^{\tfrac{\varepsilon _i-\mu }{k_BT}}\pm 1}} &= \begin{cases}
-    f(\varepsilon _i)&\text{for}\,+\\ b(\varepsilon _i)&\text{for}\,-
-  \end{cases}
+  \diffp[n]{F}{H}\qquad \text{diverges}
 .\end{align} 
+Here $F$ is the thermodynamic potential (free energy in this case) and $B$ is an external quantitiy (here the external magnetic field).
+For example in the $2^\text{nd}$ order with 
+\begin{align} 
+  \td F=-S\td T-p\td V+\mu \td N-\mu _0M\td H
+\end{align} 
+then
+\begin{align} 
+  -\dfrac{1}{\mu _0}\diffp[2]{F}{H}=\diffp[]{M}{H}=\chi 
+\end{align} 
+diverges at the Curie-temperature in the phase transition of a ferromagnet to a paramagnet.
+
+%{{{ Ising Model
+\subsection{Ising Model}
 
 %}}}
+%}}}
+
 %}}}
 
 \end{multicols}
@@ -752,7 +867,5 @@ If one were to use $\beta =\tfrac{1}{k_BT}$ and $\alpha =\tfrac{\mu }{k_BT}$ and
 %\listoftables
 %\bibliographystyle{plain}
 %\bibliography{refs}
-
-%}}}
 
 \end{document}
