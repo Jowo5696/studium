@@ -110,7 +110,7 @@
 \renewcommand\abstractname{Abstract}
 \abstract{\noindent This work is a short summary on the derivation of the methods of statistical mechanics as well as its application to various systems whether they be discrete or continuous.
 The focus is on ensemble theory.
-The derivations and arguments rely heavily on Raj Kumar Pathria \textit{Statistical Mechanics}.}
+The derivations and arguments rely heavily on \textsc{Raj Kumar Pathria} \textit{Statistical Mechanics} as well as \textsc{Nicolas Borghini} \textit{Statistische Physik} script (Bielefeld) and \textsc{Johann Kroha}'s lecture (Bonn WS24/25).}
 
 %}}}
 
@@ -466,7 +466,7 @@ Due to the first law of thermodynamics this is also equal to
 \begin{align} 
   \Leftrightarrow \dfrac{f}{2}(V\td P + P\td V) &= -P\td V \\
   \Leftrightarrow P\left(\dfrac{f}{2}+1\right)\td V &= -\dfrac{f}{2}V\td P\\
-  \Leftrightarrow \underbrace{\dfrac{\tfrac{f}{2}+1}{\tfrac{f}{2}}}_{=:\gamma }\dfrac{\td V}{V} &= -\dfrac{\td P}{P}\\
+  \Leftrightarrow \underbrace{\dfrac{\tfrac{f}{2}+1}{\tfrac{f}{2} }}_{=:\gamma }\dfrac{\td V}{V} &= -\dfrac{\td P}{P}\\
   \Leftrightarrow -\gamma \ln\left(\dfrac{V_2}{V_1}\right) &= \ln\left(\dfrac{P_2}{P_1}\right)\\
   \Leftrightarrow \left(\dfrac{V_1}{V_2}\right)^{\gamma } &= \dfrac{P_2}{P_1}\\
   \Leftrightarrow P_1V_1^\gamma  &= P_2V_2^\gamma =\text{const}
@@ -478,18 +478,48 @@ Thus for any reversible adiabatic process
 .\end{align} 
 The heat capacity at constant volume is given by
 \begin{align} 
-  c_V &= \diffp[]{U}{T} = \dfrac{f}{2}Nk_B
+  c_V &= \left(\diffp[]{U}{T}\right)_V = \dfrac{f}{2}Nk_B
 .\end{align} 
 The heat capacity at constant pressure is best calculated when the fixed variables of state contains the pressure and the volume is variable
 \begin{align} 
-  c_P &= \diffp[]{(U+PV)}{T} = \left(\dfrac{f}{2}+1\right)Nk_B
+  c_P &= \left(\diffp[]{(U+PV)}{T}\right)_P = \left(\dfrac{f}{2}+1\right)Nk_B
 .\end{align} 
 Therefore
 \begin{align} 
   \Aboxed{c_P&>c_V} & \dfrac{c_P}{c_V}&=\dfrac{\tfrac{f}{2}+1}{\tfrac{f}{2}}=\gamma 
 .\end{align} 
-This hold generally.
+This holds generally.
 For a constant volume the added heat can only be transferred to the temperature of the system, but for constant pressure the heat can also be used to expand the gas.
+%}}}
+
+%{{{ Van-der-Waals Gas
+\subsection{Van-der-Waals Gas}
+The Van-der-Waals gas is a first approximation to a real gas; its constituents are interacting particles with a hard shell.
+The equation of state changes such that
+\begin{align} 
+  P &= \dfrac{RT}{v-b}-\dfrac{a}{v^2}
+,\end{align} 
+with $v=\tfrac{VN_A}{N}$ the molar volume.
+The parameter $b$ is the covolume and models the lower bound of the volume $(v>b)$ which is available to the gas since the particles each have a hard shell of fixed radius.
+The parameter $a$ is the internal pressure which reduces the pressure of the gas due to attractive potentials between the particles.
+\begin{Figure}
+  \centering
+  \includegraphics[width=\textwidth]{VdW_isotherms.png}
+  \captionof{figure}{Van-der-Waals isotherms along with the spinodal curve (black dash-dot curve) and coexistence / saturation curve (red dash-dot curve). [Wikipedia]}
+\end{Figure}
+Below the critical temperature $T_c$ the isotherms show the phase transition of a liquid to a gas (left to right).
+The spinodal curve separates the regions in which liquid, vapor or gas exists from the regions of unphysical stats.
+The solid lines are physical states of matter; liquid on the left side and gas on the right side.
+The dotted curve (blue and green) is a superheated liquid on the left side and a subcooled vapor on the right side.
+These states of matter a only metastable and will collapse to their respective stable states upon disturbance; they are often produced in a phase transition.
+The coexistence curve models these metastable states where they can coexist with their stable partners.
+
+To model the phase transition more accurately one can use the Maxwell construction of equal area to draw a line between the two big dots on the isotherms.
+The line separates the curve between the two points, such that the area under both curves are equal.
+This is done, because a system cannot do work solely due to a change of phase (the integral in a $p$-$v$-diagram is equal to work).
+There is no real physical discontinuity, the liquid or gas will be a mixture of vapor with either state.
+%}}}
+
 %}}}
 
 %{{{ Density of States
@@ -574,8 +604,8 @@ In three dimensions
 %}}}
 %}}}
 
-%{{{ Occupation Number
-\section{Occupation Number}
+%{{{ Quantum Statistics
+\section{Quantum Statistics}
 %{{{ The Gibbs Paradox
 \subsection{The Gibbs Paradox}
 Consider an ideal monoatomic gas in the canonical treatment.
@@ -607,7 +637,7 @@ The thermal wavelength can also be calculated via the wavenumber
 Then
 \begin{align} 
   \lambda _T&= 2\pi \hbar \left(\int_{-\infty}^{\infty}\td p\, \text{e}^{-\beta \tfrac{p^2}{2m}}\right)^{-1}\\
-            &= 2\pi \hbar \left(\,\sqrt[]{\dfrac{\pi }{\tfrac{\beta }{2m}}}\right)^{-1} = 2\pi \hbar \,\sqrt[]{\dfrac{\beta }{2\pi m}}\\
+            &= 2\pi \hbar \left(\,\sqrt[]{\dfrac{\pi }{\tfrac{\beta }{2m} }}\right)^{-1} = 2\pi \hbar \,\sqrt[]{\dfrac{\beta }{2\pi m}}\\
             &= \,\sqrt[]{\dfrac{2\pi \hbar ^2}{k_BTm}}
 \end{align} 
 
@@ -670,8 +700,8 @@ One can write (and leaving out the constant of proportionality denoted by star)
 This leads to the conclusion that the enumeration of indistinguishable particles has been done wrong and that the number of microstates needs to be reduced such that the total change of entropy of mixing (two identical gases with indistinguishable particles) is equal to zero.
 %}}}
 
-%{{{ Derivation
-\subsection{Derivation}
+%{{{ Occupation Number Formalism
+\subsection{Occupation Number Formalism}
 It is not always wise or even correct to take identical and non-localized constituents of a system (e.g.\ particles in a gas) as distinguishable and let the change of their respective positions count as a separate microstate (see for example the Gibbs paradox).
 To calculate the correct value for the probability distribution and the partition sum of indistinguishable particles one has to use the theory of occupation numbers because it would be unphysical to count each particle separately.
 
@@ -760,8 +790,6 @@ The variance is given by
 ,\end{align} 
 since $n_i^2=n_i$ for Fermions.
 
-%{{{ Properties
-\subsection{Properties}
 The distribution has a width of $2k_BT$ and is centered on $\mu $.
 For $f(\varepsilon _i<\mu )\rightarrow 1$ and $f(\varepsilon _i>\mu )\rightarrow 0$.
 At $f(\varepsilon _i=\mu )=0.5$.
@@ -772,9 +800,25 @@ $f(\varepsilon _i)$ will then be infinitely sharp around $\mu $ since the width 
   \lim_{T\rightarrow 0}f(\varepsilon _i)=\theta (\mu -\varepsilon _i)
 .\end{align}
 As a consequence for the low temperature regime the only states which can be occupied are for energies $\varepsilon _i<\mu $.
-This energy is also called the Fermi-energy $\mu (T=0)=\varepsilon _F$.
-The corresponding momentum is the Fermi-momentum $p_F=\tfrac{\varepsilon _F}{2m}$.
-%}}}
+This energy is also called the Fermi energy $\mu (T=0)=\varepsilon _F$.
+The corresponding momentum is the Fermi momentum $p_F=\tfrac{\varepsilon _F}{2m}$.
+The Fermi energy is calculated with the particle number for $T\rightarrow 0$.
+Consider a free fermionic gas with quadradic dispersion relation $E=\tfrac{p^2}{2m}$
+\begin{align} 
+  \rho  &= \int_{}^{}\td \Gamma \,\delta \left(E-E_f\right)\\
+        &= \dfrac{V}{(2\pi \hbar )^3}\int_{}^{}\td S_2\,\int_{}^{}\td p\,p^2\delta (E-E_f)\\
+        &= \dfrac{V}{2\pi ^2\hbar ^3}\int_{}^{}\td E\,\dfrac{m\cdot 2mE}{\,\sqrt[]{2mE}}\delta (E-E_f)\\
+        &= V\dfrac{m\,\sqrt[]{2m}}{2\pi ^2\hbar ^3}\,\sqrt[]{E} =: Vc \,\sqrt[]{E}
+.\end{align} 
+The average particle number is thus
+\begin{align} 
+  \left\langle N\right\rangle &= \left\langle \sum_{i}^{}n_i\right\rangle =\sum_{i}^{}\left\langle n_i\right\rangle \\
+                              &= \sum_{i}^{}f(\varepsilon _i) = \int_{}^{}\td E\,\rho (E)f(E)\\
+                              &\stackrel{T\rightarrow 0}{=} Vc\int_{0}^{\varepsilon _F}\td E\,\,\sqrt[]{E}\\
+                              &= Vc \dfrac{2}{3}\varepsilon _F^{3/2}\\
+  \Leftrightarrow \varepsilon _F &= \left(\dfrac{3}{2}\dfrac{\left\langle N\right\rangle }{Vc}\right)^{\tfrac{2}{3}}
+.\end{align} 
+!TODO! SOME ADDITIONAL CALCULATIONS ON PAPER
 %}}}
 
 %{{{ Bose-Einstein Statistics
@@ -818,16 +862,20 @@ It holds not only for the single energy level $i$ but more generally for the who
 These distributions are quite similar and only differ by a sign; plus for Fermions and minus for Bosons.
 %}}}
 
+%}}}
+
 %{{{ Phase Transitions
 \section{Phase Transitions}
 In thermodynamical / statistical systems the behaviour of particles has been regarded as non-interacting.
 This leads to thermodynamic functions, which depend on the properties (e.g.\ energy) of the single particles and produces accurate results.
 However, if one allows for the interaction of particles to happen, a collective, long-range behaviour of the system arises.
 This can be seen at certain temperatures, when so called phase transistion occur.
-A phase transition is a transistion for which a certain order parameter has a zero value and now takes a non-zero value (throughout the whole medium, thus long-range).
+A phase transition is a transistion for which a certain order parameter $m$ has a zero value and now takes a non-zero value (throughout the whole medium, thus long-range).
 Such order parameters can be for example the magnetisation of a medium.
 The need for these parameters arises, as a phase transition breaks the symmetry of the system and introduces a new variable which is needed to describe the system in its current state.
 
+%{{{ Order Parameter \& Critical Exponents
+\subsection{Order Parameter \& Critical Exponents}
 First order phase transitions involve a latent heat.
 This heat is absorbed or released during a phase transition while the system stays at constant temperature.
 I.e.\ this heat is the energy needed (or released) in the phase transition.
@@ -839,26 +887,70 @@ This is seen in the transition of a ferromagnetic material to a paramagnetic mat
 
 A phase transition is of $n$-th order when 
 \begin{align} 
-  \diffp[n]{F}{H}\qquad \text{diverges}
+  \diffp[n]{F}{X}\qquad \text{diverges}
 .\end{align} 
-Here $F$ is the thermodynamic potential (free energy in this case) and $B$ is an external quantitiy (here the external magnetic field).
+Here $F$ is the thermodynamic potential (free energy generally) and $X$ is a state variable (intensive generally).
 For example in the $2^\text{nd}$ order with 
 \begin{align} 
-  \td F=-S\td T-p\td V+\mu \td N-\mu _0M\td H
+  \td F=-S\td T+M\td B
 \end{align} 
 then
 \begin{align} 
-  -\dfrac{1}{\mu _0}\diffp[2]{F}{H}=\diffp[]{M}{H}=\chi 
+  \left(\diffp[2]{F}{B}\right)_T=\left(\diffp[]{M}{B}\right)_T=\chi 
 \end{align} 
 diverges at the Curie-temperature in the phase transition of a ferromagnet to a paramagnet.
+More generally one can define the order parameter $m$ and an ordering field $h$, s.t.\ in the limit of $h\rightarrow 0$, $m$ tends to a limiting value $m_0$ which is zero for $T\geq T_c$ and non-zero for $T<T_c$.
+
+The intrinsic measures of the system are not sufficient in describing the phase transition since the correlation length $\xi $ extends to infinity.
+Thus one needs a measure of the phase transition which is length/scale independent.
+The only functions which fulfill this criterium are polynomials
+\begin{align} 
+  f(x) = x^\alpha \rightarrow f(x) &= (Ax)^\alpha \\
+  \Leftrightarrow \dfrac{f(x)}{A^\alpha } &= x^\alpha \\
+  \Leftrightarrow f^*(x) &= x^\alpha 
+.\end{align} 
+Thus at the critical temperature the defining properties of the phase transition are described by polynomials or the power law.
+The way the order parameter vanishes at the critical temperature is defined by
+\begin{align} 
+  m_0\propto \left|\dfrac{T_c-T}{T_c}\right|^\beta =|\tau |^\beta 
+,\end{align} 
+where $\beta $ is the critical exponent and 
+\begin{align} 
+  \dfrac{T-T_c}{T_c}=:\tau 
+\end{align} 
+is the reduced temperature.
+For the ordered phase $\tau <0$, for the disordered phase $\tau >0$ and at the critical temperature $\tau =0$.
+The susceptibilities are defined equally
+\begin{align} 
+  \chi  &\propto \left.\diffp[]{m}{h}\right|_{h\rightarrow 0}\propto \begin{cases}
+    \tau ^{-\gamma }\, \text{above}\\
+    (-\tau )^{-\gamma '} \, \text{below}\\
+  \end{cases}\\
+  c_V &\propto \begin{cases}
+    \tau ^{-\alpha }\, \text{above}\\
+    (-\tau )^{-\alpha '}\, \text{below}
+  \end{cases}
+,\end{align} 
+for $\chi $ the magnetic susceptibility with $m=M$ the magnetisation, $h=B$ the external magnetic field and $c_V$ the specific heat capacity.
+
+In general the usage of the label of the critical exponents is not arbitrary.
+To summarize:
+$\alpha $ relates the specific heat to the temperature $c_V=\tau ^{-\alpha }$; $\beta $ relates the order parameter to the temperature $m=|\tau |^{\beta }$; $\gamma $ relates the systems response / susceptibility to an external driving parameter (exeternal field) $\chi =\diffp[]{m}{h}=\tau ^{-\gamma }$
+\footnote{There are many more critical exponents relating the order parameter or other various quantities of the system with the temperature.
+These are not listed here (see a summary on wikipedia on the article of universality classes).}.
+
+Different systems who share the same critical exponents behave identical at the critical temperature.
+Thus a certain set of critical exponents is called a universality class and all systems belonging to this class show the same behaviour at the critical temperature.
+If a model solves a given system (i.e.\ yields a set of critical exponents), then other systems solved with this model will belong to the same universality class and thus behave the same way at $T_c$.
+%}}}
 
 %{{{ Ising Model
 \subsection{Ising Model}
+!TODO! SEE NOTES ON PAPER
+%}}}
 
 %}}}
-%}}}
 
-%}}}
 
 \end{multicols}
 
