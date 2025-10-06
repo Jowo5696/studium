@@ -137,8 +137,6 @@ The derivations and arguments rely heavily on \textsc{Raj Kumar Pathria} \textit
 
 \begin{multicols}{2}
 
-%{{{
-
 % {{{ Ensemble Theory
 \section{Ensemble Theory}
 Imagine one would like to study the microscopic behaviour of a many particle system.
@@ -152,12 +150,25 @@ For a many particle system made up of $N$ particles, a microstate is a single po
 The time evolution is a single curve through this phase space, thus a series of different microstates (which each have to realize the same macrostate).
 One can imagine a gas inside a box: The positions of all gas particles will change over time however the volume will always stay the same.
 
-To study the macrostate from a microstate one can take a time average average of all microstates which have been on the trajectory.
+To study the macrostate from a microstate one can take a time average of all microstates, which have been on the trajectory.
+For example the average value of an observable $f$ is given by
+\begin{align} 
+  \left\langle f \right\rangle _t=\lim_{t\rightarrow \infty}\dfrac{1}{t}\int_{0}^{t}\td t'\,f(t')
+.\end{align} 
+To compute this integral one has to know the time dependence of $f$. 
 Instead one could also make use of the ergodic theorem and average a multitude of identically prepared system to achieve the same average.
-The set of all identically prepared systems are then called an ensemble.
-These systems are, in general, only imaginary copies of a single system and they are considered in the calculation as possible microstates for a system (i.e.\ they don't have to be considered as a separate system for which there are neccessary calculation to do).
+The theorem states that a dynamical system will eventually visit all parts of its phase space
+\footnote{A more rigorous explanation is definitely needed, but the general picture is clear.}.
+Together with Liouville's theorem, if a system is prepared, such that it uniformly fills its phase space, then the system will always have the same phase space distribution.
+Since a single system will visit all parts of its phase space over an arbitrarily long period of time, one can achieve the same goal by preparing infinitely many identical systems, which are all left to themselfes to evolve through time hence will also visit all parts of phase space, and take the average over all these systems at a certain instant in time.
+\begin{align} 
+  \left\langle f \right\rangle _e=\sum_{\mathfrak{m}}^{}p_\mathfrak{m} f = \left\langle f \right\rangle _t
+,\end{align} 
+whereby $p_\mathfrak{m}$ is the probability that a certain microstate $\mathfrak{m}$ is realized in any system.
+The set of all identically prepared systems are called an ensemble.
+These systems are, in general, only imaginary copies of a single system and they are considered in the calculation as possible microstates for that system (i.e.\ they don't have to be considered as a separate system for which there are neccessary calculation to do).
 The use of this theory is not apparent when one considers a precisely known macroscopic system i.e.\ all macrostates are fixed.
-However, if one only fixes a certain amount of macrostates and leaves e.g.\ the energy to be arbitrary, then the restriction on the phase space trajectory is lifted in that dimension and the microstates allow for an arbitrary range of energies.
+However, if one only fixes a certain amount of macrostates and leaves e.g.\ the energy to be arbitrary, then the restriction on the phase space trajectory is lifted in that dimension and the microstates allow for an arbitrary range of energies within the hyperplane conformal to its restriction.
 Then one can utilise the methods of the theory to calculate the average energy of such a system by summing over all energies (which are realized in a certain microstate) and weighing them with a probability function.
 %}}}
 
@@ -174,76 +185,106 @@ The entropy is given by
 \begin{align} 
   \boxed{S = -k_B\sum_{i}^{}p_i \ln p_i\equiv -k_B\text{tr}\left(\rho \ln \rho \right)}
 ,\end{align} 
-with $p_i$ being the probability that the $i^{\text{th}}$ microstate is realized and $\rho $ being the density matrix.
+with $p_i$ being the probability that the $i^{\text{th}}$ microstate\footnote{The label is equivalent $\mathfrak{m}\equiv i$ but the sum over $i$ is more common.} is realized and $\rho $ being the density matrix.
 The only constraints are that the probability distribution may be normalized and that it is used to calculate the average value of any observable $A^l$ 
 \begin{align} 
-  f_0 &= \sum_{i}^{}p_i-1=0 & f_l &= \sum_{i}^{}p_iA^l_i-\left\langle A^l_i\right\rangle =0
+  f_0 &= \sum_{i}^{}p_i-1=0 & f_l &= \sum_{i}^{}p_iA^l-\left\langle A^l\right\rangle =0
 ,\end{align} 
-while the sum of $f_l$ ranges over all $i$ microstates with their corresponding value of $A_i^l$.
+while the sum of $f_l$ ranges over all $i$ microstates.
 The Lagrangian is
 \begin{align} 
   \mathcal{L} &= S - k_B\lambda _0f_0 - k_B\sum_{l}^{}\lambda _lf_l\\
               &\begin{multlined}
-              = -k_B\sum_{i}^{}p_i\ln p_i - k_B\lambda _0\left(\sum_{i}^{}p_i-1\right) \\- k_B\sum_{l}^{}\lambda _l\left(\sum_{i}^{}p_iA_i^l-\left\langle A^l\right\rangle \right)
+              = -k_B\sum_{i}^{}p_i\ln p_i - k_B\lambda _0\left(\sum_{i}^{}p_i-1\right) \\- k_B\sum_{l}^{}\lambda _l\left(\sum_{i}^{}p_iA^l-\left\langle A^l\right\rangle \right)
               \end{multlined}
 .\end{align} 
 Now taking the variation w.r.t.\ to all $p_i$ equal to zero
 \begin{multline}
-  \delta _{p_i}\mathcal{L} = k_B\left(-\sum_{i}^{}\ln p_i - \sum_{i}^{}1 - \lambda _0\sum_{i}^{}1 \right.\\ -\left.\sum_{l}^{}\lambda _l \sum_{i}^{}A_i^l\right)\delta p_i=0
+  \delta _{p_i}\mathcal{L} = k_B\left(-\sum_{i}^{}\ln p_i - \sum_{i}^{}1 - \lambda _0\sum_{i}^{}1 \right.\\ -\left.\sum_{l}^{}\lambda _l \sum_{i}^{}A^l\right)\delta p_i=0
 .\end{multline}
 Exchanging $\sum_{l}^{}$ and $\sum_{i}^{}$ in the last term and taking $\sum_{i}^{}$ out of the parentheses yields
 \begin{align} 
-  -\ln p_i - 1 - \lambda _0 - \sum_{l}^{}\lambda _lA^l_i &= 0
+  -\ln p_i - 1 - \lambda _0 - \sum_{l}^{}\lambda _lA^l &= 0
 ,\end{align} 
 because $\delta _{p_i}\mathcal{L}=0\,\forall \delta p_i$ independently.
 \begin{align} 
-  p_i &= \text{e}^{-(1 + \lambda _0) - \sum_{l}^{}\lambda _lA_i^l} = \text{e}^{-(1+\lambda _0)}\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}
+  p_i &= \text{e}^{-(1 + \lambda _0) - \sum_{l}^{}\lambda _lA^l} = \text{e}^{-(1+\lambda _0)}\text{e}^{-\sum_{l}^{}\lambda _lA^l}
 .\end{align} 
 The normalisation multiplier yields
 \begin{align} 
-  \sum_{i}^{}p_i &= \sum_{i}^{}\text{e}^{-(1+\lambda _0)}\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}\\
-                 &= \text{e}^{-(1+\lambda _0)}\sum_{i}^{}\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}\\
+  \sum_{i}^{}p_i &= \sum_{i}^{}\text{e}^{-(1+\lambda _0)}\text{e}^{-\sum_{l}^{}\lambda _lA^l}\\
+                 &= \text{e}^{-(1+\lambda _0)}\sum_{i}^{}\text{e}^{-\sum_{l}^{}\lambda _lA^l}\\
                  &= 1\\
-  \Leftrightarrow \text{e}^{-(1+\lambda _0)} &= \dfrac{1}{\sum_{i}^{}\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}}=:\dfrac{1}{Z}
+  \Leftrightarrow \text{e}^{-(1+\lambda _0)} &= \dfrac{1}{\sum_{i}^{}\text{e}^{-\sum_{l}^{}\lambda _lA^l}}=:\dfrac{1}{Z}
 .\end{align} 
 Thereby
 \begin{align} 
-  \boxed{p_i=\dfrac{\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}}{\sum_{i}^{}\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}}=:\dfrac{\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}}{Z}}
+  \boxed{p_i=\dfrac{\text{e}^{-\sum_{l}^{}\lambda _lA^l}}{\sum_{i}^{}\text{e}^{-\sum_{l}^{}\lambda _lA^l}}=:\dfrac{\text{e}^{-\sum_{l}^{}\lambda _lA^l}}{Z}}
 .\end{align} 
 The other Lagrange multiplier yields
 \begin{align} 
-  \sum_{i}^{}p_iA_i^l &= \sum_{i}^{}\dfrac{\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}}{\sum_{i}^{}\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}}A_i^l\\
-                      &= \dfrac{1}{Z}\sum_{i}^{}\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}A_i^l\\
-                      &= -\dfrac{1}{Z}\diffp*[]{\sum_{i}^{}\text{e}^{-\sum_{l}^{}\lambda _lA_i^l}}{\lambda _l}\\
+  \sum_{i}^{}p_iA^l &= \sum_{i}^{}\dfrac{\text{e}^{-\sum_{l}^{}\lambda _lA^l}}{\sum_{i}^{}\text{e}^{-\sum_{l}^{}\lambda _lA^l}}A^l\\
+                      &= \dfrac{1}{Z}\sum_{i}^{}\text{e}^{-\sum_{l}^{}\lambda _lA^l}A^l\\
+                      &= -\dfrac{1}{Z}\diffp*[]{\sum_{i}^{}\text{e}^{-\sum_{l}^{}\lambda _lA^l}}{\lambda _l}\\
                       &= \boxed{-\diffp[]{\ln Z}{\lambda _l} = \left\langle A^l\right\rangle }
 .\end{align} 
 The relation $-\diffp[]{\ln Z}{\lambda _l} = \left\langle A^l\right\rangle $ is used to determine the Lagrange multiplier.
 It is also useful to know
 \begin{align} 
-  \diffp[2]{\ln Z}{\lambda _l} &= \left\langle A^l\right\rangle ^2-\left\langle {A^l}^2\right\rangle \\
+  \left\langle A^2\right\rangle  &= \sum_{i}^{}\dfrac{\text{e}^{-\sum_{l}^{}\lambda _lA^l}}{\sum_{i}^{}\text{e}^{-\sum_{l}^{}\lambda _lA^l}}{A^l}^2\\
+                                 &= \dfrac{1}{Z}\diffp[2]{Z}{\lambda _l}\\
+                                 &= \diffp*[]{\left(\dfrac{1}{Z}\diffp[]{Z}{\lambda _l}\right)}{\lambda _l}-\diffp*[]{\dfrac{1}{Z}}{\lambda _l}\diffp[]{Z}{\lambda _l}\\
+                                 &= \diffp[2]{\ln Z}{\lambda _l}+\dfrac{1}{Z^2}\diffp[]{Z}{\lambda _l}\diffp[]{Z}{\lambda _l}\\
+                                 &= \diffp[2]{\ln Z}{\lambda _l}+\left(\diffp[]{\ln Z}{\lambda _l}\right)^2\\
+  \Leftrightarrow \diffp[2]{\ln Z}{\lambda _l} &= \left\langle {A^l}^2\right\rangle -\left\langle A^l\right\rangle ^2 = \text{Var}\left(A^l\right)
+\end{align}
+in general
+\begin{align} 
   \diffp[]{\ln Z}{\lambda _k,\lambda _l} &= \left\langle A^lA^k\right\rangle -\left\langle A^l\right\rangle \left\langle A^k\right\rangle 
 .\end{align}
 Recall the general formula for entropy
 \begin{align} 
   S &= -k_B\sum_{i}^{}p_i\ln p_i\\
     &= -k_B\left\langle \ln p_i\right\rangle \\
-    &= k_B\left\langle \ln Z\right\rangle -k_B\left\langle \ln \text{e}^{-\sum_{l}^{}\lambda _lA^l_i}\right\rangle \\
-    &= k_B\ln Z + k_B\left\langle \sum_{l}^{}\lambda _lA_i^l\right\rangle \\
-    &= k_B\ln Z + k_B\sum_{l}^{}\lambda _l\left\langle A_i^l\right\rangle \\
-\Aboxed{S &= k_B\ln Z - k_B\sum_{l}^{}\lambda _l\diffp[]{\ln Z}{\lambda _l}}
+    &= k_B\left\langle \ln Z\right\rangle -k_B\left\langle \ln \text{e}^{-\sum_{l}^{}\lambda _lA^l}\right\rangle \\
+    &= k_B\ln Z + k_B\left\langle \sum_{l}^{}\lambda _lA^l\right\rangle \\
+  \Aboxed{S &= k_B\ln Z + k_B\sum_{l}^{}\lambda _l\left\langle A^l\right\rangle }\\
+    &= k_B\ln Z - k_B\sum_{l}^{}\lambda _l\diffp[]{\ln Z}{\lambda _l}
 ,\end{align} 
-with $\left\langle A_i^l\right\rangle =\left\langle A^l\right\rangle $ since !TODO!.
-
-Consider the derivative of $S$ w.r.t.\ $\left\langle A^l\right\rangle $ and choose $A=E$ with $\lambda =\beta $ as the energy
+Consider the derivative of $S$ w.r.t.\ $\left\langle A^l\right\rangle $ and choose $A^l=E$ with $\lambda _l=\beta $ as the energy
 \begin{align} 
   \diffp[]{S}{\left\langle E\right\rangle } &= k_B\beta =\dfrac{1}{T}\Leftrightarrow \boxed{\beta =\dfrac{1}{k_BT}}
 \end{align} 
-by comparison with the thermodynamic potential of the entropy and its derivatives\footnote{The assumption $U=\left\langle E\right\rangle $ is phenomenological and not rigorous; another way to show this would be by calculating the total differential $\td S$.}.
-If one were to set $A=N$ and $\lambda =-\alpha $ as the particle number
+by comparison with the thermodynamic potential of the entropy and its derivatives
+\footnote{The assumption $U=\left\langle E\right\rangle $ is phenomenological.}.
+If one were to set $A^l=N$ and $\lambda _l=-\alpha $ as the particle number
 \begin{align} 
   \diffp[]{S}{\left\langle N\right\rangle }=-k_B\alpha =-\dfrac{\mu }{T}\Leftrightarrow \boxed{\alpha =\dfrac{\mu }{k_BT}}
 .\end{align} 
-
+This can also be derived from the total differential of $S$.
+\begin{align} 
+  \td S &= -\td \left(k_B\sum_{i}^{}p_i\ln p_i\right)\\
+        &= -k_B\sum_{i}^{}\left(\ln p_i + 1\right)\td p_i
+.\end{align} 
+$\sum_{i}^{}\td p_i=0$ due to the normalisation constraint.
+In the canonical ensemble $p_i = \tfrac{1}{Z}\text{e}^{-\beta E}$
+\begin{align} 
+  \td S &= k_B\sum_{i}^{}\left(\ln Z + \beta E\right)\td p_i\\
+        &= k_B\beta \sum_{i}^{}E\td p_i
+,\end{align}
+since $Z$ is a number.
+Compare the first law of thermodnamics
+\begin{align} 
+  \td S &= \dfrac{1}{T}\td \left\langle E\right\rangle  + \dfrac{p}{T}\td V\\
+        &= \dfrac{1}{T}\td \left(\sum_{i}^{}p_iE\right) + \dfrac{p}{T}\td V\\
+        &= \dfrac{1}{T}\left(\sum_{i}^{}E\td p_i + \sum_{i}^{}p_i\td E\right) + \dfrac{p}{T}\td V\\
+        &= \dfrac{1}{T}\sum_{i}^{}E\td p_i + \dfrac{1}{T}\left\langle \td E\right\rangle +\dfrac{p}{T}\td V\\
+  \td S &= k_B\beta \sum_{i}^{}E\td p_i
+,\end{align} 
+which yields
+\begin{align} 
+  \beta  &= \dfrac{1}{k_BT} & \dfrac{\left\langle \td E\right\rangle }{\td V} &= -p
+\end{align} 
 %}}}
 
 %{{{ Microcanonical Ensemble
@@ -265,21 +306,21 @@ which is also a suitable thermodynamic potential.
 %{{{ Canonical Ensemble
 \subsection{Canonical Ensemble}
 The ensemble is specified to have a fixed pressure, volume, temperature and particle number resulting in an unknown energy value, whose mean has to be calculated.
-The probability that a certain microstate $\mathfrak{m}$ realizes a macrostate whose energy is $E_\mathfrak{m}$ is given by
+The probability that a certain microstate $\mathfrak{m}$ realizes a macrostate whose energy is $E$ is given by
 \begin{align} 
-  p_\mathfrak{m} &= \dfrac{\text{e}^{-\beta E_\mathfrak{m} }}{\sum_{\mathfrak{m}}^{}\text{e}^{-\beta E_\mathfrak{m} }} & \left\langle E\right\rangle &=\sum_{i}^{}p_iE_i
+  p_\mathfrak{m} &= \dfrac{\text{e}^{-\beta E}}{\sum_{\mathfrak{m}}^{}\text{e}^{-\beta E}} & \left\langle E\right\rangle &=\sum_{\mathfrak{m}}^{}p_\mathfrak{m}E
 ,\end{align} 
 which in turn results in the average energy value $\left\langle E\right\rangle $.
 The distribution is normalized by the partition function (the sum can also the form of an integral in the classical continuous sense)
 \begin{align} 
-  Z &= \sum_{\mathfrak{m}}^{}\text{e}^{-\beta E_\mathfrak{m}}
+  Z &= \sum_{\mathfrak{m}}^{}\text{e}^{-\beta E}
 \end{align} 
-which accounts for all possible values the energy $E$ can take, i.e.\ all possible microstates which have to realize the macrostate $\left(P,V,T\right)$ but are free to take whatever value in $E$.
+which accounts for all possible values the energy $E$ can take, i.e.\ all possible microstates which have to realize the macrostate $\left(T,V,N\right)$ but are free to take any value in $E$.
 
 The entropy is given by
 \begin{align} 
   S &= -k_B\sum_{i}^{}p_i\ln p_i\\
-    &= -k_B\sum_{i}^{}p_i\left(-\beta E_i-\ln Z\right)\\
+    &= -k_B\sum_{i}^{}p_i\left(-\beta E-\ln Z\right)\\
     &= k_B\beta \left\langle E\right\rangle +k_B\ln Z\\
     &= \dfrac{U}{T}+k_B\ln Z \label{eq:entropy_partition_sum}
 .\end{align} 
@@ -302,7 +343,7 @@ thermodynamic properties can be calculated from the microscopic partition sum.
 \subsubsection{Example: Dipoles in a Magnetic Field}
 As an example consider a system of $N$ dipoles (non-interacting, localized, freely orientable) in a magnetic field.
 \begin{align} 
-          Z &= \sum_{\mathfrak{m}}^{}\text{e}^{-\beta E_\mathfrak{m}}\\
+          Z &= \sum_{\mathfrak{m}}^{}\text{e}^{-\beta E}\\
             &= \sum_{ \left\{\theta \right\}}^{}\text{e}^{\sum_{i}^{}h\cos \theta _i}\\
             &= \sum_{ \left\{\theta \right\}}^{}\prod_{i}^{}\text{e}^{h\cos \theta _i}\\
             &= \sum_{\theta _1}^{}\sum_{\theta _2}^{}\hdots \sum_{\theta _N}^{}\text{e}^{h\cos \theta _1}\text{e}^{h\cos \theta _2}\hdots \text{e}^{h\cos \theta _N}\\
@@ -312,8 +353,8 @@ As an example consider a system of $N$ dipoles (non-interacting, localized, free
             &= \left(Z_1\right)^N
 .\end{align} 
 The factorization of $Z$ in (\ref{eq:factorization}) is only possible because the dipoles are non-interacting; there are no $\theta _{ij}$ factors which would make it impossible to split the product that way.
-A microstate $\mathfrak{m}$ of this system is able to realize a certain macrostate $\left(P,V,T\right)$ with arbitrary energy $E_\mathfrak{m}$.
-The energy of the system or that a microstate $\mathfrak{m}$ can take is $E_\mathfrak{m}=\sum_{i}^{N}\varepsilon _i=h\sum_{i}^{}\cos \theta _i$ the sum of all individual dipole energies, which is a proportionality factor times the cosine of the angle relative to the magnetic field (thus the degree of freedom is the angle relative to the applied field).
+A microstate $\mathfrak{m}$ of this system is able to realize a certain macrostate $\left(T,V,N\right)$ with arbitrary energy $E$.
+The energy of the system or that a microstate $\mathfrak{m}$ can take is $E=\sum_{i}^{N}\varepsilon _i=h\sum_{i}^{}\cos \theta _i$ the sum of all individual dipole energies, which is a proportionality factor times the cosine of the angle relative to the magnetic field (thus the degree of freedom is the angle relative to the applied field).
 Since system consists of $N$ dipoles and it is possible for every dipole to have every possible rotation for every possible rotation for every $N-1$ other dipole, the available microstates are
 \begin{align} 
   \sum_{\mathfrak{m}}^{}=\sum_{\theta _1}^{}\sum_{\theta _2}^{}\hdots \sum_{\theta _N}^{}
@@ -330,7 +371,7 @@ If one were to use the energies $\varepsilon _i$ as a label instead the sum woul
 \begin{align} 
   \sum_{\mathfrak{m}}^{}=\sum_{\varepsilon _1}^{}\sum_{\varepsilon _2}^{}\hdots \sum_{\varepsilon _N}^{}
 ,\end{align} 
-with $E_\mathfrak{m}=\sum_{i}^{N}\varepsilon _i$ as above.
+with $E=\sum_{i}^{N}\varepsilon _i$ as above.
 %}}}
 
 %{{{ Example: Harmonic Oscillator
@@ -339,10 +380,10 @@ This could also be used for a non-interacting set of harmonic oscillators in whi
 \begin{align} 
   \sum_{\mathfrak{m}}^{}=\sum_{n_1}^{}\sum_{n_2}^{}\hdots \sum_{n_N}^{}
 ,\end{align} 
-with $E_\mathfrak{m}=\sum_{i}^{N}\hbar \omega \left(n_i+\tfrac{1}{2}\right)$.
+with $E=\sum_{i}^{N}\hbar \omega \left(n_i+\tfrac{1}{2}\right)$.
 The total partition function is given by
 \begin{align} 
-  Z &= \sum_{\mathfrak{m}}^{}\text{e}^{-\beta E_\mathfrak{m}}\\
+  Z &= \sum_{\mathfrak{m}}^{}\text{e}^{-\beta E}\\
     &= \sum_{ \left\{n\right\}}^{}\text{e}^{-\beta \sum_{i}^{N}\hbar \omega (n_i+\tfrac{1}{2})}
 .\end{align} 
 Since they are all non-interacting the partition function factorizes
@@ -364,12 +405,20 @@ Then the series converges
 Also
 \begin{align} 
   \dfrac{1}{1-\text{e}^{-x}} &= \dfrac{1}{\text{e}^{-x/2}\left(\text{e}^{x/2}-\text{e}^{-x/2}\right)}=\dfrac{\text{e}^{x/2}}{\text{e}^{x/2}-\text{e}^{-x/2}}\\
-                             &= \dfrac{\text{e}^{x/2}}{2\sinh x}
+                             &= \dfrac{\text{e}^{x/2}}{2\sinh \tfrac{x}{2}}
 .\end{align} 
 Thereby
 \begin{align} 
-  Z &= \text{e}^{-\hbar \omega \tfrac{N}{2}}\left(\dfrac{\text{e}^{\hbar \omega /2}}{\sinh \left(\beta \hbar \omega \right)}\right)^N\\
-    &= \sinh \left(\beta \hbar \omega \right)^{-N}=\dfrac{1}{\sinh \left(\beta \hbar \omega \right)^N}
+  Z &= \text{e}^{-\hbar \omega \tfrac{N}{2}}\left(\dfrac{\text{e}^{\hbar \omega /2}}{2\sinh \left(\tfrac{1}{2}\beta \hbar \omega \right)}\right)^N\\
+    &= \dfrac{1}{\left(2\sinh \left(\tfrac{1}{2}\beta \hbar \omega \right)\right)^N} = \left(2\csch \left(\tfrac{1}{2}\beta \hbar \omega \right)\right)^N
+.\end{align} 
+The average value for the energy is thus
+\begin{align} 
+  \left\langle E\right\rangle  &= -\diffp[]{\ln Z}{\beta }\\
+                               &= -\diffp*[]{\ln \left(2^N\csch\left(\tfrac{1}{2}\beta \hbar \omega \right)^N\right)}{\beta }\\
+                               &= N\diffp*[]{\ln\left(2\sinh \left(\tfrac{1}{2}\beta \hbar \omega \right)\right)}{\beta }\\
+                               &= N\dfrac{2\cosh \left(\tfrac{1}{2}\beta \hbar \omega \right)}{2\sinh \left(\tfrac{1}{2}\beta \hbar \omega \right)}\dfrac{1}{2}\hbar \omega \\
+                               &= \dfrac{N\hbar \omega }{2}\coth \left(\tfrac{1}{2}\beta \hbar \omega  \right)
 .\end{align} 
 %}}}
 
@@ -377,7 +426,9 @@ Thereby
 \subsection{Grand Canonical Ensemble}
 The ensemble is specified to have a fixed pressure, volume and temperature resulting in an unknown energy and particle number.
 It is simply the canonical ensemble but with varying / unspecified particle number.
-The probability that a certain microstate $\mathfrak{m}$ realizes a macrostate whose particle number is $N$ and energy $E_{\mathfrak{m}(N)}$ (the energy or energy microstates depend on the particle number, which is indicated by $\mathfrak{m}(N)$) is then given by
+The probability that a certain microstate $\mathfrak{m}$ realizes a macrostate whose particle number is $N$ and energy $E_{\mathfrak{m}(N)}$ (the energy or energy microstates depend on the particle number, which is indicated by $\mathfrak{m}(N)$\footnote{The dependence of $E$ on $\mathfrak{m}(N)$ is only symbolic in the sense that the sum $E_{\mathfrak{m}(N)}=\sum_{i}^{N}\varepsilon _i$ depends on $N$. 
+It should not be confused that $E$ could somehow not be the total energy anymore.
+See that it is still the canonical partition sum but dependent on $N$.}) is then given by
 \begin{align} 
   p_\mathfrak{m} &= \dfrac{\text{e}^{-\beta E_{\mathfrak{m}(N)}+\alpha N}}{\sum_{\mathfrak{m}}^{}\text{e}^{-\beta E_{\mathfrak{m}(N)}+\alpha N}}
 ,\end{align} 
@@ -410,7 +461,6 @@ and with
   \td \Phi =-S\td T-p\td V-N\td \mu 
 \end{align} 
 thermodynamic properties can be calculated from the microscopic partition sum.
-
 %}}}
 
 %}}}
@@ -424,9 +474,18 @@ Thus an ideal gas in three dimensions consisting of monoatomic constituents, whi
 \begin{align} 
   U &= \sum_{i}^{N}\dfrac{1}{2}m_i|\dot{\vv{r_i}}|^2=\sum_{i}^{N}\dfrac{3}{2}k_BT=\dfrac{3}{2}Nk_BT
 .\end{align} 
-In general if a system of $N$ constituents has $f$ degrees of freedom, which appear quadratically in the internal energy, then the energy can be written as
+In general if a system of $N$ constituents has $f$ degrees of freedom, which appear to the power of $\alpha $ in the internal energy, then the energy can be written as
 \begin{align} 
-  \Aboxed{U &= \dfrac{f}{2}Nk_BT}
+  \Aboxed{U &= \dfrac{f}{\alpha }Nk_BT}
+.\end{align} 
+Formally
+\begin{align} 
+  \left\langle x_m\diffp[]{H}{x_n} \right\rangle &= \delta _{mn}k_BT
+.\end{align} 
+If the degree of freedom $x_m$ appears quadratic as $a_mx_m^2=H$ then
+\begin{align} 
+  \left\langle x_m\diffp[]{a_mx_m^2}{x_m}\right\rangle &=\left\langle 2a_mx_m^2\right\rangle =2\left\langle H\right\rangle =k_BT\\
+  \left\langle H\right\rangle &=\dfrac{1}{2}k_BT
 .\end{align} 
 %}}}
 
@@ -490,6 +549,19 @@ Therefore
 .\end{align} 
 This holds generally.
 For a constant volume the added heat can only be transferred to the temperature of the system, but for constant pressure the heat can also be used to expand the gas.
+
+The specific can also be calculated from a statistical point of view.
+It is
+\begin{align} 
+  \text{Var}(E) &= \diffp[2]{\ln Z}{\beta } \\
+                &= \diffp*[]{\diffp[]{\ln Z}{\beta }}{\beta }\\
+                &= -\diffp*[]{\left\langle E\right\rangle }{\beta }\\
+                &= \dfrac{1}{k_B\beta ^2}\diffp*[]{\left\langle E\right\rangle }{T}\\
+                &= k_BT^2c_V
+,\end{align} 
+since $\left\langle E\right\rangle =U$.
+The specific heat is therefore linearily proportional to the variance of $E$.
+For a system with a minimal variance in the Energy, the specific heat is also minimal.
 %}}}
 
 %{{{ Van-der-Waals Gas
@@ -611,9 +683,9 @@ In three dimensions
 Consider an ideal monoatomic gas in the canonical treatment.
 The partition function is given by
 \begin{align} 
-  Z &= \sum_{\mathfrak{m}}^{}\text{e}^{-\beta E_\mathfrak{m}}
+  Z &= \sum_{\mathfrak{m}}^{}\text{e}^{-\beta E}
 ,\end{align} 
-with $E_\mathfrak{m}=\sum_{i}^{N}\tfrac{1}{2m}\left(\tfrac{2\pi \hbar }{L}\right)^2|\vv{n}_i|^2=:\sum_{i}^{N}\Delta |\vv{n}_i|^2$ with $\vv{n}_i=(n_{i_x}, n_{i_y}, n_{i_z})$ the vector of quantum numbers of the $i^\text{th}$ particle
+with $E=\sum_{i}^{N}\tfrac{1}{2m}\left(\tfrac{2\pi \hbar }{L}\right)^2|\vv{n}_i|^2=:\sum_{i}^{N}\Delta |\vv{n}_i|^2$ with $\vv{n}_i=(n_{i_x}, n_{i_y}, n_{i_z})$ the vector of quantum numbers of the $i^\text{th}$ particle
 \begin{align} 
   Z &= \sum_{ \left\{n\right\}}^{}\text{e}^{-\beta \sum_{i}^{3N}\Delta n_i^2}\\
     &= \left(\sum_{n_i}^{}\text{e}^{-\beta \Delta n_i^2}\right)^{3N}
@@ -722,7 +794,7 @@ The partition sum in general is
 .\end{align} 
 Now the energy is not the particle energy sum but rather
 \begin{align} 
-  E_\mathfrak{m}(N)=\sum_{i}^{}\varepsilon _i n_i
+  E(N)=\sum_{i}^{}\varepsilon _i n_i
 \end{align} 
 the sum over all energy levels (denoted by $\varepsilon _i$) and their respective occupation number (denoted by $n_i$) which is the amount of particles on that energy level.
 The total number of particles within the system is therefore
@@ -766,7 +838,7 @@ For Fermions $n_i  \in \left[0,1\right]$ thus
 \begin{align} 
   \mathcal{Z}=\prod_{i}^{}\left(1+\text{e}^{\alpha -\beta \varepsilon _i}\right)
 .\end{align} 
-The average occupation number for a single energy level $i$ is calculated via !TODO! DISCREPANCY BETWEEN AVERAGE VALUE CALCULATION SUMMATION INDICES
+The average occupation number for a single energy level $i$ is calculated via 
 \begin{align} 
   \left\langle n_i\right\rangle  &= \sum_{ \left\{n\right\}}^{}p_i n_i\\
                                  &= \sum_{ \left\{n\right\}}^{}\dfrac{1}{\mathcal{Z}}\text{e}^{(\alpha -\beta \varepsilon _i)n_i}n_i\\
@@ -818,7 +890,6 @@ The average particle number is thus
                               &= Vc \dfrac{2}{3}\varepsilon _F^{3/2}\\
   \Leftrightarrow \varepsilon _F &= \left(\dfrac{3}{2}\dfrac{\left\langle N\right\rangle }{Vc}\right)^{\tfrac{2}{3}}
 .\end{align} 
-!TODO! SOME ADDITIONAL CALCULATIONS ON PAPER
 %}}}
 
 %{{{ Bose-Einstein Statistics
@@ -840,7 +911,7 @@ If this constraint holds then the sum will converge
   \mathcal{Z} &= \prod_{i}^{}\dfrac{1}{1-\text{e}^{\alpha -\beta \varepsilon _i}}=\prod_{i}^{}\mathcal{Z}_i
 .\end{align} 
 
-The average occupation number for a single energy level $i$ is calculated via !TODO! SEE ABOVE
+The average occupation number for a single energy level $i$ is calculated via
 \begin{align} 
   \left\langle n_i\right\rangle  &= \sum_{ \left\{n\right\}}^{}p_i n_i\\
                                  &= \sum_{ \left\{n\right\}}^{}\dfrac{1}{\mathcal{Z}}\text{e}^{(\alpha -\beta \varepsilon _i)n_i}n_i\\
@@ -860,6 +931,24 @@ This is the Bose distribution.
 It holds not only for the single energy level $i$ but more generally for the whole system.
 
 These distributions are quite similar and only differ by a sign; plus for Fermions and minus for Bosons.
+
+TODO BEC
+%}}}
+
+%{{{ Grand Canonical Ensemble
+\subsection{Grand Canonical Ensemble}
+Since the partition sums are quite similar
+\begin{align} 
+  \mathcal{Z}_f &= \prod_{i}^{}\left(1+\text{e}^{-\beta (\varepsilon _i-\mu )}\right)\\
+  \mathcal{Z}_b &= \prod_{i}^{}\dfrac{1}{1-\text{e}^{-\beta (\varepsilon _i-\mu )}}
+,\end{align} 
+the grand canonical potential is given by
+\begin{align} 
+  \Phi  &= -k_BT\ln\mathcal{Z} \\
+        &= \mp k_BT\sum_{i}^{}\ln \left(1\pm\text{e}^{-\beta (\varepsilon _i-\mu )}\right)\\
+        &= \mp k_BT\int_{}^{}\td \varepsilon \,\rho (\varepsilon )\ln \left(1\pm\text{e}^{-\beta (\varepsilon _i-\mu )}\right)
+,\end{align} 
+with the top row for fermions and the bottom row for bosons.
 %}}}
 
 %}}}
@@ -912,7 +1001,7 @@ The only functions which fulfill this criterium are polynomials
 Thus at the critical temperature the defining properties of the phase transition are described by polynomials or the power law.
 The way the order parameter vanishes at the critical temperature is defined by
 \begin{align} 
-  m_0\propto \left|\dfrac{T_c-T}{T_c}\right|^\beta =|\tau |^\beta 
+  m_0\propto \left|\dfrac{T-T_c}{T_c}\right|^\beta =|\tau |^\beta 
 ,\end{align} 
 where $\beta $ is the critical exponent and 
 \begin{align} 
@@ -935,7 +1024,7 @@ for $\chi $ the magnetic susceptibility with $m=M$ the magnetisation, $h=B$ the 
 
 In general the usage of the label of the critical exponents is not arbitrary.
 To summarize:
-$\alpha $ relates the specific heat to the temperature $c_V=\tau ^{-\alpha }$; $\beta $ relates the order parameter to the temperature $m=|\tau |^{\beta }$; $\gamma $ relates the systems response / susceptibility to an external driving parameter (exeternal field) $\chi =\diffp[]{m}{h}=\tau ^{-\gamma }$
+$\alpha $ relates the specific heat to the temperature $c_V\propto|\tau |^{-\alpha }$; $\beta $ relates the order parameter to the temperature $m\propto|\tau |^{\beta }$; $\gamma $ relates the systems response / susceptibility to an external driving parameter (exeternal field) $\chi \propto\diffp[]{m}{h}\propto|\tau |^{-\gamma }$
 \footnote{There are many more critical exponents relating the order parameter or other various quantities of the system with the temperature.
 These are not listed here (see a summary on wikipedia on the article of universality classes).}.
 
@@ -946,11 +1035,10 @@ If a model solves a given system (i.e.\ yields a set of critical exponents), the
 
 %{{{ Ising Model
 \subsection{Ising Model}
-!TODO! SEE NOTES ON PAPER
+TODO SEE NOTES ON PAPER
 %}}}
 
 %}}}
-
 
 \end{multicols}
 
