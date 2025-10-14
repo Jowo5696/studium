@@ -1,0 +1,170 @@
+\documentclass[a4paper,10pt]{article}
+
+%{{{ packages
+\usepackage{blindtext}
+\usepackage{lipsum} % lorem ipsum
+\usepackage[ngerman]{babel}
+\usepackage[tiny]{titlesec} % section title size
+\usepackage{index}
+\usepackage[onehalfspacing]{setspace} % line spacing
+\usepackage{fullpage} % makes document wider
+\usepackage{pdfpages}
+\usepackage{fancyhdr} % fancy headers
+\usepackage{authblk} % author formatting
+\usepackage{hyperref} % "clickable" references in text
+\hypersetup{colorlinks=true,allcolors=blue}
+
+\usepackage{booktabs} % toprule,midrule,bottomrule
+\usepackage{multirow} % multiple rows in tabular
+\usepackage{multicol} % multiple columns in tabular
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{svg} % \includesvg{}
+\usepackage{tikz}
+\usepackage[european,siunitx]{circuitikz}
+\usepackage{import} % can import files from other directories
+\usepackage{pgfplots}
+\usepackage{gnuplottex}
+\usepackage{wrapfig} % let text wrap around figure
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{tensor} % for right index order 
+\usepackage{dsfont} % double stroke font
+\usepackage{cancel} % to cancel in fraction
+\usepackage{bm} % bold math font (if error is produced use \bm{{}})
+\usepackage{mathtools}
+\usepackage[ISO]{diffcoeff} % differentiation
+\usepackage[locale=DE]{siunitx}
+\usepackage[official]{eurosym}
+\usepackage{mathrsfs} % calligraphy
+\usepackage{physics}
+\usepackage[a]{esvect}
+\usepackage{bigints} % big integrals
+%\usepackage[frak=esstix]{mathalpha} % disable if LaTeX uses too many alphabets
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{listings}
+
+\usepackage{hyphsubst}
+\usepackage{caption}
+\usepackage{xr} % crossreferencing between documents \externaldocument{}
+\usepackage{enumitem} % for enumerate environment
+\usepackage{lineno}
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{color}
+
+\allowdisplaybreaks % allows equations to be broken (e.g. by multicols)
+
+\usetikzlibrary{arrows}
+\pgfplotsset{compat=1.15}
+
+\newcommand{\td}{\,\text{d}}
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+\newcommand{\id}{1\kern-.258em1}
+
+\newcommand\inlineeqno{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnoa{(\theequation.\text{a})}
+\newcommand\inlineeqnob{(\theequation.\text{b})}
+\newcommand\inlineeqnoc{(\theequation.\text{c})}
+
+\newcommand\inlineeqnowo{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnowoa{\theequation.\text{a}}
+\newcommand\inlineeqnowob{\theequation.\text{b}}
+\newcommand\inlineeqnowoc{\theequation.\text{c}}
+
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+
+\iffalse\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}\fi % for multicols figures
+
+\pagestyle{fancy}
+
+\sloppy % block text
+
+\numberwithin{equation}{section}
+
+\titleformat{\subsection}{}{\thesubsection}{1em}{\itshape}
+\titleformat{\subsubsection}{}{\thesubsubsection}{1em}{\itshape}
+
+%}}}
+
+\begin{document}
+
+%{{{ Titelseite
+
+\begin{titlepage}
+  \title{Übersichtsprüfung Theorie 1 \& 4\\\small Note 1.0\normalsize}
+  \author{Stefan Förste}
+\end{titlepage}
+
+\maketitle
+\pagenumbering{gobble}
+
+%\renewcommand\abstractname{Abstract}
+%\abstract{\noindent}
+
+%}}}
+
+%\clearpage
+
+\iffalse
+%{{{ Inhaltsverzeichnis
+\fancyhead[R]{\leftmark}
+%\fancyhead[R]{\leftmark\\rightmark}
+\fancyhead[L]{\thepage}
+\fancyfoot[C]{}
+
+%\renewcommand*\contentsname{Contents}
+\tableofcontents
+
+%}}}
+\fi
+
+%\clearpage
+
+\pagenumbering{arabic}
+
+%{{{
+
+%\begin{multicols}{2}
+Die Prüfungsatmosphäre ist sehr angenehm und die gestellten Fragen sind klar formuliert.
+Oft sind keine expliziten Herleitungen nötig, es reicht diese zu mündlich zu erklären.
+Die Folgenden Themen wurden abgefragt, jeweils in der Tiefe, dass man auf eine Prüfungszeit von ca.\ 35 Minuten kommt.
+\begin{enumerate}[label=--]
+  \item Hamilton'sches Prinzip
+  \item Euler-Lagrange Gleichung
+  \item Noether Theorem, Noether Ladung
+  \item Impulserhaltung und Transformation (berechnen durch geeignete Transformation)
+  \item Energieerhaltung durch Zeitinvarianz / Hamilton Funktion
+  \item Hamilton Funktion und Bewegungsgleichungen
+  \item Newton Inertialsystem, beschleunigte Bezugssysteme, Scheinkräfte
+  \item Ergodenhypothese
+  \item Gibbs-Paradoxon und Besetzungszahldarstellung
+  \item Unterschied Mikro- und Makrozustand
+  \item Mögliche Mikrozustände / Sind alle Mikrozustände gleich dem Makrozustand? 
+    Antwort: Es besteht keine eins zu eins Korrespondenz zwischen den Mikro- und Makrozuständen. 
+    Die Mikrozustände sind beschränkt auf die zum Ensemble passende Hyperebene in Phasenraum. 
+    \footnote{Hier die Antwort, da die Frage nicht präzise formuliert ist. In der Prüfung hat es ein wenig länger gedauert bis wir uns verständigen konnten.}
+  \item mikrokanonisch, kanonisch, großkanonisches Ensemble: Zustandsvariablen, Wahrscheinlichkeitsverteilung, Zustandssumme, Entropie, Potential
+  \item erster und zweiter Hauptsatz der Thermodynamik
+  \item Gibbs-Duhem Relation
+  \item Carnot in $(p,V)$ und $(T,S)$ Diagram und Wirkungsgrad herleiten
+\end{enumerate}
+Die Vorbereitungszeit betrug 114.5 Stunden und zwei gehaltene Theorie 1 Tutorien.
+Verwendetes Material ist für Theorie 1: Hanhart \& Kubis Skript SS25, Kuypers; für Theorie 4: Pathria, Borghini Skript (uni Bielefeld), Kroha Skript WS24/25.
+Zum Üben empfiehlt es sich von einem LLM Fragen zum Thema gestellt zu bekommen.
+Der Vorbereitungsfortschritt/Wissenstand sollte allerdings so weit sein, dass Fehler des LLMs erkannt werden können.
+%\end{multicols}
+
+%\clearpage
+%\listoffigures
+%\listoftables
+%\bibliographystyle{plain}
+%\bibliography{refs}
+
+%}}}
+
+\end{document}
