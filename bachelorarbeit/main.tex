@@ -1,0 +1,309 @@
+\documentclass[a4paper,10pt]{article}
+
+%{{{ packages
+\usepackage{blindtext}
+\usepackage{lipsum} % lorem ipsum
+\usepackage[ngerman]{babel}
+\usepackage[tiny]{titlesec} % section title size
+\usepackage{index}
+\usepackage[onehalfspacing]{setspace} % line spacing
+%\usepackage{fullpage} % makes document wider
+\usepackage{pdfpages} % \includepdf
+\usepackage{fancyhdr} % fancy headers
+\usepackage{authblk} % author formatting
+\usepackage{hyperref} % "clickable" references in text
+\hypersetup{colorlinks=true,allcolors=blue}
+
+\usepackage{booktabs} % toprule,midrule,bottomrule
+\usepackage{multirow} % multiple rows in tabular
+\usepackage{multicol} % multiple columns in tabular
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{svg} % \includesvg{}
+\usepackage{tikz}
+\usepackage[european,siunitx]{circuitikz}
+\usepackage{import} % can import files from other directories
+\usepackage{pgfplots}
+\usepackage{gnuplottex}
+\usepackage{wrapfig} % let text wrap around figure
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{tensor} % for right index order 
+\usepackage{dsfont} % double stroke font
+\usepackage{cancel} % to cancel in fraction
+\usepackage{bm} % bold math font (if error is produced use \bm{{}})
+\usepackage{mathtools}
+\usepackage[ISO]{diffcoeff} % differentiation
+\usepackage[locale=DE]{siunitx}
+\usepackage[official]{eurosym} % euro symbol
+\usepackage{mathrsfs} % calligraphy
+\usepackage{physics}
+\usepackage[a]{esvect} % vector arrows
+\usepackage{bigints} % big integrals
+%\usepackage[frak=esstix]{mathalpha} % disable if LaTeX uses too many alphabets
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{listings}
+
+\usepackage{hyphsubst}
+\usepackage[]{caption} % [figurename=, tablename=]
+\usepackage{xr} % crossreferencing between documents \externaldocument{}
+\usepackage{enumitem} % for enumerate environment
+\usepackage{lineno}
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{color}
+
+\allowdisplaybreaks % allows equations to be broken (e.g. by multicols)
+
+\usetikzlibrary{arrows}
+\pgfplotsset{compat=1.15}
+
+\newcommand{\td}{\,\text{d}}
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+\newcommand{\id}{\mathds{1}}
+
+\newcommand\inlineeqno{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnoa{(\theequation.\text{a})}
+\newcommand\inlineeqnob{(\theequation.\text{b})}
+\newcommand\inlineeqnoc{(\theequation.\text{c})}
+
+\newcommand\inlineeqnowo{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnowoa{\theequation.\text{a}}
+\newcommand\inlineeqnowob{\theequation.\text{b}}
+\newcommand\inlineeqnowoc{\theequation.\text{c}}
+
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+
+\newcommand{\todo}[1]{\textcolor{red}{TODO: #1}}
+
+% for multicols figures and then use \captionof{figure}{}
+\iffalse
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+\fi
+
+\sloppy % block text
+
+\numberwithin{equation}{section}
+
+\titleformat{\subsection}{}{\thesubsection}{1em}{\itshape}
+\titleformat{\subsubsection}{}{\thesubsubsection}{1em}{\itshape}
+
+%}}}
+
+\begin{document}
+
+%{{{ Titelseite
+
+\begin{titlepage}
+  %\title{\scalebox{.8}[3]{Thermodynamics of Black Holes}}
+  \title{Thermodynamics of Black Holes}
+  \author{Jonas Wortmann}
+  \affil{\vspace{2cm}Bachelorarbeit in Physik angefertigt im\\\vspace{1cm}Physikalischen Institut\\\vspace{1cm}vorgelegt der Mathematisch-Naturwissenschaftlichen Fakultät der\\\vspace{1cm}Rheinischen Friedrich-Wilhelms-Universität Bonn\\\vspace{2cm}}
+\end{titlepage}
+
+\maketitle
+\pagenumbering{gobble}
+
+%\renewcommand\abstractname{Abstract}
+%\abstract{\noindent}
+
+\clearpage
+
+\vspace*{\fill}
+\noindent Ich versichere, dass ich diese Arbeit selbstständig verfasst und keine anderen als die angegebenen
+Quellen und Hilfsmittel benutzt sowie die Zitate kenntlich gemacht habe.\\\\\\
+\begin{minipage}{0.45\textwidth}
+  Bonn,\hrule\par\vspace{1mm}
+  Datum
+\end{minipage}\hfill
+\begin{minipage}{0.45\textwidth}
+  \phantom{Bonn,}\hrule\par\vspace{1mm}
+  Unterschift
+\end{minipage}\\\\
+\begin{enumerate}[label=\arabic*]
+  \item GutachterIn:
+  \item GutachterIn:
+\end{enumerate}
+
+%}}}
+
+\clearpage
+
+%{{{ Inhaltsverzeichnis
+
+\renewcommand*\contentsname{Contents}
+\tableofcontents
+
+%}}}
+
+\clearpage
+
+\pagestyle{fancy}
+
+\fancyhead[R]{\leftmark}
+%\fancyhead[R]{\leftmark\\\rightmark}
+\fancyhead[L]{\thepage}
+\fancyfoot[C]{}
+
+\pagenumbering{arabic}
+
+%{{{
+
+%\begin{multicols}{2}
+
+%{{{ Introduction
+\section{Introduction}
+\texttt{}
+
+%}}}
+
+%{{{ Theoretical Background 
+\section{Theoretical Background}
+
+%{{{ Einstein Field Equation / Black Holes
+\subsection{Einstein Field Equation / Black Holes}
+\texttt{short derivation of solutions for einstein field equation. schwarzschild, kerr, reissner-nordström, kerr-newman. short discussion of the no-hair theorem.} 
+\begin{enumerate}[label=\arabic*.]
+  \item Einstein's field equation relates the geometry of spacetime to the energy and matter of the bodies which move through it.
+  \item There exist a few analytic solutions, i.e.\ metrices, to this equation, which are of importance to our work. Especially metrices, which solve the vacuum EFE with certain symmetries.
+  \item Of particular interest are Schwarzschild, Kerr, Reissner-Nordström and Kerr-Newman.
+  \item Another important quantity is the Schwarzschild radius of a mass.
+    For when this mass is present within one Schwarzschild radius, then there exists an event horizon, i.e.\ a hypersurface which is null everywhere, and a singularity within.
+    This object is then called black hole.
+    \todo{this is not precise}
+  \item A black hole is characterised by the no-hair theorem.
+\end{enumerate}
+%}}}
+
+%{{{ Thermodynamics
+\subsection{Thermodynamics}
+\texttt{laws of thermodynamics.} 
+\begin{enumerate}[label=\arabic*.]
+  \item all four laws of thermodynamics.
+\end{enumerate}
+%}}}
+
+%}}}
+
+%{{{ Geroch's Gedanken Experiment
+\section{Geroch's Gedanken Experiment}
+\texttt{gerochs heat engine and the need for entropy / a non decreasing quantity for bh.
+first conjecture by bekenstein.}
+\textit{ferrari:\url{https://arxiv.org/pdf/gr-qc/0505008}, bekenstein:\url{https://doi.org/10.1007/BF02757029}} 
+\begin{enumerate}[label=\arabic*.]
+  \item Gerochs heat engine:
+    An observer lowers a mass $m$ on an ideal string to the event horizon of a black hole.
+    The body will then radiate energy $\Delta m$ into the black hole.
+    Since its energy as measured from inifnity is zero, it will remain unchanged after the body radiates into the black hole.
+    After that the mass $m-\Delta m$ is pulled back up and has done a total work of $\Delta m$ on the observer.
+    This work however has completely been converted into heat thus violating the second law.
+  \item This process only works in a reversible fashion, since otherwise a portion of the work of the body would have gone into the irreversible process.
+  \item This needs for a irreversibly increasing quantity of the black hole, analoguous to the entropy.
+  \item A good candidate is in this case is the area, see the area theorem.
+    Therefore the area could be proportional to the black hole entropy.
+\end{enumerate}
+%}}}
+
+%{{{ Kerr Black Holes and Penrose Process
+\section{Penrose Process}
+\texttt{penrose process to extract work from bh.
+area theorem.
+formula for area analog to 1st hs (can area <-> entropy?).
+not sure abt constants only the equation could hold.} 
+\textit{kerr:\url{https://doi.org/10.1103/PhysRevLett.11.237}, penrose:\url{https://doi.org/10.1038/physci229177a0}, carroll}
+\begin{enumerate}[label=\arabic*.]
+  \item To further see a link between thermodynamics and black hole dynamics one can also consider the Penrose-process.
+    This leads to the analog of the first law of thermodynamics and a more definite relation between the entropy and area of a black hole.
+    Although at this point only the ratio is known.
+\end{enumerate}
+%}}}
+
+%{{{ Unruh effect and Hawking Radiation
+\section{Unruh effect and Hawking Radiation}
+\texttt{introduction with unruh effect (qft in curved spacetime carroll) derivation / argumentation for hawking radiation. need for an event horizon since then there is no timelike killing vector throughout the whole spacetime s.t.\ the modes match minkowski.
+no violation of the area theorem due to hawking radiation (see carroll p.\ 417).
+identification of S - A and T - kappa.} 
+\textit{carroll, unruh:\url{https://doi.org/10.1103/PhysRevD.14.870}} 
+\begin{enumerate}[label=\arabic*.]
+  \item Upon taking a look at quantum field theory in curved space time, we observe the Unruh effect.
+  \item With the equivalence principle, the acceleration of such a Rindler observer is indistinguishable from gravity.
+    Therefore the acceleration can be associated with the surface gravity of the black hole, which leads to the black hole being a black body.
+  \item The black body temperature is the temperature of the radiation produced by the black hole called Hawking radiation.
+  \item With a formula for the temperature the entropy for the black hole can be defined properly.
+\end{enumerate}
+%}}}
+
+%{{{ Generalised Zeroth, First and Third Law of Thermodynamics
+\section{Generalised Laws of Thermodynamics}
+\textit{Carroll} 
+
+%{{{ Zeroth
+\subsection{Zeroth}
+\begin{enumerate}[label=\arabic*.]
+  \item Stationary black hole in equilibrium.
+\end{enumerate}
+%}}}
+
+%{{{ First
+\subsection{First}
+\begin{enumerate}[label=\arabic*.]
+  \item see Penrose-process.
+\end{enumerate}
+%}}}
+
+%{{{ Second
+\subsection{Second}
+\begin{enumerate}[label=\arabic*.]
+  \item The generalized second law as by Bekenstein.
+\end{enumerate}
+%}}}
+
+%{{{ Third
+\subsection{Third}
+\begin{enumerate}[label=\arabic*.]
+  \item The surface gravity never vanishes.
+    Although in extremal black holes this is not the case.
+\end{enumerate}
+%}}}
+
+%}}}
+
+%{{{ Information Loss Paradox
+\section{Information Loss Paradox}
+\texttt{complex systems such as a star can collapse to a black hole with only the no-hair theorem (i.e.\ less information). in classical gr the information (in the complexity of the star) can just be behind the event horizon without problem. but in gr with qft the black hole evaporates, which would destroy the information inevitably such that the total entropy of the universe will decrease.
+also if two such very different stars would collapse to the same sort of black hole which would decay into indistinguishable thermal radiation the information about the difference of the stars is lost.
+this is a violation of the unitarity of quantum mechanics.} 
+\textit{Carroll} 
+\begin{enumerate}[label=\arabic*.]
+  \item Discussion of the information loss paradox as explained above.
+  \item Outlook as an active research topic and the need to further understand the compatibility of gravity and quantum mechanics.
+\end{enumerate}
+%}}}
+
+\clearpage
+
+%{{{ Questions
+\section*{Questions}
+\begin{enumerate}[label=--]
+  \item how is $\mathcal{H}^+$ event horizon different from $\mathscr{I}^+$ conformal null infinity. the world line should just be able to cross (see german wikipedia penrose diagram)?
+  \item in the collapsing star penrose diagram why is $i^+$ not directly above $i^-$? are the constant $r$ lines sill valid?
+  \item energy at infintiy $E=m(1-2\tfrac{M}{r})^{1/2}$ in bekenstein. derivation?
+  \item irreducible mass (carroll p.\ 270) and area theorem no clear derivation?
+\end{enumerate}
+%}}}
+
+%\end{multicols}
+
+%\clearpage
+%\listoffigures
+%\listoftables
+%\bibliographystyle{plain}
+%\bibliography{refs}
+
+%}}}
+
+\end{document}
