@@ -6,8 +6,8 @@
 \usepackage[ngerman]{babel}
 \usepackage[tiny]{titlesec} % section title size
 \usepackage{index}
-\usepackage[onehalfspacing]{setspace} % line spacing
-%\usepackage{fullpage} % makes document wider
+%\usepackage[onehalfspacing]{setspace} % line spacing
+\usepackage[headings]{fullpage} % makes document wider
 \usepackage{pdfpages} % \includepdf
 \usepackage{fancyhdr} % fancy headers
 \usepackage{authblk} % author formatting
@@ -166,7 +166,78 @@ Quellen und Hilfsmittel benutzt sowie die Zitate kenntlich gemacht habe.\\\\\\
 
 %{{{ Einstein Field Equation / Black Holes
 \subsection*{Einstein Field Equation / Black Holes}
-\texttt{short derivation of solutions for einstein field equation. schwarzschild, kerr, reissner-nordström, kerr-newman. short discussion of the no-hair theorem.} 
+Einstein's field equations relates the geometry of spacetime to the energy and matter of the bodies which move through it
+\begin{align} 
+  R\indices{_\mu _\nu }-\dfrac{1}{2}g\indices{_\mu _\nu }R +\Lambda g\indices{_\mu _\nu }&= \kappa T\indices{_\mu _\nu } \label{eq:efe}
+,\end{align} 
+where 
+\begin{align} 
+  R\indices{^\rho _\mu _\sigma _\nu } &= \partial_\sigma \Gamma _{\nu \mu }^\rho -\partial_\nu \Gamma _{\sigma \mu }^\rho +\Gamma _{\sigma \lambda }^\rho \Gamma _{\nu \mu }^\lambda -\Gamma _{\nu \lambda }^\rho \Gamma _{\sigma \mu }^\lambda & R\indices{^\lambda _\mu _\lambda _\nu } &= R\indices{_\mu _\nu } & g\indices{^\mu ^\nu }R\indices{_\mu _\nu }=R\indices{^\mu _\mu } &= R \label{eq:riemann tensor}
+,\end{align} 
+is the Riemann tensor, the Ricci tensor and the Ricci scalar; $g_{\mu \nu }$ is the metric, $T_{\mu \nu }$ the stress-energy tensor, $\Lambda $ the cosmological constant and $\kappa =\tfrac{8\pi G}{c^4}$.
+It is an equation of motion for the metric tensor, which dictates the path test particles take by the geodesics equation.
+Since we will be dealing with the vacuum space around a gravitating mass, we are only interested in the the solutions of the metric which fulfill the equation for $T_{\mu \nu }=\Lambda =0$, s.t.\
+\begin{align} 
+  R_{\mu \nu }-\dfrac{1}{2}g_{\mu \nu }R &= R_{\mu \nu }-\dfrac{1}{2}g_{\mu \nu }g^{\rho \sigma }R_{\rho \sigma } = 0\\
+  R_{\mu \nu } &= 0 \label{eq:efe vacuum}
+.\end{align} 
+The equation (\ref{eq:efe vacuum}) is the Einstein field equation in vacuum, restricting the possible solutions of the metric to be Ricci flat.
+
+%{{{ Schwarzschild
+\subsection*{Schwarzschild}
+In \cite{Schwarzschild1916} an analytic solution to (\ref{eq:efe vacuum}) found by Schwarzschild is presented, which is given by\footnote{The form is taken from \cite{Carroll}. A derivation is also given in the book.}
+\begin{align} 
+  ds^2 = g_{\mu \nu }dx^\mu dx^\nu  &= -\left(1-\dfrac{2GM}{r}\right)\td t^2+\left(1-\dfrac{2GM}{r}\right)^{-1}\td r^2+r^2\td \Omega ^2 \label{eq:schwarzschild metric}
+,\end{align} 
+where $c=1$, $\td \Omega ^2=\td \theta ^2+\sin ^2\theta \td \phi $ and $\left\{t,r,\theta ,\phi \right\}$ are the spherical coordinates.
+In SI units the Schwarzschild radius is given by
+\begin{align} 
+  r_S &= \dfrac{2GM}{c^2} \label{eq:schwarzschild radius}
+,\end{align} 
+where $M$ is the mass of the gravitating body, defined by the weak field limit.
+Upon inspecting the metric we can notice two values of $r$ for which $\td s^2$ diverges.
+The $r=r_S$ divergence is a mere coordinate dependent phenomenon, as can be seen when changing to e.g.\ Kruskal coordinates (then $r=r_S$ will be infinitely far away).
+Although this singularity can be lifted, it is still of physical significance\footnote{As opposed to be thought by Schwarzschild himself, who regarded the singularity as an artifact of the analytical solution\cite{Schwarzschild1916}.}, as it characterizes the event horizon of a black hole (which will be introduced later).
+The singularity at $r=0$ is however not liftable, since $R\indices{^\mu ^\nu ^\rho ^\sigma }R\indices{_\mu _\nu _\rho _\sigma }=\tfrac{48G^2M^2}{r^6}$, which is a coordinate independent scalar, has a singularity at that point.
+\todo{motivation / reason for introduction}
+%}}}
+
+%{{{ Reissner-Nordström
+\subsection*{Reissner-Nordström}
+The analytical solution of the Einstein field equation in vacuum for a gravitating and electrically charged mass is given by the Reissner-Nordström metric with the magnetic charge $P=0$\cite{Carroll}\cite{Reissner1916}
+\begin{align} 
+  \td s^2 &= -\left(1-\dfrac{2GM}{r}+\dfrac{GQ^2}{r^2}\right)+\left(1-\dfrac{2GM}{r}+\dfrac{GQ^2}{r^2}\right)^{-1}\td r^2+r^2\td \Omega ^2 \label{eq:reissner-nordström metric}
+,\end{align} 
+where $Q$ is the electric charge of the body.
+In the case of a neutral mass the solution reduces to the Schwarzschild metric (\ref{eq:schwarzschild metric}). 
+%}}}
+
+%{{{ Kerr
+\subsection*{Kerr}
+For a rotating mass (\ref{eq:efe vacuum}) was solved by Kerr\cite{Carroll}\cite{Kerr1961}
+\begin{multline} 
+  \td s^2 = -\left(1-\dfrac{2GMr}{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }\right)\td t^2
+  -\dfrac{2GMr\tfrac{J}{M}\sin ^2\theta }{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }\left(\td t\td \phi +\td \phi \td t\right)
+  +\dfrac{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }{r^2-2GMr+\tfrac{J^2}{M^2}}\td r^2\\
+  +\left(r^2+\dfrac{J^2}{M^2}\cos ^2\theta  \right)\td \theta 
+  +\dfrac{\sin ^2\theta }{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }\left( \left(r^2+\dfrac{J^2}{M^2}\right)^2-\dfrac{J^2}{M^2}\left(r^2-2GMr+\dfrac{J^2}{M^2}\right)\sin ^2\theta \right)\td \phi ^2 \label{eq:kerr metric}
+,\end{multline} 
+where $J$ is the total angular momentum of the spinning mass.
+%}}}
+
+%{{{ Kerr-Newman
+\subsection*{Kerr-Newman}
+Upon replacing $2GMr\rightarrow 2GMr-GQ^2$ in (\ref{eq:kerr metric}) we arrive at the solution of (\ref{eq:efe vacuum}) for a rotating and charged mass\cite{Carroll}
+\begin{multline} 
+  \td s^2 = -\left(1-\dfrac{2GMr-GQ^2}{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }\right)\td t^2
+  -\dfrac{(2GMr-GQ^2)\tfrac{J}{M}\sin ^2\theta }{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }\left(\td t\td \phi +\td \phi \td t\right)
+  +\dfrac{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }{r^2-2GMr+GQ^2+\tfrac{J^2}{M^2}}\td r^2\\
+  +\left(r^2+\dfrac{J^2}{M^2}\cos ^2\theta  \right)\td \theta 
+  +\dfrac{\sin ^2\theta }{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }\left( \left(r^2+\dfrac{J^2}{M^2}\right)^2-\dfrac{J^2}{M^2}\left(r^2-2GMr+GQ^2+\dfrac{J^2}{M^2}\right)\sin ^2\theta \right)\td \phi ^2 \label{eq:kerr-newman metric}
+,\end{multline} 
+%}}}
+
+\small\texttt{short derivation of solutions for einstein field equation. schwarzschild, kerr, reissner-nordström, kerr-newman. short discussion of the no-hair theorem.} 
 \begin{enumerate}[label=\arabic*.]
   \item Einstein's field equation relates the geometry of spacetime to the energy and matter of the bodies which move through it.
     It is an equation of motion for the metric tensor, which dictates the path test particles take by the geodesics equation.
@@ -179,6 +250,7 @@ Quellen und Hilfsmittel benutzt sowie die Zitate kenntlich gemacht habe.\\\\\\
     \todo{this is not precise.}
   \item A black hole is characterised by the no-hair theorem.
 \end{enumerate}
+\normalsize
 %}}}
 
 %{{{ Thermodynamics
@@ -290,11 +362,11 @@ this is a violation of the unitarity of quantum mechanics.}
 
 %\end{multicols}
 
-%\clearpage
+\clearpage
 %\listoffigures
 %\listoftables
-%\bibliographystyle{plain}
-%\bibliography{refs}
+\bibliographystyle{plain} % alpha apalike
+\bibliography{refs}
 
 %}}}
 
