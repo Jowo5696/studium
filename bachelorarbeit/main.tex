@@ -189,15 +189,15 @@ In \cite{Schwarzschild1916} an analytic solution to (\ref{eq:efe vacuum}) found 
 \begin{align} 
   ds^2 = g_{\mu \nu }dx^\mu dx^\nu  &= -\left(1-\dfrac{2GM}{r}\right)\td t^2+\left(1-\dfrac{2GM}{r}\right)^{-1}\td r^2+r^2\td \Omega ^2 \label{eq:schwarzschild metric}
 ,\end{align} 
-where $c=1$, $\td \Omega ^2=\td \theta ^2+\sin ^2\theta \td \phi $ and $\left\{t,r,\theta ,\phi \right\}$ are the spherical coordinates.
+where $c=1$, $\td \Omega ^2=\td \theta ^2+\sin ^2\theta \td \phi ^2$ and $\left\{t,r,\theta ,\phi \right\}$ are the spherical coordinates.
 In SI units the Schwarzschild radius is given by
 \begin{align} 
   r_S &= \dfrac{2GM}{c^2} \label{eq:schwarzschild radius}
 ,\end{align} 
 where $M$ is the mass of the gravitating body, defined by the weak field limit.
 Upon inspecting the metric we can notice two values of $r$ for which $\td s^2$ diverges.
-The $r=r_S$ divergence is a mere coordinate dependent phenomenon, as can be seen when changing to e.g.\ Kruskal coordinates (then $r=r_S$ will be infinitely far away).
-Although this singularity can be lifted, it is still of physical significance\footnote{As opposed to be thought by Schwarzschild himself, who regarded the singularity as an artifact of the analytical solution\cite{Schwarzschild1916}.}, as it characterizes the event horizon of a black hole (which will be introduced later).
+The $r=r_S$ divergence is a mere coordinate dependent phenomenon.
+Although this singularity can be lifted, it is still of physical significance\footnote{As opposed to be thought by Schwarzschild himself, who regarded the singularity as an artifact of the analytical solution\cite{Schwarzschild1916}.}, as it characterizes the event horizon of a black hole (this will be explained in more detail later).
 The singularity at $r=0$ is however not liftable, since $R\indices{^\mu ^\nu ^\rho ^\sigma }R\indices{_\mu _\nu _\rho _\sigma }=\tfrac{48G^2M^2}{r^6}$, which is a coordinate independent scalar, has a singularity at that point.
 \todo{motivation / reason for introduction}
 %}}}
@@ -206,7 +206,7 @@ The singularity at $r=0$ is however not liftable, since $R\indices{^\mu ^\nu ^\r
 \subsection*{Reissner-Nordström}
 The analytical solution of the Einstein field equation in vacuum for a gravitating and electrically charged mass is given by the Reissner-Nordström metric with the magnetic charge $P=0$\cite{Carroll}\cite{Reissner1916}
 \begin{align} 
-  \td s^2 &= -\left(1-\dfrac{2GM}{r}+\dfrac{GQ^2}{r^2}\right)+\left(1-\dfrac{2GM}{r}+\dfrac{GQ^2}{r^2}\right)^{-1}\td r^2+r^2\td \Omega ^2 \label{eq:reissner-nordström metric}
+  \td s^2 &= -\left(1-\dfrac{2GM}{r}+\dfrac{GQ^2}{r^2}\right)\td t^2+\left(1-\dfrac{2GM}{r}+\dfrac{GQ^2}{r^2}\right)^{-1}\td r^2+r^2\td \Omega ^2 \label{eq:reissner-nordström metric}
 ,\end{align} 
 where $Q$ is the electric charge of the body.
 In the case of a neutral mass the solution reduces to the Schwarzschild metric (\ref{eq:schwarzschild metric}). 
@@ -219,7 +219,7 @@ For a rotating mass (\ref{eq:efe vacuum}) was solved by Kerr\cite{Carroll}\cite{
   \td s^2 = -\left(1-\dfrac{2GMr}{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }\right)\td t^2
   -\dfrac{2GMr\tfrac{J}{M}\sin ^2\theta }{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }\left(\td t\td \phi +\td \phi \td t\right)
   +\dfrac{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }{r^2-2GMr+\tfrac{J^2}{M^2}}\td r^2\\
-  +\left(r^2+\dfrac{J^2}{M^2}\cos ^2\theta  \right)\td \theta 
+  +\left(r^2+\dfrac{J^2}{M^2}\cos ^2\theta  \right)\td \theta ^2
   +\dfrac{\sin ^2\theta }{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }\left( \left(r^2+\dfrac{J^2}{M^2}\right)^2-\dfrac{J^2}{M^2}\left(r^2-2GMr+\dfrac{J^2}{M^2}\right)\sin ^2\theta \right)\td \phi ^2 \label{eq:kerr metric}
 ,\end{multline} 
 where $J$ is the total angular momentum of the spinning mass.
@@ -232,9 +232,51 @@ Upon replacing $2GMr\rightarrow 2GMr-GQ^2$ in (\ref{eq:kerr metric}) we arrive a
   \td s^2 = -\left(1-\dfrac{2GMr-GQ^2}{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }\right)\td t^2
   -\dfrac{(2GMr-GQ^2)\tfrac{J}{M}\sin ^2\theta }{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }\left(\td t\td \phi +\td \phi \td t\right)
   +\dfrac{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }{r^2-2GMr+GQ^2+\tfrac{J^2}{M^2}}\td r^2\\
-  +\left(r^2+\dfrac{J^2}{M^2}\cos ^2\theta  \right)\td \theta 
+  +\left(r^2+\dfrac{J^2}{M^2}\cos ^2\theta  \right)\td \theta ^2
   +\dfrac{\sin ^2\theta }{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }\left( \left(r^2+\dfrac{J^2}{M^2}\right)^2-\dfrac{J^2}{M^2}\left(r^2-2GMr+GQ^2+\dfrac{J^2}{M^2}\right)\sin ^2\theta \right)\td \phi ^2 \label{eq:kerr-newman metric}
 ,\end{multline} 
+\todo{are the metrics really needed??}
+%}}}
+
+%{{{ Black Holes
+\subsection*{Black Holes}
+As we have briefly said, in (\ref{eq:schwarzschild metric}) there exists a coordinate singularity at $r=r_S=2GM$, which we denoted as the event horizon of a Schwarzschild black hole.
+In general, we will call objects for which the Schwarzschild metric holds even at $r=2GM$ black holes.
+Let us investigate the behaviour of light cones at this particular surface.
+Imagine a null ray closing in on $r_S$ at $\td \Omega =0$
+\begin{align} 
+  \td s^2 = 0 &= -\left(1-\dfrac{r_S}{r}\right)\td t^2+\left(1-\dfrac{r_S}{r}\right)^{-1}\td r^2\\
+  \diff[]{r}{t} &= 1-\dfrac{r_S}{r}
+.\end{align} 
+For $r\rightarrow r_S$ 
+\begin{align} 
+  \lim_{r\rightarrow r_S}\diff[]{r}{t}=0\quad\Leftrightarrow \quad \lim_{r\rightarrow r_S}\diff[]{t}{r}=\infty
+.\end{align} 
+The light ray will cease to make progress towards the surface at $r_S$; at least in this coordinate system.
+To cut the derivation\cite{Carroll} short we will introduce the Kruskal coordinates $\left\{T,R,\theta ,\phi \right\}$ which relate to $\left\{r,t,\theta ,\phi \right\}$ via 
+\begin{align} 
+  T &= \,\sqrt[]{\left(\dfrac{r}{r_S}-1\right)}\text{e}^{\tfrac{r}{2r_S}}\sinh \left(\dfrac{t}{2r_S}\right) &
+  R &= \,\sqrt[]{\left(\dfrac{r}{r_S}-1\right)}\text{e}^{\tfrac{r}{2r_S}}\cosh \left(\dfrac{t}{2r_S}\right)
+.\end{align} 
+The metric becomes
+\begin{align} 
+  \td s^2 &= \dfrac{4r_S^3}{r}\text{e}^{-\tfrac{r}{r_S}}\left(-\td T^2+\td R^2\right)+r^2\td \Omega ^2
+,\end{align} 
+where $r$ has to be implicitely defined\footnote{The solution for $r$ is the Lambert-W function $r=r_S\left(W\left(\tfrac{R^2-T^2}{\text{e}}\right)+1\right)$.} by $R^2-T^2=\left(1-\tfrac{r}{r_S}\right)\text{e}^{r/r_S}$.
+In these coordinates the light cones are at $45^\circ$ everywhere,\todo{Are $T$ and $R$ valid time and space coordinates which can be indentified with time and space in the general sense?}
+\begin{align} 
+  \diff[]{R}{T} &= \pm 1
+.\end{align} 
+This will therefore also hold at $r=r_S$; the event horizon of the black hole is therefore a null hypersurface.
+Thus, for any light cone crossing this hypersurface, all future directed paths will point towards the center of the black hole.
+But, since the light cones behave as they would in flat space, it is no problem for an observer to cross the event horizon in a finite amount of their proper time (although to an outside observer, the infalling observer will still only reach it asymptotically).
+
+\begin{enumerate}[label=\alph*)]
+  \item show one never reaches the event horizon from an outside observer.
+  \item show the observer who traveles to the event horizon does reach it in finite time.
+  \item formal definition of the event horizon as a null hypersurface with a singularity within.
+  \item no-hair theorem
+\end{enumerate}
 %}}}
 
 \small\texttt{short derivation of solutions for einstein field equation. schwarzschild, kerr, reissner-nordström, kerr-newman. short discussion of the no-hair theorem.} 
@@ -357,6 +399,7 @@ this is a violation of the unitarity of quantum mechanics.}
   \item in the collapsing star penrose diagram why is $i^+$ not directly above $i^-$? are the constant $r$ lines sill valid?
   \item energy at infintiy $E=m(1-2\tfrac{M}{r})^{1/2}$ in bekenstein. derivation?
   \item irreducible mass (carroll p.\ 270) and area theorem no clear derivation?
+  \item does the event horizon imply a singularity? i.e.\ since all matter has to converge.
 \end{enumerate}
 %}}}
 
