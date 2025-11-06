@@ -3,7 +3,8 @@
 %{{{ packages
 \usepackage{blindtext}
 \usepackage{lipsum} % lorem ipsum
-\usepackage[ngerman]{babel}
+\usepackage[english]{babel} % correct typesetting
+\usepackage{csquotes} % correct quotation
 \usepackage[tiny]{titlesec} % section title size
 \usepackage{index}
 %\usepackage[onehalfspacing]{setspace} % line spacing
@@ -13,6 +14,8 @@
 \usepackage{authblk} % author formatting
 \usepackage{hyperref} % "clickable" references in text
 \hypersetup{colorlinks=true,allcolors=blue}
+\usepackage[backend=biber,style=numeric]{biblatex}
+\addbibresource{refs.bib}
 
 \usepackage{booktabs} % toprule,midrule,bottomrule
 \usepackage{multirow} % multiple rows in tabular
@@ -59,7 +62,7 @@
 \pgfplotsset{compat=1.15}
 
 \newcommand{\td}{\,\text{d}}
-\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+%\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
 \newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
 \newcommand{\id}{\mathds{1}}
 
@@ -93,6 +96,8 @@
 \titleformat{\subsubsection}{}{\thesubsubsection}{1em}{\itshape}
 
 %}}}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
 
 \begin{document}
 
@@ -175,7 +180,11 @@ where
   R\indices{^\rho _\mu _\sigma _\nu } &= \partial_\sigma \Gamma _{\nu \mu }^\rho -\partial_\nu \Gamma _{\sigma \mu }^\rho +\Gamma _{\sigma \lambda }^\rho \Gamma _{\nu \mu }^\lambda -\Gamma _{\nu \lambda }^\rho \Gamma _{\sigma \mu }^\lambda & R\indices{^\lambda _\mu _\lambda _\nu } &= R\indices{_\mu _\nu } & g\indices{^\mu ^\nu }R\indices{_\mu _\nu }=R\indices{^\mu _\mu } &= R \label{eq:riemann tensor}
 ,\end{align} 
 is the Riemann tensor, the Ricci tensor and the Ricci scalar; $g_{\mu \nu }$ is the metric, $T_{\mu \nu }$ the stress-energy tensor, $\Lambda $ the cosmological constant and $\kappa =\tfrac{8\pi G}{c^4}$.
-It is an equation of motion for the metric tensor, which dictates the path test particles take by the geodesics equation.
+It is an equation of motion for the metric tensor, which dictates the path test particles take by the geodesics equation
+\begin{align} 
+  \diff[2]{x^\mu }{\lambda }+\Gamma _{\rho \sigma}^\mu \diff[]{x^\rho }{\lambda }\diff[]{x^\sigma }{\lambda } &= 0 \label{eq:geodesics equation}
+,\end{align} 
+where $\lambda $ is the affine parameter and $\Gamma $ is the Christoffel symbol.
 Since we will be dealing with the vacuum space around a gravitating mass, we are only interested in the the solutions of the metric which fulfill the equation for $T_{\mu \nu }=\Lambda =0$, s.t.\
 \begin{align} 
   R_{\mu \nu }-\dfrac{1}{2}g_{\mu \nu }R &= R_{\mu \nu }-\dfrac{1}{2}g_{\mu \nu }g^{\rho \sigma }R_{\rho \sigma } = 0\\
@@ -197,14 +206,14 @@ In SI units the Schwarzschild radius is given by
 where $M$ is the mass of the gravitating body, defined by the weak field limit.
 Upon inspecting the metric we can notice two values of $r$ for which $\td s^2$ diverges.
 The $r=r_S$ divergence is a mere coordinate dependent phenomenon.
-Although this singularity can be lifted, it is still of physical significance\footnote{As opposed to be thought by Schwarzschild himself, who regarded the singularity as an artifact of the analytical solution\cite{Schwarzschild1916}.}, as it characterizes the event horizon of a black hole (this will be explained in more detail later).
+Although this singularity can be lifted, it is still of physical significance\footnote{As opposed to be thought by Schwarzschild himself, who regarded the singularity as an artifact of the analytical solution \cite{Schwarzschild1916}.}, as it characterizes the event horizon of a black hole (this will be explained in more detail later).
 The singularity at $r=0$ is however not liftable, since $R\indices{^\mu ^\nu ^\rho ^\sigma }R\indices{_\mu _\nu _\rho _\sigma }=\tfrac{48G^2M^2}{r^6}$, which is a coordinate independent scalar, has a singularity at that point.
 \todo{motivation / reason for introduction}
 %}}}
 
 %{{{ Reissner-Nordström
 \subsection*{Reissner-Nordström}
-The analytical solution of the Einstein field equation in vacuum for a gravitating and electrically charged mass is given by the Reissner-Nordström metric with the magnetic charge $P=0$\cite{Carroll}\cite{Reissner1916}
+The analytical solution of the Einstein field equation in vacuum for a gravitating and electrically charged mass is given by the Reissner-Nordström metric with the magnetic charge $P=0$ \cite{Carroll} \cite{Reissner1916}
 \begin{align} 
   \td s^2 &= -\left(1-\dfrac{2GM}{r}+\dfrac{GQ^2}{r^2}\right)\td t^2+\left(1-\dfrac{2GM}{r}+\dfrac{GQ^2}{r^2}\right)^{-1}\td r^2+r^2\td \Omega ^2 \label{eq:reissner-nordström metric}
 ,\end{align} 
@@ -214,7 +223,7 @@ In the case of a neutral mass the solution reduces to the Schwarzschild metric (
 
 %{{{ Kerr
 \subsection*{Kerr}
-For a rotating mass (\ref{eq:efe vacuum}) was solved by Kerr\cite{Carroll}\cite{Kerr1961}
+For a rotating mass (\ref{eq:efe vacuum}) was solved by Kerr \cite{Carroll} \cite{Kerr1961}
 \begin{multline} 
   \td s^2 = -\left(1-\dfrac{2GMr}{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }\right)\td t^2
   -\dfrac{2GMr\tfrac{J}{M}\sin ^2\theta }{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }\left(\td t\td \phi +\td \phi \td t\right)
@@ -227,7 +236,7 @@ where $J$ is the total angular momentum of the spinning mass.
 
 %{{{ Kerr-Newman
 \subsection*{Kerr-Newman}
-Upon replacing $2GMr\rightarrow 2GMr-GQ^2$ in (\ref{eq:kerr metric}) we arrive at the solution of (\ref{eq:efe vacuum}) for a rotating and charged mass\cite{Carroll}
+Upon replacing $2GMr\rightarrow 2GMr-GQ^2$ in (\ref{eq:kerr metric}) we arrive at the solution of (\ref{eq:efe vacuum}) for a rotating and charged mass \cite{Carroll}
 \begin{multline} 
   \td s^2 = -\left(1-\dfrac{2GMr-GQ^2}{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }\right)\td t^2
   -\dfrac{(2GMr-GQ^2)\tfrac{J}{M}\sin ^2\theta }{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }\left(\td t\td \phi +\td \phi \td t\right)
@@ -242,8 +251,9 @@ Upon replacing $2GMr\rightarrow 2GMr-GQ^2$ in (\ref{eq:kerr metric}) we arrive a
 \subsection*{Black Holes}
 As we have briefly said, in (\ref{eq:schwarzschild metric}) there exists a coordinate singularity at $r=r_S=2GM$, which we denoted as the event horizon of a Schwarzschild black hole.
 In general, we will call objects for which the Schwarzschild metric holds even at $r=2GM$ black holes.
-Let us investigate the behaviour of light cones at this particular surface.
-Imagine a null ray closing in on $r_S$ at $\td \Omega =0$
+
+Let us now investigate the behaviour of light cones at this particular surface.
+Imagine a null ray closing in on $r_S$ for $\td \Omega =0$
 \begin{align} 
   \td s^2 = 0 &= -\left(1-\dfrac{r_S}{r}\right)\td t^2+\left(1-\dfrac{r_S}{r}\right)^{-1}\td r^2\\
   \diff[]{r}{t} &= 1-\dfrac{r_S}{r}
@@ -253,7 +263,7 @@ For $r\rightarrow r_S$
   \lim_{r\rightarrow r_S}\diff[]{r}{t}=0\quad\Leftrightarrow \quad \lim_{r\rightarrow r_S}\diff[]{t}{r}=\infty
 .\end{align} 
 The light ray will cease to make progress towards the surface at $r_S$; at least in this coordinate system.
-To cut the derivation\cite{Carroll} short we will introduce the Kruskal coordinates $\left\{T,R,\theta ,\phi \right\}$ which relate to $\left\{r,t,\theta ,\phi \right\}$ via 
+To cut short the derivation \cite{Carroll} we will introduce the Kruskal coordinates $\left\{T,R,\theta ,\phi \right\}$ which relate to $\left\{r,t,\theta ,\phi \right\}$ via 
 \begin{align} 
   T &= \,\sqrt[]{\left(\dfrac{r}{r_S}-1\right)}\text{e}^{\tfrac{r}{2r_S}}\sinh \left(\dfrac{t}{2r_S}\right) &
   R &= \,\sqrt[]{\left(\dfrac{r}{r_S}-1\right)}\text{e}^{\tfrac{r}{2r_S}}\cosh \left(\dfrac{t}{2r_S}\right)
@@ -267,32 +277,31 @@ In these coordinates the light cones are at $45^\circ$ everywhere,\todo{Are $T$ 
 \begin{align} 
   \diff[]{R}{T} &= \pm 1
 .\end{align} 
-This will therefore also hold at $r=r_S$; the event horizon of the black hole is therefore a null hypersurface.
+This will therefore also hold at $r=r_S$; the event horizon of the black hole is therefore a null hypersurface.\todo{rigorous definition in townsend.}
 Thus, for any light cone crossing this hypersurface, all future directed paths will point towards the center of the black hole.
 But, since the light cones behave as they would in flat space, it is no problem for an observer to cross the event horizon in a finite amount of their proper time (although to an outside observer, the infalling observer will still only reach it asymptotically).
 
-\begin{enumerate}[label=\alph*)]
-  \item show one never reaches the event horizon from an outside observer.
-  \item show the observer who traveles to the event horizon does reach it in finite time.
-  \item formal definition of the event horizon as a null hypersurface with a singularity within.
-  \item no-hair theorem
-\end{enumerate}
-%}}}
+The singularity at $r=0$ is however not liftable.
+Such a singularity is called a spacetime singularity and is characterized by geodesic incompleteness.
+That is, if there exists a geodesic curve, which cannot be continued to all values of the affine parameter, then there exists a spacetime singularity, such that it is a manifest property of the manifold (i.e.\ it cannot be lifted by a mere coordinate transform) \cite{Townsend1997}.\todo{explicit calculation (short)}
 
-\small\texttt{short derivation of solutions for einstein field equation. schwarzschild, kerr, reissner-nordström, kerr-newman. short discussion of the no-hair theorem.} 
-\begin{enumerate}[label=\arabic*.]
-  \item Einstein's field equation relates the geometry of spacetime to the energy and matter of the bodies which move through it.
-    It is an equation of motion for the metric tensor, which dictates the path test particles take by the geodesics equation.
-    \todo{relation to the equivalence principle, i.e.\ gravity as curved spacetime.}
-  \item There exist a few analytic solutions, i.e.\ metrices, to this equation, which are of importance to our work. Especially metrices, which solve the vacuum EFE with certain symmetries.
-  \item Of particular interest are Schwarzschild, Kerr, Reissner-Nordström and Kerr-Newman.
-  \item Another important quantity is the Schwarzschild radius of a mass.
-    For when this mass is present within one Schwarzschild radius, then there exists an event horizon, i.e.\ a hypersurface which is null everywhere, and a singularity within.
-    This object is then called black hole.
-    \todo{this is not precise.}
-  \item A black hole is characterised by the no-hair theorem.
-\end{enumerate}
-\normalsize
+Black holes in general are only described by a small number of properties.
+Israel \cite{Israel1967} \cite{Israel1968} was the first to deduce this property by showing that, for a static, asymptotically flat spacetime \todo{simply connected equipotential lines $g_{00}$; important?} the Schwarzschild metric (\ref{eq:schwarzschild metric}) is the only metric for which the event horizon is regular (i.e.\ is non-singular\todo{see question}).
+This characterizes the solution by Schwarzschild to be unique.
+By further analysis he also deduced that for a vacuum, in which the source-free Maxwell equations hold (all charges are said to be within the black hole), only the Reissner-Nordström metric (\ref{eq:reissner-nordström metric}) is a solution with regular event horizon.
+Thus it is also unique.
+Analoguously Robinson \cite{Robinson1975} proved the uniqueness of the Kerr metric (\ref{eq:kerr metric}) and Mazur \cite{Mazur1982} proved the uniqueness of the Kerr-Newman metric (\ref{eq:kerr-newman metric}) for their respective vacua.
+In a general form, we can write this as a no-hair theorem or uniqueness theorem (formulation taken literally from \cite[][p.\ 238]{Carroll}).
+\enquote{Stationary, asympotically flat black hole solutions to general relativity coupled to electromagnetism that are non-singular outside the event horizon are fully characterized by the parameters of mass, electric and magnetic charge, and angular momentum.}.
+The impact of this theorem might not be as important right now, but it will be later when discussing its implications in the light of the information content a black hole can have (or the way two black holes can be quite similar although their respective collapsing star was not).
+
+Two important theorems are left to mention.
+The first is the still unproven \enquote{cosmic censorship conjecture} by Penrose \cite{Penrose1969} which says, that there exists no naked singularity, i.e.\ a singularity not surrounded by an event horizon, which resulted by means of gravitational collapse\footnote{It is thought that the singularity from which our universe originated could in fact be a naked singularity \cite{Hawking1972}.}.
+This statement is reasonable to accept, because it would verify that the classical theory of general relativity, which breaks down at the singularity, does not so in fact, because the information, which a singularity holds, is sealed behind the event horizon, thus diminishing its impact on the theory, since it could not escape anyway \cite{Hawking1972}.
+
+The second is the area theorem by Hawking \cite{Hawking1972}.
+It states, under the assumption of the weak energy condition and the cosmic censorship conjecture that the area of a future event horizon in an asymptotically flat spacetime cannot decrease \cite{Carroll} \cite{Hawking1972}.
+%}}}
 %}}}
 
 %{{{ Thermodynamics
@@ -392,6 +401,13 @@ this is a violation of the unitarity of quantum mechanics.}
 
 \clearpage
 
+%{{{ Notes
+\section*{Notes}
+\begin{enumerate}[label=--]
+  \item Townsend "Killing Horizons" definition of surface gravity.
+\end{enumerate}
+%}}}
+
 %{{{ Questions
 \section*{Questions}
 \begin{enumerate}[label=--]
@@ -400,6 +416,8 @@ this is a violation of the unitarity of quantum mechanics.}
   \item energy at infintiy $E=m(1-2\tfrac{M}{r})^{1/2}$ in bekenstein. derivation?
   \item irreducible mass (carroll p.\ 270) and area theorem no clear derivation?
   \item does the event horizon imply a singularity? i.e.\ since all matter has to converge.
+  \item does non-singular event horizon mean that it can be crossed? 
+    since non-singular would imply that the hypersurface is geodesic complete.
 \end{enumerate}
 %}}}
 
@@ -408,8 +426,9 @@ this is a violation of the unitarity of quantum mechanics.}
 \clearpage
 %\listoffigures
 %\listoftables
-\bibliographystyle{plain} % alpha apalike
-\bibliography{refs}
+%\bibliographystyle{plain} % alpha apalike
+%\bibliography{refs}
+\printbibliography
 
 %}}}
 
