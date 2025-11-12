@@ -170,6 +170,7 @@ Quellen und Hilfsmittel benutzt sowie die Zitate kenntlich gemacht habe.\\\\\\
 \section{Theoretical Background}
 
 %{{{ Einstein Field Equation / Black Holes
+%{{{
 \subsection*{Einstein Field Equation / Black Holes}
 Einstein's field equations relates the geometry of spacetime to the energy and matter of the bodies which move through it
 \begin{align} 
@@ -191,6 +192,7 @@ Since we will be dealing with the vacuum space around a gravitating mass, we are
   R_{\mu \nu } &= 0 \label{eq:efe vacuum}
 .\end{align} 
 The equation (\ref{eq:efe vacuum}) is the Einstein field equation in vacuum, restricting the possible solutions of the metric to be Ricci flat.
+%}}}
 
 %{{{ Schwarzschild
 \subsection*{Schwarzschild}
@@ -224,26 +226,36 @@ In the case of a neutral mass the solution reduces to the Schwarzschild metric (
 %{{{ Kerr
 \subsection*{Kerr}
 For a rotating mass (\ref{eq:efe vacuum}) was solved by Kerr \cite{Carroll} \cite{Kerr1961}
-\begin{multline} 
+\iffalse\begin{multline} 
   \td s^2 = -\left(1-\dfrac{2GMr}{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }\right)\td t^2
   -\dfrac{2GMr\tfrac{J}{M}\sin ^2\theta }{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }\left(\td t\td \phi +\td \phi \td t\right)
   +\dfrac{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }{r^2-2GMr+\tfrac{J^2}{M^2}}\td r^2\\
   +\left(r^2+\dfrac{J^2}{M^2}\cos ^2\theta  \right)\td \theta ^2
   +\dfrac{\sin ^2\theta }{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }\left( \left(r^2+\dfrac{J^2}{M^2}\right)^2-\dfrac{J^2}{M^2}\left(r^2-2GMr+\dfrac{J^2}{M^2}\right)\sin ^2\theta \right)\td \phi ^2 \label{eq:kerr metric}
 ,\end{multline} 
-where $J$ is the total angular momentum of the spinning mass.
+\fi
+\begin{multline}
+  \td s^2 = -\left(1-\dfrac{2GMr}{\rho ^2}\right)\td t^2-\dfrac{2GMra\sin ^2\theta }{\rho ^2}(\td t\td \phi +\td \phi \td t)+\dfrac{\rho ^2}{\Delta }\td r^2+\rho ^2\td \theta ^2+\dfrac{\sin ^2\theta }{\rho ^2}\left( \left(r^2+a^2\right)^2-a^2\Delta \sin ^2\theta \right)\td \phi ^2 \label{eq:kerr metric}
+\end{multline}
+where 
+\begin{align} 
+  \Delta =r^2-2GMr+a^2\qquad  \rho ^2=r^2+a^2\cos ^2\theta \qquad a=J/M 
+\end{align} 
+and $J$ is the total angular momentum of the spinning mass.
+\todo{stationary limit surface, ergosphere, outer event horizon, inner event horizon}
 %}}}
 
 %{{{ Kerr-Newman
 \subsection*{Kerr-Newman}
-Upon replacing $2GMr\rightarrow 2GMr-GQ^2$ in (\ref{eq:kerr metric}) we arrive at the solution of (\ref{eq:efe vacuum}) for a rotating and charged mass \cite{Carroll}
-\begin{multline} 
+Upon replacing $2GMr\rightarrow 2GMr-GQ^2 \inlineeqno\label{eq:kerr-newman metric}$ in (\ref{eq:kerr metric}) we arrive at the solution of (\ref{eq:efe vacuum}) for a rotating and charged mass \cite{Carroll}
+\iffalse\begin{multline} 
   \td s^2 = -\left(1-\dfrac{2GMr-GQ^2}{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }\right)\td t^2
   -\dfrac{(2GMr-GQ^2)\tfrac{J}{M}\sin ^2\theta }{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }\left(\td t\td \phi +\td \phi \td t\right)
   +\dfrac{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }{r^2-2GMr+GQ^2+\tfrac{J^2}{M^2}}\td r^2\\
   +\left(r^2+\dfrac{J^2}{M^2}\cos ^2\theta  \right)\td \theta ^2
   +\dfrac{\sin ^2\theta }{r^2+\tfrac{J^2}{M^2}\cos ^2\theta }\left( \left(r^2+\dfrac{J^2}{M^2}\right)^2-\dfrac{J^2}{M^2}\left(r^2-2GMr+GQ^2+\dfrac{J^2}{M^2}\right)\sin ^2\theta \right)\td \phi ^2 \label{eq:kerr-newman metric}
 ,\end{multline} 
+\fi
 \todo{are the metrics really needed??}
 %}}}
 
@@ -299,7 +311,7 @@ Two important theorems are left to mention.
 The first is the still unproven \enquote{cosmic censorship conjecture} by Penrose \cite{Penrose1969} which says, that there exists no naked singularity, i.e.\ a singularity not surrounded by an event horizon, which resulted by means of gravitational collapse\footnote{It is thought that the singularity from which our universe originated could in fact be a naked singularity \cite{Hawking1972}.}.
 This statement is reasonable to accept, because it would verify that the classical theory of general relativity, which breaks down at the singularity, does not so in fact, because the information, which a singularity holds, is sealed behind the event horizon, thus diminishing its impact on the theory, since it could not escape anyway \cite{Hawking1972}.
 
-The second is the area theorem by Hawking \cite{Hawking1972}.
+The second is the area theorem by Hawking \cite{Hawking1972}.\todo{derivation? understanding?}
 It states, under the assumption of the weak energy condition and the cosmic censorship conjecture that the area of a future event horizon in an asymptotically flat spacetime cannot decrease \cite{Carroll} \cite{Hawking1972}.
 %}}}
 %}}}
@@ -393,34 +405,30 @@ Now the body is allowed to radiate into the black hole resulting in a decrease o
 But since the body has no energy at the event horizon as measured from infinity, the black hole will also have no increase in its mass due to the radiation.
 Afterwards, the observer raises the body again and has performed a total amount of work $\Delta m$.
 The body has therefore converted all work $\Delta m$ into heat, since nothing about the black hole has changed. \todo{is the proess cyclic?} This is in clear violation of the second law of thermodynamics, that not all heat can be converted into work within a cyclic process.
-
 To solve this apparent paradox, it is needed for the process to not be cyclic, i.e.\ there needs to be a quantity that changes irreversibly after one cycle.
-\todo{Hawking area theorem}
-Therefore, Bekenstein introduced an entropy for black holes, which is proportional to the black hole's area $A$, 
+
+A logical candidate for this quantity is the area $A$ of the black hole, since it is never decreasing as stated in Hawking's theorem.
+In the process where our observer then lowers the mass $m$ to the event horizon, the area of the black hole increases (while lowering or when the body radiates) irreversibly, resulting in the process not being reversible thus providing a solution to the paradox.
+The heat $\Delta m$ has not been converted to work completely, but instead some of it has gone into increasing the area of the black hole.
+Now that there exists such a non-decreasing quantity, which respects the second law of thermodynamics, Bekenstein \cite{Bekenstein1972} constructed a form of entropy for black holes
 \begin{align} 
   S_{bh}\equiv S_{b.h.} &= \eta k_BL_p^{-2}A
 ,\end{align} 
-where $\eta $ is a constant number of order unity, $k_B$ is the Boltzmann constant, $L_p$ is the Planck length.
-
-\texttt{gerochs heat engine and the need for entropy / a non decreasing quantity for bh.
-first conjectured by bekenstein.}
-\textit{ferrari:\url{https://arxiv.org/pdf/gr-qc/0505008}, bekenstein:\url{https://doi.org/10.1007/BF02757029}} 
-\begin{enumerate}[label=\arabic*.]
-  \item Gerochs heat engine:
-    An observer lowers a mass $m$ on an ideal string to the event horizon of a black hole.
-    The body will then radiate energy $\Delta m$ into the black hole.
-    Since its energy as measured from inifnity is zero, it will remain unchanged after the body radiates into the black hole.
-    After that the mass $m-\Delta m$ is pulled back up and has done a total work of $\Delta m$ on the observer.
-    This work however has completely been converted into heat thus violating the second law.
-  \item This process only works in a reversible fashion, since otherwise a portion of the work of the body would have gone into the irreversible process.
-  \item This needs for a irreversibly increasing quantity of the black hole, analoguous to the entropy.
-  \item A good candidate is in this case is the area, see the area theorem.
-    Therefore the area could be proportional to the black hole entropy.
-\end{enumerate}
+where $\eta $ is a constant number of order unity, $k_B$ is the Boltzmann constant, $L_p$ is the Planck length. \todo{explanation of constants}
+Consequently, the second law of thermodynamics has to be rephrased to capture also the entropy of the black hole \cite{Carroll}:
+The total entropy of matter and of black holes in an isolated system can never decrease
+\begin{align} 
+  \td \left(S+S_{bh}\right)\geq 0
+.\end{align} 
 %}}}
 
 %{{{ Penrose Process
 \section{Penrose Process}
+To further see a link between thermodynamics and black hole theory, we should construct a relation between the area of a black hole $A$ and the other parameters mass $M$, angular momentum $J$ and charge $Q$.
+Since these are sufficient to describe every black hole as states by the no-hair or uniqueness theorem, we should be able to find a relation, which characterizes how each quantity changes in relation to the other quantities.
+
+Consider the Penrose-Process 
+
 \texttt{penrose process to extract work from bh.
 area theorem.
 formula for area analog to 1st hs (can area <-> entropy?).
