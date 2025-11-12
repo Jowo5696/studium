@@ -177,7 +177,7 @@ Einstein's field equations relates the geometry of spacetime to the energy and m
 ,\end{align} 
 where 
 \begin{align} 
-  R\indices{^\rho _\mu _\sigma _\nu } &= \partial_\sigma \Gamma _{\nu \mu }^\rho -\partial_\nu \Gamma _{\sigma \mu }^\rho +\Gamma _{\sigma \lambda }^\rho \Gamma _{\nu \mu }^\lambda -\Gamma _{\nu \lambda }^\rho \Gamma _{\sigma \mu }^\lambda & R\indices{^\lambda _\mu _\lambda _\nu } &= R\indices{_\mu _\nu } & g\indices{^\mu ^\nu }R\indices{_\mu _\nu }=R\indices{^\mu _\mu } &= R \label{eq:riemann tensor}
+  R\indices{^\rho _\mu _\sigma _\nu } &= \partial_\sigma \Gamma \indices*{_\nu _\mu ^\rho} -\partial_\nu \Gamma _{\sigma \mu }^\rho +\Gamma \indices*{_\sigma _\lambda ^\rho} \Gamma _{\nu \mu }^\lambda -\Gamma _{\nu \lambda }^\rho \Gamma _{\sigma \mu }^\lambda & R\indices{^\lambda _\mu _\lambda _\nu } &= R\indices{_\mu _\nu } & g\indices{^\mu ^\nu }R\indices{_\mu _\nu }=R\indices{^\mu _\mu } &= R \label{eq:riemann tensor}
 ,\end{align} 
 is the Riemann tensor, the Ricci tensor and the Ricci scalar; $g_{\mu \nu }$ is the metric, $T_{\mu \nu }$ the stress-energy tensor, $\Lambda $ the cosmological constant and $\kappa =\tfrac{8\pi G}{c^4}$.
 It is an equation of motion for the metric tensor, which dictates the path test particles take by the geodesics equation
@@ -196,12 +196,12 @@ The equation (\ref{eq:efe vacuum}) is the Einstein field equation in vacuum, res
 \subsection*{Schwarzschild}
 In \cite{Schwarzschild1916} an analytic solution to (\ref{eq:efe vacuum}) found by Schwarzschild is presented, which is given by\footnote{The form is taken from \cite{Carroll}. A derivation is also given in the book.}
 \begin{align} 
-  ds^2 = g_{\mu \nu }dx^\mu dx^\nu  &= -\left(1-\dfrac{2GM}{r}\right)\td t^2+\left(1-\dfrac{2GM}{r}\right)^{-1}\td r^2+r^2\td \Omega ^2 \label{eq:schwarzschild metric}
+  \td s^2 = g_{\mu \nu }\td x^\mu \td x^\nu  &= -\left(1-\dfrac{2GM}{r}\right)\td t^2+\left(1-\dfrac{2GM}{r}\right)^{-1}\td r^2+r^2\td \Omega ^2 \label{eq:schwarzschild metric}
 ,\end{align} 
 where $c=1$, $\td \Omega ^2=\td \theta ^2+\sin ^2\theta \td \phi ^2$ and $\left\{t,r,\theta ,\phi \right\}$ are the spherical coordinates.
 In SI units the Schwarzschild radius is given by
 \begin{align} 
-  r_S &= \dfrac{2GM}{c^2} \label{eq:schwarzschild radius}
+  \Aboxed{r_S &= \dfrac{2GM}{c^2}} \label{eq:schwarzschild radius}
 ,\end{align} 
 where $M$ is the mass of the gravitating body, defined by the weak field limit.
 Upon inspecting the metric we can notice two values of $r$ for which $\td s^2$ diverges.
@@ -268,7 +268,7 @@ To cut short the derivation \cite{Carroll} we will introduce the Kruskal coordin
   T &= \,\sqrt[]{\left(\dfrac{r}{r_S}-1\right)}\text{e}^{\tfrac{r}{2r_S}}\sinh \left(\dfrac{t}{2r_S}\right) &
   R &= \,\sqrt[]{\left(\dfrac{r}{r_S}-1\right)}\text{e}^{\tfrac{r}{2r_S}}\cosh \left(\dfrac{t}{2r_S}\right)
 .\end{align} 
-The metric becomes
+The metric takes the form
 \begin{align} 
   \td s^2 &= \dfrac{4r_S^3}{r}\text{e}^{-\tfrac{r}{r_S}}\left(-\td T^2+\td R^2\right)+r^2\td \Omega ^2
 ,\end{align} 
@@ -306,17 +306,102 @@ It states, under the assumption of the weak energy condition and the cosmic cens
 
 %{{{ Thermodynamics
 \subsection*{Thermodynamics}
-\texttt{laws of thermodynamics.} 
-\begin{enumerate}[label=\arabic*.]
-  \item All four laws of thermodynamics.
-  \item Notion of reversible and irreversible processes and the quantity entropy.
-\end{enumerate}
+The theory of theromodynamics is a phenomenological theory of heat and work.
+It has been mostly established by Boltzmann, Carnot and Clausius throughout the $19^{\text{th}}$ century and relies on the following four fundamental laws.
+\begin{itemize}
+  \item [0.] Suppose system A and system B as well as system B and system C are in thermal equilibrium, then also system A and system C are in thermal equilibrium.
+    The temperature $T$ is defined as the number which is equal for systems in thermal equilibrium by heat exchange.
+  \item [1.] The internal energy of an isolated system is conserved.
+    The rate of change of internal energy of a system by interaction with another system is given by
+    \begin{align} 
+      \td U = T\td S+\sum_{i}^{}F_i\td X_i
+    ,\end{align} 
+    where $F_i\td X_i$ is a way for the system to do mechanical work, $U$ is the internal energy, $T$ is the temperature, $S$ is the entropy.
+  \item [2.] The total entropy of an isolated system can never decrease
+    \begin{align} 
+      \td S\geq 0
+    .\end{align} 
+    Equivalentely, there exists no cyclic process, which passes heat from a colder body $T_1$ to a warmer body $T_2>T_1$ while serving no other purpose.
+    Equivalentely, not all mechanical work done can be converted to heat.
+    A process is called reversible when $\td S=0$ and irreversible when $\td S>0$.
+  \item [3.] The absolute zero-point temperature $T=\SI{0}{K}$ can never be reached by a finite amount of thermodynamic cycles.
+    For $T$ towards zero the entropy takes a constant value.
+\end{itemize}
+Thermodynamics also has a deep link to statistical mechanics by the Gibbs entropy and ensemble theory
+\begin{align} 
+  S &= -k_B\sum_{\mathfrak{m}}^{}p_\mathfrak{m}\ln p_\mathfrak{m}
+,\end{align} 
+where $\mathfrak{m}$ is a microstate and $p_\mathfrak{m}$ the probability that a certain microstate realizes a macrostate.
+For example in the microcanonical ensemble, which can be characterized by the state variables $(N,V,E)$, particle number, volume, energy, the probability that a microstate realizes a certain macrostate is given by a uniform distribution which maximizes the entropy under the constraint that $\sum_{\mathfrak{m}}^{}p_\mathfrak{m}-1=0$, which is
+\begin{align} 
+  p = \dfrac{1}{\Omega } \qquad S = k_B\ln \Omega 
+,\end{align} 
+where $\Omega $ is the number of microstates available to the system for constant $(N,V,E)$.
 %}}}
 
 %}}}
 
 %{{{ Geroch's Gedanken Experiment
-\section{Geroch's Gedanken Experiment}
+\section{Geroch's Gedankenexperiment}
+Geroch \cite{Geroch1971} \cite{Bekenstein1972} formulated a gedankenexperiment to venture about the second law of thermodynamcis, when black holes are considered part of the system.
+The preassumption is that black holes are described by a macrostate, which is realized by exactly one microstate, since they are analytical solutions to the Einstein equation (\ref{eq:efe vacuum}); i.e.\ a black hole per se is not a statistical system described by a probability distribution of certain microstates.
+
+Now we consider the following construct:
+An observer is equipped with an ideal rope and a body of mass $m$ and she resides near a Schwarzschild black hole, such that she is at rest compared to it (e.g.\ at infinity).
+The metric is therefore (\ref{eq:schwarzschild metric}) and we will set $\td \Omega ^2=0$
+\begin{align} 
+  \td s^2 &= -\left(1-\dfrac{r_S}{r}\right)\td t^2+\left(1-\dfrac{r_S}{r}\right)^{-1}\td r^2
+.\end{align} 
+Now she lowers the body towards the black hole's event horizon.
+To make claims about the work done we first need to calculate the body's energy as measured by the observer.
+
+Since none of the metric coefficients depend on time, there exists a timelike Killing vector
+\begin{align} 
+  K_\mu  = g_{\mu \nu }(\partial_t)^\nu = g_{\mu \nu }\delta _t^\nu = \left(-\left(1-\dfrac{r_S}{r}\right)\quad 0\quad 0\quad 0\right)
+,\end{align} 
+with a constant of motion 
+\begin{align} 
+  K_\mu \diff[]{x^\mu }{\tau }=\text{const}=-\left(1-\dfrac{r_S}{r}\right)\diff[]{t}{\tau }
+,\end{align} 
+where we have chosen $\lambda =\tau $ the proper time as the affine parameter.
+From Noether's theorem it follows that the constant of motion must be the energy.
+We will therefore set
+\begin{align} 
+  E &= \left(1-\dfrac{r_S}{r}\right)\diff[]{t}{\tau }
+.\end{align} 
+If we move with the body on its worldline, then the metric will be
+\begin{align} 
+  \td s^2 &= -\left(1-\dfrac{r_S}{r}\right)\td t^2 = -\td \tau ^2
+.\end{align} 
+This fixes the derivative in our equation for the energy 
+\begin{align} 
+  E &= \dfrac{\left(1-\dfrac{r_S}{r}\right)}{\,\sqrt[]{1-\dfrac{r_S}{r}} }=\,\sqrt[]{1-\dfrac{r_S}{r}}
+.\end{align} 
+This energy can be understood as the energy per unit mass, such that
+\begin{align} 
+  E &= m\,\sqrt[]{1-\dfrac{r_S}{r}}
+\end{align} 
+is the total energy of our body with mass $m$ \cite{Carroll}.
+
+This is sufficient to further construct the experiment.
+As she lowers the body towards the event horizon, the body performs work on her which is proportional to its initial mass $m$.
+When the body reaches the event horizon its energy is
+\begin{align} 
+  \lim_{r\rightarrow r_S}E=0
+.\end{align} 
+Now the body is allowed to radiate into the black hole resulting in a decrease of its mass $m'=m-\Delta m$.
+But since the body has no energy at the event horizon as measured from infinity, the black hole will also have no increase in its mass due to the radiation.
+Afterwards, the observer raises the body again and has performed a total amount of work $\Delta m$.
+The body has therefore converted all work $\Delta m$ into heat, since nothing about the black hole has changed. \todo{is the proess cyclic?} This is in clear violation of the second law of thermodynamics, that not all heat can be converted into work within a cyclic process.
+
+To solve this apparent paradox, it is needed for the process to not be cyclic, i.e.\ there needs to be a quantity that changes irreversibly after one cycle.
+\todo{Hawking area theorem}
+Therefore, Bekenstein introduced an entropy for black holes, which is proportional to the black hole's area $A$, 
+\begin{align} 
+  S_{bh}\equiv S_{b.h.} &= \eta k_BL_p^{-2}A
+,\end{align} 
+where $\eta $ is a constant number of order unity, $k_B$ is the Boltzmann constant, $L_p$ is the Planck length.
+
 \texttt{gerochs heat engine and the need for entropy / a non decreasing quantity for bh.
 first conjectured by bekenstein.}
 \textit{ferrari:\url{https://arxiv.org/pdf/gr-qc/0505008}, bekenstein:\url{https://doi.org/10.1007/BF02757029}} 
@@ -411,13 +496,13 @@ this is a violation of the unitarity of quantum mechanics.}
 %{{{ Questions
 \section*{Questions}
 \begin{enumerate}[label=--]
-  \item how is $\mathcal{H}^+$ event horizon different from $\mathscr{I}^+$ conformal null infinity. the world line should just be able to cross (see german wikipedia penrose diagram)?
-  \item in the collapsing star penrose diagram why is $i^+$ not directly above $i^-$? are the constant $r$ lines sill valid?
-  \item energy at infintiy $E=m(1-2\tfrac{M}{r})^{1/2}$ in bekenstein. derivation?
-  \item irreducible mass (carroll p.\ 270) and area theorem no clear derivation?
-  \item does the event horizon imply a singularity? i.e.\ since all matter has to converge.
+  \item how is $\mathcal{H}^+$ event horizon different from $\mathscr{I}^+$ conformal null infinity. the world line should just be able to cross (see german wikipedia penrose diagram)? \textbf{cannot be deduced by just the diagram, the line $r=2GM$ is just drawn but no equal to the line of infinity} 
+  \item in the collapsing star penrose diagram why is $i^+$ not directly above $i^-$? are the constant $r$ lines sill valid? \textbf{two different metrics joined together therefore lines of const $r$ have to be adapted} 
+  \item energy at infintiy $E=m(1-2\tfrac{M}{r})^{1/2}$ in bekenstein. derivation? \textbf{black hole exact solution thus not entropy as it could not be realized by multiple microstate} 
+  \item irreducible mass (carroll p.\ 270) and area theorem no clear derivation? \textbf{stability of black hole $\delta J<\delta M$ mass irr area} \textbf{area shrinks but doesnt violate theorem since the condition is not vaild anyway (weak energy condition) $\rightarrow $ gets hotter with shrinking horizon}
+  \item does the event horizon imply a singularity? i.e.\ since all matter has to converge. \textbf{yes} 
   \item does non-singular event horizon mean that it can be crossed? 
-    since non-singular would imply that the hypersurface is geodesic complete.
+    since non-singular would imply that the hypersurface is geodesic complete. \textbf{yes also $g_{00}$ höhenlinien therefore no other gravitating source} 
 \end{enumerate}
 %}}}
 
