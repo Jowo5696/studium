@@ -347,9 +347,9 @@ Thermodynamics also has a deep link to statistical mechanics by the Gibbs entrop
 where $\mathfrak{m}$ is a microstate and $p_\mathfrak{m}$ the probability that a certain microstate realizes a macrostate.
 For example in the microcanonical ensemble, which can be characterized by the state variables $(N,V,E)$, particle number, volume, energy, the probability that a microstate realizes a certain macrostate is given by a uniform distribution which maximizes the entropy under the constraint that $\sum_{\mathfrak{m}}^{}p_\mathfrak{m}-1=0$, which is
 \begin{align} 
-  p = \dfrac{1}{\Omega } \qquad S = k_B\ln \Omega 
+  p = \dfrac{1}{\Omega (N,V,E)} \qquad S = k_B\ln \Omega (N,V,E)
 ,\end{align} 
-where $\Omega $ is the number of microstates available to the system for constant $(N,V,E)$.
+where $\Omega (N,V,E)$ is the number of microstates available to the system for constant $(N,V,E)$, or equivalentely, which lie on the hypersurface of constant $(N,V,E)$ in the phase space.
 %}}}
 
 %}}}
@@ -523,7 +523,7 @@ Since both $M_\text{irr}$ and $A$ are related their variation will surely be pos
   \delta M_\text{irr} &= \dfrac{1}{\sqrt{2}}\delta \left(\sqrt{M^2+\sqrt{M^4-\tfrac{J^2}{G^2} }}\right)\\
                       &= \dfrac{1}{\sqrt{2}}\dfrac{1}{\sqrt{2}M_\text{irr}}\dfrac{1}{2}\delta \left(M^2+\sqrt{M^4-\tfrac{J^2}{G^2}}\right)\\
                       &= \dfrac{1}{4M_\text{irr}}\left(2M\delta M+\dfrac{4M^3\delta M-\tfrac{2J}{G^2}\delta J}{2\sqrt{M^4-\tfrac{J^2}{G^2} }}\right)\\
-                      &= \dfrac{1}{4M_\text{irr}}\left( \left(\dfrac{M\sqrt{M^4-\tfrac{J^2}{G^2}}+2M^3}{\sqrt{M^4-\tfrac{J^2}{G^2}}}\right)\delta M-\dfrac{J}{G^2\sqrt{M^4-\tfrac{J^2}{G^2}}}\delta J\right)\\
+                      &= \dfrac{1}{4M_\text{irr}}\left( \left(\dfrac{M\sqrt{M^4-\tfrac{J^2}{G^2}}+2M^3}{\sqrt{M^4-\tfrac{J^2}{G^2} }}\right)\delta M-\dfrac{J}{G^2\sqrt{M^4-\tfrac{J^2}{G^2} }}\delta J\right)\\
                       \intertext{using $\sqrt{M^4-\tfrac{J^2}{G^2}}=\tfrac{M}{G}\sqrt{G^2M^2-a^2}$ with $a=\tfrac{J}{M}$}
                       &= \dfrac{1}{4M_\text{irr}}\left( \left(\dfrac{\tfrac{M^2}{G}\sqrt{G^2M^2-a^2}+2M^3}{\tfrac{M}{G}\sqrt{G^2M^2-a^2}}\right)\delta M-\dfrac{J}{GM\sqrt{G^2M^2-a^2}}\delta J\right)\\
                       &= \dfrac{1}{4M_\text{irr}\sqrt{G^2M^2-a^2}}\left( \left(M\sqrt{G^2M^2-a^2}+2GM^2\right)\delta M-\dfrac{a}{G}\delta J\right)\\
