@@ -151,8 +151,9 @@ Quellen und Hilfsmittel benutzt sowie die Zitate kenntlich gemacht habe.\\\\\\
 
 \fancyhead[R]{\leftmark}
 %\fancyhead[R]{\leftmark\\\rightmark}
-\fancyhead[L]{\thepage}
+\fancyhead[L]{Thermodynamics of Black Holes}
 \fancyfoot[C]{}
+\fancyfoot[R]{\thepage}
 
 \pagenumbering{arabic}
 
@@ -242,7 +243,7 @@ where
   \Delta =r^2-2GMr+a^2\qquad  \rho ^2=r^2+a^2\cos ^2\theta \qquad a=J/M 
 \end{align} 
 and $J$ is the total angular momentum of the spinning mass.
-\todo{stationary limit surface, ergosphere, outer event horizon, inner event horizon}
+\todo{stationary limit surface, ergosphere, outer event horizon, inner event horizon, $\Omega $ rotation speed, surface gravity}
 %}}}
 
 %{{{ Kerr-Newman
@@ -277,8 +278,8 @@ For $r\rightarrow r_S$
 The light ray will cease to make progress towards the surface at $r_S$; at least in this coordinate system.
 To cut short the derivation \cite{Carroll} we will introduce the Kruskal coordinates $\left\{T,R,\theta ,\phi \right\}$ which relate to $\left\{r,t,\theta ,\phi \right\}$ via 
 \begin{align} 
-  T &= \,\sqrt[]{\left(\dfrac{r}{r_S}-1\right)}\text{e}^{\tfrac{r}{2r_S}}\sinh \left(\dfrac{t}{2r_S}\right) &
-  R &= \,\sqrt[]{\left(\dfrac{r}{r_S}-1\right)}\text{e}^{\tfrac{r}{2r_S}}\cosh \left(\dfrac{t}{2r_S}\right)
+  T &= \sqrt{\left(\dfrac{r}{r_S}-1\right)}\text{e}^{\tfrac{r}{2r_S}}\sinh \left(\dfrac{t}{2r_S}\right) &
+  R &= \sqrt{\left(\dfrac{r}{r_S}-1\right)}\text{e}^{\tfrac{r}{2r_S}}\cosh \left(\dfrac{t}{2r_S}\right)
 .\end{align} 
 The metric takes the form
 \begin{align} 
@@ -387,11 +388,11 @@ If we move with the body on its worldline, then the metric will be
 .\end{align} 
 This fixes the derivative in our equation for the energy 
 \begin{align} 
-  E &= \dfrac{\left(1-\dfrac{r_S}{r}\right)}{\,\sqrt[]{1-\dfrac{r_S}{r}} }=\,\sqrt[]{1-\dfrac{r_S}{r}}
+  E &= \dfrac{\left(1-\dfrac{r_S}{r}\right)}{\sqrt{1-\dfrac{r_S}{r}} }=\sqrt{1-\dfrac{r_S}{r}}
 .\end{align} 
 This energy can be understood as the energy per unit mass, such that
 \begin{align} 
-  E &= m\,\sqrt[]{1-\dfrac{r_S}{r}}
+  E &= m\sqrt{1-\dfrac{r_S}{r}}
 \end{align} 
 is the total energy of our body with mass $m$ \cite{Carroll}.
 
@@ -423,22 +424,141 @@ The total entropy of matter and of black holes in an isolated system can never d
 %}}}
 
 %{{{ Penrose Process
-\section{Penrose Process}
+\section{Penrose-Process}
 To further see a link between thermodynamics and black hole theory, we should construct a relation between the area of a black hole $A$ and the other parameters mass $M$, angular momentum $J$ and charge $Q$.
-Since these are sufficient to describe every black hole as states by the no-hair or uniqueness theorem, we should be able to find a relation, which characterizes how each quantity changes in relation to the other quantities.
+Since these are sufficient to describe every black hole as stated by the no-hair or uniqueness theorem, we should be able to find a relation which characterizes how each quantity changes in relation to the other.
+Let us think about which of these could be readily accessed.
+The area is always non-decreasing therefore not prone to change as we would like;
+the mass could be increased by simple means but not readily extracted;
+for the charge we have yet to link the Einstein equation with Maxwell's equation, thus we will set it to zero for now.
+This leaves us with the angular momentum, i.e.\ Kerr black holes, which we, in principle, have access to.
+We should therefore think about how we could extract angular momentum from it.
+Such a process has been developed by Penrose \cite{Penrose1969} \cite{Carroll}.
 
-Consider the Penrose-Process 
+Consider a Kerr black hole with angular momentum $J$ and a particle with four-momentum $P^\mu $.
+The energy of the particle is given by 
+\begin{align} 
+  E = K^\mu P_\mu = P_t \qquad K = \partial_t
+,\end{align} 
+where $K$ is a Killing vector of the Kerr metric (\ref{eq:kerr metric}) with important property
+\begin{align} 
+  | | K| | =0\text{ stationary limit}\qquad | | K| | <0\text{ ergosphere}\qquad | |K| |=1\text{ at infinity}\text{\todo{show this?}}
+,\end{align} 
+where $| | K| | =g(K,K)$.
+Now imagine the particle enters the ergosphere, traverses it for a moment and at a certain point in time, it splits into two components
+\begin{align} 
+  P^\mu =\tensor[^1]{P}{^\mu }+\tensor[^2]{P}{^\mu }
+,\end{align} 
+The particle manages to do it in such a way that
+\begin{align} 
+  \tensor[^1]{P}{^0}<0\quad \Rightarrow \quad \tensor[^2]{P}{^0}>P^0
+,\end{align} 
+where the second particle escapes from the ergosphere to infinity.
+It is entirely possible for the energy to be negative since the Killing vector $K=\partial_t$ is spacelike inside the ergophere\todo{show this}.
+Now, since particle 2 has more energy than the initial particle (from where it originated), energy has been extracted from somewhere, otherwise this would be a violation of conservation of energy.
+As it turns out, this energy comes from the reduction of the angular momentum $J$ of the black hole.
+To understand how $J$ has been reduced we will take another look at the symmetry of the Kerr metric; not only $K=\partial_t$ but also $R=\partial _\phi $ is a Killing vector, such that
+\begin{align} 
+  L=R^\mu P_\mu =P_\phi \qquad R=\partial_\phi 
+\end{align} 
+is a conserved quantity, namely the angular momentum of the particle.
+Also, since every event horizon in a stationary spacetime is a Killing horizon \todo{show this}, then the Killing vector
+\begin{align} 
+  \chi ^\mu =K^\mu +\Omega R^\mu  \qquad \Omega =\left(\diff[]{\phi }{t}\right)_-r_+=\dfrac{a}{r_+^2+a^2}\todo{show this}
+,\end{align} 
+is therefore null along the outer event horizon.
+Since we want to understand how $J$ has been reduced we will track the path that particle 1 takes.
+Particle 1 has negative energy, so it will not escape to infinity but eventually cross the outer event horizon $r_+$.
+This happenes, when
+\begin{align} 
+  \chi ^\mu \tensor[^1]{P}{_\mu }<0
+,\end{align} 
+as $x\chi ^\mu $ will become spacelike.
+This also implies that
+\begin{align} 
+  K^\mu \tensor[^1]{P}{_\mu }+\Omega R^\nu \tensor[^1]{P}{_\nu }=\tensor[^1]{E}{}+\Omega \tensor[^1]{L}{}<0\quad \Rightarrow \quad \tensor[^1]{L}{}<\dfrac{\tensor[^1]{E}{}}{\Omega }
+,\end{align} 
+where $\tensor[^1]{E}{}<0$ and $\Omega >0$ such that $\tensor[^1]{L}{}<0$.
+Particle 1 therefore adds negative energy and negative angular momentum to the hole, which decreases its mass and its angularmomentum
+\begin{align} 
+  \delta M=\tensor[^1]{E}{}\qquad \delta J=\tensor[^1]{L}{}\quad \Rightarrow \quad \delta J\leq \dfrac{\delta M}{\Omega } \label{eq:angular momentum mass relation}
+,\end{align} 
+where the equality holds in the most ideal process.
+We could argue, that $\tensor[^1]{E}{}$ and $\tensor[^1]{L}{}$ are somewhat arbitrary and it is therefore possible to completely extract all mass and rotational energy from the black hole, but this is not possible\footnote{It has been shown, that at most 29\% of its total energy can be extracted this way \cite{Carroll}.}
+The reason is the irreducible mass of a black hole \cite{Christodoulou1970} \cite{Carroll}.
+If one were to deplete the Kerr black hole of all its angular momentum, then a Schwarzschild black hole of mass equal to the irreducible mass remains.
+The irreducible mass can be understood as the energy, which is contained within the outer event horizon $r_+$ and can therefore not leave the black hole.
+It is given by
+\begin{align} 
+  M_\text{irr} &= \sqrt{\dfrac{A}{16\pi G^2}} \text{\todo{show this}}
+,\end{align} 
+where $A$ is the area of the black hole.
+We can calculate the area by integrating about the surface over the induced metric on the outer event horizon
+\begin{align} 
+  (\td s^2)'=g_{\mu \nu }'\td x^\mu \td x^\nu =\td s^2\left(\td t=\td r=0\right)|_{r=r_+} &= \rho ^2(r_+)\td \theta ^2+\dfrac{\sin ^2\theta }{\rho ^2(r_+)}\left( \left(r_+^2+a^2\right)^2-a^2\Delta (r_+)\sin ^2\theta \right)\td \phi ^2
+.\end{align} 
+Which yields, with $r_+=GM+\sqrt{G^2M^2-a^2}$ and $\Delta =r^2-2GMr+a^2$,
+\begin{align} 
+  \Delta (r_+) &= G^2M^2+G^2M^2-a^2+2GM\sqrt{G^2M^2-a^2}-2GM\left(GM+\sqrt{G^2M^2-a^2}\right)+a^2\\
+               &= 2G^2M^2+2GM\sqrt{G^2M^2-a^2}-2G^2M^2-2GM\sqrt{G^2M^2-a^2}=0
+,\end{align} 
+therefore
+\begin{align} 
+  (\td s^2)' &= \rho ^2(r_+)\td \theta ^2+\dfrac{\sin ^2\theta }{\rho ^2(r_+)}\left(r_+^2+a^2\right)^2\td \phi ^2
+,\end{align} 
+and
+\begin{align} 
+  A &= \int_{}^{}\td s'\,=\int_{}^{}\td \theta \td \phi \,\sqrt{g'}=\int_{0}^{\pi }\td \theta \,\int_{0}^{2\pi }\td \phi \,\sin \theta \left(r_+^2+a^2\right)=4\pi \left(r_+^2+a^2\right)
+.\end{align} 
+We can write the irreducible mass as
+\begin{align} 
+  M_\text{irr}=\sqrt{\dfrac{r_+^2+a^2}{4G^2}} &= \sqrt{\dfrac{G^2M^2+G^2M^2-a^2+2GM\sqrt{G^2M^2-a^2}+a^2}{4G^2}}\\
+                                                  &= \sqrt{\tfrac{1}{2}M^2+\tfrac{M}{2G}\sqrt{G^2M^2-\tfrac{J^2}{M^2} }}\\
+                                                  &= \dfrac{1}{\sqrt{2}}\sqrt{M^2+\sqrt{M^4-\tfrac{J^2}{G^2} }} \label{eq:irreducible mass}
+,\end{align} 
+where $a=\tfrac{J}{M}$ to have a relation between the irreducible mass, the total mass and the angular momentum.
+We can now take the variation of (\ref{eq:irreducible mass}) to have a formula for the variation of the area.
+Since both $M_\text{irr}$ and $A$ are related their variation will surely be positive, so we can use it to verify (\ref{eq:angular momentum mass relation}).
+\begin{align} 
+  \delta M_\text{irr} &= \dfrac{1}{\sqrt{2}}\delta \left(\sqrt{M^2+\sqrt{M^4-\tfrac{J^2}{G^2} }}\right)\\
+                      &= \dfrac{1}{\sqrt{2}}\dfrac{1}{\sqrt{2}M_\text{irr}}\dfrac{1}{2}\delta \left(M^2+\sqrt{M^4-\tfrac{J^2}{G^2}}\right)\\
+                      &= \dfrac{1}{4M_\text{irr}}\left(2M\delta M+\dfrac{4M^3\delta M-\tfrac{2J}{G^2}\delta J}{2\sqrt{M^4-\tfrac{J^2}{G^2} }}\right)\\
+                      &= \dfrac{1}{4M_\text{irr}}\left( \left(\dfrac{M\sqrt{M^4-\tfrac{J^2}{G^2}}+2M^3}{\sqrt{M^4-\tfrac{J^2}{G^2}}}\right)\delta M-\dfrac{J}{G^2\sqrt{M^4-\tfrac{J^2}{G^2}}}\delta J\right)\\
+                      \intertext{using $\sqrt{M^4-\tfrac{J^2}{G^2}}=\tfrac{M}{G}\sqrt{G^2M^2-a^2}$ with $a=\tfrac{J}{M}$}
+                      &= \dfrac{1}{4M_\text{irr}}\left( \left(\dfrac{\tfrac{M^2}{G}\sqrt{G^2M^2-a^2}+2M^3}{\tfrac{M}{G}\sqrt{G^2M^2-a^2}}\right)\delta M-\dfrac{J}{GM\sqrt{G^2M^2-a^2}}\delta J\right)\\
+                      &= \dfrac{1}{4M_\text{irr}\sqrt{G^2M^2-a^2}}\left( \left(M\sqrt{G^2M^2-a^2}+2GM^2\right)\delta M-\dfrac{a}{G}\delta J\right)\\
+                      \intertext{now multiply with $\tfrac{G}{G}$ to get equal powers of $G$ and $M$ and factor out $a$}
+                      &= \dfrac{a}{4GM_\text{irr}\sqrt{G^2M^2-a^2}}\left( \dfrac{1}{a}\left(GM\sqrt{G^2M^2-a^2}+2G^2M^2\right)\delta M-\delta J\right)\\
+                      \intertext{recall $\Omega =\tfrac{a}{r_+^2+a^2}=a\left(2G^2M^2+2GM\sqrt{G^2M^2-a^2}\right)^{-1}$}
+                      &= \dfrac{a}{4GM_\text{irr}\sqrt{G^2M^2-a^2}}\left(\dfrac{\delta M}{\Omega }-\delta J\right)=\delta M_\text{irr}
+.\end{align} 
+As we have said
+\begin{align} 
+  0<\delta M_\text{irr}\propto \dfrac{\delta M}{\Omega }-\delta J\quad \Leftrightarrow \quad \delta J\leq \dfrac{\delta M}{\Omega }
+,\end{align} 
+where the equality holds if $M_\text{irr}$ does not undergo change, i.e.\ only in the ideal case.
 
-\texttt{penrose process to extract work from bh.
-area theorem.
-formula for area analog to 1st hs (can area <-> entropy?).
-not sure abt constants only the equation could hold.} 
-\textit{kerr:\url{https://doi.org/10.1103/PhysRevLett.11.237}, penrose:\url{https://doi.org/10.1038/physci229177a0}, carroll}
-\begin{enumerate}[label=\arabic*.]
-  \item To further see a link between thermodynamics and black hole dynamics one can also consider the Penrose-process.
-    This leads to the analog of the first law of thermodynamics and a more definite relation between the entropy and area of a black hole.
-    Although at this point only the ratio is known.
-\end{enumerate}
+As we said in the beginning we want to relate $M$ with $A$ and $J$, therefore
+\begin{align} 
+  \delta M_\text{irr} &= \dfrac{1}{2M_\text{irr}}\dfrac{\delta A}{16\pi G^2}\\
+  \dfrac{a}{4GM_\text{irr}\sqrt{G^2M^2-a^2}}\left(\dfrac{\delta M}{\Omega }-\delta J\right) &= \dfrac{1}{2M_\text{irr}}\dfrac{\delta A}{16\pi G^2}\\
+  \delta M &= \dfrac{1}{2M_\text{irr}}\dfrac{\delta A}{16\pi G^2}\dfrac{4GM_\text{irr}\sqrt{G^2M^2-a^2}}{a\Omega }+\Omega \delta J\\
+  \delta M &= \dfrac{\sqrt{G^2M^2-a^2}}{8\pi Ga\Omega }\delta A+\Omega \delta J\\
+  \intertext{now $\Omega =a\left(2G^2M^2+2GM\sqrt{G^2M^2-a^2}\right)^{-1}$ and the surface gravity $\kappa =\tfrac{\sqrt{G^2M^2-a^2}}{2GM(GM+\sqrt{G^2M^2-a^2})}=\tfrac{\sqrt{G^2M^2-a^2}}{a\Omega }$}
+  \Aboxed{\delta M &= \dfrac{\kappa }{8\pi G}\delta A+\Omega \delta J}
+.\end{align} 
+Thus we have the promised relation between the quantities describing a Kerr black hole.
+It is not that we have done this for no reason; recall from earlier that we already concluded the second law of thermodynamics could be violated by the means of black holes, and promptly found a more general form which lifted this paradox and also accounted for black holes.
+However we have not violated the first law of thermodynamics with this procedure, nevertheless we see a clear correspondence to it (at least from the look of the formula)
+\begin{align} 
+  \td U &= \delta Q+\delta W=T\td S+\delta W
+.\end{align} 
+It seems that 
+\begin{align} 
+  \delta M \leftrightarrow \td U\qquad \dfrac{\kappa }{8\pi G}\delta A\leftrightarrow T\td S\qquad \Omega \delta J\leftrightarrow \delta W
+.\end{align} 
+The identification makes sense, the mass should be equal to the internal energy, since the only property a Schwarzschild black hole has is its mass\footnote{Aside from its area, but the entropy will be present nevertheless.}, the area has already been equated with the entropy and the angular momentum has been said to extract energy from the black hole which would translate to work done on the system.
+An important conclusion we could draw, is that the surface gravity $\kappa $ is somehow related to the temperature $T$, but no exact relation is known until here, since only a proportionality has been proposed for the area and entropy.
 %}}}
 
 %{{{ Unruh effect and Hawking Radiation
