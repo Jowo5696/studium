@@ -159,7 +159,7 @@ Quellen und Hilfsmittel benutzt sowie die Zitate kenntlich gemacht habe.\\\\\\
 
 %{{{
 
-%\begin{multicols}{2}
+%\begin{multicols*}{2}
 
 %{{{ Introduction
 \section{Introduction}
@@ -170,9 +170,8 @@ Quellen und Hilfsmittel benutzt sowie die Zitate kenntlich gemacht habe.\\\\\\
 %{{{ Theoretical Background 
 \section{Theoretical Background}
 
-%{{{ Einstein Field Equation / Black Holes
-%{{{
-\subsection*{Einstein Field Equation / Black Holes}
+%{{{ Einstein Field Equation and Black Holes
+\subsection{Einstein Field Equation and Black Holes}
 Einstein's field equations relates the geometry of spacetime to the energy and matter of the bodies which move through it
 \begin{align} 
   R\indices{_\mu _\nu }-\dfrac{1}{2}g\indices{_\mu _\nu }R +\Lambda g\indices{_\mu _\nu }&= \kappa T\indices{_\mu _\nu } \label{eq:efe}
@@ -181,35 +180,35 @@ where
 \begin{align} 
   R\indices{^\rho _\mu _\sigma _\nu } &= \partial_\sigma \Gamma \indices*{_\nu _\mu ^\rho} -\partial_\nu \Gamma _{\sigma \mu }^\rho +\Gamma \indices*{_\sigma _\lambda ^\rho} \Gamma _{\nu \mu }^\lambda -\Gamma _{\nu \lambda }^\rho \Gamma _{\sigma \mu }^\lambda & R\indices{^\lambda _\mu _\lambda _\nu } &= R\indices{_\mu _\nu } & g\indices{^\mu ^\nu }R\indices{_\mu _\nu }=R\indices{^\mu _\mu } &= R \label{eq:riemann tensor}
 ,\end{align} 
-is the Riemann tensor, the Ricci tensor and the Ricci scalar; $g_{\mu \nu }$ is the metric, $T_{\mu \nu }$ the stress-energy tensor, $\Lambda $ the cosmological constant and $\kappa =\tfrac{8\pi G}{c^4}$.
+is the Riemann tensor, the Ricci tensor and the Ricci scalar; $g_{\mu \nu }$ is the metric, $T_{\mu \nu }$ the stress-energy tensor, $\Lambda $ the cosmological constant and $\kappa =\tfrac{8\pi G}{c^4}$ (SI units).
+From here on we will set $c=1$ such that $\kappa =8\pi G$.
 It is an equation of motion for the metric tensor, which dictates the path test particles take by the geodesics equation
 \begin{align} 
-  \diff[2]{x^\mu }{\lambda }+\Gamma _{\rho \sigma}^\mu \diff[]{x^\rho }{\lambda }\diff[]{x^\sigma }{\lambda } &= 0 \label{eq:geodesics equation}
+   \dfrac{\text{D}}{\td \lambda }\diff[]{x^\nu }{\lambda }:=\diff[]{x^\mu }{\lambda }\nabla _\mu \diff[]{x^\nu }{\lambda }=\diff[2]{x^\mu }{\lambda }+\Gamma _{\rho \sigma}^\mu \diff[]{x^\rho }{\lambda }\diff[]{x^\sigma }{\lambda }=0\label{eq:geodesics equation}
 ,\end{align} 
-where $\lambda $ is the affine parameter and $\Gamma $ is the Christoffel symbol.
+\todo{no affine parametrization formula} where $\lambda $ is the affine parameter, $\Gamma $ is the Christoffel symbol and $\nabla $ the covariant derivative.
 Since we will be dealing with the vacuum space around a gravitating mass, we are only interested in the the solutions of the metric which fulfill the equation for $T_{\mu \nu }=\Lambda =0$, s.t.\
 \begin{align} 
-  R_{\mu \nu }-\dfrac{1}{2}g_{\mu \nu }R &= R_{\mu \nu }-\dfrac{1}{2}g_{\mu \nu }g^{\rho \sigma }R_{\rho \sigma } = 0\\
-  R_{\mu \nu } &= 0 \label{eq:efe vacuum}
+  R_{\mu \nu }-\dfrac{1}{2}g_{\mu \nu }R = R_{\mu \nu }-\dfrac{1}{2}g_{\mu \nu }g^{\rho \sigma }R_{\rho \sigma } = 0\quad \Leftrightarrow \quad R_{\mu \nu } = 0 \label{eq:efe vacuum}
 .\end{align} 
 The equation (\ref{eq:efe vacuum}) is the Einstein field equation in vacuum, restricting the possible solutions of the metric to be Ricci flat.
 %}}}
 
 %{{{ Schwarzschild
 \subsection*{Schwarzschild}
-In \cite{Schwarzschild1916} an analytic solution to (\ref{eq:efe vacuum}) found by Schwarzschild is presented, which is given by\footnote{The form is taken from \cite{Carroll}. A derivation is also given in the book.}
+In \cite{Schwarzschild1916} an analytic solution to (\ref{eq:efe vacuum}) found by Schwarzschild is presented, which is given by\footnote{The form is taken from \cite{Carroll}. A derivation is also given in the book. This holds also for the other metrics presented.}
 \begin{align} 
   \td s^2 = g_{\mu \nu }\td x^\mu \td x^\nu  &= -\left(1-\dfrac{2GM}{r}\right)\td t^2+\left(1-\dfrac{2GM}{r}\right)^{-1}\td r^2+r^2\td \Omega ^2 \label{eq:schwarzschild metric}
 ,\end{align} 
 where $c=1$, $\td \Omega ^2=\td \theta ^2+\sin ^2\theta \td \phi ^2$ and $\left\{t,r,\theta ,\phi \right\}$ are the spherical coordinates.
 In SI units the Schwarzschild radius is given by
 \begin{align} 
-  \Aboxed{r_S &= \dfrac{2GM}{c^2}} \label{eq:schwarzschild radius}
+  r_S &= \dfrac{2GM}{c^2} \label{eq:schwarzschild radius}
 ,\end{align} 
 where $M$ is the mass of the gravitating body, defined by the weak field limit.
 Upon inspecting the metric we can notice two values of $r$ for which $\td s^2$ diverges.
 The $r=r_S$ divergence is a mere coordinate dependent phenomenon.
-Although this singularity can be lifted, it is still of physical significance\footnote{As opposed to be thought by Schwarzschild himself, who regarded the singularity as an artifact of the analytical solution \cite{Schwarzschild1916}.}, as it characterizes the event horizon of a black hole (this will be explained in more detail later).
+Although this singularity can be lifted, it is still of physical significance\footnote{As opposed to be thought by Schwarzschild himself, who regarded the singularity as an artifact of the analytical solution \cite{Schwarzschild1916}.}, as it characterizes the event horizon of a black hole (see subsection (\ref{sec:black holes})).
 The singularity at $r=0$ is however not liftable, since $R\indices{^\mu ^\nu ^\rho ^\sigma }R\indices{_\mu _\nu _\rho _\sigma }=\tfrac{48G^2M^2}{r^6}$, which is a coordinate independent scalar, has a singularity at that point.
 \todo{motivation / reason for introduction}
 %}}}
@@ -261,7 +260,7 @@ Upon replacing $2GMr\rightarrow 2GMr-GQ^2 \inlineeqno\label{eq:kerr-newman metri
 %}}}
 
 %{{{ Black Holes
-\subsection*{Black Holes}
+\subsection*{Black Holes} \label{sec:black holes}
 As we have briefly said, in (\ref{eq:schwarzschild metric}) there exists a coordinate singularity at $r=r_S=2GM$, which we denoted as the event horizon of a Schwarzschild black hole.
 In general, we will call objects for which the Schwarzschild metric holds even at $r=2GM$ black holes.
 
@@ -315,10 +314,9 @@ This statement is reasonable to accept, because it would verify that the classic
 The second is the area theorem by Hawking \cite{Hawking1972}.\todo{derivation? understanding?}
 It states, under the assumption of the weak energy condition and the cosmic censorship conjecture that the area of a future event horizon in an asymptotically flat spacetime cannot decrease \cite{Carroll} \cite{Hawking1972}.
 %}}}
-%}}}
 
 %{{{ Thermodynamics
-\subsection*{Thermodynamics}
+\subsection{Thermodynamics}
 The theory of theromodynamics is a phenomenological theory of heat and work.
 It has been mostly established by Boltzmann, Carnot and Clausius throughout the $19^{\text{th}}$ century and relies on the following four fundamental laws.
 \begin{itemize}
@@ -490,7 +488,7 @@ If one were to deplete the Kerr black hole of all its angular momentum, then a S
 The irreducible mass can be understood as the energy, which is contained within the outer event horizon $r_+$ and can therefore not leave the black hole.
 It is given by
 \begin{align} 
-  M_\text{irr} &= \sqrt{\dfrac{A}{16\pi G^2}} \text{\todo{show this}}
+  M_\text{irr} &= \sqrt{\dfrac{A}{16\pi G^2}} \text{\todo{show this, see christodoulou 1970}}
 ,\end{align} 
 where $A$ is the area of the black hole.
 We can calculate the area by integrating about the surface over the induced metric on the outer event horizon
@@ -547,7 +545,7 @@ As we said in the beginning we want to relate $M$ with $A$ and $J$, therefore
   \intertext{now $\Omega =a\left(2G^2M^2+2GM\sqrt{G^2M^2-a^2}\right)^{-1}$ and the surface gravity $\kappa =\tfrac{\sqrt{G^2M^2-a^2}}{2GM(GM+\sqrt{G^2M^2-a^2})}=\tfrac{\sqrt{G^2M^2-a^2}}{a\Omega }$}
   \Aboxed{\delta M &= \dfrac{\kappa }{8\pi G}\delta A+\Omega \delta J}
 .\end{align} 
-Thus we have the promised relation between the quantities describing a Kerr black hole.
+Thus we have the promised relation between the quantities describing a Kerr black hole.\footnote{Do not interchange $\kappa $ (the surface gravity) with the Einstein gravitational constant, also called $\kappa $,  which happenes to be equal to $8\pi G$.}
 It is not that we have done this for no reason; recall from earlier that we already concluded the second law of thermodynamics could be violated by the means of black holes, and promptly found a more general form which lifted this paradox and also accounted for black holes.
 However we have not violated the first law of thermodynamics with this procedure, nevertheless we see a clear correspondence to it (at least from the look of the formula)
 \begin{align} 
@@ -634,7 +632,7 @@ this is a violation of the unitarity of quantum mechanics.}
 \end{enumerate}
 %}}}
 
-%\end{multicols}
+%\end{multicols*}
 
 \clearpage
 %\listoffigures
