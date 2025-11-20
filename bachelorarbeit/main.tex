@@ -184,7 +184,7 @@ is the Riemann tensor, the Ricci tensor and the Ricci scalar; $g_{\mu \nu }$ is 
 From here on we will set $c=1$ such that $\kappa =8\pi G$.
 It is an equation of motion for the metric tensor, which dictates the path test particles take by the geodesics equation
 \begin{align} 
-   \dfrac{\text{D}}{\td \lambda }\diff[]{x^\nu }{\lambda }:=\diff[]{x^\mu }{\lambda }\nabla _\mu \diff[]{x^\nu }{\lambda }=\diff[2]{x^\mu }{\lambda }+\Gamma _{\rho \sigma}^\mu \diff[]{x^\rho }{\lambda }\diff[]{x^\sigma }{\lambda }=0\label{eq:geodesics equation}
+   \dfrac{\text{D}}{\td \lambda }\diff[]{x^\mu }{\lambda }:=\diff[]{x^\nu }{\lambda }\nabla _\nu \diff[]{x^\mu }{\lambda }=\diff[2]{x^\mu }{\lambda }+\Gamma _{\rho \sigma}^\mu \diff[]{x^\rho }{\lambda }\diff[]{x^\sigma }{\lambda }=0\label{eq:geodesics equation}
 ,\end{align} 
 \todo{no affine parametrization formula} where $\lambda $ is the affine parameter, $\Gamma $ is the Christoffel symbol and $\nabla $ the covariant derivative.
 Since we will be dealing with the vacuum space around a gravitating mass, we are only interested in the the solutions of the metric which fulfill the equation for $T_{\mu \nu }=\Lambda =0$, s.t.\
@@ -482,15 +482,27 @@ Particle 1 therefore adds negative energy and negative angular momentum to the h
   \delta M=\tensor[^1]{E}{}\qquad \delta J=\tensor[^1]{L}{}\quad \Rightarrow \quad \delta J\leq \dfrac{\delta M}{\Omega } \label{eq:angular momentum mass relation}
 ,\end{align} 
 where the equality holds in the most ideal process.
-We could argue that $\tensor[^1]{E}{}$ and $\tensor[^1]{L}{}$ are somewhat arbitrary and it is therefore possible to completely extract all mass and rotational energy from the black hole, but this is not possible\footnote{It has been shown, that at most 29\% of its total energy can be extracted this way \cite{Carroll}.}.
+We could argue that $\tensor[^1]{E}{}$ and $\tensor[^1]{L}{}$ are somewhat arbitrary and it is therefore possible to completely extract all mass and rotational energy from the black hole, but this is not the case. It has been shown, that at most 29\% of its total energy can be extracted this way \cite{Carroll}.
 The reason is the irreducible mass of a black hole \cite{Christodoulou1970} \cite{Carroll}.
 If one were to deplete the Kerr black hole of all its angular momentum, then a Schwarzschild black hole of mass equal to the irreducible mass remains.
 The irreducible mass can be understood as the energy, which is contained within the outer event horizon $r_+$ and can therefore not leave the black hole.
-It is given by
+It has been derived by Christodoulou \cite{Christodoulou1970} as a mass-energy formula\todo{argument for formula from christodoulou}
+\begin{align}
+  (GM)^2=(GM_\text{irr})^2+\dfrac{(GJ)^2}{4(GM_\text{irr})^2}=(GM_\text{irr})^2+\dfrac{a^2(GM)^2}{4(GM_\text{irr})^2}
+.\end{align} 
+We can solve this equation for $GM_\text{irr}$ 
 \begin{align} 
-  M_\text{irr} &= \sqrt{\dfrac{A}{16\pi G^2}} \text{\todo{show this, see christodoulou 1970}}
-,\end{align} 
-where $A$ is the area of the black hole.
+  (GM_\text{irr})^4-(GM_\text{irr})^2(GM)^2+\dfrac{a^2(GM)^2}{4}=0
+\end{align} 
+and we will only consider the \enquote{+} solution, since we want the mass within $r_+$ 
+\begin{align} 
+  (GM_\text{irr})^2=\dfrac{1}{2}\left( (GM)^2+\sqrt{(GM)^2\left( (GM)^2-a^2\right)}\right)=\dfrac{1}{2}GM\left(GM+\sqrt{(GM)^2-a^2}\right)=\dfrac{1}{2}GMr_+ \label{eq:irreducible mass 0}
+.\end{align} 
+Finally
+\begin{align} 
+  M_\text{irr}=\sqrt{\dfrac{Mr_+}{2G}} \label{eq:irreducible mass 1}
+\end{align} 
+Now we take a look at the area\todo{motivation}.
 We can calculate the area by integrating about the surface over the induced metric on the outer event horizon
 \begin{align} 
   (\td s^2)'=g_{\mu \nu }'\td x^\mu \td x^\nu =\td s^2\left(\td t=\td r=0\right)|_{r=r_+} &= \rho ^2(r_+)\td \theta ^2+\dfrac{\sin ^2\theta }{\rho ^2(r_+)}\left( \left(r_+^2+a^2\right)^2-a^2\Delta (r_+)\sin ^2\theta \right)\td \phi ^2
@@ -506,15 +518,23 @@ therefore
 ,\end{align} 
 and
 \begin{align} 
-  A &= \int_{}^{}\td s'\,=\int_{}^{}\td \theta \td \phi \,\sqrt{g'}=\int_{0}^{\pi }\td \theta \,\int_{0}^{2\pi }\td \phi \,\sin \theta \left(r_+^2+a^2\right)=4\pi \left(r_+^2+a^2\right)
+  A &= \int_{}^{}\td s'\,=\int_{}^{}\td \theta \td \phi \,\sqrt{g'}=\int_{0}^{\pi }\td \theta \,\int_{0}^{2\pi }\td \phi \,\sin \theta \left(r_+^2+a^2\right)=4\pi \left(r_+^2+a^2\right) \label{eq:kerr area 1}
 .\end{align} 
-We can write the irreducible mass as
+We can plug $r_+$ into this equation to get
+\begin{align} 
+  A=4\pi \left(r_+^2+a^2\right) &= 4\pi \left((GM)^2+(GM)^2-a^2+2GM\sqrt{(GM)^2-a^2}+a^2\right)\\
+                                &= 4\pi \left(2(GM)^2+2GM\sqrt{(GM)^2-a^2}\right)=8\pi GMr_+ \label{eq:kerr area 2}
+\end{align} 
+Now with (\ref{eq:irreducible mass 1}) and (\ref{eq:kerr area 2})
+\begin{align} 
+  M_\text{irr}=\sqrt{\dfrac{A}{16\pi G^2}} \label{eq:irreducible mass 2}
+.\end{align} 
+However to do further calculations, we should relate $M_\text{irr}$ to $M$ and $J$ again
 \begin{align} 
   M_\text{irr}=\sqrt{\dfrac{r_+^2+a^2}{4G^2}} &= \sqrt{\dfrac{G^2M^2+G^2M^2-a^2+2GM\sqrt{G^2M^2-a^2}+a^2}{4G^2}}\\
                                                   &= \sqrt{\tfrac{1}{2}M^2+\tfrac{M}{2G}\sqrt{G^2M^2-\tfrac{J^2}{M^2} }}\\
                                                   &= \dfrac{1}{\sqrt{2}}\sqrt{M^2+\sqrt{M^4-\tfrac{J^2}{G^2} }} \label{eq:irreducible mass}
 ,\end{align} 
-where $a=\tfrac{J}{M}$ to have a relation between the irreducible mass, the total mass and the angular momentum.
 We can now take the variation of (\ref{eq:irreducible mass}) to have a formula for the variation of the area.
 Since both $M_\text{irr}$ and $A$ are related their variation will surely be positive, so we can use it to verify (\ref{eq:angular momentum mass relation}).
 \begin{align} 
@@ -522,7 +542,7 @@ Since both $M_\text{irr}$ and $A$ are related their variation will surely be pos
                       &= \dfrac{1}{\sqrt{2}}\dfrac{1}{\sqrt{2}M_\text{irr}}\dfrac{1}{2}\delta \left(M^2+\sqrt{M^4-\tfrac{J^2}{G^2}}\right)\\
                       &= \dfrac{1}{4M_\text{irr}}\left(2M\delta M+\dfrac{4M^3\delta M-\tfrac{2J}{G^2}\delta J}{2\sqrt{M^4-\tfrac{J^2}{G^2} }}\right)\\
                       &= \dfrac{1}{4M_\text{irr}}\left( \left(\dfrac{M\sqrt{M^4-\tfrac{J^2}{G^2}}+2M^3}{\sqrt{M^4-\tfrac{J^2}{G^2} }}\right)\delta M-\dfrac{J}{G^2\sqrt{M^4-\tfrac{J^2}{G^2} }}\delta J\right)\\
-                      \intertext{using $\sqrt{M^4-\tfrac{J^2}{G^2}}=\tfrac{M}{G}\sqrt{G^2M^2-a^2}$ with $a=\tfrac{J}{M}$}
+                      \intertext{using $\sqrt{M^4-\tfrac{J^2}{G^2}}=\tfrac{M}{G}\sqrt{G^2M^2-a^2}$}
                       &= \dfrac{1}{4M_\text{irr}}\left( \left(\dfrac{\tfrac{M^2}{G}\sqrt{G^2M^2-a^2}+2M^3}{\tfrac{M}{G}\sqrt{G^2M^2-a^2}}\right)\delta M-\dfrac{J}{GM\sqrt{G^2M^2-a^2}}\delta J\right)\\
                       &= \dfrac{1}{4M_\text{irr}\sqrt{G^2M^2-a^2}}\left( \left(M\sqrt{G^2M^2-a^2}+2GM^2\right)\delta M-\dfrac{a}{G}\delta J\right)\\
                       \intertext{now multiply with $\tfrac{G}{G}$ to get equal powers of $G$ and $M$ and factor out $a$}
@@ -622,13 +642,15 @@ this is a violation of the unitarity of quantum mechanics.}
 %{{{ Questions
 \section*{Questions}
 \begin{enumerate}[label=--]
-  \item how is $\mathcal{H}^+$ event horizon different from $\mathscr{I}^+$ conformal null infinity. the world line should just be able to cross (see german wikipedia penrose diagram)? \textbf{cannot be deduced by just the diagram, the line $r=2GM$ is just drawn but no equal to the line of infinity} 
-  \item in the collapsing star penrose diagram why is $i^+$ not directly above $i^-$? are the constant $r$ lines sill valid? \textbf{two different metrics joined together therefore lines of const $r$ have to be adapted} 
-  \item energy at infintiy $E=m(1-2\tfrac{M}{r})^{1/2}$ in bekenstein. derivation? \textbf{black hole exact solution thus not entropy as it could not be realized by multiple microstate} 
   \item irreducible mass (carroll p.\ 270) and area theorem no clear derivation? \textbf{stability of black hole $\delta J<\delta M$ mass irr area} \textbf{area shrinks but doesnt violate theorem since the condition is not vaild anyway (weak energy condition) $\rightarrow $ gets hotter with shrinking horizon}
   \item does the event horizon imply a singularity? i.e.\ since all matter has to converge. \textbf{yes} 
   \item does non-singular event horizon mean that it can be crossed? 
     since non-singular would imply that the hypersurface is geodesic complete. \textbf{yes also $g_{00}$ höhenlinien therefore no other gravitating source} 
+\end{enumerate}
+\vspace{3cm}
+\begin{enumerate}[label=--]
+  \item hawking paper derivation of $p_\omega ^{(2)}$ 
+  \item townsend: geodesic not affinely parameterized if $l\rightarrow f \xi $? but this is not the parameter and nevertheless reparametrization $\lambda \rightarrow \alpha \lambda +\beta $ is still affine.
 \end{enumerate}
 %}}}
 
