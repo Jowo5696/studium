@@ -234,18 +234,33 @@ Then
 \begin{align} 
   l^2\equiv l^\mu l_\mu  &= l^\mu g_{\mu \nu }l^\nu =g^{\mu \rho }\partial_\rho Sg_{\mu \nu }g^{\nu \sigma }\partial_\sigma S=g^{\mu \rho }\partial_\rho S\partial_\mu S\\
                &= g^{t t}(\partial_tS)^2+g^{r r}(\partial_rS)^2+g^{\theta \theta }(\partial_\theta S)^2+g^{\phi \phi }(\partial_\phi S)^2\\
-               &= \left(1-\dfrac{2GM}{r}\right)(1)^2
+               &= \left(1-\dfrac{r_S}{r}\right)(1)^2
 ,\end{align} 
 where
 \begin{align} 
-  \left. l^\mu l_\mu \right|_{r=2GM}=0
+  \left. l^\mu l_\mu \right|_{r=r_S}=0
 .\end{align} 
 Therefore $S|_{r=r_S}$ is indeed a null hypersurface.
 For $r<r_S$ the vector $l^2<0$ is becoming timelike.
 Thus, for any light cone crossing this hypersurface, all future directed paths will point towards the center of the black hole, since the normal vector is neccessarily inside the light cone.
 This is because the normal vector is also the greatest distance to traverse towards the center (i.e.\ an upper bound), thus any other vector, which is smaller, will also be timelike.
+\todo{formulation: distances become timelike}
 One must move towards the center.
+The same line of argumentation can be done with the Killing vector $K=\partial _t$, since
+\begin{align} 
+  \left.K^2\right|_{r=r_S}=K^\mu K_\mu =K^\mu g_{\mu \nu }K^\nu =g_{t t}=\dfrac{r_S}{r_S}-1=0
+,\end{align} 
+which is also null on the surface and spacelike $\left(K^2>0\right)$ within.
+The time-translation Killing vector outside the surface is in general timelike $\left(K^2<0\right)$ which means, that an observers worldline can lie along the Killing vector.
+The worldline of $K=\partial _t$ is one where all coordinates apart from $t$ remain unchanged.
+If now $K$ is becoming spacelike, then $K$ cannot describe an observers worldline anymore; an observer cannot have constant spatial coordinates within the region behind the surface.
+Assume that such an observer would go through the surface by decreasing the radius $r$ to the center.
+If she would like to turn around, she has to reverse her direction, i.e.\ traverse a point where $r$ would be a constant for a certain amount of time and then increase again.
+However, this is not allowed because the point of constant radius is not part of her worldline.
+\todo{but could she not increase $\theta $ and $\phi $ so much as to cancle the negative sign of $t$?}
+Therefore the radial coordinate cannot change sign, once it is determined from outside the surface; the observer has neccessarily to move in the direction of decreasing $r$ and reach the singularity at $r=0$.
 We will call such a surface an \enquote{event horizon}.
+
 The question becomes, can these coordinates be extended such that an observer could cross the event horizon?
 To cut short the derivation \cite{Carroll} for a maximally extended coordinate chart, we will introduce the Kruskal coordinates $\left\{T,R,\theta ,\phi \right\}$ which relate to $\left\{r,t,\theta ,\phi \right\}$ via 
 \begin{align} 
@@ -309,7 +324,7 @@ There are now three solutions for the event horizon.
 
 \noindent $G^2M^2<a^2$: For this case there will be no real solution of $r_\pm$ thus no event horizon and the singularity will be a naked singularity.
 This stands in violation with the cosmic censorship conjecture (discussed in \textit{Black Holes}).\\
-\noindent $G^2M^2=a^2$: This is the extreme Kerr black hole.\\
+\noindent $G^2M^2=a^2$: This is the extreme Kerr black hole, which is unstable.\\
 \noindent $G^2M^2>a^2$: Now both solutions of $r$ are real and can be of physical significance.
 To check the structure of the surface we will use
 \begin{align} 
@@ -328,12 +343,48 @@ Now that there are two different event horizons, there is an interesting propert
   \left.l^2\right|_{r=r_+}=\dfrac{\Delta (r_+)^2}{\rho ^2}=0\quad \left.l^2\right|_{r_-<r<r_+}=\dfrac{\Delta (r_-<r<r_+)^2}{\rho ^2}<0\quad \left.l^2\right|_{r=r_-}=\dfrac{\Delta (r_-)^2}{\rho ^2}=0\quad \left.l^2\right|_{r<r_-}=\dfrac{\Delta (r<r_-)^2}{\rho ^2}>0
 ,\end{align} 
 where $\rho $ has to be understood as a function of the respective value of $r$.
-\todo{discussion}
+Clearly, the normal vector outside the event horizon is spacelike, at the event horizon null and inside timelike.
+Thus $r_+$ behaves just like the event horizon of the Schwarzschild metric at $r_S$.
+But there is a second event horizon at $r_-$ which is again a null hypersurface.
+Behind the second horizon, $l^2$ is again spacelike, as it was outside the event horizon.
+Thus, if one enters the Kerr black hole from $r_+$, one has neccessarily to cross the event horizon at $r_-$, but after that is free to move however she likes.
+This opens up the possibility of moving back out the black hole, as in a Kerr \enquote{white hole}, where you neccessarily have to move out of $r_+$ once you have crossed $r_-$.
+Further discussion and implications can be found in \cite{Carroll}.
 
-Another important surface is when
+Another important surface appears for
 \begin{align} 
   1-\dfrac{2GMr}{\rho ^2}=0\quad \Rightarrow \quad r^2-2GMr+a^2\cos ^2\theta =0\quad \Rightarrow \quad r_\pm^E=GM\pm\sqrt{G^2M^2-a^2\cos ^2\theta }
-\end{align} 
+,\end{align} 
+where the region inside $r_+^E$ is called the \enquote{ergosphere}.
+%For future reference $\left(r_+^E\right)^2=2G^2M^2-a^2\cos ^2\theta +2GM\sqrt{GM-a^2\cos ^2\theta }$.
+It coincides with the outer event horizon at $\theta =0$ or $\theta =\pi $.
+The surface $S=r-r_+^E$ with
+\begin{align} 
+  \left.l^2\right|_{r=r_+^E}=\dfrac{\Delta ^2(r_+^E)}{\rho ^2(r_+^E)}\neq 0
+,\end{align} 
+is evidently not null (except at $\theta =0$ and $\theta =\pi $) so it doesn't act as yet another event horizon. 
+However, what will yield an interesting result is the killing vector $K=\partial _t$.
+Its norm is
+\begin{align} 
+  \left.K^2\right|_{r=r_+^E}=g_{t t}=0
+,\end{align} 
+clearly, since we have just calculated the particular surface with this condition.
+Just as in the Schwarzschild case, curves of constant spatial coordinates are not worldlines of observers anymore.
+However this surface is not an event horizon, therefore $r$ is not timelike and one can move in whatever radial direction she wants.
+\todo{but $\phi $ cannot be zero}
+
+\iffalse\begin{align} 
+  \Delta (r_e) &= r_e^2-2GMr_e+a^2\\
+               &= 2G^2M^2-a^2\cos ^2\theta +2GM\sqrt{GM-a^2\cos ^2\theta }-2G^2M^2-2GM\sqrt{G^2M^2-a^2\cos ^2\theta }+a^2\\
+               &= a^2\left(1-\cos ^2\theta \right)=a^2\sin ^2\theta \\
+  \rho (r_e) &= r_e^2+a^2\cos ^2\theta =2G^2M^2-a^2\cos ^2\theta +2GM\sqrt{GM-a^2\cos ^2\theta }+a^2\cos ^2\theta \\
+             &= 2G^2M^2+2GM\sqrt{GM-a^2\cos ^2\theta }\\
+\left(r_e^2+a^2\right)^2 &= \left(2G^2M^2-a^2\cos ^2\theta +2GM\sqrt{GM-a^2\cos ^2\theta }+a^2\right)^2\\
+                         &= \left(2G^2M^2+2GM\sqrt{GM-a^2\cos ^2\theta }+a^2\sin ^2\theta \right)^2\\
+                         &= 4G^4M^4+4G^2M^2\left(GM-a^2\cos ^2\theta \right)+a^4\sin ^4\theta +4GMa^2\sin ^2\theta \sqrt{GM-a^2\cos ^2\theta }\\
+                         &\qquad +4G^2M^2\left(2GM\sqrt{GM-a^2\cos ^2\theta }+a^2\sin ^2\theta \right)\\
+                         &= 4G^4M^4 + 4G^3M^3\left(1+2\sqrt{GM-a^2\cos ^2\theta }\right)
+\end{align}\fi
 
 
 \todo{stationary limit surface, ergosphere, outer event horizon, inner event horizon, $\Omega $ rotation speed, surface gravity}
@@ -511,14 +562,10 @@ where $K$ is a Killing vector of the Kerr metric (\ref{eq:kerr metric}) with nor
 .\end{align} 
 Then
 \begin{align} 
-  \lim_{r \rightarrow \infty}K^2=-1\\
-  \left.K^2\right|_{r=r_+^E}=\dfrac{2GM\left(GM+\sqrt{G^2M^2-a^2\cos ^2\theta }\right)}{2G^2M^2+2GM\sqrt{G^2M^2-a^2\cos ^2\theta }}-1=0
+  \lim_{r \rightarrow \infty}K^2 &= -1\\
+  \left.K^2\right|_{r=r_+^E} &= \dfrac{2GM\left(GM+\sqrt{G^2M^2-a^2\cos ^2\theta }\right)}{2G^2M^2-a^2\cos ^2\theta +2GM\sqrt{G^2M^2-a^2\cos ^2\theta }+a^2\cos ^2\theta }-1=0\\
+  \left.K^2\right|_{r<r_+^E} &> 0
 \end{align} 
-
-\begin{align} 
-  | | K| | =0\text{ stationary limit}\qquad | | K| | <0\text{ ergosphere}\qquad | |K| |=1\text{ at infinity}
-,\end{align} 
-where $| | K| | =g(K,K)$.
 Now imagine the particle enters the ergosphere, traverses it for a moment and at a certain point in time, splits into two components
 \begin{align} 
   P^\mu =\tensor[^1]{P}{^\mu }+\tensor[^2]{P}{^\mu }
@@ -528,7 +575,7 @@ The particle manages to do it in such a way that
   \tensor[^1]{P}{^0}<0\quad \Rightarrow \quad \tensor[^2]{P}{^0}>P^0
 ,\end{align} 
 where the second particle escapes from the ergosphere to infinity.
-It is entirely possible for the energy to be negative since the Killing vector $K=\partial_t$ is timelike inside the ergophere.
+It is entirely possible for the energy to be negative since the Killing vector $K=\partial_t$ is spacelike inside the ergophere.
 Now, since particle 2 has more energy than the initial particle (from where it originated), energy has been extracted from somewhere, otherwise this would be a violation of conservation of energy.
 As it turns out, this energy comes from the reduction of the angular momentum $J$ of the black hole.
 To understand how $J$ has been reduced we will take another look at the symmetry of the Kerr metric; not only $K=\partial_t$ but also $R=\partial _\phi $ is a Killing vector, such that
