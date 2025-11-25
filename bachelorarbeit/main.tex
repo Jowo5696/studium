@@ -186,7 +186,23 @@ It is an equation of motion for the metric tensor, which dictates the path test 
 \begin{align} 
    \dfrac{\text{D}}{\td \lambda }\diff[]{x^\mu }{\lambda }:=\diff[]{x^\nu }{\lambda }\nabla _\nu \diff[]{x^\mu }{\lambda }=\diff[2]{x^\mu }{\lambda }+\Gamma _{\rho \sigma}^\mu \diff[]{x^\rho }{\lambda }\diff[]{x^\sigma }{\lambda }=0\label{eq:geodesics equation}
 ,\end{align} 
-\todo{no affine parametrization formula} where $\lambda $ is the affine parameter, $\Gamma $ is the Christoffel symbol and $\nabla $ the covariant derivative.
+where $\lambda $ is the affine parameter, $\Gamma $ is the Christoffel symbol (i.e.\ the Levi-Civita connection is implied) and $\nabla $ the covariant derivative.
+If a geodesic is not affinely parameterized it will in general not be zero.
+For example we can find another tangent vector which is proportional to the original tangent vector such that
+\begin{align} 
+  t^\mu \equiv\diff[]{\tilde{x}^\mu }{\lambda }=f(\lambda )\diff[]{x^\mu }{\lambda }\equiv f\diff[]{x^\mu }{\lambda }
+,\end{align} 
+which will yield
+\begin{align} 
+  0=\diff[]{x^\nu }{\lambda }\nabla _\nu \diff[]{x^\mu }{\lambda } &= \dfrac{1}{f}t^\nu \nabla _\nu \left(\dfrac{1}{f}t^\mu \right) = \dfrac{1}{f}t^\nu \left(\partial_\nu \dfrac{1}{f}\right)t^\mu +\dfrac{1}{f^2}t^\nu \left(\nabla _\nu t^\mu \right) = \dfrac{1}{f}t^\nu \left(-\dfrac{1}{f^2}\partial_\nu f\right)t^\mu +\dfrac{1}{f^2}t^\nu \left(\nabla _\nu t^\mu \right)\\
+                                                                   &= -\dfrac{1}{f^2}t^\nu \left(\partial_\nu \ln f\right)t^\mu +\dfrac{1}{f^2}t^\nu \left(\nabla _\nu t^\mu \right)
+,\end{align} 
+then
+\begin{align} 
+  t^\nu \nabla _\nu t^\mu  &= t^\nu \left(\partial_\nu \ln f\right)t^\mu \equiv \kappa t^\mu \label{eq:not affine geodesics}
+,\end{align} 
+which is the geodesic equation for non-affinely parameterized curves \cite{Townsend1997}\footnote{Do not interchange $\kappa $ from the non-affine parametrization with $\kappa $ as the Einstein-constant.}.
+
 Since we will be dealing with the vacuum space around a gravitating mass, we are only interested in the the solutions of the metric which fulfill the equation for $T_{\mu \nu }=\Lambda =0$, s.t.\
 \begin{align} 
   R_{\mu \nu }-\dfrac{1}{2}g_{\mu \nu }R = R_{\mu \nu }-\dfrac{1}{2}g_{\mu \nu }g^{\rho \sigma }R_{\rho \sigma } = 0\quad \Leftrightarrow \quad R_{\mu \nu } = 0 \label{eq:efe vacuum}
@@ -244,8 +260,8 @@ Therefore $S|_{r=r_S}$ is indeed a null hypersurface.
 For $r<r_S$ the vector $l^2<0$ is becoming timelike.
 Thus, for any light cone crossing this hypersurface, all future directed paths will point towards the center of the black hole, since the normal vector is neccessarily inside the light cone.
 This is because the normal vector is also the greatest distance to traverse towards the center (i.e.\ an upper bound), thus any other vector, which is smaller, will also be timelike.
-\todo{formulation: distances become timelike}
-One must move towards the center.
+In general, distances become timelike and one must move towards the center.
+
 The same line of argumentation can be done with the Killing vector $K=\partial _t$, since
 \begin{align} 
   \left.K^2\right|_{r=r_S}=K^\mu K_\mu =K^\mu g_{\mu \nu }K^\nu =g_{t t}=\dfrac{r_S}{r_S}-1=0
@@ -258,8 +274,8 @@ Assume that such an observer would go through the surface by decreasing the radi
 If she would like to turn around, she has to reverse her direction, i.e.\ traverse a point where $r$ would be a constant for a certain amount of time and then increase again.
 However, this is not allowed because the point of constant radius is not part of her worldline.
 \todo{but could she not increase $\theta $ and $\phi $ so much as to cancle the negative sign of $t$?}
-Therefore the radial coordinate cannot change sign, once it is determined from outside the surface; the observer has neccessarily to move in the direction of decreasing $r$ and reach the singularity at $r=0$.
-We will call such a surface an \enquote{event horizon}.
+Therefore the radial coordinate cannot change sign, once it is determined from outside the surface; the observer neccessarily has to move in the direction of decreasing $r$ and reach the singularity at $r=0$.
+We will call a surface which exhibits these properties an \enquote{event horizon}.
 
 The question becomes, can these coordinates be extended such that an observer could cross the event horizon?
 To cut short the derivation \cite{Carroll} for a maximally extended coordinate chart, we will introduce the Kruskal coordinates $\left\{T,R,\theta ,\phi \right\}$ which relate to $\left\{r,t,\theta ,\phi \right\}$ via 
@@ -346,9 +362,9 @@ where $\rho $ has to be understood as a function of the respective value of $r$.
 Clearly, the normal vector outside the event horizon is spacelike, at the event horizon null and inside timelike.
 Thus $r_+$ behaves just like the event horizon of the Schwarzschild metric at $r_S$.
 But there is a second event horizon at $r_-$ which is again a null hypersurface.
-Behind the second horizon, $l^2$ is again spacelike, as it was outside the event horizon.
-Thus, if one enters the Kerr black hole from $r_+$, one has neccessarily to cross the event horizon at $r_-$, but after that is free to move however she likes.
-This opens up the possibility of moving back out the black hole, as in a Kerr \enquote{white hole}, where you neccessarily have to move out of $r_+$ once you have crossed $r_-$.
+Behind the second horizon, $l^2$ is spacelike, as it was outside the event horizon.
+Thus, if an observer enters the Kerr black hole from $r_+$, she neccessarily has to cross the event horizon at $r_-$, but after that is free to move however she likes.
+This opens up the possibility of moving back out the black hole (on the other side), as in a Kerr \enquote{white hole}, where you neccessarily have to move out of $r_+$ once you have crossed $r_-$.
 Further discussion and implications can be found in \cite{Carroll}.
 
 Another important surface appears for
@@ -356,7 +372,6 @@ Another important surface appears for
   1-\dfrac{2GMr}{\rho ^2}=0\quad \Rightarrow \quad r^2-2GMr+a^2\cos ^2\theta =0\quad \Rightarrow \quad r_\pm^E=GM\pm\sqrt{G^2M^2-a^2\cos ^2\theta }
 ,\end{align} 
 where the region inside $r_+^E$ is called the \enquote{ergosphere}.
-%For future reference $\left(r_+^E\right)^2=2G^2M^2-a^2\cos ^2\theta +2GM\sqrt{GM-a^2\cos ^2\theta }$.
 It coincides with the outer event horizon at $\theta =0$ or $\theta =\pi $.
 The surface $S=r-r_+^E$ with
 \begin{align} 
@@ -370,21 +385,50 @@ Its norm is
 ,\end{align} 
 clearly, since we have just calculated the particular surface with this condition.
 Just as in the Schwarzschild case, curves of constant spatial coordinates are not worldlines of observers anymore.
-However this surface is not an event horizon, therefore $r$ is not timelike and one can move in whatever radial direction she wants.
-\todo{but $\phi $ cannot be zero}
+However this surface is not an event horizon, therefore $r$ is not timelike and one can move in whatever radial direction she wants (including out the surface once entered).
+Still, one cannot remain stationary and is therefore dragged with the rotation of the black hole.
+\todo{Lens-Thirring effect}
 
-\iffalse\begin{align} 
-  \Delta (r_e) &= r_e^2-2GMr_e+a^2\\
-               &= 2G^2M^2-a^2\cos ^2\theta +2GM\sqrt{GM-a^2\cos ^2\theta }-2G^2M^2-2GM\sqrt{G^2M^2-a^2\cos ^2\theta }+a^2\\
-               &= a^2\left(1-\cos ^2\theta \right)=a^2\sin ^2\theta \\
-  \rho (r_e) &= r_e^2+a^2\cos ^2\theta =2G^2M^2-a^2\cos ^2\theta +2GM\sqrt{GM-a^2\cos ^2\theta }+a^2\cos ^2\theta \\
-             &= 2G^2M^2+2GM\sqrt{GM-a^2\cos ^2\theta }\\
-\left(r_e^2+a^2\right)^2 &= \left(2G^2M^2-a^2\cos ^2\theta +2GM\sqrt{GM-a^2\cos ^2\theta }+a^2\right)^2\\
-                         &= \left(2G^2M^2+2GM\sqrt{GM-a^2\cos ^2\theta }+a^2\sin ^2\theta \right)^2\\
-                         &= 4G^4M^4+4G^2M^2\left(GM-a^2\cos ^2\theta \right)+a^4\sin ^4\theta +4GMa^2\sin ^2\theta \sqrt{GM-a^2\cos ^2\theta }\\
-                         &\qquad +4G^2M^2\left(2GM\sqrt{GM-a^2\cos ^2\theta }+a^2\sin ^2\theta \right)\\
-                         &= 4G^4M^4 + 4G^3M^3\left(1+2\sqrt{GM-a^2\cos ^2\theta }\right)
-\end{align}\fi
+The speed at which the black hole rotates can be understood as the angular velocity at the outer event horizon.
+To calculate we will consider a null trajectory at $\theta =\tfrac{\pi }{2}$ at a constant radius $r_+$ (really at $r_+$ is not possible since the surface is null so realistically it is infinitesimally above $r_+$).
+The induced metric becomes %(with $g_{t t}=0$ at $r_+$)
+\begin{align} 
+  \td\tilde{s}^2 &= g_{t t}\td t^2+g_{t \phi }\left(\td t\td \phi +\td \phi \td t\right)+g_{\phi \phi }\td \phi ^2 = 0
+,\end{align} 
+with components
+\begin{align} 
+  g_{t t} &= \dfrac{2GMr_+}{\rho ^2(r_+)}-1=\dfrac{2G^2M^2+2GM\sqrt{G^2M^2-a^2}}{2G^2M^2-a^2+2GM\sqrt{G^2M^2-a^2}}-1=\dfrac{r_+^2+a^2}{r_+^2}-1\\
+  g_{\phi \phi } &= \dfrac{\left(r_+^2+a^2\right)^2}{r_+^2}\\
+  g_{t \phi } &= -\dfrac{2GMr_+a}{r_+^2}=-\dfrac{a\left(2G^2M^2+2GM\sqrt{G^2M^2-a^2}\right)}{r_+^2}=-\dfrac{a\left(r_+^2+a^2\right)}{r_+^2}
+.\end{align} 
+Therefore
+\begin{align} 
+  \left(\diff[]{\phi }{t}\right)^2 + 2g^{\phi \phi }g_{t \phi }\diff[]{\phi }{t}+g^{\phi \phi }g_{t t}=0\quad \Rightarrow \quad \diff[]{\phi }{t} = 0\lor \diff[]{\phi }{t}=-2g^{\phi \phi }g_{t \phi }
+.\end{align} 
+\begin{align} 
+  \diff[]{\phi }{t} &= -g^{\phi \phi }g_{t \phi }\pm \sqrt{\left(g^{\phi \phi }g_{t \phi }\right)^2-g^{\phi \phi }g_{t t}}\\
+                    &= \dfrac{a}{r_+^2+a^2}\pm \sqrt{\left(\dfrac{a}{r_+^2+a^2}\right)^2-\dfrac{1}{r_+^2+a^2}+\dfrac{r_+^2}{\left(r_+^2+a^2\right)^2}}=\dfrac{a}{r_+^2+a^2}
+.\end{align} 
+
+\todo{only one solution??? check calculation but could make sense.}
+The zero solution is to be understood as the trajectory pointing against the hole's rotation; it will not be helpful in our calculation.
+The non-zero solution yields, with $\rho (r_+,\theta =\tfrac{\pi }{2})=r_+^2$ and $\Delta (r_+)=0$
+\begin{align} 
+  \diff[]{\phi }{t} &=-2\dfrac{r_+^2}{\left(r_+^2+a^2\right)^2}\left(-\dfrac{2GMr_+a}{r_+^2}\right)=\dfrac{4G^2M^2a+4GMa\sqrt{G^2M^2-a^2}}{\left(2G^2M^2+2GM\sqrt{G^2M^2-a^2}\right)^2}=\dfrac{2a}{r_+^2+a^2}=:\Omega \label{eq:kerr rotation speed}
+\end{align} 
+\todo{why factor of 2???}
+$\Omega $ can be understood as the rotation speed of the black hole.
+
+Lastly we will want to calculate the gravity of the black hole at $r_+$.
+The surface at $r_+$ is a null hypersurface which is also a Killing horizon for $K=\partial_t$.
+Therefore $K$ is proportional to the normal vector on this surface, however it need not be affinely parameterized and will in general solve only (\ref{eq:not affine geodesics}). 
+The proportionality constant $\kappa $ of (\ref{eq:not affine geodesics}) is called \enquote{surface gravity} if the equation holds for a Killing vector on a Killing horizon \cite{Townsend1997}.
+This is the quantaty we now want to calculate.
+\todo{derivation in townsend}
+\begin{align} 
+  \kappa =\sqrt{-\dfrac{1}{2}\left(\nabla ^\mu K^\nu \right)\left(\nabla _\nu K_\mu \right)}
+.\end{align} 
+Thereby for $K=\partial _t$ 
 
 
 \todo{stationary limit surface, ergosphere, outer event horizon, inner event horizon, $\Omega $ rotation speed, surface gravity}
@@ -443,9 +487,9 @@ It has been mostly established by Boltzmann, Carnot and Clausius throughout the 
   \item [1.] The internal energy of an isolated system is conserved.
     The rate of change of internal energy of a system by interaction with another system is given by
     \begin{align} 
-      \td U = T\td S+\sum_{i}^{}F_i\td X_i
+      \td U = T\td S+\sum_{i}^{}Y_i\td X_i
     ,\end{align} 
-    where $F_i\td X_i$ is a way for the system to do mechanical work, $U$ is the internal energy, $T$ is the temperature, $S$ is the entropy.
+    where $Y_i\td X_i$ is a way for the system to do mechanical work, $U$ is the internal energy, $T$ is the temperature, $S$ is the entropy.
   \item [2.] The total entropy of an isolated system can never decrease
     \begin{align} 
       \td S\geq 0
@@ -556,15 +600,9 @@ The energy of the particle is given by
 \begin{align} 
   E = K^\mu P_\mu = P_t \qquad K = \partial_t
 ,\end{align} 
-where $K$ is a Killing vector of the Kerr metric (\ref{eq:kerr metric}) with norm
+where $K$ is a Killing vector of the Kerr metric (\ref{eq:kerr metric}) with norm $K^2=g_{t t}=\tfrac{2GMr}{\rho ^2}-1$
 \begin{align} 
-  K^2 = K^\mu K_\mu = K^\mu g_{\mu \nu }K^\nu = g_{t t} = \dfrac{2GMr}{\rho ^2}-1 = \dfrac{2GMr}{r^2+a^2\cos ^2\theta }-1
-.\end{align} 
-Then
-\begin{align} 
-  \lim_{r \rightarrow \infty}K^2 &= -1\\
-  \left.K^2\right|_{r=r_+^E} &= \dfrac{2GM\left(GM+\sqrt{G^2M^2-a^2\cos ^2\theta }\right)}{2G^2M^2-a^2\cos ^2\theta +2GM\sqrt{G^2M^2-a^2\cos ^2\theta }+a^2\cos ^2\theta }-1=0\\
-  \left.K^2\right|_{r<r_+^E} &> 0
+  \lim_{r \rightarrow \infty}K^2 = -1\qquad \left.K^2\right|_{r=r_+^E} = 0\qquad \left.K^2\right|_{r<r_+^E} > 0
 \end{align} 
 Now imagine the particle enters the ergosphere, traverses it for a moment and at a certain point in time, splits into two components
 \begin{align} 
@@ -583,9 +621,9 @@ To understand how $J$ has been reduced we will take another look at the symmetry
   L=R^\mu P_\mu =P_\phi \qquad R=\partial_\phi 
 \end{align} 
 is a conserved quantity, namely the angular momentum of the particle.
-Also, since every event horizon in a stationary spacetime is a Killing horizon \todo{show this}, then the Killing vector
+Since every event horizon in a stationary spacetime is a Killing horizon \cite{Carroll}, then the Killing vector
 \begin{align} 
-  \chi ^\mu =K^\mu +\Omega R^\mu  \qquad \Omega =\left(\diff[]{\phi }{t}\right)_-r_+=\dfrac{a}{r_+^2+a^2}\todo{show this}
+  \chi ^\mu =K^\mu +\Omega R^\mu\qquad \Omega \stackrel{(\ref{eq:kerr rotation speed})}{=}\dfrac{a^2}{r_+^2+a^2}
 ,\end{align} 
 is therefore null along the outer event horizon.
 Since we want to understand how $J$ has been reduced we will track the path that particle 1 takes.
@@ -611,37 +649,29 @@ If one were to deplete the Kerr black hole of all its angular momentum, then a S
 The irreducible mass can be understood as the energy, which is contained within the outer event horizon $r_+$ and can therefore not leave the black hole.
 It has been derived by Christodoulou \cite{Christodoulou1970} as a mass-energy formula\todo{argument for formula from christodoulou}
 \begin{align}
-  (GM)^2=(GM_\text{irr})^2+\dfrac{(GJ)^2}{4(GM_\text{irr})^2}=(GM_\text{irr})^2+\dfrac{a^2(GM)^2}{4(GM_\text{irr})^2}
+  G^2M^2=(GM_\text{irr})^2+\dfrac{G^2J^2}{4G^2M_\text{irr}^2}=G^2M_\text{irr}^2+\dfrac{a^2G^2M^2}{4G^2M_\text{irr}^2}
 .\end{align} 
 We can solve this equation for $GM_\text{irr}$ 
 \begin{align} 
-  (GM_\text{irr})^4-(GM_\text{irr})^2(GM)^2+\dfrac{a^2(GM)^2}{4}=0
+  G^4M_\text{irr}^4-G^2M_\text{irr}^2G^2M^2+\dfrac{a^2G^2M^2}{4}=0
 \end{align} 
 and we will only consider the \enquote{+} solution, since we want the mass within $r_+$ 
 \begin{align} 
-  (GM_\text{irr})^2=\dfrac{1}{2}\left( (GM)^2+\sqrt{(GM)^2\left( (GM)^2-a^2\right)}\right)=\dfrac{1}{2}GM\left(GM+\sqrt{(GM)^2-a^2}\right)=\dfrac{1}{2}GMr_+ \label{eq:irreducible mass 0}
+  G^2M_\text{irr}^2=\dfrac{1}{2}\left( G^2M^2+\sqrt{G^2M^2\left( G^2M^2-a^2\right)}\right)=\dfrac{1}{2}GM\left(GM+\sqrt{G^2M^2-a^2}\right)=\dfrac{1}{2}GMr_+ \label{eq:irreducible mass 0}
 .\end{align} 
 Finally
 \begin{align} 
   M_\text{irr}=\sqrt{\dfrac{Mr_+}{2G}} \label{eq:irreducible mass 1}
 \end{align} 
-Now we take a look at the area\todo{motivation}.
-We can calculate the area by integrating about the surface over the induced metric on the outer event horizon
+As of now this expression cannot be further simplified so we will take a look at the area.
+We can calculate it by integrating over the surface with the induced metric on the outer event horizon
 \begin{align} 
-  (\td s^2)'=g_{\mu \nu }'\td x^\mu \td x^\nu =\td s^2\left(\td t=\td r=0\right)|_{r=r_+} &= \rho ^2(r_+)\td \theta ^2+\dfrac{\sin ^2\theta }{\rho ^2(r_+)}\left( \left(r_+^2+a^2\right)^2-a^2\Delta (r_+)\sin ^2\theta \right)\td \phi ^2
+  \td \tilde{s}^2=g_{\mu \nu }'\td x^\mu \td x^\nu =\td s^2\left(\td t=\td r=0\right)|_{r=r_+} &= \rho ^2(r_+)\td \theta ^2+\dfrac{\sin ^2\theta }{\rho ^2(r_+)}\left( \left(r_+^2+a^2\right)^2-a^2\Delta (r_+)\sin ^2\theta \right)\td \phi ^2\\
+                                                                                               &= \rho ^2(r_+)\td \theta ^2+\dfrac{\sin ^2\theta }{\rho ^2(r_+)}\left(r_+^2+a^2\right)^2\td \phi ^2
 .\end{align} 
-Which yields, with $r_+=GM+\sqrt{G^2M^2-a^2}$ and $\Delta =r^2-2GMr+a^2$,
+With $\Delta (r_+)=0$, thereby
 \begin{align} 
-  \Delta (r_+) &= G^2M^2+G^2M^2-a^2+2GM\sqrt{G^2M^2-a^2}-2GM\left(GM+\sqrt{G^2M^2-a^2}\right)+a^2\\
-               &= 2G^2M^2+2GM\sqrt{G^2M^2-a^2}-2G^2M^2-2GM\sqrt{G^2M^2-a^2}=0
-,\end{align} 
-therefore
-\begin{align} 
-  (\td s^2)' &= \rho ^2(r_+)\td \theta ^2+\dfrac{\sin ^2\theta }{\rho ^2(r_+)}\left(r_+^2+a^2\right)^2\td \phi ^2
-,\end{align} 
-and
-\begin{align} 
-  A &= \int_{}^{}\td s'\,=\int_{}^{}\td \theta \td \phi \,\sqrt{g'}=\int_{0}^{\pi }\td \theta \,\int_{0}^{2\pi }\td \phi \,\sin \theta \left(r_+^2+a^2\right)=4\pi \left(r_+^2+a^2\right) \label{eq:kerr area 1}
+  A &= \int_{}^{}\td \tilde{s}\,=\int_{}^{}\td \theta \td \phi \,\sqrt{\tilde{g}}=\int_{0}^{\pi }\td \theta \,\int_{0}^{2\pi }\td \phi \,\sin \theta \left(r_+^2+a^2\right)=4\pi \left(r_+^2+a^2\right) \label{eq:kerr area 1}
 .\end{align} 
 We can plug $r_+$ into this equation to get
 \begin{align} 
