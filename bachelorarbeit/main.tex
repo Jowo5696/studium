@@ -163,8 +163,7 @@ Quellen und Hilfsmittel benutzt sowie die Zitate kenntlich gemacht habe.\\\\\\
 
 %{{{ Introduction
 \section{Introduction}
-\texttt{}
-
+This work shall present a thorough derivation of the laws of black hole thermodynamcis.
 %}}}
 
 %{{{ Theoretical Background 
@@ -184,7 +183,7 @@ is the Riemann tensor, the Ricci tensor and the Ricci scalar; $g_{\mu \nu }$ is 
 From here on we will set $c=1$ such that $\kappa =8\pi G$.
 It is an equation of motion for the metric tensor, which dictates the path test particles take by the geodesics equation
 \begin{align} 
-   \dfrac{\text{D}}{\td \lambda }\diff[]{x^\mu }{\lambda }:=\diff[]{x^\nu }{\lambda }\nabla _\nu \diff[]{x^\mu }{\lambda }=\diff[2]{x^\mu }{\lambda }+\Gamma _{\rho \sigma}^\mu \diff[]{x^\rho }{\lambda }\diff[]{x^\sigma }{\lambda }=0\label{eq:geodesics equation}
+   \dfrac{\text{D}}{\td \lambda }\diff[]{x^\mu }{\lambda }\equiv\diff[]{x^\nu }{\lambda }\nabla _\nu \diff[]{x^\mu }{\lambda }=\diff[2]{x^\mu }{\lambda }+\Gamma _{\rho \sigma}^\mu \diff[]{x^\rho }{\lambda }\diff[]{x^\sigma }{\lambda }=0\label{eq:geodesics equation}
 ,\end{align} 
 where $\lambda $ is the affine parameter, $\Gamma $ is the Christoffel symbol (i.e.\ the Levi-Civita connection is implied) and $\nabla $ the covariant derivative.
 If a geodesic is not affinely parameterized it will in general not be zero.
@@ -263,7 +262,7 @@ where
 Therefore $S|_{r=r_S}$ is indeed a null hypersurface.
 For $r<r_S$ the vector $l^2<0$ is becoming timelike.
 Thus, for any light cone crossing this hypersurface, all future directed paths will point towards the center of the black hole, since the normal vector is neccessarily inside the light cone.
-This is because the normal vector is also the greatest distance to traverse towards the center (i.e.\ an upper bound), thus any other vector, which is smaller, will also be timelike.
+This is because the normal vector is also the greatest distance to traverse towards the center (i.e.\ an upper bound), thus any other vector, whose norm is less, will also be timelike.
 In general, distances become timelike and one must move towards the center.
 
 The same line of argumentation can be done with the Killing vector $K=\partial _t$, since
@@ -585,7 +584,7 @@ The total entropy of matter and of black holes in an isolated system can never d
 %}}}
 
 %{{{ Penrose Process
-\section{Penrose-Process}
+\section{Penrose Process}
 To further see a link between thermodynamics and black hole theory, we should construct a relation between the area of a black hole $A$ and the other parameters mass $M$, angular momentum $J$ and charge $Q$.
 Since these are sufficient to describe every black hole as stated by the no-hair or uniqueness theorem, we should be able to find a relation which characterizes how each quantity changes in relation to the other.
 Let us think about which of these could be readily accessed.
@@ -639,7 +638,7 @@ This also implies that
   K^\mu \tensor[^1]{P}{_\mu }+\Omega R^\nu \tensor[^1]{P}{_\nu }=\tensor[^1]{E}{}+\Omega \tensor[^1]{L}{}<0\quad \Rightarrow \quad \tensor[^1]{L}{}<\dfrac{\tensor[^1]{E}{}}{\Omega }
 ,\end{align} 
 where $\tensor[^1]{E}{}<0$ and $\Omega >0$ such that $\tensor[^1]{L}{}<0$.
-Particle 1 therefore adds negative energy and negative angular momentum to the hole, which decreases its mass and its angularmomentum
+Particle 1 therefore adds negative energy and negative angular momentum to the hole, which decreases its mass and its angular momentum
 \begin{align} 
   \delta M=\tensor[^1]{E}{}\qquad \delta J=\tensor[^1]{L}{}\quad \Rightarrow \quad \delta J\leq \dfrac{\delta M}{\Omega } \label{eq:angular momentum mass relation}
 ,\end{align} 
@@ -716,12 +715,12 @@ As we said in the beginning we want to relate $M$ with $A$ and $J$, therefore
   \dfrac{a}{4GM_\text{irr}\sqrt{G^2M^2-a^2}}\left(\dfrac{\delta M}{\Omega }-\delta J\right) &= \dfrac{1}{2M_\text{irr}}\dfrac{\delta A}{16\pi G^2}\\
   \delta M &= \dfrac{1}{2M_\text{irr}}\dfrac{\delta A}{16\pi G^2}\dfrac{4GM_\text{irr}\sqrt{G^2M^2-a^2}\Omega }{a}+\Omega \delta J\\
   \delta M &= \dfrac{\sqrt{G^2M^2-a^2}\Omega }{8\pi Ga}\delta A+\Omega \delta J\\
-  \intertext{now $\Omega =a\left(2G^2M^2+2GM\sqrt{G^2M^2-a^2}\right)^{-1}$ and the surface gravity $\kappa =\tfrac{\sqrt{G^2M^2-a^2}}{2GM(GM+\sqrt{G^2M^2-a^2})}=\tfrac{\Omega \sqrt{G^2M^2-a^2}}{a}$}
+  \intertext{with the surface gravity $\kappa =\tfrac{\Omega \sqrt{G^2M^2-a^2}}{a}$}
   \Aboxed{\delta M &= \dfrac{\kappa }{8\pi G}\delta A+\Omega \delta J}
 .\end{align} 
 Thus we have the promised relation between the quantities describing a Kerr black hole.\footnote{Do not interchange $\kappa $ (the surface gravity) with the Einstein gravitational constant, also called $\kappa $,  which happenes to be equal to $8\pi G$.}
 It is not that we have done this for no reason; recall from earlier that we already concluded the second law of thermodynamics could be violated by the means of black holes, and promptly found a more general form which lifted this paradox and also accounted for black holes.
-However we have not violated the first law of thermodynamics with this procedure, nevertheless we see a clear correspondence to it (at least from the look of the formula)
+However we have not violated the first law of thermodynamics with this procedure, nevertheless we see a clear correspondence to it (at least from the looks of the formula)
 \begin{align} 
   \td U &= \delta Q+\delta W=T\td S+\delta W
 .\end{align} 
@@ -733,8 +732,101 @@ The identification makes sense, the mass should be equal to the internal energy,
 An important conclusion we could draw is that the surface gravity $\kappa $ is somehow related to the temperature $T$, but no exact relation is known until here, since only a proportionality has been proposed for the area and entropy.
 %}}}
 
-%{{{ Unruh effect and Hawking Radiation
-\section{Unruh effect and Hawking Radiation}
+%{{{ Hawking Radiation
+\section{Hawking Radiation}
+As of now, we have only dealt with classical general relativity; even in the extend to not include quantum mechanical effects into our calculations.
+This yielded some very profound results, but we have not been able to fix the equations relating quantities of black holes to quantities of classical thermodynamics.
+As we have seen in thermodynamics, the entropy connects the microscopic quantum mechanical properties of systems with the macroscopic variables of state. 
+Therefore, it will be useful if we could get an exact equation which relates the entropy with the area of a black hole.
+For this, we will now consider quatum field theory in curved spacetime.
+
+Quantum field theory deals with the quantization of fields.
+We will have a vacuum state $\ket{0}$, which is defined such that the annihilation operator $a$ yields zero upon acting on the vacuum, $a\ket{0}=0$.
+Any other exited state can be generated by $\ket{n_k}=\tfrac{1}{\sqrt{n_k!}}\left(a^\dagger _k\right)^{n_k}\ket{0}$, where $k$ denotes exitations with the same momentum $\vv{k}$.
+An exitation will in general be a plane wave, also called \enquote{mode}, $\psi _0\text{e}^{\text{i}k^\mu x_\mu }$, which can be understood as a particle upon approximating to first quantization.
+These motion of plane waves are governed by the Klein-Gordon equation $\partial ^2\psi -m^2\psi -\xi R\psi =0$, where $m$ is the mass and $\xi $ denotes the coupling strength to the curvature scalar $R$ \cite{Carroll}.
+
+The following discussion will be based on the derivation by Hawking \cite{Hawking1975}.
+A cruicial fact is that if the modes $f$ will solve the Klein-Gordon equation, then a linear combination of these modes will also solve the Klein-Gordon equation.
+Therefore any field $\psi $ can be expanded with these modes
+\begin{align} 
+  \psi =\sum_{i}^{}\left(f_ia_i+\overline{f}_ia^\dagger _i\right) \label{eq:linear combination}
+,\end{align} 
+where $a$ and $a^\dagger $ are the annihilation and creation operators.
+The modes fulfil the following property
+\begin{align} 
+  \partial _t f = -\text{i}\omega f\text{ \enquote{positive frequency}} \qquad \partial _t \overline{f}= \text{i}\omega \overline{f}\text{ \enquote{negative frequency}}
+,\end{align} 
+(although $\omega >0$) while also
+\begin{align} 
+  \left(a,b\right)\equiv \text{i}\int_{\Sigma }^{}\td \mu (\Sigma )\,\left(\overline{b}\partial _t a-a \partial _t \overline{b}\right)\qquad \left(f_\mu ,f_\nu \right)=\delta _{\mu \nu }\qquad \left(\overline{f}_\mu ,\overline{f}_\nu \right)=-\delta _{\mu \nu }\qquad \left(f_\mu ,\overline{f}_\nu \right)=0
+,\end{align} 
+where $\Sigma $ is a Cauchy surface, thus they form a complete set.
+This will in general hold if the spacetime is static and flat, because if those properties are not given, we cannot readily define positive and negative frequency modes with respect to a time derivative, since the scalar product $k^\mu x_\mu $ will in general have mixed time and space components.
+In turn, we cannot decompose the solution $\psi $ into the closed form (\ref{eq:linear combination}) and therefore cannot determine how $\psi $ splits into $a$ and $a^\dagger $.
+We will see that we are faced with exactly this problem, because in our work, we are concerned about black holes as well as their creation.
+Thus, if we allow there to exist an asymptotically flat spacetime in the infinite past, say at $\mathscr{J}^-$, then let matter accumulate over a time span such that a black hole forms, and at the end the spacetime will be asymptotically flat in the infinite future, say at $\mathscr{J}^+$, then this spacetime is definitely not static nor flat.
+What we can do however, is define to define a set of positive and negative frequency modes in the flat and static spacetime which is in our reach.
+For example we could say that on $\mathscr{J}^-$, there exists a set of modes $f$, such that
+\begin{align} 
+  \psi =\sum_{i}^{}\left(f_ia_i+\overline{f}_ia^\dagger _i\right) \label{eq:ingoing solution}
+,\end{align} 
+and $\psi $ will solve the Klein-Gordon equation of $\mathscr{J}^-$.
+We will choose $f$ that they are positive frequency with respect to the affine parameter at $\mathscr{J}^-$.
+Now since this set of modes is completely valid on $\mathscr{J}^-$ as it is in flat spacetime, we can use it to define $a$ and $a^\dagger $ as the annihilation and creation operator of modes on $\mathscr{J}^-$.
+We can identify this with ingoing particles from $\mathscr{J}^-$.
+Analoguously on $\mathscr{J}^+$ 
+\begin{align} 
+  \psi = \sum_{i}^{}\left(p_ib_i+\overline{p}_ib^\dagger _i\right) \label{eq:outgoing solution}
+,\end{align} 
+where we will identify the creation and annihilation operators $b$ and $b^\dagger $ with outgoing particles to $\mathscr{J}^+$.
+Since both (\ref{eq:ingoing solution}) and (\ref{eq:outgoing solution}) completely determine $\psi $, they are valid for all times.
+We also have to complete sets of modes $f$ and $p$, which means that they can be expanded into each other \todo{bogolyubov transform}
+\begin{align} 
+  p_i &= \sum_{j}^{}\left(\alpha _{ij}f_j+\beta _{ij}\overline{f}_j\right)\qquad b = \sum_{j}^{}\left(\alpha _{ij}a_j+\beta _{ij}a^\dagger _j\right) \label{eq:bogolyubov transform 1}\\
+  f_i &= \sum_{j}^{}\left(\overline{\alpha }_{ij}p_j-\overline{\beta }_{ij}\overline{p}_j\right)\qquad a = \sum_{j}^{}\left(\overline{\alpha }_{ij}b_j-\overline{\beta }_{ij}b^\dagger \right) \label{eq:bogolyubov transform 2}
+,\end{align} 
+where $\alpha $ and $\beta $ are coefficients, which fulfil
+\begin{align} 
+  \sum_{j}^{}\left(\alpha _{ik}\overline{\alpha }_{jk}-\beta _{ik}\overline{\beta }_{jk}\right)=\delta _{ij}\qquad \sum_{j}^{}\left(\alpha _{ik}\beta _{jk}-\beta _{ik}\alpha _{jk}\right)=0
+.\end{align} 
+The coefficients can therefore also be expressed as a scalar product of the modes
+\begin{align} 
+  \alpha _{ij}=\left(g_i,f_j\right)\qquad \beta _{ij}=-\left(g_i,\overline{f}_j\right)
+.\end{align} 
+\todo{could show}
+We are now faced with a different problem though.
+As we can see from (\ref{eq:bogolyubov transform 2}), the annihilation operator for $\mathscr{J}^-$ is a linear combination of the annihilation and creation operator of $\mathscr{J}^+$.
+This means, that where $b$ defines a vacuum, $a$ might not define it as a vacuum, since when acting with $b$, so will act $a$ as well as $a^\dagger $.
+The creation and annihilation operators do not share the same vacuum.
+We will define the vacuum on $\mathscr{J}^-$ as $\ket{0_-}$ and the vacuum at $\mathscr{J}^+$ as $\ket{0_+}$, then we have
+\begin{align} 
+  a\ket{0_-} &= 0\qquad a\ket{0_+}\neq 0\\
+  b\ket{0_-} &\neq 0\qquad b\ket{0_+}=0
+.\end{align} 
+We could do even more and ask, what will be the expected number of particles in the vacuum $\ket{0_-}$, upon defining the modes on $\mathscr{J}^+$
+\begin{align} 
+  \bra{0_-}b^\dagger _ib_i \ket{0_-} &= \bra{0_-}\sum_{j}^{}\left(\overline{\alpha }_{ij}a^\dagger _j+\overline{\beta }_{ij}a_j\right)\left(\alpha _{ij}a_j+\beta _{ij}a^\dagger _j\right)\ket{0_-}\\
+                                 &= \bra{0_-}\sum_{j}^{}\left(|\alpha _{ij}|^2a^\dagger _ja_j+\overline{\alpha }_{ij}a^\dagger _jb_{ij}a^\dagger _j+\overline{\beta }_{ij}a_j\alpha _{ij}a_j+|\beta _{ij}|^2a_ja^\dagger _j\right)\ket{0_-}\\
+                                 &= \sum_{j}^{}|\beta _{ij}|^2
+,\end{align} 
+which will not be zero in general.
+Just from the fact that the modes cannot be continued throughout the whole spacetime due to curvature, there is a different notion of vacuum and one observer with a different set of modes will define particles, where another observer will define a vacuum.
+\todo{detect these particles: Carroll p.\ 399: need proper time}
+Remember, said curvature originates solely from our black hole and nothing else; it was therefore suspected by Hawking that a black hole radiates.
+
+We are now tasked to calculate $|\beta _{ij}|^2$ to obtain information about the spectrum of particles.
+To perform explicit calculation we will consider the Schawrzschild metric (\ref{eq:schwarzschild metric}) but in Eddington-Finkelstein coordinates
+\begin{align} 
+  v=t+r+2GM\ln\left(\dfrac{r}{2GM}-1\right)\qquad u=t-r-2GM\ln\left(\dfrac{r}{2GM}-1\right)
+,\end{align} 
+where $v$ is the ingoing coordinate and $u$ is the outgoing coordinate, such that ingoing radial null geodesics are $v=\text{const}$ and outgoing $u=\text{const}$.
+We will also say that, since the Schwarzschild metric is spherically symmetric, we can decompose the plane waves into spherical harmonics 
+\begin{align} 
+  f_{\omega '}=\dfrac{1}{\sqrt{2\pi \omega '}r}F(r)Y\left(\theta ,\phi \right)\qquad p_\omega =\dfrac{1}{\sqrt{2\pi \omega }r}P(r)Y(\theta ,\phi )
+,\end{align} 
+and make the summations continuous
+
 \texttt{introduction with unruh effect (qft in curved spacetime carroll) derivation / argumentation for hawking radiation. need for an event horizon since then there is no timelike killing vector throughout the whole spacetime s.t.\ the modes match minkowski.
 no violation of the area theorem due to hawking radiation (see carroll p.\ 417).
 identification of S - A and T - kappa.} 
