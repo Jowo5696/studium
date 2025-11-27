@@ -202,6 +202,10 @@ then
   t^\nu \nabla _\nu t^\mu  &= t^\nu \left(\partial_\nu \ln f\right)t^\mu \equiv \kappa t^\mu \label{eq:not affine geodesics}
 ,\end{align} 
 which is the geodesic equation for non-affinely parameterized curves \cite{Townsend1997}\footnote{Do not interchange $\kappa $ from the non-affine parametrization with $\kappa $ as the Einstein-constant.}.
+The constant can also be expressed as \cite{Townsend1997} \todo{could show}
+\begin{align} 
+  \kappa =\sqrt{-\dfrac{1}{2}\left(\nabla ^\mu t^\nu \right)\left(\nabla _\mu t_\nu \right)}
+.\end{align} 
 
 Since we will be dealing with the vacuum space around a gravitating mass, we are only interested in the the solutions of the metric which fulfill the equation for $T_{\mu \nu }=\Lambda =0$, s.t.\
 \begin{align} 
@@ -403,35 +407,32 @@ with components
 .\end{align} 
 Therefore
 \begin{align} 
-  \left(\diff[]{\phi }{t}\right)^2 + 2g^{\phi \phi }g_{t \phi }\diff[]{\phi }{t}+g^{\phi \phi }g_{t t}=0\quad \Rightarrow \quad \diff[]{\phi }{t} = 0\lor \diff[]{\phi }{t}=-2g^{\phi \phi }g_{t \phi }
-.\end{align} 
+  \left(\diff[]{\phi }{t}\right)^2 + 2g^{\phi \phi }g_{t \phi }\diff[]{\phi }{t}+g^{\phi \phi }g_{t t}=0
+,\end{align} 
+with solution
 \begin{align} 
   \diff[]{\phi }{t} &= -g^{\phi \phi }g_{t \phi }\pm \sqrt{\left(g^{\phi \phi }g_{t \phi }\right)^2-g^{\phi \phi }g_{t t}}\\
                     &= \dfrac{a}{r_+^2+a^2}\pm \sqrt{\left(\dfrac{a}{r_+^2+a^2}\right)^2-\dfrac{1}{r_+^2+a^2}+\dfrac{r_+^2}{\left(r_+^2+a^2\right)^2}}=\dfrac{a}{r_+^2+a^2}
 .\end{align} 
-
 \todo{only one solution??? check calculation but could make sense.}
-The zero solution is to be understood as the trajectory pointing against the hole's rotation; it will not be helpful in our calculation.
-The non-zero solution yields, with $\rho (r_+,\theta =\tfrac{\pi }{2})=r_+^2$ and $\Delta (r_+)=0$
+We will define the rotation speed of the black hole thus
 \begin{align} 
-  \diff[]{\phi }{t} &=-2\dfrac{r_+^2}{\left(r_+^2+a^2\right)^2}\left(-\dfrac{2GMr_+a}{r_+^2}\right)=\dfrac{4G^2M^2a+4GMa\sqrt{G^2M^2-a^2}}{\left(2G^2M^2+2GM\sqrt{G^2M^2-a^2}\right)^2}=\dfrac{2a}{r_+^2+a^2}=:\Omega \label{eq:kerr rotation speed}
-\end{align} 
-\todo{why factor of 2???}
-$\Omega $ can be understood as the rotation speed of the black hole.
+  \Omega \equiv \dfrac{a}{r_+^2+a^2} \label{eq:kerr rotation speed}
+.\end{align} 
 
 Lastly we will want to calculate the gravity of the black hole at $r_+$.
 The surface at $r_+$ is a null hypersurface which is also a Killing horizon for $K=\partial_t$.
 Therefore $K$ is proportional to the normal vector on this surface, however it need not be affinely parameterized and will in general solve only (\ref{eq:not affine geodesics}). 
 The proportionality constant $\kappa $ of (\ref{eq:not affine geodesics}) is called \enquote{surface gravity} if the equation holds for a Killing vector on a Killing horizon \cite{Townsend1997}.
-This is the quantaty we now want to calculate.
-\todo{derivation in townsend}
+This is the quantity we now want to calculate.
+We will be using
 \begin{align} 
-  \kappa =\sqrt{-\dfrac{1}{2}\left(\nabla ^\mu K^\nu \right)\left(\nabla _\nu K_\mu \right)}
+  \kappa ^2=-\dfrac{1}{2}\left(\nabla ^\mu K^\nu \right)\left(\nabla _\mu K_\nu \right)
+,\end{align} 
+with $K=\partial _t$ and the Christoffel symbols from \cite{Mueller2010}, which yields \todo{could show}
+\begin{align} 
+  \kappa =\dfrac{r_+-r_-}{2\left(r_+^2+a^2\right)}=\dfrac{\Omega \left(r_+-r_-\right)}{2a}=\dfrac{\Omega \sqrt{G^2M^2-a^2}}{2a}
 .\end{align} 
-Thereby for $K=\partial _t$ 
-
-
-\todo{stationary limit surface, ergosphere, outer event horizon, inner event horizon, $\Omega $ rotation speed, surface gravity}
 %}}}
 
 %{{{ Reissner-Nordström
@@ -460,7 +461,7 @@ Upon replacing $2GMr\rightarrow 2GMr-GQ^2 \inlineeqno\label{eq:kerr-newman metri
 %{{{ Black Holes
 \subsection*{Black Holes} \label{sec:black holes}
 Black holes in general are only described by a small number of properties.
-Israel \cite{Israel1967} \cite{Israel1968} was the first to deduce this property by showing that, for a static, asymptotically flat spacetime \todo{simply connected equipotential lines $g_{00}$; important?} the Schwarzschild metric (\ref{eq:schwarzschild metric}) is the only metric for which the event horizon is regular (i.e.\ is non-singular\todo{see question}).
+Israel \cite{Israel1967} \cite{Israel1968} was the first to deduce this property by showing that, for a static, asymptotically flat spacetime with only one gravitating mass, the Schwarzschild metric (\ref{eq:schwarzschild metric}) is the only metric for which the event horizon is regular (i.e.\ is non-singular).
 This characterizes the solution by Schwarzschild to be unique.
 By further analysis he also deduced that for a vacuum, in which the source-free Maxwell equations hold (all charges are said to be within the black hole), only the Reissner-Nordström metric (\ref{eq:reissner-nordström metric}) is a solution with regular event horizon.
 Thus it is also unique.
@@ -575,7 +576,7 @@ Now that there exists such a non-decreasing quantity, which respects the second 
 \begin{align} 
   S_{bh}\equiv S_{b.h.} &= \eta k_BL_p^{-2}A
 ,\end{align} 
-where $\eta $ is a constant number of order unity, $k_B$ is the Boltzmann constant, $L_p$ is the Planck length. \todo{explanation of constants}
+where $\eta $ is a constant number of order unity, $k_B$ is the Boltzmann constant, $L_p$ is the Planck length. \todo{explanation of constants, reason}
 Consequently, the second law of thermodynamics has to be rephrased to capture also the entropy of the black hole \cite{Carroll}:
 The total entropy of matter and of black holes in an isolated system can never decrease
 \begin{align} 
@@ -649,7 +650,7 @@ If one were to deplete the Kerr black hole of all its angular momentum, then a S
 The irreducible mass can be understood as the energy, which is contained within the outer event horizon $r_+$ and can therefore not leave the black hole.
 It has been derived by Christodoulou \cite{Christodoulou1970} as a mass-energy formula\todo{argument for formula from christodoulou}
 \begin{align}
-  G^2M^2=(GM_\text{irr})^2+\dfrac{G^2J^2}{4G^2M_\text{irr}^2}=G^2M_\text{irr}^2+\dfrac{a^2G^2M^2}{4G^2M_\text{irr}^2}
+  G^2M^2=G^2M_\text{irr}^2+\dfrac{G^2J^2}{4G^2M_\text{irr}^2}=G^2M_\text{irr}^2+\dfrac{a^2G^2M^2}{4G^2M_\text{irr}^2}
 .\end{align} 
 We can solve this equation for $GM_\text{irr}$ 
 \begin{align} 
@@ -666,7 +667,7 @@ Finally
 As of now this expression cannot be further simplified so we will take a look at the area.
 We can calculate it by integrating over the surface with the induced metric on the outer event horizon
 \begin{align} 
-  \td \tilde{s}^2=g_{\mu \nu }'\td x^\mu \td x^\nu =\td s^2\left(\td t=\td r=0\right)|_{r=r_+} &= \rho ^2(r_+)\td \theta ^2+\dfrac{\sin ^2\theta }{\rho ^2(r_+)}\left( \left(r_+^2+a^2\right)^2-a^2\Delta (r_+)\sin ^2\theta \right)\td \phi ^2\\
+  \td \tilde{s}^2=\tilde{g}_{\mu \nu }\td x^\mu \td x^\nu =\td s^2\left(\td t=\td r=0\right)|_{r=r_+} &= \rho ^2(r_+)\td \theta ^2+\dfrac{\sin ^2\theta }{\rho ^2(r_+)}\left( \left(r_+^2+a^2\right)^2-a^2\Delta (r_+)\sin ^2\theta \right)\td \phi ^2\\
                                                                                                &= \rho ^2(r_+)\td \theta ^2+\dfrac{\sin ^2\theta }{\rho ^2(r_+)}\left(r_+^2+a^2\right)^2\td \phi ^2
 .\end{align} 
 With $\Delta (r_+)=0$, thereby
@@ -675,8 +676,8 @@ With $\Delta (r_+)=0$, thereby
 .\end{align} 
 We can plug $r_+$ into this equation to get
 \begin{align} 
-  A=4\pi \left(r_+^2+a^2\right) &= 4\pi \left((GM)^2+(GM)^2-a^2+2GM\sqrt{(GM)^2-a^2}+a^2\right)\\
-                                &= 4\pi \left(2(GM)^2+2GM\sqrt{(GM)^2-a^2}\right)=8\pi GMr_+ \label{eq:kerr area 2}
+  A=4\pi \left(r_+^2+a^2\right) &= 4\pi \left(G^2M^2+G^2M^2-a^2+2GM\sqrt{G^2M^2-a^2}+a^2\right)\\
+                                &= 4\pi \left(2G^2M^2+2GM\sqrt{G^2M^2-a^2}\right)=8\pi GMr_+ \label{eq:kerr area 2}
 \end{align} 
 Now with (\ref{eq:irreducible mass 1}) and (\ref{eq:kerr area 2})
 \begin{align} 
@@ -713,9 +714,9 @@ As we said in the beginning we want to relate $M$ with $A$ and $J$, therefore
 \begin{align} 
   \delta M_\text{irr} &= \dfrac{1}{2M_\text{irr}}\dfrac{\delta A}{16\pi G^2}\\
   \dfrac{a}{4GM_\text{irr}\sqrt{G^2M^2-a^2}}\left(\dfrac{\delta M}{\Omega }-\delta J\right) &= \dfrac{1}{2M_\text{irr}}\dfrac{\delta A}{16\pi G^2}\\
-  \delta M &= \dfrac{1}{2M_\text{irr}}\dfrac{\delta A}{16\pi G^2}\dfrac{4GM_\text{irr}\sqrt{G^2M^2-a^2}}{a\Omega }+\Omega \delta J\\
-  \delta M &= \dfrac{\sqrt{G^2M^2-a^2}}{8\pi Ga\Omega }\delta A+\Omega \delta J\\
-  \intertext{now $\Omega =a\left(2G^2M^2+2GM\sqrt{G^2M^2-a^2}\right)^{-1}$ and the surface gravity $\kappa =\tfrac{\sqrt{G^2M^2-a^2}}{2GM(GM+\sqrt{G^2M^2-a^2})}=\tfrac{\sqrt{G^2M^2-a^2}}{a\Omega }$}
+  \delta M &= \dfrac{1}{2M_\text{irr}}\dfrac{\delta A}{16\pi G^2}\dfrac{4GM_\text{irr}\sqrt{G^2M^2-a^2}\Omega }{a}+\Omega \delta J\\
+  \delta M &= \dfrac{\sqrt{G^2M^2-a^2}\Omega }{8\pi Ga}\delta A+\Omega \delta J\\
+  \intertext{now $\Omega =a\left(2G^2M^2+2GM\sqrt{G^2M^2-a^2}\right)^{-1}$ and the surface gravity $\kappa =\tfrac{\sqrt{G^2M^2-a^2}}{2GM(GM+\sqrt{G^2M^2-a^2})}=\tfrac{\Omega \sqrt{G^2M^2-a^2}}{a}$}
   \Aboxed{\delta M &= \dfrac{\kappa }{8\pi G}\delta A+\Omega \delta J}
 .\end{align} 
 Thus we have the promised relation between the quantities describing a Kerr black hole.\footnote{Do not interchange $\kappa $ (the surface gravity) with the Einstein gravitational constant, also called $\kappa $,  which happenes to be equal to $8\pi G$.}
