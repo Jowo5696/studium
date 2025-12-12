@@ -14,7 +14,7 @@
 \usepackage{authblk} % author formatting
 \usepackage{hyperref} % "clickable" references in text
 \hypersetup{colorlinks=true,allcolors=blue}
-\usepackage[backend=biber,style=numeric]{biblatex}
+\usepackage[backend=biber,style=phys]{biblatex}
 \addbibresource{refs.bib}
 
 \usepackage{booktabs} % toprule,midrule,bottomrule
@@ -771,30 +771,30 @@ where $\Sigma $ is a Cauchy surface and $\left(\cdot ,\cdot \right)$ is the Klei
 This will hold in general if the spacetime is static and flat, because if those properties are not given, we cannot readily define positive and negative frequency modes with respect to a time derivative, since the scalar product $k^\mu x_\mu $ then has mixed time and space components.
 In turn, we cannot decompose the solution $\psi $ into the closed form (\ref{eq:linear combination}) and therefore cannot determine how $\psi $ splits into $a$ and $a^\dagger $.
 We will see that we are faced with exactly this problem, because in this work, we are concerned about black holes as well as their creation.
-Thus, if we allow there to exist an asymptotically flat spacetime in the infinite past, say at $\mathscr{J}^-$, let matter accumulate over a time span such that a black hole forms, and at the end the spacetime will be asymptotically flat in the infinite future, say at $\mathscr{J}^+$, then this spacetime is definitely not static nor flat.
+Thus, if we allow there to exist an asymptotically flat spacetime in the infinite past, say at $\mathscr{I}^-$, let matter accumulate over a time span such that a black hole forms, and at the end the spacetime will be asymptotically flat in the infinite future, say at $\mathscr{I}^+$, then this spacetime is definitely not static nor flat.
 What we can do however, is to define a set of positive and negative frequency modes in the flat and static spacetime which is in our reach.
-For example we could say that on $\mathscr{J}^-$, there exists a set of modes $f$, such that
+For example we could say that on $\mathscr{I}^-$, there exists a set of modes $f$, such that
 \begin{align} 
   \psi =\sum_{i}^{}\left(f_ia_i+\overline{f}_ia^\dagger _i\right) \label{eq:ingoing solution}
 ,\end{align} 
-and $\psi $ will solve the Klein-Gordon equation on $\mathscr{J}^-$.
-We will choose $f$ such that they are positive frequency with respect to the affine parameter at $\mathscr{J}^-$.
-Now since this set of modes is completely valid on $\mathscr{J}^-$ as it is in flat spacetime, we can use it to define $a$ and $a^\dagger $ as the annihilation and creation operator of modes on $\mathscr{J}^-$.
-We can identify this with ingoing particles from $\mathscr{J}^-$.
-Analoguously on $\mathscr{J}^+$ 
+and $\psi $ will solve the Klein-Gordon equation on $\mathscr{I}^-$.
+We will choose $f$ such that they are positive frequency with respect to the affine parameter at $\mathscr{I}^-$.
+Now since this set of modes is completely valid on $\mathscr{I}^-$ as it is in flat spacetime, we can use it to define $a$ and $a^\dagger $ as the annihilation and creation operator of modes on $\mathscr{I}^-$.
+We can identify this with ingoing particles from $\mathscr{I}^-$.
+Analoguously on $\mathscr{I}^+$ 
 \begin{align} 
   \psi = \sum_{i}^{}\left(p_ib_i+\overline{p}_ib^\dagger _i\right) \label{eq:outgoing solution}
 ,\end{align} 
-where we will identify the creation and annihilation operators $b$ and $b^\dagger $ with outgoing particles to $\mathscr{J}^+$.
+where we will identify the creation and annihilation operators $b$ and $b^\dagger $ with outgoing particles to $\mathscr{I}^+$.
 Since both (\ref{eq:ingoing solution}) and (\ref{eq:outgoing solution}) completely determine $\psi $, they are valid for all times.
 We also have to complete sets of modes $f$ and $p$, which means that they can be expanded into each other \todo{bogolyubov transform}
 \begin{align} 
-  p_i &= \sum_{j}^{}\left(\alpha _{ij}f_j+\beta _{ij}\overline{f}_j\right)\qquad b = \sum_{j}^{}\left(\alpha _{ij}a_j+\beta _{ij}a^\dagger _j\right) \label{eq:bogolyubov transform 1}\\
-  f_i &= \sum_{j}^{}\left(\overline{\alpha }_{ij}p_j-\overline{\beta }_{ij}\overline{p}_j\right)\qquad a = \sum_{j}^{}\left(\overline{\alpha }_{ij}b_j-\overline{\beta }_{ij}b^\dagger \right) \label{eq:bogolyubov transform 2}
+  p_i &= \sum_{j}^{}\left(\alpha _{ij}f_j+\beta _{ij}\overline{f}_j\right)\qquad b_i= \sum_{j}^{}\left(\alpha _{ij}a_j+\beta _{ij}a^\dagger _j\right) \label{eq:bogolyubov transform 1}\\
+  f_i &= \sum_{j}^{}\left(\overline{\alpha }_{ij}p_j-\overline{\beta }_{ij}\overline{p}_j\right)\qquad a_i = \sum_{j}^{}\left(\overline{\alpha }_{ij}b_j-\overline{\beta }_{ij}b^\dagger \right) \label{eq:bogolyubov transform 2}
 ,\end{align} 
 where $\alpha $ and $\beta $ are coefficients, which fulfil
 \begin{align} 
-  \sum_{j}^{}\left(\alpha _{ik}\overline{\alpha }_{jk}-\beta _{ik}\overline{\beta }_{jk}\right)=\delta _{ij}\qquad \sum_{j}^{}\left(\alpha _{ik}\beta _{jk}-\beta _{ik}\alpha _{jk}\right)=0
+  \sum_{j}^{}\left(\alpha _{ik}\overline{\alpha }_{jk}-\beta _{ik}\overline{\beta }_{jk}\right)=\delta _{ij}\qquad \sum_{j}^{}\left(\alpha _{ik}\beta _{jk}-\beta _{ik}\alpha _{jk}\right)=0 \label{eq:bogolyubov coefficients norm}
 .\end{align} 
 The coefficients can therefore also be expressed as a scalar product of the modes
 \begin{align} 
@@ -802,18 +802,18 @@ The coefficients can therefore also be expressed as a scalar product of the mode
 .\end{align} 
 \todo{could show}
 We are now faced with a different problem though.
-As we can see from (\ref{eq:bogolyubov transform 2}), the annihilation operator for $\mathscr{J}^-$ is a linear combination of the annihilation and creation operator of $\mathscr{J}^+$.
+As we can see from (\ref{eq:bogolyubov transform 2}), the annihilation operator for $\mathscr{I}^-$ is a linear combination of the annihilation and creation operator of $\mathscr{I}^+$.
 This means, that where $b$ defines a vacuum, $a$ might not define it as a vacuum, since when acting with $b$, so will act $a$ as well as $a^\dagger $.
 The creation and annihilation operators do not share the same vacuum.
-We will define the vacuum on $\mathscr{J}^-$ as $\ket{0_-}$ and the vacuum at $\mathscr{J}^+$ as $\ket{0_+}$, then we have
+We will define the vacuum on $\mathscr{I}^-$ as $\ket{0_-}$ and the vacuum at $\mathscr{I}^+$ as $\ket{0_+}$, then we have
 \begin{align} 
   a\ket{0_-} &= 0\qquad a\ket{0_+}\neq 0\\
   b\ket{0_-} &\neq 0\qquad b\ket{0_+}=0
 .\end{align} 
-We could do even more and ask, what will be the expected number of particles in the vacuum $\ket{0_-}$, upon defining the modes on $\mathscr{J}^+$
+We could do even more and ask, what will be the expected number of particles in the vacuum $\ket{0_-}$, upon defining the modes on $\mathscr{I}^+$
 \begin{align} 
   \bra{0_-}b^\dagger _ib_i \ket{0_-} &= \bra{0_-}\sum_{j}^{}\left(\overline{\alpha }_{ij}a^\dagger _j+\overline{\beta }_{ij}a_j\right)\left(\alpha _{ij}a_j+\beta _{ij}a^\dagger _j\right)\ket{0_-}\\
-                                 &= \bra{0_-}\sum_{j}^{}\left(|\alpha _{ij}|^2a^\dagger _ja_j+\overline{\alpha }_{ij}a^\dagger _jb_{ij}a^\dagger _j+\overline{\beta }_{ij}a_j\alpha _{ij}a_j+|\beta _{ij}|^2a_ja^\dagger _j\right)\ket{0_-}\\
+                                 &= \bra{0_-}\sum_{j}^{}\left(|\alpha _{ij}|^2a^\dagger _ja_j+\overline{\alpha }_{ij}a^\dagger _j\beta _{ij}a^\dagger _j+\overline{\beta }_{ij}a_j\alpha _{ij}a_j+|\beta _{ij}|^2a_ja^\dagger _j\right)\ket{0_-}\\
                                  &= \sum_{j}^{}|\beta _{ij}|^2 \label{eq:beta squared}
 ,\end{align} 
 which will not be zero in general.
@@ -833,7 +833,7 @@ The metric takes the form \cite{Carroll}
 ,\end{align} 
 for, the usual time coordinate but tortoise radial coordinate, and, the Eddington-Finkelstein time coordinate with usual radial coordinate, respectively.
 We set $\tilde{r}\equiv r(r^*)$ the radial coordinate as a function of the tortoise coordinate.
-The field solves the massless Klein-Gordon equation with $\xi =0$ since we are interested in solutions on $\mathscr{J}^\pm$ 
+The field solves the massless Klein-Gordon equation with $\xi =0$ since we are interested in solutions on $\mathscr{I}^\pm$ 
 \begin{align} 
   \partial ^2f = \dfrac{1}{\sqrt{-g}}\partial _\mu \left(\sqrt{-g}g^{\mu \nu }\partial _\nu f \right) = 0 \label{eq:massless klein-gordon}
 .\end{align} 
@@ -879,25 +879,25 @@ and
   -\partial _v \partial _u R_{\omega '}(r,t)+\left(1-\dfrac{2GM}{r}\right)\left(\dfrac{l(l+1)}{r^2}+\dfrac{2GM}{r^3}\right)R_{\omega '}(r,t)=0 \label{eq:edd-fink radial part}
 .\end{align} 
 This equation can be solved with the ansatz $R_{\omega '}(r,t)=R_{\omega '}^1(v)+R_{\omega '}^2(u)$.
-We will pick $R_{\omega '}^1(v)$ since we are interested in the ingoing solutions from $\mathscr{J}^-$, i.e.\ $f$.
+We will pick $R_{\omega '}^1(v)$ since we are interested in the ingoing solutions from $\mathscr{I}^-$, i.e.\ $f$.
 The ansatz $R_{\omega '}^1(v)=F_{\omega '}(r)\text{e}^{\text{i}\omega 'v}$ will work because (\ref{eq:edd-fink radial part}) is an ODE.
 Since $v=t+r^*$, there is no need for $F$ to be dependent on time and we will define $F$ such that it solves the radial part of our equation.
 
-We can go through the same argumentation for the modes $p$ and we will end up with the same answer, although the time and radial part will be solved by $R_{\omega }^2(u)=P_\omega (r)\text{e}^{\text{i}\omega u}$ and be valid on $\mathscr{J}^+$.
-We thus have an expression for the modes $f$ and $p$ on $\mathscr{J}^-$ and $\mathscr{J}^+$ in the Schwarzschild metric respectively
+We can go through the same argumentation for the modes $p$ and we will end up with the same answer, although the time and radial part will be solved by $R_{\omega }^2(u)=P_\omega (r)\text{e}^{\text{i}\omega u}$ and be valid on $\mathscr{I}^+$.
+We thus have an expression for the modes $f$ and $p$ on $\mathscr{I}^-$ and $\mathscr{I}^+$ in the Schwarzschild metric respectively
 \begin{align} 
   f_{\omega 'l m} &= \dfrac{1}{\sqrt{2\pi \omega '}}\dfrac{1}{r}F_{\omega '}(r)\text{e}^{\text{i}\omega 'v}Y_{l m}(\theta ,\phi )\\
   p_{\omega l m} &= \dfrac{1}{\sqrt{2\pi \omega }}\dfrac{1}{r}P_\omega (r)\text{e}^{\text{i}\omega u}Y_{l m}(\theta ,\phi )
 .\end{align} 
-These modes are given in \cite{Hawking1975} equation (2.11) and (2.12), and are valid throughout the whole spacetime, since they are completely determined by their respective data on $\mathscr{J}^\pm$.
+These modes are given in \cite{Hawking1975} equation (2.11) and (2.12), and are valid throughout the whole spacetime, since they are completely determined by their respective data on $\mathscr{I}^\pm$.
 
-As seen from (\ref{eq:beta squared}), the number of particles on $\mathscr{J}^-$ is non-zero for an observer at $\mathscr{J}^+$ who defines the modes as $p$ and vacuum $\ket{0_+}$.
-We are therefore interested in the back-propagation of $p$ to $\mathscr{J}^-$ to gain information about the waves which arrive at $\mathscr{J}^+$, i.e.\ to relate $f$ to $p$.
+As seen from (\ref{eq:beta squared}), the number of particles on $\mathscr{I}^-$ is non-zero for an observer at $\mathscr{I}^+$ who defines the modes as $p$ and vacuum $\ket{0_+}$.
+We are therefore interested in the back-propagation of $p$ to $\mathscr{I}^-$ to gain information about the waves which arrive at $\mathscr{I}^+$, i.e.\ to relate $f$ to $p$.
 In the Schwarzschild metric with gravitational collapse (i.e.\ no eternal black hole) there exists only the black hole event horizon at $r=r_S$.
-Since the black hole is not eternal, there will be a moment in the past at a time $v_0$, where geodesics going into the collapsing body will be incomplete because there is no continuation to $i^+$ or $\mathscr{J}^+$, i.e.\ the geodesic will be inside the event horizon once it has formed;
+Since the black hole is not eternal, there will be a moment in the past at a time $v_0$, where geodesics going into the collapsing body will be incomplete because there is no continuation to $i^+$ or $\mathscr{I}^+$, i.e.\ the geodesic will be inside the event horizon once it has formed;
 we define this time as $v_0\equiv 0$ \footnote{This would be the white hole horizon in a maximally extended Schwarzschild metric}.
-The modes of interest are the ones which arrive on $\mathscr{J}^-$ at a time $v\rightarrow v_0$ and went through the collapsing body on their way (the other part of the modes will just scatter back to $\mathscr{J}^-$ without going through the body).
-To an observer on $\mathscr{J}^-$ the waves will be arbitrarily blueshifted as they close in on the event horizon from the future for $v\rightarrow v_0$ (as they would be redshifted if they were to come from $\mathscr{J}^-$ and reach an observer on $\mathscr{J}^+$).
+The modes of interest are the ones which arrive on $\mathscr{I}^-$ at a time $v\rightarrow v_0$ and went through the collapsing body on their way (the other part of the modes will just scatter back to $\mathscr{I}^-$ without going through the body).
+To an observer on $\mathscr{I}^-$ the waves will be arbitrarily blueshifted as they close in on the event horizon from the future for $v\rightarrow v_0$ (as they would be redshifted if they were to come from $\mathscr{I}^-$ and reach an observer on $\mathscr{I}^+$).
 In this case the frequency of the wave will be large compared to the local curvature such that it allows for the geometrical optics approximation of the wave.
 This means that the wave can be described as a plane wave $p _{\omega l m}=P_0\text{e}^{\text{i}\omega u}$ where $u$ is a null hypersurface of constant phase.
 $K=\partial _u$ is a Killing vector in the Eddington-Finkelstein metric, then at the horizon $r=2GM$ the Killing vector is null $\left.K^2\right|_{r=2GM}=\left.-\left(1-\tfrac{2GM}{r}\right)\right|_{r=2GM}=0$; the accuracy of the approximation increases as $v\rightarrow v_0$ justifying our approach \cite{Wald1984}.
@@ -919,14 +919,14 @@ however $f=\diff[]{\lambda }{u}$
 upon choosing the constant $f_0=\kappa $ and setting the integration constant to zero \cite{Townsend1997}.
 In the Schwarzschild metric $\kappa =\tfrac{1}{4M}$ \todo{could show appendix}.
 
-$\mathscr{J}^-$ is a null hypersurface which is generated by null geodesics parameterized by the coordinate $v$ \todo{need show}.
-We can therefore choose $v\propto \lambda |_{\mathscr{J}^-}$ on $\mathscr{J}^-$ and use this to parameterize our plane waves on $\mathscr{J}^-$.
+$\mathscr{I}^-$ is a null hypersurface which is generated by null geodesics parameterized by the coordinate $v$ \todo{need show}.
+We can therefore choose $v\propto \lambda |_{\mathscr{I}^-}$ on $\mathscr{I}^-$ and use this to parameterize our plane waves on $\mathscr{I}^-$.
 Thereby
 \begin{align} 
-  p(v)=P_0\,\text{exp}\left(\text{i}\dfrac{\omega }{\kappa }\ln(-\alpha v)\right)\quad \text{on}\quad \mathscr{J}^- \quad \text{and}\quad v<0\label{eq:p on scri^-}
+  p(v)=P_0\,\text{exp}\left(\text{i}\dfrac{\omega }{\kappa }\ln(-\alpha v)\right)\quad \text{on}\quad \mathscr{I}^- \quad \text{and}\quad v<0\label{eq:p on scri^-}
 ,\end{align} 
 where $\alpha $ denotes the constant of proportionality.
-This solution is only valid for $v<0$ since, on the one hand the logarithm is only defined on the positive real axis and on the other hand there exist no modes $p$ for $v>0$, since this means that $v>v_0$ for which no modes can escape to $\mathscr{J}^+$.
+This solution is only valid for $v<0$ since, on the one hand the logarithm is only defined on the positive real axis and on the other hand there exist no modes $p$ for $v>0$, since this means that $v>v_0$ for which no modes can escape to $\mathscr{I}^+$.
 
 From (\ref{eq:bogolyubov transform 1}), $p$ is itself an expansion into modes $f$, therefore we can take the Fourier-transform of (\ref{eq:p on scri^-}) to obtain the decomposition w.r.t.\ the frequency $\sigma $
 \begin{align} 
@@ -948,28 +948,31 @@ The relation between these modes is
 which is equation (14.3.6) in \cite{Wald1984}.
 This can be directly converted to the appropriate Bogolyubov coefficients from (\ref{eq:bogolyubov transform 1}), where 
 \begin{align} 
-  \alpha _{\omega \omega '}=-\text{e}^{-\pi \tfrac{\omega }{\kappa }}\beta _{\omega \omega '}
+  \beta _{\omega \omega '}=-\text{e}^{-\pi \tfrac{\omega }{\kappa }}\alpha _{\omega \omega '}
 .\end{align} 
-
-\begin{enumerate}[label=--]
-  \item see wald p.\ 400 and stack exchange post
-  \item $f$ satisfies KG equation in schwarzschild metric (see laplace beltrami); check by computation.
-    then the linear combination of the solution is valid.
-  \item at asymptotic limit $f$ is a plane wave which fixes $F(r)$ to be constant (i.e.\ unity)
-  \item fourier transform $\psi (\omega )$ to $\psi (v)$ gives an expression for bogolyubov coefficients (though read to p.\ 406)
-\end{enumerate}
-
-\texttt{introduction with unruh effect (qft in curved spacetime carroll) derivation / argumentation for hawking radiation. need for an event horizon since then there is no timelike killing vector throughout the whole spacetime s.t.\ the modes match minkowski.
-no violation of the area theorem due to hawking radiation (see carroll p.\ 417).
-identification of S - A and T - kappa.} 
-\textit{carroll, unruh:\url{https://doi.org/10.1103/PhysRevD.14.870}} 
-\begin{enumerate}[label=\arabic*.]
-  \item Upon taking a look at quantum field theory in curved space time, we observe the Unruh effect.
-  \item With the equivalence principle, the acceleration of such a Rindler observer is indistinguishable from gravity.
-    Therefore the acceleration can be associated with the surface gravity of the black hole, which leads to the black hole being a black body.
-  \item The black body temperature is the temperature of the radiation produced by the black hole called Hawking radiation.
-  \item With a formula for the temperature the entropy for the black hole can be defined properly.
-\end{enumerate}
+This information about the coefficients suffices to calculate the expected number of particles (which is now a continuous integral) (\ref{eq:beta squared})
+\begin{align} 
+  \bra{0_-}b_{\omega }^\dagger b_{\omega }\ket{0_-}=\int_{0}^{\infty}\td \omega '\,|\beta _{\omega \omega '}|^2
+.\end{align} 
+The normalization condition (\ref{eq:bogolyubov coefficients norm}) is also continuous \todo{carroll different indices}
+\begin{align} 
+  \int_{0}^{\infty}\td k\,\left(\alpha _{\omega k}\overline{\alpha }_{\omega 'k}-\beta _{\omega k}\overline{\beta }_{\omega 'k}\right)=\delta _{\omega \omega '}
+.\end{align} 
+We will set $\omega =\omega '$ and relabel $k\equiv \omega '$ for consistency
+\begin{align} 
+  \Leftrightarrow \quad \int_{0}^{\infty}\td \omega '\,\left(|\alpha _{\omega '\omega }|^2-|\beta _{\omega '\omega }|^2\right) &= 1\\
+  \Leftrightarrow \quad \int_{0}^{\infty}\td \omega '\,\left(\text{e}^{2\pi \tfrac{\omega }{\kappa }}-1\right)|\beta _{\omega '\omega }|^2 &= 1\\
+  \Leftrightarrow \quad \int_{0}^{\infty}\td \omega '\,|\beta _{\omega '\omega }|^2 &= \dfrac{1}{\text{e}^{2\pi \tfrac{\omega }{\kappa }}-1} \label{eq:spectrum}
+,\end{align} 
+\todo{in hawking it is fraction} where the RHS of (\ref{eq:spectrum}) is a blackbody spectrum with temperature \cite{Hawking1975}
+\begin{align} 
+  T=\dfrac{\kappa }{2\pi }
+.\end{align} 
+Thus we have finally fixed the equation relating entropy and area of a black hole
+\begin{align} 
+  \dfrac{A}{4G}=S
+.\end{align} 
+\todo{black hole evaporation, area theorem not violated (carroll p.\ 417)}
 %}}}
 
 %{{{ Laws of Black Hole Thermodynamics
