@@ -484,6 +484,7 @@ It has been mostly established by Boltzmann, Carnot and Clausius throughout the 
 \begin{itemize}
   \item [0.] Suppose system A and system B as well as system B and system C are in thermal equilibrium, then also system A and system C are in thermal equilibrium.
     The temperature $T$ is defined as the number which is equal for systems in thermal equilibrium by heat exchange.
+    Systems in thermal equilibrium have thus a constant temperature $T$.
   \item [1.] The internal energy of an isolated system is conserved.
     The rate of change of internal energy of a system by interaction with another system is given by
     \begin{align} 
@@ -498,7 +499,7 @@ It has been mostly established by Boltzmann, Carnot and Clausius throughout the 
     Equivalentely, not all mechanical work done can be converted to heat.
     A process is called reversible when $\td S=0$ and irreversible when $\td S>0$.
   \item [3.] The absolute zero-point temperature $T=\SI{0}{K}$ can never be reached by a finite amount of thermodynamic cycles.
-    For $T$ towards zero the entropy takes a constant value.
+    For $T$ towards zero, the entropy takes a constant value.
 \end{itemize}
 Thermodynamics also has a deep link to statistical mechanics by the Gibbs entropy and ensemble theory
 \begin{align} 
@@ -752,7 +753,7 @@ These solutions will in general fulfil the canonical commutation relations
 ,\end{align} 
 such that the theory can be quantized by expansion in terms of the annihilation and creation operators, which fulfil the same commutation relations \cite{Carroll}.
 
-The following discussion is be based on the derivation by Hawking \cite{Hawking1975} and \cite{Wald1984} with insight on the derivation of the modes $f$ and $p$ gained from \cite{Donne2019}.
+The following discussion is be based on the derivation by Hawking \cite{Hawking1975} and Wald \cite{Wald1984} with insight on the derivation of the modes $f$ and $p$ gained from \cite{Donne2019}.
 A cruicial fact is that if the modes $f$ solve the Klein-Gordon equation, then a linear combination of these modes will also solve the Klein-Gordon equation.
 Therefore any field $\psi $ can be expanded with these modes
 \begin{align} 
@@ -768,7 +769,7 @@ The modes fulfil the following property
   \left(a,b\right)\equiv \text{i}\int_{\Sigma }^{}\td \mu (\Sigma )\,\left(\overline{b}\partial _t a-a \partial _t \overline{b}\right)\qquad \left(f_\mu ,f_\nu \right)=\delta _{\mu \nu }\qquad \left(\overline{f}_\mu ,\overline{f}_\nu \right)=-\delta _{\mu \nu }\qquad \left(f_\mu ,\overline{f}_\nu \right)=0
 ,\end{align} 
 where $\Sigma $ is a Cauchy surface and $\left(\cdot ,\cdot \right)$ is the Klein-Gordon scalar product, thus they form a complete set.
-This will hold in general if the spacetime is static and flat, because if those properties are not given, we cannot readily define positive and negative frequency modes with respect to a time derivative, since the scalar product $k^\mu x_\mu $ then has mixed time and space components.
+This will hold in general if the spacetime is static and flat, because if those properties are not given, we cannot readily define positive and negative frequency modes with respect to a time derivative, since the scalar product $k^\mu x_\mu $ then has mixed time and space components \todo{actuall not, only if $g$ is not static then then derivatives don't separate into sum (marc). if metric is not flat then also no problem}.
 In turn, we cannot decompose the solution $\psi $ into the closed form (\ref{eq:linear combination}) and therefore cannot determine how $\psi $ splits into $a$ and $a^\dagger $.
 We will see that we are faced with exactly this problem, because in this work, we are concerned about black holes as well as their creation.
 Thus, if we allow there to exist an asymptotically flat spacetime in the infinite past, say at $\mathscr{I}^-$, let matter accumulate over a time span such that a black hole forms, and at the end the spacetime will be asymptotically flat in the infinite future, say at $\mathscr{I}^+$, then this spacetime is definitely not static nor flat.
@@ -843,7 +844,7 @@ In the standard Schwarzschild metric (\ref{eq:schwarzschild metric}), (\ref{eq:m
 .\end{align} 
 We switch to the tortiose coordinate $r^*$ (and use $\tilde{r}=r(r^*)$ and thereby $\partial _r\rightarrow \partial _{\tilde{r}}$) to simplify the equation
 \begin{align} 
-  \partial _{\tilde{r}}=\diffp[]{r^*}{\tilde{r}}\partial _{r^*}=\left(1+2GM\dfrac{\tfrac{1}{2GM}}{\tfrac{\tilde{r}}{2GM}-1}\right)\partial _{r^*}=\dfrac{1}{1-\tfrac{2GM}{\tilde{r}}}\partial _{r^*}
+  \partial _{\tilde{r}}=\diffp[]{r^*}{\tilde{r}}\partial _{r^*}=\left(1+2GM\dfrac{\tfrac{1}{2GM}}{\tfrac{\tilde{r}}{2GM}-1}\right)\partial _{r^*}=\dfrac{1}{1-\tfrac{2GM}{\tilde{r} }}\partial _{r^*}
 \end{align} 
 then
 \begin{align} 
@@ -931,14 +932,14 @@ This solution is only valid for $v<0$ since, on the one hand the logarithm is on
 From (\ref{eq:bogolyubov transform 1}), $p$ is itself an expansion into modes $f$, therefore we can take the Fourier-transform of (\ref{eq:p on scri^-}) to obtain the decomposition w.r.t.\ the frequency $\sigma $
 \begin{align} 
   \tilde{p}(\sigma )\equiv \mathcal{F}\left(p(v)\right)(\sigma ) &= \dfrac{1}{\sqrt{2\pi }}\int_{-\infty}^{0}\td v\,P_0\, \text{exp}\left(\text{i}\dfrac{\omega }{\kappa }\ln (-\alpha v)\right)\text{e}^{\text{i}v\sigma }\\
-                                                                 &= \dfrac{P_0\alpha ^{i\tfrac{\omega }{\kappa }}}{\sqrt{2\pi }}\int_{-\infty}^{0}\td v\,\left(-v\right)^{\text{i}\frac{\omega }{\kappa }}\text{e}^{\text{i}v \sigma }\\
+                                                                 &= \dfrac{P_0\alpha ^{i\tfrac{\omega }{\kappa } }}{\sqrt{2\pi }}\int_{-\infty}^{0}\td v\,\left(-v\right)^{\text{i}\frac{\omega }{\kappa }}\text{e}^{\text{i}v \sigma }\\
                                                                  \intertext{set $v=-v'\equiv -v$}
-                                                                 &= \dfrac{P_0\alpha ^{i\tfrac{\omega }{\kappa }}}{\sqrt{2\pi }}\int_{0}^{\infty}\td v\,v^{\text{i}\frac{\omega }{\kappa }}\text{e}^{-\text{i}v \sigma }\\
+                                                                 &= \dfrac{P_0\alpha ^{i\tfrac{\omega }{\kappa } }}{\sqrt{2\pi }}\int_{0}^{\infty}\td v\,v^{\text{i}\frac{\omega }{\kappa }}\text{e}^{-\text{i}v \sigma }\\
                                                                  \intertext{to make this integral look similar to $\Gamma (z)=\int_{0}^{\infty}\td t\,t ^{z-1}\text{e}^{-t}$ set $v=-\tfrac{i}{\sigma }t$ with $\sigma =\Im(\sigma )$ such that $v \in \mathds{R}$ \todo{complex $\sigma $?}}
-                                                                 &= \dfrac{P_0\alpha ^{\text{i}\tfrac{\omega }{\kappa }}}{\sqrt{2\pi }}\int_{0}^{\infty}\td t\,\left(-\dfrac{\text{i}}{\sigma }\right)v ^{\text{i}\tfrac{\omega }{\kappa }}\left(-\dfrac{\text{i}}{\sigma }\right)^{\text{i}\tfrac{\omega }{\kappa }}\text{e}^{-t}\\
-                                                                 &= \dfrac{P_0\alpha ^{\text{i}\tfrac{\omega }{\kappa }}}{\sqrt{2\pi }}\left(-\text{i}\sigma \right)^{-1-\text{i}\tfrac{\omega }{\kappa }}\Gamma \left(1+\text{i}\dfrac{\omega }{\kappa }\right)\\
+                                                                 &= \dfrac{P_0\alpha ^{\text{i}\tfrac{\omega }{\kappa } }}{\sqrt{2\pi }}\int_{0}^{\infty}\td t\,\left(-\dfrac{\text{i}}{\sigma }\right)v ^{\text{i}\tfrac{\omega }{\kappa }}\left(-\dfrac{\text{i}}{\sigma }\right)^{\text{i}\tfrac{\omega }{\kappa }}\text{e}^{-t}\\
+                                                                 &= \dfrac{P_0\alpha ^{\text{i}\tfrac{\omega }{\kappa } }}{\sqrt{2\pi }}\left(-\text{i}\sigma \right)^{-1-\text{i}\tfrac{\omega }{\kappa }}\Gamma \left(1+\text{i}\dfrac{\omega }{\kappa }\right)\\
                                                                  \intertext{where $(-1)^{-1-\text{i}\tfrac{\omega }{\kappa }}=(-1)^{-1}(-1)^{-\text{i}\tfrac{\omega }{\kappa }}=-\left(\text{e}^{i \pi }\right)^{-\text{i}\tfrac{\omega }{\kappa }}=-\text{e}^{\pi \tfrac{\omega }{\kappa }}$}
-                                                                 &= -\text{e}^{\pi \tfrac{\omega }{\kappa }}\dfrac{P_0\alpha ^{\text{i}\tfrac{\omega }{\kappa }}}{\sqrt{2\pi }}\left(\text{i}\sigma \right)^{-1-\text{i}\tfrac{\omega }{\kappa }}\Gamma \left(1+\text{i}\dfrac{\omega }{\kappa }\right)
+                                                                 &= -\text{e}^{\pi \tfrac{\omega }{\kappa }}\dfrac{P_0\alpha ^{\text{i}\tfrac{\omega }{\kappa } }}{\sqrt{2\pi }}\left(\text{i}\sigma \right)^{-1-\text{i}\tfrac{\omega }{\kappa }}\Gamma \left(1+\text{i}\dfrac{\omega }{\kappa }\right)
 .\end{align} 
 The modes $\tilde{p}(\sigma )$ correspond to the positive frequency part of $f$ and analoguosly $\tilde{p}(-\sigma )$ to the negative frequency part of $f$.
 The relation between these modes is 
@@ -973,6 +974,34 @@ Thus we have finally fixed the equation relating entropy and area of a black hol
   \dfrac{A}{4G}=S
 .\end{align} 
 \todo{black hole evaporation, area theorem not violated (carroll p.\ 417)}
+%}}}
+
+%{{{ Surface Gravity
+\section{Surface Gravity}
+A system in equilibrium has a constant temperature $T$.
+In black hole mechanics, this translates to a constant surface gravity $\kappa $ on the horizon.
+\begin{align} 
+  t\indices{_[ _\rho }\nabla \indices{_\lambda _]}\left(t\indices{^\nu }\nabla \indices{_\nu }t\indices{_\mu }\right) &= t\indices{_[_\rho }\nabla \indices{_\lambda _]}\left(\kappa t\indices{_\mu }\right)\\
+  \Leftrightarrow \left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}t\indices{^\nu }\right)\nabla \indices{_\nu }t\indices{_\mu } 
+  + t\indices{^\nu }\left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}\nabla \indices{_\nu }t\indices{_\mu }\right) &= \left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}\kappa \right)t\indices{_\mu }
+  + \kappa \left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}t\indices{_\mu }\right)
+.\end{align} 
+Term $(a)$ by Frobenius theorem and Killing eq cancles term $(d)$
+\begin{align} 
+  (a) = -\dfrac{1}{2}t\indices{^\nu }\left(\nabla \indices{_\rho }t\indices{_\lambda }\right)\left(\nabla \indices{_\nu }t\indices{_\mu } \right)
+  = -\dfrac{1}{2}\kappa t\indices{_\mu }\left(\nabla \indices{_\rho }t\indices{_\lambda }\right)
+  = \kappa \left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}t\indices{_\mu }\right)
+,\end{align} 
+such that
+\begin{align} 
+  \Leftrightarrow t\indices{^\nu }\left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}\nabla \indices{_\nu }t\indices{_\mu }\right) &= \left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}\kappa \right)t\indices{_\mu }\\
+  \Leftrightarrow t\indices{^\nu }\dfrac{1}{2}\left(t\indices{_\rho }\nabla \indices{_\lambda }\nabla \indices{_\nu }t\indices{_\mu }-t\indices{_\lambda }\nabla \indices{_\rho }\nabla \indices{_\nu }t\indices{_\mu }\right) &= \left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}\kappa \right)t\indices{_\mu }\\
+  \Leftrightarrow t\indices{^\nu }t\indices{_[_\rho }R\indices{_\lambda _]_\nu _\mu ^\sigma }t\indices{_\sigma } &= \left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}\kappa \right)t\indices{_\mu }\\
+  \Leftrightarrow t\indices{^\nu }\dfrac{1}{2}\left(-t\indices{_\rho }R\indices{_\nu _\mu _\lambda ^\sigma }t\indices{_\sigma }+t\indices{_\lambda }R\indices{_\nu _\mu _\rho ^\sigma }t\indices{_\sigma }\right) &= \left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}\kappa \right)t\indices{_\mu } \text{todo C.3.6}\\
+  \Leftrightarrow t\indices{^\nu }R\indices{_\mu _\nu _[_\lambda ^\sigma }t\indices{_\rho _]}t\indices{_\sigma } &= 
+\end{align} 
+
+
 %}}}
 
 %{{{ Laws of Black Hole Thermodynamics
