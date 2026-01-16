@@ -998,7 +998,7 @@ such that
   \Leftrightarrow t\indices{^\nu }\dfrac{1}{2}\left(t\indices{_\rho }\nabla \indices{_\lambda }\nabla \indices{_\nu }t\indices{_\mu }-t\indices{_\lambda }\nabla \indices{_\rho }\nabla \indices{_\nu }t\indices{_\mu }\right) &= \left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}\kappa \right)t\indices{_\mu }\\
   \Leftrightarrow t\indices{^\nu }\dfrac{1}{2}\left(t\indices{_\rho }R\indices{_\mu _\nu _\lambda ^\sigma }t\indices{_\sigma }-t\indices{_\lambda }R\indices{_\mu _\nu _\rho ^\sigma }t\indices{_\sigma }\right) &= a\\
   \Leftrightarrow t\indices{^\nu }R\indices{_\mu _\nu _[_\lambda ^\sigma }t\indices{_\rho _]}t\indices{_\sigma } &= a\\
-  \Leftrightarrow t\indices{^\nu }t\indices{_[_\rho }R\indices{_\lambda _]_\nu _\mu ^\sigma }t\indices{_\sigma } &= \left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}\kappa \right)t\indices{_\mu }\\
+  \Leftrightarrow t\indices{^\nu }t\indices{_[_\rho }R\indices{_\lambda _]_\nu _\mu ^\sigma }t\indices{_\sigma } &= \left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}\kappa \right)t\indices{_\mu } \label{eq:const surface gravity 1}\\
 \end{align} 
 
 Frobenius theorem
@@ -1032,9 +1032,29 @@ Thereby with Frobenius' Theorem
 \begin{align} 
    -\dfrac{1}{2}\left(t\indices{_\mu }\nabla \indices{_\nu }t\indices{_\sigma }\right)\nabla \indices{_\rho }t\indices{_\lambda }+t\indices{_\mu }R\indices{_\sigma _\nu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }&= \dfrac{1}{2}\left(t\indices{_\nu }\nabla \indices{_\sigma }t\indices{_\mu }\right)\nabla \indices{_\rho }t\indices{_\lambda }+\dfrac{1}{2}\left(t\indices{_\sigma }\nabla \indices{_\mu }t\indices{_\nu }\right)\nabla \indices{_\rho }t\indices{_\lambda }+2t\indices{_[_\nu }R\indices{_\sigma _]_\mu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }\\
    \Leftrightarrow t\indices{_\mu }R\indices{_\sigma _\nu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau } &= 2t\indices{_[_\nu }R\indices{_\sigma _]_\mu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }+\dfrac{1}{2}\left(t\indices{_\mu }\nabla \indices{_\nu }t\indices{_\sigma }\right)\nabla \indices{_\rho }t\indices{_\lambda }+\dfrac{1}{2}\left(t\indices{_\nu }\nabla \indices{_\sigma }t\indices{_\mu }\right)\nabla \indices{_\rho }t\indices{_\lambda }+\dfrac{1}{2}\left(t\indices{_\sigma }\nabla \indices{_\mu }t\indices{_\nu }\right)\nabla \indices{_\rho }t\indices{_\lambda }\\
-  \Leftrightarrow t\indices{_\mu }R\indices{_\sigma _\nu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau } &= 2t\indices{_[_\nu }R\indices{_\sigma _]_\mu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }
+  \Leftrightarrow t\indices{_\mu }R\indices{_\sigma _\nu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau } &= 2t\indices{_[_\nu }R\indices{_\sigma _]_\mu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }\\
+  \Leftrightarrow t\indices{_\mu }R\indices{_\sigma _\nu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau } +t\indices{_\nu }R\indices{_\mu _\sigma _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }+t\indices{_\sigma }R\indices{_\nu _\mu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau } &= 0
 \end{align} 
-
+Now contract with $g\indices{^\mu ^\lambda }$ and use $t\indices{^\lambda }t\indices{_\lambda }=0$ because on $t$ is null on the horizon
+\begin{align} 
+  t\indices{_\mu }R\indices{_\sigma _\nu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }g\indices{^\mu ^\lambda } &= t\indices{^\lambda }R\indices{_\sigma _\nu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }=\dfrac{1}{2}t\indices{^\lambda }R\indices{_\sigma _\nu _\lambda ^\tau }t\indices{_\rho }t\indices{_\tau }=\dfrac{1}{2}t\indices{^\lambda }R\indices{_\sigma _\nu _\lambda _\tau }t\indices{_\rho }t\indices{^\tau }=0
+\end{align} 
+because $R\indices{_\sigma _\nu _\lambda _\tau }$ is antisymmetric and $t\indices{^\lambda }t\indices{^\tau }$ is symmetric in $\lambda $ and $\tau $.
+The other term
+\begin{align} 
+  t\indices{_\nu }R\indices{_\mu _\sigma _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }g\indices{^\mu ^\lambda }+t\indices{_\sigma }R\indices{_\nu _\mu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }g\indices{^\mu ^\lambda } &= \dfrac{1}{2}t\indices{_\nu }R\indices{_\sigma ^\tau }t\indices{_\rho }t\indices{_\tau }-\dfrac{1}{2}t\indices{_\nu }R\indices{_\lambda _\sigma _\rho ^\tau }t\indices{^\lambda }t\indices{_\tau }-\dfrac{1}{2}t\indices{_\sigma }R\indices{_\nu ^\tau }t\indices{_\rho }t\indices{_\tau }-\dfrac{1}{2}t\indices{_\sigma }R\indices{_\nu _\lambda _\rho ^\tau }t\indices{^\lambda }t\indices{_\tau }\\
+                                                                                                                                                                                                                                                &= t\indices{_[_\nu }R\indices{_\sigma _]^\tau }t\indices{_\rho }t\indices{_\tau }+t\indices{_[_\nu }R\indices{_\sigma _]_\lambda _\rho ^\tau }t\indices{^\lambda }t\indices{_\tau }
+\end{align} 
+Therefore
+\begin{align} 
+  t\indices{_[_\nu }R\indices{_\sigma _]_\lambda _\rho ^\tau }t\indices{^\lambda }t\indices{_\tau }=-t\indices{_[_\nu }R\indices{_\sigma _]^\tau }t\indices{_\rho }t\indices{_\tau }
+\end{align} 
+This can be used in (\ref{eq:const surface gravity 1})
+\begin{align} 
+   \left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}\kappa \right)t\indices{_\mu } &= t\indices{^\nu }t\indices{_[_\rho }R\indices{_\lambda _]_\nu _\mu ^\sigma }t\indices{_\sigma }\\
+                                                                                       &= -t\indices{_[_\rho }R\indices{_\lambda _]^\sigma }t\indices{_\sigma }t\indices{_\mu }\\
+   \Leftrightarrow t\indices{_[_\rho }\nabla \indices{_\lambda _]}\kappa &= -t\indices{_[_\rho }R\indices{_\lambda _]^\sigma }t\indices{_\sigma }
+\end{align} 
 
 
 %}}}
