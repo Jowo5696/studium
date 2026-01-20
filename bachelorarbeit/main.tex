@@ -179,7 +179,7 @@ where
 \begin{align} 
   R\indices{^\rho _\mu _\sigma _\nu } &= \partial_\sigma \Gamma \indices*{_\nu _\mu ^\rho} -\partial_\nu \Gamma _{\sigma \mu }^\rho +\Gamma \indices*{_\sigma _\lambda ^\rho} \Gamma _{\nu \mu }^\lambda -\Gamma _{\nu \lambda }^\rho \Gamma _{\sigma \mu }^\lambda & R\indices{^\lambda _\mu _\lambda _\nu } &= R\indices{_\mu _\nu } & g\indices{^\mu ^\nu }R\indices{_\mu _\nu }=R\indices{^\mu _\mu } &= R \label{eq:riemann tensor}
 ,\end{align} 
-is the Riemann tensor, the Ricci tensor and the Ricci scalar; $g_{\mu \nu }$ is the metric, $T_{\mu \nu }$ the stress-energy tensor, $\Lambda $ the cosmological constant and $\kappa =\tfrac{8\pi G}{c^4}$ (SI units).
+is the Riemann tensor, the Ricci tensor and the Ricci scalar; $g_{\mu \nu }$ is the metric, $T_{\mu \nu }$ the energy-momentum tensor, $\Lambda $ the cosmological constant and $\kappa =\tfrac{8\pi G}{c^4}$ (SI units).
 From here on we will set $c=1$ such that $\kappa =8\pi G$.
 It is an equation of motion for the metric tensor, which dictates the path test particles take by the geodesics equation
 \begin{align} 
@@ -1054,9 +1054,21 @@ This can be used in (\ref{eq:const surface gravity 1})
    \left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}\kappa \right)t\indices{_\mu } &= t\indices{^\nu }t\indices{_[_\rho }R\indices{_\lambda _]_\nu _\mu ^\sigma }t\indices{_\sigma }\\
                                                                                        &= -t\indices{_[_\rho }R\indices{_\lambda _]^\sigma }t\indices{_\sigma }t\indices{_\mu }\\
    \Leftrightarrow t\indices{_[_\rho }\nabla \indices{_\lambda _]}\kappa &= -t\indices{_[_\rho }R\indices{_\lambda _]^\sigma }t\indices{_\sigma }
-\end{align} 
-
-
+.\end{align} 
+The Ricci tensor depends on the matter content in the universe at hand.
+In the simple case of vacuum, $R\indices{_\mu _\nu }=0$ and the equation is fulfilled trivially.
+However, we need not be so strict.
+We can use Einstein's equation, so solve for $R\indices{_\mu _\nu }$
+\begin{align} 
+g\indices{^\nu ^\sigma }\left(R\indices{_\mu _\nu }-\dfrac{1}{2}g\indices{_\mu _\nu }R\right) &= g\indices{^\nu ^\sigma }8\pi G\,T\indices{_\mu _\nu }\\
+ \Leftrightarrow R\indices{_\mu ^\sigma } -\dfrac{1}{2}\delta \indices*{_\mu ^\sigma }R &= 8\pi G\,T\indices{_\mu ^\sigma }
+.\end{align} 
+Now
+\begin{align} 
+  t\indices{_[_\rho }\nabla \indices{_\lambda _]}\kappa  &= \dfrac{1}{2}\left(-t\indices{_\rho }8\pi G\,T\indices{_\lambda ^\sigma }t\indices{_\sigma }-\dfrac{1}{2}t\indices{_\rho }\delta \indices*{_\lambda ^\sigma }R\,t\indices{_\sigma }+t\indices{_\lambda }8\pi G\,T\indices{_\rho ^\sigma }t\indices{_\sigma }+\dfrac{1}{2}t\indices{_\lambda }\delta \indices*{_\rho ^\sigma }R\,t\indices{_\sigma }\right)\\
+                                                         &= -8\pi G\,t\indices{_[_\rho }T\indices{_\lambda _]^\sigma }t\indices{_\sigma }
+.\end{align} 
+Whether the equation yields zero, depends on the conditions imposed on the energy-momentum tensor.
 %}}}
 
 %{{{ Laws of Black Hole Thermodynamics
