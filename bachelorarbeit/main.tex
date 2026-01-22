@@ -186,7 +186,7 @@ It is an equation of motion for the metric tensor, which dictates the path test 
    \dfrac{\text{D}}{\td \lambda }\diff[]{x^\mu }{\lambda }\equiv\diff[]{x^\nu }{\lambda }\nabla _\nu \diff[]{x^\mu }{\lambda }=\diff[2]{x^\mu }{\lambda }+\Gamma _{\rho \sigma}^\mu \diff[]{x^\rho }{\lambda }\diff[]{x^\sigma }{\lambda }=0\label{eq:geodesics equation}
 \,.\end{align} 
 where $\lambda $ is the affine parameter, $\Gamma $ is the Christoffel symbol (i.e.\ the Levi-Civita connection is implied) and $\nabla $ the covariant derivative.
-If a geodesic is not affinely parameterized it will in general not be zero.
+If a geodesic is not affinely parameterized (\ref{eq:geodesics equation}) is not zero.
 For example we can find another tangent vector which is proportional to the original tangent vector such that
 \begin{align} 
   t^\mu \equiv\diff[]{\tilde{x}^\mu }{\lambda }=f(\lambda )\diff[]{x^\mu }{\lambda }\equiv f\diff[]{x^\mu }{\lambda } \label{eq:tangent vector proportionality}
@@ -205,6 +205,7 @@ The constant can also be expressed as \cite{Townsend1997} \todo{could show}
 \begin{align} 
   \kappa =\sqrt{-\dfrac{1}{2}\left(\nabla ^\mu t^\nu \right)\left(\nabla _\mu t_\nu \right)}
 \,.\end{align} 
+\todo{If $t$ happenes to be a Killing vector, i.e.\ a vector field which generates a one-parameter family of isometries, then $\kappa $ is called \enquote{surface gravity}, if it is computed on a Killing horizon. argument of proportionality on null hypersurface}
 
 Since we will be dealing with the vacuum space around a gravitating mass, we are only interested in the the solutions of the metric which fulfill the equation for $T_{\mu \nu }=\Lambda =0$\,, s.t.\
 \begin{align} 
@@ -381,10 +382,10 @@ The surface $S=r-r_+^E$ with
   \left.l^2\right|_{r=r_+^E}=\dfrac{\Delta ^2(r_+^E)}{\rho ^2(r_+^E)}\neq 0
 \,.\end{align} 
 is evidently not null (except at $\theta =0$ and $\theta =\pi $) so it doesn't act as yet another event horizon. 
-However, what will yield an interesting result is the killing vector $K=\partial _t$\,.
+However, what will yield an interesting result is the Killing vector $K=\partial _t$\,.
 Its norm is
 \begin{align} 
-  \left.K^2\right|_{r=r_+^E}=g_{t t}=0
+  \left.K^2\right|_{r=r_+^E}=\left.g\indices{_t _t}\right|_{r=r_+^E}=0
 \,.\end{align} 
 clearly, since we have just calculated the particular surface with this condition.
 Just as in the Schwarzschild case, curves of constant spatial coordinates are not worldlines of observers anymore.
@@ -420,7 +421,7 @@ We will define the rotation speed of the black hole thus
 
 Lastly we will want to calculate the gravity of the black hole at $r_+$\,.
 The surface at $r_+$ is a null hypersurface which is also a Killing horizon for $K=\partial_t$\,.
-Therefore $K$ is proportional to the normal vector on this surface, however it need not be affinely parameterized and will in general solve only (\ref{eq:not affine geodesics}). 
+Therefore $K$ is proportional to the normal vector on this surface, however it need not be affinely parameterized and will in general solve only (\ref{eq:not affine geodesics}) \todo{not true, but if K is null then K is also proportional to itself from where the non-affine geodesic equation follows}. 
 The proportionality constant $\kappa $ of (\ref{eq:not affine geodesics}) is called \enquote{surface gravity} if the equation holds for a Killing vector on a Killing horizon \cite{Townsend1997}.
 This is the quantity we now want to calculate.
 We will be using
@@ -618,12 +619,12 @@ Now, since particle 2 has more energy than the initial particle (from where it o
 As it turns out, this energy comes from the reduction of the angular momentum $J$ of the black hole.
 To understand how $J$ has been reduced we will take another look at the symmetry of the Kerr metric; not only $K=\partial_t$ but also $R=\partial _\phi $ is a Killing vector, such that
 \begin{align} 
-  L=R^\mu P_\mu =P_\phi \qquad R=\partial_\phi 
+  L=R^\mu P_\mu =P_\phi \,,\quad R=\partial_\phi 
 \end{align} 
 is a conserved quantity, namely the angular momentum of the particle.
-Since every event horizon in a stationary spacetime is a Killing horizon \cite{Carroll}, then the Killing vector
+Since every event horizon in a stationary spacetime is a Killing horizon \cite{Carroll}, the Killing vector
 \begin{align} 
-  \chi ^\mu =K^\mu +\Omega R^\mu\qquad \Omega \stackrel{(\ref{eq:kerr rotation speed})}{=}\dfrac{a}{r_+^2+a^2}
+  \chi ^\mu =K^\mu +\Omega R^\mu\,,\quad \Omega \stackrel{(\ref{eq:kerr rotation speed})}{=}\dfrac{a}{r_+^2+a^2}
 \,.\end{align} 
 is therefore null along the outer event horizon.
 Since we want to understand how $J$ has been reduced we will track the path that particle 1 takes.
@@ -972,85 +973,114 @@ Thus we have finally fixed the equation relating entropy and area of a black hol
 \begin{align} 
   \dfrac{A}{4G}=S
 \,.\end{align} 
-\todo{black hole evaporation, area theorem not violated (carroll p.\ 417)}
+\todo{black hole evaporation, area theorem not violated (carroll p.\ 417)} \todo{two other methods: unruh effect $\cdot $ wick rotation / euclidean periodicity.}
 %}}}
 
 %{{{ Surface Gravity
 \section{Surface Gravity}
 A system in equilibrium has a constant temperature $T$\,.
 In black hole mechanics, this translates to a constant surface gravity $\kappa $ on the horizon.
+To show this, we will mostly follow the line of argumentation by Wald \cite{Wald1984}.
 
-To compute $\kappa $\,, we have to start with the geodesic equation in non-affine parametrization
+The event horizon of a black hole in a stationary and axisymmetric spacetime is also a Killing horizon, which is generated by a Killing vector, that is null on the surface.
+We will define $t$ to be such a Killing vector and to compute $\kappa $\,, we have to start with the geodesic equation in non-affine parametrization
 \begin{align} 
   t\indices{^\nu }\nabla \indices{_\nu }t\indices{_\mu }=\kappa t\indices{_\mu } \label{eq:geodesic equation surface gravity}
 \,,\end{align} 
-where $t$ is the Killing vector, which is null on the horizon.
-To have $\kappa $ be the quantity that we want to compute, we impose this equation to hold only \textit{on} the horizon.
-To determine, whether $\kappa $ is constant or not, we should therefore only take the derivative tangential to the horizon.
-One could apply the Lie derivative to (\ref{eq:geodesic equation surface gravity}), and find out the $\kappa $ is constant on one orbit of the one-parameter family of isometries which are generated by $t$, but we want to determine whether $\kappa $ is also constant from one orbit to another (such that is constant everywhere on the horizon).
+where, from now on, computation on the horizon is implicit. 
+Since we want to determine whether $\kappa $ is constant or not, we can only differentiate the equation tangential to the horizon, otherwise it would not hold.
+In other words, we have to find out whether $\kappa $ is constant from one orbit, of the isometry generated by $t$, to another.
 
-Say
+A derivative in the direction of $t$ is given by $t\indices{^\mu }\nabla \indices{_\mu }$, however, $t$ is normal to the horizon, thus the derivative is also normal to the horizon.
+To construct a tensor $l$ orthogonal to $t$ (i.e.\ tangent to the horizon), we can use $l\indices{^\mu ^\nu ^\lambda }=\varepsilon \indices{^\mu ^\nu ^\lambda ^\rho }t\indices{_\rho }$, because $l\indices{^\mu ^\nu ^\lambda }t\indices{_\lambda }=\varepsilon \indices{^\mu ^\nu ^\lambda ^\rho }t\indices{_\lambda }t\indices{_\rho }=0$ by the anti-/symmetry in $\mu \leftrightarrow \nu $.
+Therefore the derivative orthogonal to $t$ is given by $l\indices{^\mu ^\nu ^\lambda }\nabla \indices{_\lambda }=\varepsilon \indices{^\mu ^\nu ^\lambda ^\rho }t\indices{_\rho }\nabla \indices{_\lambda }=2t\indices{_[_\rho }\nabla \indices{_\lambda _]}$.
+We can apply this now to (\ref{eq:geodesic equation surface gravity})
 \begin{align} 
   t\indices{_[ _\rho }\nabla \indices{_\lambda _]}\left(t\indices{^\nu }\nabla \indices{_\nu }t\indices{_\mu }\right) &= t\indices{_[_\rho }\nabla \indices{_\lambda _]}\left(\kappa t\indices{_\mu }\right)\\
-  \Leftrightarrow \left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}t\indices{^\nu }\right)\nabla \indices{_\nu }t\indices{_\mu } 
-  + t\indices{^\nu }\left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}\nabla \indices{_\nu }t\indices{_\mu }\right) &= \left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}\kappa \right)t\indices{_\mu }
-  + \kappa \left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}t\indices{_\mu }\right)
+\Leftrightarrow \underbrace{\left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}t\indices{^\nu }\right)\nabla \indices{_\nu }t\indices{_\mu }}_{(a)} + t\indices{^\nu }\left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}\nabla \indices{_\nu }t\indices{_\mu }\right) &= \left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}\kappa \right)t\indices{_\mu } + \underbrace{\kappa \left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}t\indices{_\mu }\right)}_{(d)}
 \,.\end{align} 
-Term $(a)$ by Frobenius theorem and Killing eq cancles term $(d)$
+We can use Frobenius' theorem, $t\indices{_[_\rho }\nabla \indices{_\lambda }t\indices{_\nu _]}=0$, because $t$ is normal to the horizon, which yields
 \begin{align} 
-  (a) = -\dfrac{1}{2}t\indices{^\nu }\left(\nabla \indices{_\rho }t\indices{_\lambda }\right)\left(\nabla \indices{_\nu }t\indices{_\mu } \right)
-  = -\dfrac{1}{2}\kappa t\indices{_\mu }\left(\nabla \indices{_\rho }t\indices{_\lambda }\right)
+  t\indices{_[_\rho }\nabla \indices{_\lambda }t\indices{_\nu _]} &= 0 \label{eq:frobenius}\\
+  \Leftrightarrow \dfrac{1}{3!}\left(t\indices{_\rho}\nabla \indices{_\lambda }t\indices{_\nu }+t\indices{_\lambda }\nabla \indices{_\nu }t\indices{_\rho }+t\indices{_\nu }\nabla \indices{_\rho }t\indices{_\lambda }-t\indices{_\rho }\nabla \indices{_\nu }t\indices{_\lambda }-t\indices{_\lambda }\nabla \indices{_\rho }t\indices{_\nu }-t\indices{_\nu }\nabla \indices{_\lambda }t\indices{_\rho }\right) &= 0\\
+  \intertext{using Killing's equation $\nabla \indices{_(_\lambda }t\indices{_\nu _)} = 0$}
+  \Leftrightarrow t\indices{_\rho }\nabla \indices{_\lambda }t\indices{_\nu }+t\indices{_\lambda }\nabla \indices{_\nu }t\indices{_\rho }+t\indices{_\nu }\nabla \indices{_\rho }t\indices{_\lambda } &= 0 \label{eq:frobenius 2}\\
+  \Leftrightarrow t\indices{_\rho }\nabla \indices{_\lambda }t\indices{_\nu } &= -2t\indices{_[_\lambda }\nabla \indices{_\nu _]}t\indices{_\rho } \label{eq:frobenius 3}
+\end{align} 
+Thus term $(a)$
+\begin{align} 
+  (a) = -\dfrac{1}{2}\left(t\indices{^\nu }\nabla \indices{_\rho }t\indices{_\lambda }\right)\nabla \indices{_\nu }t\indices{_\mu }
+  = -\dfrac{1}{2}t\indices{^\nu }\left(\nabla \indices{_\rho }t\indices{_\lambda }\right)\left(\nabla \indices{_\nu }t\indices{_\mu } \right)
+  \stackrel{(\ref{eq:geodesic equation surface gravity})}{=} -\dfrac{1}{2}\kappa t\indices{_\mu }\left(\nabla \indices{_\rho }t\indices{_\lambda }\right)
   = \kappa \left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}t\indices{_\mu }\right)
+  = (d)
 \,.\end{align} 
 such that
 \begin{align} 
-  \Leftrightarrow t\indices{^\nu }\left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}\nabla \indices{_\nu }t\indices{_\mu }\right) &= \left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}\kappa \right)t\indices{_\mu }\\
-  \Leftrightarrow t\indices{^\nu }\dfrac{1}{2}\left(t\indices{_\rho }\nabla \indices{_\lambda }\nabla \indices{_\nu }t\indices{_\mu }-t\indices{_\lambda }\nabla \indices{_\rho }\nabla \indices{_\nu }t\indices{_\mu }\right) &= \left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}\kappa \right)t\indices{_\mu }\\
-  \Leftrightarrow t\indices{^\nu }\dfrac{1}{2}\left(t\indices{_\rho }R\indices{_\mu _\nu _\lambda ^\sigma }t\indices{_\sigma }-t\indices{_\lambda }R\indices{_\mu _\nu _\rho ^\sigma }t\indices{_\sigma }\right) &= a\\
-  \Leftrightarrow t\indices{^\nu }R\indices{_\mu _\nu _[_\lambda ^\sigma }t\indices{_\rho _]}t\indices{_\sigma } &= a\\
-  \Leftrightarrow t\indices{^\nu }t\indices{_[_\rho }R\indices{_\lambda _]_\nu _\mu ^\sigma }t\indices{_\sigma } &= \left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}\kappa \right)t\indices{_\mu } \label{eq:const surface gravity 1}\\
+  \Leftrightarrow \left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}\kappa \right)t\indices{_\mu } &= t\indices{^\nu }\left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}\nabla \indices{_\nu }t\indices{_\mu }\right)\\
+                                                                                                      &= t\indices{^\nu }\dfrac{1}{2}\left(t\indices{_\rho }\nabla \indices{_\lambda }\nabla \indices{_\nu }t\indices{_\mu }-t\indices{_\lambda }\nabla \indices{_\rho }\nabla \indices{_\nu }t\indices{_\mu }\right) \label{eq:surface gravity before riemann}
 \end{align} 
-
-Frobenius theorem
+The definition of the Riemann tensor using derivatives can be simplified for Killing fields using the cyclic property $R\indices{_[_\mu _\nu _\lambda _]_\sigma }=0$ and $R\indices{_(_\mu _\nu _)_\lambda _\sigma }=0$ and Killing's equation.
+Thereby
 \begin{align} 
-  t\indices{_[_\mu }\nabla \indices{_\nu }t\indices{_\rho _]} &= 0 \label{eq:frobenius}\\
-  \Leftrightarrow \dfrac{1}{3!}\left(t\indices{_\mu }\nabla \indices{_\nu }t\indices{_\rho }+t\indices{_\nu }\nabla \indices{_\rho }t\indices{_\mu }+t\indices{_\rho }\nabla \indices{_\mu }t\indices{_\nu }-t\indices{_\mu }\nabla \indices{_\rho }t\indices{_\nu }-t\indices{_\nu }\nabla \indices{_\mu }t\indices{_\rho }-t\indices{_\rho }\nabla \indices{_\nu }t\indices{_\mu }\right) &= 0\\
-  \intertext{using Killing's equation $\nabla \indices{_(_\mu }t\indices{_\nu _)} = 0$}
-  \Leftrightarrow t\indices{_\mu }\nabla \indices{_\nu }t\indices{_\rho }+t\indices{_\nu }\nabla \indices{_\rho }t\indices{_\mu }+t\indices{_\rho }\nabla \indices{_\mu }t\indices{_\nu } &= 0 \label{eq:frobenius 2}\\
-  \Leftrightarrow t\indices{_\mu }\nabla \indices{_\nu }t\indices{_\rho } &= -2t\indices{_[_\nu }\nabla \indices{_\rho _]}t\indices{_\mu } \label{eq:frobenius 3}
+  R\indices{_\mu _\nu _\lambda ^\sigma }t\indices{_\sigma } &= \nabla \indices{_\mu }\nabla \indices{_\nu }t\indices{_\lambda }-\nabla \indices{_\nu }\nabla \indices{_\mu }t\indices{_\lambda }\\
+  R\indices{_\nu _\lambda _\mu ^\sigma }t\indices{_\sigma } &= \nabla \indices{_\nu }\nabla \indices{_\lambda }t\indices{_\mu }-\nabla \indices{_\lambda }\nabla \indices{_\nu }t\indices{_\mu }=-\nabla \indices{_\nu }\nabla \indices{_\mu }t\indices{_\lambda }+\nabla \indices{_\lambda }\nabla \indices{_\mu }t\indices{_\nu }\\
+  R\indices{_\lambda _\mu _\nu ^\sigma }t\indices{_\sigma } &= \nabla \indices{_\lambda }\nabla \indices{_\mu }t\indices{_\nu }-\nabla \indices{_\mu }\nabla \indices{_\lambda }t\indices{_\nu }=\nabla \indices{_\lambda }\nabla \indices{_\mu }t\indices{_\nu }+\nabla \indices{_\mu }\nabla \indices{_\nu }t\indices{_\lambda }
+\,.\end{align} 
+Now we can substract and add 
+\begin{align} 
+  R\indices{_\mu _\nu _\lambda ^\sigma }t\indices{_\sigma }-R\indices{_\nu _\lambda _\mu ^\sigma }t\indices{_\sigma }+R\indices{_\lambda _\mu _\nu ^\sigma }t\indices{_\sigma } &= 2\nabla \indices{_\mu }\nabla \indices{_\nu }t\indices{_\lambda }\\
+                                                                                                                                                                                &= R\indices{_\mu _\nu _\lambda ^\sigma }t\indices{_\sigma }+R\indices{_\lambda _\mu _\nu ^\sigma }t\indices{_\sigma }+R\indices{_\mu _\nu _\lambda ^\sigma }t\indices{_\sigma }+R\indices{_\lambda _\mu _\nu ^\sigma }t\indices{_\sigma }\\
+                                                                                                                                                                                &= 2R\indices{_\lambda _\nu _\mu ^\sigma }t\indices{_\sigma }\\
+  \Leftrightarrow \nabla \indices{_\mu }\nabla \indices{_\nu }t\indices{_\lambda } &= R\indices{_\lambda _\nu _\mu ^\sigma }t\indices{_\sigma } \label{eq:riemann killing identity}
+\,.\end{align} 
+Now we can use (\ref{eq:riemann killing identity}) to get
+\begin{align} 
+  \text{(\ref{eq:surface gravity before riemann})}&= t\indices{^\nu }\dfrac{1}{2}\left(t\indices{_\rho }R\indices{_\mu _\nu _\lambda ^\sigma }t\indices{_\sigma }-t\indices{_\lambda }R\indices{_\mu _\nu _\rho ^\sigma }t\indices{_\sigma }\right)\\
+                                                                                                      &= t\indices{^\nu }R\indices{_\mu _\nu _[_\lambda ^\sigma }t\indices{_\rho _]}t\indices{_\sigma } \label{eq:surface gravity right antisymm}
+\,.\end{align} 
+This term simplifies to
+\begin{align} 
+  \dfrac{1}{2}\left(t\indices{^\nu }R\indices{_\mu _\nu _\lambda ^\sigma }t\indices{_\rho }t\indices{_\sigma }-t\indices{^\nu }R\indices{_\mu _\nu _\rho ^\sigma }t\indices{_\lambda }t\indices{_\sigma }\right) &= \dfrac{1}{2}\left(-t\indices{^\nu }R\indices{_\nu _\lambda _\mu ^\sigma }t\indices{_\rho }t\indices{_\sigma }-t\indices{^\nu }R\indices{_\lambda _\mu _\nu ^\sigma }t\indices{_\rho }t\indices{_\sigma }+t\indices{^\nu }R\indices{_\nu _\rho _\mu ^\sigma }t\indices{_\lambda }t\indices{_\sigma }+t\indices{^\nu }R\indices{_\rho _\mu _\nu ^\sigma }t\indices{_\lambda }t\indices{_\sigma }\right)\\
+                                                                                                                                                                                                                 &= t\indices{^\nu }t\indices{_[_\rho }R\indices{_\lambda _]_\nu _\mu ^\sigma }t\indices{_\sigma }
+\,,\end{align} 
+where the second and fourth term vanish by anti-/symmetry in $\nu \leftrightarrow \sigma $\,.
+Thereby
+\begin{align} 
+  (\ref{eq:surface gravity right antisymm}) &= t\indices{^\nu }t\indices{_[_\rho }R\indices{_\lambda _]_\nu _\mu ^\sigma }t\indices{_\sigma } \label{eq:const surface gravity 1}
 \end{align} 
-
-To simplify further we can use $t\indices{_[ _\rho }\nabla \indices{_\lambda _]}$ on (\ref{eq:frobenius 3})
+We cannot reduce this equation further, therefore let us try to use another equation.
+Since (\ref{eq:frobenius 3}) has already helped us quite a lot, we can try to use $t\indices{_[ _\rho }\nabla \indices{_\lambda _]}$ on it as well
 \begin{align} 
   t\indices{_[ _\rho }\nabla \indices{_\lambda _]}\left(t\indices{_\mu }\nabla \indices{_\nu }t\indices{_\sigma}\right) &= t\indices{_[ _\rho }\nabla \indices{_\lambda _]}\left(-2t\indices{_[_\nu }\nabla \indices{_\sigma _]}t\indices{_\mu }\right)\\
   \Leftrightarrow \left(t\indices{_[ _\rho }\nabla \indices{_\lambda _]}t\indices{_\mu }\right)\nabla \indices{_\nu }t\indices{_\sigma }+t\indices{_\mu }\left(t\indices{_[ _\rho }\nabla \indices{_\lambda _]}\nabla \indices{_\nu }t\indices{_\sigma }\right) &= -2\left(t\indices{_[ _\rho }\nabla \indices{_\lambda _]}t\indices{_[_\nu }\right)\nabla \indices{_\sigma _]}t\indices{_\mu }-2\left(t\indices{_[ _\rho }\nabla \indices{_\lambda _]}\nabla \indices{_[_\sigma }t\indices{_|_\mu _|}\right)t\indices{_\nu _]}\\
-  \Leftrightarrow \left(t\indices{_[ _\rho }\nabla \indices{_\lambda _]}t\indices{_\mu }\right)\nabla \indices{_\nu }t\indices{_\sigma } +t\indices{_\mu }R\indices{_\sigma _\nu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }&= -2\left(t\indices{_[ _\rho }\nabla \indices{_\lambda _]}t\indices{_[_\nu }\right)\nabla \indices{_\sigma _]}t\indices{_\mu }+2t\indices{_[_\nu }R\indices{_\sigma _]_\mu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }
+  \Leftrightarrow \left(t\indices{_[ _\rho }\nabla \indices{_\lambda _]}t\indices{_\mu }\right)\nabla \indices{_\nu }t\indices{_\sigma } +t\indices{_\mu }R\indices{_\sigma _\nu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }&\stackrel{(\ref{eq:riemann killing identity})}{=} -2\left(t\indices{_[ _\rho }\nabla \indices{_\lambda _]}t\indices{_[_\nu }\right)\nabla \indices{_\sigma _]}t\indices{_\mu }+2t\indices{_[_\nu }R\indices{_\sigma _]_\mu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau } \label{eq:last derivative on frobenius 3}
 \end{align} 
-
 Now calculate
 \begin{align} 
-  \left(t\indices{_[ _\rho }\nabla \indices{_\lambda _]}t\indices{_\mu }\right)\nabla \indices{_\nu }t\indices{_\sigma } &= -\dfrac{1}{2}\left(t\indices{_\mu }\nabla \indices{_\rho }t\indices{_\lambda }\right)\nabla \indices{_\nu }t\indices{_\sigma }=-\dfrac{1}{2}\left(t\indices{_\mu }\nabla \indices{_\nu }t\indices{_\sigma }\right)\nabla \indices{_\rho }t\indices{_\lambda }
+  \left(t\indices{_[ _\rho }\nabla \indices{_\lambda _]}t\indices{_\mu }\right)\nabla \indices{_\nu }t\indices{_\sigma } &\stackrel{(\ref{eq:frobenius 3})}{=} -\dfrac{1}{2}\left(t\indices{_\mu }\nabla \indices{_\rho }t\indices{_\lambda }\right)\nabla \indices{_\nu }t\indices{_\sigma }=-\dfrac{1}{2}\left(t\indices{_\mu }\nabla \indices{_\nu }t\indices{_\sigma }\right)\nabla \indices{_\rho }t\indices{_\lambda }
 \end{align} 
 and
 \begin{align} 
   -2\left(t\indices{_[ _\rho }\nabla \indices{_\lambda _]}t\indices{_[_\nu }\right)\nabla \indices{_\sigma _]}t\indices{_\mu } &= -\left(\left(t\indices{_[ _\rho }\nabla \indices{_\lambda _]}t\indices{_\nu }\right)\nabla \indices{_\sigma }t\indices{_\mu }-\left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}t\indices{_\sigma }\right)\nabla \indices{_\nu }t\indices{_\mu }\right)\\
-                                                                                                                               &= \dfrac{1}{2}\left(t\indices{_\nu }\nabla \indices{_\rho }t\indices{_\lambda }\right)\nabla \indices{_\sigma }t\indices{_\mu }-\dfrac{1}{2}\left(t\indices{_\sigma }\nabla \indices{_\rho }t\indices{_\lambda }\right)\nabla \indices{_\nu }t\indices{_\mu }\\
+                                                                                                                               &\stackrel{(\ref{eq:frobenius 3})}{=} \dfrac{1}{2}\left(t\indices{_\nu }\nabla \indices{_\rho }t\indices{_\lambda }\right)\nabla \indices{_\sigma }t\indices{_\mu }-\dfrac{1}{2}\left(t\indices{_\sigma }\nabla \indices{_\rho }t\indices{_\lambda }\right)\nabla \indices{_\nu }t\indices{_\mu }\\
                                                                                                                                &= \dfrac{1}{2}\left(t\indices{_\nu }\nabla \indices{_\sigma }t\indices{_\mu }\right)\nabla \indices{_\rho }t\indices{_\lambda }-\dfrac{1}{2}\left(t\indices{_\sigma }\nabla \indices{_\nu }t\indices{_\mu }\right)\nabla \indices{_\rho }t\indices{_\lambda }\\
                                                                                                                                &= \dfrac{1}{2}\left(t\indices{_\nu }\nabla \indices{_\sigma }t\indices{_\mu }\right)\nabla \indices{_\rho }t\indices{_\lambda }+\dfrac{1}{2}\left(t\indices{_\sigma }\nabla \indices{_\mu }t\indices{_\nu }\right)\nabla \indices{_\rho }t\indices{_\lambda }
 \end{align} 
-Thereby with Frobenius' Theorem
+Plugging this back into (\ref{eq:last derivative on frobenius 3})
 \begin{align} 
    -\dfrac{1}{2}\left(t\indices{_\mu }\nabla \indices{_\nu }t\indices{_\sigma }\right)\nabla \indices{_\rho }t\indices{_\lambda }+t\indices{_\mu }R\indices{_\sigma _\nu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }&= \dfrac{1}{2}\left(t\indices{_\nu }\nabla \indices{_\sigma }t\indices{_\mu }\right)\nabla \indices{_\rho }t\indices{_\lambda }+\dfrac{1}{2}\left(t\indices{_\sigma }\nabla \indices{_\mu }t\indices{_\nu }\right)\nabla \indices{_\rho }t\indices{_\lambda }+2t\indices{_[_\nu }R\indices{_\sigma _]_\mu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }\\
-   \Leftrightarrow t\indices{_\mu }R\indices{_\sigma _\nu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau } &= 2t\indices{_[_\nu }R\indices{_\sigma _]_\mu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }+\dfrac{1}{2}\left(t\indices{_\mu }\nabla \indices{_\nu }t\indices{_\sigma }\right)\nabla \indices{_\rho }t\indices{_\lambda }+\dfrac{1}{2}\left(t\indices{_\nu }\nabla \indices{_\sigma }t\indices{_\mu }\right)\nabla \indices{_\rho }t\indices{_\lambda }+\dfrac{1}{2}\left(t\indices{_\sigma }\nabla \indices{_\mu }t\indices{_\nu }\right)\nabla \indices{_\rho }t\indices{_\lambda }\\
-  \Leftrightarrow t\indices{_\mu }R\indices{_\sigma _\nu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau } &= 2t\indices{_[_\nu }R\indices{_\sigma _]_\mu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }\\
+   \Leftrightarrow t\indices{_\mu }R\indices{_\sigma _\nu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau } &= 2t\indices{_[_\nu }R\indices{_\sigma _]_\mu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }+\dfrac{1}{2}\left(\left(t\indices{_\mu }\nabla \indices{_\nu }t\indices{_\sigma }\right)+\left(t\indices{_\nu }\nabla \indices{_\sigma }t\indices{_\mu }\right)+\left(t\indices{_\sigma }\nabla \indices{_\mu }t\indices{_\nu }\right)\right)\nabla \indices{_\rho }t\indices{_\lambda }\\
+   \Leftrightarrow t\indices{_\mu }R\indices{_\sigma _\nu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau } &\stackrel{(\ref{eq:frobenius 2})}{=} 2t\indices{_[_\nu }R\indices{_\sigma _]_\mu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }\\
   \Leftrightarrow t\indices{_\mu }R\indices{_\sigma _\nu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau } +t\indices{_\nu }R\indices{_\mu _\sigma _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }+t\indices{_\sigma }R\indices{_\nu _\mu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau } &= 0
-\end{align} 
-Now contract with $g\indices{^\mu ^\lambda }$ and use $t\indices{^\lambda }t\indices{_\lambda }=0$ because on $t$ is null on the horizon
+\,.\end{align} 
+Now contract all three summands with $g\indices{^\mu ^\lambda }$ and use $t\indices{^\lambda }t\indices{_\lambda }=0$\,.
+The first term on the left becomes
 \begin{align} 
-  t\indices{_\mu }R\indices{_\sigma _\nu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }g\indices{^\mu ^\lambda } &= t\indices{^\lambda }R\indices{_\sigma _\nu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }=\dfrac{1}{2}t\indices{^\lambda }R\indices{_\sigma _\nu _\lambda ^\tau }t\indices{_\rho }t\indices{_\tau }=\dfrac{1}{2}t\indices{^\lambda }R\indices{_\sigma _\nu _\lambda _\tau }t\indices{_\rho }t\indices{^\tau }=0
-\end{align} 
-because $R\indices{_\sigma _\nu _\lambda _\tau }$ is antisymmetric and $t\indices{^\lambda }t\indices{^\tau }$ is symmetric in $\lambda $ and $\tau $\,.
-The other term
+  t\indices{_\mu }R\indices{_\sigma _\nu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }g\indices{^\mu ^\lambda } &= t\indices{^\lambda }R\indices{_\sigma _\nu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }=\dfrac{1}{2}t\indices{^\lambda }R\indices{_\sigma _\nu _\lambda ^\tau }t\indices{_\rho }t\indices{_\tau }=0
+\,,\end{align} 
+due to the $\lambda \leftrightarrow \tau $ anti-/symmetry.
+The other two terms
 \begin{align} 
   t\indices{_\nu }R\indices{_\mu _\sigma _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }g\indices{^\mu ^\lambda }+t\indices{_\sigma }R\indices{_\nu _\mu _[_\lambda ^\tau }t\indices{_\rho _]}t\indices{_\tau }g\indices{^\mu ^\lambda } &= \dfrac{1}{2}t\indices{_\nu }R\indices{_\sigma ^\tau }t\indices{_\rho }t\indices{_\tau }-\dfrac{1}{2}t\indices{_\nu }R\indices{_\lambda _\sigma _\rho ^\tau }t\indices{^\lambda }t\indices{_\tau }-\dfrac{1}{2}t\indices{_\sigma }R\indices{_\nu ^\tau }t\indices{_\rho }t\indices{_\tau }-\dfrac{1}{2}t\indices{_\sigma }R\indices{_\nu _\lambda _\rho ^\tau }t\indices{^\lambda }t\indices{_\tau }\\
                                                                                                                                                                                                                                                 &= t\indices{_[_\nu }R\indices{_\sigma _]^\tau }t\indices{_\rho }t\indices{_\tau }+t\indices{_[_\nu }R\indices{_\sigma _]_\lambda _\rho ^\tau }t\indices{^\lambda }t\indices{_\tau }
@@ -1059,19 +1089,19 @@ Therefore
 \begin{align} 
   t\indices{_[_\nu }R\indices{_\sigma _]_\lambda _\rho ^\tau }t\indices{^\lambda }t\indices{_\tau }=-t\indices{_[_\nu }R\indices{_\sigma _]^\tau }t\indices{_\rho }t\indices{_\tau }
 \end{align} 
-This can be used in (\ref{eq:const surface gravity 1})
+As anticipated, this can be used in (\ref{eq:const surface gravity 1})
 \begin{align} 
    \left(t\indices{_[_\rho }\nabla \indices{_\lambda _]}\kappa \right)t\indices{_\mu } &= t\indices{^\nu }t\indices{_[_\rho }R\indices{_\lambda _]_\nu _\mu ^\sigma }t\indices{_\sigma }\\
                                                                                        &= -t\indices{_[_\rho }R\indices{_\lambda _]^\sigma }t\indices{_\sigma }t\indices{_\mu }\\
    \Leftrightarrow t\indices{_[_\rho }\nabla \indices{_\lambda _]}\kappa &= -t\indices{_[_\rho }R\indices{_\lambda _]^\sigma }t\indices{_\sigma }
 \,.\end{align} 
-The Ricci tensor depends on the matter content in the universe at hand.
-In the simple case of vacuum, $R\indices{_\mu _\nu }=0$ and the equation is fulfilled trivially.
+The equation has finally a form, with which we can associate some physical meaning, because the Ricci tensor depends on the matter content in the universe at hand.
+In the simple case of vacuum, $R\indices{_\mu _\nu }=0$ the equation is fulfilled trivially.
 However, we need not be so strict.
-We can use Einstein's equation, so solve for $R\indices{_\mu _\nu }$
+We can use Einstein's equation, so solve for $R\indices{_\lambda ^\sigma }$
 \begin{align} 
-g\indices{^\nu ^\sigma }\left(R\indices{_\mu _\nu }-\dfrac{1}{2}g\indices{_\mu _\nu }R\right) &= g\indices{^\nu ^\sigma }8\pi G\,T\indices{_\mu _\nu }\\
- \Leftrightarrow R\indices{_\mu ^\sigma } -\dfrac{1}{2}\delta \indices*{_\mu ^\sigma }R &= 8\pi G\,T\indices{_\mu ^\sigma }
+g\indices{^\nu ^\sigma }\left(R\indices{_\lambda _\nu }-\dfrac{1}{2}g\indices{_\lambda _\nu }R\right) &= g\indices{^\nu ^\sigma }8\pi G\,T\indices{_\lambda _\nu }\\
+ \Leftrightarrow R\indices{_\lambda ^\sigma } -\dfrac{1}{2}\delta \indices*{_\lambda ^\sigma }R &= 8\pi G\,T\indices{_\lambda ^\sigma }
 \,.\end{align} 
 Now
 \begin{align} 
@@ -1083,11 +1113,11 @@ Consider Raychaudhuri's equation \todo{discuss in appendix}
 \begin{align} 
   \diff[]{\theta }{\lambda } &= -\dfrac{1}{2}\theta ^2-\hat{\sigma }\indices{_\lambda _\sigma }\hat{\sigma }\indices{^\lambda ^\sigma }+\hat{\omega }\indices{_\lambda _\sigma }\hat{\omega }\indices{^\lambda ^\sigma }-R\indices{_\lambda _\sigma }t\indices{^\lambda }t\indices{^\sigma }
 \,.\end{align} 
-For null geodesic congruences generating the horizon of a static black hole (which is the case for every black hole which has eventually settled in a state of equilibrium) the expansion, shear and rotation are zero \todo{cf \cite{Hawking1972}}, yielding
+For null geodesic congruences \todo{generating the horizon of a static black hole (which is the case for every black hole which has eventually settled in a state of equilibrium) the expansion, shear and rotation are zero cf \cite{Hawking1972}... really tho?}, yielding
 \begin{align} 
   0=R\indices{_\lambda _\sigma }t\indices{^\lambda }t\indices{^\sigma }=8\pi G\,T\indices{_\lambda _\sigma }t\indices{^\lambda }t\indices{^\sigma }+\dfrac{1}{2}g\indices{_\lambda _\sigma }Rt\indices{^\lambda }t\indices{^\sigma }=8\pi G\, T\indices{_\lambda _\sigma }t\indices{^\lambda }t\indices{^\sigma }
 \,.\end{align} 
-This means, that $T\indices{_\lambda ^\sigma }t\indices{_\sigma }$ either points in the direction of $t\indices{_\lambda }$ or is spacelike orthogonal \todo{show this?} to it.
+This means, that $T\indices{_\lambda ^\sigma }t\indices{_\sigma }$ either points in the direction of $t\indices{_\lambda }$ or is spacelike orthogonal to it.
 However, by the (Null) Dominant Energy Condition ((N)DEC), the quantity $T\indices{_\lambda ^\sigma }t\indices{_\sigma }$ is a future-pointing non-spacelike vector, thus it has to be parallel to $t\indices{_\lambda }$\,.
 Now, $t\indices{_[_\rho }T\indices{_\lambda _]^\sigma }t\indices{_\sigma }=\tfrac{1}{2}\left(t\indices{_\rho }T\indices{_\lambda ^\sigma }t\indices{_\sigma }-t\indices{_\lambda }T\indices{_\rho ^\sigma }t\indices{_\sigma }\right)$\,.
 Since $T\indices{_\lambda ^\sigma }t\indices{_\sigma }\propto t\indices{_\lambda }$\,, then $\left(t\indices{_\rho }t\indices{_\lambda }-t\indices{_\lambda }t\indices{_\rho }\right)=0$ and thereby $t\indices{_[_\rho }T\indices{_\lambda _]^\sigma }t\indices{_\sigma }=0$\,.
@@ -1095,9 +1125,8 @@ This leads to
 \begin{align} 
   \boxed{t\indices{_[_\rho }\nabla \indices{_\lambda _]}\kappa =0}
 \,.\end{align} 
-The surface gravity is constant tangential to or on the event horizon of the black hole.
-We have thus shown that the zeroth law of thermodynamics is recovered from black hole mechanics.
-It should be noted that the zeroth law only holds, if the (N)DEC is imposed on the energy-momentum tensor, while the other laws hold for any form of $T$ \todo{true?}.
+The surface gravity is constant tangential to the event horizon of the black hole.
+We have thus shown that the zeroth law of thermodynamics is recovered from black hole mechanics assuming the (N)DEC.
 %}}}
 
 %{{{ Laws of Black Hole Thermodynamics
