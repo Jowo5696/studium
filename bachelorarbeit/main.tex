@@ -185,10 +185,10 @@ Another definition of the Riemann tensor we will be using is, for any vector $w$
 A Lorentzian metric is a metric, whose signature is $(-,+,+,+)$, which is also the convention we will be using.
 Given a vector field $w$\, at a point $p$\,, it can be classified in the following three categories
 \begin{align} 
-  w\indices{^\mu }w\indices{_\mu }&>0\qq{\text{spacelike}},\\
-  w\indices{^\mu }w\indices{_\mu }&=0\qq{\text{null}},\\
-  w\indices{^\mu }w\indices{_\mu }&<0\qq{\text{timelike}}
-.\end{align} 
+  w\indices{^\mu }w\indices{_\mu }&>0\quad\text{spacelike}\,,\\
+  w\indices{^\mu }w\indices{_\mu }&=0\quad\text{null}\,,\\
+  w\indices{^\mu }w\indices{_\mu }&<0\quad\text{timelike}
+\,.\end{align} 
 
 The shortest possible path through a manifold is given by the geodesics equation.
 This is the path that an unaccelerated test particle would take.
@@ -208,14 +208,16 @@ which reads
 \,.\end{align} 
 which is the geodesic equation for non-affine parametrized curves \cite{Townsend1997}.
 
-If on $M$\,, there exists a diffeomorphism $\phi :M\rightarrow M$\,, which leaves the metric invariant, i.e.\ $\phi \indices{^*}g=g$\,, then it is called an isometry.
-The vector field $K$ which generates the isometry, i.e.\ $K|_p$ tangent to a curve which goes through $\phi _0(p)$\,, is called Killing vector field and gives rise to a constant of motion along a geodesic curve \cite{Wald1984}.
-Given an explicit coordinate form of a metric, one can also read off $K$ by the condition, that if $g$ does not depend on a coordinate $x\indices{^\mu }$\,, then $K\indices{^{x\indices{^\mu } }}=\partial \indices{^\mu }$ is a Killing vector.
+If on $M$\,, there exists a one-parameter group of diffeomorphisms $\phi_t :\mathds{R}\times M\rightarrow M,t \in \mathds{R}$\,, which, for fixed $t$\,, leaves the metric invariant, i.e.\ $\phi \indices*{_t^*}g=g$\,, then it is called an isometry.
+A vector field $w$ is said to generate a diffeomorphism, when it is tangential to the curve $\phi _t(p):\mathds{R}\rightarrow M$ (where the varying parameter is $t$) at $t=0$\,, i.e.\ $w|_p$ is the tangent vector to $\phi _0(p)$\,.
+The curve is also called \enquote{orbit} of $\phi $\,.
+The vector field $K$ which generates an isometry is called Killing vector field and gives rise to a constant of motion along a geodesic curve \cite{Wald1984} \todo{might be unnecessarily rigorous. you need to really understand or leave out.}.
+Given an explicit coordinate form of a metric, one can also read off $K$ by the condition, that if $g$ does not depend on a coordinate $x\indices{^\mu }$\,, then $K=\partial \indices{^\mu }$ is a Killing vector.
 If $K$ is null on some hypersurface, this surface is called Killing horizon of $K$\,.
 If $K$ also fulfils (\ref{eq:not affine geodesics}), then $\kappa $ is called surface gravity, if the equation is computed on the Killing horizon \cite{Carroll}.
 
 Throughout this work, if not stated otherwise, we will be dealing with the Einstein equation in vacuum, i.e.\ $T\indices{_\mu _\nu }\equiv 0$\,.
-This leads to
+This leads to \todo{better if trace reversed}
 \begin{align} 
   R_{\mu \nu }-\dfrac{1}{2}g_{\mu \nu }R = R_{\mu \nu }-\dfrac{1}{2}g_{\mu \nu }g^{\rho \sigma }R_{\rho \sigma } = 0\quad \Leftrightarrow \quad R_{\mu \nu } = 0 \label{eq:efe vacuum}
 \,.\end{align} 
@@ -230,8 +232,9 @@ Birkhoff \cite{Birkhoff1923} has shown that the only solution in a static and sp
   \td s^2 = g_{\mu \nu }\td x^\mu \td x^\nu  &= -\left(1-\dfrac{2GM}{r}\right)\td t^2+\left(1-\dfrac{2GM}{r}\right)^{-1}\td r^2+r^2\td \Omega ^2 \label{eq:schwarzschild metric}
 \,.\end{align} 
 where $c=1$\,, $\td \Omega ^2=\td \theta ^2+\sin ^2\theta \td \phi ^2$ and $\left\{t,r,\theta ,\phi \right\}$ are the spherical coordinates.
-A spacetime is static, if the spacetime is stationary, i.e.\ there exists a timelike Killing vector, and the metric does not have terms of the form $\td t\td x\indices{^\mu }$\,, where $t$ denotes the timelike Killing parameter.
+A spacetime is static, if the spacetime is stationary, i.e.\ there exists a timelike Killing vector, and the metric does not have terms of the form $\td t\td x\indices{^\mu }$\,, where $t$ denotes the time coordinate.
 A spacetime is spherically symmetric if the metric is invariant under rotations \todo{wald p.\ 120 more rigorous}.
+To complete properties of spacetime, we also mention axisymmetric spacetimes, which are characterised by the metric being invariant under rotations around a single preferred axis.
 
 Upon inspecting the metric (\ref{eq:schwarzschild metric}) we notice two values of $r$ for which components of $\td s^2$ diverge.
 For $r=0$\,, there is a coordinate invariant divergence, which can be checked with a coordinate invariant measure, e.g.\ the Kretschmann scalar $R\indices{^\mu ^\nu ^\rho ^\sigma }R\indices{_\mu _\nu _\rho _\sigma }=\tfrac{48G^2M^2}{r^6}$\,, which diverges at $r=0$\,.
@@ -256,27 +259,23 @@ A vector $l$ is normal to a surface $S$ if
 \,.\end{align} 
 Then
 \begin{align} 
-  l\indices{^\mu }l\indices{_\mu } &= l^\mu g_{\mu \nu }l^\nu =g^{\mu \rho }\partial_\rho Sg_{\mu \nu }g^{\nu \sigma }\partial_\sigma S=g^{\mu \rho }\partial_\rho S\partial_\mu S = g^{r r}(\partial_rS)^2 = \left(1-\dfrac{r_S}{r}\right)
-\,.\end{align} 
-where
-\begin{align} 
-  \left. l^\mu l_\mu \right|_{r=r_S}=0
+  l\indices{^\mu }l\indices{_\mu } &= l^\mu g_{\mu \nu }l^\nu =g^{\mu \rho }\partial_\rho Sg_{\mu \nu }g^{\nu \sigma }\partial_\sigma S=g^{\mu \rho }\partial_\rho S\partial_\mu S = g^{r r}(\partial_rS)^2 = \left(1-\dfrac{r_S}{r}\right)\quad \Leftrightarrow \quad \left. l^\mu l_\mu \right|_{r=r_S}=0
 \,.\end{align} 
 Therefore $S|_{r=r_S}$ is indeed a null hypersurface.
 For $r<r_S$ the vector $l^2<0$ is becoming timelike, i.e.\ distances are timelike behind the surface.
 Since the spacetime is static, it has a timelike Killing vector $K=\partial \indices{_t}$\,.
 Its norm is
 \begin{align} 
-  K\indices{^\mu }K\indices{_\mu }|_{r=r_S}=K\indices{^\mu }g\indices{_\mu _\nu }K\indices{^\nu }|_{r=r_S}=g\indices{_t _t}|_{r=r_S}=\left.\left(\dfrac{r_S}{r}-1\right)\right|_{r=r_S}=0
+  K\indices{^\mu }K\indices{_\mu }=K\indices{^\mu }g\indices{_\mu _\nu }K\indices{^\nu }=g\indices{_t _t}=\left(\dfrac{r_S}{r}-1\right)\quad \Leftrightarrow \quad K\indices{^\mu }K\indices{_\mu }|_{r=r_S}=0
 \,,\end{align} 
 which makes $S$ a Killing horizon of $K=\partial \indices{_t}$\,. 
 Outside $S$\,, $K$ is timelike, which means that it can describe an observers worldline given by a curve, where all coordinates apart from $t$ remain unchanged.
 If behind $S$\,, $K$ is becoming spacelike, then $K$ cannot describe an observers worldline anymore; an observer cannot have constant spatial coordinates within the region behind the surface.
 Assume that such an observer would go through the surface by decreasing the radius $r$ to the centre.
 If she would like to turn around, she has to reverse her direction, i.e.\ traverse a point where $r$ would be a constant for a certain amount of time and then increase again.
-However, this is not allowed because the point of constant radius is not part of her worldline.
+However, this is not allowed, because she cannot move in a direction that is spacelike.
 Therefore the radial coordinate cannot change sign, once it is determined from outside the surface; the observer necessarily has to move in the direction of decreasing $r$ and reach the singularity at $r=0$\,.
-We will call a surface which exhibits these properties an \enquote{event horizon}, and the region within it a \enquote{black hole}.
+We will call a surface which exhibits these properties an \enquote{event horizon}, and the region within it a \enquote{black hole} \todo{more rigorous in wald p155}.
 
 From our line of argumentation, it is clear that the apparent singularity at $r_S$ is removable by switching coordinate charts.
 To cut short the derivation \cite{Carroll} for a maximally extended coordinate chart, we will introduce the Kruskal coordinates $\left\{T,R,\theta ,\phi \right\}$ which relate to $\left\{r,t,\theta ,\phi \right\}$ via 
@@ -293,18 +292,26 @@ In these coordinates the light cones are at $45^\circ$ everywhere, which can be 
 \begin{align} 
   \diff[]{R}{T} &= \pm 1
 \,.\end{align} 
-This will therefore also hold at $r=r_S$; the event horizon of the black hole is also in this chart a null hypersurface.
+This will therefore also hold at $r=r_S$; the event horizon of the black hole is a null hypersurface in this chart as well.
 But, since the light cones behave as they would in flat space, it is no problem for an observer to cross the event horizon in a finite amount of their proper time (although to an outside observer, the infalling observer will still only reach it asymptotically).
 \todo{could include pic of kruskal chart and say region II is black hole. could also leave out kruskal completely and only mention.}
 
-The singularity at $r=0$ is however not removable.
-Such a singularity is called a spacetime singularity and is characterized by geodesic incompleteness.
-That is, if there exists a geodesic curve, which cannot be continued to all values of the affine parameter, then there exists a spacetime singularity, such that it is a manifest property of the manifold (i.e.\ it cannot be lifted by a mere coordinate transform) \cite{Townsend1997}.\todo{explicit calculation (short)}
-
 \vspace{1em}
-Taking the time to derive all other possible solutions for (\ref{eq:efe vacuum}) is an insurmountable task, therefore we will present the known solutions and show, where to find proofs of their uniqueness.
+Taking the time to derive all other possible solutions for (\ref{eq:efe vacuum}) in a spacetime, which is not necessarily static and spherically symmetric, is an insurmountable task, therefore we will present the known solutions which are of importance to us and show, where to find proofs of their uniqueness.
+
+\subsection*{Reissner-Nordström}
+The solution of (\ref{eq:efe vacuum}) with a charged mass is given by the Reissner-Nordström metric \cite{Carroll} \cite{Reissner1916}
+\begin{align} 
+  \td s^2 &= -\left(1-\dfrac{2GM}{r}+\dfrac{G(Q^2+P^2)}{r^2}\right)\td t^2+\left(1-\dfrac{2GM}{r}+\dfrac{G(Q^2+P^2)}{r^2}\right)^{-1}\td r^2+r^2\td \Omega ^2 \label{eq:reissner-nordström metric}
+\,.\end{align} 
+where $Q$ is the electric and $P$ is the magnetic charge\footnote{For a magnetic charge the Maxwell equations take on a slightly different form. It is also believed that in some theories a magnetic charge exists. Further reading (no topic-specific literature) in \cite{Carroll} and \cite{Wald1984}.} of the body (in the following we will set $P=0$\,, since one could always do $Q^2\rightarrow Q^2+P^2$).
+In the case of a neutral mass the solution reduces to the Schwarzschild metric (\ref{eq:schwarzschild metric}).
+The converse is also possible, in (\ref{eq:schwarzschild metric}) we could replace $2GMr\rightarrow 2GMr+G(Q^2+P^2)$\,.
+The spacetime is still static and spherically symmetric.
+In this spacetime, the source-free Maxwell equations hold and all charges are within the black hole.
+
 \subsection*{Kerr}
-For a rotating mass (\ref{eq:efe vacuum}) was solved by Kerr \cite{Carroll} \cite{Kerr1961}
+The solution of (\ref{eq:efe vacuum}) with a rotating mass is given by the Kerr metric \cite{Carroll} \cite{Kerr1961}
 \begin{multline}
   \td s^2 = -\left(1-\dfrac{2GMr}{\rho ^2}\right)\td t^2-\dfrac{2GMra\sin ^2\theta }{\rho ^2}(\td t\td \phi +\td \phi \td t)+\dfrac{\rho ^2}{\Delta }\td r^2+\rho ^2\td \theta ^2+\dfrac{\sin ^2\theta }{\rho ^2}\left( \left(r^2+a^2\right)^2-a^2\Delta \sin ^2\theta \right)\td \phi ^2 \label{eq:kerr metric}
 \end{multline}
@@ -312,166 +319,46 @@ where
 \begin{align} 
   \Delta =r^2-2GMr+a^2\qquad  \rho ^2=r^2+a^2\cos ^2\theta \qquad a=J/M 
 \end{align} 
-and $J$ is the total angular momentum of the spinning mass.
+and $J$ is the total angular momentum.
 The coordinates $\left\{t,r,\theta ,\phi \right\}$ are Boyer-Lindquist coordinates with cartesian representation
 \begin{align} 
   x=\sqrt{r^2+a^2}\sin \theta \cos \phi \qquad y=\sqrt{r^2+a^2}\sin \theta \sin \phi \qquad z=r\cos \theta
 \,.\end{align} 
-
-\subsection*{Reissner-Nordström}
-The analytical solution of the Einstein field equation in vacuum for a gravitating and charged mass is given by the Reissner-Nordström metric \cite{Carroll} \cite{Reissner1916}
-\begin{align} 
-  \td s^2 &= -\left(1-\dfrac{2GM}{r}+\dfrac{G(Q^2+P^2)}{r^2}\right)\td t^2+\left(1-\dfrac{2GM}{r}+\dfrac{G(Q^2+P^2)}{r^2}\right)^{-1}\td r^2+r^2\td \Omega ^2 \label{eq:reissner-nordström metric}
-\,.\end{align} 
-where $Q$ is the electric and $P$ is the magnetic charge\footnote{For a magnetic charge the Maxwell equations take on a slightly different form. It is also believed that in some theories a magnetic charge exists. Further reading (no topic-specific literature) in \cite{Carroll} and \cite{Wald1984}.} of the body.
-In the case of a neutral mass the solution reduces to the Schwarzschild metric (\ref{eq:schwarzschild metric}). 
+The spacetime of the Kerr metric is stationary, since $K=\partial \indices{_t}$ is a Killing vector, however it is not static, since it has $\td t\td \phi $ cross terms.
+Also, the spacetime is not spherically symmetric, but only axisymmetric around $\phi $\,.
 
 \subsection*{Kerr-Newman}
-Upon replacing $2GMr\rightarrow 2GMr-G(Q^2+P^2) \inlineeqno\label{eq:kerr-newman metric}$ in (\ref{eq:kerr metric}) we arrive at the solution of (\ref{eq:efe vacuum}) for a rotating and charged mass \cite{Carroll}.
+The solution of (\ref{eq:efe vacuum}) with a charged and rotating mass is given by the Kerr-Newman metric \cite{Carroll}.
+Upon replacing $2GMr\rightarrow 2GMr-G(Q^2+P^2) \inlineeqno\label{eq:kerr-newman metric}$ in (\ref{eq:kerr metric}) we get the desired form.
+This is analogues to going from a non-rotating mass to a non-rotating charged mass.
+The spacetime is also stationary and axisymmetric, as in the Kerr case.
 
 %}}}
 
 %{{{ Black Holes
 \subsection*{Black Holes} \label{sec:black holes}
-\todo{here refer to solutions above and make good transition}
-Black holes in general are only described by a small number of properties.
-Israel \cite{Israel1967} \cite{Israel1968} was the first to deduce this property by showing that the Schwarzschild metric is the unique solution with non-singular event horizon for a static, asymptotically flat spacetime with only one gravitating mass (i.e.\ the converse of Birkhoff's theorem).
-By further analysis he also deduced that for a vacuum, in which the source-free Maxwell equations hold (all charges are said to be within the black hole), only the Reissner-Nordström metric (\ref{eq:reissner-nordström metric}) is a solution with regular event horizon.
-Thus it is also unique.
-Analogously Robinson \cite{Robinson1975} proved the uniqueness of the Kerr metric (\ref{eq:kerr metric}) and Mazur \cite{Mazur1982} proved the uniqueness of the Kerr-Newman metric (\ref{eq:kerr-newman metric}) for their respective vacua.
-In a general form, we can write this as a no-hair theorem or uniqueness theorem (formulation taken literally from \cite[][p.\ 238]{Carroll}).
+As we have seen, black holes are only described by a small number of properties.
+In a general form, we can write this as a \enquote{no-hair theorem} or uniqueness theorem (formulation taken literally from \cite[][p.\ 238]{Carroll}).
 \enquote{Stationary, asympotically flat black hole solutions to general relativity coupled to electromagnetism that are non-singular outside the event horizon are fully characterized by the parameters of mass, electric and magnetic charge, and angular momentum.}.
-%The impact of this theorem might not be as important right now, but it will be later when discussing its implications in the light of the information content a black hole can have (or the way two black holes can be quite similar although their respective collapsing star was not).
+\todo{contradiction to argument further down:} Thus, if a charged and rotating mass in a vacuum undergoes gravitational collapse and forms a black hole, the metric will take the unique form of the Kerr-Newman metric (\ref{eq:kerr-newman metric}).
+This has been proven by Mazur \cite{Mazur1982} and Wald \cite{Wald1974} for the combined case of $M^2\geq a^2+Q^2$\,.
+Concerning the other solutions, Israel \cite{Israel1967} \cite{Israel1968} was the first to show that the Schwarzschild metric is the unique solution with non-singular event horizon for a static, spherically symmetric and asymptotically flat spacetime with only one gravitating mass (i.e.\ the converse of Birkhoff's theorem).
+By further analysis he also deduced that for a vacuum, in which the source-free Maxwell equations hold, only the Reissner-Nordström metric (\ref{eq:reissner-nordström metric}) is a solution with regular event horizon.
+And lastly Robinson \cite{Robinson1975} proved the uniqueness of the Kerr metric (\ref{eq:kerr metric}).
 
-Two important theorems are left to mention.
+Now that we have taken some time to talk about the possible solutions for (\ref{eq:efe vacuum}), we observe that all metrics have the $r=0$ singularity in common, which cannot be removed.
+It is the singularity in the centre of a mass which has undergone complete gravitational collapse and formed a black hole.
+Such a singularity is called a spacetime singularity and is characterized by geodesic incompleteness.
+That is, if there exists a geodesic curve, which cannot be continued to all values of the affine parameter, then there exists a spacetime singularity at the point, to where the geodesic cannot be continued, such that it is a manifest property of the manifold \cite{Townsend1997}.
+Concerning the gravitational collapse, there are some statements, which are widely believed to be true.
 The first is the still unproven \enquote{cosmic censorship conjecture} by Penrose \cite{Penrose1969} which says, that there exists no naked singularity, i.e.\ a singularity not surrounded by an event horizon, which resulted by means of gravitational collapse\footnote{It is thought that the singularity from which our universe originated could in fact be a naked singularity \cite{Hawking1972}.}.
 This statement is reasonable to accept, because it would verify that the classical theory of general relativity, which breaks down at the singularity, does not so in fact, because the information, which a singularity holds, is sealed behind the event horizon, thus diminishing its impact on the theory, since it could not escape anyway \cite{Hawking1972}.
-
-The second is the area theorem by Hawking \cite{Hawking1972}.\todo{derivation? understanding?}
+Literally from Wald \cite[p.1-2]{Wald1974} \enquote{[$\hdots $][t]he second conjecture states at the only possible black hole final states (i.e.\ , the only stationary, black hole solutions of Einstein’s equations) are the Kerr-Newman solutions [$\hdots $].}
+This is similar to what we have already discussed as the uniqueness theorem, the difference however is that the uniqueness theorems hold for eternal black holes (i.e.\ black holes, which were not created by complete gravitational collapse) but it is not yet proven, whether black holes created by gravitational collapse share this property.
+On the other hand, what is not a conjecture, but proven, is the area theorem by Hawking \cite{Hawking1972}.\todo{derivation? understanding?}
 It states, under the assumption of the weak energy condition and the cosmic censorship conjecture that the area of a future event horizon in an asymptotically flat spacetime cannot decrease \cite{Carroll} \cite{Hawking1972}.
 %}}}
 
-%{{{ Kerr
-\subsection*{Kerr}
-For a rotating mass (\ref{eq:efe vacuum}) was solved by Kerr \cite{Carroll} \cite{Kerr1961}
-\begin{multline}
-  \td s^2 = -\left(1-\dfrac{2GMr}{\rho ^2}\right)\td t^2-\dfrac{2GMra\sin ^2\theta }{\rho ^2}(\td t\td \phi +\td \phi \td t)+\dfrac{\rho ^2}{\Delta }\td r^2+\rho ^2\td \theta ^2+\dfrac{\sin ^2\theta }{\rho ^2}\left( \left(r^2+a^2\right)^2-a^2\Delta \sin ^2\theta \right)\td \phi ^2 \label{eq:kerr metric}
-\end{multline}
-where 
-\begin{align} 
-  \Delta =r^2-2GMr+a^2\qquad  \rho ^2=r^2+a^2\cos ^2\theta \qquad a=J/M 
-\end{align} 
-and $J$ is the total angular momentum of the spinning mass.
-The coordinates $\left\{t,r,\theta ,\phi \right\}$ are Boyer-Lindquist coordinates with cartesian representation
-\begin{align} 
-  x=\sqrt{r^2+a^2}\sin \theta \cos \phi \qquad y=\sqrt{r^2+a^2}\sin \theta \sin \phi \qquad z=r\cos \theta
-\,.\end{align} 
-This metric has divergences at $\Delta =0$ and $\rho =0$ 
-\begin{align} 
-  &r^2-2GMr+a^2 = 0 &&r^2+a^2\cos \theta ^2 = 0\\
-  \Rightarrow \quad&r_\pm = GM\pm \sqrt{G^2M^2-a^2} &\Rightarrow \quad&r=0 \land \theta =\dfrac{\pi }{2}
-\,.\end{align} 
-whereas $r_\pm$ is again a consequence of coordinates, which will be the event horizon ($r_+$ outer event horizon, $r_-$ inner event horizon) and $r=0\land \theta =\tfrac{\pi }{2}$ the singularity.
-Due to the particular form of coordinates the singularity is not a point in space (as it has been in the Schwarzschild solution) but a disc
-\begin{align} 
-  x_S=a\cos \phi \qquad y_S=a\sin \phi \qquad z_S=0
-\,.\end{align} 
-with radius $a$\,.
-For $a=\text{const}$ the singularity has the form of a ring.
-
-There are now three solutions for the event horizon.
-
-\noindent $G^2M^2<a^2$: For this case there will be no real solution of $r_\pm$ thus no event horizon and the singularity will be a naked singularity.
-This stands in violation with the cosmic censorship conjecture (discussed in \textit{Black Holes}).\\
-\noindent $G^2M^2=a^2$: This is the extreme Kerr black hole, which is unstable.\\
-\noindent $G^2M^2>a^2$: Now both solutions of $r$ are real and can be of physical significance.
-To check the structure of the surface we will use
-\begin{align} 
-  l^\mu =g^{\mu \nu }\partial_\nu S\qquad S=r-r_+
-\,.\end{align}
-then
-\begin{align} 
-  l^\mu l_\mu  &= g^{\mu \nu }(\partial_\mu S\partial_\nu S) = g^{r r}(\partial_r S)^2 =\dfrac{\Delta ^2}{\rho ^2}
-\,.\end{align} 
-which is a null hypersurface, since
-\begin{align} 
-  \left.l^2\right|_{r=r_+}=0
-\,.\end{align} 
-Now that there are two different event horizons, there is an interesting property about the spacetime between these surfaces
-\begin{align} 
-  \left.l^2\right|_{r=r_+}=\dfrac{\Delta (r_+)^2}{\rho ^2}=0\quad \left.l^2\right|_{r_-<r<r_+}=\dfrac{\Delta (r_-<r<r_+)^2}{\rho ^2}<0\quad \left.l^2\right|_{r=r_-}=\dfrac{\Delta (r_-)^2}{\rho ^2}=0\quad \left.l^2\right|_{r<r_-}=\dfrac{\Delta (r<r_-)^2}{\rho ^2}>0
-\,.\end{align} 
-where $\rho $ has to be understood as a function of the respective value of $r$\,.
-Clearly, the normal vector outside the event horizon is spacelike, at the event horizon null and inside timelike.
-Thus $r_+$ behaves just like the event horizon of the Schwarzschild metric at $r_S$\,.
-But there is a second event horizon at $r_-$ which is again a null hypersurface.
-Behind the second horizon, $l^2$ is spacelike, as it was outside the event horizon.
-Thus, if an observer enters the Kerr black hole from $r_+$\,, she necessarily has to cross the event horizon at $r_-$, but after that is free to move however she likes.
-This opens up the possibility of moving back out the black hole (on the other side), as in a Kerr \enquote{white hole}, where you necessarily have to move out of $r_+$ once you have crossed $r_-$\,.
-Further discussion and implications can be found in \cite{Carroll}.
-
-Another important surface appears for
-\begin{align} 
-  1-\dfrac{2GMr}{\rho ^2}=0\quad \Rightarrow \quad r^2-2GMr+a^2\cos ^2\theta =0\quad \Rightarrow \quad r_\pm^E=GM\pm\sqrt{G^2M^2-a^2\cos ^2\theta }
-\,.\end{align} 
-where the region inside $r_+^E$ is called the \enquote{ergosphere}.
-It coincides with the outer event horizon at $\theta =0$ or $\theta =\pi $\,.
-The surface $S=r-r_+^E$ with
-\begin{align} 
-  \left.l^2\right|_{r=r_+^E}=\dfrac{\Delta ^2(r_+^E)}{\rho ^2(r_+^E)}\neq 0
-\,.\end{align} 
-is evidently not null (except at $\theta =0$ and $\theta =\pi $) so it doesn't act as yet another event horizon. 
-However, what will yield an interesting result is the Killing vector $K=\partial _t$\,.
-Its norm is
-\begin{align} 
-  \left.K^2\right|_{r=r_+^E}=\left.g\indices{_t _t}\right|_{r=r_+^E}=0
-\,.\end{align} 
-clearly, since we have just calculated the particular surface with this condition.
-Just as in the Schwarzschild case, curves of constant spatial coordinates are not worldlines of observers anymore.
-However this surface is not an event horizon, therefore $r$ is not timelike and one can move in whatever radial direction she wants (including out the surface once entered).
-Still, one cannot remain stationary and is therefore dragged with the rotation of the black hole.
-\todo{Lens-Thirring effect}
-
-The speed at which the black hole rotates can be understood as the angular velocity at the outer event horizon.
-To calculate we will consider a null trajectory at $\theta =\tfrac{\pi }{2}$ at a constant radius $r_+$.
-The induced metric becomes %(with $g_{t t}=0$ at $r_+$)
-\begin{align} 
-  \td\tilde{s}^2 &= g_{t t}\td t^2+g_{t \phi }\left(\td t\td \phi +\td \phi \td t\right)+g_{\phi \phi }\td \phi ^2 = 0
-\,.\end{align} 
-with components
-\begin{align} 
-  g_{t t} &= \dfrac{2GMr_+}{\rho ^2(r_+)}-1=\dfrac{2G^2M^2+2GM\sqrt{G^2M^2-a^2}}{2G^2M^2-a^2+2GM\sqrt{G^2M^2-a^2}}-1=\dfrac{r_+^2+a^2}{r_+^2}-1\\
-  g_{\phi \phi } &= \dfrac{\left(r_+^2+a^2\right)^2}{r_+^2}\\
-  g_{t \phi } &= -\dfrac{2GMr_+a}{r_+^2}=-\dfrac{a\left(2G^2M^2+2GM\sqrt{G^2M^2-a^2}\right)}{r_+^2}=-\dfrac{a\left(r_+^2+a^2\right)}{r_+^2}
-\,.\end{align} 
-Therefore
-\begin{align} 
-  \left(\diff[]{\phi }{t}\right)^2 + 2g^{\phi \phi }g_{t \phi }\diff[]{\phi }{t}+g^{\phi \phi }g_{t t}=0
-\,.\end{align} 
-with solution
-\begin{align} 
-  \diff[]{\phi }{t} &= -g^{\phi \phi }g_{t \phi }\pm \sqrt{\left(g^{\phi \phi }g_{t \phi }\right)^2-g^{\phi \phi }g_{t t}}\\
-                    &= \dfrac{a}{r_+^2+a^2}\pm \sqrt{\left(\dfrac{a}{r_+^2+a^2}\right)^2-\dfrac{1}{r_+^2+a^2}+\dfrac{r_+^2}{\left(r_+^2+a^2\right)^2}}=\dfrac{a}{r_+^2+a^2}
-\,.\end{align} 
-We will define the rotation speed of the black hole thus
-\begin{align} 
-  \Omega \equiv \dfrac{a}{r_+^2+a^2} \label{eq:kerr rotation speed}
-\,.\end{align} 
-
-Lastly we will want to calculate the gravity of the black hole at $r_+$\,.
-The surface at $r_+$ is a null hypersurface which is also a Killing horizon for $K=\partial_t$\,.
-Therefore $K$ is proportional to the normal vector on this surface, however it need not be affine parametrized and will in general solve only (\ref{eq:not affine geodesics}) \todo{not true, but if K is null then K is also proportional to itself from where the non-affine geodesic equation follows}. 
-The proportionality constant $\kappa $ of (\ref{eq:not affine geodesics}) is called \enquote{surface gravity} if the equation holds for a Killing vector on a Killing horizon \cite{Townsend1997}.
-This is the quantity we now want to calculate.
-We will be using
-\begin{align} 
-  \kappa ^2=-\dfrac{1}{2}\left(\nabla ^\mu K^\nu \right)\left(\nabla _\mu K_\nu \right)
-\,.\end{align} 
-with $K=\partial _t$ and the Christoffel symbols from \cite{Mueller2010}, which yields \todo{could show}
-\begin{align} 
-  \kappa =\dfrac{r_+-r_-}{2\left(r_+^2+a^2\right)}=\dfrac{\Omega \left(r_+-r_-\right)}{2a}=\dfrac{\Omega \sqrt{G^2M^2-a^2}}{2a}
-\,.\end{align} 
-%}}}
 
 %{{{ Thermodynamics
 \subsection{Thermodynamics}
@@ -524,14 +411,9 @@ The metric is therefore (\ref{eq:schwarzschild metric}) and we will set $\td \Om
 \,.\end{align} 
 Now she lowers the body towards the black hole's event horizon.
 To make claims about the work done we first need to calculate the body's energy as measured by the observer.
-
-Since none of the metric coefficients depend on time, there exists a timelike Killing vector
+As mentioned before, since none of the metric coefficients depend on time, there exists a timelike Killing vector, which gives rise to a constant of motion along a geodesic
 \begin{align} 
-  K_\mu  = g_{\mu \nu }(\partial_t)^\nu = g_{\mu \nu }\delta _t^\nu = \left(-\left(1-\dfrac{r_S}{r}\right)\quad 0\quad 0\quad 0\right)
-\,.\end{align} 
-with a constant of motion 
-\begin{align} 
-  K_\mu \diff[]{x^\mu }{\tau }=\text{const}=-\left(1-\dfrac{r_S}{r}\right)\diff[]{t}{\tau }
+  K_\mu  = g_{\mu \nu }(\partial_t)^\nu = g_{\mu \nu }\delta _t^\nu = \left(-\left(1-\dfrac{r_S}{r}\right)\quad 0\quad 0\quad 0\right)\quad \Leftrightarrow \quad K_\mu \diff[]{x^\mu }{\tau }=\text{const}=-\left(1-\dfrac{r_S}{r}\right)\diff[]{t}{\tau }
 \,.\end{align} 
 where we have chosen $\lambda =\tau $ the proper time as the affine parameter.
 From Noether's theorem it follows that the constant of motion must be the energy.
@@ -582,22 +464,130 @@ The total entropy of matter and of black holes in an isolated system can never d
 
 %{{{ Penrose Process
 \section{Penrose Process}
-To further see a link between thermodynamics and black hole theory, we should construct a relation between the area of a black hole $A$ and the other parameters mass $M$\,, angular momentum $J$ and charge $Q$\,.
-Since these are sufficient to describe every black hole as stated by the no-hair or uniqueness theorem, we should be able to find a relation which characterizes how each quantity changes in relation to the other.
-Let us think about which of these could be readily accessed.
-The area is always non-decreasing therefore not prone to change as we would like;
-the mass could be increased by simple means but not readily extracted;
-for the charge we have yet to link the Einstein equation with Maxwell's equation, thus we will set it to zero and will be of no further interest.
-This leaves us with the angular momentum, i.e.\ Kerr black holes, which we, in principle, have access to.
-We should therefore think about how we could extract angular momentum from it.
-Such a process has been developed by Penrose \cite{Penrose1969} \cite{Carroll}.
+To further see a link between thermodynamics and black hole mechanics, we should construct a relation between the area of a black hole $A$ and the other parameters mass $M$\,, angular momentum $J$ and charge $Q$\,.
+Since these are sufficient to describe every black hole as stated by the no-hair theorem, we should be able to find a relation which characterizes how each quantity changes in relation to the other.
+We will set the charge to zero \todo{reason? also maybe could calc with Qneq0?}
+A process to extract angular momentum of a black hole has been developed by Penrose \cite{Penrose1969} \cite{Carroll}.
+We will come shortly to discussing the details of this process, first we need to understand how Kerr black holes work.
 
-Consider a Kerr black hole with angular momentum $J$ and a particle with four-momentum $P^\mu $\, \todo{if also has charge then just replace}.
+As we have done in the Schwarzschild case, we will first find the event horizon by an apparent singularity and derive its properties.
+The metric (\ref{eq:kerr metric}) has divergences, for $\rho =0$ we find the singularity
+\begin{align} 
+  r^2+a^2\cos \theta ^2 = 0\quad \Rightarrow \quad r=0 \land \theta =\dfrac{\pi }{2}
+\,.\end{align} 
+Due to the particular form of coordinates the singularity is not a point in space (as it has been in the Schwarzschild solution) but a disc
+\begin{align} 
+  x_S=a\cos \phi \qquad y_S=a\sin \phi \qquad z_S=0
+\,.\end{align} 
+with radius $a$\,.
+For $a=\text{const}$ the singularity has the form of a ring.
+For $\Delta =0$ we find two event horizons
+\begin{align} 
+  r^2-2GMr+a^2 = 0\quad \Rightarrow \quad r_\pm = GM\pm \sqrt{G^2M^2-a^2} 
+\,.\end{align} 
+There are now three cases to consider.
+$G^2M^2<a^2$\,, for this case there will be no real solution of $r_\pm$ thus no event horizon and the singularity will be a naked singularity.
+This stands in violation with the cosmic censorship conjecture, therefore we will discard the solution.
+$G^2M^2=a^2$\,, this is the extreme Kerr black hole, which is unstable \todo{show}.
+$G^2M^2>a^2$\,, now both solutions of $r$ are real and can be of physical significance.
+To check the structure of the surface $S=r-r_+$ we will use the normal vector $l\indices{^\mu }=g\indices{^\mu ^\nu }\partial\indices{_\nu }S$ then
+\begin{align} 
+  l\indices{^\mu }l\indices{_\mu } &= g\indices{^\mu ^\nu }(\partial\indices{_\mu }S\partial\indices{_\nu }S) = g\indices{^r^r}(\partial\indices{_r}S)^2 =\dfrac{\Delta ^2}{\rho ^2}
+\,.\end{align} 
+Now that there are two different event horizons, there is an interesting property about the spacetime between these surfaces
+\iffalse
+\begin{table}[t]
+  \centering
+  \begin{tabular}{ccccc}
+    \toprule
+    $r$ & $=r_+$ & $>r_-\land <r_+$ & $=r_-$ & $<r_-$ \\
+    \midrule
+    $l\indices{^\mu }l\indices{_\mu }$ & $=0$ & $<0$ & $=0$ & $>0$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\fi
+\begin{align} 
+  l\indices{^\mu }l\indices{_\mu }|_{r>r_+}>0\,,\quad l\indices{^\mu }l\indices{_\mu }|_{r=r_+}=0\,,\quad l\indices{^\mu }l\indices{_\mu }|_{r_-<r<r_+}<0\,,\quad l\indices{^\mu }l\indices{_\mu }|_{r=r_-}=0\,,\quad l\indices{^\mu }l\indices{_\mu }|_{r<r_-}>0
+\,.\end{align} 
+Clearly, the normal vector outside the event horizon is spacelike, at the event horizon null and inside timelike.
+Thus $r_+$ behaves just like the event horizon of the Schwarzschild metric at $r_S$\,.
+But there is a second event horizon at $r_-$ which is again a null hypersurface.
+Behind the second horizon, $l$ is spacelike, as it was outside the event horizon.
+Thus, if an observer enters the Kerr black hole from $r_+$\,, she necessarily has to cross the event horizon at $r_-$, but after that is free to move however she likes.
+This opens up the possibility of moving back out the black hole (on the other side), as in a Kerr \enquote{white hole}, where you necessarily have to move out of $r_+$ once you have crossed $r_-$\,.
+Further discussion and implications can be found in \cite{Carroll}.
+
+Another important surface appears for
+\begin{align} 
+  g\indices{_t_t}=1-\dfrac{2GMr}{\rho ^2}=0\quad \Rightarrow \quad r^2-2GMr+a^2\cos ^2\theta =0\quad \Rightarrow \quad r_\pm^E=GM\pm\sqrt{G^2M^2-a^2\cos ^2\theta }
+\,.\end{align} 
+where the region inside $r_+^E$ is called the \enquote{ergosphere}.
+It coincides with the outer event horizon at $\theta =0$ or $\theta =\pi $\,.
+The surface $S=r-r_+^E$ with
+\begin{align} 
+  l\indices{^\mu }l\indices{_\mu }|_{r=r_+^E}=\dfrac{\Delta ^2(r_+^E)}{\rho ^2(r_+^E)}\neq 0
+\,.\end{align} 
+is evidently not null (except at $\theta =0$ and $\theta =\pi $) so it doesn't act as yet another event horizon. 
+However, what will yield an interesting result is the Killing vector $K=\partial _t$\,.
+Its norm is
+\begin{align} 
+  K\indices{^\mu }K\indices{_\mu }|_{r=r_+^E}=g\indices{_t _t}|_{r=r_+^E}=0
+\,.\end{align} 
+clearly, since we have just calculated the particular surface with this condition.
+Just as in the Schwarzschild case, curves of constant spatial coordinates are not worldlines of observers anymore.
+However this surface is not an event horizon, therefore $r$ is not timelike and an observer can move in whatever radial direction she wants (including out the surface once entered).
+Still, she cannot remain stationary and is therefore dragged with the rotation of the black hole.
+\todo{Lens-Thirring effect}
+
+The speed at which the black hole rotates can be understood as the angular velocity at the outer event horizon.
+To calculate we will consider a null trajectory at $\theta =\tfrac{\pi }{2}$ at a constant radius $r_+$.
+The induced metric becomes %(with $g_{t t}=0$ at $r_+$)
+\begin{align} 
+  \td\tilde{s}^2 &= g_{t t}\td t^2+g_{t \phi }\left(\td t\td \phi +\td \phi \td t\right)+g_{\phi \phi }\td \phi ^2 = 0
+\,.\end{align} 
+with components
+\begin{align} 
+  g_{t t} &= \dfrac{2GMr_+}{\rho ^2(r_+)}-1=\dfrac{2G^2M^2+2GM\sqrt{G^2M^2-a^2}}{2G^2M^2-a^2+2GM\sqrt{G^2M^2-a^2}}-1=\dfrac{r_+^2+a^2}{r_+^2}-1\\
+  g_{\phi \phi } &= \dfrac{\left(r_+^2+a^2\right)^2}{r_+^2}\\
+  g_{t \phi } &= -\dfrac{2GMr_+a}{r_+^2}=-\dfrac{a\left(2G^2M^2+2GM\sqrt{G^2M^2-a^2}\right)}{r_+^2}=-\dfrac{a\left(r_+^2+a^2\right)}{r_+^2}
+\,.\end{align} 
+Therefore
+\begin{align} 
+  \left(\diff[]{\phi }{t}\right)^2 + 2g^{\phi \phi }g_{t \phi }\diff[]{\phi }{t}+g^{\phi \phi }g_{t t}=0
+\,.\end{align} 
+with solution
+\begin{align} 
+  \diff[]{\phi }{t} &= -g^{\phi \phi }g_{t \phi }\pm \sqrt{\left(g^{\phi \phi }g_{t \phi }\right)^2-g^{\phi \phi }g_{t t}}\\
+                    &= \dfrac{a}{r_+^2+a^2}\pm \sqrt{\left(\dfrac{a}{r_+^2+a^2}\right)^2-\dfrac{1}{r_+^2+a^2}+\dfrac{r_+^2}{\left(r_+^2+a^2\right)^2}}=\dfrac{a}{r_+^2+a^2}
+\,.\end{align} 
+We will define the rotation speed of the black hole thus
+\begin{align} 
+  \Omega \equiv \dfrac{a}{r_+^2+a^2} \label{eq:kerr rotation speed}
+\,.\end{align} 
+
+Lastly we will want to calculate the gravity of the black hole at $r_+$\,.
+The surface at $r_+$ is a null hypersurface which is also a Killing horizon for $K=\partial_t$\,.
+Therefore $K$ is proportional to the normal vector on this surface, however it need not be affine parametrized and will in general solve only (\ref{eq:not affine geodesics}) \todo{not true, but if K is null then K is also proportional to itself from where the non-affine geodesic equation follows}. 
+The proportionality constant $\kappa $ of (\ref{eq:not affine geodesics}) is called \enquote{surface gravity} if the equation holds for a Killing vector on a Killing horizon \cite{Townsend1997} \todo{already discussed in introduction}.
+This is the quantity we now want to calculate.
+We will be using
+\begin{align} 
+  \kappa ^2=-\dfrac{1}{2}\left(\nabla ^\mu K^\nu \right)\left(\nabla _\mu K_\nu \right)
+\,.\end{align} 
+with $K=\partial _t$ and the Christoffel symbols from \cite{Mueller2010}, which yields \todo{could show}
+\begin{align} 
+  \kappa =\dfrac{r_+-r_-}{2\left(r_+^2+a^2\right)}=\dfrac{\Omega \left(r_+-r_-\right)}{2a}=\dfrac{\Omega \sqrt{G^2M^2-a^2}}{2a}
+\,.\end{align} 
+
+\vspace{1em}
+\noindent Now we should have enough knowledge to study the Penrose process.
+Consider again a Kerr black hole with angular momentum $J$ and a particle with four-momentum $P^\mu $\,.
 The energy of the particle is given by 
 \begin{align} 
   E = K^\mu P_\mu = P_t \qquad K = \partial_t
 \,.\end{align} 
-where $K$ is a Killing vector of the Kerr metric (\ref{eq:kerr metric}) with norm $K^2=g_{t t}=\tfrac{2GMr}{\rho ^2}-1$
+where $K$ is a Killing vector of the Kerr metric (\ref{eq:kerr metric}) with norm $K^2=g_{t t}=\tfrac{2GMr}{\rho ^2}-1$ \todo{redundancy from above}
 \begin{align} 
   \lim_{r \rightarrow \infty}K^2 = -1\qquad \left.K^2\right|_{r=r_+^E} = 0\qquad \left.K^2\right|_{r<r_+^E} > 0
 \end{align} 
@@ -1122,6 +1112,17 @@ This leads to
 \,.\end{align} 
 The surface gravity is constant tangential to the event horizon of the black hole.
 We have thus shown that the zeroth law of thermodynamics is recovered from black hole mechanics assuming the (N)DEC.
+%}}}
+
+%{{{ Surface Gravity 2
+\section{Surface Gravity 2}
+Lastly we come to the discussion of the third law of thermodynamics.
+It states that the absolute zero-point temperature cannot be reached; this translates to $\kappa =0$ on the event horizon.
+
+\begin{enumerate}[label=--]
+  \item in schwarzschild = 1/4GM so only for M to inf
+  \item in kerr-newman 
+\end{enumerate}
 %}}}
 
 %{{{ Information Loss Paradox
