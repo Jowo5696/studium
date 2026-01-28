@@ -129,9 +129,9 @@ Quellen und Hilfsmittel benutzt sowie die Zitate kenntlich gemacht habe.\\\\\\
   \phantom{Bonn,}\hrule\par\vspace{1mm}
   Unterschift
 \end{minipage}\\\\
-\begin{enumerate}[label=\arabic*]
+\begin{enumerate}[label=\arabic*.]
   \item Gutachter: Priv.-Doz.\ Dr.\ Stefan Förste
-  \item GutachterIn:
+  \item Gutachter: Prof.\ Dr.\ Herbert Dreiner
 \end{enumerate}
 
 %}}}
@@ -171,18 +171,19 @@ This work shall present a concise and clear derivation of all four laws of black
 \enquote{Spacetime is a manifold $M$ on which there is defined a Lorentz metric $g\indices{_\mu _\nu }$.
 The curvature of $g\indices{_\mu _\nu }$ is related to the matter distribution in spacetime by Einstein's equation [$\hdots $]} \cite[p. 73]{Wald1984}, which is given by
 \begin{align} 
-  R\indices{_\mu _\nu }-\dfrac{1}{2}g\indices{_\mu _\nu }R=8\pi G\,T\indices{_\mu _\nu } \label{eq:efe}
+  R\indices{_\mu _\nu }-\dfrac{1}{2}g\indices{_\mu _\nu }R=8\pi T\indices{_\mu _\nu } \label{eq:efe}
 \,.\end{align} 
 where
 \begin{align} 
   R\indices{^\rho _\mu _\sigma _\nu } &= \partial_\sigma \Gamma \indices*{_\nu _\mu ^\rho} -\partial_\nu \Gamma _{\sigma \mu }^\rho +\Gamma \indices*{_\sigma _\lambda ^\rho} \Gamma _{\nu \mu }^\lambda -\Gamma _{\nu \lambda }^\rho \Gamma _{\sigma \mu }^\lambda & R\indices{^\lambda _\mu _\lambda _\nu } &= R\indices{_\mu _\nu } & g\indices{^\mu ^\nu }R\indices{_\mu _\nu }=R\indices{^\mu _\mu } &= R \label{eq:riemann tensor}
 \,.\end{align} 
 is the Riemann tensor, the Ricci tensor and the Ricci scalar, $T$ the energy-momentum tensor, and $\Gamma $ is the Christoffel symbol, whereby the Levi-Civita connection is implied.
+We use units in which $c=G=1$\,.
 Another definition of the Riemann tensor we will be using is, for any vector $w$
 \begin{align} 
   R\indices{_\mu _\nu _\lambda ^\sigma }w\indices{_\sigma }\equiv \nabla \indices{_\mu }\nabla \indices{_\nu }w\indices{_\lambda }-\nabla \indices{_\nu }\nabla \indices{_\mu }w\indices{_\lambda }
 .\end{align} 
-A Lorentzian metric is a metric, whose signature is $(-,+,+,+)$, which is also the convention we will be using.
+A Lorentzian metric has signature $(-,+,+,+)$, which is also the convention we will be using.
 Given a vector field $w$\, at a point $p$\,, it can be classified in the following three categories
 \begin{align} 
   w\indices{^\mu }w\indices{_\mu }&>0\quad\text{spacelike}\,,\\
@@ -214,7 +215,7 @@ The curve is also called \enquote{orbit} of $\phi $\,.
 The vector field $K$ which generates an isometry is called Killing vector field and gives rise to a constant of motion along a geodesic curve \cite{Wald1984} \todo{might be unnecessarily rigorous. you need to really understand or leave out.}.
 Given an explicit coordinate form of a metric, one can also read off $K$ by the condition, that if $g$ does not depend on a coordinate $x\indices{^\mu }$\,, then $K=\partial \indices{^\mu }$ is a Killing vector.
 If $K$ is null on some hypersurface, this surface is called Killing horizon of $K$\,.
-If $K$ also fulfils (\ref{eq:not affine geodesics}), then $\kappa $ is called surface gravity, if the equation is computed on the Killing horizon \cite{Carroll}.
+If $K$ also fulfils (\ref{eq:not affine geodesics}), then $\kappa $ is called surface gravity, if the equation is computed on the Killing horizon \cite{Carroll} \cite{Townsend1997}.
 
 Throughout this work, if not stated otherwise, we will be dealing with the Einstein equation in vacuum, i.e.\ $T\indices{_\mu _\nu }\equiv 0$\,.
 This leads to \todo{better if trace reversed}
@@ -222,8 +223,80 @@ This leads to \todo{better if trace reversed}
   R_{\mu \nu }-\dfrac{1}{2}g_{\mu \nu }R = R_{\mu \nu }-\dfrac{1}{2}g_{\mu \nu }g^{\rho \sigma }R_{\rho \sigma } = 0\quad \Leftrightarrow \quad R_{\mu \nu } = 0 \label{eq:efe vacuum}
 \,.\end{align} 
 This equation restricts the possible solutions to be Ricci-flat.
+
+The metric, or rather the spacetime described by the metric, can have certain useful properties.
+A spacetime is called \enquote{stationary}, if there exsits a timelike Killing vector field.
+A spacetime is called \enquote{static}, if it is stationary and the metric does not have terms of the form $\td t\td x\indices{^\mu }$\,, where $t$ denotes the time coordinate.
+A spacetime is spherically symmetric, if the metric is invariant under rotations \todo{wald p.\ 120 more rigorous} and it is axisymmetric, if the metric is invariant under rotations around a single preferred axis.
 %}}}
 
+%{{{ Black Holes 
+\subsection*{Black Holes}
+The number of solutions to (\ref{eq:efe vacuum}) is severely limited.
+In the following, we will see certain metrics, which are solutions under varying conditions we attributed to spacetimes.
+However, all metrics have in common that they describe a single object of mass $M$ in a vacuum.
+Also in all metrics (though not for all values of their parameters) there exists a certain radius $r_\text{e.h.}$, for if a metric still holds at this radius, the hypersurface which lies on this radius is a one-way membrane, permeable from the outside, and is called \enquote{event horizon}.
+The region within the event horizon is called \enquote{black hole} and at the centre is a spacetime singularity.
+A manifold, which exhibits such a singularity is geodesic incomplete, i.e.\ a geodesic cannot be continued to all values of its parameter; at the point where it terminates is a singularity.
+If the given object cannot withstand its own gravitational force by means of outward pressure, it completely collapses and at the point in time, where its radius is lower than $r_\text{e.h.}$\,, there originates an event horizon and subsequently a black hole region.
+This statement is encapsulated by the Cosmic Censorship Conjecture by Penrose \cite{Penrose1969} which says, that there exists no naked singularity, i.e.\ a singularity not surrounded by an event horizon, which resulted by means of gravitational collapse\footnote{It is thought that the singularity from which our universe originated could in fact be a naked singularity \cite{Hawking1972}.}.
+This statement is reasonable to accept, because it would verify that the classical theory of general relativity, which breaks down at the singularity, does not so in fact, because the information, which a singularity holds, is sealed behind the event horizon, thus diminishing its impact on the theory, since it could not escape anyway \cite{Hawking1972}.
+In the following chapters we are only interested in solutions, which exhibit black holes and we will discuss their properties as well as the event horizons in more detail.
+
+Now, let us write down the possible solutions to (\ref{eq:efe vacuum}).
+Birkhoff \cite{Birkhoff1923} has shown that the only solution in a static and spherically symmetric spacetime is the Schwarzschild metric \cite{Schwarzschild1916} \footnote{The form of the metric is taken from \cite{Carroll}. A derivation is also given in the book. This holds also for the other metrics presented.}
+\begin{align} 
+  \td s^2 = g_{\mu \nu }\td x^\mu \td x^\nu  &= -\left(1-\dfrac{2M}{r}\right)\td t^2+\left(1-\dfrac{2M}{r}\right)^{-1}\td r^2+r^2\td \Omega ^2 \label{eq:schwarzschild metric}
+\,.\end{align} 
+where $\td \Omega ^2=\td \theta ^2+\sin ^2\theta \td \phi ^2$ and $\left\{t,r,\theta ,\phi \right\}$ are the spherical coordinates.
+Israel \cite{Israel1967} \cite{Israel1968} was the first to show that the Schwarzschild metric is the unique solution with non-singular event horizon for a static, spherically symmetric and asymptotically flat spacetime with only one gravitating mass (i.e.\ the converse of Birkhoff's theorem).
+
+By further analysis he also deduced that for a static and spherically symmetric spacetime, in which the source-free Maxwell equations hold, only the Reissner-Nordström metric \cite{Reissner1916} is a solution with regular event horizon.
+It is given by
+\begin{align} 
+  \td s^2 &= -\left(1-\dfrac{2M}{r}+\dfrac{\tilde{Q}^2}{r^2}\right)\td t^2+\left(1-\dfrac{2M}{r}+\dfrac{\tilde{Q}^2}{r^2}\right)^{-1}\td r^2+r^2\td \Omega ^2 \label{eq:reissner-nordström metric}
+\,.\end{align} 
+where $\tilde{Q}^2\equiv Q^2+P^2$\,, $Q$ is the electric and $P$ is the magnetic charge\footnote{For a magnetic charge the Maxwell equations take on a slightly different form. It is also believed that in some theories a magnetic charge exists. Further reading (no topic-specific literature) in \cite{Carroll} and \cite{Wald1984}.} of the body.
+In the case of a neutral mass the solution reduces to the Schwarzschild metric (\ref{eq:schwarzschild metric}).
+The converse is also possible, in (\ref{eq:schwarzschild metric}) we could replace $2Mr\rightarrow 2Mr+\tilde{Q}^2$\,.
+
+In a spacetime, which is stationary (see the Killing vector $K=\partial \indices{_t}$ and the cross-terms $\td t\td \phi $) and axisymmetric in the angle $\phi $\,, Robinson \cite{Robinson1975} proved the uniqueness of the Kerr metric \cite{Kerr1961}
+\begin{multline}
+  \td s^2 = -\left(1-\dfrac{2Mr}{\rho ^2}\right)\td t^2-\dfrac{2Mra\sin ^2\theta }{\rho ^2}(\td t\td \phi +\td \phi \td t)+\dfrac{\rho ^2}{\Delta }\td r^2+\rho ^2\td \theta ^2\\+\dfrac{\sin ^2\theta }{\rho ^2}\left( \left(r^2+a^2\right)^2-a^2\Delta \sin ^2\theta \right)\td \phi ^2 \label{eq:kerr metric}
+\end{multline}
+where 
+\begin{align} 
+  \Delta =r^2-2Mr+a^2\qquad  \rho ^2=r^2+a^2\cos ^2\theta \qquad a=J/M 
+\end{align} 
+and $J$ is the total angular momentum.
+The coordinates $\left\{t,r,\theta ,\phi \right\}$ are Boyer-Lindquist coordinates with cartesian representation
+\begin{align} 
+  x=\sqrt{r^2+a^2}\sin \theta \cos \phi \qquad y=\sqrt{r^2+a^2}\sin \theta \sin \phi \qquad z=r\cos \theta
+\,.\end{align} 
+
+The most general case is given by a stationary and axisymmetric spacetime (as in the Kerr metric), but with a charged and rotating mass.
+It has been proven by Mazur \cite{Mazur1982} and Wald \cite{Wald1974} that the Kerr-Newman metric for the combined case of $M^2\geq a^2+Q^2$\,, is the only solution to such a spacetime.
+It is given by
+\begin{multline}
+  \td s^2 = -\left(1-\dfrac{2Mr-\tilde{Q}^2}{\rho ^2}\right)\td t^2-\dfrac{(2Mr-\tilde{Q})a\sin ^2\theta }{\rho ^2}(\td t\td \phi +\td \phi \td t)+\dfrac{\rho ^2}{\Delta }\td r^2+\rho ^2\td \theta ^2\\+\dfrac{\sin ^2\theta }{\rho ^2}\left( \left(r^2+a^2\right)^2-a^2\Delta \sin ^2\theta \right)\td \phi ^2 \label{eq:kerr metric}
+\end{multline}
+where 
+\begin{align} 
+  \Delta =r^2-2Mr+\tilde{Q}^2+a^2\qquad  \rho ^2=r^2+a^2\cos ^2\theta \qquad a=J/M \label{eq:def delta rho}
+.\end{align} 
+It can be obtained by replacing $2Mr\rightarrow 2Mr-\tilde{Q}^2$ in the Kerr metric.
+From now on we will use the equations (\ref{eq:def delta rho}) for $\Delta $ and $\rho $\,.
+
+\vspace{1em}
+\noindent Thus, in general black holes are only described by a small number of properties, namely mass $M$\,, angular momentum $J$ and charge $\tilde{Q}$\,.
+This property of black holes is called \enquote{no-hair} or uniqueness theorem \cite{Carroll}.
+It is not proven however, that all black holes which originate by gravitational collapse also exhibit these properties; literally from Wald \cite[p.1-2]{Wald1974} \enquote{$[\hdots ]$[t]he $[\hdots ]$ conjecture states that the only possible black hole final states (i.e., the only stationary, black hole solutions of Einstein’s equations) are the Kerr-Newman solutions $[\hdots ]$.}
+Another important parameter of black holes is their area $A$\,.
+A theorem by Hawking \cite{Hawking1972} states, that under the assumption of the weak energy condition and the cosmic censorship conjecture, the area of a future event horizon in an asymptotically flat spacetime cannot decrease.
+The implications of this are important to us in the following chapters.
+%}}}
+
+\iffalse
 %{{{ Schwarzschild
 \subsection*{Schwarzschild}
 The number of solutions to (\ref{eq:efe vacuum}) is severely limited.
@@ -358,7 +431,7 @@ This is similar to what we have already discussed as the uniqueness theorem, the
 On the other hand, what is not a conjecture, but proven, is the area theorem by Hawking \cite{Hawking1972}.\todo{derivation? understanding?}
 It states, under the assumption of the weak energy condition and the cosmic censorship conjecture that the area of a future event horizon in an asymptotically flat spacetime cannot decrease \cite{Carroll} \cite{Hawking1972}.
 %}}}
-
+\fi
 
 %{{{ Thermodynamics
 \subsection{Thermodynamics}
@@ -466,9 +539,8 @@ The total entropy of matter and of black holes in an isolated system can never d
 \section{Penrose Process}
 To further see a link between thermodynamics and black hole mechanics, we should construct a relation between the area of a black hole $A$ and the other parameters mass $M$\,, angular momentum $J$ and charge $Q$\,.
 Since these are sufficient to describe every black hole as stated by the no-hair theorem, we should be able to find a relation which characterizes how each quantity changes in relation to the other.
-We will set the charge to zero \todo{reason? also maybe could calc with Qneq0?}
 A process to extract angular momentum of a black hole has been developed by Penrose \cite{Penrose1969} \cite{Carroll}.
-We will come shortly to discussing the details of this process, first we need to understand how Kerr black holes work.
+We will come shortly to discussing the details of this process, first we need to understand how Kerr-Newman black holes work.
 
 As we have done in the Schwarzschild case, we will first find the event horizon by an apparent singularity and derive its properties.
 The metric (\ref{eq:kerr metric}) has divergences, for $\rho =0$ we find the singularity
@@ -483,13 +555,13 @@ with radius $a$\,.
 For $a=\text{const}$ the singularity has the form of a ring.
 For $\Delta =0$ we find two event horizons
 \begin{align} 
-  r^2-2GMr+a^2 = 0\quad \Rightarrow \quad r_\pm = GM\pm \sqrt{G^2M^2-a^2} 
+  r^2-2Mr+a^2 = 0\quad \Rightarrow \quad r_\pm = M\pm \sqrt{M^2-a^2} 
 \,.\end{align} 
 There are now three cases to consider.
-$G^2M^2<a^2$\,, for this case there will be no real solution of $r_\pm$ thus no event horizon and the singularity will be a naked singularity.
+$M^2<a^2$\,, for this case there will be no real solution of $r_\pm$ thus no event horizon and the singularity will be a naked singularity.
 This stands in violation with the cosmic censorship conjecture, therefore we will discard the solution.
-$G^2M^2=a^2$\,, this is the extreme Kerr black hole, which is unstable \todo{show}.
-$G^2M^2>a^2$\,, now both solutions of $r$ are real and can be of physical significance.
+$M^2=a^2$\,, this is the extreme Kerr black hole, which is unstable \todo{show}.
+$M^2>a^2$\,, now both solutions of $r$ are real and can be of physical significance.
 To check the structure of the surface $S=r-r_+$ we will use the normal vector $l\indices{^\mu }=g\indices{^\mu ^\nu }\partial\indices{_\nu }S$ then
 \begin{align} 
   l\indices{^\mu }l\indices{_\mu } &= g\indices{^\mu ^\nu }(\partial\indices{_\mu }S\partial\indices{_\nu }S) = g\indices{^r^r}(\partial\indices{_r}S)^2 =\dfrac{\Delta ^2}{\rho ^2}
@@ -520,7 +592,7 @@ Further discussion and implications can be found in \cite{Carroll}.
 
 Another important surface appears for
 \begin{align} 
-  g\indices{_t_t}=1-\dfrac{2GMr}{\rho ^2}=0\quad \Rightarrow \quad r^2-2GMr+a^2\cos ^2\theta =0\quad \Rightarrow \quad r_\pm^E=GM\pm\sqrt{G^2M^2-a^2\cos ^2\theta }
+  g\indices{_t_t}=1-\dfrac{2Mr}{\rho ^2}=0\quad \Rightarrow \quad r^2-2Mr+a^2\cos ^2\theta =0\quad \Rightarrow \quad r_\pm^E=M\pm\sqrt{M^2-a^2\cos ^2\theta }
 \,.\end{align} 
 where the region inside $r_+^E$ is called the \enquote{ergosphere}.
 It coincides with the outer event horizon at $\theta =0$ or $\theta =\pi $\,.
@@ -548,9 +620,9 @@ The induced metric becomes %(with $g_{t t}=0$ at $r_+$)
 \,.\end{align} 
 with components
 \begin{align} 
-  g_{t t} &= \dfrac{2GMr_+}{\rho ^2(r_+)}-1=\dfrac{2G^2M^2+2GM\sqrt{G^2M^2-a^2}}{2G^2M^2-a^2+2GM\sqrt{G^2M^2-a^2}}-1=\dfrac{r_+^2+a^2}{r_+^2}-1\\
+  g_{t t} &= \dfrac{2Mr_+}{\rho ^2(r_+)}-1=\dfrac{2M^2+2M\sqrt{M^2-a^2}}{2M^2-a^2+2M\sqrt{M^2-a^2}}-1=\dfrac{r_+^2+a^2}{r_+^2}-1\\
   g_{\phi \phi } &= \dfrac{\left(r_+^2+a^2\right)^2}{r_+^2}\\
-  g_{t \phi } &= -\dfrac{2GMr_+a}{r_+^2}=-\dfrac{a\left(2G^2M^2+2GM\sqrt{G^2M^2-a^2}\right)}{r_+^2}=-\dfrac{a\left(r_+^2+a^2\right)}{r_+^2}
+  g_{t \phi } &= -\dfrac{2Mr_+a}{r_+^2}=-\dfrac{a\left(2M^2+2M\sqrt{M^2-a^2}\right)}{r_+^2}=-\dfrac{a\left(r_+^2+a^2\right)}{r_+^2}
 \,.\end{align} 
 Therefore
 \begin{align} 
@@ -566,18 +638,15 @@ We will define the rotation speed of the black hole thus
   \Omega \equiv \dfrac{a}{r_+^2+a^2} \label{eq:kerr rotation speed}
 \,.\end{align} 
 
-Lastly we will want to calculate the gravity of the black hole at $r_+$\,.
-The surface at $r_+$ is a null hypersurface which is also a Killing horizon for $K=\partial_t$\,.
-Therefore $K$ is proportional to the normal vector on this surface, however it need not be affine parametrized and will in general solve only (\ref{eq:not affine geodesics}) \todo{not true, but if K is null then K is also proportional to itself from where the non-affine geodesic equation follows}. 
-The proportionality constant $\kappa $ of (\ref{eq:not affine geodesics}) is called \enquote{surface gravity} if the equation holds for a Killing vector on a Killing horizon \cite{Townsend1997} \todo{already discussed in introduction}.
-This is the quantity we now want to calculate.
-We will be using
+Lastly we want to calculate the gravity of the black hole at $r_+$\,.
+The surface at $r_+$ is a null hypersurface which is also a Killing horizon for $K=\partial_t$\,, therefore we can use $K\indices{^\nu }\nabla \indices{_\nu }K\indices{^\mu }=\kappa K\indices{^\mu }$\,.
+$K$ is orthogonal to the Killing horizon, then by Frobenius' theorem $K\indices{_[_\mu }\nabla \indices{_\nu }K\indices{_\lambda _]}=0$\,, which yields \cite{Townsend1997}
 \begin{align} 
-  \kappa ^2=-\dfrac{1}{2}\left(\nabla ^\mu K^\nu \right)\left(\nabla _\mu K_\nu \right)
+  \kappa =\sqrt{-\dfrac{1}{2}\left(\nabla ^\mu K^\nu \right)\left(\nabla _\mu K_\nu \right)}
 \,.\end{align} 
-with $K=\partial _t$ and the Christoffel symbols from \cite{Mueller2010}, which yields \todo{could show}
+with $K=\partial _t$ and the Christoffel symbols from \cite{Mueller2010}, which yields \todo{could show (or appendix)}
 \begin{align} 
-  \kappa =\dfrac{r_+-r_-}{2\left(r_+^2+a^2\right)}=\dfrac{\Omega \left(r_+-r_-\right)}{2a}=\dfrac{\Omega \sqrt{G^2M^2-a^2}}{2a}
+  \kappa =\dfrac{r_+-r_-}{2\left(r_+^2+a^2\right)}=\dfrac{\Omega \left(r_+-r_-\right)}{2a}=\dfrac{\Omega \sqrt{M^2-a^2}}{2a}
 \,.\end{align} 
 
 \vspace{1em}
@@ -586,69 +655,66 @@ Consider again a Kerr black hole with angular momentum $J$ and a particle with f
 The energy of the particle is given by 
 \begin{align} 
   E = K^\mu P_\mu = P_t \qquad K = \partial_t
-\,.\end{align} 
-where $K$ is a Killing vector of the Kerr metric (\ref{eq:kerr metric}) with norm $K^2=g_{t t}=\tfrac{2GMr}{\rho ^2}-1$ \todo{redundancy from above}
-\begin{align} 
-  \lim_{r \rightarrow \infty}K^2 = -1\qquad \left.K^2\right|_{r=r_+^E} = 0\qquad \left.K^2\right|_{r<r_+^E} > 0
-\end{align} 
+\,.\end{align}
+where $K$ is a Killing vector of the Kerr metric (\ref{eq:kerr metric}).
 Now imagine the particle enters the ergosphere, traverses it for a moment and at a certain point in time, splits into two components
 \begin{align} 
-  P^\mu =\tensor[^1]{P}{^\mu }+\tensor[^2]{P}{^\mu }
+  P^\mu =P\indices*{^\mu _A}+P\indices*{^\mu _B}
 \,.\end{align} 
 The particle manages to do it in such a way that
 \begin{align} 
-  \tensor[^1]{P}{^0}<0\quad \Rightarrow \quad \tensor[^2]{P}{^0}>P^0
+  P\indices*{^0_A}<0\quad \Rightarrow \quad P\indices*{^0_B}>P^0
 \,.\end{align} 
-where the second particle escapes from the ergosphere to infinity.
+where particle $B$ escapes from the ergosphere to infinity.
 It is entirely possible for the energy to be negative since the Killing vector $K=\partial_t$ is spacelike inside the ergophere.
-Now, since particle 2 has more energy than the initial particle (from where it originated), energy has been extracted from somewhere, otherwise this would be a violation of conservation of energy.
+Now, since particle $B$ has more energy than the initial particle (from where it originated), energy has been extracted from somewhere, otherwise this would be a violation of conservation of energy.
 As it turns out, this energy comes from the reduction of the angular momentum $J$ of the black hole.
 To understand how $J$ has been reduced we will take another look at the symmetry of the Kerr metric; not only $K=\partial_t$ but also $R=\partial _\phi $ is a Killing vector, such that
 \begin{align} 
   L=R^\mu P_\mu =P_\phi \,,\quad R=\partial_\phi 
 \end{align} 
 is a conserved quantity, namely the angular momentum of the particle.
-Since every event horizon in a stationary spacetime is a Killing horizon \cite{Carroll}, the Killing vector
+Since every event horizon in a stationary spacetime is a Killing horizon \cite{Carroll}, the Killing vector \todo{and because neither K nor R are null, then chi must be}
 \begin{align} 
   \chi ^\mu =K^\mu +\Omega R^\mu\,,\quad \Omega \stackrel{(\ref{eq:kerr rotation speed})}{=}\dfrac{a}{r_+^2+a^2}
 \,.\end{align} 
 is therefore null along the outer event horizon.
-Since we want to understand how $J$ has been reduced we will track the path that particle 1 takes.
-Particle 1 has negative energy, so it will not escape to infinity but eventually cross the outer event horizon $r_+$\,.
-This happenes, when
+Since we want to understand how $J$ has been reduced we will track the path that particle $A$ takes.
+Particle $A$ has negative energy, so it will not escape to infinity but eventually cross the outer event horizon $r_+$\,.
+This happens, when
 \begin{align} 
-  \chi ^\mu \tensor[^1]{P}{_\mu }<0
+  \chi \indices{_\mu }P\indices*{^\mu _A}<0
 \,.\end{align} 
-as $\chi ^\mu $ will become spacelike.
+as $\chi $ becomes spacelike.
 This also implies that
 \begin{align} 
-  K^\mu \tensor[^1]{P}{_\mu }+\Omega R^\nu \tensor[^1]{P}{_\nu }=\tensor[^1]{E}{}+\Omega \tensor[^1]{L}{}<0\quad \Rightarrow \quad \tensor[^1]{L}{}<\dfrac{\tensor[^1]{E}{}}{\Omega }
+  K\indices{_\mu }P\indices*{^\mu _A}+\Omega R\indices{_\nu }P\indices*{^\nu _A}=E_A+\Omega L_A<0\quad \Rightarrow \quad L_A<\dfrac{E_A}{\Omega }
 \,.\end{align} 
-where $\tensor[^1]{E}{}<0$ and $\Omega >0$ such that $\tensor[^1]{L}{}<0$\,.
-Particle 1 therefore adds negative energy and negative angular momentum to the hole, which decreases its mass and its angular momentum
+where $E_A<0$ and $\Omega >0$ such that $L_A<0$\,.
+Particle $A$ therefore adds negative energy and negative angular momentum to the black hole, which decreases its mass and its angular momentum
 \begin{align} 
-  \delta M=\tensor[^1]{E}{}\qquad \delta J=\tensor[^1]{L}{}\quad \Rightarrow \quad \delta J\leq \dfrac{\delta M}{\Omega } \label{eq:angular momentum mass relation}
+  \delta M=E_A\qquad \delta J=L_A\quad \Rightarrow \quad \delta J\leq \dfrac{\delta M}{\Omega } \label{eq:angular momentum mass relation}
 \,.\end{align} 
 where the equality holds in the most ideal process.
-We could argue that $\tensor[^1]{E}{}$ and $\tensor[^1]{L}{}$ are somewhat arbitrary and it is therefore possible to completely extract all mass and rotational energy from the black hole, but this is not the case. It has been shown, that at most 29\% of its total energy can be extracted this way \cite{Carroll}.
+We could argue that $E_A$ and $L_A$ are somewhat arbitrary and it is therefore possible to completely extract all mass and rotational energy from the black hole, but this is not the case. It has been shown, that at most 29\% of its total energy can be extracted this way \cite{Carroll}.
 The reason is the irreducible mass of a black hole \cite{Christodoulou1970} \cite{Carroll}.
 If one were to deplete the Kerr black hole of all its angular momentum, then a Schwarzschild black hole of mass equal to the irreducible mass remains.
 The irreducible mass can be understood as the energy, which is contained within the outer event horizon $r_+$ and can therefore not leave the black hole.
 It has been derived by Christodoulou \cite{Christodoulou1970} as a mass-energy formula\todo{argument for formula from christodoulou}
 \begin{align}
-  G^2M^2=G^2M_\text{irr}^2+\dfrac{G^2J^2}{4G^2M_\text{irr}^2}=G^2M_\text{irr}^2+\dfrac{a^2G^2M^2}{4G^2M_\text{irr}^2}
+  M^2=M_\text{irr}^2+\dfrac{J^2}{4M_\text{irr}^2}=M_\text{irr}^2+\dfrac{a^2M^2}{4M_\text{irr}^2}
 \,.\end{align} 
-We can solve this equation for $GM_\text{irr}$ 
+We can solve this equation for $M_\text{irr}$ 
 \begin{align} 
-  G^4M_\text{irr}^4-G^2M_\text{irr}^2G^2M^2+\dfrac{a^2G^2M^2}{4}=0
+  M_\text{irr}^4-M_\text{irr}^2M^2+\dfrac{a^2M^2}{4}=0
 \end{align} 
 and we will only consider the \enquote{+} solution, since we want the mass within $r_+$ 
 \begin{align} 
-  G^2M_\text{irr}^2=\dfrac{1}{2}\left( G^2M^2+\sqrt{G^2M^2\left( G^2M^2-a^2\right)}\right)=\dfrac{1}{2}GM\left(GM+\sqrt{G^2M^2-a^2}\right)=\dfrac{1}{2}GMr_+ \label{eq:irreducible mass 0}
+  M_\text{irr}^2=\dfrac{1}{2}\left( M^2+\sqrt{M^2\left( M^2-a^2\right)}\right)=\dfrac{1}{2}M\left(M+\sqrt{M^2-a^2}\right)=\dfrac{1}{2}Mr_+ \label{eq:irreducible mass 0}
 \,.\end{align} 
 Finally
 \begin{align} 
-  M_\text{irr}=\sqrt{\dfrac{Mr_+}{2G}} \label{eq:irreducible mass 1}
+  M_\text{irr}=\sqrt{\dfrac{Mr_+}{2}} \label{eq:irreducible mass 1}
 \end{align} 
 As of now this expression cannot be further simplified so we will take a look at the area.
 We can calculate it by integrating over the surface with the induced metric on the outer event horizon
@@ -662,33 +728,32 @@ With $\Delta (r_+)=0$\,, thereby
 \,.\end{align} 
 We can plug $r_+$ into this equation to get
 \begin{align} 
-  A=4\pi \left(r_+^2+a^2\right) &= 4\pi \left(G^2M^2+G^2M^2-a^2+2GM\sqrt{G^2M^2-a^2}+a^2\right)\\
-                                &= 4\pi \left(2G^2M^2+2GM\sqrt{G^2M^2-a^2}\right)=8\pi GMr_+ \label{eq:kerr area 2}
+  A=4\pi \left(r_+^2+a^2\right) &= 4\pi \left(M^2+M^2-a^2+2M\sqrt{M^2-a^2}+a^2\right)\\
+                                &= 4\pi \left(2M^2+2M\sqrt{M^2-a^2}\right)=8\pi Mr_+ \label{eq:kerr area 2}
 \end{align} 
 Now with (\ref{eq:irreducible mass 1}) and (\ref{eq:kerr area 2})
 \begin{align} 
-  M_\text{irr}=\sqrt{\dfrac{A}{16\pi G^2}} \label{eq:irreducible mass 2}
+  M_\text{irr}=\sqrt{\dfrac{A}{16\pi }} \label{eq:irreducible mass 2}
 \,.\end{align} 
 However to do further calculations, we should relate $M_\text{irr}$ to $M$ and $J$ again
 \begin{align} 
-  M_\text{irr}=\sqrt{\dfrac{r_+^2+a^2}{4G^2}} &= \sqrt{\dfrac{G^2M^2+G^2M^2-a^2+2GM\sqrt{G^2M^2-a^2}+a^2}{4G^2}}\\
-                                                  &= \sqrt{\tfrac{1}{2}M^2+\tfrac{M}{2G}\sqrt{G^2M^2-\tfrac{J^2}{M^2} }}\\
-                                                  &= \dfrac{1}{\sqrt{2}}\sqrt{M^2+\sqrt{M^4-\tfrac{J^2}{G^2} }} \label{eq:irreducible mass}
+  M_\text{irr}=\sqrt{\dfrac{r_+^2+a^2}{4}} &= \sqrt{\dfrac{M^2+M^2-a^2+2M\sqrt{M^2-a^2}+a^2}{4}}\\
+                                                  &= \sqrt{\tfrac{1}{2}M^2+\tfrac{M}{2}\sqrt{M^2-\tfrac{J^2}{M^2} }}\\
+                                                  &= \dfrac{1}{\sqrt{2}}\sqrt{M^2+\sqrt{M^4-J^2}} \label{eq:irreducible mass}
 \,.\end{align} 
 We can now take the variation of (\ref{eq:irreducible mass}) to have a formula for the variation of the area.
 Since both $M_\text{irr}$ and $A$ are related their variation will surely be positive, so we can use it to verify (\ref{eq:angular momentum mass relation}).
 \begin{align} 
-  \delta M_\text{irr} &= \dfrac{1}{\sqrt{2}}\delta \left(\sqrt{M^2+\sqrt{M^4-\tfrac{J^2}{G^2} }}\right)\\
-                      &= \dfrac{1}{\sqrt{2}}\dfrac{1}{\sqrt{2}M_\text{irr}}\dfrac{1}{2}\delta \left(M^2+\sqrt{M^4-\tfrac{J^2}{G^2}}\right)\\
-                      &= \dfrac{1}{4M_\text{irr}}\left(2M\delta M+\dfrac{4M^3\delta M-\tfrac{2J}{G^2}\delta J}{2\sqrt{M^4-\tfrac{J^2}{G^2} }}\right)\\
-                      &= \dfrac{1}{4M_\text{irr}}\left( \left(\dfrac{M\sqrt{M^4-\tfrac{J^2}{G^2}}+2M^3}{\sqrt{M^4-\tfrac{J^2}{G^2} }}\right)\delta M-\dfrac{J}{G^2\sqrt{M^4-\tfrac{J^2}{G^2} }}\delta J\right)\\
-                      \intertext{using $\sqrt{M^4-\tfrac{J^2}{G^2}}=\tfrac{M}{G}\sqrt{G^2M^2-a^2}$}
-                      &= \dfrac{1}{4M_\text{irr}}\left( \left(\dfrac{\tfrac{M^2}{G}\sqrt{G^2M^2-a^2}+2M^3}{\tfrac{M}{G}\sqrt{G^2M^2-a^2}}\right)\delta M-\dfrac{J}{GM\sqrt{G^2M^2-a^2}}\delta J\right)\\
-                      &= \dfrac{1}{4M_\text{irr}\sqrt{G^2M^2-a^2}}\left( \left(M\sqrt{G^2M^2-a^2}+2GM^2\right)\delta M-\dfrac{a}{G}\delta J\right)\\
-                      \intertext{now multiply with $\tfrac{G}{G}$ to get equal powers of $G$ and $M$ and factor out $a$}
-                      &= \dfrac{a}{4GM_\text{irr}\sqrt{G^2M^2-a^2}}\left( \dfrac{1}{a}\left(GM\sqrt{G^2M^2-a^2}+2G^2M^2\right)\delta M-\delta J\right)\\
-                      \intertext{recall $\Omega =\tfrac{a}{r_+^2+a^2}=a\left(2G^2M^2+2GM\sqrt{G^2M^2-a^2}\right)^{-1}$}
-                      &= \dfrac{a}{4GM_\text{irr}\sqrt{G^2M^2-a^2}}\left(\dfrac{\delta M}{\Omega }-\delta J\right)=\delta M_\text{irr}
+  \delta M_\text{irr} &= \dfrac{1}{\sqrt{2}}\delta \left(\sqrt{M^2+\sqrt{M^4-J^2}}\right)\\
+                      &= \dfrac{1}{\sqrt{2}}\dfrac{1}{\sqrt{2}M_\text{irr}}\dfrac{1}{2}\delta \left(M^2+\sqrt{M^4-J^2}\right)\\
+                      &= \dfrac{1}{4M_\text{irr}}\left(2M\delta M+\dfrac{4M^3\delta M-2J\delta J}{2\sqrt{M^4-J^2}}\right)\\
+                      &= \dfrac{1}{4M_\text{irr}}\left( \left(\dfrac{M\sqrt{M^4-J^2}+2M^3}{\sqrt{M^4-J^2}}\right)\delta M-J\sqrt{M^4-J^2}\delta J\right)\\
+                      \intertext{using $\sqrt{M^4-J^2}=M\sqrt{M^2-a^2}$}
+                      &= \dfrac{1}{4M_\text{irr}}\left( \left(\dfrac{M^2\sqrt{M^2-a^2}+2M^3}{M\sqrt{M^2-a^2}}\right)\delta M-\dfrac{J}{M\sqrt{M^2-a^2}}\delta J\right)\\
+                      &= \dfrac{1}{4M_\text{irr}\sqrt{M^2-a^2}}\left( \left(M\sqrt{M^2-a^2}+2M^2\right)\delta M-a\delta J\right)\\
+                      &= \dfrac{a}{4M_\text{irr}\sqrt{M^2-a^2}}\left( \dfrac{1}{a}\left(M\sqrt{M^2-a^2}+2M^2\right)\delta M-\delta J\right)\\
+                      \intertext{recall $\Omega =\tfrac{a}{r_+^2+a^2}=a\left(2M^2+2M\sqrt{M^2-a^2}\right)^{-1}$}
+                      &= \dfrac{a}{4M_\text{irr}\sqrt{M^2-a^2}}\left(\dfrac{\delta M}{\Omega }-\delta J\right)=\delta M_\text{irr}
 \,.\end{align} 
 As we have said
 \begin{align} 
@@ -698,14 +763,14 @@ where the equality holds if $M_\text{irr}$ does not undergo change, i.e.\ only i
 
 As we said in the beginning we want to relate $M$ with $A$ and $J$\,, therefore
 \begin{align} 
-  \delta M_\text{irr} &= \dfrac{1}{2M_\text{irr}}\dfrac{\delta A}{16\pi G^2}\\
-  \dfrac{a}{4GM_\text{irr}\sqrt{G^2M^2-a^2}}\left(\dfrac{\delta M}{\Omega }-\delta J\right) &= \dfrac{1}{2M_\text{irr}}\dfrac{\delta A}{16\pi G^2}\\
-  \delta M &= \dfrac{1}{2M_\text{irr}}\dfrac{\delta A}{16\pi G^2}\dfrac{4GM_\text{irr}\sqrt{G^2M^2-a^2}\Omega }{a}+\Omega \delta J\\
-  \delta M &= \dfrac{\sqrt{G^2M^2-a^2}\Omega }{8\pi Ga}\delta A+\Omega \delta J\\
-  \intertext{with the surface gravity $\kappa =\tfrac{\Omega \sqrt{G^2M^2-a^2}}{a}$}
-  \Aboxed{\delta M &= \dfrac{\kappa }{8\pi G}\delta A+\Omega \delta J}
+  \delta M_\text{irr} &= \dfrac{1}{2M_\text{irr}}\dfrac{\delta A}{16\pi }\\
+  \dfrac{a}{4M_\text{irr}\sqrt{M^2-a^2}}\left(\dfrac{\delta M}{\Omega }-\delta J\right) &= \dfrac{1}{2M_\text{irr}}\dfrac{\delta A}{16\pi }\\
+  \delta M &= \dfrac{1}{2M_\text{irr}}\dfrac{\delta A}{16\pi }\dfrac{4M_\text{irr}\sqrt{M^2-a^2}\Omega }{a}+\Omega \delta J\\
+  \delta M &= \dfrac{\sqrt{M^2-a^2}\Omega }{8\pi a}\delta A+\Omega \delta J\\
+  \intertext{with the surface gravity $\kappa =\tfrac{\Omega \sqrt{M^2-a^2}}{a}$}
+  \Aboxed{\delta M &= \dfrac{\kappa }{8\pi }\delta A+\Omega \delta J}
 \,.\end{align} 
-Thus we have the promised relation between the quantities describing a Kerr black hole.\footnote{Do not interchange $\kappa $ (the surface gravity) with the Einstein gravitational constant, also called $\kappa $\,,  which happens to be equal to $8\pi G$\,.}
+Thus we have the promised relation between the quantities describing a Kerr black hole.\footnote{Do not interchange $\kappa $ (the surface gravity) with the Einstein gravitational constant, also called $\kappa $\,,  which happens to be equal to $8\pi $\,.}
 It is not that we have done this for no reason; recall from earlier that we already concluded the second law of thermodynamics could be violated by the means of black holes, and promptly found a more general form which lifted this paradox and also accounted for black holes.
 However we have not violated the first law of thermodynamics with this procedure, nevertheless we see a clear correspondence to it (at least from the looks of the formula)
 \begin{align} 
@@ -713,7 +778,7 @@ However we have not violated the first law of thermodynamics with this procedure
 \,.\end{align} 
 It seems that 
 \begin{align} 
-  \delta M \leftrightarrow \td U\qquad \dfrac{\kappa }{8\pi G}\delta A\leftrightarrow T\td S\qquad \Omega \delta J\leftrightarrow \delta W
+  \delta M \leftrightarrow \td U\qquad \dfrac{\kappa }{8\pi }\delta A\leftrightarrow T\td S\qquad \Omega \delta J\leftrightarrow \delta W
 \,.\end{align} 
 The identification makes sense, the mass should be equal to the internal energy, since the only property a Schwarzschild black hole has is its mass\footnote{Aside from its area, but the entropy will be present nevertheless.}, the area has already been equated with the entropy and the angular momentum has been said to extract energy from the black hole which would translate to work done on the system.
 An important conclusion we could draw is that the surface gravity $\kappa $ is somehow related to the temperature $T$\,, but no exact relation is known until here, since only a proportionality has been proposed for the area and entropy.
@@ -809,13 +874,13 @@ Just from the fact that the modes cannot be continued throughout the whole space
 We are now tasked to calculate $|\beta _{ij}|^2$ to obtain information about the spectrum of particles.
 To perform explicit calculation we will consider a massless field in the Schawrzschild metric (\ref{eq:schwarzschild metric}) in Eddington-Finkelstein with tortoise-coordinates
 \begin{align} 
-  v=t+r^*\qquad u=t-r^*\qquad r^*\equiv r+2GM\ln\left(\dfrac{r}{2GM}-1\right)
+  v=t+r^*\qquad u=t-r^*\qquad r^*\equiv r+2M\ln\left(\dfrac{r}{2M}-1\right)
 \,.\end{align} 
 where $v$ is the ingoing coordinate and $u$ is the outgoing coordinate, such that ingoing radial null geodesics are $v=\text{const}$ and outgoing $u=\text{const}$\,.
 The metric takes the form \cite{Carroll}
 \begin{align} 
-  \td s^2\left(t,r^*,\theta ,\phi \right) &= \left(1-\dfrac{2GM}{\tilde{r}}\right)\left(-\td t^2+\td {r^*}^2\right)+\tilde{r}^2\td \Omega ^2\\
-  \td s^2\left(v,r,\theta ,\phi \right) &= -\left(1-\dfrac{2GM}{r}\right)\td v^2+\td v\td r+\td r\td v+r^2\td \Omega ^2
+  \td s^2\left(t,r^*,\theta ,\phi \right) &= \left(1-\dfrac{2M}{\tilde{r}}\right)\left(-\td t^2+\td {r^*}^2\right)+\tilde{r}^2\td \Omega ^2\\
+  \td s^2\left(v,r,\theta ,\phi \right) &= -\left(1-\dfrac{2M}{r}\right)\td v^2+\td v\td r+\td r\td v+r^2\td \Omega ^2
 \,.\end{align} 
 for, the usual time coordinate but tortoise radial coordinate, and, the Eddington-Finkelstein time coordinate with usual radial coordinate, respectively.
 We set $\tilde{r}\equiv r(r^*)$ the radial coordinate as a function of the tortoise coordinate.
@@ -825,15 +890,15 @@ The field solves the massless Klein-Gordon equation with $\xi =0$ since we are i
 \,.\end{align} 
 In the standard Schwarzschild metric (\ref{eq:schwarzschild metric}), (\ref{eq:massless klein-gordon}) becomes
 \begin{align} 
-  -\dfrac{1}{1-\tfrac{2GM}{r}}\partial ^2_t f +\dfrac{1}{r^2}\partial _r\left(r^2\left(1-\dfrac{2GM}{r}\right)\partial _r f \right)+\dfrac{1}{r^2}\laplace _{\theta ,\phi }f =0
+  -\dfrac{1}{1-\tfrac{2M}{r}}\partial ^2_t f +\dfrac{1}{r^2}\partial _r\left(r^2\left(1-\dfrac{2M}{r}\right)\partial _r f \right)+\dfrac{1}{r^2}\laplace _{\theta ,\phi }f =0
 \,.\end{align} 
 We switch to the tortoise coordinate $r^*$ (and use $\tilde{r}=r(r^*)$ and thereby $\partial _r\rightarrow \partial _{\tilde{r}}$) to simplify the equation
 \begin{align} 
-  \partial _{\tilde{r}}=\diffp[]{r^*}{\tilde{r}}\partial _{r^*}=\left(1+2GM\dfrac{\tfrac{1}{2GM}}{\tfrac{\tilde{r}}{2GM}-1}\right)\partial _{r^*}=\dfrac{1}{1-\tfrac{2GM}{\tilde{r} }}\partial _{r^*}
+  \partial _{\tilde{r}}=\diffp[]{r^*}{\tilde{r}}\partial _{r^*}=\left(1+2M\dfrac{\tfrac{1}{2M}}{\tfrac{\tilde{r}}{2M}-1}\right)\partial _{r^*}=\dfrac{1}{1-\tfrac{2M}{\tilde{r} }}\partial _{r^*}
 \end{align} 
 then
 \begin{align} 
-  -\partial _t^2f +\dfrac{1}{\tilde{r}^2}\partial _{r^*}\left(\tilde{r}^2\partial _{r^*}f \right)+\left(1-\dfrac{2GM}{\tilde{r}}\right)\dfrac{1}{\tilde{r}^2}\laplace _{\theta ,\phi }f =0
+  -\partial _t^2f +\dfrac{1}{\tilde{r}^2}\partial _{r^*}\left(\tilde{r}^2\partial _{r^*}f \right)+\left(1-\dfrac{2M}{\tilde{r}}\right)\dfrac{1}{\tilde{r}^2}\laplace _{\theta ,\phi }f =0
 \,.\end{align} 
 Since the Schwarzschild spacetime is spherically symmetric we can write $f$ as a product of a radial function and the spherical harmonics.
 We also choose the appropriate normalization to be $\tfrac{1}{\sqrt{2\pi \omega }}$\,.
@@ -843,13 +908,13 @@ We also choose the appropriate normalization to be $\tfrac{1}{\sqrt{2\pi \omega 
 whereby the factor $\tfrac{1}{r}$ will simplify the equation.
 Then, plugging $f$ into the wave equation, multiplying with $\sqrt{2\pi \omega '}$ and leaving the dependencies for better readability
 \begin{align} 
-  \Leftrightarrow \quad -Y\dfrac{1}{\tilde{r}}\partial _t^2R+Y\dfrac{1}{\tilde{r}^2}\partial _{r^*}\left(\tilde{r}^2\partial _{r^*}\left(\dfrac{1}{\tilde{r}}R\right)\right)+\left(1-\dfrac{2GM}{\tilde{r}}\right)\dfrac{1}{\tilde{r}^2}\dfrac{1}{\tilde{r}}R\laplace _{\theta ,\phi }Y &= 0
+  \Leftrightarrow \quad -Y\dfrac{1}{\tilde{r}}\partial _t^2R+Y\dfrac{1}{\tilde{r}^2}\partial _{r^*}\left(\tilde{r}^2\partial _{r^*}\left(\dfrac{1}{\tilde{r}}R\right)\right)+\left(1-\dfrac{2M}{\tilde{r}}\right)\dfrac{1}{\tilde{r}^2}\dfrac{1}{\tilde{r}}R\laplace _{\theta ,\phi }Y &= 0
   \intertext{we can use $\laplace _{\theta ,\phi }Y_{l m}(\theta ,\phi )=l(l+1)Y_{l m}(\theta ,\phi )$ and the divide by $Y_{l m}(\theta ,\phi )\tfrac{1}{\tilde{r}}$}
-  \Leftrightarrow \quad -\partial _t^2R+\dfrac{1}{\tilde{r}}\partial _{r^*}\left(\tilde{r}^2\partial _{r^*}\left(\dfrac{1}{\tilde{r}}R\right)\right)+\left(1-\dfrac{2GM}{\tilde{r}}\right)\dfrac{l(l+1)}{\tilde{r}^2}R &= 0\\
-  \Leftrightarrow \quad -\partial _t^2 R+\dfrac{1}{\tilde{r}}\partial _{r^*}\left(-\diffp[]{\tilde{r}}{r^*}R+\tilde{r}\partial _{r^*}R\right)+\left(1-\dfrac{2GM}{\tilde{r}}\right)\dfrac{l(l+1)}{\tilde{r}^2}R &= 0\\
-  \Leftrightarrow \quad -\partial _t^2 R-\dfrac{1}{\tilde{r}}\diffp[2]{\tilde{r}}{r^*}R-\dfrac{1}{\tilde{r}}\diffp[]{\tilde{r}}{r^*}\partial _{r^*}R+\dfrac{1}{\tilde{r}}\diffp[]{\tilde{r}}{r^*}\partial _{r^*}R+\partial _{r^*}^2R +\left(1-\dfrac{2GM}{\tilde{r}}\right)\dfrac{l(l+1)}{\tilde{r}^2}R &= 0\\
-  \intertext{now use $\diffp[]{\tilde{r}}{r^*}=1-\tfrac{2GM}{\tilde{r}}$ and $\diffp[2]{\tilde{r}}{r^*}=-\tfrac{2GM}{\tilde{r}^2}\diffp[]{\tilde{r}}{r^*}=-\tfrac{2GM}{\tilde{r}^2}\left(1-\tfrac{2GM}{\tilde{r}}\right)$}
-  \Leftrightarrow \quad -\partial _t^2 R_{\omega '}(\tilde{r},t)+\partial _{r^*}^2 R_{\omega '}\left(\tilde{r},t\right)+\left(1-\dfrac{2GM}{\tilde{r}}\right)\left(\dfrac{l(l+1)}{\tilde{r}^2}+\dfrac{2GM}{\tilde{r}^3}\right)R_{\omega '}(\tilde{r},t) &= 0
+  \Leftrightarrow \quad -\partial _t^2R+\dfrac{1}{\tilde{r}}\partial _{r^*}\left(\tilde{r}^2\partial _{r^*}\left(\dfrac{1}{\tilde{r}}R\right)\right)+\left(1-\dfrac{2M}{\tilde{r}}\right)\dfrac{l(l+1)}{\tilde{r}^2}R &= 0\\
+  \Leftrightarrow \quad -\partial _t^2 R+\dfrac{1}{\tilde{r}}\partial _{r^*}\left(-\diffp[]{\tilde{r}}{r^*}R+\tilde{r}\partial _{r^*}R\right)+\left(1-\dfrac{2M}{\tilde{r}}\right)\dfrac{l(l+1)}{\tilde{r}^2}R &= 0\\
+  \Leftrightarrow \quad -\partial _t^2 R-\dfrac{1}{\tilde{r}}\diffp[2]{\tilde{r}}{r^*}R-\dfrac{1}{\tilde{r}}\diffp[]{\tilde{r}}{r^*}\partial _{r^*}R+\dfrac{1}{\tilde{r}}\diffp[]{\tilde{r}}{r^*}\partial _{r^*}R+\partial _{r^*}^2R +\left(1-\dfrac{2M}{\tilde{r}}\right)\dfrac{l(l+1)}{\tilde{r}^2}R &= 0\\
+  \intertext{now use $\diffp[]{\tilde{r}}{r^*}=1-\tfrac{2M}{\tilde{r}}$ and $\diffp[2]{\tilde{r}}{r^*}=-\tfrac{2M}{\tilde{r}^2}\diffp[]{\tilde{r}}{r^*}=-\tfrac{2M}{\tilde{r}^2}\left(1-\tfrac{2M}{\tilde{r}}\right)$}
+  \Leftrightarrow \quad -\partial _t^2 R_{\omega '}(\tilde{r},t)+\partial _{r^*}^2 R_{\omega '}\left(\tilde{r},t\right)+\left(1-\dfrac{2M}{\tilde{r}}\right)\left(\dfrac{l(l+1)}{\tilde{r}^2}+\dfrac{2M}{\tilde{r}^3}\right)R_{\omega '}(\tilde{r},t) &= 0
 \,.\end{align} 
 This form allows us to readily use Eddington-Finkelstein coordinates and switch back to the standard Schwarzschild radius $r$ 
 \begin{align} 
@@ -862,7 +927,7 @@ Thereby
 \end{align} 
 and
 \begin{align} 
-  -\partial _v \partial _u R_{\omega '}(r,t)+\left(1-\dfrac{2GM}{r}\right)\left(\dfrac{l(l+1)}{r^2}+\dfrac{2GM}{r^3}\right)R_{\omega '}(r,t)=0 \label{eq:edd-fink radial part}
+  -\partial _v \partial _u R_{\omega '}(r,t)+\left(1-\dfrac{2M}{r}\right)\left(\dfrac{l(l+1)}{r^2}+\dfrac{2M}{r^3}\right)R_{\omega '}(r,t)=0 \label{eq:edd-fink radial part}
 \,.\end{align} 
 This equation can be solved with the ansatz $R_{\omega '}(r,t)=R_{\omega '}^1(v)+R_{\omega '}^2(u)$\,.
 We will pick $R_{\omega '}^1(v)$ since we are interested in the ingoing solutions from $\mathscr{I}^-$\,, i.e.\ $f$\,.
@@ -886,7 +951,7 @@ The modes of interest are the ones which arrive on $\mathscr{I}^-$ at a time $v\
 To an observer on $\mathscr{I}^-$ the waves will be arbitrarily blueshifted as they close in on the event horizon from the future for $v\rightarrow v_0$ (as they would be redshifted if they were to come from $\mathscr{I}^-$ and reach an observer on $\mathscr{I}^+$).
 In this case the frequency of the wave will be large compared to the local curvature such that it allows for the geometrical optics approximation of the wave.
 This means that the wave can be described as a plane wave $p _{\omega l m}=P_0\text{e}^{\text{i}\omega u}$ where $u$ is a null hypersurface of constant phase.
-$K=\partial _u$ is a Killing vector in the Eddington-Finkelstein metric, then at the horizon $r=2GM$ the Killing vector is null $\left.K^2\right|_{r=2GM}=\left.-\left(1-\tfrac{2GM}{r}\right)\right|_{r=2GM}=0$; the accuracy of the approximation increases as $v\rightarrow v_0$ justifying our approach \cite{Wald1984}.
+$K=\partial _u$ is a Killing vector in the Eddington-Finkelstein metric, then at the horizon $r=2M$ the Killing vector is null $\left.K^2\right|_{r=2M}=\left.-\left(1-\tfrac{2M}{r}\right)\right|_{r=2M}=0$; the accuracy of the approximation increases as $v\rightarrow v_0$ justifying our approach \cite{Wald1984}.
 The coordinate $u=u(\lambda )$ depends on the geodesic parameter $\lambda $\,, such that $K=\partial _u=\diff[]{\lambda }{u}\diff[]{}{\lambda }$\,.
 If we consider geodesics parametrized by $u$\,, these would not be affine parametrized, which results in a surface gravity since we are dealing with a Killing vector.
 The non-affine parametrization can be expressed as a proportionality between two different tangent vectors, where the proportionality constant depends on $\lambda $ as in (\ref{eq:tangent vector proportionality}).
@@ -956,7 +1021,7 @@ We will set $\omega =\omega '$ and relabel $k\equiv \omega '$ for consistency
 \,.\end{align} 
 Thus we have finally fixed the equation relating entropy and area of a black hole
 \begin{align} 
-  \dfrac{A}{4G}=S
+  \dfrac{A}{4}=S
 \,.\end{align} 
 \todo{black hole evaporation, area theorem not violated (carroll p.\ 417), also see wald p.\ 417} \todo{two other methods: unruh effect $\cdot $ wick rotation / euclidean periodicity.}
 %}}}
@@ -1085,13 +1150,13 @@ In the simple case of vacuum, $R\indices{_\mu _\nu }=0$ the equation is fulfille
 However, we need not be so strict.
 We can use Einstein's equation, so solve for $R\indices{_\lambda ^\sigma }$
 \begin{align} 
-g\indices{^\nu ^\sigma }\left(R\indices{_\lambda _\nu }-\dfrac{1}{2}g\indices{_\lambda _\nu }R\right) &= g\indices{^\nu ^\sigma }8\pi G\,T\indices{_\lambda _\nu }\\
- \Leftrightarrow R\indices{_\lambda ^\sigma } -\dfrac{1}{2}\delta \indices*{_\lambda ^\sigma }R &= 8\pi G\,T\indices{_\lambda ^\sigma }
+g\indices{^\nu ^\sigma }\left(R\indices{_\lambda _\nu }-\dfrac{1}{2}g\indices{_\lambda _\nu }R\right) &= g\indices{^\nu ^\sigma }8\pi T\indices{_\lambda _\nu }\\
+ \Leftrightarrow R\indices{_\lambda ^\sigma } -\dfrac{1}{2}\delta \indices*{_\lambda ^\sigma }R &= 8\pi T\indices{_\lambda ^\sigma }
 \,.\end{align} 
 Now
 \begin{align} 
-  t\indices{_[_\rho }\nabla \indices{_\lambda _]}\kappa  &= \dfrac{1}{2}\left(-t\indices{_\rho }8\pi G\,T\indices{_\lambda ^\sigma }t\indices{_\sigma }-\dfrac{1}{2}t\indices{_\rho }\delta \indices*{_\lambda ^\sigma }R\,t\indices{_\sigma }+t\indices{_\lambda }8\pi G\,T\indices{_\rho ^\sigma }t\indices{_\sigma }+\dfrac{1}{2}t\indices{_\lambda }\delta \indices*{_\rho ^\sigma }R\,t\indices{_\sigma }\right)\\
-                                                         &= -8\pi G\,t\indices{_[_\rho }T\indices{_\lambda _]^\sigma }t\indices{_\sigma }
+  t\indices{_[_\rho }\nabla \indices{_\lambda _]}\kappa  &= \dfrac{1}{2}\left(-t\indices{_\rho }8\pi T\indices{_\lambda ^\sigma }t\indices{_\sigma }-\dfrac{1}{2}t\indices{_\rho }\delta \indices*{_\lambda ^\sigma }R\,t\indices{_\sigma }+t\indices{_\lambda }8\pi T\indices{_\rho ^\sigma }t\indices{_\sigma }+\dfrac{1}{2}t\indices{_\lambda }\delta \indices*{_\rho ^\sigma }R\,t\indices{_\sigma }\right)\\
+                                                         &= -8\pi t\indices{_[_\rho }T\indices{_\lambda _]^\sigma }t\indices{_\sigma }
 \,.\end{align} 
 Whether the equation yields zero, depends on the conditions imposed on the energy-momentum tensor.
 Consider Raychaudhuri's equation \todo{discuss in appendix}
@@ -1100,7 +1165,7 @@ Consider Raychaudhuri's equation \todo{discuss in appendix}
 \,.\end{align} 
 For null geodesic congruences \todo{generating the horizon of a static black hole (which is the case for every black hole which has eventually settled in a state of equilibrium) the expansion, shear and rotation are zero cf \cite{Hawking1972}... really tho?}, yielding
 \begin{align} 
-  0=R\indices{_\lambda _\sigma }t\indices{^\lambda }t\indices{^\sigma }=8\pi G\,T\indices{_\lambda _\sigma }t\indices{^\lambda }t\indices{^\sigma }+\dfrac{1}{2}g\indices{_\lambda _\sigma }Rt\indices{^\lambda }t\indices{^\sigma }=8\pi G\, T\indices{_\lambda _\sigma }t\indices{^\lambda }t\indices{^\sigma }
+  0=R\indices{_\lambda _\sigma }t\indices{^\lambda }t\indices{^\sigma }=8\pi T\indices{_\lambda _\sigma }t\indices{^\lambda }t\indices{^\sigma }+\dfrac{1}{2}g\indices{_\lambda _\sigma }Rt\indices{^\lambda }t\indices{^\sigma }=8\pi T\indices{_\lambda _\sigma }t\indices{^\lambda }t\indices{^\sigma }
 \,.\end{align} 
 This means, that $T\indices{_\lambda ^\sigma }t\indices{_\sigma }$ either points in the direction of $t\indices{_\lambda }$ or is spacelike orthogonal to it.
 However, by the (Null) Dominant Energy Condition ((N)DEC), the quantity $T\indices{_\lambda ^\sigma }t\indices{_\sigma }$ is a future-pointing non-spacelike vector, thus it has to be parallel to $t\indices{_\lambda }$\,.
@@ -1120,7 +1185,7 @@ Lastly we come to the discussion of the third law of thermodynamics.
 It states that the absolute zero-point temperature cannot be reached; this translates to $\kappa =0$ on the event horizon.
 
 \begin{enumerate}[label=--]
-  \item in schwarzschild = 1/4GM so only for M to inf
+  \item in schwarzschild = 1/4M so only for M to inf
   \item in kerr-newman 
 \end{enumerate}
 %}}}
